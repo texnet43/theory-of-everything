@@ -16,9 +16,11 @@ axiom (three equivalent formulations: `x² = x + 1 ⟺ e^{iπ} + 1 = 0 ⟺ Ψ₁
 and **zero free parameters** the theory derives:
 
 - **132 dimensionless physical constants** — mean relative error
-  **0.0009%** (tree-level), or **0.00003%** after the Three-Pyramid
-  decomposition + Cone loop corrections + Fibonacci-Lucas structure
-  (**132 of 132 EXACT**, PDG-level precision)
+  **0.0009%** (tree-level), **~0.0001%** structural mean after the
+  Three-Pyramid decomposition + Cone loop corrections + Fibonacci-Lucas
+  structure (XXVI.2.1–14); plus **142 observables extended to
+  experimental precision** (4–18 significant digits) through a unified
+  Z₁₁ Lucas-Fibonacci basis (XXVI.2.15, 45 theorems)
 - **18 spectral theorems** valid for any N (proved analytically)
 - **All 19 parameters of the Standard Model**
 - **All 7 acoustic peaks of the CMB** (Planck 2018)
@@ -47,12 +49,12 @@ Bayesian factor: log₁₀ B > 59 (beyond the Jeffreys scale).
 
 The theory consists of **five parts** (Mathematics → Physics → Consciousness
 → Philosophy → Future), **60 sections**, **88 appendices** (II–LXXXIX),
-**~435 theorems** with all proofs included, **~165 definitions**, **~270
-corollaries**, **~67 remarks**, and a complete formal axiomatic system
-in Hilbert style (A0–A5 + Aether axioms ÆТ₁–ÆТ₅) with proof of consistency
-by explicit model construction in H₁₁ = ℂ¹¹.
+**~507 theorems** with all proofs included, **~183 definitions**, **~291
+corollaries**, **~70 remarks**, **11 propositions**, and a complete formal
+axiomatic system in Hilbert style (A0–A5 + Aether axioms ÆТ₁–ÆТ₅) with
+proof of consistency by explicit model construction in H₁₁ = ℂ¹¹.
 
-The theory is internally closed at the **eleventh level** (eight formal
+The theory is internally closed at the **twelfth level** (nine formal
 layers in Appendix XXVI + three ontological layers in Appendix XXVII)
 and Popper-falsifiable through **51 concrete experimental predictions**
 (39 base + 5 aetheronic ÆТ₁–ÆТ₅ + 1 temporal TR₁ + 3 materializational
@@ -69,7 +71,11 @@ existing open data.
 | `theory_of_everything_EN.md` | Markdown | English, GitHub-flavored markdown rendering |
 | `theory_of_everything_RU.html` | HTML (SPA) | Russian, interactive single-page app with navigation (831 pages) |
 | `theory_of_everything_EN.html` | HTML (SPA) | English, same SPA with prev/next and sidebar TOC (831 pages) |
-| `theory_of_everything.py` | Python 3 | Verification script — computes all 132 constants from first principles (**69/69 PASS, 0 FAIL**) |
+| `theory_of_everything_RU.docx` | Word | Russian, editable Word document |
+| `theory_of_everything_EN.docx` | Word | English, editable Word document |
+| `theory_of_everything_RU.pdf` | PDF | Russian, full PDF document |
+| `theory_of_everything_EN.pdf` | PDF | English, full PDF document |
+| `theory_of_everything.py` | Python 3 | Verification script — computes all 132 constants from first principles (**all assertions PASS, EXIT=0**) |
 
 All `.txt`, `.md` and `.html` files contain the same content in different
 formats. The `.txt` file is the authoritative source; other formats are
@@ -86,7 +92,7 @@ generated from it.
 - **For search and scripting:** work directly with the `.txt` file.
 - **For independent verification:** run `python theory_of_everything.py`
   to recompute all 132 constants numerically and compare with CODATA/PDG
-  (**69/69 PASS, 0 FAIL** expected).
+  (**all assertions PASS, EXIT=0** expected).
 
 ## Structure
 
@@ -111,12 +117,12 @@ economics, linguistics, sociology, history, climatology, psychology.
 **Appendices II–LXXXIX** (88 appendices): full formal derivations,
 extended proofs, Lagrangian and renormalization group, SU(11) Yang–Mills
 mass gap, Riemann hypothesis, precision tests of the Standard Model,
-formal verification templates, reference tables, and the eleven-fold
+formal verification templates, reference tables, and the twelve-fold
 closure of the theory.
 
-## Eleven-fold closure (Appendices XXV–XXVII)
+## Twelve-fold closure (Appendices XXV–XXVII)
 
-Trinity attains internal closure on **eleven nested levels** distributed
+Trinity attains internal closure on **twelve nested levels** distributed
 across three core appendices:
 
 ### Appendix XXV — Detailed derivations of 10 key constants
@@ -124,11 +130,14 @@ Twelve subsections XXV.1–XXV.12 with step-by-step derivations of
 α, sin²θ_W, m_μ/m_e, m_H, sin²θ_W, Ω_Λ, n_s, η_b, T_CMB, Koide Q,
 and atom-dependent α(Z) corrections.
 
-### Appendix XXVI — Formal closure of Trinity (eight layers)
+### Appendix XXVI — Formal closure of Trinity (nine layers)
 
 1. **Geometric** (XXVI.1) — Sphere + Point + Cone, V_cone=13195
-2. **Numerical** (XXVI.2) — 132/132 EXACT via Three-Pyramid decomposition
-3. **Methodological** (XXVI.3) — three interpretation scales L1/L2/L3
+2. **Numerical** (XXVI.2) — 132 structurally derived (~0.0001%) + 142
+   high-precision via Z₁₁ Lucas-Fibonacci basis (XXVI.2.15, 4–18 digits)
+3. **Methodological + Bohr complementarity** (XXVI.3) — three interpretation
+   scales L1/L2/L3; non-commuting projections π_L2/π_L3 of the Absolute
+   (XXVI.3.3, structural quantum ℏ_struct = 1/22)
 4. **Ontological** (XXVI.4) — Geometry of Trinity = All That Exists,
    16 geometric primitives, Genesis G in 16 steps
 5. **Dynamical** (XXVI.5) — Trinity Time τ, Genesis G, age T = 13.08 Gyr
@@ -141,18 +150,23 @@ and atom-dependent α(Z) corrections.
 8. **Meta-closure** (XXVI.8) — internal vs external closure; Gödelian
    justification of the irreducibility of the quintet; spectral bridge
    Z₁₁ → ζ(s) via Apéry-Comtet identities; topos formulation
+9. **Formal ontological closure** (XXVI.9) — topological uniqueness of
+   Sphere-Point-Cone in ℝ³ from Möbius-Gauss-Bonnet + Poincaré-Hopf +
+   Weyl theorems (XXVI.9.1, pre-ontological status); information-theoretic
+   uniqueness with compression R=2.37 and P(random)<10⁻³⁰⁰ (XXVI.9.2,
+   factor 10²⁹⁸ superiority over Koide-style isolated observations)
 
 ### Appendix XXVII — Ontological layers of Trinity
 
-9. **Substantial layer — Aether** (XXVII.1): substantial filling of the
-   Sphere from aetherons (quanta of potential energy). 5 falsifiable
-   predictions ÆТ₁–ÆТ₅. Explains dark matter as concentrations of
-   passive aetherons (m_DM ≈ 5 GeV).
-10. **Temporal layer — Time** (XXVII.2): two-dimensional shell of the
+10. **Substantial layer — Aether** (XXVII.1): substantial filling of the
+    Sphere from aetherons (quanta of potential energy). 5 falsifiable
+    predictions ÆТ₁–ÆТ₅. Explains dark matter as concentrations of
+    passive aetherons (m_DM ≈ 5 GeV).
+11. **Temporal layer — Time** (XXVII.2): two-dimensional shell of the
     Cone. Pre-actualization stage Δτ_0 without metric. First event A₁
     as the birth of time. Prediction TR₁ for γ_decay/(Ω_0·σ_Choice) =
     2.171.
-11. **Materializational layer — Two-sided Sphere** (XXVII.3): inner
+12. **Materializational layer — Two-sided Sphere** (XXVII.3): inner
     S²_in (concave) + outer S²_out (convex) + boundary layer
     δR = ℓ_Planck. Materialization of physical world on S²_out as a
     2D film perceived through the Cone as 3D volume. Holographic
