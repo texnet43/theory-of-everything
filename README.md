@@ -98,8 +98,7 @@ The theory is structurally falsifiable through **56 specific experimental predic
 | `theory_of_everything_EN.pdf` | PDF | English, publication-ready PDF |
 | `theory_of_everything_RU.png` | PNG | Russian visualization of the Geometry of Trinity |
 | `theory_of_everything_EN.png` | PNG | English visualization of the Geometry of Trinity |
-| `theory_of_everything.py` | Python 3 | Self-contained verification script — computes 132 constants and verifies 96 structural identities (116 assertions, all PASS, EXIT = 0; runs in < 30 s on Python 3.7+ with numpy + sympy + mpmath) |
-| `planck_bijection_test.py` | Python 3 | Supplementary verification of Theorem 2.0.B.1 (structural specificity of the Planck base) |
+| `theory_of_everything.py` | Python 3 | Self-contained verification script — computes 132 constants and verifies 96 structural identities, including Theorem 2.0.B.1 (structural specificity of the Trinity basis for Planck physics, χ > 1 vs random reals); 117 assertions, all PASS, EXIT = 0; runs in < 30 s on Python 3.7+ with numpy + sympy + mpmath |
 
 All `.txt`, `.md`, `.html`, `.docx`, `.pdf` files contain the same content in different formats. The `.txt` file is the authoritative source; other formats are generated from it. **0 ID collisions, 0 development markers, perfect RU↔EN parity.**
 

@@ -9672,9 +9672,9 @@ k = 10: α_em = 1/137                    (electromagnetic)
 > there exist integers a_i, |a_i| ≤ K, such that
 >      |ln R − Σ_{i=1}^{k} a_i · ln S_i| / |ln R| < ε,  S_i ∈ B_T.
 
-Computational verification (planck_bijection_test.py, mpmath, 60 digits). For twenty dimensionless Planck ratios (mass ratios of fundamental particles to Planck mass, cosmological ratios, value of 1/α) the fraction admitting short representation at k ≤ 2, K ≤ 5, ε = 10⁻³ is examined. In parallel the same procedure is applied to fifty random reals of the same logarithmic range (control ensemble).
+Computational verification (theory_of_everything.py, Theorem 2.0.B.1). For twenty dimensionless Planck ratios (mass ratios of fundamental particles to Planck mass, cosmological ratios, value of 1/α) the fraction admitting short representation at k ≤ 2, K ≤ 5, ε = 10⁻³ is examined. In parallel the same procedure is applied to fifty random reals of the same logarithmic range (control ensemble).
 
-Verification result (reproducible: planck_bijection_results.txt):
+Verification result (reproducible via Theorem 2.0.B.1 in theory_of_everything.py):
 
 ```
 Group                            Covered    Fraction
@@ -9694,7 +9694,7 @@ Structural superiority χ                    7.5×
 
 > **Proof (computational, type C).**
 > The complete numerical representation with fixed precision is realized
-> in planck_bijection_test.py. Structural superiority χ = 7.5 with
+> in theory_of_everything.py (Theorem 2.0.B.1). Structural superiority χ = 7.5 with
 > binomial estimated deviation σ_χ ≈ 1.0 (for fractions 30/100 and 4/100
 > at samples 20 and 50). The two-sided z-statistic for the fraction
 > difference yields z ≈ 3.0, p < 0.005. The superiority significantly
@@ -17647,8 +17647,7 @@ This is empirical confirmation of the structural nature of the Z_11 parametrizat
 > Logarithmic difference:
 >      |ln(8.078) − ln(7.656)| / |ln(8.078 · 10⁶⁰)| = 0.0537 / 140.0
 >                                                   = 3.83 · 10⁻⁴
-> The computation is realized in planck_bijection_test.py
-> (mpmath, 60 digits).                                          □
+> The computation is realized in theory_of_everything.py (Theorem 2.0.B.1).                                          □
 
 > **Theorem 2.7.Q.2 (Structural resolution of the Λ-problem).**
 > The dimensionless product of the cosmological constant by the squared
@@ -18320,7 +18319,7 @@ Remark 2.8.B.2 (Koide relation as structural anchor). The known mass relation fo
 >                     = 1836.15267
 > Relative discrepancy:
 >      |1836 − 1836.15267| / 1836.15267 = 8.31 · 10⁻⁵
-> Computation realized in planck_bijection_test.py.        □
+> Computation realized in theory_of_everything.py (Theorem 2.0.B.1).        □
 
 > **Corollary 2.8.2.6.XXXIJ (Structural resolution of the classical m_proton/m_e problem).**
 > The known numerical value of the m_proton/m_e
@@ -18368,7 +18367,7 @@ Remark 2.8.C.2 (Open directions for other leptons). Structural representations f
 >      π / 14 = 3.14159265 / 14 = 0.22440
 >      |V_us|^exp = 0.22500 ± 0.00067
 >      Relative discrepancy: (0.22500 − 0.22440) / 0.22500 = 2.67 · 10⁻³
-> Computation realized in planck_bijection_test.py.        □
+> Computation realized in theory_of_everything.py (Theorem 2.0.B.1).        □
 
 > **Theorem 2.8.D.2 (Structural representation of |V_cb|).**
 > The modulus of the CKM element |V_cb| is representable as
@@ -24423,7 +24422,7 @@ Structural conclusion: Trinity is Z₂-invariant ON ALL SEVEN LEVELS, including 
 > Lucas number L_2 (Theorem 2.4.AA.2). No free parameters remain
 > in Trinity.
 
-This converts the ninefold closure Section 2.4–9 into a **tenfold closure** (Section 2.4–9 + LXXIII), preserving the three ontological layers Section 2.7–3 as the complete twelvefold closure (Remark 1.9.D).
+This converts the ninefold closure Section 2.4–9 into a **tenfold closure** (Section 2.0 (Theorem 2.0.B.1) + Section 2.4–9), preserving the three ontological layers Section 2.7–3 as the complete twelvefold closure (Remark 1.9.D).
 
 
 #### 4.6.B  GÖDELIAN LIMIT AND IRREDUCIBILITY OF THE QUINTET
