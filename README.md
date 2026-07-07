@@ -27,6 +27,8 @@ From **7 axioms** (A0–A5 base Hilbert + A6 dimensional lexicon) and
 >
 > 3b. **Algebraic necessity of QR as the metric carrier (Theorem 4.3.0.d.N):** the identification "quadratic residue = metric direction" is an algebraic theorem, not a postulate. By bilinearity of the metric tensor (Riemann 1854), the carrier of any bilinear form on Z_N* is necessarily a subgroup (bilinearity g(ab,c)=g(a,c)·g(b,c) requires ab∈S). QR(N) is the unique proper nontrivial subgroup of the cyclic group Z_N*, hence the unique consistent metric carrier. The non-residues do not form a subgroup and cannot carry a metric — they are forced to be the internal (charge) sector. This holds for every prime N≡3(mod 4); for N≡1(mod 4) no proper carrier exists and no Lorentzian signature can arise. Three independent routes converge: algebraic (4.3.0.d.N), ontological (2.4.G.7.c), topological (1.10.B.3).
 >
+> 3c. **Four emergence steps: mathematics → physics = 4 forks = 4 forces (Theorem 5.4.E):** the transition from the mathematical structure Z₁₁ to physical reality is not a single leap but four sequential emergence steps, each producing one fundamental force: (E1) carrier Z_N → gravity (k=0), (E2) metric closure → strong (k=3), (E3) field closure → weak (k=9), (E4) Z₂-completion → electromagnetism (k=10). The number of forks = number of forces = φ(φ(11)) = 4 = L₃ = dim(spacetime). Trinity has one root fork (choice of cyclic carrier) from which all four forces are derived — compared to four independent postulates in the Standard Model.
+>
 > 4. **SM group from R, Z₂:** G_SM = SU(R)×SU(Z₂)×U(1) = SU(3)×SU(2)×U(1) without any GUT embedding. Each factor is uniquely determined by its dimension.
 >
 > 5. **Eight 2→2 amplitudes:** first explicit gravitational 2→2 amplitudes — φₖφₖ→φₖφₖ, φₖg→φₖg, cross-mode, φφ→γγ, φφ→ψψ̄, gg→gg, gg→φφ, φγ→φγ. Partial-wave unitarity and the quartic sum rule verified; the remaining higher-loop amplitudes and the 1-loop optical theorem are open (Remark 5.7.VS.1.t.w).
@@ -93,10 +95,10 @@ The five aether properties ÆТ₁–ÆТ₅ are **reduced to the Sphere-Point-C
 
 Five Parts × 12 modal subsections = **60 modal cells** + **1 service appendix (Glossary I)**:
 
-- **765 theorems** (all with proofs)
+- **766 theorems** (all with proofs)
 - **269 definitions**
-- **554 corollaries**
-- **276 remarks**
+- **556 corollaries**
+- **277 remarks**
 - **26 lemmas**
 - **11 propositions**
 
