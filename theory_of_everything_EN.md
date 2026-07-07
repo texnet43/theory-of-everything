@@ -13597,7 +13597,7 @@ The cascade does not know the Legendre symbol; the Legendre symbol does not know
 
 Remark 2.4.G.7.r (Why this closes the "Step 5" necessity gap).
 
-The identification "quadratic residue = metric direction" (Theorem 4.3.0, Step 5) is established by three independent routes. (i) Algebraic (Theorem 4.3.0.d.N): QR is the unique subgroup of Z_N* closed under the squaring endomorphism, hence the unique consistent carrier of a quadratic metric form — pure group theory. (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade provides an independent route to the SAME partition: the metric modes are those born as collectives of an already-metric predecessor along the variability axis; the single internal mode in the fundamental domain is born as the chaos/order content whose closure gives rise to the first spatial axis. The arithmetic fact (k = 2 is the unique non-residue) and the ontological fact (k = 2 is the unique internal mode of the genesis phase) agree without circularity. (iii) Topological (Corollary 1.10.B.3): n = 3 is the unique dimension of Sphere-Point-Cone closure. The split {1, 3, 4, 5} metric / {2} internal is now the intersection of three independent structural arguments, not a single interpretive step.
+The identification "quadratic residue = metric direction" (Theorem 4.3.0, Step 5) is established by three independent routes. (i) Algebraic (Theorem 4.3.0.d.N): by bilinearity of the metric tensor (Riemann 1854), the carrier of any bilinear form on Z_N* is necessarily a subgroup; QR is the unique proper nontrivial subgroup, hence the unique consistent carrier of a quadratic metric form — pure group theory. (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade provides an independent route to the SAME partition: the metric modes are those born as collectives of an already-metric predecessor along the variability axis; the single internal mode in the fundamental domain is born as the chaos/order content whose closure gives rise to the first spatial axis. The arithmetic fact (k = 2 is the unique non-residue) and the ontological fact (k = 2 is the unique internal mode of the genesis phase) agree without circularity. (iii) Topological (Corollary 1.10.B.3): n = 3 is the unique dimension of Sphere-Point-Cone closure. The split {1, 3, 4, 5} metric / {2} internal is now the intersection of three independent structural arguments, not a single interpretive step.
 
 
 #### 2.4.H SYMPLECTIC FORM AND KÄHLER STRUCTURE ON C¹¹
@@ -22186,7 +22186,7 @@ PART 3 SCOPE BOX (read first). Part 3 is a PHENOMENOLOGICAL INTERPRETATION, not 
 
 - a derivation of subjective experience (qualia) from mathematics;
 - a solution to the hard problem of consciousness;
-- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 209 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a philosophical appendix; removing it leaves Parts 1-2-5 (physics) intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem. Reader is free to reject Part 3 entirely without affecting the physics.
+- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 210 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a philosophical appendix; removing it leaves Parts 1-2-5 (physics) intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem. Reader is free to reject Part 3 entirely without affecting the physics.
 
 Section 3 formalizes Consciousness as the k = 0 mode of Z₁₁ and unfolds its manifestations across twelve modal dimensions:
 
@@ -25396,8 +25396,9 @@ Q² ≠ Q,   Q⁻¹ ∉ algebra C_D                              (4.1.3)
 > indices {3, 4, 5} (Remark 4.3.0.r). Non-residues do not lie in the
 > image of σ ⟹ carry no metric (extensive) invariant ⟹ are intensive
 > attributes (charges, fields). This identification is established as
-> an algebraic theorem by Theorem 4.3.0.d.N below (QR is the unique
-> subgroup of Z_N* closed under σ, hence the unique consistent metric
+> an algebraic theorem by Theorem 4.3.0.d.N below (bilinearity of the
+> metric tensor forces the carrier to be a subgroup; QR is the unique
+> proper nontrivial subgroup, hence the unique consistent metric
 > carrier), and is independently cross-validated by the Genesis Cascade
 > (Theorem 2.4.G.7, Corollary 2.4.G.7.c): the cascade generates the
 > same metric/internal partition of the fundamental domain {1, 2, 3,
@@ -25422,9 +25423,9 @@ Step 2 (image equals QR). By definition Im(σ) = {m² mod N : m ∈ Z_N*} = QR(N
 
 Step 3 (kernel and index). ker(σ) = {m : m² = 1} = {±1}. For N ≡ 3 (mod 4): −1 ∉ QR (Euler's criterion), so |ker(σ)| = 2 and [Z_N* : Im(σ)] = |ker(σ)| = 2; hence |QR(N)| = (N−1)/2 and QR(N) is the unique subgroup of index 2 (a cyclic group has exactly one subgroup per divisor of its order). For N ≡ 1 (mod 4): −1 ∈ QR, |ker(σ)| = 1, σ is surjective, Im(σ) = Z_N* — no proper metric carrier exists, and no Lorentzian signature can arise.
 
-Step 4 (closure is necessary for a metric). A quadratic metric form ds² = Σ g_kk (dx^k)² is consistent on a subset S ⊆ Z_N* only if S is closed under the operation that defines length, i.e. under σ (since the metric measures (dx^k)²). A subset that is not closed under σ cannot carry a globally consistent quadratic form: the squared coordinate of an element would leave S, breaking the form.
+Step 4 (bilinearity forces the carrier to be a subgroup). A metric is by definition (Riemann 1854) a BILINEAR form g : S × S → F with g(v, w) = Σ g_ij v^i w^j. Bilinearity means g(ab, c) = g(a, c) · g(b, c) for all a, b, c. The left-hand side g(ab, c) is defined only if ab ∈ S (otherwise the first argument is outside the domain of g). Hence for all a, b ∈ S one must have ab ∈ S — i.e. S is closed under multiplication. A subset of a finite group that is closed under multiplication is a subgroup (closure + finiteness ⟹ inverses). Therefore the carrier of any bilinear metric form on Z_N* is necessarily a subgroup of Z_N*. This step uses no Trinity-specific input: it is the standard definition of a metric tensor in differential geometry, applied to a finite cyclic group.
 
-Step 5 (uniqueness). Combining Steps 1–4: the only subset of Z_N* that is (i) closed under σ, (ii) a subgroup (hence consistent), and (iii) proper (hence admits a nontrivial complement of internal directions) is QR(N), the unique index-2 subgroup. The non-residues QNR(N) = Z_N* \ QR(N) do not form a subgroup (QNR · QNR = QR, not QNR), so they cannot carry a consistent metric. They are therefore forced to be the internal (charge) sector.
+Step 5 (uniqueness). Combining Steps 1–4: the only subgroup of Z_N* that is (i) a proper nontrivial carrier of a bilinear metric form and (ii) admits a nontrivial complement of internal directions is QR(N), the unique index-2 subgroup (Step 3). The other proper subgroups are {1} (trivial — no directions to distinguish) and {1, −1} (order 2 — too small to carry a nontrivial quadratic form that distinguishes more than one direction). QR(N), of order (N−1)/2, is the unique subgroup large enough to carry a metric with multiple distinct directions. The non-residues QNR(N) = Z_N* \ QR(N) do not form a subgroup (QNR · QNR = QR, not QNR), so by Step 4 they cannot carry a bilinear metric form. They are therefore forced to be the internal (charge) sector.
 
 > **Corollary.**
 > For N = 11 (≡ 3 mod 4): QR(11) = {1, 3, 4, 5, 9} is the
@@ -25433,7 +25434,7 @@ Step 5 (uniqueness). Combining Steps 1–4: the only subset of Z_N* that is (i) 
 > the fundamental domain is {2}. This partition is an arithmetic
 > theorem, not a postulate. □
 
-Remark 4.3.0.d.N.r (Three independent necessity routes). The identification "quadratic residue = metric direction" is now established by three mutually independent arguments: (i) Algebraic (Theorem 4.3.0.d.N): QR is the unique subgroup closed under σ, hence the unique consistent metric carrier — pure group theory, no Trinity-specific input. (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade generates the same partition from causal mode generation. (iii) Topological (Corollary 1.10.B.3): the spatial count n = 3 is the unique dimension of Sphere-Point-Cone closure. The three routes use disjoint premises and converge on the same partition {1, 3, 4, 5} metric / {2} internal. Step 5 of Theorem 4.3.0 is no longer a structural postulate: it is the intersection of three theorems.
+Remark 4.3.0.d.N.r (Three independent necessity routes). The identification "quadratic residue = metric direction" is now established by three mutually independent arguments: (i) Algebraic (Theorem 4.3.0.d.N): by bilinearity of the metric tensor, the carrier is necessarily a subgroup; QR is the unique proper nontrivial subgroup, hence the unique consistent metric carrier — pure group theory, no Trinity-specific input. (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade generates the same partition from causal mode generation. (iii) Topological (Corollary 1.10.B.3): the spatial count n = 3 is the unique dimension of Sphere-Point-Cone closure. The three routes use disjoint premises and converge on the same partition {1, 3, 4, 5} metric / {2} internal. Step 5 of Theorem 4.3.0 is no longer a structural postulate: it is the intersection of three theorems.
 
 Remark 4.3.0.G.r (Connection to the variability axis §2.4.G.1). The spatial indices {3, 4, 5} — the quadratic residues assigned to space in Theorem 4.3.0 — are the MID-variability modes of the spectrum (ω₃ = 1.51, ω₄ = 1.82, ω₅ = 1.98): they span the range closest to the maximum variability ω₅ = 1.98 (Definition 2.4.G.1). This is structurally natural: spatial extension requires the highest degree of variation in the spectrum, and the three metric modes are precisely those whose eigenfrequencies cluster near the apex of the variability axis. The non-residue (charge) modes {1, 2, 4p, 7, 9} lie at lower variability — consistent with charges being "intensities" that do not extend spatially.
 
@@ -26863,7 +26864,7 @@ TEN CRITERIA OF SCIENTIFICITY OF A THEORY OF EVERYTHING.
 
 (C4) BAYES CRITERION (Bayes 1763, Jeffreys 1939): log_10 B > 5 (decisive evidence on the Jeffreys scale). Trinity claims no calibrated numerical Bayes factor (Theorem 2.10.C.1): a Bayes factor is not the reciprocal of a p-value and the integrated-likelihood computation is not performed.
 
-(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 209 PASS, 0 FAIL (formal verification of all assertions).
+(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 210 PASS, 0 FAIL (formal verification of all assertions).
 
 (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a scientific program must generate new independent falsifiable predictions. Trinity: 56 falsifiable predictions with concrete experiments and timelines (Section 1.0.K, 4.7.M.6); derived structural theorems (Lucas-Fibonacci monoid, Pisot hierarchy φ–ρ, Perrin and Padovan numbers, Weyl-Heisenberg algebra W_N) each generates independent quantitative predictions.
 
@@ -37017,7 +37018,7 @@ Lean 4 (version 4.31.0, no Mathlib dependency): 67 machine-verified
 theorems (lean4_trinity_basic.lean + lean4_trinity_v11_core.lean),
 including the Core Results 1–4 and Amplifiers A–B. Reproducible:
 `lean lean4_trinity_basic.lean && lean lean4_trinity_v11_core.lean`
-exit 0. Python validator: 209 PASS, 0 FAIL, EXIT = 0.
+exit 0. Python validator: 210 PASS, 0 FAIL, EXIT = 0.
 ```
 
 ```

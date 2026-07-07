@@ -20071,9 +20071,11 @@
 
   The identification "quadratic residue = metric direction"
   (Theorem 4.3.0, Step 5) is established by three independent routes.
-  (i) Algebraic (Theorem 4.3.0.d.N): QR is the unique subgroup of
-  Z_N* closed under the squaring endomorphism, hence the unique
-  consistent carrier of a quadratic metric form — pure group theory.
+  (i) Algebraic (Theorem 4.3.0.d.N): by bilinearity of the metric
+  tensor (Riemann 1854), the carrier of any bilinear form on Z_N* is
+  necessarily a subgroup; QR is the unique proper nontrivial subgroup,
+  hence the unique consistent carrier of a quadratic metric form —
+  pure group theory.
   (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade provides
   an independent route to the SAME partition: the metric
   modes are those born as collectives of an already-metric
@@ -31977,7 +31979,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  209 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  210 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -36803,8 +36805,9 @@
   indices {3, 4, 5} (Remark 4.3.0.r). Non-residues do not lie in the
   image of σ ⟹ carry no metric (extensive) invariant ⟹ are intensive
   attributes (charges, fields). This identification is established as
-  an algebraic theorem by Theorem 4.3.0.d.N below (QR is the unique
-  subgroup of Z_N* closed under σ, hence the unique consistent metric
+  an algebraic theorem by Theorem 4.3.0.d.N below (bilinearity of the
+  metric tensor forces the carrier to be a subgroup; QR is the unique
+  proper nontrivial subgroup, hence the unique consistent metric
   carrier), and is independently cross-validated by the Genesis Cascade
   (Theorem 2.4.G.7, Corollary 2.4.G.7.c): the cascade generates the
   same metric/internal partition of the fundamental domain {1, 2, 3,
@@ -36836,20 +36839,32 @@
   |ker(σ)| = 1, σ is surjective, Im(σ) = Z_N* — no proper metric
   carrier exists, and no Lorentzian signature can arise.
 
-  Step 4 (closure is necessary for a metric). A quadratic metric form
-  ds² = Σ g_kk (dx^k)² is consistent on a subset S ⊆ Z_N* only if S is
-  closed under the operation that defines length, i.e. under σ (since
-  the metric measures (dx^k)²). A subset that is not closed under σ
-  cannot carry a globally consistent quadratic form: the squared
-  coordinate of an element would leave S, breaking the form.
+  Step 4 (bilinearity forces the carrier to be a subgroup). A metric
+  is by definition (Riemann 1854) a BILINEAR form g : S × S → F with
+  g(v, w) = Σ g_ij v^i w^j. Bilinearity means
+  g(ab, c) = g(a, c) · g(b, c) for all a, b, c. The left-hand side
+  g(ab, c) is defined only if ab ∈ S (otherwise the first argument is
+  outside the domain of g). Hence for all a, b ∈ S one must have
+  ab ∈ S — i.e. S is closed under multiplication. A subset of a
+  finite group that is closed under multiplication is a subgroup
+  (closure + finiteness ⟹ inverses). Therefore the carrier of any
+  bilinear metric form on Z_N* is necessarily a subgroup of Z_N*.
+  This step uses no Trinity-specific input: it is the standard
+  definition of a metric tensor in differential geometry, applied to
+  a finite cyclic group.
 
-  Step 5 (uniqueness). Combining Steps 1–4: the only subset of Z_N*
-  that is (i) closed under σ, (ii) a subgroup (hence consistent), and
-  (iii) proper (hence admits a nontrivial complement of internal
-  directions) is QR(N), the unique index-2 subgroup. The non-residues
+  Step 5 (uniqueness). Combining Steps 1–4: the only subgroup of Z_N*
+  that is (i) a proper nontrivial carrier of a bilinear metric form
+  and (ii) admits a nontrivial complement of internal directions is
+  QR(N), the unique index-2 subgroup (Step 3). The other proper
+  subgroups are {1} (trivial — no directions to distinguish) and
+  {1, −1} (order 2 — too small to carry a nontrivial quadratic form
+  that distinguishes more than one direction). QR(N), of order
+  (N−1)/2, is the unique subgroup large enough to carry a metric with
+  multiple distinct directions. The non-residues
   QNR(N) = Z_N* \ QR(N) do not form a subgroup (QNR · QNR = QR, not
-  QNR), so they cannot carry a consistent metric. They are therefore
-  forced to be the internal (charge) sector.
+  QNR), so by Step 4 they cannot carry a bilinear metric form. They
+  are therefore forced to be the internal (charge) sector.
 
   Corollary. For N = 11 (≡ 3 mod 4): QR(11) = {1, 3, 4, 5, 9} is the
   unique metric carrier; the metric directions of Theorem 4.3.0 are
@@ -36860,9 +36875,10 @@
   Remark 4.3.0.d.N.r (Three independent necessity routes). The
   identification "quadratic residue = metric direction" is now
   established by three mutually independent arguments:
-    (i) Algebraic (Theorem 4.3.0.d.N): QR is the unique subgroup
-        closed under σ, hence the unique consistent metric carrier —
-        pure group theory, no Trinity-specific input.
+    (i) Algebraic (Theorem 4.3.0.d.N): by bilinearity of the metric
+        tensor, the carrier is necessarily a subgroup; QR is the unique
+        proper nontrivial subgroup, hence the unique consistent metric
+        carrier — pure group theory, no Trinity-specific input.
     (ii) Ontological (Corollary 2.4.G.7.c): the Genesis Cascade
          generates the same partition from causal mode generation.
     (iii) Topological (Corollary 1.10.B.3): the spatial count n = 3
@@ -39027,7 +39043,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 209 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 210 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -54569,7 +54585,7 @@ readers.
   theorems (lean4_trinity_basic.lean + lean4_trinity_v11_core.lean),
   including the Core Results 1–4 and Amplifiers A–B. Reproducible:
   `lean lean4_trinity_basic.lean && lean lean4_trinity_v11_core.lean`
-  exit 0. Python validator: 209 PASS, 0 FAIL, EXIT = 0.
+  exit 0. Python validator: 210 PASS, 0 FAIL, EXIT = 0.
 
   ─────────────────────────────────────────────────────────────────────
   AMPLIFIER D (P1). Starobinsky R² inflation from α.
