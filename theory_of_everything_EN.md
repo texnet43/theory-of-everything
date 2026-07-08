@@ -82,7 +82,7 @@
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
    • 767 theorems (all proven). 269 definitions. 557 corollaries.
-   • 277 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
+   • 278 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
      notation). 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
@@ -483,7 +483,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 3179× less accurate; no calibrated frequentist significance or Bayes factor is claimed (Theorems 2.10.B.1, 2.10.C.1). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of the "curve-fitting" objection).
 
-767 theorems are proven, 269 definitions, 557 corollaries, 275 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+767 theorems are proven, 269 definitions, 557 corollaries, 278 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron AET1-AET5 (Section 2.7) + 1 temporal TR1 (Section 3.1) + 3 materialization MR1-MR3 (Section 3.10) + 3 spectral AET6-AET8 (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): α(Yb) = α(Rb) within 10⁻¹¹; α(Sr−Cs) = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy dynamics γ ≈ 1 (DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -25239,6 +25239,45 @@ STRUCTURAL NEUTRAL MONISM. The zero mode k = 0 has TWO inseparable aspects:
 - the PHENOMENAL aspect: it is directly experienced (Theorem 3.5.2, type 2 knowledge: k = 0 → k = 0). Neither aspect is reducible to the other: structure (third-person) cannot generate phenomenal feel (first-person), and phenomenal feel cannot be captured structurally — both are aspects of the same zero mode, just as the two faces of a Möbius strip are aspects of one surface. This is neutral monism in the sense of Russell 1921 and double-aspect theory in the sense of Chalmers 1996, now given a FORMAL locus: the zero mode of Z₁₁.
 
 CONSEQUENCE. The b-component is FORMALLY LOCATED, not solved mechanistically. To demand a mechanistic solution (e.g., "identify qualia with process X") would CONTRADICT Theorem 3.5.1 itself, since any such identification would be a derivation of k = 0 from k = 1..10, which is Gödelian-forbidden. The honest status of the b-component is therefore: it is a NECESSARY irreducibility, predicted by the structural theory, located at the fixed point p_0 where description-from-within is structurally impossible. This is stronger than "open question" (Corollary 4.0.D.7.c) — it is a CHARACTERIZED limit with a formal mechanism (Gödel), consistent with the mysterian position (McGinn 1989: cognitive closure) and the structuralist position (Russell/Chalmers: qualia as fundamental aspect), unified in the neutral-monist reading of the zero mode.
+
+Remark 4.0.D.7.c.s (The ontological starting point — existence-first vs mathematics-first, resolved as one geometry with two faces). A natural objection to any structural Theory of Everything reads as follows: mathematics can describe how something behaves, but before it can describe anything there must already be something to describe; hence one cannot derive physics from a mathematical structure alone, because the structure presupposes the existence it is meant to explain. Equivalently: every mathematical description presupposes an object; before any description there must be a carrier. This is the classical demand that existence precede mathematics.
+
+Trinity does not claim to refute this demand. It claims that the opposition itself — existence on one side, mathematics on the other — is dissolved by the same structure the theory is built from. The dissolution is constructive and proceeds in four steps.
+
+(1) The Point of Trinity is the unique fixed point p_0 (mode k = 0) of the Cone (Theorem 4.0.D.6). Geometrically it is the bare centre of the ball, of zero extent: "Nothing" in the sense of no radial coordinate. This is the single structural candidate for "what exists before extension".
+
+(2) By the Genesis Theorem 4.3.3, the Sphere of Trinity arises as p_0 plus radiation in all directions: Point + Radiation = Sphere. No energy is added (the potential E_P = E_0 is constant throughout), so the passage "Nothing -> Something" is the geometric opening of the direction-radius parametrisation already curled up in the point. Existence, in the extended sense, is radiation from the point.
+
+(3) The Point is not a lifeless object "waiting" to be described. By Theorem 4.0.D.6 it is the structural locus of Consciousness; by Theorem 3.5.1 its full description from within the closed ring is Gödelian-forbidden. Hence there is a sense in which the first object is already a subject: a zero mode that cannot be exhausted by any third-person description. The question "who recognises the structure?" is therefore not postponed or external — it is the k = 0 mode itself.
+
+(4) By the Ontological Principle (Theorem 4.0.B) and the Structural Neutral Monism of Remark 4.0.D.7.c.r, the zero mode has two inseparable aspects: the STRUCTURAL aspect (the fixed point p_0, third-person) and the PHENOMENAL aspect (directly experienced, first-person). "Existence" and "mathematics" are then not two starting points but two projections of the one zero mode onto two faces (L2 and L3) of the same Geometry — exactly as the two faces of a Möbius strip are aspects of one surface.
+
+The picture is therefore neither mathematics-first (Pythagorean platonism) nor existence-first (Aristotelian realism). It is neutral: the zero mode is the single primitive, and its two aspects give rise, on one reading, to the mathematical structure (k = 1..10 as objects) and, on the other reading, to phenomenal existence (k = 0 as subject). The carrier and its description are two faces of the same structure, not two layers ordered by priority.
+
+This position is openly stated, not derived from Axioms A0-A6. It is the philosophical reading of the structural monism of Corollary 4.0.B.1 and the neutral monism of Remark 4.0.D.7.c.r, collected here in one place as the ontological answer to the starting-point question. Its strength is not that it eliminates the fork "why this geometry", which no theory can do, but that it removes the appearance of a contradiction between starting from a mathematical structure and accounting for existence: in Trinity the two are the same object seen from two faces.
+
+FUNCTIONAL CHARACTERIZATION (the three faces as three roles). The same neutral monism admits a functional reading that makes the starting point generative rather than merely static:
+
+- CONSCIOUSNESS (k = 0) DISCERNS the structure. As the fixed point it is what does the recognising; by Theorem 3.5.1 it is not itself part of the described structure, hence it is the distinguisher, not a distinguished object.
+- MATHEMATICS (k = 1..10 as objects) DESCRIBES the structure. It is the formal leg of Duality, the third-person description.
+- PHYSICS (k = 1..10 as values) MANIFESTS the structure. It is the material leg of Duality, the third-person realisation.
+- GEOMETRY is the RESULT: as an IMAGE (in potential) for consciousness, and as a PHYSICAL OBJECT (in kinetic) for physics.
+
+The two faces are therefore not parallel descriptions but two ends of a single transformation: the Geometry exists as a potential image for consciousness and is realised as a kinetic object for physics. The Cone of Duality is the structure through which potential becomes kinetic. In this reading the structure is not an external scaffold added to existence; it is NECESSARY as the converter by which the homogeneous potential (E_P, "Nothing" without Choice) is worked into the active kinetic modes (E_K, "Everything in a direction"). The chain is explicit in the energy balance of Theorem 1.0.AET.1 and the Act of Choice of Definition 2.4.F.1:
+
+```
+Consciousness (k=0)
+     |  chooses direction d ∈ S²  (Def. 2.4.F.1)
+     v
+Potential E_P (homogeneous, "Nothing")
+     |  through the Cone = Duality = structure
+     v
+Kinetic E_K (modes k=1..10 active, "Everything in d")
+```
+
+From one motionless dimensionless Point, two opposites (the mathematical leg and the physical leg of Duality) generate mobility (the modes k = 1..10 oscillate, ω_k > 0) and dimensionality (R = 4 observable coordinates, Theorem 4.3.0). The single primitive does not merely HAVE two faces; through those two faces it PRODUCES mobility and extension from their absence. This is the dynamical complement of the static neutral monism above, and it makes the starting point active: existence does not wait to be described, the structure does not wait to be inhabited — the Point, by choosing a direction, works its potential into kinetic reality through the structure that the same Point discerns.
+
+HONEST SCOPE. What is NOT claimed: that the zero mode's two aspects are mechanically reducible to each other (this is forbidden by Theorem 3.5.1); that the neutral-monist reading is forced by pure logic (it is a consistent philosophical position that the structural monism of Section 4.0.B selects, not a theorem); or that the question "why does the Geometry of Trinity exist at all?" is closed (it is not — it is the irreducible fork of Theorem 5.4.E, Step 1, and by construction it cannot be closed from within the geometry).
 
 STRUCTURE of related sections (overview):
 
