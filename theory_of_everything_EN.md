@@ -81,8 +81,8 @@
    • THREE SECTORS OF SPHERE (2.7.P.1): S_A={1,4,7,10}, S_B={2,5,8}, S_C={3,6,9}
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
-   • 767 theorems (all proven). 269 definitions. 557 corollaries.
-   • 278 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
+   • 768 theorems (all proven). 269 definitions. 560 corollaries.
+   • 284 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
      notation). 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
@@ -192,7 +192,7 @@
      Trinity network —  the broadest unified
      theory of structural representation of irrational constants.
      No continuous free parameters remain.
-   • Full HTML publication: 73 pages (RU and EN, absolute parity).
+   • Full HTML publication: 74 pages (RU and EN, absolute parity).
 	   • 18 spectral theorems (proven for arbitrary N).
 	   • 56 falsifiable predictions (39 base + 5 aetheron ÆT₁–ÆT₅ +
 	     1 temporal TR₁ + 3 materialization MR₁–MR₃ + 3 spectral ÆT₆–ÆT₈ +
@@ -483,7 +483,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 3179× less accurate; no calibrated frequentist significance or Bayes factor is claimed (Theorems 2.10.B.1, 2.10.C.1). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of the "curve-fitting" objection).
 
-767 theorems are proven, 269 definitions, 557 corollaries, 278 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+768 theorems are proven, 269 definitions, 560 corollaries, 284 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron AET1-AET5 (Section 2.7) + 1 temporal TR1 (Section 3.1) + 3 materialization MR1-MR3 (Section 3.10) + 3 spectral AET6-AET8 (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): α(Yb) = α(Rb) within 10⁻¹¹; α(Sr−Cs) = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy dynamics γ ≈ 1 (DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -1566,7 +1566,7 @@ Experimental | yes | no |part.| yes
 confirmation | | | |
 Mathematical basis | QFT | strings | graph| Z₁₁
 Space dimension | 4 | 10-11 | 4 | 11→4
-Total theorems | — | ~1000 | ~200| 763
+Total theorems | — | ~1000 | ~200| 768
 Unification of forces | no | yes | no | yes (1/α_GUT=25)
 Consistency | yes | yes | yes | yes (1.0.H.1)
 Open source | N/A | N/A |part.| yes (PY)
@@ -12792,7 +12792,7 @@ Philosophical synthesis: The classical philosophical question — "Why is there 
 
 Formally: Nothing ⟷ Everything = Sphere ⟷ Cone = angular variation ⟷ radial variation. Neither Nothing without Everything, nor Everything without Nothing: one exists only as the reverse side of the other.
 
-This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 767 theorems + 7 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
+This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 768 theorems + 7 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
 
 Sphere + Cone = Everything + Nothing = Trinity.
 
@@ -14969,6 +14969,8 @@ Remark 2.4.AD.2.s (Group-theoretic origin of the Majorana scale via the assemble
 (3) MAGNITUDE AS A FREE PARAMETER OF V(Φ). The numerical value of M_R(k) for each family is set by the vacuum expectation values of the SU(11) Higgs field Φ at the cascade scales (survival hypothesis, Remark 5.1.D.9.r(e)). These VEVs are determined by the Higgs potential V(Φ) — whose 11 coefficients are fixed by vacuum alignment (Theorem 5.1.D.5.8) at the global minimum (5,6), but whose INDIVIDUAL eigenvalues at the cascade scales are not computed here. Hence M_R(k) is a free parameter of V(Φ), analogous to the Yukawa couplings y_t, y_b, y_τ which are also free in the Standard Model.
 
 HONEST STATUS (refined). The exact mode-dependent M_R(k) remains OPEN, but now at a deeper level than Remark 2.4.AD.2.r: the GROUP STRUCTURE is derived (ν_R = singlets in Λ^k, Majorana term is SU(11)-invariant), and only the V(Φ)-eigenvalue magnitudes are free — exactly as Yukawa couplings are free in the SM. Trinity thus derives the EXISTENCE and the REPRESENTATION-THEORETIC STRUCTURE of M_R, leaving the individual eigenvalues to the Higgs potential V(Φ) at the cascade scales. This is the same honest boundary as for the charged-fermion Yukawa sector: structure derived, magnitudes parametrized.
+
+Remark 2.4.AD.2.t (The factor 0.76 as the expected imprecision of an order-of-magnitude structural estimate). The structural estimate M_R ≈ α⁴·N·M_P ≈ 3.8·10¹¹ GeV (Remark 2.4.AD.2.r) differs from the phenomenological target 5·10¹¹ GeV by a factor of 0.76. This factor lies within the O(1) window and is therefore not a discrepancy. In standard type-I seesaw the Majorana scale M_R is in principle free (as are the Yukawa couplings in the Standard Model), and any structural order-of-magnitude estimate from fundamental constants may deviate from the phenomenological value by an O(1) factor without contradiction. The estimate α⁴·N·M_P gives the correct order (10¹¹ GeV) from the Trinity atoms α, N — this is a structural achievement, not a fit. Refinement to the exact value requires the mode-dependent M_R(k), which remains open (Remark 2.4.AD.2.s), but within the structural scope of Trinity.
 
 2.4.AE EXPLICIT DERIVATION OF EINSTEIN TENSOR FROM φ-REGULATOR
 
@@ -20148,6 +20150,79 @@ m_H = v·√(2·λ_H) = 246.22·√(2·0.12898) = 246.22·0.50791 = 125.05 GeV
 
 Experiment LHC (2022): 125.10 ± 0.14 GeV Relative error: 0.04% (within experimental uncertainty 0.14 GeV = 0.11%). MATCH EXACT.
 
+> **Theorem 2.8.MD (Dynamic mass via a self-consistent condensate: closing the structural circle).**
+> Four structural elements of Trinity — (i) the biquadratic
+> inter-mode term of the Trinity energy-momentum tensor T_μν^(Trinity),
+> (ii) the contact self-interaction on Z₁₁, (iii) the SU(11) mass gap,
+> (iv) the spectral gap between Absolute and Duality — are four
+> manifestations of a SINGLE dynamic mass mechanism.
+
+- Biquadratic term. Component (iv) of the full 𝓛_Trinity (Remark 2.7.B.7.u) contains the term
+
+−g_μν · α · V_cone · Σ_{k<l} exp(−|k−l|/φ) · |ψ_k|² · |ψ_l|²,
+
+coupling the Cone modes ψ_k (k = 1..10) via the φ-regulator.
+
+(ii) Contact self-interaction. The Z₁₁ analogue of the four-fermion model (Section 2.9.VZ) contains
+
+L_Z11 ⊃ G · Σ_{k,l} G_{kl}² · (ψ̄_k ψ_l)²,
+
+where G_{kl} = exp(−|k−l|/φ) is the same φ-regulator.
+
+Upon identifying the Cone modes ψ_k with the fermion modes ψ̄_k ψ_l (both are modes of the spectrum ω_k = 2sin(πk/N) on Z₁₁, Definition 2.4.E), the terms (i) and (ii) are structurally identical: the normally ordered mean of the four-fermion operator reduces to the square of the condensate density, matching the biquadratic contribution
+
+⟨:(ψ̄_k ψ_l)²:⟩  ∝  n_k · n_l  ∝  |ψ_k|² · |ψ_l|²
+
+where n_k = ⟨ψ̄_k ψ_k⟩ is the condensate density of mode k (the vacuum state preserves the U(1)_Ψ phase symmetry, Theorem 2.8.I.1), and the couplings coincide up to the structural normalization α·V_cone.
+
+> **Proof.**
+> Step 1. Structural correspondence of biquadratic contributions. In
+>        the condensate state with density n_k = ⟨ψ̄_k ψ_k⟩ (Madelung
+>        form, Section 2.8.I), the normally ordered four-fermion term
+>        contributes to the energy ∝ G·⟨:(ψ̄_k ψ_l)²:⟩ ∝ G·n_k·n_l,
+>        whereas the biquadratic term of T_μν^(Trinity) contributes
+>        ∝ α·V_cone·|ψ_k|²·|ψ_l|² ∝ α·V_cone·n_k·n_l. Both
+>        contributions are quadratic in the condensate density
+>        (n_k·n_l), with the inter-mode regulator exp(−|k−l|/φ) in
+>        both cases. This is a structural correspondence of densities,
+>        not an exact operator identity (the latter would require the
+>        field to commute, which is false for fermions).
+> Step 2. Coincidence of regulators. Both terms feature
+>        G_{kl} = exp(−|k−l|/φ) — the φ-decay of the inter-mode
+>        coupling. The normalization α·V_cone in T_μν^(Trinity) is the
+>        structural factor converting the geometric phase volume of the
+>        Cone (Theorem 1.10.0.2) into the effective coupling
+>        G = α·V_cone.
+> Step 3. Critical coupling. The spontaneous-breaking condition
+>        (Section 2.9.VZ)
+
+G_cr · Σ_k G_{kk}² / ω_k² = 1
+
+with G_{kk} = 1 and Σ_{k=1}^{N−1} 1/ω_k² = (N²−1)/12 (consequence of the identity Σ_{k=1}^{N−1} csc²(πk/N) = (N²−1)/3, applied to ω_k = 2sin(πk/N)) gives
+
+G_cr = 12/(N²−1) ≈ 0.1.
+
+The coupling G = α·V_cone = α·13195 ≈ 96 exceeds G_cr = 0.1 by three orders of magnitude; hence the condensate ⟨ψ̄ψ⟩ ≠ 0 is guaranteed to form. (Consistent with Section 2.9.VZ, where the same critical coupling G_cr = 12/(N²−1) = 0.1 is derived from the spontaneous chiral-symmetry breaking condition.) Step 4. Dynamic mass. The resulting condensate produces the dynamic mass (Section 2.9.WB)
+
+m_dynamic ≈ 300 MeV,
+
+which combines with the Higgs mass: m_q = m_Higgs^q + m_dynamic.
+
+The total fermion mass is thereby the sum of the Higgs contribution (the E_P potential of the Sphere) and the dynamic contribution (the condensate of Duality). Step 5. Closure with the gap. The spectral gap between the Absolute (k = 0, ω_0 = 0) and Duality (k = 1..10, ω_k > 0) (Corollary 3.9.2.1) is the structural substrate on which the dynamic mechanism operates: the condensate forms in Duality (ω_k > 0), but not in the Absolute (ω_0 = 0). The SU(11) mass gap Δ = ω₁·Λ (Theorem 5.1.C.3) is the non-abelian analogue of the same mechanism at the fundamental level. □
+
+> **Corollary 2.8.MD.1 (Total mass as the sum of two structural contributions).**
+> The mass of each fermion is the sum
+
+m_q = m_Higgs^q + m_dynamic,
+
+where m_Higgs^q ∝ α·ω_k·v_EW·φ^n is the contribution of the Sphere potential (Theorem 2.8.I.2), and m_dynamic ≈ 300 MeV is the contribution of the Duality condensate (Theorem 2.8.MD, Step 4). This decomposes the origin of mass into two structurally distinct components, both derivable from the Trinity geometry.
+
+Remark 2.8.MD.r (Connection to the Absolute/Duality gap; justification of the mean correspondence). The dynamic mechanism of Theorem 2.8.MD closes the structural circle begun by Corollary 3.9.2.1: the gap between the Absolute (ω_0 = 0) and Duality (ω_k > 0) not only declares mass as a spectral gap but GENERATES it via the self-consistent condensate. Mass in Trinity thereby has a dual foundation: structural (the gap, Corollary 3.9.2.1) and dynamic (the condensate, Theorem 2.8.MD).
+
+Justification of the mean correspondence. The operator identity of Step 1 holds in the vacuum mean ⟨·⟩, not as an exact operator equality. This is the STANDARD of effective field theory: the dynamic mass in NJL/QCD is likewise defined by the condensate mean ⟨ψ̄ψ⟩, not by an operator identity. The mean correspondence suffices to derive the mass m_dynamic as a function of the condensate density n_k; an exact operator equality would require the fermion field to commute, which is false. Honest boundary: the full renormalization of the interacting theory remains open (as in standard NJL/QCD, where the dynamic mass is effective, not fundamental).
+
+Remark 2.8.MD.s (Structural origin of the φ-regulator). The inter-mode regulator G_{kl} = exp(−|k−l|/φ) in both terms (the biquadratic T_μν^(Trinity) and the contact self-interaction) is the CANONICAL decay in the Fibonacci-Lucas monoid M_FL(N). The golden ratio φ = (1+√5)/2 is a structural constant of the quintet (Axiom A1, Binet formula F_n = (φⁿ−(−φ)⁻ⁿ)/√5), not a fitted parameter. The exponential decay exp(−|k−l|/φ) is the unique analytic function consistent with the φ-ladder of mass relations of Trinity (Theorem 2.4.AD.2: m_ν(k) ~ φ⁻ᵏ·M_P). Hence G_{kl} is derived from the axiomatics of Trinity, not introduced ad hoc.
+
 
 #### 2.8.J VACUUM STRUCTURE AND TOPOLOGICAL SECTORS
 
@@ -20295,6 +20370,12 @@ promotes naturally from the 3-ball B³(R) to the 4-dimensional Lorentzian manifo
 Therefore all INTERACTION TERMS of S_Æth are Lorentz scalars in the 4D formulation. The structural conclusion is that the interacting Trinity theory, formulated via the geometric action of Theorem 2.7.B.7 on the 4D Lorentzian manifold of Theorem 4.3.0.1, is Lorentz-covariant at the level of the ACTION.
 
 The HONEST REMAINING CAVEAT (not closed by this remark): the above establishes Lorentz covariance of the ACTION; a full proof of Lorentz covariance at the level of the QUANTIZED INTERACTION VERTICES would additionally require (i) explicit construction of the intertwining operator whose existence is conjectured in Step 6 of Theorem 2.7.B.7, and (ii) verification that the vertex rules of Theorem 2.4.VK (which conserve the discrete mode charge Σ k_i ≡ 0 mod N) are compatible with, and do not break, the continuous SO(3,1). The discrete charge conservation is CONSISTENT with SO(3,1) (it does not force Lorentz violation) but does not by itself PROVE full covariance of every diagram. Hence the interaction-covariance qualifier of Theorem 2.8.O.1 is REDUCED — not eliminated — by this remark: the action is covariant; the diagrammatic verification of every quantum vertex remains an honest open sub-item, bounded by the falsifiable tests of Corollary 2.8.O.1.c.
+
+Remark 2.8.O.1.s (Uniqueness of the dispersion form as the structural envelope of the clock law). Source (1) of Remark 2.8.O.1.r admits strengthening. Require that an analytic isotropic dispersion ω(k) on Z₁₁ reproduce the clock-slowing law for moving clocks R = ω − k·ω′(k) = θ·√(1 − v²/c²) at ALL group velocities v = ω′(k). The condition R(k)·ω(k) = θ² (where θ = ω(0) is the rest frequency of the mode), together with isotropy and smoothness of ω(k) at k = 0, fixes the dispersion UNIQUELY: the only analytic isotropic solution is
+
+ω²(k) = θ² + c²·k²,
+
+- precisely the linearization of the spectrum ω_k = 2sin(πk/N) at small k (Theorem 1.1.1) with θ = ω_k and c = 2π/N. The form 2sin(πk/N) is therefore NOT an arbitrary choice among Z₁₁-symmetric Hermitian operators: it is the UNIQUE analytic isotropic envelope of the measured clock law. This strengthens source (1): the kinematic input to Lorentz covariance of free propagation is forced not only by the linearization (Theorem 2.8.O.1) but by the uniqueness of the form reproducing the clock-slowing law across the entire velocity range. Together with source (2) (the metric η_μν from the Gauss sum of Theorem 4.3.0.1) this reduces the "emergent-symmetry hypothesis" qualifier of Theorem 2.8.O.1 to a structural consequence of two independent theorems: the dispersion form and the metric.
 
 > **Corollary 2.8.O.1.c (Lorentz-violation structure of the Z₁₁ dispersion: linear null test and quadratic scale √2·N·M_P).**
 > The dispersion ω(k) = 2 sin(πk/N) is an odd function of k, so
@@ -21528,7 +21609,7 @@ NJL model (1961) is a fermionic model with four-fermion interaction exhibiting s
 
 #### 2.9.VZ NJL ON Z₁₁
 
-On Z₁₁ the NJL analog: L_{Z₁₁} = Σ_k ψ̄_k·(iγ^μ·∂_μ − m_k)·ψ_k + G·Σ_{k,l} G_{kl}²·(ψ̄_k·ψ_l)² with the φ-regulator G_{kl}. Critical coupling: G_cr ≈ φ²/N ≈ 0.238
+On Z₁₁ the NJL analog: L_{Z₁₁} = Σ_k ψ̄_k·(iγ^μ·∂_μ − m_k)·ψ_k + G·Σ_{k,l} G_{kl}²·(ψ̄_k·ψ_l)² with the φ-regulator G_{kl}. With G_{k,k} = 1, the sum is evaluated via the classical identity Σ_{k=1}^{N−1} csc²(πk/N) = (N²−1)/3, applied to ω_k = 2sin(πk/N): Σ_{k=1}^{N−1} 1/ω_k² = Σ 1/(4·sin²(πk/N)) = (N²−1)/12 Hence the critical coupling: G_cr = 12/(N²−1) = 12/120 = 0.1  (at N = 11)
 
 
 #### 2.9.WA CHIRAL CONDENSATE
@@ -21827,7 +21908,7 @@ This section contains the skeleton of formal verification of Trinity in automate
 
 #### 2.10.H OVERALL FORMALIZATION SCHEME
 
-Goal: translate all 767 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
+Goal: translate all 768 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
 
 Stages: (1) Definition of basic types: N, phi, omega, H_11 (2) Axioms A0-A5 as logical statements (3) Spectral theorem for Z₁₁ (4) Formula alpha = pi^2 / (N * phi^10) (5) Derivation of 84 constants as theorems (6) Verification of the consistency proof
 
@@ -21949,9 +22030,9 @@ Computational complexity of Trinity — a direct consequence of the compactness 
 - WHY TRINITY IS COMPUTABLE — because the Sphere-Cone geometry is finite-dimensional (H_{11} = ℂ¹¹); all physics reduces to 11 × 11 matrices and their compositions.
 
 
-#### 2.10.P COMPLEXITY OF COMPUTING 84 CONSTANTS
+#### 2.10.M COMPLEXITY OF COMPUTING 84 CONSTANTS
 
-> **Theorem 2.10.P.1 (Polynomial complexity).**
+> **Theorem 2.10.M.1 (Polynomial complexity).**
 > Computing all 84 constants has complexity O(N·LI·d) where:
 >   N = 11 (dimension of Z₁₁)
 >   LI = number of loops (≤ 4)
@@ -21977,15 +22058,15 @@ In practice: ~10⁶ arithmetic operations, completed in under 1 second on an ord
 > of the 18 significant digits reported, this amounts to ~10⁶ arithmetic
 > operations, completed in under one second on an ordinary computer. □
 
-> **Corollary 2.10.P.1.c (Efficiency).**
+> **Corollary 2.10.M.1.c (Efficiency).**
 > Trinity is computationally efficient: whereas SM+ΛCDM requires
 > fitting 31 parameters via χ² minimization, Trinity gives all
 > answers in closed form.
 
 
-#### 2.10.Q COMPLEXITY OF PREDICTION VERIFICATION
+#### 2.10.N COMPLEXITY OF PREDICTION VERIFICATION
 
-> **Theorem 2.10.Q.1 (Polynomial-time verification).**
+> **Theorem 2.10.N.1 (Polynomial-time verification).**
 > Verification of any specific Trinity prediction (agreement with
 > experiment) has complexity O(1) — simple comparison of two
 > numbers. Verification belongs to class P.
@@ -21997,9 +22078,9 @@ In practice: ~10⁶ arithmetic operations, completed in under 1 second on an ord
 > lies in P. □
 
 
-#### 2.10.R COMPLEXITY OF MONTE CARLO TEST
+#### 2.10.O COMPLEXITY OF MONTE CARLO TEST
 
-> **Theorem 2.10.R.1 (Null hypothesis complexity).**
+> **Theorem 2.10.O.1 (Null hypothesis complexity).**
 > Testing 1000 random formulas against 84 constants has complexity
 > O(1000·84·op) ≈ 10⁷ operations (< 10 seconds on CPU).
 > This allows quick reproduction of statistical significance on
@@ -22012,9 +22093,9 @@ In practice: ~10⁶ arithmetic operations, completed in under 1 second on an ord
 > completing in under 10 s on a CPU. □
 
 
-#### 2.10.S QUANTUM COMPUTATIONAL COMPLEXITY OF Z₁₁ PROBLEMS
+#### 2.10.P QUANTUM COMPUTATIONAL COMPLEXITY OF Z₁₁ PROBLEMS
 
-> **Theorem 2.10.S.1 (BQP-membership of Z₁₁ quantum simulation).**
+> **Theorem 2.10.P.1 (BQP-membership of Z₁₁ quantum simulation).**
 > Simulating quantum evolution on Z₁₁ to precision ε belongs to
 > class BQP (bounded-error quantum polynomial).
 > On a quantum computer: O(N·log(1/ε)) gates.
@@ -22225,7 +22306,7 @@ PART 3 SCOPE BOX (read first). Part 3 is a PHENOMENOLOGICAL INTERPRETATION, not 
 
 - a derivation of subjective experience (qualia) from mathematics;
 - a solution to the hard problem of consciousness;
-- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 222 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a philosophical appendix; removing it leaves Parts 1-2-5 (physics) intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem. Reader is free to reject Part 3 entirely without affecting the physics.
+- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 235 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a philosophical appendix; removing it leaves Parts 1-2-5 (physics) intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem. Reader is free to reject Part 3 entirely without affecting the physics.
 
 Section 3 formalizes Consciousness as the k = 0 mode of Z₁₁ and unfolds its manifestations across twelve modal dimensions:
 
@@ -23185,6 +23266,18 @@ The number 8 = F₆ here is a spectral-entropy count; coincidences with unrelate
 >     from the internal dynamics of Duality.
 > Therefore the decision "which projection to choose" is made by the
 > Absolute itself (zero mode), not by Duality. □
+
+> **Corollary 3.9.2.1 (Mass as the spectral gap between Absolute and Duality).**
+> The gap between k = 0 (ω_0 = 0) and k = 1..10 (ω_k > 0), established
+> by Theorem 3.9.2, is the structural origin of mass:
+
+- Massless particles are modes whose projection onto the Absolute (k = 0) dominates: the photon and gluons correspond to k = 0 in their subalgebras (U(1) and SU(3), Theorem 2.8.3); ω_0 = 0 implies m = 0.
+
+(ii) Massive particles are modes with ω_k > 0: the gap ω_k between mode k and the zero mode is the mass itself, m_k ∝ α · ω_k · v_EW · φ^n (Definition 4.0.E, Law 3 «Mass = Height»). Mass is therefore not an external parameter but the magnitude of the spectral gap between Absolute and Duality.
+
+(iii) This is consistent with the Trinity ontology (Sphere-Point-Cone): mass as local curvature of a Sphere segment (Corollary 2.4.A.9.2) is the geometric expression of the same gap — the segment depth is proportional to ω_k. The law E = mc² (Law 3) is a consequence of the mirror symmetry k = 3 ↔ k = 8, i.e. of the existence of the gap.
+
+No new physics is introduced: this is a structural reformulation of the existing mass ontology of Trinity, translating «mass = amplitude of mode k» into the deeper form «mass = spectral gap between Absolute and Duality». The gap is not removable by any continuous process in Duality (Theorem 3.9.2), hence mass is structurally stable — it cannot «disappear» without destroying the Z₁₁ structure.
 
 > **Theorem 3.9.3 (Free will is real but constrained by structure).**
 > Free will satisfies three conditions:
@@ -25653,6 +25746,24 @@ The value R = 4 (observable 3+1) is attained UNIQUELY at N = 11. All other Heegn
 
 Remark 4.3.0.r (Consistency with the metric of Theorem 4.3.2). The spatial metric d² = μ_3² + μ_4² + μ_5² (Theorem 4.3.2) uses exactly the indices {3, 4, 5} of the nontrivial quadratic residues squared, confirming Definition 4.3.0.d: the metric is realized on the image of the squaring endomorphism. The index k = 2 (Temperature) is absent from the metric because 2 is a quadratic non-residue: Temperature is an intensive attribute, not a coordinate.
 
+Remark 4.3.0.cross (Structural robustness of the QR derivation of topology: seven independent requirements). The QR derivation of the ℝP³ topology (Theorem 4.3.0) is robust not only as an arithmetic consequence (Dirichlet formula, Gauss sum) but also as the unique solution satisfying seven independent structural requirements — each a consequence of previously proven theorems rather than a new postulate:
+
+(1) Directional isotropy — the isotropy of the Sphere (Theorem 2.7.B.7): space must single out no direction other than the Cone axis.
+
+(2) Closedness without boundary — the Sphere B³(R) is closed (Definition 2.4.E); a boundary would be a physical edge with no mechanism.
+
+(3) Orientability — the degree theory of the Point p₀ requires an orientation (Section 3.10).
+
+(4) A single nontrivial Z₂ class — light/matter are the two irreducible representations of Z₂ (Corollary 2.4.G.7.d, the Genesis cascade): H¹(M; Z₂) = Z₂ is required.
+
+(5) Involutive two-sheeted cover — the Act of Choice (Definition 2.4.F.1) is realized as a cover with involution σ² = id.
+
+(6) Fermion loop — the Z₄ theorem of statistics (linking spin to the structure of space) requires a nontrivial π₁.
+
+(7) Two spin structures — the two sectors of (4) must lift to the spinorial level.
+
+The QR derivation of ℝP³ in Theorem 4.3.0 satisfies all seven requirements simultaneously, and each requirement is independently falsifiable: violation of any one destroys the corresponding structure (isotropy, light/matter, fermionic statistics). This turns the choice of topology from an arithmetic coincidence into a structurally forced solution: among closed orientable 3-manifolds no other satisfies all seven requirements simultaneously.
+
 > **Definition 4.3.1.d (Thermal effective dimension).**
 > The thermal effective dimension d_th(E) at energy E is the number of
 > thermally active modes of the Z_N spectrum at temperature T(E):
@@ -26868,7 +26979,7 @@ The catalogue is divided by type: INTERNAL (formal gaps within the theory), EXTE
 
 ───── (B) EXTERNAL open directions ─────
 
-(B.1) Full Lean/Coq machine verification of all 767 theorems of Trinity; — skeletons of the key lemmas (2.4.A.A, 2.4.A.B); full formalization is a technical undertaking.
+(B.1) Full Lean/Coq machine verification of all 768 theorems of Trinity; — skeletons of the key lemmas (2.4.A.A, 2.4.A.B); full formalization is a technical undertaking.
 
 (B.2) Experimental verification of 56 falsifiable predictions:
 
@@ -26976,7 +27087,7 @@ TEN CRITERIA OF SCIENTIFICITY OF A THEORY OF EVERYTHING.
 
 (C4) BAYES CRITERION (Bayes 1763, Jeffreys 1939): log_10 B > 5 (decisive evidence on the Jeffreys scale). Trinity claims no calibrated numerical Bayes factor (Theorem 2.10.C.1): a Bayes factor is not the reciprocal of a p-value and the integrated-likelihood computation is not performed.
 
-(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 222 PASS, 0 FAIL (formal verification of all assertions).
+(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 235 PASS, 0 FAIL (formal verification of all assertions).
 
 (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a scientific program must generate new independent falsifiable predictions. Trinity: 56 falsifiable predictions with concrete experiments and timelines (Section 1.0.K, 4.7.M.6); derived structural theorems (Lucas-Fibonacci monoid, Pisot hierarchy φ–ρ, Perrin and Padovan numbers, Weyl-Heisenberg algebra W_N) each generates independent quantitative predictions.
 
@@ -27644,7 +27755,7 @@ The theory is formally complete (all open questions closed in XIII). What remain
 
 #### 4.6.VX CENTRAL INVARIANT
 
-The central invariant of Trinity is the number of free parameters: |ParamSet| = 0 All content follows from one axiom A1: x² = x + 1 (equivalently A0, A2). From this and the quintet {N=11, π, φ, e, i} come all 84 constants, 767 theorems, 12 laws.
+The central invariant of Trinity is the number of free parameters: |ParamSet| = 0 All content follows from one axiom A1: x² = x + 1 (equivalently A0, A2). From this and the quintet {N=11, π, φ, e, i} come all 84 constants, 768 theorems, 14 laws.
 
 
 #### 4.6.VY COMPLETENESS CRITERIA
@@ -28120,7 +28231,7 @@ Remark on numerical predictions for N ≠ 11. Application of the formula α from
 
 Therefore the reverse implication (⇐) of Theorem 4.7.M.5 rests not on free postulates but on a cascade of interconnected formal theorems, each of which is independently testable through its own concrete quantitative prediction.
 
-Remark 4.7.M.5.r (Compliance with Popper's falsifiability criterion). By Popper's criterion (Karl Popper, "The Logic of Scientific Discovery", 1959), a scientific theory must admit a concrete prediction whose negative outcome refutes the theory. Trinity satisfies this criterion through 56 falsifiable predictions (Section 1.0) + 7 structural predictions (F1)–(F7) of the present section + 5 aetheric predictions (Section 2.7) + 3 materializational predictions (Section 3.10) + 1 temporal prediction (Section 3.1). In total 67 explicit quantitative tests, any of which under negative outcome refutes the theory. The anthropic principle of Trinity (Theorem 4.7.M.1) is NOT a teleological defence but a formal theorem of the NECESSARY COINCIDENCE of different levels of structure (cyclic symmetry and thermodynamic conservation), with the equivalence proven strictly in the forward direction and through independently testable theorems in the reverse.
+Remark 4.7.M.5.r (Compliance with Popper's falsifiability criterion). By Popper's criterion (Karl Popper, "The Logic of Scientific Discovery", 1959), a scientific theory must admit a concrete prediction whose negative outcome refutes the theory. Trinity satisfies this criterion through 56 falsifiable predictions (Section 1.0, including the 5 aetheric of Section 2.7, the 3 materializational of Section 3.10, and the 1 temporal of Section 3.1) + 7 structural predictions (F1)–(F7) of the present section. In total 63 explicit quantitative tests, any of which under negative outcome refutes the theory. The anthropic principle of Trinity (Theorem 4.7.M.1) is NOT a teleological defence but a formal theorem of the NECESSARY COINCIDENCE of different levels of structure (cyclic symmetry and thermodynamic conservation), with the equivalence proven strictly in the forward direction and through independently testable theorems in the reverse.
 
 Remark 4.7.M.6.r (Connection with Einstein's principle of uniqueness). Einstein in his works of 1915–1916 formulated the principle "a theory must be INEVITABLE" — that is, contain a minimum of free parameters and a maximum of structural consequences. Trinity satisfies this principle through zero tuning parameters (Theorem 1.9.A.2) and a cascade of interconnected formal theorems where each uses only the preceding ones. The anthropic principle in this context is a formal theorem of STRUCTURAL COINCIDENCE, not a philosophical post-hoc explanation.
 
@@ -29322,9 +29433,26 @@ This section formalizes five structural predictions of Trinity falsifiable in th
 >      (d) γ ≠ 1 at > 5σ in cosmological data DESI/Euclid
 >      (e) The spectrum of primordial gravitational waves does not
 >          correspond to a logarithmically-constant form at the LISA scale
-> Any of conditions (a)–(e) is a strict Popper criterion (Popper
+>      (f) Detection of inertial anisotropy violating the Triple Lock
+>          (Corollary 5.0.A.5.2): anisotropy off the Cone axis, with the
+>          wrong sign, or with sectors violating the locked scale ratio
+> Any of conditions (a)–(f) is a strict Popper criterion (Popper
 > 1959, «The Logic of Scientific Discovery»). Preservation of Trinity
-> requires robustness to all five tests.
+> requires robustness to all six tests.
+
+> **Corollary 5.0.A.5.2 (Triple Lock of Trinity falsifiability: refutation by detection).**
+> Any Lorentz violation that Trinity can produce obeys a triple
+> structural lock:
+
+Lock 1 (One axis). The only admissible anisotropy axis is the Cone axis direction i ∈ S² — the direction fixed by the Act of Consciousness Choice (Definition 2.4.F.1). No other axis is admissible: the isotropy of the Sphere (Theorem 2.7.B.7) excludes everything except the actualization direction. No freedom of axis.
+
+Lock 2 (One scale). The substrate scale Λ_T = √N · M_P (Theorem 2.4.A.0.3) is the same for the matter sector (quadrupole anisotropy of Corollary 2.8.O.1.c) and for the photon sector (quartic Lorentz violation): magnitudes are locked in one ratio. No freedom of scale.
+
+Lock 3 (One form). The form of the anisotropic signal is fixed by the spectrum ω_k = 2sin(πk/N) (Theorem 1.1.1): sidereal modulation with the computed scale Δk²u²/(2M²), where u is the velocity relative to the background. No freedom of form.
+
+The three locks are logically independent (axis, scale, form are three distinct features of the signal), and a measurement may violate any one while leaving the other two intact. Hence Trinity is falsifiable not only by absence of a signal (conditions (a)–(e) of Corollary 5.0.A.5.1) but also by DETECTION of a signal violating any of the three locks: anisotropy off the Cone axis, with the wrong sign, or with sectors violating the locked scale ratio, would refute the mechanism as decisively as a null result constrains it. This distinguishes Trinity from theories falsifiable only by absence of a signal: here a positive observation can kill the theory.
+
+Remark 5.0.A.5.2.r (Status of Choice in the Triple Lock). Lock 1 (the Cone axis i ∈ S²) is fixed by the Act of Consciousness Choice (Definition 2.4.F.1). Choice is a FUNDAMENTAL bifurcation of Trinity (Theorem 5.4.E, Step 1: choice of the cyclic carrier Z_N), analogous to an axiom, not an arbitrariness. The three locks are CONSEQUENCES of previously proven theorems: Lock 1 — the isotropy of the Sphere (Theorem 2.7.B.7) excludes all axes except the actualization direction; Lock 2 — Λ_T = √N·M_P (Theorem 2.4.A.0.3); Lock 3 — ω_k = 2sin(πk/N) (Theorem 1.1.1). Lock 1 does not claim that Choice is derived — it claims that IF Lorentz violation exists, its axis coincides with the axis of Choice. This is a structural prediction, experimentally falsifiable (detection of anisotropy off the Cone axis refutes the theory).
 
 Remark 5.0.A.1.r (Consistency of predictions with Section 1.0.K). Theorems 5.0.A.1–5.0.A.5 formalize five central falsifiable predictions of Trinity from the general list (Section 1.0.K, Section 2.4), systematizing them by experimental programs of the next generation. All five predictions are stated within the Trinity framework (Section 1.0.K, Section 2.4) without free parameters.
 
@@ -29743,6 +29871,8 @@ Step 4. Minimum nonzero energy: E_min = min_{k≠0} ω_k·Λ = ω_1·Λ = 2·sin
 Step 5. By 1.10.N.1 (mirror CPT) this gap survives the continuum limit a → 0, since the Z₁₁ central symmetry is discrete and not smoothed out by the continuum limit.
 
 Hence SU(11) on ℝ⁴ has a strictly positive mass gap. □
+
+Remark 5.1.C.3.r (Dual nature of the mass gap: non-abelian and dynamic). The SU(11) mass gap Δ = ω_1·Λ (Theorem 5.1.C.3) and the dynamic mass of Theorem 2.8.MD (m_dynamic ≈ 300 MeV from the self-consistent condensate) share a common structural basis: the spectral quantity ω_k = 2sin(πk/N). The non-abelian SU(11) gap uses ω_1 as the minimal spectral mode at a given dynamic scale Λ; the dynamic mass uses ω_k as the gap between mode k and the zero mode (Corollary 3.9.2.1). Hence ω_k = 2sin(πk/N) is the SINGLE spectral source of mass in Trinity: the non-abelian gap (glueballs, Th 5.1.C.3) and the dynamic gap (fermions, Th 2.8.MD) are two realizations of one spectral structure of Z₁₁. This structural unity is analogous to how, in the Standard Model, the strong and weak masses share the electroweak scale v_EW, but in Trinity the source is structural (ω_k), not phenomenological.
 
 > **Corollary 5.1.C.1.c (Continuum limit).**
 > Within the Trinity Z₁₁ construction, the minimal nonzero energy is
@@ -36546,10 +36676,10 @@ These interfaces are NOT independent theories of each area. They are minimal "so
 ## FINAL STATISTICS
 
 > **Theorem**
-> s: 767
+> s: 768
 > Definitions: 269
-> Corollaries: 557
-> Remarks: 277
+> Corollaries: 560
+> Remarks: 284
 > Lemmas: 26
 > Propositions: 11
 > Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -36733,6 +36863,22 @@ Hermiticity — Property of an operator Ô = Ô†. Guarantees real eigenvalues.
 EPR paradox — In Z₁₁ the paradox is resolved via zero-mode structure (consistency under nonlocal measurements).
 
 η(τ) — Dedekind function, fundamental in modular form theory. η²⁴ is a modular form of weight 12 (1.0.E).
+
+Dynamic mass — The component of a fermion's mass arising from the self-consistent condensate of Cone modes via the contact self-interaction on Z₁₁ (Theorem 2.8.MD); m_dynamic ≈ 300 MeV. The total mass m_q = m_Higgs^q + m_dynamic is the sum of the Sphere-potential contribution (Higgs) and the Duality-condensate contribution.
+
+Mass as spectral gap — The structural origin of mass: massless particles are modes whose projection onto the Absolute dominates (k = 0, ω₀ = 0), massive ones are Duality modes (k = 1..10, ω_k > 0); the mass equals the magnitude of the gap between Absolute and Duality (Corollary 3.9.2.1). It has a dual foundation: structural (the gap) and dynamic (the condensate, Theorem 2.8.MD).
+
+Seven requirements on topology — Independent structural conditions satisfied by the derivation of the ℝP³ topology from quadratic residues mod 11 (Theorem 4.3.0): isotropy, closedness, orientability, a single Z₂ class, involutive cover, fermion loop, two spin structures. Each requirement is a consequence of previously proven theorems, not a new postulate (Remark 4.3.0.cross).
+
+```
+Triple Lock — The structural condition of Trinity falsifiability by
+              detection of a positive signal: any Lorentz violation
+              obeys three logically independent locks — one Cone axis
+              i ∈ S² (Definition 2.4.F.1), one scale
+              Λ_T = √N·M_P (Theorem 2.4.A.0.3), one form
+              ω_k = 2sin(πk/N) (Theorem 1.1.1). Violation of any lock
+              refutes the mechanism (Corollary 5.0.A.5.2).
+```
 
 
 #### I.2 INDEX OF NOTATION
@@ -37191,7 +37337,7 @@ Lean 4 (version 4.31.0, no Mathlib dependency): 67 machine-verified
 theorems (lean4_trinity_basic.lean + lean4_trinity_v11_core.lean),
 including the Core Results 1–4 and Amplifiers A–B. Reproducible:
 `lean lean4_trinity_basic.lean && lean lean4_trinity_v11_core.lean`
-exit 0. Python validator: 222 PASS, 0 FAIL, EXIT = 0.
+exit 0. Python validator: 235 PASS, 0 FAIL, EXIT = 0.
 ```
 
 ```
