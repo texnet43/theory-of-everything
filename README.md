@@ -102,7 +102,7 @@ Five Parts × 12 modal subsections = **60 modal cells** + **1 service appendix (
 - **768 theorems** (all with proofs)
 - **269 definitions**
 - **560 corollaries**
-- **281 remarks**
+- **287 remarks**
 - **26 lemmas**
 - **11 propositions**
 

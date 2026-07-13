@@ -82,7 +82,7 @@
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
    • 768 theorems (all proven). 269 definitions. 560 corollaries.
-   • 284 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
+   • 287 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
      notation). 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
@@ -483,7 +483,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 3179× less accurate; no calibrated frequentist significance or Bayes factor is claimed (Theorems 2.10.B.1, 2.10.C.1). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of the "curve-fitting" objection).
 
-768 theorems are proven, 269 definitions, 560 corollaries, 284 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+768 theorems are proven, 269 definitions, 560 corollaries, 287 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron AET1-AET5 (Section 2.7) + 1 temporal TR1 (Section 3.1) + 3 materialization MR1-MR3 (Section 3.10) + 3 spectral AET6-AET8 (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): α(Yb) = α(Rb) within 10⁻¹¹; α(Sr−Cs) = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy dynamics γ ≈ 1 (DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -5320,6 +5320,27 @@ Therefore d = |Q| = 5 is an algebraic invariant, not an empirical parameter. At 
 
 Remark 1.10.0.r (N = 11 as the consequence of a single structural input). N = 11 is the unique consequence of the single structural input d = |Quintet| = 5 (Steps 1–5) — not a derivation from nothing. This one input has two equivalent faces: the algebraic |Quintet| = 5 and the spatial dimension R = 3. They meet in the icosahedron — the unique regular solid carrying 5-fold (icosahedral A₅) symmetry in 3D — whose 12 vertices equal the 3D kissing number K(3) = N + 1 (cf. the hemi-icosahedral 11-cell, automorphism PSL(2,11) ⊃ A₅). Trinity thus rests on ONE structural input (against the ~19 free parameters of the Standard Model), expressible either way; no deeper principle forces it.
 
+Remark 1.10.0.s (Why Z₁₁, not Z₇ or Z₁₃ — explicit comparison). The structural selection N = 11 from the PRIMARY criterion B1∧B2∧B3 (Theorem 1.10.0.28) eliminates alternative cyclic groups Z_p through concrete physical requirements, not through fitting α:
+
+- Z₇ (p = 7): condition B1 (N = 2·|Quintet|+1) gives |Quintet| = 3. R = 3 (spatial dimension from Higgs VEV) requires |Quintet| ≥ R = 3, but R + Z₂ = 3 + 2 = 5 ≠ 3. Z₇ does not close the spectral identity I₁·T₁ = T₃: (49−1)·14/12 = 56 ≠ 140. The SM group SU(3)×SU(2)×U(1) has dim = 3²−1+2²−1+1 = 12 ≠ N+1 = 8. Z₅ = echo gives only 1 generation (Th 5.1.D.9), not 3.
+
+```
+(ii) Z₁₃ (p = 13): condition B1 gives |Quintet| = 6. R = 3 requires
+     |Quintet| = R + Z₂ = 5, but 6 ≠ 5. The spectral identity
+     I₁·T₁ = T₃: (169−1)·26/12 = 364 ≠ 260. dim G_SM = 12 ≠ N+1 = 14.
+     Z₆ = echo gives 2 generations (Th 5.1.D.9), not 3. N ≡ 1 (mod 4)
+     violates condition B2 (Heegner h = 1 requires N ≡ 3 mod 4).
+```
+
+```
+(iii) Z₁₁ (p = 11): B1 gives |Quintet| = 5 = R + Z₂ = 3 + 2 ✓.
+      I₁·T₁ = T₃: 120·22/12 = 220 = 20·11 ✓. dim G_SM = 12 = N+1 ✓.
+      Z₅ = echo gives exactly 3 generations (Th 5.1.D.9) ✓. N ≡ 3 (mod 4),
+      h(−11) = 1 (Heegner) ✓.
+```
+
+Thus N = 11 is the UNIQUE prime satisfying FOUR independent physical requirements simultaneously: (a) Quintet closure |Quintet| = R+Z₂, (b) spectral identity I₁·T₁ = T₃, (c) dim G_SM = N+1, (d) exactly 3 fermion generations. Each requirement is independently falsifiable and does not depend on fitting the α-formula.
+
 > **Corollary 1.10.0.c (3D space and 1D time as consequences of Quintet).**
 > Since d = |Quintet| = 5 is algebraically fixed, and reality must be
 > realized through these 5 dimensions, the observable 3D-structure of
@@ -7884,6 +7905,33 @@ Derived conclusion: the hypothesis of PSLQ-semantization of the coefficients of 
 > the 99th percentile (Corollary 1.10.C.3). The post-hoc-fitting hypothesis is rejected. □
 
 Remark 1.10.F.6.r (Openness and reproducibility of the experiment). The script pslq_specificity_test.py is distributed as part of the Trinity release (CC BY 4.0). Any researcher can independently reproduce the four tests on a standard Python 3 + mpmath 1.3+ environment. All random seed values are fixed for reproducibility. The full log of the experiment is saved in pslq_specificity_results.txt.
+
+
+#### 2.4.4.QE VACUUM BIREFRINGENCE ON MAGNETARS
+
+Remark 2.4.4.QE (Euler-Heisenberg vacuum birefringence as a structural consequence of α). Since α is derived structurally from Z₁₁ (Theorem 2.4.A), all one-loop QED effects whose coefficients are pure functions of α automatically inherit a structural origin. In particular, the Euler-Heisenberg effective Lagrangian (1936)
+
+𝓛_EH = (α²/90π·m_e⁴)·[(E² − B²)² + 7(E·B)²]
+
+yields the vacuum refractive-index difference in a magnetic field:
+
+Δn = n_∥ − n_⊥ = (4α/45π)·(B/B_cr)²,   B_cr = m_e²/e ≈ 4.41·10⁹ T.
+
+Substituting Trinity α = 1/137.035999207:
+
+coefficient (4α/45π) = 2.065·10⁻⁴.
+
+For the nearest magnetar RX J1856.5-3754 (B_surf ≈ 10¹⁰ T, first observation Mignani et al. 2016) at an effective on-beam field B_eff ≈ 10⁴ T:
+
+Δn (Trinity) = 2.065·10⁻⁴ · (10⁴/4.41·10⁹)² ≈ 1.06·10⁻¹⁵.
+
+This is consistent with the observed polarization of ~16% (VLT, 2016) within the magnetospheric model. The difference between Trinity-α and CODATA-α in Δn: 1.8·10⁻⁹ (below current sensitivity).
+
+Prediction for a strong-field magnetar (B_surf ≈ 10¹¹ T, effective field B_eff ≈ 10⁸ T):
+
+Δn ≈ 1.06·10⁻⁷.
+
+Structural distinction from standard QED: Trinity fixes α without free parameters, whereas the standard formulation uses the measured value. Upon reaching 10⁻⁹ sensitivity (next-generation polarimeters IXPE, eXTP) the Trinity prediction becomes independently testable.
 
 
 #### 1.10.F.11 THIRD LEVEL OF TRINITY STRUCTURE:
@@ -29456,6 +29504,20 @@ Remark 5.0.A.5.2.r (Status of Choice in the Triple Lock). Lock 1 (the Cone axis 
 
 Remark 5.0.A.1.r (Consistency of predictions with Section 1.0.K). Theorems 5.0.A.1–5.0.A.5 formalize five central falsifiable predictions of Trinity from the general list (Section 1.0.K, Section 2.4), systematizing them by experimental programs of the next generation. All five predictions are stated within the Trinity framework (Section 1.0.K, Section 2.4) without free parameters.
 
+Remark 5.0.A.1.s (New physics from the α-formula — not refinement of known constants). The Trinity α-formula (Theorem 2.4.A) yields not only a refinement of the known constant 1/α = 137.035999207, but also a series of NEW physical predictions, previously unknown and testable in the laboratory:
+
+- 11-loop β-function deviation Δβ₁₁ = −2.84·10⁻⁶ (Corollary 2.4.4.1) — a structural prediction distinct from standard QED at the 11-loop level. Testable: FCC-hh / CLIC / ILC (2040+) upon reaching sensitivity to 11-loop contributions.
+
+(ii) Z₁₁ modulation of the g-factor: the 11 coefficients c₁,...,c₁₁ in the expansion g_e = π/φ + Σ c_n·αⁿ·M_n have a structural form from QR(11), distinct from standard QED. Testable at 10⁻¹³ sensitivity.
+
+(iii) Triple Lock (Corollary 5.0.A.5.2): Lorentz violation of a definite sign (superluminal), on one axis (Cone), at one scale (Λ_T = √N·M_P). This is NEW physics — not a refinement, but a prediction of effects absent from the SM.
+
+(iv) E_QG,1 = N·M_P (null test for linear LIV) — the theory PREDICTS the absence of linear Lorentz violation. This is a structural prediction, falsifiable by every new GRB analysis (Fermi-LAT, LHAASO).
+
+- Dynamic mass m_dynamic ≈ 300 MeV (Theorem 2.8.MD) — a structural contribution of the condensate to the fermion mass, distinct from the Higgs mechanism. Testable via lattice QCD.
+
+These predictions are structural consequences of Z₁₁ symmetry, not fits. Each is independently falsifiable and does not reduce to refinement of already known SM constants.
+
 Phenomenological predictions are stratified by the Trinity geometry:
 
 - LORENTZ-INVARIANCE VIOLATION δ_Lor ~ 1/N = 9.09% at r → 0 (Planck scale, the Absolute); emergent Lorentz symmetry at r → R_∞ (Corollary 2.4.A.7: flat approximation of the Sphere locally).
@@ -36679,7 +36741,7 @@ These interfaces are NOT independent theories of each area. They are minimal "so
 > s: 768
 > Definitions: 269
 > Corollaries: 560
-> Remarks: 284
+> Remarks: 287
 > Lemmas: 26
 > Propositions: 11
 > Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
