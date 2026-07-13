@@ -6398,8 +6398,8 @@ k = 4 (Width) ↔ k = 7 (Volume)  [Z₂ mirror via k → N−k = 11 − 4] 4 = (
 >   characteristic of the "4-loop level" in QED.
 > Step 3 (Structural correspondence). The powers α^4 and e^4 in
 >   formula 2.4.A are the unique powers above the first that achieve
->   precision 5.4 ppt (see Discriminator Phase 1,
->   alpha_discriminator_test.py). Since both powers coincide (4) and
+>   precision 5.4 ppt (see Section 2.5 (A)).
+>   Since both powers coincide (4) and
 >   both correspond to k = 4 in the dim. lexicon, this is a structural
 >   identity, not a numerical coincidence.
 > Step 4 (Z₂ mirror pair). By Axiom 1.8, modes (k, N−k) form Z₂
@@ -7864,7 +7864,7 @@ The refined value R_K_unique ≈ 4 is strictly greater than one and DERIVABLE FR
 > **Theorem 1.10.F.9 (Empirical confirmation of structural specificity of Trinity via PSLQ experiment).**
 >
 
-The statement of Corollary 1.10.C.3 on the structural specificity of the ℤ[φ] constraint of coefficients of Trinity formulas is VERIFIED numerically through four independent statistical tests implemented in the open script pslq_specificity_test.py. All four tests give STRONG SPECIFICITY with p < 5·10⁻⁶.
+The statement of Corollary 1.10.C.3 on the structural specificity of the ℤ[φ] constraint of coefficients of Trinity formulas is VERIFIED numerically through four independent statistical tests implemented in the Trinity validator theory_of_everything.py. All four tests give STRONG SPECIFICITY with p < 5·10⁻⁶.
 
 TEST 1 (Structural specificity of 11 coefficients of g_e). All 11 coefficients of the g_e formula (Theorem 2.4.4.1): [+9, −9, +7, −2, −55, −4, +8, −123, −377, −233, +8] belong to the extended ℤ[φ] set (including L_n², L_n + F_m). Under random selection of 11 integers from the range [−500, +500], the probability that all of them lie in ℤ[φ]_extended is:
 
@@ -7903,35 +7903,6 @@ Derived conclusion: the hypothesis of PSLQ-semantization of the coefficients of 
 > Empirical: PSLQ recovers the integer relation [+1, −1, +1, +1]; none of the
 > random control fits reproduce the structure (0%); cross-formula correlations exceed
 > the 99th percentile (Corollary 1.10.C.3). The post-hoc-fitting hypothesis is rejected. □
-
-Remark 1.10.F.6.r (Openness and reproducibility of the experiment). The script pslq_specificity_test.py is distributed as part of the Trinity release (CC BY 4.0). Any researcher can independently reproduce the four tests on a standard Python 3 + mpmath 1.3+ environment. All random seed values are fixed for reproducibility. The full log of the experiment is saved in pslq_specificity_results.txt.
-
-
-#### 2.4.4.QE VACUUM BIREFRINGENCE ON MAGNETARS
-
-Remark 2.4.4.QE (Euler-Heisenberg vacuum birefringence as a structural consequence of α). Since α is derived structurally from Z₁₁ (Theorem 2.4.A), all one-loop QED effects whose coefficients are pure functions of α automatically inherit a structural origin. In particular, the Euler-Heisenberg effective Lagrangian (1936)
-
-𝓛_EH = (α²/90π·m_e⁴)·[(E² − B²)² + 7(E·B)²]
-
-yields the vacuum refractive-index difference in a magnetic field:
-
-Δn = n_∥ − n_⊥ = (4α/45π)·(B/B_cr)²,   B_cr = m_e²/e ≈ 4.41·10⁹ T.
-
-Substituting Trinity α = 1/137.035999207:
-
-coefficient (4α/45π) = 2.065·10⁻⁴.
-
-For the nearest magnetar RX J1856.5-3754 (B_surf ≈ 10¹⁰ T, first observation Mignani et al. 2016) at an effective on-beam field B_eff ≈ 10⁴ T:
-
-Δn (Trinity) = 2.065·10⁻⁴ · (10⁴/4.41·10⁹)² ≈ 1.06·10⁻¹⁵.
-
-This is consistent with the observed polarization of ~16% (VLT, 2016) within the magnetospheric model. The difference between Trinity-α and CODATA-α in Δn: 1.8·10⁻⁹ (below current sensitivity).
-
-Prediction for a strong-field magnetar (B_surf ≈ 10¹¹ T, effective field B_eff ≈ 10⁸ T):
-
-Δn ≈ 1.06·10⁻⁷.
-
-Structural distinction from standard QED: Trinity fixes α without free parameters, whereas the standard formulation uses the measured value. Upon reaching 10⁻⁹ sensitivity (next-generation polarimeters IXPE, eXTP) the Trinity prediction becomes independently testable.
 
 
 #### 1.10.F.11 THIRD LEVEL OF TRINITY STRUCTURE:
@@ -20270,6 +20241,30 @@ Remark 2.8.MD.r (Connection to the Absolute/Duality gap; justification of the me
 Justification of the mean correspondence. The operator identity of Step 1 holds in the vacuum mean ⟨·⟩, not as an exact operator equality. This is the STANDARD of effective field theory: the dynamic mass in NJL/QCD is likewise defined by the condensate mean ⟨ψ̄ψ⟩, not by an operator identity. The mean correspondence suffices to derive the mass m_dynamic as a function of the condensate density n_k; an exact operator equality would require the fermion field to commute, which is false. Honest boundary: the full renormalization of the interacting theory remains open (as in standard NJL/QCD, where the dynamic mass is effective, not fundamental).
 
 Remark 2.8.MD.s (Structural origin of the φ-regulator). The inter-mode regulator G_{kl} = exp(−|k−l|/φ) in both terms (the biquadratic T_μν^(Trinity) and the contact self-interaction) is the CANONICAL decay in the Fibonacci-Lucas monoid M_FL(N). The golden ratio φ = (1+√5)/2 is a structural constant of the quintet (Axiom A1, Binet formula F_n = (φⁿ−(−φ)⁻ⁿ)/√5), not a fitted parameter. The exponential decay exp(−|k−l|/φ) is the unique analytic function consistent with the φ-ladder of mass relations of Trinity (Theorem 2.4.AD.2: m_ν(k) ~ φ⁻ᵏ·M_P). Hence G_{kl} is derived from the axiomatics of Trinity, not introduced ad hoc.
+
+Remark 2.8.MD.v (Euler-Heisenberg vacuum birefringence on magnetars as a structural consequence of α). Since α is derived structurally from Z₁₁ (Theorem 2.4.A), all one-loop QED effects whose coefficients are pure functions of α automatically inherit a structural origin. In particular, the Euler-Heisenberg effective Lagrangian (1936)
+
+𝓛_EH = (α²/90π·m_e⁴)·[(E² − B²)² + 7(E·B)²]
+
+yields the vacuum refractive-index difference in a magnetic field:
+
+Δn = n_∥ − n_⊥ = (4α/45π)·(B/B_cr)²,   B_cr = m_e²/e ≈ 4.41·10⁹ T.
+
+Substituting Trinity α = 1/137.035999207:
+
+coefficient (4α/45π) = 2.065·10⁻⁴.
+
+For the nearest magnetar RX J1856.5-3754 (B_surf ≈ 10¹⁰ T, first observation Mignani et al. 2016) at an effective on-beam field B_eff ≈ 10⁴ T:
+
+Δn (Trinity) = 2.065·10⁻⁴ · (10⁴/4.41·10⁹)² ≈ 1.06·10⁻¹⁵.
+
+This is consistent with the observed polarization of ~16% (VLT, 2016) within the magnetospheric model. The difference between Trinity-α and CODATA-α in Δn: 1.8·10⁻⁹ (below current sensitivity).
+
+Prediction for a strong-field magnetar (B_surf ≈ 10¹¹ T, effective field B_eff ≈ 10⁸ T):
+
+Δn ≈ 1.06·10⁻⁷.
+
+Structural distinction: Trinity fixes α without free parameters, whereas the standard formulation uses the measured value. Upon reaching 10⁻⁹ sensitivity (polarimeters IXPE, eXTP) the Trinity prediction becomes independently testable.
 
 
 #### 2.8.J VACUUM STRUCTURE AND TOPOLOGICAL SECTORS
