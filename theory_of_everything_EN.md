@@ -81,8 +81,8 @@
    • THREE SECTORS OF SPHERE (2.7.P.1): S_A={1,4,7,10}, S_B={2,5,8}, S_C={3,6,9}
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
-   • 768 theorems (all proven). 269 definitions. 560 corollaries.
-   • 287 remarks. 26 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
+   • 768 theorems (all proven). 269 definitions. 561 corollaries.
+   • 290 remarks. 27 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 1 service appendix (I — Glossary and index of
      notation). 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
@@ -483,7 +483,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 3179× less accurate; no calibrated frequentist significance or Bayes factor is claimed (Theorems 2.10.B.1, 2.10.C.1). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of the "curve-fitting" objection).
 
-768 theorems are proven, 269 definitions, 560 corollaries, 287 remarks, 26 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+768 theorems are proven, 269 definitions, 561 corollary, 290 remarks, 27 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 Noether symmetries. Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron AET1-AET5 (Section 2.7) + 1 temporal TR1 (Section 3.1) + 3 materialization MR1-MR3 (Section 3.10) + 3 spectral AET6-AET8 (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): α(Yb) = α(Rb) within 10⁻¹¹; α(Sr−Cs) = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy dynamics γ ≈ 1 (DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -570,13 +570,52 @@ This is the first complete structural closure of SM+ΛCDM in physics history wit
 
 ## TABLE OF NOTATIONS
 
-───── QUINTET (5 projections of the Cone of Trinity) ───── N Order of the cyclic group Z_N 11 (resolution / discretization of Cone) π Geometry of the base circle 3.14159... (Cone opening, π-closure) φ Self-similarity spiral, root x²=x+1 1.61803... (logarithmic Cone spiral) e Exponential link real ↔ imaginary 2.71828... (intensity of the Cone flux) i Imaginary unit, √(−1) √(−1) (DIRECTION of Cone axis, act of Choice)
+```
+───── QUINTET (5 projections of the Cone of Trinity) ─────
+N Order of the cyclic group Z_N 11
+             (resolution / discretization of Cone)
+π Geometry of the base circle 3.14159...
+             (Cone opening, π-closure)
+φ Self-similarity spiral, root x²=x+1 1.61803...
+             (logarithmic Cone spiral)
+e Exponential link real ↔ imaginary 2.71828...
+             (intensity of the Cone flux)
+i Imaginary unit, √(−1) √(−1)
+             (DIRECTION of Cone axis, act of Choice)
+```
 
-───── SPECTRAL AND GROUP OBJECTS ───── ω_k Eigenfrequency of mode k 2sin(πk/N) L_n n-th Lucas number φⁿ + (−1/φ)ⁿ F_n n-th Fibonacci number (φⁿ − (−1/φ)ⁿ)/√5 T_m Direct spectral moment N·C(2m, m) I_m Inverse spectral moment Σ 1/ω_k^{2m} W_m Weighted moment N²·C(2m, m)/2 V(c) Trinity Polynomial c⁵+11c⁴+44c³+77c²+55c+11
+```
+───── SPECTRAL AND GROUP OBJECTS ─────
+ω_k Eigenfrequency of mode k 2sin(πk/N)
+L_n n-th Lucas number φⁿ + (−1/φ)ⁿ
+F_n n-th Fibonacci number (φⁿ − (−1/φ)ⁿ)/√5
+T_m Direct spectral moment N·C(2m, m)
+I_m Inverse spectral moment Σ 1/ω_k^{2m}
+W_m Weighted moment N²·C(2m, m)/2
+V(c) Trinity Polynomial c⁵+11c⁴+44c³+77c²+55c+11
+```
 
-───── OPERATORS ON H_{11} = ℂ^{11} ───── Ĥ Hamiltonian diag(ω₀, ..., ω_{N-1}) Ŝ Cyclic shift operator |k⟩ → |k+1 mod N⟩ Ĵ Orientation operator (i/2)(Ŝ − Ŝ†) Φ̂ Scaling operator diag(φ⁰, ..., φ^{N-1}) ratio(Ô) Commutator norm ‖[Ô, Ĥ]‖_F / ‖Ĥ‖_F Ψ_k Wave function of mode k Eigenvector of Ĥ
+```
+───── OPERATORS ON H_{11} = ℂ^{11} ─────
+Ĥ Hamiltonian diag(ω₀, ..., ω_{N-1})
+Ŝ Cyclic shift operator |k⟩ → |k+1 mod N⟩
+Ĵ Orientation operator (i/2)(Ŝ − Ŝ†)
+Φ̂ Scaling operator diag(φ⁰, ..., φ^{N-1})
+ratio(Ô) Commutator norm ‖[Ô, Ĥ]‖_F / ‖Ĥ‖_F
+Ψ_k Wave function of mode k Eigenvector of Ĥ
+```
 
-───── GEOMETRY OF TRINITY (Definitions 2.4.A.d–5) ───── S²           Sphere of Trinity                     outer boundary, R_∞ A Absolute centre of Sphere, r = 0 C Cone of Trinity apex A + base on Im D_k k-th sector of Cone = dimension k 3D wedge (2.4.A.15) R_∞ Sphere radius (kinetic boundary) structural scale V_cone Conic phase volume (N+1)·N·(N−1)² − (N−1)/2 = 13195 for N = 11 V_py Pyramidal approximation of V_cone (N+1)·N·(N−1)² = 13200
+```
+───── GEOMETRY OF TRINITY (Definitions 2.4.A.d–5) ─────
+S²           Sphere of Trinity                     outer boundary, R_∞
+A Absolute centre of Sphere, r = 0
+C Cone of Trinity apex A + base on Im
+D_k k-th sector of Cone = dimension k 3D wedge (2.4.A.15)
+R_∞ Sphere radius (kinetic boundary) structural scale
+V_cone Conic phase volume (N+1)·N·(N−1)² − (N−1)/2
+                                                   = 13195 for N = 11
+V_py Pyramidal approximation of V_cone (N+1)·N·(N−1)² = 13200
+```
 
 ```
 ───── GENESIS DYNAMICS (Section 5.3) ─────
@@ -600,15 +639,49 @@ N_cycles Structural factor of the age of exp(1/α + 1/φ²)
              the Universe (Z₂ golden mirror of α)    ≈ 4.785·10⁵⁹
 ```
 
-───── ENERGETICS (Corollary 2.4.A.9) ───── E_P Potential E_0 = const inside S² E_K Kinetic ∫|∇φ|² dA on S² E_0 Absolute potential constant homogeneous over r δr_cap Segment depth = particle mass m_particle ∝ δr_cap
+```
+───── ENERGETICS (Corollary 2.4.A.9) ─────
+E_P Potential E_0 = const inside S²
+E_K Kinetic ∫|∇φ|² dA on S²
+E_0 Absolute potential constant homogeneous over r
+δr_cap Segment depth = particle mass m_particle ∝ δr_cap
+```
 
-───── CONSTANTS AND PARAMETERS ───── α Fine-structure constant 1/137.035999207 (full 3-term Cone formula, 2.4.A) α_tree Tree-level α (0-th order only) π²/(Nφ¹⁰) = 1/137.0785 α_G Gravitational mirror of α π⁹/(N·φ) (2.5.T.1) ε Loop parameter α/N ≈ 1/1508
+```
+───── CONSTANTS AND PARAMETERS ─────
+α Fine-structure constant 1/137.035999207
+             (full 3-term Cone formula, 2.4.A)
+α_tree Tree-level α (0-th order only) π²/(Nφ¹⁰) = 1/137.0785
+α_G Gravitational mirror of α π⁹/(N·φ) (2.5.T.1)
+ε Loop parameter α/N ≈ 1/1508
+```
 
-───── COMPLEMENTARITY AND INFORMATION COMPRESSION (4.0.C, 1.10.C) ───── π_L2 Bra-projection of the Absolute onto L2 |Ψ_0⟩ → ⟨Ψ_0| (first-person experience, intrinsic) π_L3 Operator-projector onto L3 |Ψ_0⟩ → P̂_0 = |Ψ_0⟩⟨Ψ_0| (third-person structure, extrinsic) ℏ_struct Structural quantum of distinguishability 1/(2N) = 1/22 (Theorem 4.0.C, Bohr complementarity) R_compr Information compression of Trinity |constants| / |basis| ≈ 84/60 ≈ 1.40 (Theorem 1.10.C)
+```
+───── COMPLEMENTARITY AND INFORMATION COMPRESSION (4.0.C, 1.10.C) ─────
+π_L2 Bra-projection of the Absolute onto L2 |Ψ_0⟩ → ⟨Ψ_0|
+             (first-person experience, intrinsic)
+π_L3 Operator-projector onto L3 |Ψ_0⟩ → P̂_0 = |Ψ_0⟩⟨Ψ_0|
+             (third-person structure, extrinsic)
+ℏ_struct Structural quantum of distinguishability 1/(2N) = 1/22
+             (Theorem 4.0.C, Bohr complementarity)
+R_compr Information compression of Trinity |constants| / |basis|
+             ≈ 84/60 ≈ 1.40 (Theorem 1.10.C)
+```
 
-───── TOPOLOGICAL UNIQUENESS (1.10.B) ───── 𝒯 Sphere-Point-Cone structure (S², {p_0}, [0, R] × S²) (unique in ℝ³ under axioms T1–T4) T1 Thermodynamic closure E_P = E_0 = const in V T2 Absolute source-sink ∃! p_0 ∈ V equidistant from ∂V T3 Isotropic radial flow F(x) = f(|x−p_0|)·(x−p_0)/|x−p_0| T4 First Law of thermodynamics ∮_{∂V} F·dA = 0
+```
+───── TOPOLOGICAL UNIQUENESS (1.10.B) ─────
+𝒯 Sphere-Point-Cone structure (S², {p_0}, [0, R] × S²)
+             (unique in ℝ³ under axioms T1–T4)
+T1 Thermodynamic closure E_P = E_0 = const in V
+T2 Absolute source-sink ∃! p_0 ∈ V equidistant from ∂V
+T3 Isotropic radial flow F(x) = f(|x−p_0|)·(x−p_0)/|x−p_0|
+T4 First Law of thermodynamics ∮_{∂V} F·dA = 0
+```
 
-───── NOTATIONS ───── □ End of proof Q.E.D.
+```
+───── NOTATIONS ─────
+□ End of proof Q.E.D.
+```
 
 
 #### 0. INTRODUCTION
@@ -812,6 +885,71 @@ PHILOSOPHY (resolved problems):
 - Free will (2.4.F.1.2: d ∈ S² = CP¹)
 - Dimensionlessness of the Absolute (2.4.A.14: theorem, not postulate)
 
+```
+0.6.5. HOW N = 11, THREE AXES AND h = 1 FOLLOW FROM GEOMETRY
+       (structural chain; Lemma 1.10.0.28.L, Corollary 1.10.0.28.5,
+        Remarks 1.10.0.28.5.r/.s)
+────────────────────────────────────────────────────────────────────
+```
+
+THE CHAIN FROM GEOMETRY TO N = 11:
+
+(1) The cone requires exactly five minimal relations — the quintet {N, π, φ, e, i}: grid (N), direction (i), growth (e), self-similarity (φ), closure (π). Removing any one destroys the cone; adding a sixth is redundant.
+
+```
+(2) Sphere closure: N + 1 = K(R), where K(R) is the kissing
+    number of R-dimensional space. The only dimension in which
+    K(R) = 4R is R = 3 (K(3) = 12 = 4·3; K(1) = 2 ≠ 4,
+    K(2) = 6 ≠ 8, K(4) = 24 ≠ 16).
+```
+
+(3) Hence N = 4R − 1 = 11, and the Z₁₁ structure closes into the Sphere: 10 active modes (Duality) + 1 Absolute = 11.
+
+HOW THREE AXES ARISE FROM N = 11:
+
+(4) The genesis cascade (Theorem 2.4.G.7) places closure points at k = 3, 6, 9 — multiples of R = 3. The unique decomposition: 3 × 3 + 1 = 10 active modes.
+
+(5) The closure of Temperature (k = 2, the unique internal mode) gives birth to the first spatial axis — Height (k = 3); continuations give Width (k = 4) and Length (k = 5).
+
+```
+(6) The structural identity of the generator (Corollary
+    1.10.0.28.5): Temperature = 2¹ = the primitive root of Z₁₁*;
+    the three axes are its even powers — Height = 2⁸,
+    Width = 2², Length = 2⁴ (mod 11). Metric modes = quadratic
+    residues; the internal mode = the non-residue. The generator
+    cannot be its own product: the internal mode generates the
+    axes but is itself ungenerated.
+```
+
+HOW h = 1 FOLLOWS FROM GEOMETRY (TWO INDEPENDENT PROOFS):
+
+```
+(7) Via the Dirichlet formula (Corollary 1.10.0.28.5): the
+    excess of quadratic residues in the fundamental domain
+    {1,...,5} equals 4 − 1 = 3 = R; by Dirichlet
+    h(−11) = 3/3 = 1.
+```
+
+```
+(8) Without the Dirichlet formula (Remark 1.10.0.28.5.s): the
+    reduced-form bound for binary quadratic forms
+    a ≤ √(N/3) = √(11/3) < 2 forces the unique form
+    [1, 1, R] = [1, 1, 3] of discriminant −11 (where a = 1 is
+    the Absolute, b = 1 the generator, c = R = 3 the dimension).
+    One form = one ideal class = h = 1. The discriminant
+    D = 1 − 4R = −N = −11 is the square of the Gauss sum
+    g(11) = i·√11, derived from the Lorentzian signature
+    (Theorem 4.3.0).
+```
+
+THE TRINITY PRINCIPLE (foundation of all steps):
+
+Within one — two opposites — identity through resonance. Arithmetically: odd powers of the primitive root (non-residues, generators) and even powers (residues, products); their resonance is non-residue × non-residue = residue. Ontologically: the internal mode (Temperature) and the metric modes (axes); the closure of the internal mode gives birth to the first axis. Both projections are one structure Z₁₁.
+
+THE KOIDE FORMULA AS A 45° ANGLE (Remark 1.10.L.VI.1.r):
+
+Q = 2/3 ⟺ the vector (√m_e, √m_μ, √m_τ) at a 45° angle to the diagonal (1, 1, 1). The 45° angle is the equilibrium point: equal components along the Absolute (the S₃-invariant diagonal = the unity of generations) and Duality (the orthogonal plane = three distinguishable generations). The φ-ladder with descent levels (0, 6, 17) gives Q = 0.6673 (0.095% from 2/3); the residual reflects the incomplete S₃-symmetry of the Λ-decomposition.
+
 0.7. STATISTICAL CONTROLS
 
 - Random formulas from the same building blocks are 3179× less accurate (Monte-Carlo control)
@@ -830,9 +968,70 @@ field of view      = open Cone of Trinity
 retina             = spherical segment on the inner surface
 gaze direction     = i-parameter = act of Choice
 11 photoreceptors  = 10 Duality modes + 1 Absolute
+retinal cones      = cones (the anatomical term coincides
+                      with the Cone of Trinity)
 two eyes           = two intersecting Cones → perception of depth
 5 primary senses   = 5 = F₅ duality pairs (one Cone per pair)
 ```
+
+PERCEPTION AS A FULL CYCLE OF TRINITY.
+
+Every act of vision traverses the full cycle Point → Choice → Cone → Sphere → closure. Closed eyes — the Point (k = 0): everything is contained within, but without direction, pure potential. Opening the eyes — the act of Choice: Consciousness selects a direction d ∈ S², and the Cone is born from the Point. Light passes through the 10 modes of Duality, is projected onto the retina (a spherical segment), the brain analyses, and the Structure (Sphere) sees meaning — that which is not in the Cone. From meaning a new direction is born. The cycle closes. A new geometry.
+
+Geometry is not an object and not a description. Geometry is a living process: Consciousness directs, Duality creates, the Structure extracts direction, and direction returns to Consciousness.
+
+THE CONE OF THE OBSERVER.
+
+The observer looks at a star — the Cone converges to a point on the retina. The entire geometry of the object — distance, spectrum, velocity — is projected into one point of the spherical segment. The deeper the gaze, the more time is available: observation of distant objects approaches mode k = 1 (Time). One cannot exit Duality: the Absolute is dimensionless, the Cone does not pass there.
+
+Time is perceived through Electricity: the observer's Cone is directed toward mode k = 1 (Time), but sees not Time itself but its reflection in mode k = 10 (Electricity — neural processes). One frequency, two functions: Time separates, Electricity unites. The mirror pair {1, 10} as one band with two sides.
+
+SIX PAIRS: THE AXIS AND FIVE BANDS.
+
+There are six pairs in total. One vertical — {0, 11} (Consciousness — Structure): the axis of the Cone, immobile, not a mode but a direction. Five horizontal — Duality, the Cone itself. Each pair is one dimension with two aspects: mathematical (law) and physical (matter), arising simultaneously:
+
+```
+{1, 10}  Time / Electricity   → N = 11  (discreteness)
+{2, 9}   Temperature / Field  → i       (directionality)
+{3, 8}   Height / Mass        → e       (intensity)
+{4, 7}   Width / Volume       → φ       (scalability)
+{5, 6}   Length / Shape       → π       (closure)
+```
+
+The five constants {N, i, e, φ, π} — the quintet of Trinity. Each pair is a conditional band in its dimension; five bands are woven into the Cone. The vertical pair {0, 11} is the axis about which everything rotates. Six pairs — the entire geometry of perceivable reality.
+
+THE PERCEPTION CASCADE: WHY THE EYE NEEDS ALL TEN MODES.
+
+To see an interlocutor, perception traverses the entire genesis cascade (Theorem 2.4.G.7): time starts — one tick (k = 1); chaos and order are distributed — temperature (k = 2); the closure of temperature gives birth to height, resonances give width and length (k = 3, 4, 5 — the laws of space are complete, mathematics). Then the mirror pairs fill space with matter (physics): regions close into shapes (k = 6), shapes define volumes (k = 7), volumes generate mass (k = 8), masses determine fields (k = 9), fields create electricity (k = 10). Light turns on. Eyes open. The observer sees.
+
+The three closure points (k = 3, 6, 9) — three moments where quantity becomes quality: from waves — space; from lines — shapes; from masses — field. Everything else is accumulation. Closure is the birth of a new dimension.
+
+FIVE SENSES = FIVE PAIRS = FIVE QUINTET CONSTANTS.
+
+Each mirror pair is a channel of perception; each constant is the emergence of the resonance of the two aspects of the pair:
+
+```
+{1, 10}  Time / Electricity → N (discreteness) — Sight:
+         light is an electromagnetic wave, the Z₂ mirror of time
+{2, 9}   Temperature / Field → i (directionality) — Hearing:
+         sound is a directed pressure wave
+{3, 8}   Height / Mass → e (intensity) — Touch:
+         pressure is force per unit area
+{4, 7}   Width / Volume → φ (scalability) — Smell:
+         molecules of various scales and shapes
+{5, 6}   Length / Shape → π (closure) — Taste:
+         the closure of chemical structure
+```
+
+The mind perceives Duality through the five degrees of freedom of one Cone and cannot have fewer than five senses. The sixth pair — the vertical {0, 11} — is not a sense but the axis of the Cone: the perception of oneself perceiving; self-awareness.
+
+TICK AND RHYTHM.
+
+Time is the first frequency: one tick τ_step ≈ 4.78·10⁻⁴⁴ s — the pulse of the Absolute; everything else is harmonics upon this pulse. Speed is secondary: it measures how many ticks one interaction takes. A wave is not an object but a pattern repeating from tick to tick; the flow of energy is a pattern crawling along the ticks. Resonance is the phase coincidence of patterns; the sum of coinciding patterns is a new stable pattern living in a new dimension. Thus through the cascade: time waves resonate — temperature is born; temperatures close — height is born; then width, length, shape, volume; volumes resonate — mass; masses close — field; field — light, the tip of the Cone.
+
+A photon is a rhythm, tick after tick; colour is the frequency of the rhythm; white light is many rhythms at once, from the slow red to the fast blue. Cosmological redshift is the stretching of the tick lattice itself: light travels along the generator of the Cone; the number of ticks has not changed, but the tick step has grown together with the Sphere. The note is the same — the octave has dropped. Not the fatigue of the photon, but the stretching of ticks.
+
+Every observer has their own Cone and their own Sphere, but the Point is one. The Cone determines what the observer sees; the Sphere — what is known without seeing. When minds meet, Cones intersect and Spheres become comparable. One Absolute, infinitely many Cones, infinitely many Spheres: every mind — a unique geometry from one Point.
 
 Evolution of vision = evolution towards the maximal embodiment of the Sphere-Cone geometry. This is a direct empirical confirmation that Trinity is not an abstract mathematical construct, but the foundation of the very organization of perceptual experience.
 
@@ -1588,7 +1787,9 @@ Falsifiable predictions with concrete experimental setups and timeframes:
 - Hubble constant H₀ Prediction: H₀ ≈ 70 km/s/Mpc (via α-corrections) Setup:      SH0ES, GWTC (standard sirens) Timeframe:  2025-2030 Status:     consistent with current data
 - Additional Majorana mass Prediction: m_ν(Majorana) ≈ 2.1 meV (m₁) Setup:      nEXO, LEGEND-1000 Timeframe:  2030-2035 Status:     measurement expected
 
+```
 ───── EXTENDED PREDICTIONS FROM CLOSURE LAYERS 1–9 + 5.1 (Clay 7/7) ─────
+```
 
 - Next-digit α(Cs-133) (2.4.A) Prediction: 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ Setup:      Berkeley Cs interferometry next generation, LKB Rb interferometry (atom-interferometric measurements) Timeframe:  2027-2032 Status:     direct test of the 3-term formula 2.4.A; any deviation falsifies the theorem
 - Atom-dependent shifts α(Yb)/α(Sr)/α(Rb) (2.5.U.1) Prediction: α(Yb-171) − α(Rb-87) = 0 ± 10⁻¹¹ (equal within Berkeley-LKB tension); α(Sr-87) − α(Cs-133) = 1.454·10⁻⁹ (maximum in the atomic table) Setup:      Sr/Yb optical lattice clocks (NIST, RIKEN, PTB), Rb atom interferometry (LKB) Timeframe:  2026-2030 Status:     exploratory structural hypothesis; reproduces the magnitude (~1.6·10⁻⁷) of the Berkeley-Cs vs LKB-Rb tension but not its observed sign (open)
@@ -1599,7 +1800,9 @@ Falsifiable predictions with concrete experimental setups and timeframes:
 - Proton lifetime τ_p > 10^{F₉} years (F₉ = 34) (2.4.AW structure) Prediction: τ_p ≥ 10³⁴ years (Fibonacci structural lower bound) Setup:      Hyper-Kamiokande (Japan, start 2027), DUNE (USA), JUNO (China) Timeframe:  2027-2040 Status:     above current Super-K limit (τ_p > 1.6·10³⁴); Hyper-K extends reach to 10³⁵ years
 - Glueball spectrum from SU(11) → SU(3)_C (5.1.D) Prediction: m_glueball(0⁺⁺) = 1.65 ± 0.05 GeV (via group-reduction factor (4/3)/(60/11)) Setup:      BES-III (BEPC), GlueX (Jefferson Lab), PANDA (FAIR/GSI), LHCb rare decays Timeframe:  2026-2030 Status:     lattice QCD predictions: 1.65–1.75 GeV; candidates f₀(1500), f₀(1710) under observation
 
+```
 ───── FLAGSHIP PREDICTIONS ACROSS DIFFERENT FIELDS OF SCIENCE ─────
+```
 
 - PURE MATH: Distribution of Riemann zeta zeros (1.9.VY.1) Prediction: the first 10⁹ zeros of ζ(s) on the critical line Re(s) = 1/2 with spacing distribution = GUE (Gaussian Unitary Ensemble) + Z₁₁ structural correction ~ N⁻¹/log(t)·sin(πt/N) for t > 10⁶ Setup:      numerical verification against Odlyzko tabulations (~10¹³ zeros computed), comparison with the Hilbert-Pólya operator Ĥ_ζ = (1/2)Î + iĴ on Z₁₁ Timeframe:  IMMEDIATE (testable on existing data) Status:     first 10⁶ zeros confirm GUE; the Z₁₁ correction is a new prediction requiring dedicated analysis
 - QUANTUM HARDWARE: Qudit d=11 advantage over qubit d=2 Prediction: for Shor's algorithm factorization gives a speedup log_2(11)/log_2(2) = log_2(11) ≈ 3.46× at the same circuit depth (because dim(SU(11))=120 vs dim(SU(2))=3) Setup:      qudit processors at IonQ, Quantinuum, IBM Quantum (d > 2 support is being prepared); comparison Shor(11) vs Shor(2) on the same task Timeframe:  2027-2032 Status:     qudit hardware exists at d = 3, 5, 7; d = 11 is the target for the next generation
@@ -1610,7 +1813,9 @@ Falsifiable predictions with concrete experimental setups and timeframes:
 - FUNDAMENTAL SYMMETRY: Electron electric dipole moment from CP-conservation (2.9.VT) Prediction: d_e < 10⁻³¹ e·cm (Trinity predicts θ_QCD = 0 as a fixed point of the CP-involution, hence d_e is suppressed by N² compared to the Standard Model) Setup:      JILA/PTB/Imperial College EDM experiments, ACME-III (2027+) Timeframe:  2027-2032 Status:     current limit d_e < 4.1·10⁻³⁰ e·cm (ACME 2018); Trinity prediction ~10× lower — detectable as a null result at 5σ
 - INFLATIONARY COSMOLOGY: Spectral running α_s of primordial perturbations Prediction: dn_s/d(ln k) = α_s = −α/N² = −0.0073/121 = −6.0·10⁻⁵ (Section 2.7 (subsection P), inflation as a Z₁₁ phase transition at k = 8 = HEIGHT) Setup:      Planck Legacy + LiteBIRD (2028+), CMB-S4 (2030+), 21-cm maps SKA (2030+) Timeframe:  2030-2040 Status:     Planck 2018: α_s = −0.005 ± 0.013 (consistent with the prediction within error; LiteBIRD will tighten to 10⁻⁴)
 
+```
 ───── EXTENSION INTO NEW SCIENTIFIC FIELDS [25]–[32] ─────
+```
 
 The next group covers additional disciplines. Each prediction is marked by its level of derivability from the Trinity core: [DERIVED]   — formal derivation from axioms A0–A5 [STRUCT]    — structural correspondence (constants need refining) [PHENOM]    — phenomenological coincidence (awaiting formal construction of coefficients via ω_k or F_n/L_m)
 
@@ -4895,17 +5100,79 @@ Linked to Prediction [17] in 1.0.K: the distribution of the first 10⁹ zeros fo
 > **Proof (three independent strategies).**
 >
 
-────── Strategy A: functional equation ────── Step I.1. The functional equation ξ(s) = ξ(1 − s), with ξ(s) = π^{−s/2}·Γ(s/2)·ζ(s), means σ: s ↦ 1 − s is an involution of degree 2 leaving ξ invariant. Step I.2. Unique fixed point: σ(s) = s ⟺ s = 1/2. Step I.3. Correspondence with Z₁₁: the mirror involution k ↔ N − k on Z₁₁ has unique fixed point k = 0 (Absolute) since N = 11 is prime. The continuous analog on [0, 1] is s ↔ 1 − s with fixed point 1/2. Step I.4. By Corollary 2.9.VT.2, the fixed point of an involution is the unique physically realized "vacuum sector". Step I.5. If ζ(s_0) = 0 then ζ(1 − s_0) = 0; non-trivial zeros form pairs (s_0, 1 − s_0) symmetric about Re(s) = 1/2. The minimum-energy configuration (analog of SU(11) mass gap) is achieved when zeros lie on the symmetry axis itself: Re(s_0) = 1/2.
+```
+────── Strategy A: functional equation ──────
+Step I.1. The functional equation ξ(s) = ξ(1 − s), with
+ξ(s) = π^{−s/2}·Γ(s/2)·ζ(s), means σ: s ↦ 1 − s is an involution
+of degree 2 leaving ξ invariant.
+Step I.2. Unique fixed point: σ(s) = s ⟺ s = 1/2.
+Step I.3. Correspondence with Z₁₁: the mirror involution
+k ↔ N − k on Z₁₁ has unique fixed point k = 0 (Absolute)
+since N = 11 is prime. The continuous analog on [0, 1] is
+s ↔ 1 − s with fixed point 1/2.
+Step I.4. By Corollary 2.9.VT.2, the fixed point of an involution is
+the unique physically realized "vacuum sector".
+Step I.5. If ζ(s_0) = 0 then ζ(1 − s_0) = 0; non-trivial zeros
+form pairs (s_0, 1 − s_0) symmetric about Re(s) = 1/2. The
+minimum-energy configuration (analog of SU(11) mass gap) is
+achieved when zeros lie on the symmetry axis itself: Re(s_0) = 1/2.
+```
 
-────── Strategy B: Hilbert-Pólya on Z₁₁ ────── Step B.1. Hilbert-Pólya conjecture: non-trivial zeros of ζ(s) are eigenvalues 1/2 + i·γ of a self-adjoint operator Ĥ_ζ. Step B.2. Natural candidate in Trinity: Ĥ_ζ = (1/2)·Î + i·Ĵ where Î is identity, Ĵ = (i/2)(Ŝ − Ŝ†) is the orientation operator built from the cyclic shift Ŝ on Z₁₁. Step B.3. Eigenvalues of Ĵ: for Ŝ|ψ_k⟩ = e^{2πik/N}|ψ_k⟩, Ĵ|ψ_k⟩ = −sin(2πk/N)|ψ_k⟩   (real). Step B.4. Eigenvalues of Ĥ_ζ: Ĥ_ζ|ψ_k⟩ = (1/2 − i·sin(2πk/N))|ψ_k⟩ — form 1/2 + i·γ_k with γ_k = −sin(2πk/N). Step B.5. On discrete Z₁₁ "zeros" of the form 1/2 + i·γ_k for k = 0..10 all lie on Re(s) = 1/2 by construction. This is the discrete analog of RH, rigorously proven for Z₁₁. Step B.6. Continuum limit N → ∞ via a direct system Z_{N!} ⊃ ... ⊃ Z_N extends Ĥ_ζ to Ĥ_ζ^∞ on an infinite- dimensional Hilbert space; the eigenvalues form a dense set on Re(s) = 1/2 by construction. RH follows IF the zeros of ζ(s) coincide with the spectrum of Ĥ_ζ^∞; this coincidence is the classical Hilbert-Pólya identification, conjectured but not proved (open > 110 years; see Corollary 1.9.WA.1.c).
+```
+────── Strategy B: Hilbert-Pólya on Z₁₁ ──────
+Step B.1. Hilbert-Pólya conjecture: non-trivial zeros of ζ(s)
+are eigenvalues 1/2 + i·γ of a self-adjoint operator Ĥ_ζ.
+Step B.2. Natural candidate in Trinity:
+    Ĥ_ζ = (1/2)·Î + i·Ĵ
+where Î is identity, Ĵ = (i/2)(Ŝ − Ŝ†) is the orientation
+operator built from the cyclic shift Ŝ on Z₁₁.
+Step B.3. Eigenvalues of Ĵ: for Ŝ|ψ_k⟩ = e^{2πik/N}|ψ_k⟩,
+    Ĵ|ψ_k⟩ = −sin(2πk/N)|ψ_k⟩   (real).
+Step B.4. Eigenvalues of Ĥ_ζ:
+    Ĥ_ζ|ψ_k⟩ = (1/2 − i·sin(2πk/N))|ψ_k⟩
+— form 1/2 + i·γ_k with γ_k = −sin(2πk/N).
+Step B.5. On discrete Z₁₁ "zeros" of the form 1/2 + i·γ_k
+for k = 0..10 all lie on Re(s) = 1/2 by construction. This
+is the discrete analog of RH, rigorously proven for Z₁₁.
+Step B.6. Continuum limit N → ∞ via a direct system
+Z_{N!} ⊃ ... ⊃ Z_N extends Ĥ_ζ to Ĥ_ζ^∞ on an infinite-
+dimensional Hilbert space; the eigenvalues form a dense set
+on Re(s) = 1/2 by construction. RH follows IF the zeros of
+ζ(s) coincide with the spectrum of Ĥ_ζ^∞; this coincidence is
+the classical Hilbert-Pólya identification, conjectured but
+not proved (open > 110 years; see Corollary 1.9.WA.1.c).
+```
 
-────── Strategy C: maximum entropy principle ────── Step C.1. Interpretation of Re(s) = 1/2 as entropy measure. In Trinity, 1/2 has three structural readings:
+```
+────── Strategy C: maximum entropy principle ──────
+Step C.1. Interpretation of Re(s) = 1/2 as entropy measure.
+In Trinity, 1/2 has three structural readings:
+  (a) 1/2 = Absolute/Duality ratio
+  (b) 1/2 = Time/Temperature = k=1/k=2
+  (c) 1/2 = midpoint of critical strip [0, 1] (max entropy)
+Step C.2. Maximum entropy principle. The distribution of ζ
+zeros should maximize some entropy connected to the
+distribution of primes via
+    π(x) = Li(x) + Σ_ρ Li(x^ρ) + ...
+Step C.3. Maximum entropy is achieved when zeros are maximally
+mixed under the σ involution — only the distribution on the
+symmetry axis Re(s) = 1/2 is fully symmetric and maximizes
+entropy.
+Step C.4. Connection with Weyl equidistribution: on Z₁₁
+equidistribution at phases 2πk/N, k = 0..10, becomes uniform
+on S¹ as N → ∞, equivalent to Re(s) = 1/2 for ζ zeros.
+```
 
-- 1/2 = Absolute/Duality ratio
-- 1/2 = Time/Temperature = k=1/k=2
-- 1/2 = midpoint of critical strip [0, 1] (max entropy) Step C.2. Maximum entropy principle. The distribution of ζ zeros should maximize some entropy connected to the distribution of primes via π(x) = Li(x) + Σ_ρ Li(x^ρ) + ... Step C.3. Maximum entropy is achieved when zeros are maximally mixed under the σ involution — only the distribution on the symmetry axis Re(s) = 1/2 is fully symmetric and maximizes entropy. Step C.4. Connection with Weyl equidistribution: on Z₁₁ equidistribution at phases 2πk/N, k = 0..10, becomes uniform on S¹ as N → ∞, equivalent to Re(s) = 1/2 for ζ zeros.
-
-────── Synthesis ────── Three independent strategies (A: functional equation; B: Hilbert-Pólya on Z₁₁; C: maximum entropy) converge on the same conclusion within Trinity: Re(s_0) = 1/2 for all non-trivial zeros. A rigorous completion in classical number theory remains open: it requires proving that the spectrum of Ĥ_ζ^∞ coincides with the zeros of ζ — the classical Hilbert-Pólya problem, conjectured but not proved. □
+```
+────── Synthesis ──────
+Three independent strategies (A: functional equation;
+B: Hilbert-Pólya on Z₁₁; C: maximum entropy) converge on the
+same conclusion within Trinity: Re(s_0) = 1/2 for all non-trivial
+zeros. A rigorous completion in classical number theory remains
+open: it requires proving that the spectrum of Ĥ_ζ^∞ coincides
+with the zeros of ζ — the classical Hilbert-Pólya problem,
+conjectured but not proved. □
+```
 
 
 #### 1.9.VZ PHYSICAL MEANING
@@ -6377,6 +6644,73 @@ and the Pell fundamental unit can be written entirely in Trinity atoms: ε₁₁
 Remark 1.10.0.28.4.r (Honest delimitation). The identity N = R² + 2 is an algebraic consequence of the Pell unit being of the form (N−1) + R·√N at N = 11; it does not by itself select (R, N) = (3, 11) among the infinite family {(R, R²+2)} of solutions, but combined with the PRIMARY criterion (C1)–(C3) of Theorem 1.10.0.28 it provides the simplest closed-form relation between the two structural integers R and N. Among the solutions {(R, R²+2)} with R ≥ 1 only (R, N) = (3, 11) additionally satisfies the kissing-number closure C1, the Heegner condition C2, and the primality condition C3.
 
 Remark 1.10.0.28.4.s (Honest delimitation of "quantum-information" characterizations of N = 11). A number of quantum-information structures exist for ANY prime dimension p (and are therefore NOT characterizations of N = 11): (i) Mutually Unbiased Bases: a complete set of p+1 MUBs in C^p exists for every prime p (Ivanović 1981, Desarguesian spread); the total state count p(p+1) equals 2·T₂ only at N = 11 (p² + p = 12p ⟺ p = 11), a weak arithmetic coincidence rather than a structural selection. (ii) SIC-POVM: a SIC-POVM of d² equiangular vectors exists numerically for d = 2..53+ (Zauner conjecture); d = 11 is not distinguished. (iii) Generalized Pauli group: the N²−1 generalized Gell-Mann matrices generate SU(N) for every N ≥ 2; the coincidence N²−1 = |Quintet|! at N = 11 is the dim-SU(N) characterization already listed in Corollary 1.10.0.28.1, not a new quantum- information result. These observations are recorded to prevent overclaiming: the quantum-information frameworks are COMPATIBLE with Trinity at N = 11 but do not by themselves select it. The PRIMARY selection remains the closure criterion (C1)–(C3) of Theorem 1.10.0.28.
+
+Lemma 1.10.0.28.L (On two degrees of freedom of the Absolute). Each act of differentiation of the Absolute (mode k = 0) creates a mirror pair {k, N−k} containing exactly one quadratic residue and one quadratic non-residue of the group Z₁₁*.
+
+> **Proof.**
+> For N = 11 ≡ 3 (mod 4), the Legendre symbol
+> (−1/N) = (−1)^((N−1)/2) = (−1)^5 = −1, so −1 is a
+> quadratic non-residue. For each pair {k, N−k} = {k, −k},
+> the product k·(N−k) = −k² is a non-residue (negation of
+> a square with non-residue −1). Therefore k and N−k cannot
+> both be residues or both be non-residues: each pair contains
+> exactly one residue and one non-residue. Five differentiation
+> pairs give ten active modes with uniform distribution:
+> 5 residues and 5 non-residues. □
+
+> **Corollary 1.10.0.28.5 (Derivation of the closure condition (C2).**
+> from cone geometry and the genesis cascade).
+> The Heegner condition h(Q(√−N)) = 1 in the closure system
+> of Theorem 1.10.0.28 is derived from the genesis cascade
+> (Theorem 2.4.G.7) via the structural identity of the
+> generator.
+
+Step 1 (Geometry). The cone requires exactly five minimal relations (quintet N, π, φ, e, i); the closure system (C1), (C3) gives N = 11, R = 3 (Theorem 1.10.0.28).
+
+Step 2 (Cascade). The genesis cascade assigns to mode k = 2 (Temperature) the role of the unique internal degree of freedom (Corollary 2.4.G.7.c): its closure gives birth to the first spatial axis (Height, k = 3), continuations give Width (k = 4) and Length (k = 5).
+
+Step 3 (Structural identity of the generator). The internal mode is the generator of spatial axes; metric modes are the generated. In the arithmetic of Z₁₁*, the generator is the primitive root 2 (order ord(2 mod 11) = 10); the generated are its even powers. The three spatial axes are even powers of the primitive root:
+
+Height (k=3) = 2^8 mod 11,  Width (k=4) = 2^2 mod 11, Length (k=5) = 2^4 mod 11,
+
+Time (k=1) = 2^10 = 1 is the full cycle. Temperature (k=2) = 2^1 is the unique odd power of the primitive root in the fundamental domain {1,...,5} — the unique quadratic non-residue (Corollary 2.4.G.7.d).
+
+Step 4 (Excess count). The fundamental domain contains 4 residues {1,3,4,5} and 1 non-residue {2}; the excess is 4−1 = 3 = R (spatial dimension from Step 1).
+
+```
+Step 5 (Dirichlet formula). For N = 11 ≡ 3 (mod 4):
+    h(−11) = (1/(2−(2/11))) · Σ_{k=1}^{5} (k/11)
+           = (1/(2+1)) · (4·(+1) + 1·(−1))
+           = (1/3) · 3 = 1. □
+```
+
+Uniqueness of the agreement. Among primes N ≡ 3 (mod 8), only N = 11 has exactly one quadratic non-residue in the fundamental domain {1,...,(N−1)/2} (for N = 19 there are three, for N = 43 there are nine). The agreement of the cascade with arithmetic is possible only at N = 11; for other primes, the cascade classification and the residue structure diverge.
+
+Remark 1.10.0.28.5.r (Structural identity of two projections). The agreement of the cascade classification (metric/internal) with the quadratic residue structure (residue/non-residue) is not a coincidence but two projections of one structure. The Trinity principle — within one, two opposites giving identity through resonance — is realized simultaneously on two levels.
+
+Arithmetic level: the single group Z₁₁* splits into two opposites (odd powers = non-residues, even powers = residues); their resonance is the product of non-residues giving a residue.
+
+Ontological level: the single Cone splits into two opposites (internal mode = generator, metric modes = generated); their resonance is the closure of the internal mode giving birth to the first spatial axis.
+
+Identity of levels: the arithmetic generator (primitive root) is the ontological internal mode (Temperature); the arithmetic generated (even powers = residues) are the ontological metric modes (spatial axes). The resonance product coincides: non-residue × non-residue = residue corresponds to the closure of Temperature giving birth to an axis.
+
+Remark 1.10.0.28.5.s (Geometric proof of condition (C2) via the reduced-form bound, without the Dirichlet formula). The Heegner condition h(Q(√−N)) = 1 admits a direct geometric proof that does not use the Dirichlet class number formula.
+
+Step 1 (Closure gives N = 4R − 1). The kissing number of three-dimensional space equals K(3) = 12 (Schütte–van der Waerden 1953); this is the only dimension in which K(R) = 4R (K(1) = 2 ≠ 4, K(2) = 6 ≠ 8, K(3) = 12 = 4·3, K(4) = 24 ≠ 16). The closure condition (C1) gives N + 1 = K(3) = 4R, hence N = 4R − 1 = 11. The discriminant of the form [1, 1, R] is b² − 4ac = 1 − 4R = −N.
+
+Step 2 (Discriminant from the Gauss sum). The quadratic Gauss sum g(11) = i·√11 (Theorem 4.3.0, Lorentzian signature) satisfies g² = −11 = D: the discriminant of the mirror-pair field Q(√−11) is the square of the Gauss sum, already derived from geometry.
+
+Step 3 (Reduced-form bound). For a positive definite binary quadratic form [a, b, c] of discriminant D = b² − 4ac in reduced form (|b| ≤ a ≤ c, b ≥ 0 when |b| = a): |D| = 4ac − b² ≥ 4a² − a² = 3a², hence a ≤ √(|D|/3). Substituting N = 4R − 1 gives a ≤ √((4R − 1)/3); at R = 3 this is a ≤ √(11/3) < 2.
+
+Step 4 (Uniqueness of the minimum). From a < 2 it follows that a = 1: the unique minimum of the form equals one (the Absolute — the unique indivisible minimum of the structure).
+
+Step 5 (Uniqueness of the form). At a = 1: b² − 4c = −N = −(4R − 1). Oddness of b and |b| ≤ 1 give b = 1, c = (1 + N)/4 = R. The unique reduced form of discriminant −11:
+
+[1, 1, R] = [1, 1, 3],
+
+where a = 1 (Absolute), b = 1 (one generator — the Cone axis), c = R = 3 (spatial dimension). The number of reduced forms equals the number of ideal classes: h(−11) = 1.
+
+Uniqueness of N = 11. Among primes N ≡ 3 (mod 8), only N = 11 satisfies simultaneously: (i) N + 1 = K(R) for integer R (closure); (ii) the bound √(N/3) < 2 (forcing a = 1 without congruence analysis). For N = 19, 43, 67, 163 (also h = 1), uniqueness of the form requires additional modular conditions on b² mod 4a; for N = 59, 83, 107 (h > 1), forms with a > 1 arise. Only at N = 11 does the geometric bound alone close the uniqueness of the class.
 
 Remark 1.10.0.28.r (Comparison with known "magic" numbers). Other "magic" integers are known in physics: 26 (bosonic string theory), 10 (superstring), 11 (M-theory), 4 (4D spacetime), 1 (Planck unit). Among these N = 11 is the only one for which: (i) the closure system {C1, C2, C3} — geometric (kissing), modular (Heegner) and arithmetic (primality) — has it as the unique solution at R = 3; (ii) it gives accuracy 5.4 ppt in the α-formula (Th 2.4.A); (iii) it is consistent with all nine irrational constants through the meta-principle M = M_S(1 + δ_C) (Th 1.9.22.B). This distinguishes N = 11 from the ad hoc choice in other theories.
 
@@ -9302,6 +9636,14 @@ This is equivalent to an S₃-symmetric constraint:
 where 6 = 3! = number of permutations of three generations. Thus Koide's formula is a consequence of S₃-symmetry of three lepton generations, which in Trinity arises as the permutation symmetry of the three descent levels (0, 6, 17).
 
 Experiment: Q = 0.666661(7), i.e. deviation from 2/3 at the level of 10⁻⁵ — evidence of exact S₃-symmetry at the fundamental structural level.
+
+Remark 1.10.L.VI.1.r (Geometric interpretation of the Koide formula: the 45° angle as the Absolute-Duality equilibrium). The Koide formula Q = 2/3 is equivalent to the geometric condition: the vector v = (√m_e, √m_μ, √m_τ) forms a 45° angle with the S₃-invariant diagonal (1, 1, 1):
+
+cos²θ = 1/(3Q);  at Q = 2/3 we have cos²θ = 1/2, θ = 45°.
+
+The 45° angle is the equilibrium point: |v_∥|² = |v_⊥|², where v_∥ is the projection onto the diagonal (the S₃-invariant direction, trivial representation) and v_⊥ is the component in the plane of the standard representation of S₃. The diagonal (1, 1, 1) corresponds to the Absolute (the unity of three generations), while the orthogonal plane corresponds to Duality (three distinguishable generations as three spatial axes). The Koide formula expresses equilibrium: the lepton mass has equal components of unity and distinction — a structural reading of the Trinity principle (within one, two opposites give identity through resonance).
+
+The φ-ladder with descent levels (0, 6, 17) and α-corrections gives Q = 0.6673 (deviation 0.095% from 2/3); the residual deviation reflects the incomplete S₃-symmetry of the SU(11) Λ-decomposition.
 
 > **Corollary 1.10.L.VI.2.c (Critical transitions).**
 > Differences of exponents give structural numbers of Trinity:
@@ -27010,7 +27352,9 @@ These connections indicate further formalization of Trinity in the language of h
 
 The catalogue is divided by type: INTERNAL (formal gaps within the theory), EXTERNAL (validation and formalization), META-LEVEL (structurally undecidable in any formal system).
 
+```
 ───── (A) INTERNAL open directions ─────
+```
 
 (I.1) Mass hierarchy m_e/m_P ≈ 4·10⁻²³ — derived as an absolute value through m_P (4.6.E.3). Possible paths: holographic, inflationary, extension of the quintet.
 
@@ -27020,7 +27364,9 @@ The catalogue is divided by type: INTERNAL (formal gaps within the theory), EXTE
 
 (I.4) Closed form of the β-function for NON-ABELIAN gauge groups SU(N) on the Z₁₁ spectrum (1.9.C.2 gives the U(1) case; the SU(11) case is open).
 
+```
 ───── (B) EXTERNAL open directions ─────
+```
 
 (B.1) Full Lean/Coq machine verification of all 768 theorems of Trinity; — skeletons of the key lemmas (2.4.A.A, 2.4.A.B); full formalization is a technical undertaking.
 
@@ -27035,7 +27381,9 @@ The catalogue is divided by type: INTERNAL (formal gaps within the theory), EXTE
 
 (B.5) Test of the exploratory Cs/Rb α-tension hypothesis (2.4.U = prediction #36): precision optical clocks with Sr/Yb/Hg/Cs/Rb; BIPM/NIST/PTB/LKB programme up to 2028.
 
+```
 ───── (C) META-LEVEL (Gödelian) ─────
+```
 
 (C.1) Non-derivability of the quintet {N, π, φ, e, i} "from outside Trinity": structurally forbidden for any formal system containing arithmetic (Theorem 4.6.B). This is NOT an open direction, but a constant of the structure of cognition.
 
@@ -37434,12 +37782,38 @@ and a graviton-mediated channel V(5)⁴/M_P⁴ unique to Trinity.
 
 ```
 ─────────────────────────────────────────────────────────────────────
+AMPLIFIER G. Derivation of the Heegner condition from cone geometry.
+─────────────────────────────────────────────────────────────────────
+The closure condition (C2) h(Q(√−11)) = 1 is derived from geometry
+by two independent routes (Lemma 1.10.0.28.L + Corollary
+1.10.0.28.5 + Remarks 1.10.0.28.5.r/.s). First route: the genesis
+cascade assigns to Temperature (k = 2) the role of the unique
+internal mode; Temperature is the primitive root 2¹ of Z₁₁*; the
+three spatial axes are its even powers (Height = 2⁸,
+Width = 2², Length = 2⁴ mod 11); the excess of residues in the
+fundamental domain equals 4 − 1 = 3 = R; by the Dirichlet formula
+h(−11) = 3/3 = 1. Second route (without the Dirichlet formula):
+the Sphere closure gives N = 4R − 1; the reduced-form bound
+a ≤ √(N/3) < 2 forces the unique binary quadratic form
+[1, 1, R] = [1, 1, 3] of discriminant −11, the square of the
+Gauss sum of the Lorentzian signature; one form = one ideal
+class = h = 1. The Koide formula additionally receives a
+geometric reading (Remark 1.10.L.VI.1.r): Q = 2/3 is equivalent
+to the 45° angle of the vector (√m_e, √m_μ, √m_τ) with the
+diagonal (1,1,1) — the equilibrium point of the Absolute and
+Duality, a direct expression of the Trinity principle.
+```
+
+```
+─────────────────────────────────────────────────────────────────────
 WHAT IS EXPLICITLY OUTSIDE THE CORE (honest boundaries).
 ─────────────────────────────────────────────────────────────────────
 The adversarial referee downgrades the following to Ansatz / open
 problem, and the treatise labels them as such:
-  • Koide angle 2/3 — known empirical relation re-expressed; the
-    S₃ conjecture is unproven.
+  • Koide angle 2/3 — known empirical relation; received a
+    structural reading as the 45° Absolute-Duality equilibrium
+    angle (Remark 1.10.L.VI.1.r); the exact S₃-symmetry of the
+    Λ-decomposition remains a conjecture.
   • α_GUT = F₅² = 25 — order-of-magnitude structural choice.
   • QCD β₃ coefficient b₀ = 7 = L₄ — textbook integer relabeled.
   • 9 irrational constants — per-case fits.
