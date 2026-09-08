@@ -74,7 +74,7 @@ From **7 axioms** (A0–A5 base Hilbert + A6 dimensional lexicon) and
 - **Monte-Carlo control:** random formulas from the same atoms are 3179× less accurate
 - **No calibrated significance / Bayes factor is claimed** — a χ² far below E[χ²]=84 is the wrong tail (Theorems 2.10.B.1, 2.10.C.1)
 - **Kolmogorov complexity:** ≈90 bits relative to the catalogue description length — an order-of-magnitude compression estimate (≈40×), not a calibrated bound; Solomonoff prior ratio 10⁻¹²⁵⁵ over a typical numerology library
-- **Self-contained Python verification:** **247 PASS**, 0 FAIL, EXIT = 0; runs in < 30 s. Includes sympy symbolic two-loop β-function block (Theorems 5.1.D.7.5–5.1.D.7.10) and vacuum-alignment numerical verification (Theorems 5.1.D.5.6–5.1.D.5.10), de Sitter entropy / holographic radius / Λ-suppression-exponent verification (Theorems 3.10.H.3–3.10.H.5), ontological decomposition of the α-formula (Theorems 2.4.A.0.5.v–w), constructive-emergence verification of the Trinity Lagrangian (Theorem 2.7.B.7.u.2), adversarial classification of the catalogue by epistemic layer (Theorem 2.5.AC.3.v), machine-verified OPEN status of the mode-dependent Majorana scale (Theorem 2.4.AD.2.o), partial-wave unitarity + quartic sum rule of the explicit 2→2 amplitudes (Theorem 5.7.VQ.1 + Remark 5.7.VS.1.t.v), resonance / variability-axis verification (Theorems 2.4.G.2/G.4 — Z₂ mirror pairs as constructive interference, spherical closure as isotropy), Genesis Cascade verification (Theorem 2.4.G.7 — closure points k=3,6,9, cascade partition = QR(11)∩{1,..,5}), and algebraic necessity of QR as metric carrier (Theorem 4.3.0.d.N — bilinearity ⟹ carrier = subgroup, QR unique proper nontrivial subgroup of Z₁₁*).
+- **Self-contained Python verification:** **274 PASS**, 0 FAIL, EXIT = 0; runs in < 30 s. Includes the executed sympy two-loop Machacek-Vaughn projection for all eight quartic couplings (Theorems 5.1.D.7.5–5.1.D.7.10), the symbolic weak-field limit of the induced Einstein-Hilbert term (Corollary 2.7.B.8.w — G^(1)_00, Poisson equation, Kottler Λ-term, geodesic), and vacuum-alignment numerical verification (Theorems 5.1.D.5.6–5.1.D.5.10), de Sitter entropy / holographic radius / Λ-suppression-exponent verification (Theorems 3.10.H.3–3.10.H.5), ontological decomposition of the α-formula (Theorems 2.4.A.0.5.v–w), constructive-emergence verification of the Trinity Lagrangian (Theorem 2.7.B.7.u.2), adversarial classification of the catalogue by epistemic layer (Theorem 2.5.AC.3.v), machine-verified OPEN status of the mode-dependent Majorana scale (Theorem 2.4.AD.2.o), partial-wave unitarity + quartic sum rule of the explicit 2→2 amplitudes (Theorem 5.7.VQ.1 + Remark 5.7.VS.1.t.v), resonance / variability-axis verification (Theorems 2.4.G.2/G.4 — Z₂ mirror pairs as constructive interference, spherical closure as isotropy), Genesis Cascade verification (Theorem 2.4.G.7 — closure points k=3,6,9, cascade partition = QR(11)∩{1,..,5}), and algebraic necessity of QR as metric carrier (Theorem 4.3.0.d.N — bilinearity ⟹ carrier = subgroup, QR unique proper nontrivial subgroup of Z₁₁*), equation-of-state boundary of the passive-aetheron dark energy (Theorem 2.7.H.2 — |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹), topological cross-check of the two structural partitions of Ω_Λ (Remark 2.1.A.1.r), and exact combinatorial verification of the informational-capacity invariance of the Aether (Theorem 2.7.J.2 — C_max = N^(N_aether), Σ W = C_max, S + I = ln C_max), plus the ladder-of-sections verification (Theorems 2.4.G.9/2.4.G.10/Remark 2.4.G.12 — metric-free Electricity section, resonant ladder poles {10,1}, cascade closures between poles).
 
 ### Uniqueness of N = 11 — single PRIMARY criterion
 
@@ -99,10 +99,10 @@ The five aether properties ÆТ₁–ÆТ₅ are **reduced to the Sphere-Point-C
 
 Five Parts × 12 modal subsections = **60 modal cells** + **1 service appendix (Glossary I)**:
 
-- **768 theorems** (all with proofs)
-- **269 definitions**
-- **561 corollaries**
-- **290 remarks**
+- **772 theorems** (all with proofs)
+- **270 definitions**
+- **568 corollaries**
+- **294 remarks**
 - **27 lemmas**
 - **11 propositions**
 
@@ -126,15 +126,16 @@ The theory is structurally falsifiable through **56 specific experimental predic
 | `theory_of_everything_EN.txt` | Plain text (UTF-8) | Full English mirror translation (perfect RU↔EN structural symmetry) |
 | `theory_of_everything_RU.md` | Markdown | Russian, GitHub-flavored markdown rendering |
 | `theory_of_everything_EN.md` | Markdown | English, GitHub-flavored markdown rendering |
-| `theory_of_everything_RU.html` | HTML (SPA) | Russian, interactive single-page app with sidebar navigation (74 pages, 1791 anchored statements) |
-| `theory_of_everything_EN.html` | HTML (SPA) | English, same SPA with prev/next and sidebar TOC (74 pages, 1791 anchored statements) |
+| `theory_of_everything_RU.html` | HTML (SPA) | Russian, interactive single-page app with sidebar navigation (74 pages, 1918 anchored statements) |
+| `theory_of_everything_EN.html` | HTML (SPA) | English, same SPA with prev/next and sidebar TOC (74 pages, 1918 anchored statements) |
 | `theory_of_everything_RU.docx` | Word | Russian, editable Word document |
 | `theory_of_everything_EN.docx` | Word | English, editable Word document |
 | `theory_of_everything_RU.pdf` | PDF | Russian, publication-ready PDF |
 | `theory_of_everything_EN.pdf` | PDF | English, publication-ready PDF |
 | `theory_of_everything_RU.png` | PNG | Russian visualization of the Geometry of Trinity |
 | `theory_of_everything_EN.png` | PNG | English visualization of the Geometry of Trinity |
-| `theory_of_everything.py` | Python 3 | Self-contained verification script — computes 84 constants and verifies 96 structural identities, including Theorem 2.0.B.1 (structural specificity of the Trinity basis for Planck physics, χ > 1 vs random reals), vacuum-alignment proof (Theorems 5.1.D.5.6–5.1.D.5.10) and sympy two-loop β-function block for SU(11) Higgs sector with Yukawa couplings (Theorems 5.1.D.7.5–5.1.D.7.10); **247 PASS**, 0 FAIL, EXIT = 0; runs in < 30 s on Python 3.7+ with numpy + sympy + mpmath |
+| `theory_of_everything.lean` | Lean 4 | **96 machine-verified theorems in one unified file** (no Mathlib, bare Lean 4.33; three sections: I core identities, II D1–D5 amplifiers, III cascade arithmetic): net chirality of three generations (Theorem 5.1.D.9), cubic cascade anomaly identity 28−20−7−1 = 0 (Corollary 5.1.D.8.1), portal Casimirs 181/22, 84/11, 289/33, T(R_S) = 21, weighted Casimir sum 2520, freeze-out bounds. Reproduce: `lean theory_of_everything.lean` (prints ALL VERIFIED, exit 0) |
+| `theory_of_everything.py` | Python 3 | Self-contained verification script — computes 84 constants and verifies 96 structural identities, including Theorem 2.0.B.1 (structural specificity of the Trinity basis for Planck physics, χ > 1 vs random reals), vacuum-alignment proof (Theorems 5.1.D.5.6–5.1.D.5.10) and executed sympy two-loop M-V projection (eight quartic couplings, Yukawas, gauge; Theorems 5.1.D.7.5–5.1.D.7.10) the symbolic Newtonian-limit block (Corollary 2.7.B.8.w), and the embedded four-test PSLQ structural-specificity experiment (Theorem 1.10.F.9 — no separate script needed); **274 PASS**, 0 FAIL, EXIT = 0; runs in < 30 s on Python 3.7+ with numpy + sympy + mpmath |
 
 All `.txt`, `.md`, `.html`, `.docx`, `.pdf` files contain the same content in different formats. The `.txt` file is the authoritative source; other formats are generated from it. **0 ID collisions, 0 development markers, perfect RU↔EN parity.**
 
@@ -143,7 +144,7 @@ All `.txt`, `.md`, `.html`, `.docx`, `.pdf` files contain the same content in di
 - **For a first look:** open `theory_of_everything_EN.html` (or `_RU.html`) in any modern browser. The sidebar contains a navigable table of contents grouped into 5 Parts + 1 Glossary. Use ←/→ arrow keys or the on-screen buttons to move between sections. Sidebar search (`/` or `Ctrl+K`) supports both labels and full-text search.
 - **For a printable version:** open the `.pdf` file in any PDF viewer, or the `.docx` file in Word/LibreOffice.
 - **For search and scripting:** work directly with the `.txt` file.
-- **For independent verification:** run `python theory_of_everything.py` to recompute all 84 constants numerically and compare with CODATA/PDG (**247 PASS, 0 FAIL, EXIT = 0** expected). The script also independently re-derives the SU(11) group invariants (C_2(adj) = 11, C_2(fund) = 60/11, C_2(2-form) = 108/11, T(R_S^total) = 21) used in the two-loop β-function computation (Theorem 5.1.D.7.7).
+- **For independent verification:** run `python theory_of_everything.py` to recompute all 84 constants numerically and compare with CODATA/PDG (**274 PASS, 0 FAIL, EXIT = 0** expected). The script also independently re-derives the SU(11) group invariants (C_2(adj) = 11, C_2(fund) = 60/11, C_2(2-form) = 108/11, T(R_S^total) = 21) used in the two-loop β-function computation (Theorem 5.1.D.7.7).
 
 ## Structure
 
@@ -195,7 +196,7 @@ Physics, quantum field theory, and number theory — three projections of one Tr
 
 ## Clay Millennium Problems — single framework
 
-All 7 of 7 problems closed by a single principle (Z₂ fixed-point + Genesis flow E_τ + bounded V_cone = 13195):
+All 7 of 7 problems structurally addressed by a single principle (Z₂ fixed-point + Genesis flow E_τ + bounded V_cone = 13195; explicit scope statements in the preprint — structural interpretation, not Clay-formulation proofs):
 
 | # | Problem | Theorem | Key result |
 |---|---|---|---|
@@ -317,7 +318,7 @@ At N = 11 the partial sum gives 8-digit accuracy for ζ(2) and 10-digit accuracy
 Trinity makes the following claims with full transparency:
 
 - ✓ **Internal consistency proven:** the model in H_{11} = ℂ¹¹ is explicitly constructed (Theorem 1.0.H.1); decidability proven (Section 4.6.VM); twelve-fold structural closure verified (Theorem 4.6.A.1).
-- ✓ **Computational reproducibility:** independent re-execution of the Python script produces identical numerical agreement on any system; 247 PASS, 0 FAIL, EXIT = 0.
+- ✓ **Computational reproducibility:** independent re-execution of the Python script produces identical numerical agreement on any system; 274 PASS, 0 FAIL, EXIT = 0.
 - ✓ **Falsifiable scientific structure:** 56 specific predictions with explicit refutation criterion at 5σ; plus the new two-loop ratio λ_H(M_Pl)/λ_H(M_EW) = −1.0493 ± 0.5% (FCC-ee 2040) and the vacuum-alignment package check (Susyno/GroupMath/LieART, ~10⁻⁶ precision); not unfalsifiable speculation.
 - ✓ **GUT cascade dynamics formally proved:** SU(11) → SU(6) × SU(5) × U(1) is the global minimum of V₁(Φ_120) at Trinity-derived coefficients (Theorems 5.1.D.5.6–5.1.D.5.10); two-loop RGE consistency through symbolic sympy computation (Theorems 5.1.D.7.5–5.1.D.7.10). No "ad hoc" pattern selection.
 - ○ **Open directions (honestly stated):** ζ(9) lacks compact Trinity decomposition; the connection γ_1 ≈ N + π with the first non-trivial Riemann zero is marked as numerological coincidence pending deeper structural justification (Section 1.9.24.3); the qualitative aspect of consciousness ("hard problem", b-component) remains explicitly open while the structural localization (a-component) is closed.
