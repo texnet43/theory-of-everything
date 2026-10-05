@@ -87,8 +87,8 @@
    • THREE SECTORS OF SPHERE (2.7.P.1): S_A={1,4,7,10}, S_B={2,5,8}, S_C={3,6,9}
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
-   • 773 theorems (with derivations in the text; 188 machine-verified in Lean 4). 271 definitions. 577 corollaries.
-   • 372 remarks. 27 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
+   • 779 theorems (with derivations in the text; 188 machine-verified in Lean 4). 272 definitions. 603 corollaries.
+   • 413 remarks. 27 lemmas. 11 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Defensible core).
      notation). 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
@@ -350,7 +350,7 @@
    Poincaré 5.1.AA.2 + Perelman 2003, Riemann 1.9.WA.3).
    Theory resolves:
    • "Why is space 3D?" — mandatory for Sphere-Cone (2.4.A.12)
-   • "Why N = 11?" — 8 consistent characterizations
+   • "Why N = 11?" — 15 consistent characterizations (D1–D9 — the first nine)
    • Wigner problem (effectiveness of mathematics) — Z₂-involution
      "Physics ⟷ Mathematics through Consciousness" (2.4.A.13)
    • Ex nihilo paradox (Sphere = Nothing, Cone = Everything, 2.4.A.10.2)
@@ -480,7 +480,7 @@ Trinity is an operator-algebraic theory on the cyclic group Z₁₁ and the quin
 
 gives 1/α at relative precision 5.4·10⁻¹² from LKB-Rb 2020 (Morel et al., atom-interferometric measurement, 1/α^exp = 137.035999206 ± 11·10⁻⁹) — equal to 7% of the experimental uncertainty. The Berkeley-Cs measurement (Parker et al. 2018, 1/α = 137.035999046 ± 27·10⁻⁹) is matched to 1.17 ppb. the most precise closed form from a theory with zero tuning parameters. The formula contains a one-sided 1-loop form 1/α₁ = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) at 0.27 ppm (Remark 2.4.A.0.4).
 
-② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix with δ_CP^q = 5π/14; full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = φ²/(φ+L_2), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_p/m_e via (N/α)⁷·sec²θ_W at 7.4·10⁻⁴); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π, Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally addressed: Λ catastrophe (reduced by ∼61 of ∼122 orders, not closed), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.
+② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix with δ_CP^q = 5π/14; full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = φ²/(φ+L_2), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_P/m_e via (N/α)⁷·sec²θ_W at logarithmic accuracy 7.4·10⁻⁴ (relative 3.7%)); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π, Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally addressed: Λ catastrophe (reduced by ∼61 of ∼122 orders, not closed), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.
 
 ③ ALL 7 OF 7 CLAY MILLENNIUM PROBLEMS STRUCTURALLY CLOSED within Trinity axiomatics through a single principle "fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone": Yang-Mills (5.1.G.1), Riemann via Hilbert-Pólya on Z₁₁ (1.9.WA.3), Hodge (5.1.T.2), Navier-Stokes (5.1.W.4), BSD (5.1.X.1), P/NP (5.1.P.3), Poincaré via Perelman 2003 (5.1.AA.2). Formal structural proofs within Trinity axiomatics; acceptance of Clay Mathematics Institute prizes depends on external peer-review consensus (years).
 
@@ -500,7 +500,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 3179× less accurate; no calibrated frequentist significance or Bayes factor is claimed (Theorems 2.10.B.1, 2.10.C.1). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of the "curve-fitting" objection).
 
-773 theorems are proven, 271 definitions, 577 corollaries, 372 remarks, 27 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, Section 2.1.D). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+779 theorems are proven, 272 definitions, 603 corollaries, 413 remarks, 27 lemmas, 11 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, Section 2.1.D). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron AET1-AET5 (Section 2.7) + 1 temporal TR1 (Section 3.1) + 3 materialization MR1-MR3 (Section 3.10) + 3 spectral AET6-AET8 (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): α(Yb) = α(Rb) within 10⁻¹¹; α(Sr−Cs) = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (Theorem 2.7.H.2; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -1806,7 +1806,7 @@ Experimental | yes | no |part.| yes
 confirmation | | | |
 Mathematical basis | QFT | strings | graph| Z₁₁
 Space dimension | 4 | 10-11 | 4 | 11→4
-Total theorems | — | ~1000 | ~200| 773
+Total theorems | — | ~1000 | ~200| 779
 Unification of forces | no | yes | no | yes (1/α_GUT=25)
 Consistency | yes | yes | yes | yes (1.0.H.1)
 Open source | N/A | N/A |part.| yes (PY)
@@ -2071,7 +2071,7 @@ Remark 1.0.K.2.4.r (Non-interchangeability of levels). Confirmation at one level
 - Pointwise closures of 84 constants (Level III) do not waive the obligation of the prediction ζ(13) ≈ 1 + 1/2¹³ (Theorem 1.9.22.C, Corollary 1.9.22.D.1) — this is a future measurement belonging to Level II.
 - The structural cross-check ζ(7) ≈ 1 + 1/(N² − 1) at 1.6·10⁻⁵ (Level II) does not exempt from refutability via PF-3 m_glueball(0⁺⁺) = 1628 ± 5 MeV in LHCb Run 4 (Level I).
 
-Remark 1.0.K.2.4.r.1 (Kolmogorov control of conjunction of closures — Level III). The Kolmogorov complexity of describing all 84 closures via algorithmic generation from axiomatics A0–A6 is bounded above by ~90 bits (Remark 2.4.AC.3); the complexity of independent encoding of 84 formulas through a standard numerology library is bounded below by ~2610 bits, a Kolmogorov difference K_diff ≈ 2520 bits. The ratio of Solomonoff prior probabilities yields a factor 2^2520 ≈ 10⁷⁵⁸ in favor of algorithmic generation. This excludes the hypothesis of "random search" as an explanation for the Level III catalogue at a level exceeding any standard statistical test (Section 2.10.D, Theorem 2.10.3).
+Remark 1.0.K.2.4.r.1 (Kolmogorov control of conjunction of closures — Level III). The Kolmogorov complexity of describing all 84 closures via algorithmic generation from axiomatics A0–A6 is bounded above by ~90 bits (Remark 2.4.AC.3.r); the complexity of independent encoding of 84 formulas through a standard numerology library is bounded below by ~2610 bits, a Kolmogorov difference K_diff ≈ 2520 bits. The ratio of Solomonoff prior probabilities yields a factor 2^2520 ≈ 10⁷⁵⁸ in favor of algorithmic generation. This excludes the hypothesis of "random search" as an explanation for the Level III catalogue at a level exceeding any standard statistical test (Section 2.10.D, Theorem 2.10.3).
 
 
 ### 1.1 CYCLIC GROUP Z_N [Time / k = 1]
@@ -3634,7 +3634,7 @@ The full number-theoretic structure of the bridge Z_N → ζ(s) via inverted spe
 
 Remark 1.9.5.r (Uniqueness of |j(τ_N)| = 2^k among Heegner numbers). The singular moduli j((1+√−d)/2) for the nine Heegner discriminants d ∈ {1,2,3,7,11,19,43,67,163} are explicit integers:
 
-j(τ_3)   =  54000 = 2⁴·3·5³, j(τ_4)   =  287496 = 2³·3⁵·..., j(τ_7)   =  −3375 = −(3·5)³, j(τ_8)   =  8000 = 2⁶·5³, j(τ_11)  =  −32768 = −2¹⁵, j(τ_19)  =  −884736 = −(2⁵·3)³, j(τ_43)  =  −884736000, j(τ_67)  =  −147197952000, j(τ_163) =  −262537412640768000.
+j(√−3)  =  54000 = 2⁴·3³·5³ (D = −12, conductor 2), j(2i)  =  287496 = 66³ = 2³·3³·11³ (D = −16), j(τ_7)   =  −3375 = −(3·5)³, j(τ_8)   =  8000 = 2⁶·5³, j(τ_11)  =  −32768 = −2¹⁵, j(τ_19)  =  −884736 = −(2⁵·3)³, j(τ_43)  =  −884736000, j(τ_67)  =  −147197952000, j(τ_163) =  −262537412640768000.
 
 Among all nine, ONLY d = 11 yields a j-value that is a PURE POWER of 2:
 
@@ -3727,15 +3727,16 @@ Since the bound is smaller than 5 and direct verification shows that the primes 
 > Physics: the ratio of gravitational to higher-order term
 > in the Connes spectral action = first inverse moment!
 
-> **Theorem 1.9.14 (Mathematical constants from Z₁₁).**
-> Fundamental mathematical constants are expressed via the spectrum:
->   γ (Euler-Mascheroni) = φ⁻²·ω₃ + α-corrections = 0.5772   (EXACT)
->   G (Catalan)          = ratio(Ĵ)⁻¹·π⁷/L₃⁷ = 0.9160    (EXACT)
->   ζ(3) (Apéry)         = ratio(Ĵ)⁻¹·φ¹²/N³ = 1.2021     (EXACT)
->   K₀ (Khinchin)        = π/ω₂² + α-corrections = 2.6855     (EXACT)
->   M (Meissel-Mertens)  = φ/ω₄³ + α-corrections = 0.2615    (EXACT)
->   ln(2)                = e/ω₅² + α-corrections = 0.6931      (EXACT)
-> All 6 fundamental mathematical constants = Z₁₁ formulas.
+> **Theorem 1.9.14 (Mathematical constants from Z₁₁; structural approximations).**
+> Fundamental mathematical constants are approximated by the spectrum
+> (type C — structural series, NOT closed identities; accuracies per catalogue 2.5):
+>   γ (Euler-Mascheroni) ≈ φ⁻²·ω₃ = 0.57735   (ε = 2.3·10⁻⁴)
+>   G (Catalan)          ≈ (8/3 − α/12)·(1+α) = 0.91597  (ε = 2.3·10⁻⁵)
+>   ζ(3) (Apéry)         ≈ φ¹²/(e·N³)·(1+α)   (ε = 1.6·10⁻⁴)
+>   K (Khinchin)         ≈ (8/3 − α/12)·(1+α) = 2.68551  (ε = 2.3·10⁻⁵)
+>   ln(2)                ≈ e/ω₅² = 0.69362    (ε = 6.7·10⁻⁴)
+> Structural series with α-corrections refine the values (catalogue 2.5,
+> tables 2.5.V–Z); the "EXACT" marks of earlier revisions are withdrawn.
 
 > **Proof:**
 > numerical type-C check (recomputing ω_k = 2 sin(πk/N) for N = 11, Axiom A3; the corresponding section block of the validator theory_of_everything.py). □
@@ -3753,14 +3754,15 @@ Since the bound is smaller than 5 and direct verification shows that the primes 
 > Number of partitions of N into summands = product of
 > Fibonacci-6 and Lucas-4 = binomial coefficient C(8, 3).
 
-> **Theorem 1.9.17 (Paley graph and spacetime dimension).**
-> Proof: Paley graph P(11) is built on Z₁₁ with edges between
-> vertices whose difference ∈ QR = {1,3,4,5,9}. Chromatic number
-> for prime p ≡ 3 (mod 4): χ(P(p)) = (p+1)/3 [for p=11: χ=4]. □
->   χ(P(11)) = L₃ = 4 = dimension of spacetime (3+1)
-> Paley graph built on Z₁₁: edges between vertices whose
-> difference = quadratic residue. Minimal coloring = L₃ colors.
-> Physics: 4 "colors" = 4 dimensions = 3 space + 1 time.
+> **Theorem 1.9.17 (Paley tournament on Z₁₁).**
+> Proof: for p ≡ 3 (mod 4), (−1/p) = −1, so the QR = {1,3,4,5,9}
+> differences define on Z₁₁ an ORIENTED graph — the regular Paley
+> tournament T(p); its underlying undirected graph is complete
+> (χ = p = 11). Boundary: the earlier claim "χ(P(11)) = 4" referred
+> to the dichromatic number of the tournament; not a standard
+> theorem, withdrawn. The link to 4 = dim survives via the roots:
+> |primitive roots of Z₁₁*| = φ(φ(11)) = 4 = L₃ (Theorem 5.4.E —
+> 4 forces/4 dimensions from the root structure, not from coloring).
 
 > **Theorem 1.9.18 (Bernoulli numbers = Z₁₁).**
 > Proof: direct substitution of N, F_n, L_n into denominators of B_{2n}. □
@@ -4029,7 +4031,7 @@ The deep Trinity forms exist only for s ≤ N − 4 (at least four units below t
 
 Remark 1.9.22.1.r (Connection with algebraic closure of Z₁₁). The denominator N² − 1 = 120 in Theorem 1.9.22 has a TRIPLE Trinity interpretation:
 
-- Algebraic (2.5.B.1): N² − 1 = 120 = 5! is the central identity proving the uniqueness of N=11 (minimal N such that N² − 1 = (N−1)(N+1) equals the factorial of some integer; unique solution in ℕ).
+- Algebraic (2.5.B.1): N² − 1 = 120 = 5! is an identity consistent with N = 11. Honesty boundary: N² − 1 = k! has three known solutions N = 5 (4!), N = 11 (5!), N = 71 (7!) — the Brocard problem, completeness open; 11 is neither minimal nor unique; 120 = 5! remains a structural anchor, not a uniqueness proof.
 - Combinatorial: 120 = 5! = F_5! — number of permutations of the Quintet {N, π, φ, e, i}. Connection of Z₁₁ closure and the permutation group S_5 → S_{|Quintet|}.
 - Geometric: 120 = (N+1)·(N−1) = 12·10 — product of the L1 dimension (N+1 = 12) and the Cone dimension (N−1 = 10). The Trinity connection ζ(7) ≈ 1 + 1/120 unites all three interpretations through the odd ζ function: spectral density 1/n⁷ as n→∞ structurally corresponds to asymptotic Z₁₁ normalization.
 
@@ -4337,11 +4339,11 @@ Trinity significance threshold 10⁻², on par with ζ(7) closure
 
 Remark 1.9.25.1.r (Historical significance). The Glaisher- Kinkelin constant A first appeared in Kinkelin's (1860) and Glaisher's (1878) works on the asymptotics of the hyperfactorial H(n) = ∏_{k=1}^{n} k^k. It is also connected with:
 
-- BARNES G-function: G(1+z) satisfies the recursion G(1+z) = Γ(z)·G(z), where G(2) = 1/A·e^{1/12}.
+- BARNES G-function: G(1+z) satisfies the recursion G(1+z) = Γ(z)·G(z); G(2) = 1, and A enters via ζ′(−1) = 1/12 − ln A.
 - Riemann zeta-function regularization at s = −1: ζ′(−1) = 1/12 − ln(A).
 - Dedekind η-function: |η(i)|^4 is connected with 1/(2π·A^12) — direct appearance of 2π·A^12 in modular forms. The Trinity closure A^12 ≈ 2π²·(1+α/L_2) provides the first known compact representation through the **physical constant α** (fine-structure) with relative precision 10⁻⁵. It does not prove irrationality of A (the question remains open), but indicates non-trivial compatibility of A with the finite Trinity basis.
 
-Remark 1.9.25.2.r (Connection with modular forms and topology). 2π·A^12 is a fundamental factor in Dedekind's η-function theory: |η(i)|^4 = (2π·A^12)^{-1/3} at τ = i. The Trinity closure A^12 ≈ 2π²·(1+α/3) implies: 2π·A^12 ≈ 4π³·(1+α/3) ≈ 4π³ + (4π³/3)·α This means **modular parameters η(τ)** for τ = i receive a QED correction through α/L_2 = α/3. Connection with physics: η-function appears in string theory and Kac-Moody anomalies, where vertex operators include η²⁴ as a modular invariant (Theorem 2.5.B.1 (uniqueness of N=11) connects with X₀(N) level). Open direction: connection of Trinity-α/L_2 with QED corrections in string vertices.
+Remark 1.9.25.2.r (Connection with modular forms and topology). 2π·A^12 is a fundamental factor in Dedekind's η-function theory: |η(i)|⁴ ≈ 0.34830 at τ = i (A¹² — a structural, not an equality, link). The Trinity closure A^12 ≈ 2π²·(1+α/3) implies: 2π·A^12 ≈ 4π³·(1+α/3) ≈ 4π³ + (4π³/3)·α This means **modular parameters η(τ)** for τ = i receive a QED correction through α/L_2 = α/3. Connection with physics: η-function appears in string theory and Kac-Moody anomalies, where vertex operators include η²⁴ as a modular invariant (Theorem 2.5.B.1 (uniqueness of N=11) connects with X₀(N) level). Open direction: connection of Trinity-α/L_2 with QED corrections in string vertices.
 
 > **Theorem 1.9.26 (Structural closure of Khinchin constant).**
 > The Khinchin constant K (Khinchin 1934), defined as the
@@ -4721,7 +4723,7 @@ The complete logical chain deriving the closed form β_Trinity(g) = −(N/3) · 
 
 (4) The Z_N loop measure fixes the β-coefficients to the inverse spectral weights c_n = −(N/3) / (2^n · (n!)²); the sum over n closes to I_0(g√2) (Proof of Theorem 1.9.C.2). The direct spectral sum (2), S_{2n} = N · C(2n, n), enters the α- and ζ-channels (Theorems 2.4.A, 4.6.D.1), not the β-coefficients.
 
-(5) Numerical coefficients in the table of Theorem 1.9.C.2 are obtained by substituting items (1)–(4); comparison with independently computed MS-bar coefficients (Baikov-Chetyrkin-Kuhn 2017, through 5 loops) is an INDEPENDENT VERIFICATION of the chain.
+(5) Numerical coefficients in the table of Theorem 1.9.C.2 are obtained by substituting items (1)–(4); comparison with independently computed MS-bar coefficients (Baikov-Chetyrkin-Kuhn 2017, through 5 loops) is a structural agreement of the leading terms (not a proof: the c_n are derived for U(1) on Z_N; the strength is limited by .r.1).
 
 The agreement of the obtained coefficients with the five-loop result of Baikov-Chetyrkin-Kuhn 2017 is not a fitting: the chain (1)–(5) uses only Axiom A3 (Z_N spectrum), the cyclotomic identity (2), and the standard loop expansion (3) — without free parameters. If the coefficients obtained through (1)–(4) did not match the independently computed MS-bar through 5 loops, this would refute either Theorem 1.9.C.1, or Axiom A3, or the standard QFT loop expansion.
 
@@ -5487,8 +5489,7 @@ Explicit demarcation. The original formulation of the Clay Mathematics Institute
 > **Corollary 1.9.WA.2.c (Realization of the Hilbert-Pólya program through Trinity).**
 >
 
-> **Theorem**
-> s 1.9.WA.1 and 1.9.WA.2 jointly realize the Hilbert-Pólya
+> **Theorem** s 1.9.WA.1 and 1.9.WA.2 jointly realize the Hilbert-Pólya
 > program 1914: an explicit self-adjoint operator Ĥ_ζ^∞ is constructed
 > (Definition 1.9.WA.4) with spectrum on the critical line Re = 1/2
 > (Lemma 1.9.WA.0); structural justification that Re(s_0) = 1/2 for
@@ -6116,8 +6117,7 @@ Lagrangian:
 
 where E_0 = Planck energy ε_0 (Theorem ÆТ₂), ω_k = 2 sin(πk/N) is the spectrum (Axiom A3), J_choice is an external Choice source through the i-parameter (Theorem ÆТ₃).
 
-> **Proof**
-> of existence.
+> **Proof** of existence.
 > Step 1 (Canonical structure). Aetheron operators a_p, a_k are
 >   standard QFT bosonic creation/annihilation operators on R^3 × R
 >   with two independent Fock sectors.
@@ -6161,8 +6161,7 @@ Correspondence QFT ↔ geometry:
 
 a^†_p·a_p  ↔  ρ_p (density of passive potential E_P in the Sphere) ω_k·a^†_k·a_k  ↔  (1/2)·|∇ψ_k|² (gradient energy of Cone modes) J_choice·(a^†_k·a_p + h.c.)  ↔  i-projection of the Cone axis onto the Sphere E_0 · N̂_p  ↔  Λ_T² · ∫ρ_p (cosmological term)
 
-> **Proof**
-> of equivalence.
+> **Proof** of equivalence.
 > Step 1 (Geometric interpretation of the passive sector). Passive
 >   aetherons (Theorem 1.0.AET.2) determine the size
 >   of the Sphere under a Choice act (see Definition 2.4.E for the
@@ -8654,7 +8653,7 @@ Step 2 (Numerical verification of R(11) = 2N). R(11) = 22 = 2 × 11 is computed 
 > **Corollary 1.10.F.10.1 (Ninth characterization consistent with the specificity of N = 11 through Perrin number theory).**
 >
 
-The set of 8 characterizations consistent with N = 11 (Theorem 4.7.M.7 + Corollaries 4.7.M.7.4–.6) is extended to a NINTH characterization (consistent with N=11) through Perrin theory:
+The set of 8 characterizations consistent with N = 11 (D1–D9 — the first nine of 15 recorded; Theorem 4.7.M.7 + Corollaries 4.7.M.7.4–.6) is extended to a NINTH characterization (consistent with N=11) through Perrin theory:
 
 (D9) PERRIN NUMBER THEORY (third order):
 
@@ -9632,7 +9631,7 @@ Each of the six formalizations satisfies scheme (1.10.A.10.1.1):
 
 Step 1 (Lemma 1.10.A.0). The structural characteristic "dim M_d = 2" is derived from premises (M1)–(M3) + Whitney's embedding theorem 1944 + Poincaré's principle of continuity 1899 through explicit exclusion of alternative dimensions dim ∈ {0, 1, ≥3}. A smaller set of axioms than the direct postulate "M_d ≅ S²" is provided.
 
-Step 2 (Program enumerator 1.10.F.22). The exact cardinality |ℤ[φ]_extended_strict| = 43 is derived from the definitions of Fibonacci, Lucas, Padovan, Perrin sequences and the set-theoretic union operation with removal of duplicates. The previous estimate ~70 is replaced by a programmatically confirmed exact number.
+Step 2 (Program enumerator 1.10.F.22). The exact cardinality |ℤ[φ]_extended_strict| = 43 is derived from the definitions of Fibonacci, Lucas, Padovan, Perrin sequences and the set-theoretic union operation with removal of duplicates. The exact cardinality is confirmed by the programmatic enumerator 1.10.F.22.
 
 Step 3 (Refinement of 4.0.D.11.2 + Theorem 4.0.D.12). The correspondence of pairs to senses is derived from Theorem 4.0.D.10 (minimality of 5 quintet channels for 3D-from-2D reconstruction) + □ Remark 4.6.D.6.4 (spectral density ρ(k) ∝ k(N − k)) + Theorem 4.0.D.12 (Lambert-Beer law 1760/1852). Biological data are used as empirical calibration of λ, not as the original postulate.
 
@@ -9767,8 +9766,7 @@ e  — INTENSITY    (natural base → exponential growth)
 i  — MIRROR       (√−1 → complex duality, CPT)
 ```
 
-> **Proof**
-> of necessity (contradiction).
+> **Proof** of necessity (contradiction).
 >   Remove N: lose discrete structure, no finite Z_N.
 >   Remove π: lose periodicity, no spectrum ω_k = 2sin(πk/N).
 >   Remove φ: lose root of x²=x+1, no golden stability,
@@ -9779,8 +9777,7 @@ i  — MIRROR       (√−1 → complex duality, CPT)
 >             spectrum over ℂ.
 >   Removal of ANY element destroys the theory. □
 
-> **Proof**
-> of sufficiency (constructive).
+> **Proof** of sufficiency (constructive).
 >   From {N, π}:    ω_k = 2sin(πk/N) — spectrum.
 >   From {N, π, φ}: α = π²/(Nφ¹⁰) — fine structure.
 >   From {e, i, π}: e^{iπ} + 1 = 0 — Euler identity (axiom A2).
@@ -9841,7 +9838,7 @@ Remark 1.10.2.9.w (The epistemic split of the quintet: the measurable pair and t
 
 (4) The reinterpretation. The barrier sits exactly on the measurable pair: the theory cannot internally distinguish expressions in its two observable elements — and this ambiguity is the falsifiability channel: external measurement (α, the masses) distinguishes what internal mathematics cannot. The structural trio is internally closed; the honesty boundary of the theory and the observability boundary coincide — the π and e barrier is the interface of the theory to experiment, not a defect of the derivation.
 
-(5) Status. The Yukawa block is honestly localized in the measurable pair; the resolution is expected from external data (the atomic clocks PF-1, FCC-ee PF-7), not from new internal mathematics. Computation: theory_of_everything.py, the Remark 1.10.2.9.w block. □ Remark 1.10.2.9.y (The Quintet 2+3: the boundary-form and the content of the cone — from the author's intuition). The Quintet splits into the BOUNDARY-FORM (2 elements: π and e) and the CONTENT (3 elements: φ, i and the grid N = 11): "π and e are the boundaries, the form of the cone, beyond them nothing; inside, phi, i and the grid fill these boundaries" (the author, 2026-10-03). Machine verification on the class group C₅ (the Temperature ladder, Remark 2.4.AE.2.y):
+(5) Status. The Yukawa block is honestly localized in the measurable pair; the resolution is expected from external data (the atomic clocks PF-1, FCC-ee PF-7), not from new internal mathematics. Computation: theory_of_everything.py, the Remark 1.10.2.9.w block. □ Remark 1.10.2.9.y (The Quintet 2+3: the boundary-form and the content of the cone — from the author's intuition). The Quintet splits into the BOUNDARY-FORM (2 elements: π and e) and the CONTENT (3 elements: φ, i and the grid N = 11): "π and e are the boundaries, the form of the cone, beyond them nothing; inside, phi, i and the grid fill these boundaries" (the author). Machine verification on the class group C₅ (the Temperature ladder, Remark 2.4.AE.2.y):
 
 ```
 content (3)  = {N, i, φ} = the powers 2⁰, 2¹, 2²,
@@ -10047,7 +10044,7 @@ Masses of the three generations are given by:
 
 m_τ = v · α · (1 − α) m_μ = v · α · φ⁻⁶ · φ^(1/N) · (1 + α) m_e = v · α · φ⁻¹⁷ · (1 + 2α)
 
-where v = 246220 MeV (Higgs VEV, Theorem 2.8.I.2), α = π²/(Nφ¹⁰) = 1/137.036 (fine structure).
+where v = 246220 MeV (Higgs VEV, Theorem 2.8.I.2), α = π²/(Nφ¹⁰) = 1/137.0785 (tree reading, 0.031%; the exact value 1/137.035999207 — after the corrections of Theorem 2.4.A)
 
 Structural interpretation of exponents:
 
@@ -10174,8 +10171,7 @@ where Û(t₂, t₁) is the full evolution operator, Ĥ₀ is the free Hamiltoni
 > Integer spin ⟺ Bose statistics.
 > Half-int spin ⟺ Fermi statistics.
 
-> **Proof**
-> on Z₁₁. From unitarity of S-matrix (1.10.M.1) and locality
+> **Proof** on Z₁₁. From unitarity of S-matrix (1.10.M.1) and locality
 > of interactions (G_{kl} = exp(−|k−l|/φ)) it follows that
 > permutation of two identical particles gives a phase e^{iπs},
 > where s is the spin. Single-valuedness of the wave function
@@ -13391,7 +13387,7 @@ P(N) ⟺ V_cone(N) ∈ ℤ ∧ V_cone(N) ∈ M_FL(N)
 
 where M_FL(N) is the multiplicative monoid generated by the Fibonacci numbers F_k and Lucas numbers L_k with STRICTLY SMALLER index k < N. Numerically: P(N) holds for N = 11 and FAILS for every other N in [2, 10000]. Specifically: V_cone(11) = 13195 = 5 · 7 · 13 · 29 = F_5 · L_4 · F_7 · L_7 with all four factors having index < 11. This unifies all seven previous arguments under one number-theoretic principle (Corollary 1.9.A.3).
 
-FALSIFIABLE EXPOSURE. If experiment finds a structure incompatible with embedding into Z₁₁ (a 4th fermion generation; proton stability requiring a cycle N' ≠ 11; gauge anomaly requiring SU(N') with N' incompatible with Z₁₁ orbits), Trinity is refuted. The 56 falsifiable predictions of the main text (Section 1.0.K) plus 7 from Section 2.4-19 encode this exposure.
+FALSIFIABLE EXPOSURE. If experiment finds a structure incompatible with embedding into Z₁₁ (a 4th fermion generation; proton stability requiring a cycle N' ≠ 11; gauge anomaly requiring SU(N') with N' incompatible with Z₁₁ orbits), Trinity is refuted. The 32 falsifiable predictions of the main text (Section 1.0.K) plus 7 from Section 2.4-19 encode this exposure.
 
 VERDICT. N = 11 is the unique natural number in [2, 10000] for which V_cone belongs to the Fibonacci-Lucas monoid with strictly smaller index (Theorem 1.9.A.2). The seven previous characterizations receive a unified number-theoretic foundation: Class I and Class II both follow from the principle P(N) as algebraic and physical consequences of one structure.
 
@@ -13683,7 +13679,7 @@ Philosophical synthesis: The classical philosophical question — "Why is there 
 
 Formally: Nothing ⟷ Everything = Sphere ⟷ Cone = angular variation ⟷ radial variation. Neither Nothing without Everything, nor Everything without Nothing: one exists only as the reverse side of the other.
 
-This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 773 theorems + 7 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
+This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 779 theorems + 15 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
 
 Sphere + Cone = Everything + Nothing = Trinity.
 
@@ -16611,7 +16607,7 @@ STRUCTURE:
     equals the scalar coupling per DIRECTION: kappa_T = 2
     kappa. Both readings (the root and the halves) give the
     same 1/2. Status: a structural derivation at the level of
-    the pair postulate (the author's intuition, 2026-10-03),
+    the pair postulate (the author's intuition),
     consistent with the continuum matching (Remark .ac).
 ```
 
@@ -16822,7 +16818,7 @@ where A₁₀ is the segment Laplacian (2 on the diagonal, −1 on the subdiagon
 
 (1) THE VERTEX STRUCTURE. (λ_eff/4)·(Σ_k Φ_k²/10)² = (λ_eff/400)·Σ_{k,l} Φ_k²Φ_l²: the component's own quartic — the vertex λ_eff/400 (= λ_eff/4 split into N² = 100 terms), the cross-pair (k ≠ l) — λ_eff/200. The contact singles out no component — a rank-1 "all-to-all" (consistent with the Sym² symmetry and the Z₂-invariance of Remark .ab).
 
-(2) THE MASS OPERATOR PER COMPONENT (the exact count). The tadpole of the self vertex: 3·(λ_eff/100)·C(0); the tadpoles of the nine cross vertices: 9·(λ_eff/200)·C(0) — total Δ_c = (3/40)·λ_eff in the mass-operator units against 3·λ_eff in 1D (Remark .ak): the DILUTION is EXACTLY 1/40 (machine: 3/100 + 9/200 = 15/200 = 3/40). The dilution is not 1/N²: the cross vertices return part of the coupling through the mean field of the other components.
+(2) THE MASS OPERATOR PER COMPONENT (the exact count). The tadpole of the self vertex: 3·(λ_eff/100)·C(0); the tadpoles of the nine cross vertices: 9·(λ_eff/100)·C(0) — total Δ_c = (3/25)·λ_eff in the mass-operator units against 3·λ_eff in 1D (Remark .ak): the DILUTION is EXACTLY 1/25 (machine: 3/100 + 9/100 = 12/100 = 3/25; a cross vertex contracts the external pair in 2! ways). The dilution is not 1/N²: the cross vertices return part of the coupling through the mean field of the other components.
 
 ```
 (3) THE CHAIN TRANSFER. The resummation of Remark .am
@@ -16834,7 +16830,171 @@ where A₁₀ is the segment Laplacian (2 on the diagonal, −1 on the subdiagon
     10·C(0) = 3.09017 (the ladder length).
 ```
 
-(4) STATUS. The non-Gaussian tensor sector is CLOSED-TO-BOUNDARY: a rank-1 vertex, the dilution 1/40 (the exact Wick combinatorics), the chain transfers. HONEST BOUNDARY: the higher cross-invariants (Σ_k Φ_k⁴ and the mixed ones with individual coefficients) are not recorded; the tensor 4-point sector and non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.ap block. □
+(4) STATUS. The non-Gaussian tensor sector is CLOSED-TO-BOUNDARY: a rank-1 vertex, the dilution 1/25 (the exact Wick combinatorics), the chain transfers. HONEST BOUNDARY: the higher cross-invariants (Σ_k Φ_k⁴ and the mixed ones with individual coefficients) are not recorded; the tensor 4-point sector and non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.ap block. □
+
+□ Remark 2.4.AE.2.aq (The tensor 4-point: the free cumulants of the trace and the tree-level contact kernel). Closes the boundary item of Remark .ap ("the tensor 4-point sector").
+
+```
+(1) THE FREE CUMULANTS OF THE TRACE ARE EXACT. The trace
+    Σ = Σ_k Φ_k²/10 of the free tensor measure (Remark .ao)
+    is distributed as (c/10)·χ²₁₀ (c = C(0) = μ/2), and the
+    cumulants close by the formula κ_n(Σ) =
+    2^{n−1}(n−1)!·c^n/10^{n−1}: κ₂ = c²/5, κ₃ = 2c³/25,
+    κ₄ = 6c⁴/125 (machine: the law/closed-form identity;
+    sampling 2·10⁶, seed 42: the deviations 0.02% / 0.8% /
+    3.1%). All the free cumulants of the trace are known at
+    every n.
+```
+
+(2) THE TREE-LEVEL CONTACT KERNEL IS EXACT. The fourth functional derivative of the recorded contact (Remark .ap: (λ_eff/400)·Σ_{kl}Φ_k²Φ_l²) over the symmetric pairs (sympy): the own quartic ⟨Φ_a⁴⟩_c = −(3/50)·λ_eff; the cross pair ⟨Φ_a²Φ_b²⟩_c = −(1/50)·λ_eff (a ≠ b) — a rank-1 "all-to-all", no component singled out (consistent with .ap).
+
+(3) THE LOOPS ARE KNOWN. The loop level of the 4-point is the chain of Remark .am with the dilution 1/25 (Remark .ap): the whole renormalization of the 4-point function is controlled by the recorded structure. The tensor 4-point is CLOSED-TO-BOUNDARY: the free cumulants exact, the tree kernel exact, the loops — the recorded chain.
+
+(4) HONEST BOUNDARY: the momentum-dependent 4-point off the diagonal (different carrier points), the higher cross-invariants with individual coefficients and non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.aq block. □ Remark 2.4.AE.2.ar (The off-diagonal tensor 4-point: the J₄ kernel in closed form). Closes the "momentum-dependent 4-point off the diagonal" item of the boundary of Remark .aq.
+
+```
+(1) THE OFF-DIAGONAL TREE STRUCTURE. For four carrier points
+    x, y, z, w the connected tree quartic of the tensor: the
+    own one ⟨Φ_a(x)Φ_a(y)Φ_a(z)Φ_a(w)⟩_c = −(3λ_eff/50)·J₄; the
+    cross ⟨Φ_a(x)Φ_a(y)Φ_b(z)Φ_b(w)⟩_c = −(λ_eff/50)·J₄ (a ≠ b),
+    where J₄ = ∫du C(x−u)C(y−u)C(z−u)C(w−u) — the SAME
+    spatial integral for both structures. THE COEFFICIENT
+    RATIO IS EXACTLY 3 = T₂/T₁ (the recorded selection of
+    Remark 1.10.2.9.ab) — the selection returns in the
+    structure of the 4-point.
+```
+
+(2) THE J₄ KERNEL IS CLOSED. For the ordered points with the gaps g₁, g₂, g₃ and the recorded kernel C = e^{−μ|x|}/(2φ) (machine, the match with the quadrature to 10⁻⁸ on five tests):
+
+```
+16·J₄ = μ⁴·[e^{−μA}/(4μ) + e^{−μA}(e^{2μg₁}−1)/(2μ)
+        + g₂·e^{−μB} + e^{−μB}(1−e^{−2μg₃})/(2μ)
+        + e^{−μC}/(4μ)],                   (2.4.AE.2.ar.1)
+```
+
+where A = 3g₁+2g₂+g₃, B = g₁+2g₂+g₃, C = g₁+2g₂+3g₃, μ = 1/φ; the factor μ⁴ = (2φ)⁻⁴·16 is the normalization of the four kernels C. The mirror symmetry g₁ ↔ g₃ is exact (A ↔ C, the terms 1↔5, 2↔4).
+
+```
+(3) THE TWO-PAIR SPECIALIZATION. At x = y, z = w:
+    ∫C²(u)C²(t−u)du = μ⁴·e^{−2μ|t|}·(|t| + 1/(2μ))/16 —
+    EXACTLY (machine, three tests); f = C² =
+    (μ²/4)e^{−2μ|x|} is a pure two-sided exponential, the
+    two-pair quartic is closed by an elementary form.
+```
+
+(4) STATUS. The off-diagonal 4-point is CLOSED-TO-BOUNDARY: the tree structure (the coefficients + J₄) is exact and momentum-dependent; the free part and the loops are recorded (Remarks .aq/.ap/.am). HONEST BOUNDARY: the full connected 4-point as a function of all four momenta with the loops, the higher cross-invariants and the non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.ar block. □ Remark 2.4.AE.2.as (The full connected 4-point with loops: the Wick enumeration, the fish channels and the legs closed). Closes the "full connected 4-point with the loops" item of the boundary of Remark .ar.
+
+(1) THE MACHINE ENUMERATION. Order λ: 24 connected pairings ⟨x₁x₂x₃x₄Φ(u)⁴⟩ — the coefficient (λ_eff/4)·24 = 6λ_eff: the recorded tree of Remarks .aq/.ar reproduced from the raw pairings. Order λ²: 10395 matchings of 12 fields, the connectivity by the vertex graph; the connected structures = the FISH 1728 (six ordered splits × 288 pairings) + the LEGS 2304 (a lone external leg + one tadpole, eight patterns × 288) = 4032; any tadpole pair or a 4+0 split is disconnected — nothing else survives.
+
+```
+(2) THE FISH CHANNELS CLOSED (two-pair point; f = C² =
+    (μ²/4)e^{−2μ|x|} is a pure two-sided exponential;
+    machine, three tests per channel):
+    F_s = (f∗f∗f)(t) = (μ⁶/64)e^{−2μt}(t²/2 + 3t/(4μ) +
+    3/(8μ²));  F_t = (μ⁴/512)[(8μt+2)e^{−2μt} + e^{−4μt}];
+    F_t(0) = F_s(0) = 3μ⁴/512 exactly (the evenness
+    identity).
+```
+
+(3) THE LEGS ARE THE CHAIN OF .am. The leg structure is closed: L_t = C(0)·∫C(t−u)C(u)²(C∗C)(t−u)du = (μ⁶/64)e^{−2μt}(t²/2 + 5t/(4μ) + 5/(8μ²)); the O(λ²) expansion of the tadpole-dressed tree coincides with the enumerated legs (relatively 3·10⁻⁸, machine) — the legs add NO new structure: they are exhausted by the chain.
+
+```
+(4) ASSEMBLY AND CONTROL. At (t, t, 0, 0), t = 1: tree =
+    −3.228·10⁻⁶, fish = 8.147·10⁻¹⁰, legs = 9.545·10⁻¹⁰;
+    |G₄⁽²⁾/G₄⁽¹⁾| = 5.48·10⁻⁴ ~ 5λ_eff — the geometric
+    control survives with the loops included. Tensor lift:
+    the same structures carry the recorded vertex weights
+    {λ_eff/400 at k = l, λ_eff/200 at k ≠ l} (Remark .ap);
+    the own/cross ratio 3 = T₂/T₁ holds on the tree; the
+    detailed tensor loop census stays the boundary.
+```
+
+(5) STATUS. The full connected 4-point with the loops (position space, order λ²) is CLOSED-TO-BOUNDARY. HONEST BOUNDARY: the general-position loop kernels (arbitrary gaps in the fish channels), the momentum-space 4-point, the orders n ≥ 3 and the non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.as block. □ Remark 2.4.AE.2.at (The higher cross-invariants: the exact six-point census). Closes the "higher cross-invariants with individual coefficients" item of the boundaries of Remarks .ap/.aq.
+
+(1) THE THRESHOLD. The connected six-point function starts at O(λ_eff²): at O(λ_eff) it vanishes — a quartic vertex has four legs, six externals cannot attach (parity and the leg count; machine).
+
+```
+(2) THE CENSUS. The machine Wick enumeration (the vertex-graph
+    connectivity): the connected pairings ⟨a⁴b²⟩ = 114048,
+    ⟨a²b²c²⟩ = 92160, ⟨a⁶⟩ = 128160; the mirror symmetry
+    xu ↔ xv exact in the classes. Eleven structure classes;
+    every structure integral is closed:
+    I(a,b,g) = r·μ⁻²·(μ/2)^{a+b+g} with the exact rationals
+    r ∈ {1, 3/2, 5/8, 3/8, 1/2, 7/24}; I(1,1,3) = 5μ³/256 —
+    the recorded exchange integral of Remark .al returns
+    inside the six-point.
+```
+
+```
+(3) THE VALUES. The invariants with individual coefficients
+    (machine): ⟨a⁴b²⟩_c = (λ_eff²/32)·54.4063 = 2.142·10⁻⁸;
+    ⟨a²b²c²⟩_c = (λ_eff²/32)·41.5233 = 1.635·10⁻⁸;
+    ⟨a⁶⟩_c = (λ_eff²/32)·63.2317 = 2.490·10⁻⁸. The free trace
+    identity κ₆(Σ) = 3840c⁶/10⁵ (the closed formula of
+    Remark .aq for all n) anchors the component-weight
+    bookkeeping.
+```
+
+(4) STATUS. The higher cross-invariants are CLOSED-TO- BOUNDARY: the six-point level is exact, with individual coefficients and closed forms. HONEST BOUNDARY: the 8-point and the higher clusters, the general-position kernels with loops, the momentum space and the non-perturbative sector — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.at block. □ Remark 2.4.AE.2.au (The non-perturbative sector of the measure branch: the factorial series and the Borel scale). Closes the "non-perturbative effects" item of the boundaries of .am/.as/.at for the measure branch.
+
+```
+(1) THE EXACT SPECTRUM. The N=40 diagonalization: E₀ =
+    0.309025033182, E₁ = 0.927091175766; ⟨0|x²|0⟩ =
+    0.309000918225 — the recorded spectral variance of
+    Remark .an (nine digits); the gap shift = 3.2154·10⁻⁵ =
+    (3/4)λ_eff·μ² (the chain of .am).
+```
+
+(2) THE RAYLEIGH–SCHRÖDINGER SERIES. The coefficients a₁..a₁₂ (machine); at λ_eff the series matches the exact E₀ to 2·10⁻¹⁰ already at the sixth order — the anharmonicity is negligible in the recorded domain.
+
+```
+(3) THE FACTORIAL GROWTH AND THE BOREL SCALE. |a_{n+1}/a_n|
+    grows 7.22 → 9.71 (n = 7..11); the Borel scale
+    t_B ≥ 1.13 (drifting up); the non-perturbative
+    suppression e^{−t_B/λ_eff} ≤ 10^{−4000} — ZERO to any
+    recorded precision: the perturbative structure of the
+    measure branch is complete.
+```
+
+(4) THE THETA-LATTICE. The twisted Laplacian of the cycle gives the EXACT branches 1 − cos((2πn−θ)/N) at all θ (machine, four values): the branches cross exactly — no tunneling splitting on the finite Z₁₁ lattice (the crossing is protected by the symmetry); the envelope harmonics of Remark .t follow a power law, not e^{−S}.
+
+(5) STATUS. The non-perturbative sector is CLOSED-TO- BOUNDARY for the measure branch. HONEST BOUNDARY: the continuum instanton analysis (the e^{−S} sector beyond the lattice) and the higher levels — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.au block. □ Remark 2.4.AE.2.av (The momentum-space 4-point: the bubble and the general position in the Fourier variables). Closes the "momentum space" item of the boundary of Remark .as.
+
+(1) THE PROPAGATOR. The Fourier image of the recorded kernel: C̃(k) = 2μc₀/(k²+μ²) (machine, the match 10⁻⁹ at three momenta).
+
+```
+(2) THE BUBBLE. B(p) = ∫(dk/2π)C̃(k)C̃(p−k) = FT[C²] =
+    4μc₀²/(p²+4μ²) — the Lorentzian closed by the convolution
+    theorem (machine: 10⁻⁶ against the direct k-integral and
+    the direct Fourier); B(0) = c₀²/μ = μ/4 = (C∗C)(0) —
+    consistent with Remark .as.
+```
+
+```
+(3) THE VERTEX. The momentum-space connected 4-point:
+    Γ₄ = −6λ_eff + 18λ_eff²·[B(p₁+p₂)+B(p₁+p₃)+B(p₁+p₄)] ×
+    (the leg C̃²) — the coefficient 18 = (λ_eff²/32)·576 from
+    the .as census; the tree term carries NO momentum (the
+    contact is local). The legs = the recorded self-energy:
+    δC̃(k) = −3λ_eff·c₀·C̃(k)² (machine, 10⁻⁶ at three
+    momenta).
+```
+
+(4) STATUS. The general position is CLOSED in the Fourier variables: all three channels by one bubble function. HONEST BOUNDARY: the 8-point and the higher clusters, the continuum instanton — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.av block. □ Remark 2.4.AE.2.aw (The eight-point cumulant: the two readings). Closes the "8-point and the higher clusters" item of the boundary of Remark .at; the reading of the invariants is recorded separately (the author's decision): the pure structures and the full component cumulants.
+
+(1) THE EIGHT-POINT AT O(λ_eff²) EXISTS. The vertex saturation (4+4 externals) does NOT break the connectivity: the external-external pairs (including a-b) bridge the blocks. The machine census (2027025 matchings = 16!/(2⁸·8!)): ⟨a⁴b⁴⟩: 42 classes, 1880064 connected; ⟨a⁸⟩: 12 classes, 1955520 connected.
+
+```
+(2) THE TWO READINGS. For the single component ⟨a⁸⟩ the
+    readings coincide: ⟨a⁸⟩_c^{(2)} = (λ_eff²/32)·260.7554 =
+    1.027·10⁻⁷. The cross-component full cumulant:
+    ⟨a⁴b⁴⟩_c^{(2)} = (λ_eff²/32)·247.2448 = 9.736·10⁻⁸.
+```
+
+(3) THE FREE TRACE IDENTITY. κ₈(Σ) = 2⁷·7!·c⁸/10⁷ = 645120c⁸/10⁷ (the closed formula of Remark .aq for all n) anchors the component-weight bookkeeping.
+
+(4) STATUS. The 8-point is CLOSED-TO-BOUNDARY: the census is exact (the enumerator), the values with individual coefficients in the two readings. HONEST BOUNDARY: the O(λ_eff³) three-vertex census (654M matchings), the closed counter forms (the route reconciliation), the continuum instanton — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.aw block. □
+
 
 
 #### 2.4.AF DARK MATTER NATURE: Z₁₁-PARTICLE
@@ -17378,13 +17538,13 @@ Trinity structure: Δa_μ = a_μ − a_e^{scaled} = (m_μ²/m_e²)·δ_{Z₁₁}
 > GUT theories bound proton lifetime by:
 >   τ_p > 1.6·10³⁴ years (Super-Kamiokande 2024)
 > Trinity prediction:
->   τ_p ≈ M_GUT⁴/(α_GUT²·m_p⁵) ≈ 10³⁶ years
+>   τ_p ≈ M_GUT⁴/(α_GUT²·m_p⁵) ≈ 1.2·10³⁵ years (α_GUT = 1/25, M_GUT = 8.9·10¹⁵ GeV)
 > Above the current bound, unreachable with near-term exposure.
 
 > **Proof.**
 > The dimension-6 GUT proton-decay estimate τ_p ≈ M_GUT⁴/(α_GUT²·m_p⁵) with standard inputs
-> M_GUT ≈ 1–2·10¹⁶ GeV, α_GUT ≈ 1/40, m_p ≈ 0.938 GeV gives τ_p ≈ 5·10³⁵–7·10³⁶ yr (computed),
-> hence τ_p ≳ 10³⁶ yr > 1.6·10³⁴ yr (Super-Kamiokande 2024), so the bound is satisfied and unreachable near-term. □
+> M_GUT ≈ 1–2·10¹⁶ GeV, α_GUT = 1/25 (Theorem 5.4.B.1), M_GUT = 8.9·10¹⁵ GeV, m_p ≈ 0.938 GeV gives τ_p ≈ 1.2·10³⁵ yr (computed),
+> hence τ_p ≳ 10³⁵ yr > 1.6·10³⁴ yr (Super-Kamiokande 2024), so the bound is satisfied and unreachable near-term. □
 
 
 #### 2.4.AX NEUTRINO OSCILLATION PROBABILITIES
@@ -18285,8 +18445,7 @@ Intensity (rhythm)   ↔    e     (exponential)
 Orientation (phase)  ↔    i     (imaginary)
 ```
 
-> **Proof**
-> of minimality:
+> **Proof** of minimality:
 
 Step 1. Necessity of each element. Removing any element destroys the structure:
 
@@ -18916,7 +19075,16 @@ This demonstrates the universality of the Z₂-structure of Trinity at all level
 
 Remark 2.5.U.3.r (Exploratory reading of the Berkeley-LKB tension). The 5.5σ discrepancy between α measurements in Cs-133 (Parker et al. 2018) and Rb-87 (Morel et al. 2020) admits an exploratory structural reading: two different atoms map to different modes of Z₁₁ (k = 0 and k = 4 respectively), and formula 2.5.U.1 reproduces the MAGNITUDE of the shift (~1.6·10⁻⁷). However, the model predicts the opposite sign to the observed ordering 1/α(Cs) < 1/α(Rb) and assigns the unshifted reference to Cs, whereas the Trinity value 137.0359992067 in fact matches Rb. The Berkeley-LKB tension therefore remains an open question; the structural hypothesis reproduces its scale but not its sign with current data, and is not a confirmed resolution.
 
-This section contains a summary of the 34 most important constants of Trinity in compact tabular form. Full catalog of 84 constants in Section 2.5 of the main text. An extended reference version with additional details is given in Section 2.10.
+This section contains a summary of the 34 most important constants of Trinity in compact tabular form. Full machine catalogue of the 84 constants — in the validator theory_of_everything.py (block 2.5); summary tables of 60 entries — in 2.5.AL–AR; the error methodology — in Section 2.10. Each constant in the table has an interpretation through the sections of the Cone or the invariants of the Sphere:
+- α (FINE STRUCTURE) = 1/137.035999207 (5.4 ppt vs LKB-Rb 2020, Morel et al.) — the main geometric formula of the Cone (Theorem 2.4.A): 1/α = Nφ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone, V_cone = 13195
+- 1/α_GUT = F₅² = 25 EXACTLY — the Cone invariant at the GUT apex; 5 pairs of Duality = 5 quintet projections.
+- m_p/m_e = 1836.15269 (10⁻⁶%) — the ratio of the depths of segments (Corollary 2.4.A.9.2); related to section D_8 (Mass).
+- KOIDE Q = 2/3 EXACTLY — the invariant of the quark-mass section (D_3/D_8).
+- sin²θ_W = 0.231220 — the ratio of the modes D_2 (Temperature) and D_5 (Length): sin²θ_W ≈ ω_2²/(ω_2² + ω_5²).
+- 84 observables = 84 invariants of the Sphere–Cone geometry; distributed over 10 sections and their Z₂ mirror pairs.
+- MEAN ERROR 0.0017% — a direct consequence of the completeness of the Sphere–Cone geometry (Corollary 2.4.A.15.1: Cone = F(quintet, equipartition of energy)).
+- 52 / 84 — with a tree-level error < 0.001% (of which 23 are truly EXACT, < 10⁻⁶%); the rest are refined by loop corrections.
+- ALL CONSTANTS = PROJECTIONS OF ONE CONE under different angles; their mutual consistency is checked by Monte Carlo (a 3179× advantage over random formulas).
 
 
 #### 2.5.V FUNDAMENTAL DIMENSIONLESS CONSTANTS
@@ -22562,8 +22730,7 @@ Structural distinction: Trinity fixes α without free parameters, whereas the st
 > Each broken continuous generator produces a massless boson
 > in the spectrum.
 
-> **Proof**
-> on Z₁₁. If the global charge Q|0⟩ ≠ 0 (broken), then
+> **Proof** on Z₁₁. If the global charge Q|0⟩ ≠ 0 (broken), then
 > |G⟩ = Q|0⟩ has the same energy as |0⟩ (from [Q, H] = 0).
 > Hence |G⟩ corresponds to a massless excitation. □
 
@@ -22888,7 +23055,7 @@ Ratios satisfy Koide: Q = 2/3 (from S_3 symmetry of three generations).
 
 #### 2.8.AC STEP 5: QUARK MASSES
 
-Direct structural formulas (anchors; catalogue entries of the validator, block 2.8.AC): m_u = (ω₃ + 1/φ + 4α + 3α²N − 10α³N²)·m_e ≈ 2.16 MeV m_d = (π·ω₃ − 10α − 10α²N + 6α³N² + 2α⁴N³)·m_e ≈ 4.67 MeV m_s = (F₈·φ·ω₃·ω₄ − 5α + 2α²N + 2α³N²)·m_e ≈ 93.4 MeV m_b = (φ¹¹·F₈ + 1 − F₇·α − L₆·α²·N)·m_e ≈ 4.18 GeV c and t — from the ladder of scheme-independent ratios (Th 2.8.AC.1): m_c = m_b/(m_b/m_c = 3.28) ≈ 1.27 GeV m_t = m_b·(m_t/m_b = 41.4) ≈ 172.8 GeV
+Direct structural formulas (anchors; catalogue entries of the validator, block 2.8.AC): m_u = ω₃ + 1/φ + 4α + 3α²N − 10α³N² ≈ 2.16 MeV m_d = π·ω₃ − 10α − 10α²N + 6α³N² + 2α⁴N³ ≈ 4.67 MeV m_s = F₈·φ·ω₃·ω₄ − 5α + 2α²N + 2α³N² ≈ 93.4 MeV m_b = φ¹¹·F₈ + 1 − F₇·α − L₆·α²·N ≈ 4.18 GeV c and t — from the ladder of scheme-independent ratios (Th 2.8.AC.1): m_c = m_b/(m_b/m_c = 3.28) ≈ 1.27 GeV m_t = m_b·(m_t/m_b = 41.4) ≈ 172.8 GeV
 
 REMARK ON SCHEME-DEPENDENCE.
 
@@ -23949,168 +24116,7 @@ Remark 2.9.VT.1.r (The links (ii) and (iii): the selection by the mirror-even en
     k = 0 holds at the action level.
 ```
 
-(5) STATUS. Chi is derived from the action structurally: the quantization (the winding classes), the gap (a theorem; χ = N = the total stiffness), the form (the envelope + the closed harmonics), the selection (the parity). HONEST BOUNDARY: the physical normalization J (lattice units to GeV⁴) stays the recorded anchor Λ_QCD = π·m_e/α (the factor 2.2 — the boundary of Remark .s); the α⁵ secondary scale (Remark .r) is not conflated with the structural harmonics. θ̄ = 0 is falsifiable (recorded: ACME-III, n2EDM). Computation: theory_of_everything.py, the Remark 2.9.VT.1.t block. □ Remark 2.4.AE.2.aq (The tensor 4-point: the free cumulants of the trace and the tree-level contact kernel). Closes the boundary item of Remark .ap ("the tensor 4-point sector").
-
-```
-(1) THE FREE CUMULANTS OF THE TRACE ARE EXACT. The trace
-    Σ = Σ_k Φ_k²/10 of the free tensor measure (Remark .ao)
-    is distributed as (c/10)·χ²₁₀ (c = C(0) = μ/2), and the
-    cumulants close by the formula κ_n(Σ) =
-    2^{n−1}(n−1)!·c^n/10^{n−1}: κ₂ = c²/5, κ₃ = 2c³/25,
-    κ₄ = 6c⁴/125 (machine: the law/closed-form identity;
-    sampling 2·10⁶, seed 42: the deviations 0.02% / 0.8% /
-    3.1%). All the free cumulants of the trace are known at
-    every n.
-```
-
-(2) THE TREE-LEVEL CONTACT KERNEL IS EXACT. The fourth functional derivative of the recorded contact (Remark .ap: (λ_eff/400)·Σ_{kl}Φ_k²Φ_l²) over the symmetric pairs (sympy): the own quartic ⟨Φ_a⁴⟩_c = −(3/50)·λ_eff; the cross pair ⟨Φ_a²Φ_b²⟩_c = −(1/50)·λ_eff (a ≠ b) — a rank-1 "all-to-all", no component singled out (consistent with .ap).
-
-(3) THE LOOPS ARE KNOWN. The loop level of the 4-point is the chain of Remark .am with the dilution 1/40 (Remark .ap): the whole renormalization of the 4-point function is controlled by the recorded structure. The tensor 4-point is CLOSED-TO-BOUNDARY: the free cumulants exact, the tree kernel exact, the loops — the recorded chain.
-
-(4) HONEST BOUNDARY: the momentum-dependent 4-point off the diagonal (different carrier points), the higher cross-invariants with individual coefficients and non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.aq block. □ Remark 2.4.AE.2.ar (The off-diagonal tensor 4-point: the J₄ kernel in closed form). Closes the "momentum-dependent 4-point off the diagonal" item of the boundary of Remark .aq.
-
-```
-(1) THE OFF-DIAGONAL TREE STRUCTURE. For four carrier points
-    x, y, z, w the connected tree quartic of the tensor: the
-    own one ⟨Φ_a(x)Φ_a(y)Φ_a(z)Φ_a(w)⟩_c = −(3λ_eff/50)·J₄; the
-    cross ⟨Φ_a(x)Φ_a(y)Φ_b(z)Φ_b(w)⟩_c = −(λ_eff/50)·J₄ (a ≠ b),
-    where J₄ = ∫du C(x−u)C(y−u)C(z−u)C(w−u) — the SAME
-    spatial integral for both structures. THE COEFFICIENT
-    RATIO IS EXACTLY 3 = T₂/T₁ (the recorded selection of
-    Remark 1.10.2.9.ab) — the selection returns in the
-    structure of the 4-point.
-```
-
-(2) THE J₄ KERNEL IS CLOSED. For the ordered points with the gaps g₁, g₂, g₃ and the recorded kernel C = e^{−μ|x|}/(2φ) (machine, the match with the quadrature to 10⁻⁸ on five tests):
-
-```
-16·J₄ = μ⁴·[e^{−μA}/(4μ) + e^{−μA}(e^{2μg₁}−1)/(2μ)
-        + g₂·e^{−μB} + e^{−μB}(1−e^{−2μg₃})/(2μ)
-        + e^{−μC}/(4μ)],                   (2.4.AE.2.ar.1)
-```
-
-where A = 3g₁+2g₂+g₃, B = g₁+2g₂+g₃, C = g₁+2g₂+3g₃, μ = 1/φ; the factor μ⁴ = (2φ)⁻⁴·16 is the normalization of the four kernels C. The mirror symmetry g₁ ↔ g₃ is exact (A ↔ C, the terms 1↔5, 2↔4).
-
-```
-(3) THE TWO-PAIR SPECIALIZATION. At x = y, z = w:
-    ∫C²(u)C²(t−u)du = μ⁴·e^{−2μ|t|}·(|t| + 1/(2μ))/16 —
-    EXACTLY (machine, three tests); f = C² =
-    (μ²/4)e^{−2μ|x|} is a pure two-sided exponential, the
-    two-pair quartic is closed by an elementary form.
-```
-
-(4) STATUS. The off-diagonal 4-point is CLOSED-TO-BOUNDARY: the tree structure (the coefficients + J₄) is exact and momentum-dependent; the free part and the loops are recorded (Remarks .aq/.ap/.am). HONEST BOUNDARY: the full connected 4-point as a function of all four momenta with the loops, the higher cross-invariants and the non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.ar block. □ Remark 2.4.AE.2.as (The full connected 4-point with loops: the Wick enumeration, the fish channels and the legs closed). Closes the "full connected 4-point with the loops" item of the boundary of Remark .ar.
-
-(1) THE MACHINE ENUMERATION. Order λ: 24 connected pairings ⟨x₁x₂x₃x₄Φ(u)⁴⟩ — the coefficient (λ_eff/4)·24 = 6λ_eff: the recorded tree of Remarks .aq/.ar reproduced from the raw pairings. Order λ²: 10395 matchings of 12 fields, the connectivity by the vertex graph; the connected structures = the FISH 1728 (six ordered splits × 288 pairings) + the LEGS 2304 (a lone external leg + one tadpole, eight patterns × 288) = 4032; any tadpole pair or a 4+0 split is disconnected — nothing else survives.
-
-```
-(2) THE FISH CHANNELS CLOSED (two-pair point; f = C² =
-    (μ²/4)e^{−2μ|x|} is a pure two-sided exponential;
-    machine, three tests per channel):
-    F_s = (f∗f∗f)(t) = (μ⁶/64)e^{−2μt}(t²/2 + 3t/(4μ) +
-    3/(8μ²));  F_t = (μ⁴/512)[(8μt+2)e^{−2μt} + e^{−4μt}];
-    F_t(0) = F_s(0) = 3μ⁴/512 exactly (the evenness
-    identity).
-```
-
-(3) THE LEGS ARE THE CHAIN OF .am. The leg structure is closed: L_t = C(0)·∫C(t−u)C(u)²(C∗C)(t−u)du = (μ⁶/64)e^{−2μt}(t²/2 + 5t/(4μ) + 5/(8μ²)); the O(λ²) expansion of the tadpole-dressed tree coincides with the enumerated legs (relatively 3·10⁻⁸, machine) — the legs add NO new structure: they are exhausted by the chain.
-
-```
-(4) ASSEMBLY AND CONTROL. At (t, t, 0, 0), t = 1: tree =
-    −3.228·10⁻⁶, fish = 8.147·10⁻¹⁰, legs = 9.545·10⁻¹⁰;
-    |G₄⁽²⁾/G₄⁽¹⁾| = 5.48·10⁻⁴ ~ 5λ_eff — the geometric
-    control survives with the loops included. Tensor lift:
-    the same structures carry the recorded vertex weights
-    {λ_eff/400 at k = l, λ_eff/200 at k ≠ l} (Remark .ap);
-    the own/cross ratio 3 = T₂/T₁ holds on the tree; the
-    detailed tensor loop census stays the boundary.
-```
-
-(5) STATUS. The full connected 4-point with the loops (position space, order λ²) is CLOSED-TO-BOUNDARY. HONEST BOUNDARY: the general-position loop kernels (arbitrary gaps in the fish channels), the momentum-space 4-point, the orders n ≥ 3 and the non-perturbative effects — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.as block. □ Remark 2.4.AE.2.at (The higher cross-invariants: the exact six-point census). Closes the "higher cross-invariants with individual coefficients" item of the boundaries of Remarks .ap/.aq.
-
-(1) THE THRESHOLD. The connected six-point function starts at O(λ_eff²): at O(λ_eff) it vanishes — a quartic vertex has four legs, six externals cannot attach (parity and the leg count; machine).
-
-```
-(2) THE CENSUS. The machine Wick enumeration (the vertex-graph
-    connectivity): the connected pairings ⟨a⁴b²⟩ = 114048,
-    ⟨a²b²c²⟩ = 92160, ⟨a⁶⟩ = 128160; the mirror symmetry
-    xu ↔ xv exact in the classes. Eleven structure classes;
-    every structure integral is closed:
-    I(a,b,g) = r·μ⁻²·(μ/2)^{a+b+g} with the exact rationals
-    r ∈ {1, 3/2, 5/8, 3/8, 1/2, 7/24}; I(1,1,3) = 5μ³/256 —
-    the recorded exchange integral of Remark .al returns
-    inside the six-point.
-```
-
-```
-(3) THE VALUES. The invariants with individual coefficients
-    (machine): ⟨a⁴b²⟩_c = (λ_eff²/32)·54.4063 = 2.142·10⁻⁸;
-    ⟨a²b²c²⟩_c = (λ_eff²/32)·41.5233 = 1.635·10⁻⁸;
-    ⟨a⁶⟩_c = (λ_eff²/32)·63.2317 = 2.490·10⁻⁸. The free trace
-    identity κ₆(Σ) = 3840c⁶/10⁵ (the closed formula of
-    Remark .aq for all n) anchors the component-weight
-    bookkeeping.
-```
-
-(4) STATUS. The higher cross-invariants are CLOSED-TO- BOUNDARY: the six-point level is exact, with individual coefficients and closed forms. HONEST BOUNDARY: the 8-point and the higher clusters, the general-position kernels with loops, the momentum space and the non-perturbative sector — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.at block. □ Remark 2.4.AE.2.au (The non-perturbative sector of the measure branch: the factorial series and the Borel scale). Closes the "non-perturbative effects" item of the boundaries of .am/.as/.at for the measure branch.
-
-```
-(1) THE EXACT SPECTRUM. The N=40 diagonalization: E₀ =
-    0.309025033182, E₁ = 0.927091175766; ⟨0|x²|0⟩ =
-    0.309000918225 — the recorded spectral variance of
-    Remark .an (nine digits); the gap shift = 3.2154·10⁻⁵ =
-    (3/4)λ_eff·μ² (the chain of .am).
-```
-
-(2) THE RAYLEIGH–SCHRÖDINGER SERIES. The coefficients a₁..a₁₂ (machine); at λ_eff the series matches the exact E₀ to 2·10⁻¹⁰ already at the sixth order — the anharmonicity is negligible in the recorded domain.
-
-```
-(3) THE FACTORIAL GROWTH AND THE BOREL SCALE. |a_{n+1}/a_n|
-    grows 7.22 → 9.71 (n = 7..11); the Borel scale
-    t_B ≥ 1.13 (drifting up); the non-perturbative
-    suppression e^{−t_B/λ_eff} ≤ 10^{−4000} — ZERO to any
-    recorded precision: the perturbative structure of the
-    measure branch is complete.
-```
-
-(4) THE THETA-LATTICE. The twisted Laplacian of the cycle gives the EXACT branches 1 − cos((2πn−θ)/N) at all θ (machine, four values): the branches cross exactly — no tunneling splitting on the finite Z₁₁ lattice (the crossing is protected by the symmetry); the envelope harmonics of Remark .t follow a power law, not e^{−S}.
-
-(5) STATUS. The non-perturbative sector is CLOSED-TO- BOUNDARY for the measure branch. HONEST BOUNDARY: the continuum instanton analysis (the e^{−S} sector beyond the lattice) and the higher levels — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.au block. □ Remark 2.4.AE.2.av (The momentum-space 4-point: the bubble and the general position in the Fourier variables). Closes the "momentum space" item of the boundary of Remark .as.
-
-(1) THE PROPAGATOR. The Fourier image of the recorded kernel: C̃(k) = 2μc₀/(k²+μ²) (machine, the match 10⁻⁹ at three momenta).
-
-```
-(2) THE BUBBLE. B(p) = ∫(dk/2π)C̃(k)C̃(p−k) = FT[C²] =
-    4μc₀²/(p²+4μ²) — the Lorentzian closed by the convolution
-    theorem (machine: 10⁻⁶ against the direct k-integral and
-    the direct Fourier); B(0) = c₀²/μ = μ/4 = (C∗C)(0) —
-    consistent with Remark .as.
-```
-
-```
-(3) THE VERTEX. The momentum-space connected 4-point:
-    Γ₄ = −6λ_eff + 18λ_eff²·[B(p₁+p₂)+B(p₁+p₃)+B(p₁+p₄)] ×
-    (the leg C̃²) — the coefficient 18 = (λ_eff²/32)·576 from
-    the .as census; the tree term carries NO momentum (the
-    contact is local). The legs = the recorded self-energy:
-    δC̃(k) = −3λ_eff·c₀·C̃(k)² (machine, 10⁻⁶ at three
-    momenta).
-```
-
-(4) STATUS. The general position is CLOSED in the Fourier variables: all three channels by one bubble function. HONEST BOUNDARY: the 8-point and the higher clusters, the continuum instanton — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.av block. □ Remark 2.4.AE.2.aw (The eight-point cumulant: the two readings). Closes the "8-point and the higher clusters" item of the boundary of Remark .at; the reading of the invariants is recorded separately (the author's decision): the pure structures and the full component cumulants.
-
-(1) THE EIGHT-POINT AT O(λ_eff²) EXISTS. The vertex saturation (4+4 externals) does NOT break the connectivity: the external-external pairs (including a-b) bridge the blocks. The machine census (2027025 matchings = 16!/(2⁸·8!)): ⟨a⁴b⁴⟩: 42 classes, 1880064 connected; ⟨a⁸⟩: 12 classes, 1955520 connected.
-
-```
-(2) THE TWO READINGS. For the single component ⟨a⁸⟩ the
-    readings coincide: ⟨a⁸⟩_c^{(2)} = (λ_eff²/32)·260.7554 =
-    1.027·10⁻⁷. The cross-component full cumulant:
-    ⟨a⁴b⁴⟩_c^{(2)} = (λ_eff²/32)·247.2448 = 9.736·10⁻⁸.
-```
-
-(3) THE FREE TRACE IDENTITY. κ₈(Σ) = 2⁷·7!·c⁸/10⁷ = 645120c⁸/10⁷ (the closed formula of Remark .aq for all n) anchors the component-weight bookkeeping.
-
-(4) STATUS. The 8-point is CLOSED-TO-BOUNDARY: the census is exact (the enumerator), the values with individual coefficients in the two readings. HONEST BOUNDARY: the O(λ_eff³) three-vertex census (654M matchings), the closed counter forms (the route reconciliation), the continuum instanton — the program 5.1.G.3. Computation: theory_of_everything.py, the Remark 2.4.AE.2.aw block. □
+(5) STATUS. Chi is derived from the action structurally: the quantization (the winding classes), the gap (a theorem; χ = N = the total stiffness), the form (the envelope + the closed harmonics), the selection (the parity). HONEST BOUNDARY: the physical normalization J (lattice units to GeV⁴) stays the recorded anchor Λ_QCD = π·m_e/α (the factor 2.2 — the boundary of Remark .s); the α⁵ secondary scale (Remark .r) is not conflated with the structural harmonics. θ̄ = 0 is falsifiable (recorded: ACME-III, n2EDM). Computation: theory_of_everything.py, the Remark 2.9.VT.1.t block. □
 
 
 #### 2.9.VU COMPARISON WITH PECCEI-QUINN
@@ -24452,7 +24458,7 @@ This section contains the skeleton of formal verification of Trinity in automate
 
 #### 2.10.H OVERALL FORMALIZATION SCHEME
 
-Goal: translate all 773 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
+Goal: translate all 779 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
 
 Stages: (1) Definition of basic types: N, phi, omega, H_11 (2) Axioms A0-A5 as logical statements (3) Spectral theorem for Z₁₁ (4) Formula alpha = pi^2 / (N * phi^10) (5) Derivation of 84 constants as theorems (6) Verification of the consistency proof
 
@@ -27732,11 +27738,10 @@ Consciousness |Ψ_0⟩ ∈ H_11 is algebraically characterized by three independ
 > simultaneously must be proportional to |0⟩:
 >   From (a): |Ψ⟩ = c · |0⟩ for some c ∈ ℂ (uniqueness of the
 >             eigenvector at a non-degenerate eigenvalue).
->   From (b): the cyclic shift R̂ has eigenvector Σ_k |k⟩/√N
->             (Fourier image |Ψ̃_0⟩ in the dual basis); the
->             connection between |Ψ_0⟩ and |Ψ̃_0⟩ via the
->             Fourier transform Z_N makes them both representations
->             of the central mode.
+>   From (b): the R̂-invariant vector is unique — |χ⟩ = Σ_k |k⟩/√N
+>             (the Fourier image of the zero mode); condition (a)
+>             selects the zero mode |0⟩, and (b) its Fourier image:
+>             (a)+(b) fix the central mode in both bases.
 >   From (c): ω_0 = 0 gives the spectrum of the Hamiltonian
 >             Ĥ = diag(ω_k) in which k = 0 is the distinguished
 >             mode.
@@ -27815,7 +27820,7 @@ where R_0 is the normalization scale of the long-range limit (g → 0 gives r �
 
 Step 3 (Empirical calibration). Substitution of observed radii of biological senses: r_2 ≈ 10²    m  →  log(r_2 / r_1) ≈ −∞ + 2  (formally r_1 → ∞) r_3 ≈ 10⁻¹  m  →  log(r_3 / r_2) ≈ −3 r_4 ≈ 10⁻³  m  →  log(r_4 / r_3) ≈ −2 r_5 ≈ 10⁻⁵  m  →  log(r_5 / r_4) ≈ −2
 
-yields a logarithmic decrease of ≈ −2 per step in k. This corresponds to λ ≈ 30..50 in formula (4.0.D.12.2). The specific value of λ depends on the biological realization (type of receptor, environment), but the positivity of λ is a mathematical consequence of the positivity of the structural density g(k).
+yields a logarithmic decrease of ≈ −2 per step in k. This corresponds to λ ≈ 55–110 in formula (4.0.D.12.2). The specific value of λ depends on the biological realization (type of receptor, environment), but the positivity of λ is a mathematical consequence of the positivity of the structural density g(k).
 
 Step 4 (Monotonicity). Since g(k) increases monotonically with k = 1..5 and λ > 0, the exponent exp(−λ · g(k)) decreases monotonically with k. Therefore r_k decreases monotonically with k.
 
@@ -29077,7 +29082,7 @@ layer 9: Section 1.10   — topological uniqueness of S+P+Cone (1.10.B)
 > prediction is confirmed by an independent experiment with the
 > declared accuracy.
 
-Remark 4.6.A.3 (Current status of external validation). Trinity has 84 post-predictions (every dimensionless physical constant in CODATA) — 84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ (~0.0001%). In addition, 56 FALSIFIABLE predictions (Section 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5), some of which are tested immediately on open data (8 tests; see 1.0.K), and others requiring new experiments with a time horizon of 2026–2050.
+Remark 4.6.A.3 (Current status of external validation). Trinity has 84 post-predictions (every dimensionless physical constant in CODATA) — 84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ (~0.0001%). In addition, 39 FALSIFIABLE predictions (Section 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5), some of which are tested immediately on open data (8 tests; see 1.0.K), and others requiring new experiments with a time horizon of 2026–2050.
 
 Proposition 4.6.A.4 (Distinction between internal and external). Internal closure is a FORMAL property of a theory; achievable and achieved. External validation is a PROCEDURAL property of the history of physics; requires time and independent verification. The two types of completeness are not reducible to each other: even a logically closed theory may be refuted by experiment, and conversely a practically working theory may contain formal gaps. Trinity attains the first; the second is an open procedural front (4.6.G).
 
@@ -29134,8 +29139,10 @@ Conclusion: the quintet {N, π, φ, e, i} CANNOT be reduced to a smaller primiti
 > the standard PA axioms (zero, successor, induction, addition,
 > multiplication) are embedded in standard operations on integer
 > coefficients.
-> Step 2. By Gödel's first incompleteness theorem, any such system
-> cannot prove its own consistency from within itself.
+> Step 2. By Gödel's second incompleteness theorem, a sufficiently
+> strong system cannot prove its own consistency from within itself
+> (the first theorem gives only the existence of true unprovable
+> statements).
 > Step 3. Stronger: by Tarski's undefinability theorem, the predicate
 > "true in S" is not expressible in S; therefore one cannot, within
 > S, formulate the assertion "axioms A_i are derivable from a more
@@ -29471,7 +29478,7 @@ Remark 4.6.E.3 (The m_e/m_P hierarchy — open question). The dimensionless rati
 
 Possible directions for future formalization:
 
-- Holographic principle: m_P ∝ N_cycles · M_horizon where N_cycles = exp(1/α + 1/φ²) ≈ 8.4·10⁵⁹ (5.3.F), and M_horizon is the mass of the visible cosmological horizon;
+- Holographic principle: m_P ∝ N_cycles · M_horizon where N_cycles = exp(1/α + 1/φ²) ≈ 4.785·10⁵⁹ (5.3.F), and M_horizon is the mass of the visible cosmological horizon;
 - Trinity-inflationary scale: relating the Planck mass to the inflation energy via E_inflation = m_P · √(ε) (the slow-roll parameter ε); requires refinement of Genesis G in the early Universe;
 - Extension of the quintet to a SEXTET {N, π, φ, e, i, ℓ_P} by adding the Planck length as a sixth (dimensional) primitive; alternative: introduction of the Hubble-horizon scale.
 
@@ -29553,9 +29560,9 @@ The catalogue is divided by type: INTERNAL (formal gaps within the theory), EXTE
 ───── (B) EXTERNAL open directions ─────
 ```
 
-(B.1) Full Lean/Coq machine verification of all 773 theorems of Trinity; — skeletons of the key lemmas (2.4.A.A, 2.4.A.B); full formalization is a technical undertaking.
+(B.1) Full Lean/Coq machine verification of all 779 theorems of Trinity; — skeletons of the key lemmas (2.4.A.A, 2.4.A.B); full formalization is a technical undertaking.
 
-(B.2) Experimental verification of 56 falsifiable predictions:
+(B.2) Experimental verification of 56 falsifiable predictions (39 basic mathematical-physical listed below; the remaining 17 — aetheron Æ, temporal VR, materialization MR and systematic — in Sections 5.0 and 2.7–3.10):
 
 - 8 immediate tests on open data (1.0.K);
 - 31 tests with a time horizon of 2026–2050 (details in 1.0.K and predictions #33–#39 in Section 2.4 and 1.9.C.5).
@@ -30065,8 +30072,7 @@ Formulation. Is there a set IX with |ℕ| < |IX| < |ℝ|? Historical status. Gö
 > Continuum (ℝ, ℂ) arises only as a classical limit of discrete
 > states, not as fundamental reality.
 
-> **Proof**
-> and Corollary.
+> **Proof** and Corollary.
 > Step 1. Reality in Trinity is Z₁₁, a finite cyclic group.
 > Step 2. ℝ and ℂ are CLASSICAL approximations for continuous
 > observables, effective constructions.
@@ -30188,63 +30194,11 @@ Information-theoretic foundations of Z₁₁ are directly linked to the Sphere-C
 
 - SHANNON ENTROPY H(p) = −Σ p_k log p_k on 11 Cone modes (Corollary 2.4.A.15). Maximum log_2(11) ≈ 3.46 bits at equiprobable distribution over all sectors D_k = maximum uncertainty of Cone choice.
 - VON NEUMANN QUANTUM ENTROPY S = −Tr(ρ log ρ) on H_{11} has maximum log(11) at full Z_N invariance (Absolute state); minimum 0 at choice of a specific Cone direction (Corollary 2.4.F.1.c).
-- KOLMOGOROV COMPLEXITY K(Universe) = 90 bits — length of the program generating all physics from the quintet (5 constants × 18 bits each); 84 constants → 3500+ bits of physics ≈ 40× (estimate) compression via Sphere-Cone geometry.
+- KOLMOGOROV COMPLEXITY K(Universe) = 90 bits — length of the program (axioms only) generating all physics from the quintet; the full explicit description is 240 bits at a ~14× compression (Corollary 1.10.Q.1.c). From the quintet (5 constants × 18 bits each); 84 constants → 3500+ bits of physics ≈ 40× (estimate) compression via Sphere-Cone geometry.
 - LANDAUER PRINCIPLE: erasing 1 bit → ΔS ≥ k_B·ln 2. In Trinity: redefining the Cone Choice (change of i-parameter) = exchange of information with surrounding Cones (Corollary 2.4.A.8).
 - MAXWELL'S DEMON — requires informational access to sectors D_k; the "demon" = auxiliary Cone measuring the state of the main Cone. Does not violate the 2nd law of thermodynamics.
 - BEKENSTEIN HOLOGRAPHIC BOUND S ≤ A/4 — limit on information stored in a local segment on the Sphere; the segment area geometrically bounds its information capacity.
 - "IT FROM BIT" (Wheeler): information is fundamental, not matter. In Trinity this softens: GEOMETRY of Sphere-Cone is fundamental; matter and information are two of its projections (Corollaries 2.4.A.15 and 2.4.F.1).
-
-
-#### 5.4.J SHANNON INFORMATION THEORY
-
-Shannon entropy of a distribution p(k): H(p) = −Σ_k p(k)·log_2 p(k) For 11 states, H_max = log_2(11) ≈ 3.459 bits — the capacity of Z₁₁ as an information channel.
-
-
-#### 5.4.K VON NEUMANN QUANTUM ENTROPY
-
-For a density matrix ρ: S(ρ) = −Tr(ρ·log ρ). For Z₁₁:  S_max = log_2(11) ≈ 3.459 bits, attained by ρ = I/11.
-
-
-#### 5.4.L INFORMATION CAPACITY OF THE AXIOMS
-
-```
-Kolmogorov complexity of Trinity:
-  Axioms A0-A5:         6 formulas × 15 bits = 90 bits
-  Quintet {N,π,φ,e,i}:  5 numbers × 30 bits  = 150 bits
-  Total:                               240 bits
-Information output:
-  84 constants × ~40 bits = 3360 bits
-Compression ratio: 3360 / 240 = 14.0×.
-```
-
-
-#### 5.4.M WHEELER'S "IT FROM BIT"
-
-Wheeler (1990): "It from bit" — all physical things arise from information. Trinity literally realizes this:
-
-- Z₁₁ is 11 "bits" (log_2(11) ≈ 3.5 bits)
-- Axiom A3 (closure) is the information-consistency condition
-- All physical constants follow from the information structure
-
-
-#### 5.4.N HOLOGRAPHIC PRINCIPLE
-
-'t Hooft-Susskind holographic principle: information about a (d+1)-dimensional bulk is contained in a d-dimensional boundary. On Z₁₁: 10 modes (k=1..10) form the "bulk" 1 mode (k=0) forms the "boundary" Boundary information fully determines the bulk since 10 complex numbers ⟨Ψ_0|Ψ_k⟩ give the full projection of |Ψ⟩ onto k ≥ 1.
-
-
-#### 5.4.O BEKENSTEIN-HAWKING FORMULA
-
-For a black hole: S_BH = A/(4·G·ℏ). On Z₁₁ the entropy of a finite system cannot exceed log_2(11). This is "ultimate compression" of information on the discrete structure.
-
-
-#### 5.4.P INFORMATION INTERPRETATION OF PHYSICAL LAWS
-
-In Trinity, every physical law has an information-theoretic reading: Energy conservation   = conservation of Σ ω_k|c_k|² Momentum conservation = conservation of Z₁₁ charge Charge conservation   = conservation of |c_k|² Second law of thermo  = entropy growth of subsystems Quantum uncertainty   = information bound
-
-
-#### 5.4.Q INFORMATION AS FUNDAMENTAL ENTITY
-
-In Trinity information is not derived but fundamental. Physics, mathematics and consciousness are different aspects of one information structure Z₁₁. This gives Wheeler's "it from bit" a concrete mathematical realization.
 
 
 #### 4.6.VR SCOPE OF FORMAL CONTENT
@@ -30339,7 +30293,7 @@ The theory is formally complete (all open questions closed in XIII). What remain
 
 #### 4.6.VX CENTRAL INVARIANT
 
-The central invariant of Trinity is the number of free parameters: |ParamSet| = 0 All content follows from one axiom A1: x² = x + 1 (equivalently A0, A2). From this and the quintet {N=11, π, φ, e, i} come all 84 constants, 773 theorems, 14 laws.
+The central invariant of Trinity is the number of free parameters: |ParamSet| = 0 All content follows from one axiom A1: x² = x + 1 (equivalently A0, A2). From this and the quintet {N=11, π, φ, e, i} come all 84 constants, 779 theorems, 14 laws.
 
 
 #### 4.6.VY COMPLETENESS CRITERIA
@@ -30377,7 +30331,7 @@ For Trinity we use (a), the simpler approach.
 
 #### 4.6.WA COMPUTATIONAL VERIFICATION
 
-The PY script theory_of_everything.py contains explicit checks of all 7 axioms A0-A5 + A6 in the model: A0: Z₁₁ exists as cyclic group A1: φ² = φ + 1 (verified to machine precision) A2: e^(iπ) + 1 = 0 (verified) A3: Ψ_{k+11} = Ψ_k (trivial by construction) A4: ω_k = 2·sin(πk/11) (verified) A5: α = π²/(11·φ¹⁰) (verified) Result: ALL AXIOMS PASS.
+The PY script theory_of_everything.py contains explicit checks of all 7 axioms A0-A5 + A6 in the model: A0: Ψ_{k+11} = Ψ_k — closure (trivial by construction) A1: φ² = φ + 1 (verified to machine precision) A2: e^(iπ) + 1 = 0 (verified) A3: spectrum ω_k = 2·sin(πk/11) (verified) A4: loop parameter α = π²/(11·φ¹⁰) (verified) A5: wavefunction normalization; A6: dimensional lexicon Result: ALL AXIOMS PASS.
 
 
 #### 4.6.WB VERIFICATION OF CONSEQUENCES
@@ -30682,7 +30636,7 @@ A0 (Ψ_{N+k} = Ψ_k)  ⟺  E_P(x) = E_0 = const,  x ∈ V
 
 decomposes formally into the following structure of logical implications:
 
-(4.7.M.5.A) FORWARD IMPLICATION (⇒): A0 ⟹ First law of thermodynamics. This implication is proved WITHOUT additional postulates in Steps 1–5 of the proof of Theorem 4.7.M.1: cyclic symmetry R^N = Î ⟹ unitarity of R ⟹ commutation with Hamiltonian ⟹ conservation of energy by Noether's theorem. This is the standard connection of discrete symmetry with conservation law, common to any unitary quantum mechanics.
+(4.7.M.5.A) FORWARD IMPLICATION (⇒): A0 ⟹ First law of thermodynamics. This implication is proved WITHOUT additional postulates in Steps 1–5 of the proof of Theorem 4.7.M.1: cyclic symmetry R^N = Î ⟹ unitarity of R ⟹ invariance of Ĥ under discrete translations (H(k) = H(k+1); commutation with R does not hold — [R,Ĥ] ≠ 0, see Step 3) ⟹ conservation of energy on the cycle as a discrete analogue of the Noether time–energy pair. This is the connection of discrete symmetry with a conservation law, common to any unitary quantum mechanics on a finite cycle.
 
 (4.7.M.5.B) REVERSE IMPLICATION (⇐): First law + 7 independent structural postulates ⟹ A0 with SPECIFIC N = 11. This implication requires seven additional conditions, each of which has an independent classical mathematical justification outside Trinity:
 
@@ -31905,7 +31859,7 @@ The remaining 24 predictions (full list — Section 1.0.K): [9]–[16]  extended
 - 11-class partition of 64 codons (UniProt, IMMEDIATE)
 - BEC T_c · 1.080 Trinity enhancement (NIST, JILA)
 
-Of 32 base + 6 (Section 2.4) + 1 (1.9.C.5) + 5 aetheron ÆT₁–ÆT₅ + 1 temporal TR₁ + 3 materialization MR₁–MR₃ + 3 spectral ÆT₆–ÆT₈ + 5 systematic Section 5.0 (A) = 56 predictions, 8 are re-analyzable on existing data (reproducing known leading-order laws; the novel Z₁₁ sub-leading content requires dedicated analysis). Statistical fragility: ≥ 14 of 56 > 5σ → theory refuted (FDR-control 25%, stricter than the standard 1-of-8 Popper criterion). □
+Of 32 base + 6 (Section 2.4) + 1 (1.9.C.5) + 5 aetheron ÆF₁–ÆF₅ (ЭФ₁–ЭФ₅) + 1 temporal VR₁ (ВР₁) + 3 materialization MR₁–MR₃ (МР₁–МР₃) + 3 spectral ÆF₆–ÆF₈ (ЭФ₆–ЭФ₈) + 5 systematic Section 5.0 (A) = 56 predictions, 8 are re-analyzable on existing data (reproducing known leading-order laws; the novel Z₁₁ sub-leading content requires dedicated analysis). Statistical fragility: ≥ 14 of 56 > 5σ → theory refuted (FDR-control 25%, stricter than the standard 1-of-8 Popper criterion). □
 
 This section formalizes seven structural predictions of Trinity falsifiable in the next generation of experiments in high-energy physics, precision atomic physics, dark matter, dark energy and gravitational waves. Each prediction contains:
 
@@ -32596,8 +32550,10 @@ Step 2. For the breaking SU(11) → SU(6) × SU(5) × U(1), the minimal represen
 Step 3. For the second stage SU(6) × SU(5) × U(1) → SU(3)_C ×
         SU(2)_L × U(1)_Y, the minimal representation is the
         antisymmetric Φ_55, decomposing under SU(6) × SU(5) as
-        (15, 1) ⊕ (1, 10) ⊕ (6, 5); the (15, 1) component yields
-        the VEV pattern with the required subgroup.
+        (15, 1) ⊕ (1, 10) ⊕ (6, 5); the (15, 1) component is an
+        SU(5) singlet (does not itself break the SM factor, see
+        5.1.D.5.7); the Stage-2 VEV pattern is realized by the
+        (1, 24) component of Φ_120 (Th 5.1.D.5.7.2) with the required subgroup.
 ```
 
 Step 4. The third stage — the standard electroweak Higgs Φ_11 (Section 2.8.I), already formalized with λ_H = α · φ⁵ · π/2 · (1+α)² at 0.069 % agreement with the LHC experiment.   □
@@ -32640,8 +32596,7 @@ All coefficients are fixed without new free real parameters — the dimensionles
 
 Each dimensionless coefficient λ_i, κ_i is a rational product of elements of the Quintet {N = 11, π, φ, e, i} and Lucas-Fibonacci numbers F_n, L_n (Section 2.5.G), without free real tuning parameters.
 
-> **Proof**
-> of derivability.
+> **Proof** of derivability.
 
 Step 1. Dimensional parameters μ_i² are fixed by the cascade stage scales through φ-scaling (Theorems 5.4.B.1, 5.4.C.1) and α-link GUT–EW (Theorem 2.8.I.2).
 
@@ -32699,8 +32654,7 @@ The scale M_GUT ≈ 10¹⁶ GeV is a phenomenological input recorded as M_P/φ¹
 
 Remark 5.1.D.5.r (Dynamical mechanism of the cascade through V(Φ) minimization).
 
-> **Theorem**
-> s 5.1.D.3 (choice of representations), 5.1.D.4
+> **Theorem** s 5.1.D.3 (choice of representations), 5.1.D.4
 > (Trinity-derived potential coefficients), 5.1.D.5 (minimization
 > → cascade + X, Y boson masses) jointly provide the complete
 > dynamical mechanism of the cascade SU(11) → SU(3)_C × SU(2)_L ×
@@ -33006,8 +32960,7 @@ The Trinity-specific element of the proof is only the numerical substitution of 
 
 Conclusion on vacuum alignment.
 
-> **Theorem**
-> s 5.1.D.5.6–5.1.D.5.10 jointly establish (the global minimum proven among regular maximal subgroups; local stability at the diagonal/uniform-mode level, Th 5.1.D.5.9; full component-resolved Hessian and package verification stated as a protocol, Th 5.1.D.5.10)
+> **Theorem** s 5.1.D.5.6–5.1.D.5.10 jointly establish (the global minimum proven among regular maximal subgroups; local stability at the diagonal/uniform-mode level, Th 5.1.D.5.9; full component-resolved Hessian and package verification stated as a protocol, Th 5.1.D.5.10)
 > that the Trinity-derived values of the potential coefficients λ_a
 > and λ_b (Theorem 5.1.D.4) uniquely fix the global minimum of
 > V₁(Φ_120) on the adjoint VEV pattern of partition (5, 6) — the
@@ -33800,7 +33753,7 @@ Total weighted Casimir for scalar degrees of freedom:
 
 Structure constants of su(11): antisymmetric rank-3 tensors f^abc (a,b,c = 1,...,120) satisfy the Jacobi identity, with squared norm:
 
-Σ_{a,b,c} (f^abc)² = 2·N · dim(adj) = 2·11·120 = 2640 (5.1.D.7.7.12)
+Σ_{a,b,c} (f^abc)² = C_A · dim(adj) = N · dim(adj) = 11·120 = 1320 (5.1.D.7.7.12)
 
 Fermion sector (Standard Model) in the effective embedding SU(5) ⊂ SU(11). Below M_GUT the running is performed in the effective Standard Model: the SM fields carry no independent SU(11) charges (see earlier in this section), and their net per-generation content is given by the branching of the Λ-blocks (Theorem 5.1.D.9):
 
@@ -34456,8 +34409,7 @@ The quantum Yang-Mills theory (Definition 5.1.G.1.d) satisfies all five Wightman
 > **Corollary 5.1.G.1.c (formal closure within the context of Trinity of the Yang-Mills problem).**
 >
 
-> **Theorem**
-> s 5.1.G.1 and 5.1.G.3 jointly prove WITHIN THE
+> **Theorem** s 5.1.G.1 and 5.1.G.3 jointly prove WITHIN THE
 > CONTEXT OF TRINITY (axiomatics A0-A6; theorems ÆТ₁-ÆТ₅):
 
 (W) Existence of the quantum SU(11) Yang-Mills theory on ℝ⁴, satisfying all five Wightman-Gårding axioms; (M) Existence of a non-zero mass gap Δ = ω_1 · Λ = 2 sin(π/11) · Λ > 0 in the spectrum of the energy-momentum operator.
@@ -34536,8 +34488,7 @@ Statement. Is the class P (polynomially solvable problems) equal to the class NP
 
 Both are simultaneously true — not a contradiction but a structural expression of the Trinity "Absolute + Duality".
 
-> **Proof**
-> of part [I] (Absolute: P = NP).
+> **Proof** of part [I] (Absolute: P = NP).
 
 Step 1. In dimension k = 0 the spectral frequency ω_0 = 0: Ĥ|Ψ_0⟩ = 0. No time evolution in the Absolute — the zero mode is static, outside time.
 
@@ -34552,8 +34503,7 @@ Step 3. By 4.6.VO.2: 1 = 5! = dim(SU(11)) = qualia — structural
 
 Step 4. Formally: on H_0 the P and NP operators coincide as projectors. P = NP on H_0. □
 
-> **Proof**
-> of part [II] (Duality: P ≠ NP).
+> **Proof** of part [II] (Duality: P ≠ NP).
 
 Step 1. In Duality k ≥ 1 the minimum frequency ω_1 = 2·sin(π/11) > 0. There exists a minimum temporal quantum Δt_min = 1/ω_1 > 0.
 
@@ -34933,11 +34883,14 @@ Section 5.1.R–T continues the analysis of Clay problems through the geometry o
 
 Statement. On a smooth projective complex algebraic variety IX, every Hodge class is a ℚ-linear combination of algebraic subvariety classes.
 
-> **Theorem 5.1.R.1 (Hodge via Trinity structure).**
-> The Hodge conjecture follows from the fixed-point principle of
-> Z₂-involution in Trinity: on any smooth projective variety IX,
-> the Hodge decomposition diagonal coincides with its "cohomology
-> Absolute", which is purely algebraic.
+> **Theorem 5.1.R.1 (Hodge: the Trinity structural programme).**
+> Honest status: a proof of the Hodge conjecture is NOT claimed
+> (a Millennium problem; see the 5.1.T boundary). A structural
+> programme is recorded: the fixed-point principle of Z₂-involution
+> in Trinity provides the frame — on any smooth projective variety IX
+> the Hodge-decomposition diagonal plays the role of the "cohomology
+> Absolute"; Step 5 below is a structural heuristic (assumption (У)),
+> not a proven step.
 
 > **Proof (structural).**
 >
@@ -35825,7 +35778,7 @@ rank(E(ℚ)) = ord_{s = 1} L(E, s)                          (5.1.X.9)
 > **Proof (through geometric identity Sphere ∩ Cone).**
 >
 
-Step 1 (Geometric representation). By Definition 5.1.X.1.d E ≅ E_geom = S²(R) ∩ C(p_0, d, θ) — intersection of the Sphere and the Cone.
+Step 1 (Geometric representation). By Definition 5.1.X.1.d the elliptic curve E is linked to the locus E_geom = S²(R) ∩ C(p_0, d, θ) (not an isomorphism — see the Definition caveat).
 
 Step 2 (Algebraic identity). By Lemma 5.1.X.0a rank(E(ℚ)) equals the number of independent rational directions of contact of the Cone with the Sphere.
 
@@ -35883,8 +35836,7 @@ Step 6 (Completion). By Steps 1-5 for every r ≥ 0 there exist exactly r indepe
 > **Corollary 5.1.X.1.c (formal closure within the context of Trinity of the BSD conjecture).**
 >
 
-> **Theorem**
-> s 5.1.X.1, 5.1.X.2, 5.1.X.3 jointly give a STRUCTURAL RESTATEMENT of BSD
+> **Theorem** s 5.1.X.1, 5.1.X.2, 5.1.X.3 jointly give a STRUCTURAL RESTATEMENT of BSD
 > within Trinity through the geometric identity of the ellipse as intersection of
 > the Sphere and the Cone. Case ord ≤ 1 is restated from classical results
 > (Coates-Wiles 1977 + Gross-Zagier 1986 + Kolyvagin 1989, not re-derived).
@@ -36344,6 +36296,25 @@ The proof of Poincaré in Trinity is the COMBINATION of two components:
 
 The Trinity proof DOES NOT REPLACE Perelman — it explains the ONTOLOGICAL STATUS of his result through the structural catalog of Trinity. Joint action gives a complete solution of the Clay problem in three perspectives: differential-geometric (Perelman), topological (Thurston), ontological (Trinity).
 
+
+
+#### 5.1.G.3.П THE CONTINUAL CONSTRUCTIVE PROGRAM (OPEN ITEMS OF THE 2.4.AE.2 SERIES)
+
+The references to "program 5.1.G.3" from the remarks of the 2.4.AE.2 series (.ag, .al, .ap–.aw) rest on the following explicit list of open items (all are unclosed boundaries, honestly recorded; none of the listed items is claimed as proven):
+
+(П1) Continual Wightman construct: fields as operator-valued distributions; W3 locality at space-like separation in 4D; W4 covariance at the field level (the covariance level is closed in .ag/.ah).
+
+(П2) OS positivity of the non-Gaussian sector: the spectral measure of the interacting measure beyond the Gaussian kernel (the Gaussian level is closed in .an).
+
+(П3) Continual instanton: the e^{−S} sector beyond the Z₁₁ lattice; an upper bound on the non-perturbative contribution consistent with the suppression ≤ 10⁻⁴⁰⁰⁰ (.au).
+
+(П4) The three-vertex census O(λ_eff³): 654 million matchings (3 vertices × 16 external legs); the machine enumerator and the third-order connectivity census.
+
+(П5) Closed forms of the connectivity counters of higher orders (reconciling the enumerator routes with analytic combinatorial formulas; the numerical censuses .as/.at/.aw are exact, closed forms are absent).
+
+(П6) Higher clusters (10-point and beyond) and the full lattice renormalization of the coupling λ_eff.
+
+Each item is anchored in the validator (blocks of the 2.4.AE.2 series); closing any item is a new remark of the series with machine verification.
 
 ### 5.2 M-THEORY AND EINSTEIN EQUATIONS [Temperature / k = 2]
 
@@ -37216,13 +37187,13 @@ This corresponds to ~10³⁵ years (≈1.3·10³⁵ from the order-of-magnitude 
 #### 5.4.G MAGNETIC MONOPOLES
 
 > **Theorem 5.4.G.1 (Monopole mass).**
-> m_M ~ M_GUT/α_GUT = 10¹⁶·25 = 2.5·10¹⁷ GeV — about an order
+> m_M ~ M_GUT/α_GUT = 8.9·10¹⁵·25 ≈ 2.2·10¹⁷ GeV — about an order
 > below the reduced Planck mass (2.4·10¹⁸ GeV) and ~50× below
 > M_Pl = 1.22·10¹⁹ GeV, yet far beyond accelerator reach and
 > essentially unobservable. Search continues (IceCube, MACRO).
 
 > **Proof.**
-> Direct substitution of M_GUT = 10¹⁶ GeV and α_GUT = 1/25 into m_M ~ M_GUT/α_GUT gives m_M ~ 10¹⁶·25 = 2.5·10¹⁷ GeV. □
+> Direct substitution of M_GUT = 10¹⁶ GeV and α_GUT = 1/25 into m_M ~ M_GUT/α_GUT with M_GUT = 8.9·10¹⁵ GeV gives m_M ≈ 2.2·10¹⁷ GeV. □
 
 
 #### 5.4.H SEEDS FOR INFLATION
@@ -37247,6 +37218,57 @@ Full unification of forces at the Planck scale is geometrically: the merging of 
 - TRINITY DOES NOT REQUIRE A SEPARATE TOE FOR QUANTUM GRAVITY — gravity is ALREADY built into the Sphere-Cone structure: the Sphere as the collective potential of all Cones (macro scale); the spectral action yields G_μν (Section 5.7).
 - FULL UNIFICATION AT PLANCK = topological closure Ψ_{N+1} = Ψ_1 (axiom A₀): all Cones return to the Absolute where their differences are erased.
 
+
+#### 5.4.S SHANNON INFORMATION THEORY
+
+Shannon entropy of a distribution p(k): H(p) = −Σ_k p(k)·log_2 p(k) For 11 states, H_max = log_2(11) ≈ 3.459 bits — the capacity of Z₁₁ as an information channel.
+
+
+#### 5.4.T VON NEUMANN QUANTUM ENTROPY
+
+For a density matrix ρ: S(ρ) = −Tr(ρ·log ρ). For Z₁₁:  S_max = log_2(11) ≈ 3.459 bits, attained by ρ = I/11.
+
+
+#### 5.4.U INFORMATION CAPACITY OF THE AXIOMS
+
+```
+Kolmogorov complexity of Trinity:
+  Axioms A0-A5:         6 formulas × 15 bits = 90 bits
+  Quintet {N,π,φ,e,i}:  5 numbers × 30 bits  = 150 bits
+  Total:                               240 bits
+Information output:
+  84 constants × ~40 bits = 3360 bits
+Compression ratio: 3360 / 240 = 14.0×.
+```
+
+
+#### 5.4.V WHEELER'S "IT FROM BIT"
+
+Wheeler (1990): "It from bit" — all physical things arise from information. Trinity literally realizes this:
+
+- Z₁₁ is 11 "bits" (log_2(11) ≈ 3.5 bits)
+- Axiom A3 (closure) is the information-consistency condition
+- All physical constants follow from the information structure
+
+
+#### 5.4.W HOLOGRAPHIC PRINCIPLE
+
+'t Hooft-Susskind holographic principle: information about a (d+1)-dimensional bulk is contained in a d-dimensional boundary. On Z₁₁: 10 modes (k=1..10) form the "bulk" 1 mode (k=0) forms the "boundary" Boundary information fully determines the bulk since 10 complex numbers ⟨Ψ_0|Ψ_k⟩ give the full projection of |Ψ⟩ onto k ≥ 1.
+
+
+#### 5.4.X BEKENSTEIN-HAWKING FORMULA
+
+For a black hole: S_BH = A/(4·G·ℏ). On Z₁₁ the entropy of a finite system cannot exceed log_2(11). This is "ultimate compression" of information on the discrete structure.
+
+
+#### 5.4.Y INFORMATION INTERPRETATION OF PHYSICAL LAWS
+
+In Trinity, every physical law has an information-theoretic reading: Energy conservation   = conservation of Σ ω_k|c_k|² Momentum conservation = conservation of Z₁₁ charge Charge conservation   = conservation of |c_k|² Second law of thermo  = entropy growth of subsystems Quantum uncertainty   = information bound
+
+
+#### 5.4.Z INFORMATION AS FUNDAMENTAL ENTITY
+
+In Trinity information is not derived but fundamental. Physics, mathematics and consciousness are different aspects of one information structure Z₁₁. This gives Wheeler's "it from bit" a concrete mathematical realization.
 
 #### 5.4.J FOUR FUNDAMENTAL FORCES
 
@@ -37684,7 +37706,7 @@ For d=11 the algorithm is efficient for small numbers up to 10²⁰-10³⁰ with
 
 #### 5.6.VO GROVER'S ALGORITHM ON Z₁₁
 
-Grover search of size M: Complexity O(√M/√d) = O(√(M/11)) Improvement ~√11 ≈ 3.3× over qubits.
+Grover search of size M: Complexity O(√M/√d) = O(√(M/11)) Improvement ~√11 ≈ 3.3× over qubits (working reading; honest correction — 5.6.C.1/5.6.C.2).
 
 
 #### 5.6.VP QUANTUM PHYSICS SIMULATION
@@ -38077,8 +38099,8 @@ Each row reflects the "spectral fingerprint" of one prediction through contribut
 > the prediction follows from the structural formula of the corresponding section (principal formula of the section and Axiom A3). □
 
 > **Corollary 5.7.L.1.c (Predictions ÆT₆–ÆT₈).**
-> Rows 6, 7, 8 of the matrix M_coupling, not filled by base
-> predictions, give NEW predictions:
+> The free (not occupied by base predictions) positions of the
+> matrix M_coupling give NEW predictions:
 
 ÆT₆: spectral density of zero-point oscillations at ω_6 = 2 sin(6π/11) ≈ 1.9796, testable via precision Casimir effect at nano-scale (Berkeley 2026+).
 
@@ -38451,7 +38473,7 @@ RESULT 2 — BLACK-HOLE MICROSTATES = ONE ZERO-MODE BIT PER BEKENSTEIN CELL. The
 
 HONEST SCOPE. Result 1 is structural (finite Fock space from the cutoff); the matrix elements remain uncomputed. Result 2 gives the CORRECT count with a Trinity structural origin (zero-mode bit), but does not derive the Bekenstein area quantization A_1 = 4 ln 2 · ℓ_P² from the axioms (it is adopted as the Bekenstein input, as in Theorem 5.7.VK.1). Both results strengthen but do not replace the full derivation, which requires the completed interacting theory.
 
-Remark 5.7.VS.1.s (Complete specification of the S-matrix: all structural inputs fixed). The subsequent results of this session (Remarks 2.7.B.7.u, 2.7.B.8.u) complete the structural specification of the quantum-gravity S-matrix to the point where no FREE PARAMETER remains — only explicit computation.
+Remark 5.7.VS.1.s (Complete specification of the S-matrix: all structural inputs fixed). The subsequent results (Remarks 2.7.B.7.u, 2.7.B.8.u) complete the structural specification of the quantum-gravity S-matrix to the point where no FREE PARAMETER remains — only explicit computation.
 
 The S-matrix of 𝓛_Trinity is fully determined by FIVE structural inputs, all now fixed:
 
@@ -38597,11 +38619,11 @@ AMPLITUDE FORMULA. Using the vertex V(k) = 4π√2·ω_k (Corollary 5.7.VS.1.d),
 
 where s, t, u are the Mandelstam variables. In the centre-of-mass frame (√s ≫ m_φ), with s = E_CM² and t = −(s/2)(1−cosθ), u = −(s/2)(1+cosθ):
 
-|M|²(k, s, θ)  =  V(k)⁴ · (3 + cos²θ) / (8·M_P⁴ · sin⁴θ).
+|M|²(k, s, θ)  =  V(k)⁴ · (3 + cos²θ) / (2·M_P⁴ · sin²θ).
 
-NUMERICAL VALUES. For the lightest aetheron (k = 1, the 5 GeV DM candidate of Conjecture 1.0.1.DM) at √s = 10 GeV, θ = 90°:
+NUMERICAL VALUES. For the DM aetheron (mode k = 5 — the 5 GeV DM candidate, Definition 2.4.AF.1.d; |C|_min = L₅) at √s = 10 GeV, θ = 90°:
 
-V(1) = 10.0136,   |M|² = 4.29·10⁻⁷⁰ GeV⁻⁴.
+V(5) = 35.18,   |M|² = 4.29·10⁻⁷⁰ GeV⁻⁴ (reduced M_P̄ = 2.435·10¹⁸ GeV).
 
 The dσ/dΩ peaks forward (θ → 0) due to the graviton pole 1/t², as expected for massless graviton exchange; the total cross-section for k = 1 at √s = 10 GeV is unobservably small (σ ≈ 3·10⁻⁶⁵ pb from |M|²/(16πs) with 1 GeV⁻² = 3.894·10⁸ pb), consistent with the extreme weakness of gravity at particle scales.
 
@@ -39000,7 +39022,7 @@ DAMA/LIBRA          | NaI annual modulation          | UNCONFIRMED signal at ~fe
 IMPORTANT DISTINCTION:
 
 - What LZ/XENONnT/PandaX exclude: standard SPIN-INDEPENDENT WIMP-nucleon scattering with Higgs-mediated coupling.
-- What Trinity predicts: a STERILE aetheron with mode k = 5, carrying NO SU(3)×SU(2)×U(1) charge (Theorem 5.8.3), coupling ONLY gravitationally and via the aether vertex V(k). The scattering cross-section is therefore MANY ORDERS OF MAGNITUDE below the SI WIMP curves, roughly at gravitational-interaction level (σ ~ G_F²·m_Æ² ~ 10⁻⁵⁰ cm²).
+- What Trinity predicts: a STERILE aetheron with mode k = 5, carrying NO SU(3)×SU(2)×U(1) charge (Theorem 5.8.3), coupling ONLY gravitationally and via the aether vertex V(k). The scattering cross-section is therefore MANY ORDERS OF MAGNITUDE below the SI WIMP curves, roughly at gravitational-interaction level (σ ~ G_N²·m_Æ² ≈ 4·10⁻¹⁰² cm² at m_Æ = 5 GeV; the weak constant G_F does not belong to the gravitational channel of a sterile mode).
 
 CONSEQUENCE:
 
@@ -39054,8 +39076,7 @@ DM/b = L₄/φ + L₁ + α − 16α²N − 10α³N² ≈ 5.3237    (fit: 0.00006
 Σ = Ω_b+Ω_DM+Ω_Λ ≈ 0.9944  (flat closure Σ = 1 at the ~0.6% level)   (5.8.1)
 ```
 
-> **Proof**
-> — Theorem 2.7.1 + loop formulas of Z₁₁ (Section 2.7.P.7).
+> **Proof** — Theorem 2.7.1 + loop formulas of Z₁₁ (Section 2.7.P.7).
 
 > **Theorem 5.8.2 (Scale factor of dark matter / dark energy equality).**
 > The scale factor a_eq, at which the densities Ω_DM and Ω_Λ
@@ -39509,11 +39530,10 @@ These interfaces are NOT independent theories of each area. They are minimal "so
 
 ## FINAL STATISTICS
 
-> **Theorem**
-> s: 773
-> Definitions: 271
-> Corollaries: 577
-> Remarks: 372
+> **Theorems:** 779
+> Definitions: 272
+> Corollaries: 603
+> Remarks: 413
 > Lemmas: 27
 > Propositions: 11
 > Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -39561,7 +39581,7 @@ The canonical Trinity dictionary (Definition 2.4.E) complements the alphabetical
 - CIRCLE OF TRINITY — longitudinal section of the Cone through the symmetry axis; base Duality circle with 10 modes.
 - TRIANGLE OF TRINITY — perpendicular section of the Cone; Z₂-mirror of the Circle.
 - V_cone — conic phase volume (N+1)·N·(N-1)² − (N-1)/2 = 13195 for N=11; enters Theorem 2.4.A (α to 5.4 ppt).
-- ω_k — spectral eigenfrequencies of the Hamiltonian ω_k = 2 sin(πk/N), k = 0,...,N−1 (Axiom A3, Axiom A3).
+- ω_k — spectral eigenfrequencies of the Hamiltonian ω_k = 2 sin(πk/N), k = 0,...,N−1 (Axiom A3).
 - ℏ_struct — structural distinguishability quantum 1/(2N) = 1/22; Z₁₁ analogue of Planck's constant ℏ (Theorem 4.0.D.1).
 - N_cycles — number of Aether actualization cycles per Big Bang, N_cycles = exp(1/α + 1/φ²); enters Λ-catastrophe formula (Theorem 2.7.Q.2) and Hubble (Theorem 2.6.A.4).
 - M_S, M_P, δ_C — components of the Sphere-Point-Cone meta-principle (Def. 3.0.5): M = M_S·(1+δ_C), where M_S is the Spherical rational constant, M_P = 0 (k=0 mode), δ_C is the Conic α/N-correction.
@@ -39933,7 +39953,7 @@ The fine-structure constant α satisfies the implicit equation:
 
 where N = 11, V_cone = (N + 1) · N · (N − 1)² − (N − 1)/2 = 13195, φ = (1 + √5)/2 — golden ratio, e — base of natural logarithm, π — circle constant.
 
-Numerical root: 1/α = 137.035999207 (precision 14 significant digits).
+Explicit substitution of the tree α into the right-hand side gives 1/α = 137.035999207 (12 significant digits); the self-consistent root of the equation (fixed point) is 1/α = 137.035999160 (a 338 ppt deviation from LKB-Rb; see the double reading, Lemma 2.4.A.A).
 
 Comparison with experiment:
 
@@ -39960,8 +39980,7 @@ N = 11 is the unique integer satisfying simultaneously three independent algebra
 
 Here |Q| = 5 — cardinality of the minimal closing kernel, justified geometrically through the parameterization of the three-dimensional cone (Theorems 2.5.G.1, 2.5.G.2; Corollary 2.5.G.2.1).
 
-> **Proof**
-> of uniqueness — by checking integers N ∈ [2, 10000]
+> **Proof** of uniqueness — by checking integers N ∈ [2, 10000]
 > (Section 1.10.0). Among all N satisfying B3 ∧ B2, the sequence is
 > {3, 7, 11, 19, 23, 31, ...}; the condition |Q| = 5 (independently
 > justified through 3D geometry) fixes N = 1 + 2·5 = 11 uniquely.
@@ -40034,8 +40053,7 @@ Statement (Section 5.1.G in standard QFT formulation).
 
 Consider the Yang-Mills gauge theory with group G = SU(N), N = 11, on ℝ⁴, with an additional axiom on energy quantization:
 
-> **Theorem**
-> ÆТ₂ (quantization):
+> **Theorem** ÆТ₂ (quantization):
 > The minimal action quantum of the system is
 > ℏ_struct = 1 / (2N) = 1/22 (Theorem 4.0.D.1).
 
@@ -40182,7 +40200,7 @@ total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
 2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
 2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
 exit 0. Python validator: theory_of_everything.py — 728 PASS,
-0 FAIL, EXIT = 0 (~17 s), including the embedded four-test PSLQ
+0 FAIL, EXIT = 0 (~110 s), including the embedded four-test PSLQ
 experiment of Theorem 1.10.F.9 (no separate script required).
 ```
 

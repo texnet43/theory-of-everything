@@ -1,5 +1,5 @@
 (* ==================================================================== *)
-(* Trinity v1.2 — SU(11) Higgs Model for SARAH / PyR@TE 3 / RGBeta       *)
+(* Trinity v1.3 — SU(11) Higgs Model for SARAH / PyR@TE 3 / RGBeta       *)
 (* Standalone machine-readable specification for external verification   *)
 (*                                                                      *)
 (* Based on Theorem 5.1.D.7.5 (theory_of_everything_EN.txt).            *)

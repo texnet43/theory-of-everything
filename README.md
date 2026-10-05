@@ -99,10 +99,10 @@ The five aether properties ÆТ₁–ÆТ₅ are **reduced to the Sphere-Point-C
 
 Five Parts × 12 modal subsections = **60 modal cells** + **1 service appendix (Glossary I)**:
 
-- **773 theorems** (all with proofs)
-- **271 definitions**
-- **577 corollaries**
-- **372 remarks**
+- **779 theorems** (all with proofs)
+- **272 definitions**
+- **603 corollaries**
+- **413 remarks**
 - **27 lemmas**
 - **11 propositions**
 

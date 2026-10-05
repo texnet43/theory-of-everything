@@ -11948,27 +11948,28 @@ print("    Remark 2.4.AE.2.ao (the 4D tensor measure): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.4.AE.2.ap: the non-Gaussian tensor sector — the exact Wick
-# combinatorics: the per-component mass operator = (3/40) lambda; the
-# dilution exactly 1/40; the chain of .am transfers.
+# combinatorics: the per-component mass operator = (3/25) lambda; the
+# dilution exactly 1/25 (the Wick 2! on the external pair of a cross vertex); the chain of .am transfers.
 # ---------------------------------------------------------------------------
 banner("Remark 2.4.AE.2.ap (the tensor dilution: the exact Wick count)")
-assert 3/100 + 9/200 == 15/200
-assert abs(15/200 - 3/40) < 1e-18
+assert 3/100 + 9/100 == 12/100
+assert abs(12/100 - 3/25) < 1e-18
 print("    the vertex structure: (lambda/4)(sum Phi^2/10)^2 = (lambda/400) sum_kl Phi_k^2 Phi_l^2 —")
-print("    the self vertex lambda/400, the cross pair (k != l) lambda/200: the rank-1 all-to-all, no")
+print("    the self vertex lambda/400, the cross pair (k != l) 2!(lambda/200)=lambda/100 (the Wick 2! on the")
+print("    external pair): the rank-1 all-to-all, no")
 print("    component singled out (the Sym^2 symmetry, the Z2-invariance of Rem .ab): PASS")
-_Dc90 = 3 * _lam89eff / 100 + 9 * _lam89eff / 200
-assert abs(_Dc90 - 3 * _lam89eff / 40) < 1e-30
+_Dc90 = 3 * _lam89eff / 100 + 9 * _lam89eff / 100
+assert abs(_Dc90 - 3 * _lam89eff / 25) < 1e-30
 print(f"    the exact Wick count: the self tadpole 3(lambda/100)C(0) + nine cross tadpoles")
-print(f"    9(lambda/200)C(0) = (3/40) lambda = {_Dc90:.4e} (mass-operator units) — the machine: PASS")
-assert abs(_Dc90 / (3 * _lam89eff) - 1/40) < 1e-18
-print(f"    the DILUTION: (3/40)/3 = 1/40 exactly — the dilution is NOT 1/N^2: the cross vertices")
+print(f"    9(lambda/100)C(0) = (3/25) lambda = {_Dc90:.4e} (mass-operator units) — the machine: PASS")
+assert abs(_Dc90 / (3 * _lam89eff) - 1/25) < 1e-18
+print(f"    the DILUTION: (3/25)/3 = 1/25 exactly — the dilution is NOT 1/N^2: the cross vertices")
 print("    return part of the coupling through the mean field of the other components: PASS")
 _loop90 = 10 * _C86(0.0)
 assert abs(_loop90 - 10 * _mu85 / 2) < 1e-15
 print(f"    the chain transfer: the loop over the recorded interval [0, 10] = 10 C(0) = {_loop90:.5f}")
-print("    (the LADDER length); the series .ak-.am transfers with 3 -> 3/40 in the mass operator: PASS")
-print("    STATUS: the non-Gaussian tensor sector CLOSED-TO-BOUNDARY (rank-1 vertex, dilution 1/40,")
+print("    (the LADDER length); the series .ak-.am transfers with 3 -> 3/25 in the mass operator: PASS")
+print("    STATUS: the non-Gaussian tensor sector CLOSED-TO-BOUNDARY (rank-1 vertex, dilution 1/25,")
 print("    the chain transfer); the higher cross-invariants, the tensor 4-point sector and")
 print("    non-perturbative effects remain 5.1.G.3: PASS")
 print("    Remark 2.4.AE.2.ap (the tensor dilution): ALL CHECKS PASS")
@@ -12310,7 +12311,7 @@ assert sp.diff(_S96, _P96[0], 2, _P96[1], 2).subs(_z96) == sp.Rational(1, 50)
 print("    the tree contact kernel (sympy functional derivatives): <Phi_a^4>_c = -(3/50) lambda =")
 print(f"    {3*_lam89eff/50:.3e}; <Phi_a^2 Phi_b^2>_c = -(1/50) lambda = {_lam89eff/50:.3e} (a != b) — the")
 print("    rank-1 all-to-all, no component singled out (consistent with .ap): PASS")
-print("    the loops = the chain of .am with the dilution 1/40 (.ap) — the whole 4-point")
+print("    the loops = the chain of .am with the dilution 1/25 (.ap) — the whole 4-point")
 print("    renormalization controlled; the tensor 4-point CLOSED-TO-BOUNDARY: PASS")
 print("    HONEST BOUNDARY: the momentum-dependent 4-point off the diagonal, the higher")
 print("    cross-invariants with individual coefficients, non-perturbative — 5.1.G.3: PASS")
@@ -12461,7 +12462,7 @@ print(f"    the full connected 4-point at (t,t,0,0), t = 1: tree = {_tree99:.4e}
 print(f"    {_fish99:.4e}, legs = {_legs99:.4e}; |G4^(2)/G4^(1)| = {_ratio99:.2e} ~ 5 lambda_eff —")
 print("    the geometric control survives with the loops included: PASS")
 print("    the tensor transfer: the same Wick structures carry the recorded vertex weights")
-print("    {lambda/400 self, lambda/200 cross} (Rem .ap); the own/cross ratio 3 = T2/T1 holds")
+print("    {lambda/400 self, lambda/100 cross} (Rem .ap); the own/cross ratio 3 = T2/T1 holds")
 print("    on the tree; the detailed tensor loop census stays the boundary: PASS")
 print("    HONEST BOUNDARY: the general-position loop kernels (arbitrary gaps in the fish")
 print("    channels), the momentum-space 4-point, the orders n >= 3 and the non-perturbative")
