@@ -7,7 +7,7 @@ Lean 4.33+, NO Mathlib dependency. All theorems use native_decide/rfl.
 
 Reproduce:   lean theory_of_everything.lean    (must exit 0, no errors)
 
-Sections (188 machine-verified theorems total):
+Sections (191 machine-verified theorems total):
   I.   Core identities (25)            — Z11 basics, Higgs VEV, mass ratios
   II.  V11 Core: D1-D5 amplifiers (42) — Lambda exponent 2N^2, RH coefficient,
                                          constructive emergence, catalogue 9/36/39
@@ -39,7 +39,7 @@ Sections (188 machine-verified theorems total):
                                          (rows 30/110, weighted 91) — the integer
                                          core of [P, M] = 0 (Remark 2.4.BA.1.r)
   IX.  Integer skeleton of the four readings
-       (29)                            — dim Sym^2(R^4) = 10 = N-1, center-link
+       (32)                            — dim Sym^2(R^4) = 10 = N-1, center-link
                                          depths (genesis 1..5 / closure 5..1),
                                          2^5 = -1 (mod 11), 2^10 = 1 (mod 11),
                                          zeta -> zeta^2 = the 5-cycle on the five
@@ -320,7 +320,7 @@ theorem total_resonant_modes : 2 * 5 = N - 1 := by native_decide
 
 /-
 HISTORICAL NOTE — this file was originally a separate D1-D5 file; the
-unified theory_of_everything.lean now contains 173 theorems (sections I-IX).
+unified theory_of_everything.lean now contains 191 theorems (sections I-IX).
 THEOREMS OF THE ORIGINAL D1-D5 FILE (28):
 
 D1 (Λ derivation):
@@ -862,7 +862,7 @@ theorem dcyc_weighted_row0 :
 
 
 /- ================= SECTION IX: INTEGER SKELETON OF THE FOUR READINGS
-   (29 theorems; Remarks 2.4.AE.2.v/.al/.as/.at/.aw, 1.10.2.9.x/.y/.ad/.ae,
+   (32 theorems; Remarks 2.4.AE.2.v/.al/.as/.at/.aw, 1.10.2.9.x/.y/.ad/.ae,
    5.7.VS.1.t.x, 5.1.D.9.t, 2.9.VT.1.r/.s/.t) =================
 The integer core of the four readings: the metric component count of the
 4D lift (Remark 2.4.AE.2.v), the center-link depths, and the cyclotomic
@@ -1100,6 +1100,44 @@ theorem loop_fractions :
     (105 * 8 = 35 * 24) ∧ (128 * 3 = 16 * 24) ∧
     (6 * 288 + 8 * 288 = 4032) ∧ (288 * 14 = 4032) := by native_decide
 
+/-- (Remark 2.6.A.4.x) The cell table of the sections: the grid reading
+C(k) = 2^(k-1) mod 11 is the recorded activation order (Th 5.3.1) — the full
+walk 1,2,4,8,5,10,9,7,3,6,1; the F_5 = 5 mirror conserves the grid pairwise
+(five sums = 11); the ten-section sum is 55 = F_10 = 5*11 and the sum with
+the return cell is 56. -/
+theorem section_cell_walk :
+    (2 ^ 0 % 11 = 1) ∧ (2 ^ 1 % 11 = 2) ∧ (2 ^ 2 % 11 = 4) ∧ (2 ^ 3 % 11 = 8) ∧
+    (2 ^ 4 % 11 = 5) ∧ (2 ^ 5 % 11 = 10) ∧ (2 ^ 6 % 11 = 9) ∧ (2 ^ 7 % 11 = 7) ∧
+    (2 ^ 8 % 11 = 3) ∧ (2 ^ 9 % 11 = 6) ∧ (2 ^ 10 % 11 = 1) ∧
+    (1 + 10 = 11) ∧ (2 + 9 = 11) ∧ (4 + 7 = 11) ∧ (8 + 3 = 11) ∧ (5 + 6 = 11) ∧
+    (1 + 2 + 4 + 8 + 5 + 10 + 9 + 7 + 3 + 6 = 55) ∧ (55 = 5 * 11) ∧
+    (55 + 1 = 56) := by native_decide
+
+/-- (Remark 5.1.D.9.v(3)) The cubic-portal tadpole channels: with the
+recorded stage-2.5 vacua <Phi330> = (4,0) and <Phi165> = (3,5) (q = 5i-6j),
+the cubic Phi330 Phi165 Phibar11 gives a tadpole ONLY for the hidden (1,0)
+component of Phi11: U(1) -20+15+5 = 0 and the SU(6) center -4-3+1 = -6 = 0
+(mod 6), while the SM (0,1)-component is double-forbidden (U(1) -20+15-6 =
+-11 = 0; the SU(5) product 1x1x5); the siblings Phi330^3 Phibar11 (55) and
+Phi165^3 Phibar55 (-35) are U(1)-forbidden in every channel. -/
+theorem cubic_tadpole_channels :
+    (-20 + 15 + 5 = 0) ∧ ((-4 - 3 + 1) % 6 = 0) ∧
+    (-20 + 15 - 6 = -11) ∧ (-11 % 6 = 1) ∧
+    (3 * 20 - 5 = 55) ∧ (55 % 11 = 0) ∧ (55 ≠ 0) ∧
+    (3 * (-15) + 10 = -35) ∧ (-35 ≠ 0) := by native_decide
+
+/-- (Remark 5.1.D.9.w addendum) The portal piece-dimension anchors: the
+pair decompositions Lambda^c x Lambda^d (c, d in {1,2,4,8}) have the piece
+dims summing to C(11,c)*C(11,d); the recorded portal counts are sum m_nu^2 =
+2, 2, 2, 3, 3, 4 for the pairs (1,2),(1,4),(1,8),(2,4),(2,8),(4,8). -/
+theorem portal_dim_anchors :
+    (165 + 440 = 605) ∧ (605 = 11 * 55) ∧
+    (462 + 3168 = 3630) ∧ (3630 = 11 * 330) ∧
+    (55 + 1760 = 1815) ∧ (1815 = 11 * 165) ∧
+    (462 + 13068 + 4620 = 18150) ∧ (18150 = 55 * 330) ∧
+    (11 + 594 + 8470 = 9075) ∧ (9075 = 55 * 165) ∧
+    (8470 + 11 + 594 + 45375 = 54450) ∧ (54450 = 330 * 165) := by native_decide
+
 end Trinity.V15.Readings
 
-#print "TRINITY UNIFIED: ALL 188 MACHINE-VERIFIED THEOREMS PASS" 
+#print "TRINITY UNIFIED: ALL 191 MACHINE-VERIFIED THEOREMS PASS" 

@@ -28,11 +28,15 @@ GaugeGroup[Gauge = {SU11}];
 (* Phi_11: fundamental (11), light EW doublet resides in (1,5) under SU(6)xSU(5) *)
 Phi11 = Representation[SU11, Fundamental];     (* dim = 11 *)
 
-(* Phi_55: symmetric 2-tensor (66), breaks SU(11) -> SU(6) x SU(5) x U(1) *)
-Phi55 = Representation[SU11, SymmetricTensor2]; (* dim = 66 *)
+(* Phi_55: antisymmetric 2-tensor (55), cascade stage 2: SU(6)xSU(5)xU(1) -> SM; stage 1 runs through the (1,24) component of Phi_120 *)
+Phi55 = Representation[SU11, AntisymmetricTensor2]; (* dim = 55 *)
 
 (* Phi_120: adjoint (120), implements Georgi-Glashow cascade stage 2 *)
 Phi120 = Representation[SU11, Adjoint];         (* dim = 120 *)
+
+(* Enriched section carriers (Remark 5.1.D.9.u): section-shaft scalars *)
+Phi330 = Representation[SU11, AntisymmetricTensor4]; (* dim = 330 *)
+Phi165 = Representation[SU11, AntisymmetricTensor8]; (* dim = 165 *)
 
 (* === FERMION CONTENT (Theorem 5.1.D.8) === *)
 (* Exterior algebra: Lambda^k(C^11) for k = 4, 8, 9, 10 *)
@@ -52,6 +56,18 @@ FermionContent = {
 AddYukawa[yt, {QL, Phi11, tR}];    (* top *)
 AddYukawa[yb, {QL, Phi11conj, bR}]; (* bottom *)
 AddYukawa[ytau, {LL, Phi11conj, tauR}]; (* tau *)
+
+(* === SU(11)-LEVEL PORTAL YUKAWAS (Remark 5.1.D.9.u(2), exact SL(11)-counts) === *)
+(* Six living renormalizable Yukawas, LR-multiplicity [1]_SL = 1 each: *)
+AddYukawa[y48,  {Psi4, Psi8,  Phi11conj}];  (* Lambda^4 Lambda^8 Phi11bar *)
+AddYukawa[y49,  {Psi4, Psi9,  Phi55}];      (* Lambda^4 Lambda^9 Phi55 *)
+AddYukawa[y810, {Psi8, Psi10, Phi330}];     (* enriched: Lambda^8 Lambda^10 Phi330 *)
+AddYukawa[y410, {Psi4, Psi10, Phi165}];     (* enriched: Lambda^4 Lambda^10 Phi165 *)
+AddYukawa[y44,  {Psi4, Psi4,  Phi165conj}]; (* enriched: Sym^2(Lambda^4) in Lambda^8 *)
+AddYukawa[y910, {Psi9, Psi10, Phi165conj}]; (* enriched: Lambda^9 Lambda^10 Phi165bar *)
+(* Dead by the Sym^2 projection (Remark 5.1.D.9.w): Psi10 Psi10 Phi55 and
+   Psi9 Psi9 Phi330 — the singlet (2^11) is absent from Sym^2(Lambda^k) for all k <= 10.
+   Center-forbidden: Psi4 Psi8 Phi120 ([1]_SL = 0). *)
 
 (* Numerical values at M_Z (PDG 2024) *)
 yt_MZ  = 0.9369;   (* m_t = 173.1 GeV *)

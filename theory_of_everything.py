@@ -6253,7 +6253,7 @@ assert _Ne_inflation > 50 and _Ne_inflation < 60, "2.1.A.6 N_e in standard range
 print(f"    PASS: slow-roll + Starobinsky R^2 inflation from alpha (zero free params)")
 
 # Theorem 2.6.A.4: Hubble tension H_0(late)/H_0(early) = 1 + alpha*N
-_H_ratio_obs = 73.0 / 67.4
+_H_ratio_obs = 73.01 / 67.4
 _H_ratio_struct = 1.0 + _alpha_lxx * _N_lxx
 _err_H = abs(_H_ratio_struct - _H_ratio_obs) / _H_ratio_obs
 print(f"    2.6.A.4 H_0(late)/H_0(early) = 1+alpha*N = {_H_ratio_struct:.4f} vs {_H_ratio_obs:.4f}")
@@ -10912,6 +10912,78 @@ print("    Remark 5.1.D.9.t (mass-operator rank): ALL CHECKS PASS")
 
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.9.u: enrichment of the scalar sector — Phi330 = Lam^4 (charge 4)
+# and Phi165 = Lam^8 (charge 8) as section carriers (the author's resolution of
+# forks Q-1/Q-2, 2026-10-10).  Cheap invariants here; exact LR multiplicities
+# and full epsilon-contractions live in the dev scripts _lr_yukawa_check.py /
+# _q1_q2_machine_check.py (LR anchors: dim-sums 100/1815/598950, Sym^2(Lam^2 C5)=55).
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.9.u (enriched scalar sector: section carriers)")
+import itertools as _it112
+# (1) center charges of the SIX live Yukawas (conjugate scalar = negative charge)
+_live112 = [("Psi4 Psi8 Phi11bar", 4, 8, -1), ("Psi4 Psi9 Phi55bar", 4, 9, -2),
+            ("Psi8 Psi10 Phi330", 8, 10, 4), ("Psi4 Psi10 Phi165", 4, 10, 8),
+            ("Psi4 Psi4 Phi165bar", 4, 4, -8), ("Psi9 Psi10 Phi165bar", 9, 10, -8)]
+for _nm, _a, _b, _c in _live112:
+    assert (_a + _b + _c) % 11 == 0, _nm
+print("    center charges: 4+8-1, 4+9-2, 8+10+4, 4+10+8, 4+4-8, 9+10-8 = 0 (mod 11): PASS")
+# (2) Sym^2 kill of Psi10 Psi10 Phi55 and Psi9 Psi9 Phi330 (Littlewood: S_tau in
+# Sym^2(Lam^k) iff ALL columns of tau have even length; the singlet shape (2^11)
+# has two columns of length 11 -- odd -> the singlet sits in Lam^2(Lam^k) only)
+_tau112 = [2] * 11
+_ncols = _tau112[0]
+_col_lengths = [sum(1 for r in _tau112 if r > j) for j in range(_ncols)]
+assert not all(L % 2 == 0 for L in _col_lengths)      # odd columns -> Lam^2 part only
+assert 10 + 10 + 2 == 22 and 9 + 9 + 4 == 22          # center-allowed but Sym-dead
+assert (4 + 8 + 0) % 11 != 0                          # Psi4 Psi8 Phi120 center-forbidden
+print("    Sym^2 kill: (2^11) has 2 columns of length 11 (odd) -> Psi10Psi10Phi55, "
+      "Psi9Psi9Phi330 dead; Psi4Psi8Phi120 center-forbidden: PASS")
+# (3) capacity of the renormalizable mass operator: 440/121 -> 561/0
+_rng112 = np.random.default_rng(42)
+def _cap112(enriched):
+    M = np.zeros((561, 561), dtype=complex)
+    def blk(ra, rb, ca, cb, sym=False):
+        X = _rng112.standard_normal((ra, rb)) + 1j * _rng112.standard_normal((ra, rb))
+        if sym:
+            X = (X + X.T) / 2
+            M[ca:ca + ra, cb:cb + rb] += X
+            M[cb:cb + rb, ca:ca + ra] += X.T
+        else:
+            M[ca:ca + ra, cb:cb + rb] = X
+            M[cb:cb + rb, ca:ca + ra] = X.T
+    blk(330, 165, 0, 330)                       # (4,8)
+    blk(330, 55, 0, 495)                        # (4,9)
+    if enriched:
+        blk(165, 11, 330, 550)                  # (8,10)
+        blk(330, 11, 0, 550)                    # (4,10)
+        blk(330, 330, 0, 0, sym=True)           # (4,4)
+        blk(55, 11, 495, 550)                   # (9,10)
+    s = np.linalg.svd(M, compute_uv=False)
+    return int(np.sum(s >= 1e-10))
+_rk_min = _cap112(False)
+_rk_enr = _cap112(True)
+assert _rk_min == 440 and _rk_enr == 561
+print("    capacity: minimal rank 440 (kernel 121, inside Lam^4) -> enriched rank 561 "
+      "(kernel 0): rank bound dissolves: PASS")
+# (4) Q-2 verdict: the canon kappa3 portal cannot open a GUT-VEV in Phi11^(6bar,1)
+_alpha112 = 1 / 137.035999207
+_phi112 = (1 + 5 ** 0.5) / 2
+_MG112 = 1.2209e19 / _phi112 ** 15
+_v1 = 8.1 * _MG112
+_v2 = _MG112 / 5
+_T120 = (341 / 330) * _v1 ** 2 + 0.5 * _v2 ** 2 + 2 * (66 / (330 ** 0.5 * 60 ** 0.5)) * _v1 * _v2
+_om = ( (_MG112 ** 2 / 25) / (6 * (7 * _alpha112 / 5) + 2 * (_alpha112 / (11 * np.pi))) ) ** 0.5
+_lift = (_alpha112 * 11 / np.pi) * _T120
+_split = 2 * (_alpha112 ** 1.5 * 11 ** 0.5 * _phi112) * _om * 6 / 330 ** 0.5
+_ratio = _split / _lift
+assert _lift > 1e32 and _ratio < 1e-17, _ratio
+assert _lift - 2 * _split > 0
+print(f"    portal k3: lift = {_lift:.3e} GeV^2, max split = {_split:.3e}, ratio {_ratio:.1e}: "
+      "Phi11^(6bar,1) stable, nu4-nu8 dead DERIVED: PASS")
+print("    Remark 5.1.D.9.u (enriched scalar sector): ALL CHECKS PASS")
+
+
 # Remark 2.8.1.t extension: the two-invariant adjoint potential and the
 # Stage-2 global minimum (SU(5) -> SM): [3+2] wins for lambda2 > 0 (sympy).
 # ---------------------------------------------------------------------------
@@ -10980,27 +11052,38 @@ for _ in range(60):
     else: _hi70 = _m70
 _xN70 = (_lo70+_hi70)/2
 _e70 = _eps70(_xN70)
-_h70 = _mp70.mpf(2)/3*_d2V70x(_xN70)/_V70x(_xN70) - 2*_e70
+_h70 = _mp70.mpf(2)/3*_d2V70x(_xN70)/_V70x(_xN70)
 _xi70 = (_dV70x(_xN70)*_d3V70x(_xN70)/_V70x(_xN70)**2)*(_mp70.mpf(2)/3)**2
 _ns70 = 1 - 6*_e70 + 2*_h70
 _r70 = 16*_e70
-_run70 = -16*_e70*_h70 + 24*_e70**2 - 2*_xi70
-assert abs(_ns70 - _mp70.mpf('0.963981')) < 5e-6
+def _ns_at70(_Nq):
+    _lo, _hi = _xe70, _mp70.mpf('12')
+    for _ in range(60):
+        _m70b = (_lo+_hi)/2
+        if _No70(_m70b) < _Nq: _lo = _m70b
+        else: _hi = _m70b
+    return 1 - 6*_eps70(_m70b) + 2*( _mp70.mpf(2)/3*_d2V70x(_m70b)/_V70x(_m70b) )
+_dnsdN70 = (_ns_at70(_Ne70+_mp70.mpf('0.01')) - _ns_at70(_Ne70-_mp70.mpf('0.01')))/_mp70.mpf('0.02')
+_run70 = -_dnsdN70  # dn_s/dlnk = -d(n_s)/dN (mode ordering; machine anchor)
+assert abs(_run70 - (16*_e70*_h70 - 24*_e70**2 - 2*_xi70)) < _mp70.mpf('1e-6')  # closed form
+assert abs(_ns70 - _mp70.mpf('0.964862')) < 5e-6
 assert abs(_r70 - _mp70.mpf('0.0035209')) < 5e-6
-assert abs(_run70 - _mp70.mpf('-0.000502')) < 5e-6
+assert abs(_run70 - _mp70.mpf('-0.000625')) < 5e-6
 print(f"    from the potential at N_e = {_mp70.nstr(_Ne70, 5)} (eps=1 at x_end = "
       f"{_mp70.nstr(_xe70, 5)}): n_s = {_mp70.nstr(_ns70, 6)}")
 print(f"    r = {_mp70.nstr(_r70, 5)} (leading 75a^2 = {_mp70.nstr(75*_al70**2, 5)}), "
       f"running = {_mp70.nstr(_run70, 3)}: PASS")
 _lead70 = 1 - 2/_Ne70
-assert abs((_ns70 - _lead70)*_Ne70**2 - _mp70.mpf('1.41')) < 0.05 and 0 < _ns70 - _lead70 < 6e-4
+assert abs((_ns70 - _lead70)*_Ne70**2 - _mp70.mpf('4.05')) < 0.05 and 0 < _ns70 - _lead70 < 2e-3
 assert abs(_r70/(12/_Ne70**2) - _mp70.mpf('0.882')) < 0.005
 print("    leading identities algebraic (12*(5a/2)^2 = 75a^2); second-order deltas "
-      "+1.41/N^2, r/r_lead = 0.882 - one source, not three inputs: PASS")
+      "+4.05/N^2, r/r_lead = 0.882 - one source, not three inputs: PASS")
 _pl70, _pe70 = _mp70.mpf('0.9649'), _mp70.mpf('0.0042')
 _sig70 = abs(_lead70 - _pl70)/_pe70
 assert abs(_sig70 - _mp70.mpf('0.33')) < 0.02 and _mp70.mpf('0.974') - _lead70 > 10*_pe70*0 + _mp70.mpf('0.01')
-print(f"    Planck-2018 contains the leading value at {_mp70.nstr(_sig70, 3)} sigma; n_s > 0.970 "
+_sigx70 = abs(_ns70 - _pl70)/_pe70
+assert _sigx70 < _mp70.mpf('0.05')
+print(f"    Planck-2018 contains the exact value at {_mp70.nstr(_sigx70, 3)} sigma and the leading at {_mp70.nstr(_sig70, 3)} sigma; n_s > 0.970 "
       f"(ACT combinations) above the theory value by ~0.011 - the refutation channel: PASS")
 print("    Remark 2.1.A.5.r (inflation package): ALL CHECKS PASS")
 
@@ -12780,6 +12863,755 @@ print("    closed counter forms (the composition-sum reconciliation), the contin
 print("    instanton — the program 5.1.G.3: PASS")
 print("    Remark 2.4.AE.2.aw (the 8-point, the two readings): ALL CHECKS PASS")
 
+
+# Inserted before the FINAL SUMMARY banner. All locals carry the s106_ prefix
+# (validator globals shadow block locals).
+
+print("  Remark 2.6.A.4.v (alpha as the scale-execution quantum):")
+
+import math as s106_math
+
+s106_N = 11
+s106_phi = (1 + s106_math.sqrt(5)) / 2
+s106_phi10 = s106_phi ** 10
+s106_alpha_tree = s106_math.pi ** 2 / (s106_N * s106_phi10)
+s106_alpha = 1 / 137.035999207
+s106_V_cone = 13195
+s106_A = s106_N * s106_phi10 / s106_math.pi ** 2
+s106_B = s106_math.e ** 4 * s106_phi ** 2 / (s106_math.pi ** 5 * s106_N)
+
+# (1) PRICE: alpha_tree = closure^2 / (grid x span)
+s106_c = abs(s106_alpha_tree - s106_math.pi ** 2 / (s106_N * s106_phi10)) < 1e-15
+s106_c = s106_c and abs(1 / s106_alpha_tree - 137.07850) < 1e-4
+s106_c = s106_c and abs(s106_math.pi ** 2 / s106_N - 0.8972) < 1e-3
+print("    price: alpha = pi^2/(N phi^10); alpha(0) = pi^2/N = 0.897 (unification tick): PASS"
+      if s106_c else "    price: FAIL")
+
+# (2) COUNT: full formula = skeleton - intensity - cone self-volume
+s106_c = abs(s106_A - 137.07850) < 1e-4 and abs(s106_B - 0.04246) < 1e-4
+s106_skel = s106_A - s106_B
+s106_c = s106_c and abs(s106_skel - 137.036037) < 1e-5
+s106_theta = s106_math.degrees(s106_math.acos(1 - 2 / 137.035999207))
+s106_c = s106_c and abs(s106_theta - 9.801) < 0.01
+print(f"    count: skeleton {s106_skel:.6f}; solid-angle cone half-angle {s106_theta:.3f} deg: PASS"
+      if s106_c else "    count: FAIL")
+
+# (3) STEP: fixed-point iteration superattractive (3 steps)
+s106_x = s106_alpha_tree
+for _ in range(3):
+    s106_x = 1 / (s106_A - s106_B - s106_x ** 4 * s106_V_cone)
+s106_c = abs(1 / s106_x - 137.035999160) < 1e-6
+s106_c = s106_c and abs((1 + s106_alpha) ** s106_N - 1.083265) < 1e-5
+print("    step: fixed point 137.035999160 in 3 iterations; (1+alpha)^11 = 1.083265: PASS"
+      if s106_c else "    step: FAIL")
+
+# (4) BOUNDARIES: pair execution order — discrete pairs, zero-sum mod N
+s106_order = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]
+s106_pairs_ok = all(
+    (s106_order[i] + s106_order[i + 1]) % s106_N == 0
+    for i in range(0, len(s106_order), 2)
+)
+s106_c = s106_pairs_ok and sum(s106_order) == 55  # 55 = F10
+print("    boundaries: pairs {k, N-k} zero-sum mod 11, execution sum 55 = F10: PASS"
+      if s106_c else "    boundaries: FAIL")
+
+# (5) GRID: the C5 class chain N->i->phi->e->pi as powers of 2 mod 11
+s106_chain = [pow(2, j, s106_N) for j in range(5)]
+s106_c = (
+    s106_chain == [1, 2, 4, 8, 5]
+    and pow(2, 5, s106_N) == 10
+    and pow(2, 10, s106_N) == 1
+)
+print("    grid: class chain N,i,phi,e,pi = 2^j mod 11, closure 2^5 = -1, 2^10 = 1: PASS"
+      if s106_c else "    grid: FAIL")
+
+# (6) HONEST NEAR-MISSES (observations, NOT identities)
+s106_n660 = s106_math.log(s106_phi10) / s106_math.log(1 + s106_alpha)
+s106_n60 = s106_math.log(s106_phi10) / s106_math.log((1 + s106_alpha) ** s106_N)
+s106_c = abs(s106_n660 - 660) / 660 < 0.003 and abs(s106_n60 - 60) / 60 < 0.003
+print(f"    near-miss observations (0.28% each, NOT identities): ticks-to-span "
+      f"{s106_n660:.1f} ~ 660 = |PSL(2,11)|; cycles-to-span {s106_n60:.2f} ~ 60 = |A5|: PASS"
+      if s106_c else "    near-miss: FAIL")
+
+# (7) 4pi^3+pi^2+pi observation (2.2 ppm, recorded coincidence)
+s106_c = abs(4 * s106_math.pi ** 3 + s106_math.pi ** 2 + s106_math.pi - 137.035999207) / 137.035999207 < 3e-6
+print("    4pi^3+pi^2+pi = 137.036304 (2.2 ppm, recorded coincidence, not identity): PASS"
+      if s106_c else "    4pi^3: FAIL")
+
+# (8) epsilon = alpha/N ladder anchor
+s106_c = abs(1 / (s106_alpha / s106_N) - 1508) < 1
+print("    epsilon = alpha/N = 1/1508 (the per-tick per-tick price): PASS"
+      if s106_c else "    epsilon: FAIL")
+
+print("    HONEST BOUNDARY: items (1)-(8) verify the reading's numeric anchors only;")
+print("    the reading itself is the ontology-layer status (cf. 2.6.A.4.s(4)); the")
+print("    tick price IS derived from the action in Remark 2.6.A.4.w below (the")
+print("    numerator/denominator provenance; the pairing remains the reading); the")
+print("    exact cell table C(k) and the entropic rebuild measure are programs: PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 2.6.A.4.w: the tick price from the action — the G1 program (the chi
+# = N template): the numerator pi^2/N = E''(0)/4 from the flux-envelope
+# curvature (the fundamental domain of the double Z2), the denominator
+# mu^{-10} = phi^10 from the measure-branch mass (mu = 1/phi exact); the
+# ratio IS the recorded tree price. All locals carry the s113_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 2.6.A.4.w (the tick price from the action)")
+import sympy as s113_sp
+from mpmath import mp as s113_mp, mpf as s113_mpf
+
+s113_mp.dps = 50  # explicit precision (the ambient-precision lesson)
+s113_N = 11
+s113_phi = s113_mpf(1 + s113_mp.sqrt(5)) / 2
+s113_mu = s113_phi - 1
+assert abs(s113_mu - 1 / s113_phi) < s113_mpf('1e-49')
+print("    the measure mass mu = phi - 1 = 1/phi EXACT (the recorded kernel")
+print("    C = e^{-mu t}/(2 phi) = mu^2 D_mu, Remark 2.4.AE.2.aj): PASS")
+
+s113_th = s113_sp.symbols('t113', real=True)
+s113_E = s113_N * (1 - s113_sp.cos(2 * s113_sp.pi * s113_th / s113_N))
+s113_E2 = s113_sp.simplify(s113_sp.diff(s113_E, s113_th, 2).subs(s113_th, 0))
+assert s113_E2 == 4 * s113_sp.pi**2 / s113_N
+assert s113_sp.simplify(s113_E.subs(s113_th, -s113_th) - s113_E) == 0
+print("    the envelope curvature E''(0) = (2 pi)^2/N = 4 pi^2/N EXACT (sympy);")
+print("    the flow mirror E(th) = E(-th) is exact; with the winding mirror")
+print("    k -> N-k (the recorded Z2 of the pairs) the fundamental domain of the")
+print("    double Z2 is a quadrant: E''/4 = pi^2/N — the canon reading of pi^2 as")
+print("    the double Z2-closure has a mechanical carrier in the action: PASS")
+
+s113_span = s113_mu ** (-10)
+assert abs(s113_span - s113_phi**10) < s113_mpf('1e-42')
+assert abs(s113_span / 123 - 1) < 1e-4
+print(f"    the span from the measure: mu^(-10) = phi^10 = {float(s113_span):.4f}")
+print("    (correlation length 1/mu = phi per depth, ten depths — the recorded")
+print("    invariant 2.4.G.13.u/.v gets the measure carrier; anchor L_10 = 123): PASS")
+
+s113_alpha = s113_mp.pi**2 * s113_mu**10 / s113_N
+assert abs(s113_alpha - s113_mp.pi**2 / (s113_N * s113_phi**10)) < s113_mpf('1e-49')
+assert abs(1 / s113_alpha - 137.0785) < 1e-4
+print(f"    THE PRICE: alpha = (E''/4)*mu^10 = pi^2*mu^10/N = {float(s113_alpha):.10f},")
+print(f"    1/alpha = {float(1/s113_alpha):.7f} = the recorded tree skeleton 137.0785:")
+print("    the ratio of the two action quantities IS the tree price (exact): PASS")
+
+s113_om = [2 * float(s113_mp.sin(s113_mp.pi * k / s113_N)) for k in range(1, s113_N)]
+s113_I1 = sum(1 / w**2 for w in s113_om)
+s113_P = 1.0
+for w in s113_om:
+    s113_P *= w
+assert abs(s113_I1 - (s113_N**2 - 1) / 12) < 1e-9 and abs(s113_I1 - 10) < 1e-9
+assert abs(s113_P - s113_N) < 1e-9
+print("    grid consistency (recorded anchors, machine): I_1 = sum 1/omega_k^2 =")
+print("    (N^2-1)/12 = 10 = N-1 (Cor 1.2.3.c); prod omega_k = N = 11 (Th 1.8.2): PASS")
+
+s113_gap = 2 * s113_N * float(s113_mp.sin(s113_mp.pi / s113_N))**2
+s113_alpha_ch = (s113_gap / 2) / float(s113_phi**10)
+s113_r = (s113_mp.pi**2 / s113_N) / (s113_gap / 2)
+assert abs(s113_r - 1) < 0.03
+print(f"    the chord-exact sibling: gap/2 = N sin^2(pi/N) = {s113_gap/2:.6f} gives")
+print(f"    alpha_ch = {s113_alpha_ch:.7f} (1/alpha_ch = {1/s113_alpha_ch:.4f}),")
+print(f"    {float((1-s113_alpha_ch/float(s113_alpha))*100):.1f}% below the tree — the same cosine anharmonicity as")
+print("    the middle classes of 2.9.VT.1.t(2); the tree takes the curvature (the")
+print("    harmonic reading, exact at the curvature level): PASS")
+
+s113_lad = [s113_mp.pi**2 / (s113_N * s113_phi**k) for k in range(s113_N + 1)]
+assert abs(float(s113_lad[0]) - 0.897) < 1e-3
+assert abs((float(s113_lad[10]) - 1 / 137.035999207) / (1 / 137.035999207)) < 5e-4
+s113_A = s113_N * s113_phi**10 / s113_mp.pi**2
+s113_B = s113_mp.e**4 * s113_phi**2 / (s113_mp.pi**5 * s113_N)
+s113_x = s113_alpha
+for _ in range(3):
+    s113_x = 1 / (s113_A - s113_B - s113_x**4 * 13195)
+assert abs(float(1 / s113_x) - 137.035999160) < 1e-6
+assert abs((1 + 1 / 137.035999207)**s113_N - 1.083265) < 1e-5
+print(f"    the anchors closed: alpha(0) = pi^2/N = {float(s113_lad[0]):.6f} (the union tick),")
+print("    alpha(10) deviates from the measured by -0.031%, the fixed point")
+print("    137.035999160 in 3 iterations, (1+alpha)^11 = 1.083265: PASS")
+
+print("    HONEST BOUNDARY: derived = the provenance of the numerator (the chord-")
+print("    action envelope curvature) and of the denominator (the inverse measure")
+print("    mass to the depth power); NOT derived = the pairing 'price =")
+print("    closure^2/capacity' (the ontology reading of 2.6.A.4.v(1)); the")
+print("    correction terms of Theorem 2.4.A and Cor 2.4.A.0.5.1 keep their")
+print("    statuses — the tree price is a ratio of two action-derived quantities")
+print("    under the recorded pairing: PASS")
+print("    Remark 2.6.A.4.w (the tick price from the action): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 2.6.A.4.x: the cell table of the sections — the C(k) program closed:
+# the author's reading "cells = a power" + the one grid Z11 force C(k) =
+# 2^(k-1) mod 11, which IS the recorded activation order (Th 5.3.1); the
+# structural identities (F5 mirror, QR/QNR, sums) are machine-exact. All
+# locals carry the s114_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 2.6.A.4.x (the cell table of the sections)")
+s114_N = 11
+s114_grid = [2 ** k % s114_N for k in range(s114_N)]
+s114_pow = [2 ** k for k in range(s114_N)]
+assert s114_pow[-1] == 1024 == 2 ** (s114_N - 1)
+assert s114_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+print(f"    growth C_pow(k) = 2^(k-1): 1..{s114_pow[-1]}; grid reading C(k) =")
+print(f"    C_pow mod 11 = {s114_grid} (both readings recorded, cf. 2.4.AE.2.aw): PASS")
+assert s114_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+print("    IDENTIFICATION: C(k) coincides with ALL 11 values of the recorded")
+print("    activation order O(j) = 2^j mod 11 (Def 5.3.1.d, Th 5.3.1) at the")
+print("    shift section k <-> epoch j = k-1 (both ends: Time <-> Time, the")
+print("    return <-> the Sphere closure): PASS")
+s114_prims = [a for a in range(2, s114_N)
+              if len({pow(a, j, s114_N) for j in range(10)}) == 10]
+assert s114_prims == [2, 6, 7, 8]
+assert [pow(2, j, s114_N) for j in range(5)] == [1, 2, 4, 8, 5]
+assert all([pow(a, j, s114_N) for j in range(5)] != [1, 2, 4, 8, 5]
+           for a in s114_prims if a != 2)
+print(f"    base uniqueness: of the primitive roots {s114_prims} only the recorded")
+print("    carrier 2 (Temperature/Field, Rem 2.4.AE.2.x) gives the law-side")
+print("    generation chain 1,2,4,8,5 = N,i,phi,e,pi: PASS")
+assert all(s114_grid[k] + s114_grid[k + 5] == s114_N for k in range(5))
+print(f"    the F_5 = 5 mirror (Th 5.3.1 step 3): C(k+5) = N - C(k) — five pairs")
+print(f"    " + ", ".join(f"{s114_grid[k]}+{s114_grid[k+5]}" for k in range(5)) + " = 11: PASS")
+s114_QR = sorted({(a * a) % s114_N for a in range(1, s114_N)})
+s114_odd = sorted({s114_grid[k] for k in range(0, 10, 2)})
+s114_even = sorted({s114_grid[k] for k in range(1, 10, 2)})
+assert s114_QR == [1, 3, 4, 5, 9]
+assert s114_odd == s114_QR
+assert s114_even == sorted(set(range(1, s114_N)) - set(s114_QR))
+print(f"    QR/QNR: odd-section cells = {s114_odd} = QR(11) (the recorded metric")
+print(f"    carrier, Th 4.3.0.d.N); even-section cells = {s114_even} = QNR; each")
+print("    mirror pair splits into one QR- and one QNR-side: PASS")
+assert sum(s114_grid[:10]) == 55 == 5 * s114_N
+assert sum(s114_grid) == 56
+print(f"    sums: C(1..10) = {sum(s114_grid[:10])} = 55 = F_10 (the recorded execution")
+print("    sum); C(1..11) = 56 — a numeric anchor-coincidence with the recorded")
+print("    SU(5)-singlet count (an observation, NOT an identity of carriers): PASS")
+print("    HONEST BOUNDARY: the identification 'cells = the grid's reading of the")
+print("    power' is the ontology-layer reading of .v(5); the identities above are")
+print("    exact; the tie of C(k) to physical degeneracies is a separate program;")
+print("    the cell count (discrete) and the stretch (1+alpha)/span phi^10")
+print("    (continuous metric) are independent aspects of a section: PASS")
+print("    Remark 2.6.A.4.x (the cell table of the sections): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 2.6.A.4.y: the entropic measure of the grid rebuild — the .v(8)
+# program closed on recorded objects: the static section entropy S(k) =
+# ln C(k) (order at the edges, chaos in the middle — exact on the cell
+# table) and the kinetic per-tick measure dS = S(Pp) - S(p) >= 0 — a
+# theorem on the recorded doubly-stochastic washout carrier (Birkhoff).
+# All locals carry the s115_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 2.6.A.4.y (the entropic measure of the grid rebuild)")
+s115_N = 11
+s115_phi = float((1 + 5 ** 0.5) / 2)
+s115_C = [2 ** k % s115_N for k in range(s115_N)]
+s115_S = [float(np.log(c)) for c in s115_C]
+assert s115_S[0] == 0 and s115_S[10] == 0
+assert abs(max(s115_S) - np.log(10)) < 1e-12 and s115_S.index(max(s115_S)) == 5
+print("    static section entropy S(k) = ln C(k): S(1) = S(11) = 0 (order at the")
+print("    edges), max S = ln 10 at section 6 whose cell-value 10 is the")
+print("    Electricity label (Th 5.3.1) — 'order at the edges, chaos in the")
+print("    middle' (.v(6)) EXACT on the cell table; growth tick dS = ln 2: PASS")
+
+k_idx = np.arange(s115_N)
+d = np.abs(k_idx[:, None] - k_idx[None, :])
+d = np.minimum(d, s115_N - d)
+s115_W = np.exp(-d / s115_phi)
+s115_P = s115_W / s115_W.sum(axis=1, keepdims=True)
+assert np.allclose(s115_P.sum(axis=1), 1, atol=1e-15)
+assert np.allclose(s115_P.sum(axis=0), 1, atol=1e-15)
+print("    the recorded measure carrier P = W/Z_k (Rem 2.4.BA.1.r) is DOUBLY")
+print("    stochastic: row sums = column sums = 1 (machine 1e-15; structurally")
+print("    the circulant symmetry): PASS")
+
+def _s115_Sof(p):
+    p = np.clip(p, 1e-300, None)
+    return float(-(p * np.log(p)).sum())
+s115_rng = np.random.default_rng(11)
+s115_worst = 1.0
+for _ in range(20000):
+    p = s115_rng.random(s115_N); p /= p.sum()
+    s115_worst = min(s115_worst, _s115_Sof(s115_P @ p) - _s115_Sof(p))
+for i in range(s115_N):
+    d0 = np.zeros(s115_N); d0[i] = 1.0
+    s115_worst = min(s115_worst, _s115_Sof(s115_P @ d0) - _s115_Sof(d0))
+s115_u = np.full(s115_N, 1.0 / s115_N)
+assert abs(_s115_Sof(s115_P @ s115_u) - _s115_Sof(s115_u)) < 1e-15
+assert s115_worst > 0
+print(f"    THE TICK REBUILD THEOREM: dS = S(Pp) - S(p) >= 0 for ANY occupation p")
+print(f"    (Birkhoff: doubly stochastic = a convex combo of permutations);")
+print(f"    sweep 20000 random p + 11 deltas: min dS = +{s115_worst:.4f} > 0; dS = 0")
+print("    exactly and only at the equilibrium — the entropy arrow DERIVED on")
+print("    the recorded carrier (cf. the monotone growth, Cor 2.4.A.11): PASS")
+
+assert np.allclose(s115_P @ s115_u, s115_u, atol=1e-16)
+print(f"    equilibrium = the recorded zero mode: uniform, S_eq = ln 11 =")
+print(f"    {np.log(11):.4f} > ln 10 >= S(k) — full mixing is richer than any section,")
+print("    the rebuild does not complete inside one section: PASS")
+s115_ev = np.sort(np.linalg.eigvals(s115_P).real)[::-1]
+assert abs(s115_ev[0] - 1) < 1e-15
+s115_R = sorted({round(1 - x, 4) for x in s115_ev[1:]}, reverse=True)
+assert s115_R == [0.9052, 0.8915, 0.8448, 0.7465, 0.4103]
+print(f"    the decay factors R = 1 - P: {s115_R} — the recorded Quintet spectrum of")
+print("    .r(3) (five mirror pairs; the convention check: the P-eigenvalues are")
+print("    the complements to 1); the slow branch 0.9052 governs the late time: PASS")
+
+s115_gamma = np.array([float((2 * np.sin(np.pi * k / s115_N)) ** 2) for k in range(1, s115_N + 1)])
+s115_g = s115_gamma / s115_gamma.max()
+s115_Rg = np.diag(s115_g) @ (np.eye(s115_N) - s115_P)
+s115_mags = np.sort(np.abs(np.linalg.eigvals(s115_Rg)))
+assert s115_mags[0] < 1e-12
+assert abs(s115_mags[1] - 0.0173) < 3e-3 and abs(s115_mags[-1] - 0.877) < 3e-3
+assert abs(s115_mags[1] / s115_mags[-1] - 0.0197) < 5e-4
+print(f"    the weighted variant .r(5): zero mode exact, rates 0.0173..0.877,")
+print(f"    slow/fast = 0.0197 — the recorded kinetic anchors reproduced: PASS")
+
+from mpmath import mp as s115_mp, mpf as s115_mpf
+s115_mp.dps = 30
+s115_ip2 = 1 / s115_mp.phi ** 2 if hasattr(s115_mp, 'phi') else 1 / ((1 + s115_mp.sqrt(5)) / 2) ** 2
+assert abs(s115_ip2 - (1 - 1 / ((1 + s115_mp.sqrt(5)) / 2))) < s115_mpf('1e-28')
+s115_lnNc = 1 / (s115_mp.pi ** 2 / (s115_N * ((1 + s115_mp.sqrt(5)) / 2) ** 10)) + s115_ip2
+print(f"    the cycles anchor: 1/phi^2 = {float(s115_ip2):.6f} = 1 - 1/phi (the recorded")
+print(f"    Z2 golden mirror, Cor 5.3.F.1 — NOT mu = 0.618); ln N_cycles = 1/alpha +")
+print(f"    1/phi^2 = {float(s115_lnNc):.4f} — the rebuild exponent = the tick count plus the")
+print("    golden mirror share, the same count-and-intensity structure as 2.4.A: PASS")
+
+print("    HONEST BOUNDARY: the identifications 'section entropy = ln of the cell")
+print("    count' and 'tick measure = the occupation entropy gain under P' are the")
+print("    ontology-layer readings of .v(6); dS >= 0 is a theorem; 'no measure at")
+print("    k = 10' stays the recorded measurability reading; the physical")
+print("    thermodynamics is not claimed; the reaction-density normalization is")
+print("    the open program of Cor 2.4.BA.1.c: PASS")
+print("    Remark 2.6.A.4.y (the entropic measure of the grid rebuild): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.9.v: the quartic census of the enriched scalar sector — the
+# center-charge census (Z_11: the sum of the signed charges = 0 mod 11 is
+# the necessary invariance condition); the recorded potential verified line
+# by line; the kappa3 conjugation defect FIXED (the star placement); the
+# missed cubic portal Phi330bar Phi165bar Phi11 corrected. All locals carry
+# the s116_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.9.v (the quartic center census)")
+import itertools as s116_it
+s116_N = 11
+def _s116_inv(*qs):
+    return sum(qs) % s116_N == 0
+
+s116_rec = [
+    ("lambda_a", (0, 0, 0, 0)), ("lambda_b", (0, 0, 0, 0)),
+    ("lambda_c", (-2, 2, -2, 2)), ("lambda_d", (-2, 2, -2, 2)),
+    ("lambda_H", (-1, 1, -1, 1)),
+    ("kappa1", (0, 0, -1, 1)), ("kappa2", (-2, 2, -1, 1)),
+]
+assert all(_s116_inv(*qs) for _, qs in s116_rec)
+print("    the recorded potential 5.1.D.4.1-4.5: all seven quartic classes")
+print("    (lambda_a, lambda_b, lambda_c, lambda_d, lambda_H, kappa1, kappa2)")
+print("    are center-invariant: PASS")
+s116_k3w = (-1, 2, 0, 1)
+s116_k3f = (1, -2, 0, 1)
+assert not _s116_inv(*s116_k3w) and _s116_inv(*s116_k3f)
+print(f"    THE KAPPA3 CONJUGATION FIX: as written {s116_k3w} carries center 2 —")
+print("    NOT invariant; the corrected placement kappa3 Phi11 Phi55* Phi120")
+print("    Phi11 (+h.c.) is center-allowed — exactly the structure the Q-2")
+print("    machine analysis used (through <Phi55*> = Omega): the text now")
+print("    matches the machine; the Q-2 verdict stands: PASS")
+
+s116_fields = [1, -1, 2, -2, 4, -4, 8, -8]
+s116_all = [c for c in s116_it.product(s116_fields, repeat=4)
+            if tuple(sorted(c)) == c and _s116_inv(*c)]
+s116_selfs = {c for c in s116_all
+              if tuple(sorted(c)) == tuple(sorted([c[0], c[0], -c[0], -c[0]]))}
+assert len(s116_selfs) == 4
+print(f"    the full center census (adjoint-free, sorted classes): "
+      f"{len(s116_all)} allowed;")
+print(f"    self-quartics |Phi_c|^4: {sorted({abs(list(c)[0]) for c in s116_selfs})}")
+print("    — the stage-2.5 coercivity (|Phi330|^4, |Phi165|^4) secured: PASS")
+
+s116_cubic = [(-4, -8, 1), (4, 8, -1)]
+assert all(_s116_inv(*c) for c in s116_cubic)
+assert not _s116_inv(4, -8, 1) and not _s116_inv(-4, 8, 1) and not _s116_inv(4, 8, 1)
+print("    THE CUBIC PORTAL CORRECTION: Phi330bar Phi165bar Phi11 (+h.c.)")
+print("    carries center -4-8+1 = -11 = 0 — ALLOWED; the recorded 'no cubic")
+print("    portal' enumerated 4 of the 8 sign patterns (the (-4,-8,+1) pattern")
+print("    missed); the other patterns are forbidden; the recorded cascade")
+print("    (through kappa1, kappa2, <Phi120>) is untouched: PASS")
+
+print("    HONEST BOUNDARY: the center condition is necessary, not sufficient —")
+print("    the exact Sym-multiplicities (the Sym^2/Sym^3 form plethysms) are an")
+print("    open program; the coefficients of the quartics outside the recorded")
+print("    potential are not assigned (no fitting); the portal Casimir")
+print("    beta-projections (181/22, 84/11, 289/33) are conjugation-blind and")
+print("    stand; the cubic lift of <Phi11> through the stage-2.5 vacua is an")
+print("    open program: PASS")
+print("    Remark 5.1.D.9.v (the quartic center census): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.9.w: the plethysm machine — the exact Sym-multiplicities of
+# the self-quartics and the Sym2-rule correction. Cheap invariants only (the
+# closed form + hook dims; the heavy LR/weight-algorithm machinery lives in
+# the dev script _plethysm_machine.py). All locals carry the s117_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.9.w (the plethysm machine: Sym-multiplicities)")
+from math import comb as s117_comb
+def s117_dim_gl(lam, n=11):
+    if not lam: return 1
+    if len(lam) > n: return 0
+    cols = [sum(1 for r in lam if r > j) for j in range(lam[0])]
+    num = den = 1
+    for i, l in enumerate(lam):
+        for j in range(l):
+            num *= (n + j - i)
+            den *= (l - j) + cols[j] - i - 1
+    assert num % den == 0
+    return num // den
+
+def s117_sym2_pieces(c):
+    """the machine closed form: Sym2(La^c) = +_{j = c (mod 2), 2c-j <= 11}
+    S_(2^j, 1^(2c-2j)) (dev-verified by the weight algorithm + dim anchors)."""
+    return {tuple([2]*j + [1]*(2*c - 2*j)): 1
+            for j in range(c, -1, -2) if 2*c - j <= 11}
+
+s117_ok = True
+for s117_c in range(1, 11):
+    s117_d = s117_comb(11, s117_c)
+    s117_s = sum(m * s117_dim_gl(l) for l, m in s117_sym2_pieces(s117_c).items())
+    if s117_s != s117_d * (s117_d + 1) // 2:
+        s117_ok = False
+assert s117_ok
+print("    the closed form Sym2(La^k) = +_{j=k(2), 2k-j<=11} S_(2^j,1^(2k-2j)):")
+print("    the exact dim identity sum dim = C(d+1,2), d = C(11,k), holds for ALL")
+print("    k = 1..10 (hook-content dims; the dev machine cross-checked the")
+print("    weight-algorithm decompositions at k = 1,2,3,4,9,10): PASS")
+assert s117_dim_gl((2,2)) == 1210 and s117_dim_gl((1,1,1,1)) == 330
+assert s117_sym2_pieces(1) == {(2,): 1}
+assert s117_sym2_pieces(2) == {(2,2): 1, (1,1,1,1): 1}
+assert s117_sym2_pieces(10) == {(2,)*10: 1}
+print("    anchors: Sym2(La) = s_(2); Sym2(La^2) = s_(2,2)+s_(1^4) (1540);")
+print("    Sym2(La^10) = s_(2^10) — the single piece: PASS")
+
+s117_falsified = all(
+    any((j+1) % 2 == 1 for j in range(len(l)) ) is False or True
+    for l in s117_sym2_pieces(3))
+s117_c3 = s117_sym2_pieces(3)
+assert s117_c3 == {(2,2,2): 1, (2,1,1,1,1): 1}
+s117_cols = lambda lam: [sum(1 for r in lam if r > j) for j in range(lam[0])]
+assert not all(v % 2 == 0 for v in s117_cols((2,2,2)))
+assert not all(v % 2 == 0 for v in s117_cols((2,1,1,1,1)))
+print("    THE RULE CORRECTION: at k = 3 BOTH pieces (2,2,2) and (2,1^4) have")
+print("    odd columns yet ARE in Sym2 — the recorded 'even-column rule' is")
+print("    falsified (canon corrected in 9.r/9.u(2)); the verdicts stand: PASS")
+
+assert tuple([2]*11) not in s117_sym2_pieces(9)
+assert tuple([2]*11) not in s117_sym2_pieces(10)
+for s117_k in range(1, 11):
+    assert tuple([2]*11) not in s117_sym2_pieces(s117_k)
+print("    (2^11) is absent from Sym2(La^k) for ALL k = 1..10 (j = 11 > k): the")
+print("    Psi10-Psi10-Phi55 and Psi9-Psi9-Phi330 death verdicts STAND: PASS")
+
+s117_self = {c: sum(m*m for m in s117_sym2_pieces(c).values())
+             for c in (1, 2, 4, 8)}
+assert s117_self[1] == 1 and s117_self[2] == 2
+assert s117_self[4] == 3 and s117_self[8] == 2
+print(f"    THE SELF-QUARTIC COUNTS [Sym2(La^c) x Sym2(La^(11-c))]_(2^11) = sum m_nu^2")
+print(f"    (SU-duality): c=1 -> {s117_self[1]} (the recorded lambda_H); "
+      f"c=2 -> {s117_self[2]} (the recorded")
+print(f"    pair lambda_c, lambda_d); c=4 -> {s117_self[4]}; c=8 -> {s117_self[2] and s117_self[8]} —")
+print("    all four stage-2.5 vacua coercive; the recorded potential structures")
+print("    fit the machine multiplicities: PASS")
+
+print("    HONEST BOUNDARY: the exact multiplicities of the portals and of the")
+print("    3+1 classes are an open program (the chained LR on the 19-24-box")
+print("    forms did not converge in the dev run); the center census 5.1.D.9.v")
+print("    remains the necessary condition; dev script _plethysm_machine.py: PASS")
+print("    Remark 5.1.D.9.w (the plethysm machine): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.9.v(3) dynamics: the cubic-portal tadpole channels (the
+# recorded stage-2.5 vacua (4,0) and (3,5); the branching table 9.s with
+# q = 5i-6j; the centers of SU(6)xSU(5)xU(1)). All locals carry the s118_
+# prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.9.v(3) (the cubic-portal tadpole channels)")
+from math import comb as s118_comb
+s118_q = lambda i, j: 5*i - 6*j
+assert s118_q(4,0) == 20 and s118_q(3,5) == -15
+assert s118_q(1,0) == 5 and s118_q(0,1) == -6 and s118_q(5,5) == -5
+# the branchings (the recorded 9.s anchors)
+assert [ (a, s118_comb(11,a)*0 + s118_comb(6,a)*s118_comb(5,4-a))
+         for a in (4,) ] and s118_comb(6,4)*s118_comb(5,0) == 15   # (4,0)
+assert s118_comb(6,3)*s118_comb(5,5) == 20                        # (3,5)
+assert s118_comb(6,5)*s118_comb(5,5) == 6 and s118_comb(6,6)*s118_comb(5,4) == 5
+print("    the branchings (11 = 6+5, q = 5i-6j): Lam4 = (4,0) 15 + ... (330);")
+print("    Lam8 = (3,5) 20 + ... (165); Lam10 = (5,5) 6 + (6,4) 5 (11): the")
+print("    recorded 9.s anchors reproduced: PASS")
+# the tadpole channels of the cubic Phi330 Phi165 Phibar11 (the written form):
+# the conjugate charges -q(4,0) = -20 and -q(3,5) = +15, plus the Phi11 piece
+s118_u1_10 = -s118_q(4,0) - s118_q(3,5) + s118_q(1,0)
+s118_u1_01 = -s118_q(4,0) - s118_q(3,5) + s118_q(0,1)
+s118_c6_10 = (-4 - 3 + 1) % 6
+s118_c6_01 = (-4 - 3 + 0) % 6
+assert s118_u1_10 == 0 and s118_c6_10 == 0
+assert s118_u1_01 != 0 and s118_c6_01 != 0
+print("    the cubic Phi330 Phi165 Phibar11 at <Phi330>=(4,0), <Phi165>=(3,5):")
+print(f"    the (1,0)-hidden channel: U(1) -20+15+5 = {s118_u1_10}; SU(6) -4-3+1 =")
+print("    0 (mod 6) — ALLOWED, the EXPLICIT invariant via the exterior hook")
+print("    T(a,b,c) = [a^{h i1i2i3} b_{i1i2i3}] c_h (iota_b(a) in V, the pairing")
+print("    V x V* -> 1, the result det^2): PASS")
+print(f"    the (0,1)-SM component (the Higgs candidate): U(1) -20+15-6 =")
+print(f"    {s118_u1_01} != 0 AND SU(6) {s118_c6_01} != 0 (mod 6) AND SU(5) 1x1x5:")
+print("    DOUBLE-forbidden — the SM Higgs is NOT lifted: PASS")
+s118_sib1 = 3*s118_q(4,0) - 5
+s118_sib2 = 3*s118_q(3,5) + 10
+assert s118_sib1 != 0 and s118_sib2 != 0
+print(f"    the siblings: Phi330^3 Phibar11: U(1) 3*20-5 = +{s118_sib1} != 0;")
+print(f"    Phi165^3 Phi55*: U(1) 3*(-15)+10 = {s118_sib2} != 0 — no tadpoles: PASS")
+print("    VERDICT: the recorded potential 5.1.D.4 contains no scalar cubics (the")
+print("    minimal sector had none center-allowed — it was complete): the recorded")
+print("    cascade of Theorem 5.1.D.5 stands UNCHANGED; the enriched-potential")
+print("    completeness (the alpha-tick kappa_c and the induced-VEV absorption of")
+print("    the hidden (1,0)-component) is the sharpened open program of 9.u(6);")
+print("    dev script _cubic_portal_dynamics.py: PASS")
+print("    Remark 5.1.D.9.v(3) (the cubic-portal tadpole channels): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.9.w addendum: the portal multiplicities + the U(1)-consistency
+# + the 3+1 existence/zero results. Cheap anchors only (the piece lists with
+# the dim sums, the recorded counts, the U(1) branch table, the two small-LR
+# facts); the full LR machinery lives in _portal_counts.py. All locals carry
+# the s119_ prefix.
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.9.w addendum (the portal multiplicities)")
+from math import comb as s119_comb
+from functools import lru_cache as s119_lru
+from collections import defaultdict as s119_dd
+def s119_dim(lam, n=11):
+    if len(lam) > n: return 0
+    cols = [sum(1 for r in lam if r > j) for j in range(lam[0])] if lam else []
+    num = den = 1
+    for i, l in enumerate(lam):
+        for j in range(l):
+            num *= (n + j - i)
+            den *= (l - j) + cols[j] - i - 1
+    assert num % den == 0
+    return num // den
+
+s119_pieces = {
+    (1,2): {(1,1,1): 1, (2,1): 1},
+    (1,4): {(1,1,1,1,1): 1, (2,1,1,1): 1},
+    (1,8): {(2,1,1,1,1,1,1,1): 1, (1,1,1,1,1,1,1,1,1): 1},
+    (2,4): {(1,1,1,1,1,1): 1, (2,2,1,1): 1, (2,1,1,1,1): 1},
+    (2,8): {(1,1,1,1,1,1,1,1,1,1): 1, (2,1,1,1,1,1,1,1,1): 1, (2,2,1,1,1,1,1,1): 1},
+    (4,8): {(2,2,2,1,1,1,1,1,1): 1, (2,1,1,1,1,1,1,1,1,1,1): 1,
+            (2,2,1,1,1,1,1,1,1,1): 1, (2,2,2,2,1,1,1,1): 1},
+}
+s119_counts = {}
+for (c, d), P in s119_pieces.items():
+    s = sum(m * s119_dim(l) for l, m in P.items())
+    assert s == s119_comb(11, c) * s119_comb(11, d), (c, d, s)
+    s119_counts[(c, d)] = sum(m * m for m in P.values())
+assert [s119_counts[(1,2)], s119_counts[(1,4)], s119_counts[(1,8)],
+        s119_counts[(2,4)], s119_counts[(2,8)], s119_counts[(4,8)]] == [2,2,2,3,3,4]
+print("    THE PORTAL MULTIPLICITIES [(La^c x La^d) x (La^(11-c) x La^(11-d))]_(2^11)")
+print("    = sum m_nu(La^c x La^d)^2 (the SU-duality: the second factor = the dual")
+print("    x det^2): (1,2) -> 2, (1,4) -> 2, (1,8) -> 2, (2,4) -> 3, (2,8) -> 3,")
+print("    (4,8) -> 4 independent portal structures; every piece list dim-sums to")
+print("    C(11,c)*C(11,d) (the recorded pieces: La1xLa2 = s_(3)+s_(2,1), etc.): PASS")
+
+s119_q = lambda i, j: 5*i - 6*j
+s119_BR = {c: {p: s119_q(*p) for p in
+          [(a, c-a) for a in range(0, min(c, 6)+1) if 0 <= c-a <= 5]}
+          for c in (1, 2, 4, 8)}
+assert s119_BR[1] == {(1,0): 5, (0,1): -6}
+assert s119_BR[4] == {(4,0): 20, (3,1): 9, (2,2): -2, (1,3): -13, (0,4): -24}
+s119_fields = [1,-1,2,-2,4,-4,8,-8]
+s119_classes = sorted({c for c in __import__('itertools').product(s119_fields, repeat=4)
+                       if tuple(sorted(c)) == c and sum(c) % 11 == 0})
+assert len(s119_classes) == 30
+def s119_u1_ok(qt):
+    ch = [[(1 if q > 0 else -1) * v for v in s119_BR[abs(q)].values()] for q in qt]
+    return any(sum(cmb) == 0 for cmb in __import__('itertools').product(*ch))
+assert all(s119_u1_ok(c) for c in s119_classes)
+print("    THE U(1)-CONSISTENCY: the cascade U(1) (q = 5i-6j) is a subgroup of")
+print("    SU(11) distinct from the center: all 30 center-allowed quartics are")
+print("    U(1)-allowed as potential terms (the refinement is vacuous; the U(1)")
+print("    forbids the TADPOLES at the specific vacua, Rem 5.1.D.9.v(3)): PASS")
+
+D3 = s119_pieces  # reuse guard
+from functools import lru_cache as s119_lru
+def s119_lr(mu, nu, tau):
+    skew = []
+    for i, row in enumerate(tau):
+        m = mu[i] if i < len(mu) else 0
+        for j in range(m, row):
+            skew.append((i, j))
+    if len(skew) != sum(nu): return 0
+    entries = []
+    for val, cnt in enumerate(nu, start=1):
+        entries += [val] * cnt
+    rows = s119_dd(list)
+    cols = s119_dd(list)
+    for (i, j) in skew:
+        rows[i].append(j); cols[j].append(i)
+    assign = {}
+    def feas(box, val):
+        i, j = box
+        for jj in rows[i]:
+            if jj < j and (i, jj) in assign and assign[(i, jj)] > val: return False
+            if jj > j and (i, jj) in assign and assign[(i, jj)] < val: return False
+        for ii in cols[j]:
+            if ii < i and (ii, j) in assign and assign[(ii, j)] >= val: return False
+            if ii > i and (ii, j) in assign and assign[(ii, j)] <= val: return False
+        return True
+    res = 0
+    used = s119_dd(int)
+    order = sorted(skew)
+    def rec(idx):
+        nonlocal res
+        if idx == len(order):
+            word = []
+            for i in sorted(rows):
+                for j in sorted(rows[i], reverse=True):
+                    word.append(assign[(i, j)])
+            p = s119_dd(int); good = True
+            for v in word:
+                p[v] += 1
+                for vv in range(1, v):
+                    if p[vv] < p[v]: good = False; break
+                if not good: break
+            if good: res += 1
+            return
+        box = order[idx]
+        for val in sorted(set(entries)):
+            if used[val] >= entries.count(val): continue
+            if not feas(box, val): continue
+            used[val] += 1; assign[box] = val
+            rec(idx + 1)
+            del assign[box]; used[val] -= 1
+    rec(0)
+    return res
+assert s119_lr((3,), (1,)*8, tuple([1]*11)) == 0
+print("    THE 3+1 FAMILIES: Phi11^3 Phi165 = 0 EXACTLY (s_(3)*s_(1^8) does not")
+print("    contain s_(1^11): the epsilon-contraction is antisymmetric in the three")
+print("    V-blocks — the odd block swap 1x1 — killed by Sym^3): PASS")
+assert s119_lr(tuple([1]*4), tuple([1]*4), tuple([2]+[1]*6)) == 1
+assert s119_lr(tuple([2]+[1]*6), tuple([1]*4), tuple([2]+[1]*10)) == 1
+print("    the RAW tensors: (2,1^6) in Lam4^2 and (2,1^10) = Lam1-det in")
+print("    (2,1^6)xLam4 (both c=1) — but the RAW existence is not the Sym^3")
+print("    existence (the identical-field cube = Sym^3): PASS")
+
+# the targeted extraction: m_(2,1^10)(Sym3(La^4)) via the dominant recursion
+# (the closed-form weight coefficients via the size-DPs; the full machine:
+# _sym3_targeted.py)
+def s119_sym3wgt(c, lam):
+    dp3st = {(0,0,0): 1}
+    for i in range(11):
+        k = lam[i]
+        if k > 3: return 0
+        ns = s119_dd(int)
+        for (a,b,cc) in ((x,y,z) for x in range(2) for y in range(2) for z in range(2)):
+            if a+b+cc != k: continue
+            for (s1,s2,s3), cnt in dp3st.items():
+                ns[(s1+a, s2+b, s3+cc)] += cnt
+        dp3st = dict(ns)
+    dp3 = dp3st.get((c,c,c), 0)
+    dp2st = {(0,0): 1}
+    for i in range(11):
+        k = lam[i]
+        if k > 3: return 0
+        ns = s119_dd(int)
+        for (a,b) in ((x,y) for x in range(2) for y in range(2)):
+            if a + 2*b != k: continue
+            for (s1,s2), cnt in dp2st.items():
+                ns[(s1+a, s2+b)] += cnt
+        dp2st = dict(ns)
+    dp2 = dp2st.get((c,c), 0)
+    dp1 = 1 if all(x in (0,3) for x in lam) and sum(1 for x in lam if x == 3) == c else 0
+    val = dp3 + 3*dp2 + 2*dp1
+    assert val % 6 == 0
+    return val // 6
+
+@s119_lru(maxsize=None)
+def s119_kostka(lam, nu):
+    lam = tuple(lam) + (0,)*(11 - len(lam))
+    nu = tuple(nu) + (0,)*(11 - len(nu))
+    sizes = [0]*12
+    for j in range(1, 12):
+        sizes[j] = sizes[j-1] + nu[j-1]
+    if sizes[11] != sum(lam): return 0
+    @s119_lru(maxsize=None)
+    def cnt(j, pat):
+        if sum(pat) != sizes[j]: return 0
+        if j == 0: return 1
+        total = 0
+        target = sizes[j-1]
+        def gen(i, cur, acc):
+            nonlocal total
+            if i == j - 1:
+                if acc == target:
+                    total += cnt(j - 1, tuple(cur))
+                return
+            lo = pat[i+1] if i+1 < len(pat) else 0
+            hi = pat[i] if i < len(pat) else 0
+            for v in range(lo, hi+1):
+                if acc + v > target: break
+                gen(i+1, cur+[v], acc+v)
+        gen(0, [], 0)
+        return total
+    r = cnt(11, lam)
+    cnt.cache_clear()
+    return r
+
+def s119_extract(c, rho):
+    rho_p = tuple(sorted(rho, reverse=True))
+    doms = []
+    def rec(i, cur, acc, prev):
+        if i == 11:
+            if acc == 3*c:
+                lam = tuple(cur)
+                s1 = s2 = 0; ok = True
+                for k in range(11):
+                    s1 += lam[k]; s2 += rho_p[k]
+                    if s1 < s2: ok = False; break
+                if ok: doms.append(lam)
+            return
+        for v in range(min(prev, 3*c - acc), -1, -1):
+            rec(i+1, cur+[v], acc+v, v)
+    rec(0, [], 0, 3*c)
+    memo = {}
+    def get_c(lam):
+        key = tuple(lam)
+        if key in memo: return memo[key]
+        wv = tuple(lam) + (0,)*(11 - len(lam))
+        total = s119_sym3wgt(c, wv)
+        for lam2 in doms:
+            s1 = s2 = 0; strictly = False; ok = True
+            for k in range(11):
+                s1 += lam2[k]; s2 += key[k]
+                if s1 < s2: ok = False; break
+                if s1 > s2: strictly = True
+            if not ok or not strictly or lam2 == key: continue
+            kst = s119_kostka(lam2, key)
+            if kst: total -= get_c(lam2) * kst
+        memo[key] = total
+        return total
+    return get_c(rho_p), len(doms)
+
+s119_m431, s119_nd = s119_extract(4, (2,1,1,1,1,1,1,1,1,1,1))
+assert s119_m431 == 0 and s119_nd == 76
+# the Phi165^3 via the c=3 complement route: Sym3(La^8) = Sym3(La^3*)*det^3
+# reduces the multiplicity to m_(1^9)(Sym3(La^3)) (the unique dominant piece
+# (3^2,2^9) complementing to (1^9) in the 11x3 box):
+s119_m893, s119_nd8 = s119_extract(3, (1,1,1,1,1,1,1,1,1,0,0))
+assert s119_m893 == 0 and s119_nd8 == 30
+s119_s1, _ = s119_extract(3, (3,3,3,0,0,0,0,0,0,0,0))
+s119_s2, _ = s119_extract(3, (2,2,2,1,1,1,0,0,0,0,0))
+assert s119_s1 == 1 and s119_s2 == 1
+print("    THE 3+1 CUBICS RESOLVED COMPLETELY (the targeted dominant recursion):")
+print("    m_(2,1^10)(Sym3(La^4)) = 0 (76 dominants) — Phi330^3 Phibar11 = 0 (the")
+print("    former 'exist' wording falsified: the raw tensor lives in the S_(2,1)")
+print("    sectors, not in Sym^3); m_(1^9)(Sym3(La^3)) = 0 (30 dominants, the c=3")
+print("    complement route for Phi165^3 Phibar55) — ALL THREE 3+1 families = 0:")
+print("    the enriched potential receives NO new scalar cubics, the recorded")
+print("    potential 5.1.D.4 is complete for the enriched sector (the sanities")
+print("    m_(3,3,3) = m_(2,2,2,1^3) = 1 confirm the machine is alive): PASS")
+print("    Remark 5.1.D.9.w addendum (the portal multiplicities): ALL CHECKS PASS")
 
 banner("FINAL SUMMARY -- TRINITY")
 
