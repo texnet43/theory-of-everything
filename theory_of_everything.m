@@ -18,6 +18,7 @@
 (*                                                                      *)
 (* Author: texnet43                                                     *)
 (* License: CC BY 4.0                                                   *)
+(* DOI: 10.5281/zenodo.19600779                        *)
 (* ==================================================================== *)
 
 (* === GAUGE GROUP === *)
@@ -83,11 +84,12 @@ g1_MZ = 0.3573;    (* SU(5) normalization g1 = sqrt(5/3)*gY *)
 (* 11 coefficients derived from {alpha, pi, phi, e, F_n, L_n, V_cone} *)
 (* V = -mu1^2|Phi11|^2 + lambda_H|Phi11|^4 + ... (11 terms total) *)
 
-(* Key coupling constants (all derived from Trinity structure): *)
-lambdaH = alpha * phi^5 * Pi / 2 * (1 + alpha)^2; (* = 0.12898, Th 2.8.I.2 *)
+(* Key coupling constants (all derived from Trinity structure) —
+   the definitions precede their use (top-to-bottom load): *)
 alpha   = 1 / 137.035999207;                       (* Th 2.4.A *)
 V_cone  = 13195;                                    (* Def 2.4.A *)
 phi     = (1 + Sqrt[5])/2;                          (* golden ratio *)
+lambdaH = alpha * phi^5 * Pi / 2 * (1 + alpha)^2; (* = 0.12898, Th 2.8.I.2 *)
 
 (* === VACUUM ALIGNMENT (Theorem 5.1.D.5.8) === *)
 (* Global minimum of V1(Phi_120) on partition (5,6): *)

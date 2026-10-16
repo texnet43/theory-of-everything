@@ -1,3 +1,6 @@
+/-  Trinity ToE — Lean 4 machine verification (191 theorems, sections I-IX).
+    Author: texnet43 | DOI: 10.5281/zenodo.19600779 | License: CC BY 4.0 (c) 2026
+-/
 /-
 ================================================================================
 TRINITY — UNIFIED Lean 4 VERIFICATION FILE (theory_of_everything.lean)
