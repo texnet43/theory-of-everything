@@ -5,7 +5,7 @@
 (* Based on Theorem 5.1.D.7.5 (theory_of_everything_EN.txt).            *)
 (* This file defines the complete SU(11) model with:                     *)
 (*   - Gauge group SU(11)                                               *)
-(*   - Higgs sector: Phi_11 (fund), Phi_55 (sym^2 fund), Phi_120 (adj)  *)
+(*   - Higgs sector: Phi_11 (fund), Phi_55 (antisym^2 fund), Phi_120 (adj)  *)
 (*   - Yukawa sector: y_t, y_b, y_tau (PDG 2024)                        *)
 (*   - Fermion content: Lambda^4 + Lambda^8 + Lambda^9 + Lambda^10      *)
 (*                       (561 Weyl fermions, 3 SU(5) families)          *)
@@ -70,7 +70,7 @@ AddYukawa[y910, {Psi9, Psi10, Phi165conj}]; (* enriched: Lambda^9 Lambda^10 Phi1
    Psi9 Psi9 Phi330 — the singlet (2^11) is absent from Sym^2(Lambda^k) for all k <= 10.
    Center-forbidden: Psi4 Psi8 Phi120 ([1]_SL = 0). *)
 
-(* Numerical values at M_Z (PDG 2024) *)
+(* Numerical values at M_Z (PDG mix — see per-line comments) *)
 yt_MZ  = 0.9369;   (* m_t = 173.1 GeV *)
 yb_MZ  = 0.02434;  (* m_b = 4.18 GeV *)
 ytau_MZ = 0.00997; (* m_tau = 1.777 GeV *)
