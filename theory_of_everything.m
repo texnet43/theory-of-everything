@@ -22,8 +22,7 @@
 (* ==================================================================== *)
 
 (* === GAUGE GROUP === *)
-GaugeGroup[SU11];
-GaugeGroup[Gauge = {SU11}];
+GaugeGroup[SU11, Gauge -> {SU11}];
 
 (* === HIGGS REPRESENTATIONS === *)
 (* Phi_11: fundamental (11), light EW doublet resides in (1,5) under SU(6)xSU(5) *)

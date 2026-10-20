@@ -1,4 +1,4 @@
-/-  Trinity ToE — Lean 4 machine verification (191 theorems, sections I-IX).
+/-  Trinity ToE — Lean 4 machine verification (200 theorems, sections I-X).
     Author: texnet43 | DOI: 10.5281/zenodo.19600779 | License: CC BY 4.0 (c) 2026
 -/
 /-
@@ -10,7 +10,7 @@ Lean 4.33+, NO Mathlib dependency. All theorems use native_decide/rfl.
 
 Reproduce:   lean theory_of_everything.lean    (must exit 0, no errors)
 
-Sections (191 machine-verified theorems total):
+Sections (200 machine-verified theorems total):
   I.   Core identities (25)            — Z11 basics, Higgs VEV, mass ratios
   II.  V11 Core: D1-D5 amplifiers (42) — Lambda exponent 2N^2, RH coefficient,
                                          constructive emergence, catalogue 9/36/39
@@ -30,7 +30,7 @@ Sections (191 machine-verified theorems total):
                                          generators x,y with x^2 = y^3 = (xy)^5
                                          = 1 in PSL, |SL| = 1320 = 2*660, census
                                          partition 1+55+110+264+110+120 = 660
-  VII. Integer skeleton of steps 25-33
+  VII. Integer skeleton of the cascade counts
        (6)                             — pair execution sum = 55 = F10, exactly
                                          one fixed point of k -> -k on Z11
                                          (N odd: the unique zero mode), Sylow
@@ -51,6 +51,10 @@ Sections (191 machine-verified theorems total):
                                          the vertex moment ladder (5.7.VS.1.t.x),
                                          fermion kernel counts (5.1.D.9.t),
                                          the Quintet 2+3 resonance split (1.10.2.9.y)
+  X.   Cone readings of alpha (9)         — 13200 three readings, GL(2,Z11),
+                                         V_cone = 13195 = 5*7*13*29, cell grid
+                                         C(k) = 2^(k-1) mod 11 (bridge/sum/mirror/
+                                         generator), half-cycle 2^5 = -1 (mod 11)
 Negative intermediate values use Int (Nat subtraction truncates at zero).
 ================================================================================
 -/
@@ -323,7 +327,7 @@ theorem total_resonant_modes : 2 * 5 = N - 1 := by native_decide
 
 /-
 HISTORICAL NOTE — this file was originally a separate D1-D5 file; the
-unified theory_of_everything.lean now contains 191 theorems (sections I-IX).
+unified theory_of_everything.lean now contains 200 theorems (sections I-X).
 THEOREMS OF THE ORIGINAL D1-D5 FILE (28):
 
 D1 (Λ derivation):
@@ -733,7 +737,7 @@ theorem depth3_space_count :
 end Trinity.V13.IntSkeleton
 
 
-/- ================= SECTION VIII: WASHOUT MATRIX SKELETON (24 theorems; Remark 2.4.BA.1.r, steps 43-44) =================
+/- ================= SECTION VIII: WASHOUT MATRIX SKELETON (24 theorems; Remark 2.4.BA.1.r) =================
 The integer core of the discrete washout kinetic matrix (Remark 2.4.BA.1.r):
 mirror k = (11-k) % 11 (the involutive reflection), dcyc = cyclic distance
 (min of the two directed differences) — the cyclic continuation of the KMS
@@ -1143,4 +1147,53 @@ theorem portal_dim_anchors :
 
 end Trinity.V15.Readings
 
-#print "TRINITY UNIFIED: ALL 191 MACHINE-VERIFIED THEOREMS PASS" 
+/- ================= SECTION X: CONE READINGS OF ALPHA (Rem 2.4.2.s)
+   The integer skeleton of the Cone-geometric program: the three readings
+   of the volume 13200, V_cone = 13195 = 5*7*13*29, the cell grid
+   C(k) = 2^(k-1) mod 11 (bridge, sum = F10, mirror invariant, generator),
+   and the half-cycle negation 2^5 = -1 (mod 11). =========================== -/
+namespace Trinity.V16.ConeReadings
+
+/-- (Rem 2.4.2.s(6)) The three readings of the volume: (N+1)N(N-1)^2 =
+2*T2*(N-1)^2 with T2 = 66 = |GL(2,Z11)|/(N-1)^2 · (N-1)^2... the recorded
+identities 12·11·100 = 2·66·100 = 120·110 = 13200. -/
+theorem cone_volume_three_readings :
+    (12 * 11 * 100 = 13200) ∧ (2 * 66 * 100 = 13200) ∧ (120 * 110 = 13200) := by native_decide
+
+/-- (Rem 2.4.2.s(6)) |GL(2,Z11)| = (11²−1)(11²−11) = 120·110 = 13200. -/
+theorem gl2z11_order : (11^2 - 1) * (11^2 - 11) = 13200 := by native_decide
+
+/-- (Th 2.4.A box; Def 2.4.A) V_cone = (N+1)N(N-1)^2 - (N-1)/2 = 13195. -/
+theorem v_cone_formula : (11 + 1) * 11 * (11 - 1)^2 - (11 - 1) / 2 = 13195 := by native_decide
+
+/-- (Rem 2.4.2.s(6)) The depth-3 factorization 13195 = 5·7·13·29. -/
+theorem v_cone_factorization : 5 * 7 * 13 * 29 = 13195 := by native_decide
+
+/-- (Rem 2.4.2.s(2)) The cell bridge: L0=C(2)=2, L2=C(9)=3, L3=C(3)=4,
+L4=C(8)=7, F5=C(5)=5, F6=C(4)=8 with C(k) = 2^(k-1) mod 11. -/
+theorem cell_bridge :
+    (2^1 % 11 = 2) ∧ (2^8 % 11 = 3) ∧ (2^2 % 11 = 4) ∧
+    (2^7 % 11 = 7) ∧ (2^4 % 11 = 5) ∧ (2^3 % 11 = 8) := by native_decide
+
+/-- (Rem 2.4.2.s(2)) The cell sum: C(1..10) = 1+2+4+8+5+10+9+7+3+6 = 55 = F10. -/
+theorem cell_sum_f10 : 1 + 2 + 4 + 8 + 5 + 10 + 9 + 7 + 3 + 6 = 55 := by native_decide
+
+/-- (Rem 2.6.A.4.ap) The mirror invariant C(k)·C(11-k) = 2^9 = 512 = 6 (mod 11)
+for the five mirror pairs. -/
+theorem cell_mirror_invariant :
+    (1 * 6) % 11 = 6 ∧ (2 * 3) % 11 = 6 ∧ (4 * 7) % 11 = 6 ∧
+    (8 * 9) % 11 = 6 ∧ (5 * 10) % 11 = 6 := by native_decide
+
+/-- (Rem 2.6.A.4.am) The count generator C(k+1) = 2·C(k) mod 11 on all steps. -/
+theorem cell_generator :
+    (2*1) % 11 = 2 ∧ (2*2) % 11 = 4 ∧ (2*4) % 11 = 8 ∧ (2*8) % 11 = 5 ∧
+    (2*5) % 11 = 10 ∧ (2*10) % 11 = 9 ∧ (2*9) % 11 = 7 ∧ (2*7) % 11 = 3 ∧
+    (2*3) % 11 = 6 := by native_decide
+
+/-- (Rem 2.6.A.4.an) The half-cycle negation: 2^5 = 32 = -1 (mod 11); every
+mirror pair sits exactly 5 steps apart in the doubling cycle. -/
+theorem half_cycle_negation : 2^5 % 11 = 10 ∧ (2^5 + 1) % 11 = 0 := by native_decide
+
+end Trinity.V16.ConeReadings
+
+#print "TRINITY UNIFIED: ALL 200 MACHINE-VERIFIED THEOREMS PASS" 

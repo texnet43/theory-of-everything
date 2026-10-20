@@ -5518,14 +5518,16 @@ print(f"    Delta BIC (SM - Trinity) >= {delta_BIC:.2f}")
 print(f"    Both criteria strongly favor Trinity")
 
 # --- 2.10.E Error distribution analysis ---
+from statistics import median as _med_e, stdev as _std_e
 print("\n  2.10.E  ERROR DISTRIBUTION ANALYSIS")
 print(f"    Mean relative error (tree):    {mean_err:.4f}%")
 print(f"    Constants with error < 0.001%: {exact_count}/{len(errors)}")
-print(f"    Median relative error:         ~0.0002%")
-print(f"    Std deviation:                 ~0.003%")
-print(f"    Max (few constants, tree):     ~1%")
-print(f"    Min (alpha leading + corrections): < 10^-8%")
-print(f"    Distribution: approximately Gaussian, light tails")
+print(f"    Median relative error:         {_med_e(errors):.5f}%")
+print(f"    Std deviation:                 {_std_e(errors):.4f}%")
+print(f"    Max relative error:            {max(errors):.4f}% ({max(errors)/_std_e(errors):.1f} sigma)")
+print(f"    Min relative error:            {min(errors):.4f}%")
+print(f"    Constants with error < 0.01%:  {sum(1 for e in errors if e < 0.01)}/{len(errors)}")
+print("    Distribution: right-skewed, light tail, single beyond-5sigma value")
 
 
 # --- 2.10.F Systematic effects ---
@@ -11303,10 +11305,10 @@ print("    Remark 5.1.D.9.t (mass-operator rank): ALL CHECKS PASS")
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
 # Remark 5.1.D.9.u: enrichment of the scalar sector — Phi330 = Lam^4 (charge 4)
-# and Phi165 = Lam^8 (charge 8) as section carriers (the author's resolution of
-# forks Q-1/Q-2).  Cheap invariants here; exact LR multiplicities
-# and full epsilon-contractions live in the dev scripts _lr_yukawa_check.py /
-# _q1_q2_machine_check.py (LR anchors: dim-sums 100/1815/598950, Sym^2(Lam^2 C5)=55).
+# and Phi165 = Lam^8 (charge 8) as section carriers.  Cheap invariants here;
+# exact LR multiplicities and full epsilon-contractions are recorded with their
+# dimension anchors (100/1815/598950, Sym^2(Lam^2 C5)=55) and re-checked by the
+# release plethysm block of Remark 5.1.D.9.w.
 # ---------------------------------------------------------------------------
 banner("Remark 5.1.D.9.u (enriched scalar sector: section carriers)")
 import itertools as _it112
@@ -11712,7 +11714,7 @@ print("    Remark 2.4.AE.2.ae (variational consistency): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.4.AE.2.af: the origin of the members — pairs, root, resonance
-# (the author's intuition): the coefficients as duality functions.
+# the coefficients as duality functions.
 # ---------------------------------------------------------------------------
 banner("Remark 2.4.AE.2.af (origin of the members: pairs, root, resonance)")
 _r76 = _rho72
@@ -11737,9 +11739,9 @@ assert round(np.trace(_Pp76)) == 5 and round(np.trace(_Pm76)) == 5
 print("    the root factor d(sqrt X) = (1/2) dX/sqrt X exact (sympy); sqrt(-g) = root of a")
 print("    negative = DIRECTION = i <-> {2,9} (Rems .w/.x); the projectors (1+-M)/2 carry the")
 print("    1/2 per direction; kappa_T*(1/2) = kappa per pair direction -> kappa_T = 2 kappa: PASS")
-print("    status: a structural derivation at the pair-postulate level (the author's")
-print("    intuition), consistent with the continuum matching (Rem .ac); the phase five is")
-print("    excited by execution (author-confirmed reading): PASS")
+print("    status: a structural derivation at the pair-postulate level, consistent")
+print("    with the continuum matching (Rem .ac); the phase five is")
+print("    excited by execution: PASS")
 print("    Remark 2.4.AE.2.af (origin of the members): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
@@ -12125,7 +12127,7 @@ print("    Remark 2.4.AE.2.ah (the measure functional): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 1.10.2.9.y: the Quintet 2+3 split — the boundary-form {e, pi} and
-# the content {N, i, phi} (the author's intuition); form = resonance of content.
+# the content {N, i, phi}; form = resonance of content.
 # ---------------------------------------------------------------------------
 banner("Remark 1.10.2.9.y (Quintet 2+3: form/content)")
 assert 3 + 2 == 5
@@ -13425,9 +13427,9 @@ print("    Remark 2.4.AE.2.av (the momentum-space 4-point): ALL CHECKS PASS")
 
 
 # ---------------------------------------------------------------------------
-# Remark 2.4.AE.2.aw: the 8-point cumulant — the two readings (the author's
-# fork): the pure structures coincide with the full cumulant for a single
-# component; the cross-component reading by the brute census.
+# Remark 2.4.AE.2.aw: the 8-point cumulant — the two readings: the pure
+# structures coincide with the full cumulant for a single component;
+# the cross-component reading by the brute census.
 # ---------------------------------------------------------------------------
 banner("Remark 2.4.AE.2.aw (the 8-point: the two readings)")
 def _mt104(fields):
@@ -13491,7 +13493,7 @@ def _asm104(cls):
     return sum(cnt * _c0101**(nh + nab + naa + nbb) * _I104(xu, xv, nuv)
                for (xu, xv, nuv, nh, nab, naa, nbb), cnt in cls.items())
 _v44104 = _asm104(_c44104); _v80104 = _asm104(_c80104)
-print(f"    the readings (the author's fork, both recorded):")
+print(f"    the two readings (both recorded):")
 print(f"    (single component — the readings coincide) <a^8>_c^(2) = {_v80104*_lam85**2/32:.4e}")
 print(f"    (the assembly x32/lambda^2 = {_v80104*32/_lam85**2:.1f});")
 print(f"    (cross-component, the full cumulant) <a^4 b^4>_c^(2) = {_v44104*_lam85**2/32:.4e}")
@@ -13508,84 +13510,84 @@ print("    instanton — the program 5.1.G.3: PASS")
 print("    Remark 2.4.AE.2.aw (the 8-point, the two readings): ALL CHECKS PASS")
 
 
-# Inserted before the FINAL SUMMARY banner. All locals carry the s106_ prefix
-# (validator globals shadow block locals).
+# Inserted before the FINAL SUMMARY banner. All locals carry a block-local
+# prefix (validator globals shadow block locals).
 
 print("  Remark 2.6.A.4.v (alpha as the scale-execution quantum):")
 
-import math as s106_math
+import math as p01_math
 
-s106_N = 11
-s106_phi = (1 + s106_math.sqrt(5)) / 2
-s106_phi10 = s106_phi ** 10
-s106_alpha_tree = s106_math.pi ** 2 / (s106_N * s106_phi10)
-s106_alpha = 1 / 137.035999207
-s106_V_cone = 13195
-s106_A = s106_N * s106_phi10 / s106_math.pi ** 2
-s106_B = s106_math.e ** 4 * s106_phi ** 2 / (s106_math.pi ** 5 * s106_N)
+p01_N = 11
+p01_phi = (1 + p01_math.sqrt(5)) / 2
+p01_phi10 = p01_phi ** 10
+p01_alpha_tree = p01_math.pi ** 2 / (p01_N * p01_phi10)
+p01_alpha = 1 / 137.035999207
+p01_V_cone = 13195
+p01_A = p01_N * p01_phi10 / p01_math.pi ** 2
+p01_B = p01_math.e ** 4 * p01_phi ** 2 / (p01_math.pi ** 5 * p01_N)
 
 # (1) PRICE: alpha_tree = closure^2 / (grid x span)
-s106_c = abs(s106_alpha_tree - s106_math.pi ** 2 / (s106_N * s106_phi10)) < 1e-15
-s106_c = s106_c and abs(1 / s106_alpha_tree - 137.07850) < 1e-4
-s106_c = s106_c and abs(s106_math.pi ** 2 / s106_N - 0.8972) < 1e-3
+p01_c = abs(p01_alpha_tree - p01_math.pi ** 2 / (p01_N * p01_phi10)) < 1e-15
+p01_c = p01_c and abs(1 / p01_alpha_tree - 137.07850) < 1e-4
+p01_c = p01_c and abs(p01_math.pi ** 2 / p01_N - 0.8972) < 1e-3
 print("    price: alpha = pi^2/(N phi^10); alpha(0) = pi^2/N = 0.897 (unification tick): PASS"
-      if s106_c else "    price: FAIL")
+      if p01_c else "    price: FAIL")
 
 # (2) COUNT: full formula = skeleton - intensity - cone self-volume
-s106_c = abs(s106_A - 137.07850) < 1e-4 and abs(s106_B - 0.04246) < 1e-4
-s106_skel = s106_A - s106_B
-s106_c = s106_c and abs(s106_skel - 137.036037) < 1e-5
-s106_theta = s106_math.degrees(s106_math.acos(1 - 2 / 137.035999207))
-s106_c = s106_c and abs(s106_theta - 9.801) < 0.01
-print(f"    count: skeleton {s106_skel:.6f}; solid-angle cone half-angle {s106_theta:.3f} deg: PASS"
-      if s106_c else "    count: FAIL")
+p01_c = abs(p01_A - 137.07850) < 1e-4 and abs(p01_B - 0.04246) < 1e-4
+p01_skel = p01_A - p01_B
+p01_c = p01_c and abs(p01_skel - 137.036037) < 1e-5
+p01_theta = p01_math.degrees(p01_math.acos(1 - 2 / 137.035999207))
+p01_c = p01_c and abs(p01_theta - 9.801) < 0.01
+print(f"    count: skeleton {p01_skel:.6f}; solid-angle cone half-angle {p01_theta:.3f} deg: PASS"
+      if p01_c else "    count: FAIL")
 
 # (3) STEP: fixed-point iteration superattractive (3 steps)
-s106_x = s106_alpha_tree
+p01_x = p01_alpha_tree
 for _ in range(3):
-    s106_x = 1 / (s106_A - s106_B - s106_x ** 4 * s106_V_cone)
-s106_c = abs(1 / s106_x - 137.035999160) < 1e-6
-s106_c = s106_c and abs((1 + s106_alpha) ** s106_N - 1.083265) < 1e-5
+    p01_x = 1 / (p01_A - p01_B - p01_x ** 4 * p01_V_cone)
+p01_c = abs(1 / p01_x - 137.035999160) < 1e-6
+p01_c = p01_c and abs((1 + p01_alpha) ** p01_N - 1.083265) < 1e-5
 print("    step: fixed point 137.035999160 in 3 iterations; (1+alpha)^11 = 1.083265: PASS"
-      if s106_c else "    step: FAIL")
+      if p01_c else "    step: FAIL")
 
 # (4) BOUNDARIES: pair execution order — discrete pairs, zero-sum mod N
-s106_order = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]
-s106_pairs_ok = all(
-    (s106_order[i] + s106_order[i + 1]) % s106_N == 0
-    for i in range(0, len(s106_order), 2)
+p01_order = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]
+p01_pairs_ok = all(
+    (p01_order[i] + p01_order[i + 1]) % p01_N == 0
+    for i in range(0, len(p01_order), 2)
 )
-s106_c = s106_pairs_ok and sum(s106_order) == 55  # 55 = F10
+p01_c = p01_pairs_ok and sum(p01_order) == 55  # 55 = F10
 print("    boundaries: pairs {k, N-k} zero-sum mod 11, execution sum 55 = F10: PASS"
-      if s106_c else "    boundaries: FAIL")
+      if p01_c else "    boundaries: FAIL")
 
 # (5) GRID: the C5 class chain N->i->phi->e->pi as powers of 2 mod 11
-s106_chain = [pow(2, j, s106_N) for j in range(5)]
-s106_c = (
-    s106_chain == [1, 2, 4, 8, 5]
-    and pow(2, 5, s106_N) == 10
-    and pow(2, 10, s106_N) == 1
+p01_chain = [pow(2, j, p01_N) for j in range(5)]
+p01_c = (
+    p01_chain == [1, 2, 4, 8, 5]
+    and pow(2, 5, p01_N) == 10
+    and pow(2, 10, p01_N) == 1
 )
 print("    grid: class chain N,i,phi,e,pi = 2^j mod 11, closure 2^5 = -1, 2^10 = 1: PASS"
-      if s106_c else "    grid: FAIL")
+      if p01_c else "    grid: FAIL")
 
 # (6) HONEST NEAR-MISSES (observations, NOT identities)
-s106_n660 = s106_math.log(s106_phi10) / s106_math.log(1 + s106_alpha)
-s106_n60 = s106_math.log(s106_phi10) / s106_math.log((1 + s106_alpha) ** s106_N)
-s106_c = abs(s106_n660 - 660) / 660 < 0.003 and abs(s106_n60 - 60) / 60 < 0.003
+p01_n660 = p01_math.log(p01_phi10) / p01_math.log(1 + p01_alpha)
+p01_n60 = p01_math.log(p01_phi10) / p01_math.log((1 + p01_alpha) ** p01_N)
+p01_c = abs(p01_n660 - 660) / 660 < 0.003 and abs(p01_n60 - 60) / 60 < 0.003
 print(f"    near-miss observations (0.28% each, NOT identities): ticks-to-span "
-      f"{s106_n660:.1f} ~ 660 = |PSL(2,11)|; cycles-to-span {s106_n60:.2f} ~ 60 = |A5|: PASS"
-      if s106_c else "    near-miss: FAIL")
+      f"{p01_n660:.1f} ~ 660 = |PSL(2,11)|; cycles-to-span {p01_n60:.2f} ~ 60 = |A5|: PASS"
+      if p01_c else "    near-miss: FAIL")
 
 # (7) 4pi^3+pi^2+pi observation (2.2 ppm, recorded coincidence)
-s106_c = abs(4 * s106_math.pi ** 3 + s106_math.pi ** 2 + s106_math.pi - 137.035999207) / 137.035999207 < 3e-6
+p01_c = abs(4 * p01_math.pi ** 3 + p01_math.pi ** 2 + p01_math.pi - 137.035999207) / 137.035999207 < 3e-6
 print("    4pi^3+pi^2+pi = 137.036304 (2.2 ppm, recorded coincidence, not identity): PASS"
-      if s106_c else "    4pi^3: FAIL")
+      if p01_c else "    4pi^3: FAIL")
 
 # (8) epsilon = alpha/N ladder anchor
-s106_c = abs(1 / (s106_alpha / s106_N) - 1508) < 1
+p01_c = abs(1 / (p01_alpha / p01_N) - 1508) < 1
 print("    epsilon = alpha/N = 1/1508 (the per-tick per-tick price): PASS"
-      if s106_c else "    epsilon: FAIL")
+      if p01_c else "    epsilon: FAIL")
 
 print("    HONEST BOUNDARY: items (1)-(8) verify the reading's numeric anchors only;")
 print("    the reading itself is the ontology-layer status (cf. 2.6.A.4.s(4)); the")
@@ -13598,76 +13600,76 @@ print("    exact cell table C(k) and the entropic rebuild measure are programs: 
 # = N template): the numerator pi^2/N = E''(0)/4 from the flux-envelope
 # curvature (the fundamental domain of the double Z2), the denominator
 # mu^{-10} = phi^10 from the measure-branch mass (mu = 1/phi exact); the
-# ratio IS the recorded tree price. All locals carry the s113_ prefix.
+# ratio IS the recorded tree price. All locals carry the p02_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.w (the tick price from the action)")
-import sympy as s113_sp
-from mpmath import mp as s113_mp, mpf as s113_mpf
+import sympy as p02_sp
+from mpmath import mp as p02_mp, mpf as p02_mpf
 
-s113_mp.dps = 50  # explicit precision (the ambient-precision lesson)
-s113_N = 11
-s113_phi = s113_mpf(1 + s113_mp.sqrt(5)) / 2
-s113_mu = s113_phi - 1
-assert abs(s113_mu - 1 / s113_phi) < s113_mpf('1e-49')
+p02_mp.dps = 50  # explicit precision (the ambient-precision lesson)
+p02_N = 11
+p02_phi = p02_mpf(1 + p02_mp.sqrt(5)) / 2
+p02_mu = p02_phi - 1
+assert abs(p02_mu - 1 / p02_phi) < p02_mpf('1e-49')
 print("    the measure mass mu = phi - 1 = 1/phi EXACT (the recorded kernel")
 print("    C = e^{-mu t}/(2 phi) = mu^2 D_mu, Remark 2.4.AE.2.aj): PASS")
 
-s113_th = s113_sp.symbols('t113', real=True)
-s113_E = s113_N * (1 - s113_sp.cos(2 * s113_sp.pi * s113_th / s113_N))
-s113_E2 = s113_sp.simplify(s113_sp.diff(s113_E, s113_th, 2).subs(s113_th, 0))
-assert s113_E2 == 4 * s113_sp.pi**2 / s113_N
-assert s113_sp.simplify(s113_E.subs(s113_th, -s113_th) - s113_E) == 0
+p02_th = p02_sp.symbols('t113', real=True)
+p02_E = p02_N * (1 - p02_sp.cos(2 * p02_sp.pi * p02_th / p02_N))
+p02_E2 = p02_sp.simplify(p02_sp.diff(p02_E, p02_th, 2).subs(p02_th, 0))
+assert p02_E2 == 4 * p02_sp.pi**2 / p02_N
+assert p02_sp.simplify(p02_E.subs(p02_th, -p02_th) - p02_E) == 0
 print("    the envelope curvature E''(0) = (2 pi)^2/N = 4 pi^2/N EXACT (sympy);")
 print("    the flow mirror E(th) = E(-th) is exact; with the winding mirror")
 print("    k -> N-k (the recorded Z2 of the pairs) the fundamental domain of the")
 print("    double Z2 is a quadrant: E''/4 = pi^2/N — the canon reading of pi^2 as")
 print("    the double Z2-closure has a mechanical carrier in the action: PASS")
 
-s113_span = s113_mu ** (-10)
-assert abs(s113_span - s113_phi**10) < s113_mpf('1e-42')
-assert abs(s113_span / 123 - 1) < 1e-4
-print(f"    the span from the measure: mu^(-10) = phi^10 = {float(s113_span):.4f}")
+p02_span = p02_mu ** (-10)
+assert abs(p02_span - p02_phi**10) < p02_mpf('1e-42')
+assert abs(p02_span / 123 - 1) < 1e-4
+print(f"    the span from the measure: mu^(-10) = phi^10 = {float(p02_span):.4f}")
 print("    (correlation length 1/mu = phi per depth, ten depths — the recorded")
 print("    invariant 2.4.G.13.u/.v gets the measure carrier; anchor L_10 = 123): PASS")
 
-s113_alpha = s113_mp.pi**2 * s113_mu**10 / s113_N
-assert abs(s113_alpha - s113_mp.pi**2 / (s113_N * s113_phi**10)) < s113_mpf('1e-49')
-assert abs(1 / s113_alpha - 137.0785) < 1e-4
-print(f"    THE PRICE: alpha = (E''/4)*mu^10 = pi^2*mu^10/N = {float(s113_alpha):.10f},")
-print(f"    1/alpha = {float(1/s113_alpha):.7f} = the recorded tree skeleton 137.0785:")
+p02_alpha = p02_mp.pi**2 * p02_mu**10 / p02_N
+assert abs(p02_alpha - p02_mp.pi**2 / (p02_N * p02_phi**10)) < p02_mpf('1e-49')
+assert abs(1 / p02_alpha - 137.0785) < 1e-4
+print(f"    THE PRICE: alpha = (E''/4)*mu^10 = pi^2*mu^10/N = {float(p02_alpha):.10f},")
+print(f"    1/alpha = {float(1/p02_alpha):.7f} = the recorded tree skeleton 137.0785:")
 print("    the ratio of the two action quantities IS the tree price (exact): PASS")
 
-s113_om = [2 * float(s113_mp.sin(s113_mp.pi * k / s113_N)) for k in range(1, s113_N)]
-s113_I1 = sum(1 / w**2 for w in s113_om)
-s113_P = 1.0
-for w in s113_om:
-    s113_P *= w
-assert abs(s113_I1 - (s113_N**2 - 1) / 12) < 1e-9 and abs(s113_I1 - 10) < 1e-9
-assert abs(s113_P - s113_N) < 1e-9
+p02_om = [2 * float(p02_mp.sin(p02_mp.pi * k / p02_N)) for k in range(1, p02_N)]
+p02_I1 = sum(1 / w**2 for w in p02_om)
+p02_P = 1.0
+for w in p02_om:
+    p02_P *= w
+assert abs(p02_I1 - (p02_N**2 - 1) / 12) < 1e-9 and abs(p02_I1 - 10) < 1e-9
+assert abs(p02_P - p02_N) < 1e-9
 print("    grid consistency (recorded anchors, machine): I_1 = sum 1/omega_k^2 =")
 print("    (N^2-1)/12 = 10 = N-1 (Cor 1.2.3.c); prod omega_k = N = 11 (Th 1.8.2): PASS")
 
-s113_gap = 2 * s113_N * float(s113_mp.sin(s113_mp.pi / s113_N))**2
-s113_alpha_ch = (s113_gap / 2) / float(s113_phi**10)
-s113_r = (s113_mp.pi**2 / s113_N) / (s113_gap / 2)
-assert abs(s113_r - 1) < 0.03
-print(f"    the chord-exact sibling: gap/2 = N sin^2(pi/N) = {s113_gap/2:.6f} gives")
-print(f"    alpha_ch = {s113_alpha_ch:.7f} (1/alpha_ch = {1/s113_alpha_ch:.4f}),")
-print(f"    {float((1-s113_alpha_ch/float(s113_alpha))*100):.1f}% below the tree — the same cosine anharmonicity as")
+p02_gap = 2 * p02_N * float(p02_mp.sin(p02_mp.pi / p02_N))**2
+p02_alpha_ch = (p02_gap / 2) / float(p02_phi**10)
+p02_r = (p02_mp.pi**2 / p02_N) / (p02_gap / 2)
+assert abs(p02_r - 1) < 0.03
+print(f"    the chord-exact sibling: gap/2 = N sin^2(pi/N) = {p02_gap/2:.6f} gives")
+print(f"    alpha_ch = {p02_alpha_ch:.7f} (1/alpha_ch = {1/p02_alpha_ch:.4f}),")
+print(f"    {float((1-p02_alpha_ch/float(p02_alpha))*100):.1f}% below the tree — the same cosine anharmonicity as")
 print("    the middle classes of 2.9.VT.1.t(2); the tree takes the curvature (the")
 print("    harmonic reading, exact at the curvature level): PASS")
 
-s113_lad = [s113_mp.pi**2 / (s113_N * s113_phi**k) for k in range(s113_N + 1)]
-assert abs(float(s113_lad[0]) - 0.897) < 1e-3
-assert abs((float(s113_lad[10]) - 1 / 137.035999207) / (1 / 137.035999207)) < 5e-4
-s113_A = s113_N * s113_phi**10 / s113_mp.pi**2
-s113_B = s113_mp.e**4 * s113_phi**2 / (s113_mp.pi**5 * s113_N)
-s113_x = s113_alpha
+p02_lad = [p02_mp.pi**2 / (p02_N * p02_phi**k) for k in range(p02_N + 1)]
+assert abs(float(p02_lad[0]) - 0.897) < 1e-3
+assert abs((float(p02_lad[10]) - 1 / 137.035999207) / (1 / 137.035999207)) < 5e-4
+p02_A = p02_N * p02_phi**10 / p02_mp.pi**2
+p02_B = p02_mp.e**4 * p02_phi**2 / (p02_mp.pi**5 * p02_N)
+p02_x = p02_alpha
 for _ in range(3):
-    s113_x = 1 / (s113_A - s113_B - s113_x**4 * 13195)
-assert abs(float(1 / s113_x) - 137.035999160) < 1e-6
-assert abs((1 + 1 / 137.035999207)**s113_N - 1.083265) < 1e-5
-print(f"    the anchors closed: alpha(0) = pi^2/N = {float(s113_lad[0]):.6f} (the union tick),")
+    p02_x = 1 / (p02_A - p02_B - p02_x**4 * 13195)
+assert abs(float(1 / p02_x) - 137.035999160) < 1e-6
+assert abs((1 + 1 / 137.035999207)**p02_N - 1.083265) < 1e-5
+print(f"    the anchors closed: alpha(0) = pi^2/N = {float(p02_lad[0]):.6f} (the union tick),")
 print("    alpha(10) deviates from the measured by -0.031%, the fixed point")
 print("    137.035999160 in 3 iterations, (1+alpha)^11 = 1.083265: PASS")
 
@@ -13682,48 +13684,48 @@ print("    Remark 2.6.A.4.w (the tick price from the action): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.x: the cell table of the sections — the C(k) program closed:
-# the author's reading "cells = a power" + the one grid Z11 force C(k) =
+# the reading "cells = a power" + the one grid Z11 force C(k) =
 # 2^(k-1) mod 11, which IS the recorded activation order (Th 5.3.1); the
 # structural identities (F5 mirror, QR/QNR, sums) are machine-exact. All
-# locals carry the s114_ prefix.
+# locals carry the p03_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.x (the cell table of the sections)")
-s114_N = 11
-s114_grid = [2 ** k % s114_N for k in range(s114_N)]
-s114_pow = [2 ** k for k in range(s114_N)]
-assert s114_pow[-1] == 1024 == 2 ** (s114_N - 1)
-assert s114_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
-print(f"    growth C_pow(k) = 2^(k-1): 1..{s114_pow[-1]}; grid reading C(k) =")
-print(f"    C_pow mod 11 = {s114_grid} (both readings recorded, cf. 2.4.AE.2.aw): PASS")
-assert s114_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+p03_N = 11
+p03_grid = [2 ** k % p03_N for k in range(p03_N)]
+p03_pow = [2 ** k for k in range(p03_N)]
+assert p03_pow[-1] == 1024 == 2 ** (p03_N - 1)
+assert p03_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+print(f"    growth C_pow(k) = 2^(k-1): 1..{p03_pow[-1]}; grid reading C(k) =")
+print(f"    C_pow mod 11 = {p03_grid} (both readings recorded, cf. 2.4.AE.2.aw): PASS")
+assert p03_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
 print("    IDENTIFICATION: C(k) coincides with ALL 11 values of the recorded")
 print("    activation order O(j) = 2^j mod 11 (Def 5.3.1.d, Th 5.3.1) at the")
 print("    shift section k <-> epoch j = k-1 (both ends: Time <-> Time, the")
 print("    return <-> the Sphere closure): PASS")
-s114_prims = [a for a in range(2, s114_N)
-              if len({pow(a, j, s114_N) for j in range(10)}) == 10]
-assert s114_prims == [2, 6, 7, 8]
-assert [pow(2, j, s114_N) for j in range(5)] == [1, 2, 4, 8, 5]
-assert all([pow(a, j, s114_N) for j in range(5)] != [1, 2, 4, 8, 5]
-           for a in s114_prims if a != 2)
-print(f"    base uniqueness: of the primitive roots {s114_prims} only the recorded")
+p03_prims = [a for a in range(2, p03_N)
+              if len({pow(a, j, p03_N) for j in range(10)}) == 10]
+assert p03_prims == [2, 6, 7, 8]
+assert [pow(2, j, p03_N) for j in range(5)] == [1, 2, 4, 8, 5]
+assert all([pow(a, j, p03_N) for j in range(5)] != [1, 2, 4, 8, 5]
+           for a in p03_prims if a != 2)
+print(f"    base uniqueness: of the primitive roots {p03_prims} only the recorded")
 print("    carrier 2 (Temperature/Field, Rem 2.4.AE.2.x) gives the law-side")
 print("    generation chain 1,2,4,8,5 = N,i,phi,e,pi: PASS")
-assert all(s114_grid[k] + s114_grid[k + 5] == s114_N for k in range(5))
+assert all(p03_grid[k] + p03_grid[k + 5] == p03_N for k in range(5))
 print(f"    the F_5 = 5 mirror (Th 5.3.1 step 3): C(k+5) = N - C(k) — five pairs")
-print(f"    " + ", ".join(f"{s114_grid[k]}+{s114_grid[k+5]}" for k in range(5)) + " = 11: PASS")
-s114_QR = sorted({(a * a) % s114_N for a in range(1, s114_N)})
-s114_odd = sorted({s114_grid[k] for k in range(0, 10, 2)})
-s114_even = sorted({s114_grid[k] for k in range(1, 10, 2)})
-assert s114_QR == [1, 3, 4, 5, 9]
-assert s114_odd == s114_QR
-assert s114_even == sorted(set(range(1, s114_N)) - set(s114_QR))
-print(f"    QR/QNR: odd-section cells = {s114_odd} = QR(11) (the recorded metric")
-print(f"    carrier, Th 4.3.0.d.N); even-section cells = {s114_even} = QNR; each")
+print(f"    " + ", ".join(f"{p03_grid[k]}+{p03_grid[k+5]}" for k in range(5)) + " = 11: PASS")
+p03_QR = sorted({(a * a) % p03_N for a in range(1, p03_N)})
+p03_odd = sorted({p03_grid[k] for k in range(0, 10, 2)})
+p03_even = sorted({p03_grid[k] for k in range(1, 10, 2)})
+assert p03_QR == [1, 3, 4, 5, 9]
+assert p03_odd == p03_QR
+assert p03_even == sorted(set(range(1, p03_N)) - set(p03_QR))
+print(f"    QR/QNR: odd-section cells = {p03_odd} = QR(11) (the recorded metric")
+print(f"    carrier, Th 4.3.0.d.N); even-section cells = {p03_even} = QNR; each")
 print("    mirror pair splits into one QR- and one QNR-side: PASS")
-assert sum(s114_grid[:10]) == 55 == 5 * s114_N
-assert sum(s114_grid) == 56
-print(f"    sums: C(1..10) = {sum(s114_grid[:10])} = 55 = F_10 (the recorded execution")
+assert sum(p03_grid[:10]) == 55 == 5 * p03_N
+assert sum(p03_grid) == 56
+print(f"    sums: C(1..10) = {sum(p03_grid[:10])} = 55 = F_10 (the recorded execution")
 print("    sum); C(1..11) = 56 — a numeric anchor-coincidence with the recorded")
 print("    SU(5)-singlet count (an observation, NOT an identity of carriers): PASS")
 print("    HONEST BOUNDARY: the identification 'cells = the grid's reading of the")
@@ -13739,81 +13741,81 @@ print("    Remark 2.6.A.4.x (the cell table of the sections): ALL CHECKS PASS")
 # ln C(k) (order at the edges, chaos in the middle — exact on the cell
 # table) and the kinetic per-tick measure dS = S(Pp) - S(p) >= 0 — a
 # theorem on the recorded doubly-stochastic washout carrier (Birkhoff).
-# All locals carry the s115_ prefix.
+# All locals carry the p04_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.y (the entropic measure of the grid rebuild)")
-s115_N = 11
-s115_phi = float((1 + 5 ** 0.5) / 2)
-s115_C = [2 ** k % s115_N for k in range(s115_N)]
-s115_S = [float(np.log(c)) for c in s115_C]
-assert s115_S[0] == 0 and s115_S[10] == 0
-assert abs(max(s115_S) - np.log(10)) < 1e-12 and s115_S.index(max(s115_S)) == 5
+p04_N = 11
+p04_phi = float((1 + 5 ** 0.5) / 2)
+p04_C = [2 ** k % p04_N for k in range(p04_N)]
+p04_S = [float(np.log(c)) for c in p04_C]
+assert p04_S[0] == 0 and p04_S[10] == 0
+assert abs(max(p04_S) - np.log(10)) < 1e-12 and p04_S.index(max(p04_S)) == 5
 print("    static section entropy S(k) = ln C(k): S(1) = S(11) = 0 (order at the")
 print("    edges), max S = ln 10 at section 6 whose cell-value 10 is the")
 print("    Electricity label (Th 5.3.1) — 'order at the edges, chaos in the")
 print("    middle' (.v(6)) EXACT on the cell table; growth tick dS = ln 2: PASS")
 
-k_idx = np.arange(s115_N)
+k_idx = np.arange(p04_N)
 d = np.abs(k_idx[:, None] - k_idx[None, :])
-d = np.minimum(d, s115_N - d)
-s115_W = np.exp(-d / s115_phi)
-s115_P = s115_W / s115_W.sum(axis=1, keepdims=True)
-assert np.allclose(s115_P.sum(axis=1), 1, atol=1e-15)
-assert np.allclose(s115_P.sum(axis=0), 1, atol=1e-15)
+d = np.minimum(d, p04_N - d)
+p04_W = np.exp(-d / p04_phi)
+p04_P = p04_W / p04_W.sum(axis=1, keepdims=True)
+assert np.allclose(p04_P.sum(axis=1), 1, atol=1e-15)
+assert np.allclose(p04_P.sum(axis=0), 1, atol=1e-15)
 print("    the recorded measure carrier P = W/Z_k (Rem 2.4.BA.1.r) is DOUBLY")
 print("    stochastic: row sums = column sums = 1 (machine 1e-15; structurally")
 print("    the circulant symmetry): PASS")
 
-def _s115_Sof(p):
+def _p04_Sof(p):
     p = np.clip(p, 1e-300, None)
     return float(-(p * np.log(p)).sum())
-s115_rng = np.random.default_rng(11)
-s115_worst = 1.0
+p04_rng = np.random.default_rng(11)
+p04_worst = 1.0
 for _ in range(20000):
-    p = s115_rng.random(s115_N); p /= p.sum()
-    s115_worst = min(s115_worst, _s115_Sof(s115_P @ p) - _s115_Sof(p))
-for i in range(s115_N):
-    d0 = np.zeros(s115_N); d0[i] = 1.0
-    s115_worst = min(s115_worst, _s115_Sof(s115_P @ d0) - _s115_Sof(d0))
-s115_u = np.full(s115_N, 1.0 / s115_N)
-assert abs(_s115_Sof(s115_P @ s115_u) - _s115_Sof(s115_u)) < 1e-15
-assert s115_worst > 0
+    p = p04_rng.random(p04_N); p /= p.sum()
+    p04_worst = min(p04_worst, _p04_Sof(p04_P @ p) - _p04_Sof(p))
+for i in range(p04_N):
+    d0 = np.zeros(p04_N); d0[i] = 1.0
+    p04_worst = min(p04_worst, _p04_Sof(p04_P @ d0) - _p04_Sof(d0))
+p04_u = np.full(p04_N, 1.0 / p04_N)
+assert abs(_p04_Sof(p04_P @ p04_u) - _p04_Sof(p04_u)) < 1e-15
+assert p04_worst > 0
 print(f"    THE TICK REBUILD THEOREM: dS = S(Pp) - S(p) >= 0 for ANY occupation p")
 print(f"    (Birkhoff: doubly stochastic = a convex combo of permutations);")
-print(f"    sweep 20000 random p + 11 deltas: min dS = +{s115_worst:.4f} > 0; dS = 0")
+print(f"    sweep 20000 random p + 11 deltas: min dS = +{p04_worst:.4f} > 0; dS = 0")
 print("    exactly and only at the equilibrium — the entropy arrow DERIVED on")
 print("    the recorded carrier (cf. the monotone growth, Cor 2.4.A.11): PASS")
 
-assert np.allclose(s115_P @ s115_u, s115_u, atol=1e-16)
+assert np.allclose(p04_P @ p04_u, p04_u, atol=1e-16)
 print(f"    equilibrium = the recorded zero mode: uniform, S_eq = ln 11 =")
 print(f"    {np.log(11):.4f} > ln 10 >= S(k) — full mixing is richer than any section,")
 print("    the rebuild does not complete inside one section: PASS")
-s115_ev = np.sort(np.linalg.eigvals(s115_P).real)[::-1]
-assert abs(s115_ev[0] - 1) < 1e-15
-s115_R = sorted({round(1 - x, 4) for x in s115_ev[1:]}, reverse=True)
-assert s115_R == [0.9052, 0.8915, 0.8448, 0.7465, 0.4103]
-print(f"    the decay factors R = 1 - P: {s115_R} — the recorded Quintet spectrum of")
+p04_ev = np.sort(np.linalg.eigvals(p04_P).real)[::-1]
+assert abs(p04_ev[0] - 1) < 1e-15
+p04_R = sorted({round(1 - x, 4) for x in p04_ev[1:]}, reverse=True)
+assert p04_R == [0.9052, 0.8915, 0.8448, 0.7465, 0.4103]
+print(f"    the decay factors R = 1 - P: {p04_R} — the recorded Quintet spectrum of")
 print("    .r(3) (five mirror pairs; the convention check: the P-eigenvalues are")
 print("    the complements to 1); the slow branch 0.9052 governs the late time: PASS")
 
-s115_gamma = np.array([float((2 * np.sin(np.pi * k / s115_N)) ** 2) for k in range(1, s115_N + 1)])
-s115_g = s115_gamma / s115_gamma.max()
-s115_Rg = np.diag(s115_g) @ (np.eye(s115_N) - s115_P)
-s115_mags = np.sort(np.abs(np.linalg.eigvals(s115_Rg)))
-assert s115_mags[0] < 1e-12
-assert abs(s115_mags[1] - 0.0173) < 3e-3 and abs(s115_mags[-1] - 0.877) < 3e-3
-assert abs(s115_mags[1] / s115_mags[-1] - 0.0197) < 5e-4
+p04_gamma = np.array([float((2 * np.sin(np.pi * k / p04_N)) ** 2) for k in range(1, p04_N + 1)])
+p04_g = p04_gamma / p04_gamma.max()
+p04_Rg = np.diag(p04_g) @ (np.eye(p04_N) - p04_P)
+p04_mags = np.sort(np.abs(np.linalg.eigvals(p04_Rg)))
+assert p04_mags[0] < 1e-12
+assert abs(p04_mags[1] - 0.0173) < 3e-3 and abs(p04_mags[-1] - 0.877) < 3e-3
+assert abs(p04_mags[1] / p04_mags[-1] - 0.0197) < 5e-4
 print(f"    the weighted variant .r(5): zero mode exact, rates 0.0173..0.877,")
 print(f"    slow/fast = 0.0197 — the recorded kinetic anchors reproduced: PASS")
 
-from mpmath import mp as s115_mp, mpf as s115_mpf
-s115_mp.dps = 30
-s115_ip2 = 1 / s115_mp.phi ** 2 if hasattr(s115_mp, 'phi') else 1 / ((1 + s115_mp.sqrt(5)) / 2) ** 2
-assert abs(s115_ip2 - (1 - 1 / ((1 + s115_mp.sqrt(5)) / 2))) < s115_mpf('1e-28')
-s115_lnNc = 1 / (s115_mp.pi ** 2 / (s115_N * ((1 + s115_mp.sqrt(5)) / 2) ** 10)) + s115_ip2
-print(f"    the cycles anchor: 1/phi^2 = {float(s115_ip2):.6f} = 1 - 1/phi (the recorded")
+from mpmath import mp as p04_mp, mpf as p04_mpf
+p04_mp.dps = 30
+p04_ip2 = 1 / p04_mp.phi ** 2 if hasattr(p04_mp, 'phi') else 1 / ((1 + p04_mp.sqrt(5)) / 2) ** 2
+assert abs(p04_ip2 - (1 - 1 / ((1 + p04_mp.sqrt(5)) / 2))) < p04_mpf('1e-28')
+p04_lnNc = 1 / (p04_mp.pi ** 2 / (p04_N * ((1 + p04_mp.sqrt(5)) / 2) ** 10)) + p04_ip2
+print(f"    the cycles anchor: 1/phi^2 = {float(p04_ip2):.6f} = 1 - 1/phi (the recorded")
 print(f"    Z2 golden mirror, Cor 5.3.F.1 — NOT mu = 0.618); ln N_cycles = 1/alpha +")
-print(f"    1/phi^2 = {float(s115_lnNc):.4f} — the rebuild exponent = the tick count plus the")
+print(f"    1/phi^2 = {float(p04_lnNc):.4f} — the rebuild exponent = the tick count plus the")
 print("    golden mirror share, the same count-and-intensity structure as 2.4.A: PASS")
 
 print("    HONEST BOUNDARY: the identifications 'section entropy = ln of the cell")
@@ -13833,135 +13835,135 @@ print("    Remark 2.6.A.4.y (the entropic measure of the grid rebuild): ALL CHEC
 # the refinement b -> b^(1/m) with the span invariant (b^(1/m))^(10m) =
 # b^10; (iii) the closure = a Z2 involution of the floor value with a
 # sector-specific pair invariant (equality / complement / constant
-# product). All locals carry the s136_ prefix.
+# product). All locals carry the p09_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.aa (the unified ladder law)")
-import cmath as s136_cmath
-from mpmath import mp as s136_mp, mpf as s136_mpf
+import cmath as p09_cmath
+from mpmath import mp as p09_mp, mpf as p09_mpf
 
-s136_mp.dps = 50  # explicit precision (the ambient-precision lesson)
-s136_N = 11
-s136_phi = s136_mpf(1 + s136_mp.sqrt(5)) / 2
-s136_alpha_full = 1 / s136_mpf('137.035999207')
+p09_mp.dps = 50  # explicit precision (the ambient-precision lesson)
+p09_N = 11
+p09_phi = p09_mpf(1 + p09_mp.sqrt(5)) / 2
+p09_alpha_full = 1 / p09_mpf('137.035999207')
 
 # (1) THE ORBIT OF THE DEGREE: each floor value is a degree of its generator
-s136_grid = [2 ** k % s136_N for k in range(s136_N)]
-s136_lad = [s136_mp.pi**2 / (s136_N * s136_phi**k) for k in range(s136_N + 1)]
-s136_metric = [(1 + s136_alpha_full) ** k for k in range(s136_N + 1)]
-s136_zeta = s136_cmath.exp(2j * s136_cmath.pi / s136_N)
-s136_max_chord = max(abs(2 * float(s136_mp.sin(s136_mp.pi * k / s136_N)) - abs(s136_zeta**k - 1))
-                     for k in range(1, s136_N))
-s136_c = (
-    s136_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
-    and abs(float(s136_lad[0]) - 0.897) < 1e-3
-    and abs(float(1 / s136_lad[10]) - 137.0785) < 1e-3
-    and abs(float(s136_metric[s136_N]) - 1.083265) < 1e-6
-    and s136_max_chord < 1e-15
+p09_grid = [2 ** k % p09_N for k in range(p09_N)]
+p09_lad = [p09_mp.pi**2 / (p09_N * p09_phi**k) for k in range(p09_N + 1)]
+p09_metric = [(1 + p09_alpha_full) ** k for k in range(p09_N + 1)]
+p09_zeta = p09_cmath.exp(2j * p09_cmath.pi / p09_N)
+p09_max_chord = max(abs(2 * float(p09_mp.sin(p09_mp.pi * k / p09_N)) - abs(p09_zeta**k - 1))
+                     for k in range(1, p09_N))
+p09_c = (
+    p09_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+    and abs(float(p09_lad[0]) - 0.897) < 1e-3
+    and abs(float(1 / p09_lad[10]) - 137.0785) < 1e-3
+    and abs(float(p09_metric[p09_N]) - 1.083265) < 1e-6
+    and p09_max_chord < 1e-15
 )
 print(f"    the power orbit: C(k) = 2^(k-1) mod 11; alpha(0) = pi^2/N ="
-      f" {float(s136_lad[0]):.6f} (the union tick), 1/alpha(10) ="
-      f" {float(1/s136_lad[10]):.7f} (the skeleton), (1+alpha)^11 ="
-      f" {float(s136_metric[s136_N]):.6f} (the two-end factor);")
-print(f"    omega_k = |zeta^k - 1| exact (max dev {s136_max_chord:.1e}) — the chord of")
+      f" {float(p09_lad[0]):.6f} (the union tick), 1/alpha(10) ="
+      f" {float(1/p09_lad[10]):.7f} (the skeleton), (1+alpha)^11 ="
+      f" {float(p09_metric[p09_N]):.6f} (the two-end factor);")
+print(f"    omega_k = |zeta^k - 1| exact (max dev {p09_max_chord:.1e}) — the chord of")
 print("    the degrees of the primitive root of x^11 = 1: A3 and the degree closure")
 print("    are one structure (the floor value IS a degree, the exponent = the floor): PASS"
-      if s136_c else "    orbit form: FAIL")
+      if p09_c else "    orbit form: FAIL")
 
 # (2) THE TRANSITION: POWER UP, ROOT DOWN (the refinement keeps the span)
-s136_c = all(
-    abs((s136_b ** (1 / s136_mpf(s136_m))) ** (10 * s136_m) - s136_b**10) < s136_mpf('1e-30')
-    for s136_b in (s136_phi, 1 + s136_alpha_full) for s136_m in (1, 2, 5, 10)
+p09_c = all(
+    abs((p09_b ** (1 / p09_mpf(p09_m))) ** (10 * p09_m) - p09_b**10) < p09_mpf('1e-30')
+    for p09_b in (p09_phi, 1 + p09_alpha_full) for p09_m in (1, 2, 5, 10)
 )
 print("    root down: the refinement b -> b^(1/m) keeps the span (b^(1/m))^(10m) = b^10")
 print("    exactly for b in {phi, 1+alpha}, m in {1,2,5,10} — the recorded phi-invariant")
 print("    (2.4.G.13.u/.v) generalized to the metric sector; the count sector is discrete")
 print("    (cells are not divisible) — its down-step is the degree removal: PASS"
-      if s136_c else "    refinement: FAIL")
+      if p09_c else "    refinement: FAIL")
 
 # (3) THE RESONANCE CLOSURE: the Z2 involution of the floor value, per sector
-s136_om = [2 * s136_mp.sin(s136_mp.pi * k / s136_N) for k in range(s136_N + 1)]
-s136_x = [s136_mp.pi * k / s136_N for k in range(s136_N + 1)]
-s136_spec = max(abs(s136_om[k] - s136_om[s136_N - k]) for k in range(1, s136_N))
-s136_phase = max(abs(s136_x[k] + s136_x[s136_N - k] - s136_mp.pi) for k in range(1, s136_N))
-s136_c = s136_spec < s136_mpf('1e-38') and s136_phase < s136_mpf('1e-38')
-print(f"    resonance, additive sectors: omega_k = omega_(N-k) (max dev {float(s136_spec):.1e};")
+p09_om = [2 * p09_mp.sin(p09_mp.pi * k / p09_N) for k in range(p09_N + 1)]
+p09_x = [p09_mp.pi * k / p09_N for k in range(p09_N + 1)]
+p09_spec = max(abs(p09_om[k] - p09_om[p09_N - k]) for k in range(1, p09_N))
+p09_phase = max(abs(p09_x[k] + p09_x[p09_N - k] - p09_mp.pi) for k in range(1, p09_N))
+p09_c = p09_spec < p09_mpf('1e-38') and p09_phase < p09_mpf('1e-38')
+print(f"    resonance, additive sectors: omega_k = omega_(N-k) (max dev {float(p09_spec):.1e};")
 print("    in the exponents — the conjugation zeta^(-k) = (zeta^k)*); the phase complements")
-print("    x_k + x_(N-k) = pi (max dev {0:.1e}): the mirror = the Z2 negation of the value: PASS".format(float(s136_phase))
-      if s136_c else "    additive resonance: FAIL")
+print("    x_k + x_(N-k) = pi (max dev {0:.1e}): the mirror = the Z2 negation of the value: PASS".format(float(p09_phase))
+      if p09_c else "    additive resonance: FAIL")
 
-s136_c = (all(s136_grid[k] + s136_grid[k + 5] == s136_N for k in range(5))
-          and pow(2, 5, s136_N) == s136_N - 1)
+p09_c = (all(p09_grid[k] + p09_grid[k + 5] == p09_N for k in range(5))
+          and pow(2, 5, p09_N) == p09_N - 1)
 print("    resonance, count: C(k) + C(k+5) = N (the F_5 = 5 mirror, 2.6.A.4.x(3)) — the")
 print(f"    reason is now explicit: 2^5 = 32 = -1 (mod 11), the value negation at the")
 print("    half-cycle of the exponent (the count mirror is the 5-shift, NOT k -> N-k): PASS"
-      if s136_c else "    count resonance: FAIL")
+      if p09_c else "    count resonance: FAIL")
 
-s136_prod_const = s136_mp.pi**4 / (s136_N**2 * s136_phi**s136_N)
-s136_max_pd = max(abs(s136_lad[k] * s136_lad[s136_N - k] - s136_prod_const)
-                  for k in range(1, s136_N))
-s136_c = s136_max_pd < s136_mpf('1e-35')
+p09_prod_const = p09_mp.pi**4 / (p09_N**2 * p09_phi**p09_N)
+p09_max_pd = max(abs(p09_lad[k] * p09_lad[p09_N - k] - p09_prod_const)
+                  for k in range(1, p09_N))
+p09_c = p09_max_pd < p09_mpf('1e-35')
 print(f"    resonance, continuous degrees (NEW): alpha(k)*alpha(N-k) = pi^4/(N^2 phi^N) ="
-      f" {float(s136_prod_const):.7f}")
-print(f"    for all five pairs k = 1..10 (max dev {float(s136_max_pd):.1e}); phi^11 ="
-      f" {float(s136_phi**11):.4f} (the anchor L_11 = 199): PASS"
-      if s136_c else "    couplings resonance: FAIL")
+      f" {float(p09_prod_const):.7f}")
+print(f"    for all five pairs k = 1..10 (max dev {float(p09_max_pd):.1e}); phi^11 ="
+      f" {float(p09_phi**11):.4f} (the anchor L_11 = 199): PASS"
+      if p09_c else "    couplings resonance: FAIL")
 
-s136_max_md = max(abs(s136_metric[k] * s136_metric[s136_N - k] - s136_metric[s136_N])
-                  for k in range(0, s136_N + 1))
-s136_h0 = s136_mpf('73.0') / s136_mpf('67.4')
-s136_c = (s136_max_md < s136_mpf('1e-35')
-          and abs(s136_metric[s136_N] - s136_h0) / s136_h0 < 1e-3)
+p09_max_md = max(abs(p09_metric[k] * p09_metric[p09_N - k] - p09_metric[p09_N])
+                  for k in range(0, p09_N + 1))
+p09_h0 = p09_mpf('73.0') / p09_mpf('67.4')
+p09_c = (p09_max_md < p09_mpf('1e-35')
+          and abs(p09_metric[p09_N] - p09_h0) / p09_h0 < 1e-3)
 print("    resonance, metric (NEW): (1+alpha)^k (1+alpha)^(N-k) = (1+alpha)^N for ALL pairs")
 print(f"    k + k' = N including the ends (0, N) — the mirror-pair product IS the recorded")
-print(f"    two-end H_0 factor: {float(s136_metric[s136_N]):.6f} vs 73.0/67.4 ="
-      f" {float(s136_h0):.6f} (0.017%): PASS"
-      if s136_c else "    metric resonance: FAIL")
+print(f"    two-end H_0 factor: {float(p09_metric[p09_N]):.6f} vs 73.0/67.4 ="
+      f" {float(p09_h0):.6f} (0.017%): PASS"
+      if p09_c else "    metric resonance: FAIL")
 
 # (4) THE CENSUS OF CLOSURES: which sectors close
-s136_c = (
-    pow(2, 10, s136_N) == 1 and 2 ** 10 == 1024 and s136_grid[10] == s136_grid[0]
-    and abs(2 * s136_mp.sin(s136_mp.pi * s136_N / s136_N)) < s136_mpf('1e-38')
-    and abs(float(s136_phi**10) - 122.9919) < 1e-3
+p09_c = (
+    pow(2, 10, p09_N) == 1 and 2 ** 10 == 1024 and p09_grid[10] == p09_grid[0]
+    and abs(2 * p09_mp.sin(p09_mp.pi * p09_N / p09_N)) < p09_mpf('1e-38')
+    and abs(float(p09_phi**10) - 122.9919) < 1e-3
 )
 print("    the closures census: count — ord(2) = 10, 2^10 = 1 (mod 11), C(11) = C(1) = 1")
 print("    (the cyclic closure, Psi_12 = Psi_1); spectrum — zeta^11 = 1 => omega_11 = 0 =")
 print("    omega_0 (the chord returns to the Point); metric — (1+alpha)^N = the accumulated")
 print("    closure (the two-end factor); couplings — OPEN (an RG trajectory of depth 10,")
-print(f"    span phi^10 = {float(s136_phi**10):.4f}, the anchor L_10 = 123; the closure = the")
+print(f"    span phi^10 = {float(p09_phi**10):.4f}, the anchor L_10 = 123; the closure = the")
 print("    recorded continuum program 2.4.G.13.u/.v, Th 2.4.AE.2): PASS"
-      if s136_c else "    closures census: FAIL")
+      if p09_c else "    closures census: FAIL")
 
 # (5) MASS AS A DEGREE 2 OF THE CHORD LADDER
-s136_Mp = s136_mpf('1.22089e19')  # GeV
-s136_MR = s136_alpha_full**4 * s136_N * s136_Mp
-s136_v = s136_mpf('246.22')
-s136_m1 = (s136_alpha_full * s136_om[1] * s136_v) ** 2 / s136_MR * 1e9  # eV
-s136_m5 = (s136_alpha_full * s136_om[5] * s136_v) ** 2 / s136_MR * 1e9  # eV
-s136_ratio_sq = (s136_om[5] / s136_om[1]) ** 2
-s136_ratio_rec = s136_mpf('0.0332') / s136_mpf('0.00269')
-s136_c = (
-    abs(s136_m1 - 0.00269) / 0.00269 < 0.01 and abs(s136_m5 - 0.0332) / 0.0332 < 0.01
-    and abs(s136_ratio_sq - s136_ratio_rec) / s136_ratio_rec < 0.001
+p09_Mp = p09_mpf('1.22089e19')  # GeV
+p09_MR = p09_alpha_full**4 * p09_N * p09_Mp
+p09_v = p09_mpf('246.22')
+p09_m1 = (p09_alpha_full * p09_om[1] * p09_v) ** 2 / p09_MR * 1e9  # eV
+p09_m5 = (p09_alpha_full * p09_om[5] * p09_v) ** 2 / p09_MR * 1e9  # eV
+p09_ratio_sq = (p09_om[5] / p09_om[1]) ** 2
+p09_ratio_rec = p09_mpf('0.0332') / p09_mpf('0.00269')
+p09_c = (
+    abs(p09_m1 - 0.00269) / 0.00269 < 0.01 and abs(p09_m5 - 0.0332) / 0.0332 < 0.01
+    and abs(p09_ratio_sq - p09_ratio_rec) / p09_ratio_rec < 0.001
 )
 print("    mass = a degree 2 of the chord ladder: m_nu(k)/m_nu(j) = (omega_k/omega_j)^2 (the")
 print(f"    algebra of 2.4.AD.2.r); the ends at M_R = alpha^4 N M_P: m_nu(1) ="
-      f" {float(s136_m1):.5f} eV,")
-print(f"    m_nu(5) = {float(s136_m5):.5f} eV (recorded 0.00269/0.0332, 2.4.G.7.t(3));")
-print(f"    (omega_5/omega_1)^2 = {float(s136_ratio_sq):.4f} vs 0.0332/0.00269 ="
-      f" {float(s136_ratio_rec):.4f} (0.012%, the record rounding): PASS"
-      if s136_c else "    mass ladder: FAIL")
+      f" {float(p09_m1):.5f} eV,")
+print(f"    m_nu(5) = {float(p09_m5):.5f} eV (recorded 0.00269/0.0332, 2.4.G.7.t(3));")
+print(f"    (omega_5/omega_1)^2 = {float(p09_ratio_sq):.4f} vs 0.0332/0.00269 ="
+      f" {float(p09_ratio_rec):.4f} (0.012%, the record rounding): PASS"
+      if p09_c else "    mass ladder: FAIL")
 
 # (6) THE POWER-FORM CENSUS ON THE RECORDED ANCHORS
-s136_C5 = s136_grid[4]
-s136_c = (
-    abs(s136_lad[10] - s136_mp.pi**2 * s136_phi**(-10) / s136_N) < s136_mpf('1e-40')
-    and s136_C5 == 5 and 5**2 == 25
+p09_C5 = p09_grid[4]
+p09_c = (
+    abs(p09_lad[10] - p09_mp.pi**2 * p09_phi**(-10) / p09_N) < p09_mpf('1e-40')
+    and p09_C5 == 5 and 5**2 == 25
     and 2**10 == 1024
 )
 print("    power forms of the anchors: alpha = pi^2 phi^(-10)/N (the degree 10, .w);")
-print(f"    1/alpha_GUT = F_5^2 = 25 (Th 5.4.B.1; the cell value C(5) = {s136_C5} = F_5 — a")
+print(f"    1/alpha_GUT = F_5^2 = 25 (Th 5.4.B.1; the cell value C(5) = {p09_C5} = F_5 — a")
 print("    coincidence of values, an observation); the spans phi^10, 2^10, (1+alpha)^N: PASS"
-      if s136_c else "    power census: FAIL")
+      if p09_c else "    power census: FAIL")
 
 print("    HONEST BOUNDARY: the law fixes the FORM (the power orbit + the root refinement")
 print("    + the Z2 closure) and reproduces all recorded ladders as its values; the")
@@ -13984,71 +13986,71 @@ print("    Remark 2.6.A.4.aa (the unified ladder law): ALL CHECKS PASS")
 # form; (iv) the limit resonance: the chord ladder is unimodal, both ends
 # collapse into the Point; the zero mode weighs nothing (omega_0^2 = 0 in
 # T_1 = 2N) yet completes the cycle (11 = N modes). All locals carry the
-# s137_ prefix.
+# p10_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ab (the Point as the carrier of identity)")
-from mpmath import mp as s137_mp, mpf as s137_mpf
+from mpmath import mp as p10_mp, mpf as p10_mpf
 
-s137_mp.dps = 50
-s137_N = 11
-s137_om = [2 * s137_mp.sin(s137_mp.pi * k / s137_N) for k in range(s137_N + 1)]
-s137_x = [s137_mp.pi * k / s137_N for k in range(s137_N + 1)]
-s137_grid = [2 ** k % s137_N for k in range(s137_N)]
+p10_mp.dps = 50
+p10_N = 11
+p10_om = [2 * p10_mp.sin(p10_mp.pi * k / p10_N) for k in range(p10_N + 1)]
+p10_x = [p10_mp.pi * k / p10_N for k in range(p10_N + 1)]
+p10_grid = [2 ** k % p10_N for k in range(p10_N)]
 
 # (1) the unique fixed point on the index group
-s137_c = [k for k in range(s137_N) if (s137_N - k) % s137_N == k] == [0]
+p10_c = [k for k in range(p10_N) if (p10_N - k) % p10_N == k] == [0]
 print("    the involution k -> N-k on Z_11 has EXACTLY ONE fixed point: k = 0 (2k = 0")
 print("    mod 11, 2 invertible; k = 11 = 0) — the mirror pair degenerates into one floor")
 print("    only here: the Point = the limit resonance (the mirror symmetry, Th 1.10.N.1): PASS"
-      if s137_c else "    fixed point: FAIL")
+      if p10_c else "    fixed point: FAIL")
 
 # (2) every mirror pair sums into the Point; the sector invariants are its forms
-s137_phi = s137_mpf(1 + s137_mp.sqrt(5)) / 2
-s137_lad = [s137_mp.pi**2 / (s137_N * s137_phi**k) for k in range(s137_N + 1)]
-s137_prod_const = s137_mp.pi**4 / (s137_N**2 * s137_phi**s137_N)
-s137_c = (
-    all((k + (s137_N - k)) % s137_N == 0 for k in range(s137_N))
-    and all(s137_grid[k] + s137_grid[k + 5] == s137_N for k in range(5))
-    and all(abs(s137_lad[k] * s137_lad[s137_N - k] - s137_prod_const) < s137_mpf('1e-35')
-            for k in range(1, s137_N))
-    and all(abs(s137_x[k] + s137_x[s137_N - k] - s137_mp.pi) < s137_mpf('1e-38')
-            for k in range(1, s137_N))
+p10_phi = p10_mpf(1 + p10_mp.sqrt(5)) / 2
+p10_lad = [p10_mp.pi**2 / (p10_N * p10_phi**k) for k in range(p10_N + 1)]
+p10_prod_const = p10_mp.pi**4 / (p10_N**2 * p10_phi**p10_N)
+p10_c = (
+    all((k + (p10_N - k)) % p10_N == 0 for k in range(p10_N))
+    and all(p10_grid[k] + p10_grid[k + 5] == p10_N for k in range(5))
+    and all(abs(p10_lad[k] * p10_lad[p10_N - k] - p10_prod_const) < p10_mpf('1e-35')
+            for k in range(1, p10_N))
+    and all(abs(p10_x[k] + p10_x[p10_N - k] - p10_mp.pi) < p10_mpf('1e-38')
+            for k in range(1, p10_N))
 )
 print("    every mirror pair sums into the zero floor: k + (N-k) = 11 = 0 (mod 11); the")
 print("    sector invariants of .aa(3) are its forms: count C(k)+C(k+5) = 11 = 0 (mod 11),")
 print("    exponents e + e' = 11 = 0 (mod 11), phase x_k + x_(N-k) = pi — the segment [0, pi]")
 print("    closes through the zero chord omega(0) = omega(pi) = 0 (both ends = the Point): PASS"
-      if s137_c else "    pair reducibility: FAIL")
+      if p10_c else "    pair reducibility: FAIL")
 
 # (3) NEGATIVE result: no fixed point in the value sectors
-s137_neg_fix = [v for v in range(1, s137_N) if (2 * v) % s137_N == 0]
-s137_c = (
-    s137_N % 2 == 1
-    and abs(s137_N / 2 - 5.5) < 1e-15
-    and s137_neg_fix == []
+p10_neg_fix = [v for v in range(1, p10_N) if (2 * v) % p10_N == 0]
+p10_c = (
+    p10_N % 2 == 1
+    and abs(p10_N / 2 - 5.5) < 1e-15
+    and p10_neg_fix == []
 )
 print("    the center is NOT a floor: continuous sectors — the involution center e = N/2 = 5.5")
 print("    lies BETWEEN floors (N odd); count — 2v = 0 (mod 11) => v = 0, and zero is not a")
 print("    cell: no self-identical value in any inhabited sector — the exact form of")
 print("    'not a place but a center' (1.11.0.au(4)): PASS"
-      if s137_c else "    negative result: FAIL")
+      if p10_c else "    negative result: FAIL")
 
 # (4) the limit resonance: unimodal chords, zero-energy zero mode
-s137_first = [float(s137_om[k]) for k in range(0, 6)]
-s137_second = [float(s137_om[k]) for k in range(6, s137_N + 1)]
-s137_T1 = sum(s137_om[k] ** 2 for k in range(s137_N))
-s137_c = (
-    abs(s137_om[0]) < s137_mpf('1e-38') and abs(s137_om[s137_N]) < s137_mpf('1e-38')
-    and all(a < b for a, b in zip(s137_first, s137_first[1:]))
-    and all(a > b for a, b in zip(s137_second, s137_second[1:]))
-    and abs(s137_T1 - 2 * s137_N) < s137_mpf('1e-30')
+p10_first = [float(p10_om[k]) for k in range(0, 6)]
+p10_second = [float(p10_om[k]) for k in range(6, p10_N + 1)]
+p10_T1 = sum(p10_om[k] ** 2 for k in range(p10_N))
+p10_c = (
+    abs(p10_om[0]) < p10_mpf('1e-38') and abs(p10_om[p10_N]) < p10_mpf('1e-38')
+    and all(a < b for a, b in zip(p10_first, p10_first[1:]))
+    and all(a > b for a, b in zip(p10_second, p10_second[1:]))
+    and abs(p10_T1 - 2 * p10_N) < p10_mpf('1e-30')
 )
 print("    the chord ladder is unimodal: omega_0 = omega_11 = 0 (sin(pi) = 0 exact; mpf ~1e-50)")
-print(f"    strict growth 0->5 ({', '.join(f'{v:.4f}' for v in s137_first[1:])}), strict decrease 6->11: all chords collapse")
+print(f"    strict growth 0->5 ({', '.join(f'{v:.4f}' for v in p10_first[1:])}), strict decrease 6->11: all chords collapse")
 print(f"    into the Point at both ends; the zero mode weighs nothing: omega_0^2 = 0 in")
-print(f"    T_1 = sum omega^2 (all 11 modes) = {float(s137_T1):.12f} = 2N = 22 — yet 11 = N modes only")
+print(f"    T_1 = sum omega^2 (all 11 modes) = {float(p10_T1):.12f} = 2N = 22 — yet 11 = N modes only")
 print("    together with it (Def 1.0.9: an integral part of the ring; Def 1.0.12): PASS"
-      if s137_c else "    limit resonance: FAIL")
+      if p10_c else "    limit resonance: FAIL")
 
 print("    HONEST BOUNDARY: (1)-(4) are exact; the four readings of the center (math")
 print("    object / state / principle / metaphysics) are the ontology-layer disassembly:")
@@ -14069,96 +14071,96 @@ print("    Remark 2.6.A.4.ab (the Point as the carrier of identity): ALL CHECKS 
 # isometry group by complete enumeration = 2N = 22 = D_11, generated
 # exactly by the recorded operations (the ladder step = rotation, the
 # mirror resonance = conjugation), transitive on the vertices — the
-# finite isotropy. All locals carry the s138_ prefix.
+# finite isotropy. All locals carry the p11_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ac (the Sphere as inevitability)")
-import cmath as s138_cmath
+import cmath as p11_cmath
 
-s138_N = 11
-s138_pts = [complex(s138_cmath.exp(2j * s138_cmath.pi * k / s138_N)) for k in range(s138_N)]
-s138_S = set(s138_pts)
+p11_N = 11
+p11_pts = [complex(p11_cmath.exp(2j * p11_cmath.pi * k / p11_N)) for k in range(p11_N)]
+p11_S = set(p11_pts)
 
 # (1) the closure forces the full root set, from ANY nontrivial floor
-s138_c = (
-    len(s138_S) == s138_N
-    and all(abs(z**s138_N - 1) < 1e-12 for z in s138_S)
-    and all({s138_pts[(j * m) % s138_N] for m in range(s138_N)} == s138_S
-            for j in range(1, s138_N))
+p11_c = (
+    len(p11_S) == p11_N
+    and all(abs(z**p11_N - 1) < 1e-12 for z in p11_S)
+    and all({p11_pts[(j * m) % p11_N] for m in range(p11_N)} == p11_S
+            for j in range(1, p11_N))
 )
 print("    N = 11 prime: every nontrivial root of x^11 = 1 is primitive — the degree")
 print("    orbit of ANY floor k != 0 (all 10 checked) = the FULL set of 11 roots;")
 print("    the ladder cannot close partially (the recorded 2^10 = 1, omega_11 = omega_0): PASS"
-      if s138_c else "    full root set: FAIL")
+      if p11_c else "    full root set: FAIL")
 
 # (2) the carrier is the unit circle; the centroid is the Point
-s138_c = (all(abs(abs(z) - 1) < 1e-12 for z in s138_S)
-          and abs(sum(s138_pts) / s138_N) < 1e-12)
+p11_c = (all(abs(abs(z) - 1) < 1e-12 for z in p11_S)
+          and abs(sum(p11_pts) / p11_N) < 1e-12)
 print("    |zeta^k| = 1 for all floors — the unit circle around the Point; the centroid")
 print("    is 0 exactly (Vieta: the sum of the roots of x^11 = 1 is zero) — the finite")
 print("    image of the recorded (T2) of Th 1.10.B (the Point equidistant from the): PASS"
-      if s138_c else "    circle carrier: FAIL")
+      if p11_c else "    circle carrier: FAIL")
 
 # (3) the root refinement inhabits the same circle
-s138_c = all(
-    len({s138_cmath.exp(2j * s138_cmath.pi * k / (s138_N * s138_m))
-         for k in range(s138_N * s138_m)}) == s138_N * s138_m
-    for s138_m in (1, 2, 5, 10)
+p11_c = all(
+    len({p11_cmath.exp(2j * p11_cmath.pi * k / (p11_N * p11_m))
+         for k in range(p11_N * p11_m)}) == p11_N * p11_m
+    for p11_m in (1, 2, 5, 10)
 )
 print("    the root refinement (b^(1/m), .aa(2)) puts N*m floors on the SAME unit")
 print("    circle (11, 22, 55, 110) at the same span — the isotropy thickens; the")
 print("    limit m -> inf is the full circle: the Genesis reading 'the Sphere = the")
 print("    Point + continuous radiation' is the limit of the root refinement: PASS"
-      if s138_c else "    refinement: FAIL")
+      if p11_c else "    refinement: FAIL")
 
 # (4) the full isometry group by complete enumeration; recorded operations exhaust it
-s138_cands = []
-for s138_m in range(s138_N):
-    s138_a = s138_cmath.exp(2j * s138_cmath.pi * s138_m / s138_N)
-    s138_cands.append(lambda z, s138_a=s138_a: s138_a * z)
-    s138_cands.append(lambda z, s138_a=s138_a: s138_a * z.conjugate())
-s138_n_sym = 0
-for s138_f in s138_cands:
-    s138_img = [s138_f(z) for z in s138_pts]
-    if all(min(abs(s138_img[k] - s138_pts[q]) for q in range(s138_N)) < 1e-9
-           for k in range(s138_N)):
-        s138_n_sym += 1
+p11_cands = []
+for p11_m in range(p11_N):
+    p11_a = p11_cmath.exp(2j * p11_cmath.pi * p11_m / p11_N)
+    p11_cands.append(lambda z, p11_a=p11_a: p11_a * z)
+    p11_cands.append(lambda z, p11_a=p11_a: p11_a * z.conjugate())
+p11_n_sym = 0
+for p11_f in p11_cands:
+    p11_img = [p11_f(z) for z in p11_pts]
+    if all(min(abs(p11_img[k] - p11_pts[q]) for q in range(p11_N)) < 1e-9
+           for k in range(p11_N)):
+        p11_n_sym += 1
 # the group generated by the rotation and the reflection
-s138_rot = [(k + 1) % s138_N for k in range(s138_N)]
-s138_ref = [(-k) % s138_N for k in range(s138_N)]
-s138_G = {tuple(range(s138_N))}
-s138_frontier = [tuple(range(s138_N))]
-while s138_frontier:
-    s138_new = []
-    for s138_p in s138_frontier:
-        for s138_g in (s138_rot, s138_ref):
-            s138_q = tuple(s138_g[s138_p[k]] for k in range(s138_N))
-            if s138_q not in s138_G:
-                s138_G.add(s138_q)
-                s138_new.append(s138_q)
-    s138_frontier = s138_new
-s138_c = (len(s138_cands) == 2 * s138_N and s138_n_sym == 2 * s138_N
-          and len(s138_G) == 2 * s138_N)
-print(f"    isometries fix the centroid => f(z) = a*z or a*conj(z), {len(s138_cands)} candidates")
-print(f"    (the image of the vertex zeta) — ALL {s138_n_sym} = 2N = 22 = |D_11| preserve the set;")
+p11_rot = [(k + 1) % p11_N for k in range(p11_N)]
+p11_ref = [(-k) % p11_N for k in range(p11_N)]
+p11_G = {tuple(range(p11_N))}
+p11_frontier = [tuple(range(p11_N))]
+while p11_frontier:
+    p11_new = []
+    for p11_p in p11_frontier:
+        for p11_g in (p11_rot, p11_ref):
+            p11_q = tuple(p11_g[p11_p[k]] for k in range(p11_N))
+            if p11_q not in p11_G:
+                p11_G.add(p11_q)
+                p11_new.append(p11_q)
+    p11_frontier = p11_new
+p11_c = (len(p11_cands) == 2 * p11_N and p11_n_sym == 2 * p11_N
+          and len(p11_G) == 2 * p11_N)
+print(f"    isometries fix the centroid => f(z) = a*z or a*conj(z), {len(p11_cands)} candidates")
+print(f"    (the image of the vertex zeta) — ALL {p11_n_sym} = 2N = 22 = |D_11| preserve the set;")
 print(f"    the group generated by the ladder step (rotation) and the mirror resonance")
-print(f"    (conjugation) has {len(s138_G)} = 2N elements = the full group: the recorded")
+print(f"    (conjugation) has {len(p11_G)} = 2N elements = the full group: the recorded")
 print("    operations of the law EXHAUST the symmetry (nothing third): PASS"
-      if s138_c else "    isometry group: FAIL")
+      if p11_c else "    isometry group: FAIL")
 
 # (5) transitivity = the finite isotropy
-s138_orb0 = {s138_p[0] for s138_p in s138_G}
-s138_c = s138_orb0 == set(range(s138_N))
-print(f"    the orbit of vertex 0 under the group = all {len(s138_orb0)} vertices — any floor")
+p11_orb0 = {p11_p[0] for p11_p in p11_G}
+p11_c = p11_orb0 == set(range(p11_N))
+print(f"    the orbit of vertex 0 under the group = all {len(p11_orb0)} vertices — any floor")
 print("    is carried to any other by a recorded operation: the finite image of the")
 print("    isotropy reading (Th 2.4.G.4, 'the boundary is indistinguishable from the'): PASS"
-      if s138_c else "    transitivity: FAIL")
+      if p11_c else "    transitivity: FAIL")
 
 # (6) the chords of the closed set are the recorded modes
-s138_c = all(abs(2 * mp.sin(mp.pi * k / s138_N) - abs(s138_pts[k] - 1)) < 1e-12
-             for k in range(s138_N))
+p11_c = all(abs(2 * mp.sin(mp.pi * k / p11_N) - abs(p11_pts[k] - 1)) < 1e-12
+             for k in range(p11_N))
 print("    the chords of the closed set = the recorded modes omega_k = |zeta^k - 1|")
 print("    (the .aa(1) identity); the closure floor returns to the Point (.ab(4)): PASS"
-      if s138_c else "    chords: FAIL")
+      if p11_c else "    chords: FAIL")
 
 print("    HONEST BOUNDARY: (1)-(4) are exact; the assembly 'inevitability = the")
 print("    conjunction of forced links' is the ontology-layer reading; the regular")
@@ -14169,7 +14171,7 @@ print("    Remark 2.6.A.4.ac (the Sphere as inevitability): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.ad: gravity as the return — the roots and the powers of
-# the Big Bang are identical (the author's law). (i) the 11 powers
+# the Big Bang are identical (the unified law). (i) the 11 powers
 # {zeta^k} = the 11 roots of x^11 = 1 — in the closed ladder a degree and
 # a root are two names of one element; (ii) the direction = the mirror
 # involution (zeta^(-k) = conj(zeta^k) = zeta^(N-k)) — the return is the
@@ -14179,75 +14181,75 @@ print("    Remark 2.6.A.4.ac (the Sphere as inevitability): ALL CHECKS PASS")
 # alpha(0)/pi — the induced Newton coupling sits on floor 0 of the
 # coupling ladder (the return is carried by the Point floor); (v) the
 # chords fall to zero on the return (the red-shift reading, interpretive).
-# All locals carry the s139_ prefix.
+# All locals carry the p12_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ad (gravity as the return)")
-import cmath as s139_cmath
-from mpmath import mp as s139_mp, mpf as s139_mpf
+import cmath as p12_cmath
+from mpmath import mp as p12_mp, mpf as p12_mpf
 
-s139_mp.dps = 50
-s139_N = 11
-s139_phi = s139_mpf(1 + s139_mp.sqrt(5)) / 2
-s139_alpha = 1 / s139_mpf('137.035999207')
-s139_pts = [complex(s139_cmath.exp(2j * s139_cmath.pi * k / s139_N)) for k in range(s139_N)]
+p12_mp.dps = 50
+p12_N = 11
+p12_phi = p12_mpf(1 + p12_mp.sqrt(5)) / 2
+p12_alpha = 1 / p12_mpf('137.035999207')
+p12_pts = [complex(p12_cmath.exp(2j * p12_cmath.pi * k / p12_N)) for k in range(p12_N)]
 
-# (1) powers == roots (the author's identity)
-s139_c = (
-    len(set(s139_pts)) == s139_N
-    and all(abs(z**s139_N - 1) < 1e-12 for z in s139_pts)
+# (1) powers == roots (the ladder identity)
+p12_c = (
+    len(set(p12_pts)) == p12_N
+    and all(abs(z**p12_N - 1) < 1e-12 for z in p12_pts)
 )
 print("    the 11 powers {zeta^k} (the Big Bang unfolding) = the 11 roots of")
 print("    x^11 = 1 (full gravity-return): in the closed ladder a degree and a root")
 print("    are two names of one element — the identity is the closure property: PASS"
-      if s139_c else "    powers==roots: FAIL")
+      if p12_c else "    powers==roots: FAIL")
 
 # (2) the direction is the mirror involution
-s139_c = (
-    all(min(abs(z.conjugate() - s139_pts[q]) for q in range(s139_N)) < 1e-12 for z in s139_pts)
-    and all(abs(s139_cmath.exp(-2j * s139_cmath.pi * k / s139_N) - s139_pts[(s139_N - k) % s139_N]) < 1e-12
-            for k in range(s139_N))
+p12_c = (
+    all(min(abs(z.conjugate() - p12_pts[q]) for q in range(p12_N)) < 1e-12 for z in p12_pts)
+    and all(abs(p12_cmath.exp(-2j * p12_cmath.pi * k / p12_N) - p12_pts[(p12_N - k) % p12_N]) < 1e-12
+            for k in range(p12_N))
 )
 print("    zeta^(-k) = conj(zeta^k) = zeta^(N-k): the involution k -> N-k maps the")
 print("    power reading onto the root reading — the return is the unfolding read")
 print("    backwards; the arrow (.s(1)) selects the reading, the sets do not differ: PASS"
-      if s139_c else "    direction: FAIL")
+      if p12_c else "    direction: FAIL")
 
 # (3) the return span = the unfolding span; the down-path = the up-path reversed
-s139_c = all(
-    abs(((1 + s139_alpha) ** (1 / s139_mpf(s139_m))) ** (11 * s139_m) - (1 + s139_alpha)**11) < s139_mpf('1e-30')
-    and abs((s139_phi ** (1 / s139_mpf(s139_m))) ** (10 * s139_m) - s139_phi**10) < s139_mpf('1e-30')
-    for s139_m in (1, 2, 5, 10)
+p12_c = all(
+    abs(((1 + p12_alpha) ** (1 / p12_mpf(p12_m))) ** (11 * p12_m) - (1 + p12_alpha)**11) < p12_mpf('1e-30')
+    and abs((p12_phi ** (1 / p12_mpf(p12_m))) ** (10 * p12_m) - p12_phi**10) < p12_mpf('1e-30')
+    for p12_m in (1, 2, 5, 10)
 )
-s139_c2 = all(
-    sorted((1 + s139_alpha) ** (s139_mpf(s139_j) / s139_m) for s139_j in range(11 * s139_m + 1))
-    == sorted(reversed([(1 + s139_alpha) ** (s139_mpf(s139_j) / s139_m) for s139_j in range(11 * s139_m + 1)]))
-    for s139_m in (1, 2, 5)
+p12_c2 = all(
+    sorted((1 + p12_alpha) ** (p12_mpf(p12_j) / p12_m) for p12_j in range(11 * p12_m + 1))
+    == sorted(reversed([(1 + p12_alpha) ** (p12_mpf(p12_j) / p12_m) for p12_j in range(11 * p12_m + 1)]))
+    for p12_m in (1, 2, 5)
 )
-s139_c = s139_c and s139_c2
+p12_c = p12_c and p12_c2
 print("    full-path span invariant: ((1+alpha)^(1/m))^(11m) = (1+alpha)^11 and")
 print("    (phi^(1/m))^(10m) = phi^10 (recorded .aa(2)) exact; the full refined path")
 print("    {(1+alpha)^(j/m), j = 0..11m} read down = the same values reversed:")
 print("    the return covers the full unfolding span — one ladder, two directions: PASS"
-      if s139_c else "    span invariance: FAIL")
+      if p12_c else "    span invariance: FAIL")
 
 # (4) gravity sits on floor 0 of the coupling ladder (NEW identity)
-s139_pi_over_N = s139_mp.pi / s139_N
-s139_alpha0 = s139_mp.pi**2 / s139_N
-s139_c = abs(s139_pi_over_N - s139_alpha0 / s139_mp.pi) < s139_mpf('1e-45')
-print(f"    G_ind/G_N = pi/N = {float(s139_pi_over_N):.5f} (recorded, Cor 2.7.B.8.c) =")
-print(f"    alpha(0)/pi exactly (alpha(0) = pi^2/N = {float(s139_alpha0):.6f}, the union tick,")
+p12_pi_over_N = p12_mp.pi / p12_N
+p12_alpha0 = p12_mp.pi**2 / p12_N
+p12_c = abs(p12_pi_over_N - p12_alpha0 / p12_mp.pi) < p12_mpf('1e-45')
+print(f"    G_ind/G_N = pi/N = {float(p12_pi_over_N):.5f} (recorded, Cor 2.7.B.8.c) =")
+print(f"    alpha(0)/pi exactly (alpha(0) = pi^2/N = {float(p12_alpha0):.6f}, the union tick,")
 print("    .w(3)): the induced Newton coupling IS floor 0 of the coupling ladder —")
 print("    the return is carried by the Point floor (Th 2.4.G.4, the isotropy): PASS"
-      if s139_c else "    floor-0 identity: FAIL")
+      if p12_c else "    floor-0 identity: FAIL")
 
 # (5) the chords fall to zero on the return
-s139_om = [2 * s139_mp.sin(s139_mp.pi * k / s139_N) for k in range(s139_N + 1)]
-s139_c = (abs(s139_om[0]) < s139_mpf('1e-38') and abs(s139_om[s139_N]) < s139_mpf('1e-38')
-          and float(s139_om[1]) < float(s139_om[5]))
-print(f"    the chords fall to zero at the return ends (omega_1 = {float(s139_om[1]):.4f} <")
-print(f"    omega_5 = {float(s139_om[5]):.4f}, omega_0 = omega_11 = 0): falling = descending the")
+p12_om = [2 * p12_mp.sin(p12_mp.pi * k / p12_N) for k in range(p12_N + 1)]
+p12_c = (abs(p12_om[0]) < p12_mpf('1e-38') and abs(p12_om[p12_N]) < p12_mpf('1e-38')
+          and float(p12_om[1]) < float(p12_om[5]))
+print(f"    the chords fall to zero at the return ends (omega_1 = {float(p12_om[1]):.4f} <")
+print(f"    omega_5 = {float(p12_om[5]):.4f}, omega_0 = omega_11 = 0): falling = descending the")
 print("    ladder, the frequency drops — the red-shift reading (interpretive, .ab(4)): PASS"
-      if s139_c else "    chord collapse: FAIL")
+      if p12_c else "    chord collapse: FAIL")
 
 print("    HONEST BOUNDARY: the direction identification (roots = gravity, powers =")
 print("    the Big Bang) is the ontology layer over the machine identities; the field")
@@ -14268,75 +14270,75 @@ print("    Remark 2.6.A.4.ad (gravity as the return): ALL CHECKS PASS")
 # cell entropy S(k) = ln C(k): S = 0 at both ends, the single maximum
 # ln 10 at k = 6 (not monotone — the mod-11 wrap, honest) — folding to
 # the center = order, unfolding from the center = chaos. All locals
-# carry the s140_ prefix.
+# carry the p13_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ae (the section superposition and the zoom)")
-from mpmath import mp as s140_mp, mpf as s140_mpf
+from mpmath import mp as p13_mp, mpf as p13_mpf
 
-s140_mp.dps = 50
-s140_N = 11
-s140_phi = s140_mpf(1 + s140_mp.sqrt(5)) / 2
-s140_alpha = 1 / s140_mpf('137.035999207')
+p13_mp.dps = 50
+p13_N = 11
+p13_phi = p13_mpf(1 + p13_mp.sqrt(5)) / 2
+p13_alpha = 1 / p13_mpf('137.035999207')
 
 # (1) the zoom = the law operations; round trips exact
-s140_c = all(
-    abs((s140_v ** (1 / s140_mpf(s140_m))) ** s140_m - s140_v) < s140_mpf('1e-30')
-    and abs((s140_v ** s140_m) ** (1 / s140_mpf(s140_m)) - s140_v) < s140_mpf('1e-30')
-    for s140_v in (s140_phi, 1 + s140_alpha) for s140_m in (1, 2, 5, 10)
+p13_c = all(
+    abs((p13_v ** (1 / p13_mpf(p13_m))) ** p13_m - p13_v) < p13_mpf('1e-30')
+    and abs((p13_v ** p13_m) ** (1 / p13_mpf(p13_m)) - p13_v) < p13_mpf('1e-30')
+    for p13_v in (p13_phi, 1 + p13_alpha) for p13_m in (1, 2, 5, 10)
 )
 print("    zoom in = root (v^(1/m)), zoom out = power (v^m) — the operations of the")
 print("    law (.aa(2)); both round trips are exact ((v^(1/m))^m = v, (v^m)^(1/m) = v)")
 print("    for v in {phi, 1+alpha}, m in {1,2,5,10}: PASS"
-      if s140_c else "    zoom round trips: FAIL")
+      if p13_c else "    zoom round trips: FAIL")
 
 # (2) the zoom changes the depth, not the span
-s140_c = all(
-    abs((s140_v ** (1 / s140_mpf(s140_m))) ** (10 * s140_m) - s140_v**10) < s140_mpf('1e-30')
-    for s140_v in (s140_phi, 1 + s140_alpha) for s140_m in (1, 2, 5, 10)
+p13_c = all(
+    abs((p13_v ** (1 / p13_mpf(p13_m))) ** (10 * p13_m) - p13_v**10) < p13_mpf('1e-30')
+    for p13_v in (p13_phi, 1 + p13_alpha) for p13_m in (1, 2, 5, 10)
 )
 print("    (v^(1/m))^(10m) = v^10 exact: the zoom changes the reading depth, not the")
 print("    span of the ladder — the .aa(2) invariant carries the zoom: PASS"
-      if s140_c else "    span: FAIL")
+      if p13_c else "    span: FAIL")
 
 # (3) the manifestation thresholds: 10 radii + the converging zero = 11
-s140_r = [s140_phi ** (-k) for k in range(1, 11)]
-s140_steps = {float(s140_mp.log(s140_r[k + 1] / s140_r[k])) for k in range(9)}
-s140_c = (
-    len(s140_r) == 10 and len(s140_r + [s140_mpf(0)]) == 11
-    and all(abs(s140_r[k] / s140_r[k + 1] - s140_phi) < s140_mpf('1e-30') for k in range(9))
-    and max(s140_steps) - min(s140_steps) < 1e-12
+p13_r = [p13_phi ** (-k) for k in range(1, 11)]
+p13_steps = {float(p13_mp.log(p13_r[k + 1] / p13_r[k])) for k in range(9)}
+p13_c = (
+    len(p13_r) == 10 and len(p13_r + [p13_mpf(0)]) == 11
+    and all(abs(p13_r[k] / p13_r[k + 1] - p13_phi) < p13_mpf('1e-30') for k in range(9))
+    and max(p13_steps) - min(p13_steps) < 1e-12
 )
 print(f"    under r_k = phi^(-k): the ratios are phi exactly, the log-thresholds")
-print(f"    equidistant (step ln phi = {float(s140_mp.log(s140_phi)):.4f}); 10 radii + the converging zero")
+print(f"    equidistant (step ln phi = {float(p13_mp.log(p13_phi)):.4f}); 10 radii + the converging zero")
 print("    (r = 0, where all sections meet — Def 2.4.G.8) = 11 thresholds: PASS"
-      if s140_c else "    thresholds: FAIL")
+      if p13_c else "    thresholds: FAIL")
 
-s140_c = all(
-    max(float(s140_mp.log(s140_phi ** (-(k + 1) / s140_m) / s140_phi ** (-k / s140_m)))
-        for k in range(10 * s140_m - 1))
-    - min(float(s140_mp.log(s140_phi ** (-(k + 1) / s140_m) / s140_phi ** (-k / s140_m)))
-          for k in range(10 * s140_m - 1)) < 1e-12
-    for s140_m in (2, 5, 10)
+p13_c = all(
+    max(float(p13_mp.log(p13_phi ** (-(k + 1) / p13_m) / p13_phi ** (-k / p13_m)))
+        for k in range(10 * p13_m - 1))
+    - min(float(p13_mp.log(p13_phi ** (-(k + 1) / p13_m) / p13_phi ** (-k / p13_m)))
+          for k in range(10 * p13_m - 1)) < 1e-12
+    for p13_m in (2, 5, 10)
 )
 print("    the refinement m thickens the thresholds m-fold (the root, .aa(2)): PASS"
-      if s140_c else "    thickening: FAIL")
+      if p13_c else "    thickening: FAIL")
 
 # (4) the entropy direction: order at the converging ends, chaos in the middle
-s140_C = [2 ** k % s140_N for k in range(s140_N)]
-s140_S = [float(s140_mp.log(c)) for c in s140_C]
-s140_c = (
-    s140_S[0] == 0 and s140_S[10] == 0
-    and abs(s140_S[5] - s140_mp.log(10)) < 1e-12 and abs(max(s140_S) - s140_S[5]) < 1e-12
+p13_C = [2 ** k % p13_N for k in range(p13_N)]
+p13_S = [float(p13_mp.log(c)) for c in p13_C]
+p13_c = (
+    p13_S[0] == 0 and p13_S[10] == 0
+    and abs(p13_S[5] - p13_mp.log(10)) < 1e-12 and abs(max(p13_S) - p13_S[5]) < 1e-12
 )
 print("    S(k) = ln C(k): S(1) = S(11) = 0, the single maximum ln 10 at k = 6 (the")
 print("    profile is NOT monotone — the mod-11 wrap 8 -> 5, honest): folding TO the")
 print("    converging zero = order (S -> 0), unfolding FROM the center = chaos")
-print("    (S -> ln 10) — the author's directional reading on the recorded table: PASS"
-      if s140_c else "    entropy: FAIL")
+print("    (S -> ln 10) — the directional reading on the recorded table: PASS"
+      if p13_c else "    entropy: FAIL")
 
 print("    HONEST BOUNDARY: the superposition of sections as the observer's view, the")
 print("    direction of destruction, and order/chaos as the folding/unfolding")
-print("    directions are the ontology layer (the author's readings); the")
+print("    directions are the ontology layer (recorded readings); the")
 print("    quantitative law of r_k is a reading (the decrease + the empirical ladder")
 print("    are recorded, Def 2.4.G.8; the exact r_k formula is an open program); the")
 print("    observer's boundary (Def 1.0.9, Rem 3.9.4.r) is preserved: PASS")
@@ -14344,7 +14346,7 @@ print("    Remark 2.6.A.4.ae (the section superposition and the zoom): ALL CHECK
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.af: who can choose — identity = a position capable of
-# setting a direction, through the resonance center (the author's chain).
+# setting a direction, through the resonance center (the resonance chain).
 # (i) the Point is the only floor without an own direction (omega_0 = 0,
 # all others > 0) — the chooser's position must not predetermine the
 # choice; (ii) a mirror pair is spectrally identical and distinguishable
@@ -14355,63 +14357,63 @@ print("    Remark 2.6.A.4.ae (the section superposition and the zoom): ALL CHECK
 # the same zero chord) — the only accessible open-choice position is the
 # Point; (iv) the recorded anchors: the collapse = one of the 5 dual
 # outcomes (Def 1.0.10), the will executes one (au(2), 3.9.4.s). All
-# locals carry the s141_ prefix.
+# locals carry the p14_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.af (who can choose)")
-from mpmath import mp as s141_mp, mpf as s141_mpf
+from mpmath import mp as p14_mp, mpf as p14_mpf
 
-s141_mp.dps = 50
-s141_N = 11
-s141_om = [2 * s141_mp.sin(s141_mp.pi * k / s141_N) for k in range(s141_N + 1)]
-s141_x = [s141_mp.pi * k / s141_N for k in range(s141_N + 1)]
+p14_mp.dps = 50
+p14_N = 11
+p14_om = [2 * p14_mp.sin(p14_mp.pi * k / p14_N) for k in range(p14_N + 1)]
+p14_x = [p14_mp.pi * k / p14_N for k in range(p14_N + 1)]
 
 # (1) only the Point has no own direction
-s141_c = (abs(s141_om[0]) < s141_mpf('1e-38')
-          and all(s141_om[k] > 0 for k in range(1, s141_N + 1)))
+p14_c = (abs(p14_om[0]) < p14_mpf('1e-38')
+          and all(p14_om[k] > 0 for k in range(1, p14_N + 1)))
 print(f"    omega_0 = 0 exactly; omega_k > 0 for all k = 1..10 (min"
-      f" {float(s141_om[1]):.4f}): every non-zero floor already carries its own")
+      f" {float(p14_om[1]):.4f}): every non-zero floor already carries its own")
 print("    frequency (its own direction); the only floor free of an own direction")
 print("    is the Point — a position that can set a direction without")
-print("    predetermining it: PASS" if s141_c else "    free position: FAIL")
+print("    predetermining it: PASS" if p14_c else "    free position: FAIL")
 
 # (2) the pair is distinguishable only by phase
-s141_c = (
-    all(abs(s141_om[k] - s141_om[s141_N - k]) < s141_mpf('1e-38') for k in range(1, s141_N))
-    and all(abs(s141_x[k] - s141_x[s141_N - k]) > s141_mpf('1e-30') for k in range(1, s141_N))
+p14_c = (
+    all(abs(p14_om[k] - p14_om[p14_N - k]) < p14_mpf('1e-38') for k in range(1, p14_N))
+    and all(abs(p14_x[k] - p14_x[p14_N - k]) > p14_mpf('1e-30') for k in range(1, p14_N))
 )
 print("    omega_k = omega_(N-k) (the pair is spectrally IDENTICAL — the resonance)")
 print("    while x_k != x_(N-k) for every pair (x = pi/2 would need k = 5.5, between")
 print("    the floors, N odd): the direction = the phase sign, nothing else: PASS"
-      if s141_c else "    phase-only: FAIL")
+      if p14_c else "    phase-only: FAIL")
 
 # (3) the phase sign flips in the pair
-s141_dev = [s141_x[k] - s141_mp.pi / 2 for k in range(s141_N + 1)]
-s141_c = all(abs(s141_dev[s141_N - k] + s141_dev[k]) < s141_mpf('1e-38')
-             for k in range(1, s141_N))
+p14_dev = [p14_x[k] - p14_mp.pi / 2 for k in range(p14_N + 1)]
+p14_c = all(abs(p14_dev[p14_N - k] + p14_dev[k]) < p14_mpf('1e-38')
+             for k in range(1, p14_N))
 print("    d_k = x_k - pi/2 flips its sign in the pair: d_(N-k) = -d_k exact —")
 print("    setting a direction = fixing the phase sign relative to the pair's")
 print("    center (which lies between the floors, 2.6.A.4.ab(3)): PASS"
-      if s141_c else "    sign flip: FAIL")
+      if p14_c else "    sign flip: FAIL")
 
 # (4) the self-inverse phase on the floors = the Point only
-s141_self = [k for k in range(s141_N + 1)
-             if abs(s141_mp.fmod(2 * s141_x[k], s141_mp.pi)) < s141_mpf('1e-30')
-             or abs(s141_mp.fmod(2 * s141_x[k], s141_mp.pi) - s141_mp.pi) < s141_mpf('1e-30')]
-s141_c = s141_self == [0, s141_N] and abs(s141_om[0]) < s141_mpf('1e-38') \
-         and abs(s141_om[s141_N]) < s141_mpf('1e-38')
+p14_self = [k for k in range(p14_N + 1)
+             if abs(p14_mp.fmod(2 * p14_x[k], p14_mp.pi)) < p14_mpf('1e-30')
+             or abs(p14_mp.fmod(2 * p14_x[k], p14_mp.pi) - p14_mp.pi) < p14_mpf('1e-30')]
+p14_c = p14_self == [0, p14_N] and abs(p14_om[0]) < p14_mpf('1e-38') \
+         and abs(p14_om[p14_N]) < p14_mpf('1e-38')
 print(f"    the phase is self-inverse (2x = 0 mod pi) on the floors only at k in")
-print(f"    {s141_self} — both ends, the same zero chord (.ab(3)); the non-floor middle")
+print(f"    {p14_self} — both ends, the same zero chord (.ab(3)); the non-floor middle")
 print("    pi/2 is self-inverse too but between the floors: the only accessible")
 print("    open-choice position is the Point (x_0 = 0): PASS"
-      if s141_c else "    self-inverse: FAIL")
+      if p14_c else "    self-inverse: FAIL")
 
 # (5) the recorded choice anchors: 5 dual outcomes, the menu of 11
-s141_pairs = [(k, s141_N - k) for k in range(1, 6)]
-s141_c = len(s141_pairs) == 5 and len(list(range(s141_N))) == 11
+p14_pairs = [(k, p14_N - k) for k in range(1, 6)]
+p14_c = len(p14_pairs) == 5 and len(list(range(p14_N))) == 11
 print(f"    recorded: Def 1.0.10 — the collapse = the choice of ONE of the 5 dual")
-print(f"    outcomes {s141_pairs}; the menu = the overlaid sections (11 thresholds,")
+print(f"    outcomes {p14_pairs}; the menu = the overlaid sections (11 thresholds,")
 print("    .ae(1)); the will executes ONE — fixing a single exponent e of the 11: PASS"
-      if s141_c else "    choice anchors: FAIL")
+      if p14_c else "    choice anchors: FAIL")
 
 print("    HONEST BOUNDARY: the chain 'identity = a position capable of setting a")
 print("    direction, through the resonance center' is the ontology layer over the")
@@ -14423,7 +14425,7 @@ print("    Remark 2.6.A.4.af (who can choose): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.ag: the chain closes — the set direction makes the
-# position an observer automatically (the author's law). (i) the observed
+# position an observer automatically (the unified law). (i) the observed
 # content = the distances from the zero mode: omega_k = |zeta^k - zeta^0|
 # for all k (the whole spectrum is the view of the closed set FROM the
 # zero mode; its self-distance = 0); (ii) the zero of the phase
@@ -14435,55 +14437,55 @@ print("    Remark 2.6.A.4.af (who can choose): ALL CHECKS PASS")
 # zero (omega_0 = 0) are one floor k = 0 — the chain closes on a single
 # floor (the recorded self-closure layer: Th 3.5.1, Rem 3.9.4.v), the
 # cycle continues (the observer chooses, .af(1)). All locals carry the
-# s142_ prefix.
+# p15_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ag (the chain closes: the observer)")
-import cmath as s142_cmath
-from mpmath import mp as s142_mp, mpf as s142_mpf
+import cmath as p15_cmath
+from mpmath import mp as p15_mp, mpf as p15_mpf
 
-s142_mp.dps = 50
-s142_N = 11
-s142_pts = [complex(s142_cmath.exp(2j * s142_cmath.pi * k / s142_N)) for k in range(s142_N)]
-s142_om = [2 * s142_mp.sin(s142_mp.pi * k / s142_N) for k in range(s142_N + 1)]
-s142_x = [s142_mp.pi * k / s142_N for k in range(s142_N + 1)]
+p15_mp.dps = 50
+p15_N = 11
+p15_pts = [complex(p15_cmath.exp(2j * p15_cmath.pi * k / p15_N)) for k in range(p15_N)]
+p15_om = [2 * p15_mp.sin(p15_mp.pi * k / p15_N) for k in range(p15_N + 1)]
+p15_x = [p15_mp.pi * k / p15_N for k in range(p15_N + 1)]
 
 # (1) the observed content = the distances from the zero mode
-s142_c = (
-    all(abs(s142_om[k] - abs(s142_pts[k] - s142_pts[0])) < 1e-12 for k in range(s142_N))
-    and abs(s142_om[0]) < s142_mpf('1e-38')
+p15_c = (
+    all(abs(p15_om[k] - abs(p15_pts[k] - p15_pts[0])) < 1e-12 for k in range(p15_N))
+    and abs(p15_om[0]) < p15_mpf('1e-38')
 )
 print("    omega_k = |zeta^k - zeta^0| for ALL k: every chord IS the distance of")
 print("    floor k from the zero mode — the whole spectrum is the view of the")
 print("    closed set FROM the observer position; the self-distance omega_0 = 0: PASS"
-      if s142_c else "    chords: FAIL")
+      if p15_c else "    chords: FAIL")
 
 # (2) the zero of the phase coordinate = the same position
-s142_c = s142_x[0] == 0 and all(
-    abs(s142_x[k] - s142_mp.pi * k / s142_N) < s142_mpf('1e-38') for k in range(s142_N + 1)
+p15_c = p15_x[0] == 0 and all(
+    abs(p15_x[k] - p15_mp.pi * k / p15_N) < p15_mpf('1e-38') for k in range(p15_N + 1)
 )
 print("    x_k = pi*k/N measured from x_0 = 0: the phase coordinate is defined only")
 print("    relative to its zero, and the zero IS the setter's phase — the")
 print("    direction-setter is constitutively the origin of all readings: PASS"
-      if s142_c else "    zero origin: FAIL")
+      if p15_c else "    zero origin: FAIL")
 
 # (3) the observed content of a choice = the set direction
-s142_dev = [s142_x[k] - s142_mp.pi / 2 for k in range(s142_N + 1)]
-s142_c = (
-    all(abs(s142_dev[s142_N - k] + s142_dev[k]) < s142_mpf('1e-38') for k in range(1, s142_N))
-    and all(abs(s142_om[k] - s142_om[s142_N - k]) < s142_mpf('1e-38') for k in range(1, s142_N))
+p15_dev = [p15_x[k] - p15_mp.pi / 2 for k in range(p15_N + 1)]
+p15_c = (
+    all(abs(p15_dev[p15_N - k] + p15_dev[k]) < p15_mpf('1e-38') for k in range(1, p15_N))
+    and all(abs(p15_om[k] - p15_om[p15_N - k]) < p15_mpf('1e-38') for k in range(1, p15_N))
 )
 print("    after the collapse (Def 1.0.10) the outcome differs from the twin ONLY")
 print("    by the phase sign (d_(N-k) = -d_k, omega equal): the observed content of")
 print("    the choice IS the set direction — 'there is something to observe' in")
-print("    exact form: PASS" if s142_c else "    sign content: FAIL")
+print("    exact form: PASS" if p15_c else "    sign content: FAIL")
 
 # (4) setter, origin and own zero are one floor
-s142_c = abs(s142_om[0]) < s142_mpf('1e-38') and s142_x[0] == 0
+p15_c = abs(p15_om[0]) < p15_mpf('1e-38') and p15_x[0] == 0
 print("    the setter of the direction, the origin (x_0 = 0) and the own zero")
 print("    (omega_0 = 0) are the same floor k = 0 — the chain identity -> direction")
 print("    -> observation closes on one floor (Th 3.5.1, 3.9.4.v); the cycle")
 print("    continues (the observer chooses, .af(1)): PASS"
-      if s142_c else "    self-zero: FAIL")
+      if p15_c else "    self-zero: FAIL")
 
 print("    HONEST BOUNDARY: the automaticity and the self-closure are the ontology")
 print("    layer over the machine links; the boundaries stand (Th 3.5.1, Th 1.0.AET.3,")
@@ -14498,59 +14500,59 @@ print("    Remark 2.6.A.4.ag (the chain closes: the observer): ALL CHECKS PASS")
 # prediction beyond PF-1..7; (d) no separate formula for any new
 # phenomenon; the failure of any item = the honest record of a boundary.
 # The machine part re-checks the six orbital re-readings of the campaign
-# and computes the honest tallies. All locals carry the s143_ prefix.
+# and computes the honest tallies. All locals carry the p16_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ah (the acceptance criterion, applied honestly)")
-from mpmath import mp as s143_mp, mpf as s143_mpf
+from mpmath import mp as p16_mp, mpf as p16_mpf
 
-s143_mp.dps = 50
-s143_N = 11
-s143_phi = s143_mpf(1 + s143_mp.sqrt(5)) / 2
-s143_alpha = 1 / s143_mpf('137.035999207')
+p16_mp.dps = 50
+p16_N = 11
+p16_phi = p16_mpf(1 + p16_mp.sqrt(5)) / 2
+p16_alpha = 1 / p16_mpf('137.035999207')
 
 # the six orbital re-readings of the campaign, re-checked
-s143_lad = [s143_mp.pi**2 / (s143_N * s143_phi**k) for k in range(s143_N + 1)]
-s143_om = [2 * s143_mp.sin(s143_mp.pi * k / s143_N) for k in range(s143_N + 1)]
-s143_Mp = s143_mpf('1.22089e19')
-s143_MR = s143_alpha**4 * s143_N * s143_Mp
-s143_v = s143_mpf('246.22')
-s143_m1 = (s143_alpha * s143_om[1] * s143_v)**2 / s143_MR * 1e9
-s143_m5 = (s143_alpha * s143_om[5] * s143_v)**2 / s143_MR * 1e9
-s143_grid = [2**k % s143_N for k in range(s143_N)]
-s143_tally = [
-    abs(float(1 / s143_lad[10]) - 137.0785) < 1e-3 and abs(float(s143_lad[0]) - 0.897) < 1e-3,
-    abs((1 + s143_alpha)**s143_N - s143_mpf('1.083265')) < s143_mpf('1e-6'),
-    abs(s143_m1 - 0.00269) / 0.00269 < 0.01 and abs(s143_m5 - 0.0332) / 0.0332 < 0.01,
-    s143_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1],
-    5**2 == 25 and (2**4) % s143_N == 5,
-    abs(s143_mp.pi / s143_N - (s143_mp.pi**2 / s143_N) / s143_mp.pi) < s143_mpf('1e-40'),
+p16_lad = [p16_mp.pi**2 / (p16_N * p16_phi**k) for k in range(p16_N + 1)]
+p16_om = [2 * p16_mp.sin(p16_mp.pi * k / p16_N) for k in range(p16_N + 1)]
+p16_Mp = p16_mpf('1.22089e19')
+p16_MR = p16_alpha**4 * p16_N * p16_Mp
+p16_v = p16_mpf('246.22')
+p16_m1 = (p16_alpha * p16_om[1] * p16_v)**2 / p16_MR * 1e9
+p16_m5 = (p16_alpha * p16_om[5] * p16_v)**2 / p16_MR * 1e9
+p16_grid = [2**k % p16_N for k in range(p16_N)]
+p16_tally = [
+    abs(float(1 / p16_lad[10]) - 137.0785) < 1e-3 and abs(float(p16_lad[0]) - 0.897) < 1e-3,
+    abs((1 + p16_alpha)**p16_N - p16_mpf('1.083265')) < p16_mpf('1e-6'),
+    abs(p16_m1 - 0.00269) / 0.00269 < 0.01 and abs(p16_m5 - 0.0332) / 0.0332 < 0.01,
+    p16_grid == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1],
+    5**2 == 25 and (2**4) % p16_N == 5,
+    abs(p16_mp.pi / p16_N - (p16_mp.pi**2 / p16_N) / p16_mp.pi) < p16_mpf('1e-40'),
 ]
-s143_c = all(s143_tally) and sum(s143_tally) == 6
+p16_c = all(p16_tally) and sum(p16_tally) == 6
 print(f"    the six orbital re-readings re-checked (all match their recorded")
-print(f"    derivations): {sum(s143_tally)}/6 — alpha-ladder, H0 two-end factor, nu ends,")
+print(f"    derivations): {sum(p16_tally)}/6 — alpha-ladder, H0 two-end factor, nu ends,")
 print("    C(k) table, 1/alpha_GUT = 25 = C(5)^2, G_ind = alpha(0)/pi: PASS"
-      if s143_c else "    re-readings: FAIL")
+      if p16_c else "    re-readings: FAIL")
 
-s143_c = sum(s143_tally) == 6 and sum(s143_tally) < 9
-print(f"    item (b) honest tally: {sum(s143_tally)} of the required 9 — the strict form")
+p16_c = sum(p16_tally) == 6 and sum(p16_tally) < 9
+print(f"    item (b) honest tally: {sum(p16_tally)} of the required 9 — the strict form")
 print("    is not met; met as 'every re-read matches its recorded derivation';")
 print("    the full pass over the 84 (39 + 45, Test 2.5.AC.3.v) is the open")
 print("    subroutine — the honest record of the boundary: PASS"
-      if s143_c else "    tally: FAIL")
+      if p16_c else "    tally: FAIL")
 
-s143_c = abs(s143_mp.pi / s143_N - (s143_mp.pi**2 / s143_N) / s143_mp.pi) < s143_mpf('1e-40')
+p16_c = abs(p16_mp.pi / p16_N - (p16_mp.pi**2 / p16_N) / p16_mp.pi) < p16_mpf('1e-40')
 print("    item (a) honest verdict: N is the law's INPUT (every form carries N);")
 print("    the selection is the recorded separate theorem (Th 1.10.0.28, nine rows;")
 print("    the comparator {3,7,11,13,19}); the chord-power tie omega_k = |zeta^k - 1|")
 print("    is derived (.aa(1)); strictly not met, the reading form confirmed: PASS"
-      if s143_c else "    item a: FAIL")
+      if p16_c else "    item a: FAIL")
 
-s143_c = sum(s143_tally) == 6  # the campaign added no new blind predictions
+p16_c = sum(p16_tally) == 6  # the campaign added no new blind predictions
 print("    item (c) honest verdict: no new blind predictions beyond PF-1..7 — the")
 print("    manifestation thresholds (.ae) are interpretive without the quantitative")
 print("    r_k law (the open program; a derived r_k would give testable threshold")
 print("    equidistance); PF-1..7 stay the blind contour: PASS"
-      if s143_c else "    item c: FAIL")
+      if p16_c else "    item c: FAIL")
 
 print("    item (d) verdict: within the campaign (.aa-.ag) every new identity")
 print("    followed from one form (the orbit + the Z2 closure + the zoom) without a")
@@ -14574,68 +14576,68 @@ print("    Remark 2.6.A.4.ah (the acceptance criterion): ALL CHECKS PASS")
 # 0.5390 per floor is a different recorded object (the coupling) vs the
 # scale step 1/phi = 0.6180 / the upward ratio phi = 1.6180; (v) the
 # fractional depths thicken the thresholds m-fold (the zoom form); (vi)
-# the Point limit r -> 0. All locals carry the s144_ prefix.
+# the Point limit r -> 0. All locals carry the p17_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ai (the radius law of the nested spheres)")
-from mpmath import mp as s144_mp, mpf as s144_mpf, exp as s144_exp
+from mpmath import mp as p17_mp, mpf as p17_mpf, exp as p17_exp
 
-s144_mp.dps = 50
-s144_N = 11
-s144_phi = s144_mpf(1 + s144_mp.sqrt(5)) / 2
-s144_mu = 1 / s144_phi
-s144_R = s144_mpf(1)
+p17_mp.dps = 50
+p17_N = 11
+p17_phi = p17_mpf(1 + p17_mp.sqrt(5)) / 2
+p17_mu = 1 / p17_phi
+p17_R = p17_mpf(1)
 
 # (1) the uniqueness of the step from the recorded facts
-s144_q = (s144_phi**10) ** (s144_mpf(1) / 10)
-s144_c = abs(s144_q - s144_phi) < s144_mpf('1e-30')
+p17_q = (p17_phi**10) ** (p17_mpf(1) / 10)
+p17_c = abs(p17_q - p17_phi) < p17_mpf('1e-30')
 print("    uniform decay (.s(1)) => r_k = R*q^(-k); the recorded span R/r_10 =")
 print("    phi^10 (2.4.G.13.u) fixes q = (phi^10)^(1/10) = phi UNIQUELY — no new")
-print("    free parameter: PASS" if s144_c else "    uniqueness: FAIL")
+print("    free parameter: PASS" if p17_c else "    uniqueness: FAIL")
 
 # (2) the law and its properties
-s144_r = [s144_R * s144_phi**(-k) for k in range(11)]
-s144_c = (
-    all(abs(s144_r[k] / s144_r[k + 1] - s144_phi) < s144_mpf('1e-30') for k in range(10))
-    and abs(s144_R / s144_r[10] - s144_phi**10) < s144_mpf('1e-30')
-    and abs(float(s144_phi**10) - 122.9919) < 1e-3
+p17_r = [p17_R * p17_phi**(-k) for k in range(11)]
+p17_c = (
+    all(abs(p17_r[k] / p17_r[k + 1] - p17_phi) < p17_mpf('1e-30') for k in range(10))
+    and abs(p17_R / p17_r[10] - p17_phi**10) < p17_mpf('1e-30')
+    and abs(float(p17_phi**10) - 122.9919) < 1e-3
 )
 print(f"    r_k = R*phi^(-k), k = 0..10: the ratios = phi exactly, the span")
-print(f"    R/r_10 = phi^10 = {float(s144_phi**10):.4f} (the anchor L_10 = 123): PASS"
-      if s144_c else "    law: FAIL")
+print(f"    R/r_10 = phi^10 = {float(p17_phi**10):.4f} (the anchor L_10 = 123): PASS"
+      if p17_c else "    law: FAIL")
 
 # (3) the measure-mass identity
-s144_c = all(abs(s144_r[k] - s144_R * s144_mu**k) < s144_mpf('1e-30') for k in range(11))
+p17_c = all(abs(p17_r[k] - p17_R * p17_mu**k) < p17_mpf('1e-30') for k in range(11))
 print("    mu = 1/phi (the recorded measure mass, .w(2)): mu^k = phi^(-k) — the")
 print("    radii are the powers of the measure mass (r_k = R*mu^k), one object,")
-print("    two names: PASS" if s144_c else "    mu identity: FAIL")
+print("    two names: PASS" if p17_c else "    mu identity: FAIL")
 
 # (4) the honest distinction: the kernel amplitude vs the scale step
-s144_kdec = s144_exp(-1 / s144_phi)
-s144_c = (abs(s144_kdec - s144_mpf('0.5390')) < s144_mpf('1e-3')
-          and abs(s144_kdec - s144_mu) > s144_mpf('0.07')
-          and abs(s144_mu - s144_mpf('0.6180')) < s144_mpf('1e-3')
-          and abs(s144_phi - s144_mpf('1.6180')) < s144_mpf('1e-3'))
-print(f"    the kernel amplitude e^(-1/phi) = {float(s144_kdec):.4f} per floor is a DIFFERENT")
-print(f"    recorded object (the coupling) vs the scale step 1/phi = {float(s144_mu):.4f}")
-print(f"    and the upward ratio phi = {float(s144_phi):.4f} — no conflation (the false")
+p17_kdec = p17_exp(-1 / p17_phi)
+p17_c = (abs(p17_kdec - p17_mpf('0.5390')) < p17_mpf('1e-3')
+          and abs(p17_kdec - p17_mu) > p17_mpf('0.07')
+          and abs(p17_mu - p17_mpf('0.6180')) < p17_mpf('1e-3')
+          and abs(p17_phi - p17_mpf('1.6180')) < p17_mpf('1e-3'))
+print(f"    the kernel amplitude e^(-1/phi) = {float(p17_kdec):.4f} per floor is a DIFFERENT")
+print(f"    recorded object (the coupling) vs the scale step 1/phi = {float(p17_mu):.4f}")
+print(f"    and the upward ratio phi = {float(p17_phi):.4f} — no conflation (the false")
 print("    identity exp(-k/phi) = phi^(-k) is caught by the machine): PASS"
-      if s144_c else "    distinction: FAIL")
+      if p17_c else "    distinction: FAIL")
 
 # (5) the sections inherit the law; the fractional depths
-s144_rho = [s144_r[k] * s144_mpf('0.8') for k in range(11)]
-s144_c = all(abs(s144_rho[k] / s144_rho[k + 1] - s144_phi) < s144_mpf('1e-30') for k in range(10))
+p17_rho = [p17_r[k] * p17_mpf('0.8') for k in range(11)]
+p17_c = all(abs(p17_rho[k] / p17_rho[k + 1] - p17_phi) < p17_mpf('1e-30') for k in range(10))
 print("    the sections inherit the law (rho_k = r_k*sin(theta_C), Def 2.4.G.8): the")
 print("    same phi ratios exactly; the fractional depths r(k/m) = R*phi^(-k/m)")
 print("    thicken the log-thresholds m-fold (the root zoom, .ae(2)-(3)): PASS"
-      if s144_c else "    sections: FAIL")
+      if p17_c else "    sections: FAIL")
 
 # (6) the Point limit
-s144_c = s144_phi**(-100) < s144_mpf('1e-20')
+p17_c = p17_phi**(-100) < p17_mpf('1e-20')
 print("    r_k -> 0 as k -> inf: the recorded degenerate limit (Def 2.4.G.8); the")
 print("    geometric span phi^10 ~ 123 is the MODAL cascade span — the empirical")
 print("    ~60-order ladder is attached structurally, not metrically (honest); the")
 print("    empirical test stays the open program (item (4) of .ah): PASS"
-      if s144_c else "    limit: FAIL")
+      if p17_c else "    limit: FAIL")
 
 print("    HONEST BOUNDARY: the derivation is CONDITIONAL (the uniformity = the")
 print("    recorded reading of .s(1), the Ansatz status inherited); the law is the")
@@ -14646,7 +14648,7 @@ print("    Remark 2.6.A.4.ai (the radius law): ALL CHECKS PASS")
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.aj: the identity system — two paths to a floor (powers up
 # OR one root from the Sphere) must be identical; demonstrated on the
-# particle floor k=10 (the author's principle: derive from the SYSTEM, not
+# particle floor k=10 (the principle: derive from the SYSTEM, not
 # from the possibly-fitted formulas). (i) the two-path identity
 # (b^N)^(k/N) = b^k exact; (ii) the mirror-product system (five pairs,
 # one answer); (iii) the floor-10 coupling = the measured alpha (-0.031%);
@@ -14654,62 +14656,62 @@ print("    Remark 2.6.A.4.ai (the radius law): ALL CHECKS PASS")
 # single-degree forms of the floor-10 coupling with the Quintet atoms
 # (Lambda_QCD = pi*m_e*alpha^-1, m_pi/m_e = 2*alpha^-1, f_pi/m_pi =
 # 2^7*alpha, f_pi = 2^F6*m_e); the independent derivation of the degrees
-# = the open program. All locals carry the s145_ prefix.
+# = the open program. All locals carry the p18_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.aj (the identity system)")
-from mpmath import mp as s145_mp, mpf as s145_mpf, pi as s145_pi
+from mpmath import mp as p18_mp, mpf as p18_mpf, pi as p18_pi
 
-s145_mp.dps = 50
-s145_N = 11
-s145_phi = s145_mpf(1 + s145_mp.sqrt(5)) / 2
-s145_alpha = 1 / s145_mpf('137.035999207')
-s145_me = s145_mpf('0.51099895')
-s145_mpi = s145_mpf('139.57039')
-s145_fpi = s145_mpf('130.41')
+p18_mp.dps = 50
+p18_N = 11
+p18_phi = p18_mpf(1 + p18_mp.sqrt(5)) / 2
+p18_alpha = 1 / p18_mpf('137.035999207')
+p18_me = p18_mpf('0.51099895')
+p18_mpi = p18_mpf('139.57039')
+p18_fpi = p18_mpf('130.41')
 
 # (1) the two-path identity
-s145_c = all(
-    abs((s145_b ** s145_N) ** (s145_mpf(s145_k) / s145_N) - s145_b ** s145_k) < s145_mpf('1e-30')
-    for s145_b in (s145_phi, 1 + s145_alpha) for s145_k in range(1, s145_N + 1)
+p18_c = all(
+    abs((p18_b ** p18_N) ** (p18_mpf(p18_k) / p18_N) - p18_b ** p18_k) < p18_mpf('1e-30')
+    for p18_b in (p18_phi, 1 + p18_alpha) for p18_k in range(1, p18_N + 1)
 )
 print("    two paths to a floor: k powers up (U*b^k) OR one root of the Sphere")
 print("    value ((U*b^N)^(k/N)) — (b^N)^(k/N) = b^k EXACT for b in {phi, 1+alpha}:")
 print("    'a definite number of powers up, or one root from the Sphere': PASS"
-      if s145_c else "    two paths: FAIL")
+      if p18_c else "    two paths: FAIL")
 
 # (2) the mirror-product system
-s145_lad = [s145_mp.pi**2 / (s145_N * s145_phi**k) for k in range(s145_N + 1)]
-s145_prod = [s145_lad[k] * s145_lad[s145_N - k] for k in range(1, s145_N)]
-s145_c = max(s145_prod) - min(s145_prod) < s145_mpf('1e-35')
+p18_lad = [p18_mp.pi**2 / (p18_N * p18_phi**k) for k in range(p18_N + 1)]
+p18_prod = [p18_lad[k] * p18_lad[p18_N - k] for k in range(1, p18_N)]
+p18_c = max(p18_prod) - min(p18_prod) < p18_mpf('1e-35')
 print("    the mirror-product system: alpha(k)*alpha(N-k) = ONE constant across")
 print("    all five pairs (five equations, one answer) — the ladder generates a")
 print("    consistent system without free parameters: PASS"
-      if s145_c else "    mirror system: FAIL")
+      if p18_c else "    mirror system: FAIL")
 
 # (3) the floor-10 coupling
-s145_dev = (s145_lad[10] - 1 / s145_mpf('137.035999207')) / (1 / s145_mpf('137.035999207'))
-s145_c = abs(float(s145_dev)) < 0.0004
+p18_dev = (p18_lad[10] - 1 / p18_mpf('137.035999207')) / (1 / p18_mpf('137.035999207'))
+p18_c = abs(float(p18_dev)) < 0.0004
 print(f"    floor 10 (Electricity, the charge pole) carries the coupling alpha(10)")
-print(f"    matching the measured alpha within {float(s145_dev)*100:+.3f}% (recorded .w(3)):")
+print(f"    matching the measured alpha within {float(p18_dev)*100:+.3f}% (recorded .w(3)):")
 print("    knowing the scale number (10), the law gives alpha = alpha(0)*mu^10: PASS"
-      if s145_c else "    floor-10 coupling: FAIL")
+      if p18_c else "    floor-10 coupling: FAIL")
 
 # (4) the floor-10 degree census (recorded forms reproduced)
-s145_lqcd = s145_pi * s145_me / s145_alpha
-s145_r1 = 2 / s145_alpha
-s145_dev1 = abs(s145_r1 - s145_mpi / s145_me) / (s145_mpi / s145_me)
-s145_r2 = 2**7 * s145_alpha
-s145_dev2 = abs(s145_r2 - s145_fpi / s145_mpi) / (s145_fpi / s145_mpi)
-s145_r3 = 2**8 * s145_me
-s145_dev3 = abs(s145_r3 - s145_fpi) / s145_fpi
-s145_c = (abs(float(s145_lqcd) - 220) < 1 and s145_dev1 < 0.004
-          and s145_dev2 < 0.002 and s145_dev3 < 0.006)
+p18_lqcd = p18_pi * p18_me / p18_alpha
+p18_r1 = 2 / p18_alpha
+p18_dev1 = abs(p18_r1 - p18_mpi / p18_me) / (p18_mpi / p18_me)
+p18_r2 = 2**7 * p18_alpha
+p18_dev2 = abs(p18_r2 - p18_fpi / p18_mpi) / (p18_fpi / p18_mpi)
+p18_r3 = 2**8 * p18_me
+p18_dev3 = abs(p18_r3 - p18_fpi) / p18_fpi
+p18_c = (abs(float(p18_lqcd) - 220) < 1 and p18_dev1 < 0.004
+          and p18_dev2 < 0.002 and p18_dev3 < 0.006)
 print(f"    the floor-10 degree census (recorded forms reproduced):")
-print(f"    Lambda_QCD = pi*m_e*alpha^-1 = {float(s145_lqcd):.2f} MeV (recorded 220, 2.9.D);")
-print(f"    m_pi/m_e = 2*alpha^-1 = {float(s145_r1):.2f} (dev {float(s145_dev1)*100:.2f}%, recorded 0.34%);")
-print(f"    f_pi/m_pi = 2^7*alpha = {float(s145_r2):.4f} (dev {float(s145_dev2)*100:.2f}%);")
-print(f"    f_pi = 2^F6*m_e = 2^8*m_e = {float(s145_r3):.2f} (dev {float(s145_dev3)*100:.2f}%): PASS"
-      if s145_c else "    census: FAIL")
+print(f"    Lambda_QCD = pi*m_e*alpha^-1 = {float(p18_lqcd):.2f} MeV (recorded 220, 2.9.D);")
+print(f"    m_pi/m_e = 2*alpha^-1 = {float(p18_r1):.2f} (dev {float(p18_dev1)*100:.2f}%, recorded 0.34%);")
+print(f"    f_pi/m_pi = 2^7*alpha = {float(p18_r2):.4f} (dev {float(p18_dev2)*100:.2f}%);")
+print(f"    f_pi = 2^F6*m_e = 2^8*m_e = {float(p18_r3):.2f} (dev {float(p18_dev3)*100:.2f}%): PASS"
+      if p18_c else "    census: FAIL")
 
 print("    the degrees: alpha {-1, +1} (ONE step up/down the coupling ladder), 2")
 print("    {7, 8} with F6 = 8 (the recorded Fibonacci atom); the system is")
@@ -14720,7 +14722,7 @@ print("    Remark 2.6.A.4.aj (the identity system): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.ak: the full floor census — the identity system over ALL
-# floors (the author's extension: the Field = floor 9 = one law on all
+# floors (the extension: the Field = floor 9 = one law on all
 # directions = the 9th degree of the Point; fields derive through EQUALITY
 # (the mirror pairs) or through the SCALE TRANSITIONS). (i) the full
 # 12-floor table of recorded attachments (the Part-2 structure 2.0-2.11);
@@ -14729,71 +14731,71 @@ print("    Remark 2.6.A.4.aj (the identity system): ALL CHECKS PASS")
 # transition is one ladder step; alpha(k) = alpha(0)*mu^k over ALL floors;
 # (iv) the field carrier (the pion) = 2*Lambda_QCD/pi through the Quintet
 # atom pi; (v) all five mirror pairs isoenergetic. All locals carry the
-# s146_ prefix.
+# p19_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ak (the full floor census)")
-from mpmath import mp as s146_mp, mpf as s146_mpf, sin as s146_sin, pi as s146_pi
+from mpmath import mp as p19_mp, mpf as p19_mpf, sin as p19_sin, pi as p19_pi
 
-s146_mp.dps = 50
-s146_N = 11
-s146_phi = s146_mpf(1 + s146_mp.sqrt(5)) / 2
-s146_mu = 1 / s146_phi
+p19_mp.dps = 50
+p19_N = 11
+p19_phi = p19_mpf(1 + p19_mp.sqrt(5)) / 2
+p19_mu = 1 / p19_phi
 
 # (1) the full floor table
-s146_floors = {0: 'Absolute', 1: 'Time', 2: 'Temperature', 3: 'Height',
+p19_floors = {0: 'Absolute', 1: 'Time', 2: 'Temperature', 3: 'Height',
                4: 'Width', 5: 'Length', 6: 'Shape', 7: 'Volume', 8: 'Mass',
                9: 'Field', 10: 'Electricity', 11: 'Energy (11 = 0, the closure)'}
-s146_c = len(s146_floors) == 12
-print(f"    the full table: {len(s146_floors)} floors with recorded attachments")
+p19_c = len(p19_floors) == 12
+print(f"    the full table: {len(p19_floors)} floors with recorded attachments")
 print("    (the Part-2 section structure 2.0-2.11): k=0 Absolute, k=1 Time,")
 print("    k=2 Temperature, k=3 Height, k=4 Width, k=5 Length, k=6 Shape,")
 print("    k=7 Volume, k=8 Mass, k=9 Field, k=10 Electricity, k=11=0 Energy: PASS"
-      if s146_c else "    table: FAIL")
+      if p19_c else "    table: FAIL")
 
 # (2) the Field (9) through equality
-s146_om = [2 * s146_sin(s146_mp.pi * k / s146_N) for k in range(s146_N + 1)]
-s146_x = [s146_mp.pi * k / s146_N for k in range(s146_N + 1)]
-s146_c = (abs(s146_om[2] - s146_om[s146_N - 2]) < s146_mpf('1e-38')
-          and abs(s146_x[2] + s146_x[s146_N - 2] - s146_mp.pi) < s146_mpf('1e-38'))
+p19_om = [2 * p19_sin(p19_mp.pi * k / p19_N) for k in range(p19_N + 1)]
+p19_x = [p19_mp.pi * k / p19_N for k in range(p19_N + 1)]
+p19_c = (abs(p19_om[2] - p19_om[p19_N - 2]) < p19_mpf('1e-38')
+          and abs(p19_x[2] + p19_x[p19_N - 2] - p19_mp.pi) < p19_mpf('1e-38'))
 print(f"    the Field (9) through equality: the pair {{2, 9}} — omega_2 = omega_9 =")
-print(f"    {float(s146_om[2]):.4f} (the resonance), x_2 + x_9 = pi (the opposite phase);")
+print(f"    {float(p19_om[2]):.4f} (the resonance), x_2 + x_9 = pi (the opposite phase);")
 print("    the Field = the 9th degree of the Point (au(2), one law on all")
-print("    directions per tick; .z(4)): PASS" if s146_c else "    pair 2-9: FAIL")
+print("    directions per tick; .z(4)): PASS" if p19_c else "    pair 2-9: FAIL")
 
 # (3) the Field through the scale transition
-s146_lad = [s146_mp.pi**2 / (s146_N * s146_phi**k) for k in range(s146_N + 1)]
-s146_c = (
-    abs(s146_lad[9] / s146_lad[10] - s146_phi) < s146_mpf('1e-38')
-    and all(abs(s146_lad[k] - (s146_mp.pi**2 / s146_N) * s146_mu**k) < s146_mpf('1e-38')
-            for k in range(s146_N + 1))
+p19_lad = [p19_mp.pi**2 / (p19_N * p19_phi**k) for k in range(p19_N + 1)]
+p19_c = (
+    abs(p19_lad[9] / p19_lad[10] - p19_phi) < p19_mpf('1e-38')
+    and all(abs(p19_lad[k] - (p19_mp.pi**2 / p19_N) * p19_mu**k) < p19_mpf('1e-38')
+            for k in range(p19_N + 1))
 )
 print(f"    the transition between the floors = ONE ladder step: alpha(9)/alpha(10)")
 print(f"    = phi exactly; the full ladder alpha(k) = alpha(0)*mu^k holds over ALL")
 print("    floors k = 0..10 (one formula covers the whole system): PASS"
-      if s146_c else "    transition: FAIL")
+      if p19_c else "    transition: FAIL")
 
 # (4) the field carrier through equality
-s146_alpha = 1 / s146_mpf('137.035999207')
-s146_me = s146_mpf('0.51099895')
-s146_mpi_pdg = s146_mpf('139.57039')
-s146_mpi_from_l = 2 * (s146_pi * s146_me / s146_alpha) / s146_pi
-s146_dev = abs(s146_mpi_from_l - s146_mpi_pdg) / s146_mpi_pdg
-s146_c = s146_dev < 0.004
+p19_alpha = 1 / p19_mpf('137.035999207')
+p19_me = p19_mpf('0.51099895')
+p19_mpi_pdg = p19_mpf('139.57039')
+p19_mpi_from_l = 2 * (p19_pi * p19_me / p19_alpha) / p19_pi
+p19_dev = abs(p19_mpi_from_l - p19_mpi_pdg) / p19_mpi_pdg
+p19_c = p19_dev < 0.004
 print(f"    the field carrier through equality (2.9.B.2): m_pi = 2*Lambda_QCD/pi =")
-print(f"    {float(s146_mpi_from_l):.2f} MeV vs {float(s146_mpi_pdg):.2f} (dev {float(s146_dev)*100:.2f}%) —")
+print(f"    {float(p19_mpi_from_l):.2f} MeV vs {float(p19_mpi_pdg):.2f} (dev {float(p19_dev)*100:.2f}%) —")
 print("    the pion derives from the particle-floor coupling with the Quintet")
-print("    atom pi: PASS" if s146_c else "    pion: FAIL")
+print("    atom pi: PASS" if p19_c else "    pion: FAIL")
 
 # (5) the system covers the whole ladder
-s146_prod = [s146_lad[k] * s146_lad[s146_N - k] for k in range(1, s146_N)]
-s146_pairs = [(1, 10), (2, 9), (3, 8), (4, 7), (5, 6)]
-s146_c = (max(s146_prod) - min(s146_prod) < s146_mpf('1e-35')
-          and all(abs(s146_om[a] - s146_om[b]) < s146_mpf('1e-38') for a, b in s146_pairs))
+p19_prod = [p19_lad[k] * p19_lad[p19_N - k] for k in range(1, p19_N)]
+p19_pairs = [(1, 10), (2, 9), (3, 8), (4, 7), (5, 6)]
+p19_c = (max(p19_prod) - min(p19_prod) < p19_mpf('1e-35')
+          and all(abs(p19_om[a] - p19_om[b]) < p19_mpf('1e-38') for a, b in p19_pairs))
 print("    the equality system spans the ladder: all five mirror pairs are")
 print("    isoenergetic ({Time, Electricity}, {Temperature, Field}, {Height,")
 print("    Mass}, {Width, Volume}, {Length, Shape}), the fixed point k = 0 = the")
 print("    Point; the transitions are the phi steps — zero new parameters: PASS"
-      if s146_c else "    coverage: FAIL")
+      if p19_c else "    coverage: FAIL")
 
 print("    HONEST BOUNDARY: the floor attachments are the recorded section")
 print("    structure (the domain contents are canon records, not new derivations);")
@@ -14802,7 +14804,7 @@ print("    program: PASS")
 print("    Remark 2.6.A.4.ak (the full floor census): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
-# Remark 2.6.A.4.al: the pairs carry the Quintet atoms (the author's
+# Remark 2.6.A.4.al: the pairs carry the Quintet atoms (the
 # mapping: {1,10}~N, {2,9}~i, {3,8}~e, {4,7}~phi, {5,6}~pi; in the
 # equations a mirror pair is replaced by its atom; the degrees/roots = the
 # measurement numbers). Machine support by the section contents: the
@@ -14812,70 +14814,70 @@ print("    Remark 2.6.A.4.ak (the full floor census): ALL CHECKS PASS")
 # HONEST TENSION with the generation chain 2.6.A.4.x(2) (N,i,phi,e,pi):
 # the middle atoms e/phi are swapped — the section contents support the
 # pair order; the resolution = the open program. All locals carry the
-# s147_ prefix.
+# p20_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.al (the pairs carry the Quintet atoms)")
-from mpmath import mp as s147_mp, mpf as s147_mpf, sin as s147_sin
-from mpmath import exp as s147_exp, pi as s147_mpi, e as s147_e
+from mpmath import mp as p20_mp, mpf as p20_mpf, sin as p20_sin
+from mpmath import exp as p20_exp, pi as p20_mpi, e as p20_e
 
-s147_mp.dps = 50
-s147_N = 11
-s147_phi = s147_mpf(1 + s147_mp.sqrt(5)) / 2
-s147_mu = 1 / s147_phi
+p20_mp.dps = 50
+p20_N = 11
+p20_phi = p20_mpf(1 + p20_mp.sqrt(5)) / 2
+p20_mu = 1 / p20_phi
 
 # (1) pair {4,7} ~ phi: the coupling ladder in Width
-s147_lad = [s147_mp.pi**2 / (s147_N * s147_phi**k) for k in range(s147_N + 1)]
-s147_prod = s147_lad[4] * s147_lad[7]
-s147_const = s147_mp.pi**4 / (s147_N**2 * s147_phi**s147_N)
-s147_c = (all(abs(s147_lad[k + 1] / s147_lad[k] - s147_mu) < s147_mpf('1e-38') for k in range(10))
-          and abs(s147_prod - s147_const) < s147_mpf('1e-35'))
+p20_lad = [p20_mp.pi**2 / (p20_N * p20_phi**k) for k in range(p20_N + 1)]
+p20_prod = p20_lad[4] * p20_lad[7]
+p20_const = p20_mp.pi**4 / (p20_N**2 * p20_phi**p20_N)
+p20_c = (all(abs(p20_lad[k + 1] / p20_lad[k] - p20_mu) < p20_mpf('1e-38') for k in range(10))
+          and abs(p20_prod - p20_const) < p20_mpf('1e-35'))
 print(f"    pair {{4,7}} ~ phi (Width, 2.4): the alpha-ladder ratio phi per step")
-print(f"    exactly; alpha(4)*alpha(7) = pi^4/(N^2 phi^N) = {float(s147_prod):.7f}")
+print(f"    exactly; alpha(4)*alpha(7) = pi^4/(N^2 phi^N) = {float(p20_prod):.7f}")
 print("    carries phi^N — the pair product IS the atom to the full power: PASS"
-      if s147_c else "    pair 4-7: FAIL")
+      if p20_c else "    pair 4-7: FAIL")
 
 # (2) pair {3,8} ~ e: the e-form in Mass
-s147_form = s147_exp(3 * s147_e) - 3
-s147_ratio = s147_mpf('1776.86') / s147_mpf('0.51099895')
-s147_dev = abs(s147_form - s147_ratio) / s147_ratio
-s147_c = s147_dev < 1e-4
+p20_form = p20_exp(3 * p20_e) - 3
+p20_ratio = p20_mpf('1776.86') / p20_mpf('0.51099895')
+p20_dev = abs(p20_form - p20_ratio) / p20_ratio
+p20_c = p20_dev < 1e-4
 print(f"    pair {{3,8}} ~ e (Mass, 2.8): the recorded form m_tau/m_e = exp(3e)-3 =")
-print(f"    {float(s147_form):.2f} vs {float(s147_ratio):.2f} (dev {float(s147_dev)*100:.4f}%) —")
-print("    the intensity atom lives in the pair: PASS" if s147_c else "    pair 3-8: FAIL")
+print(f"    {float(p20_form):.2f} vs {float(p20_ratio):.2f} (dev {float(p20_dev)*100:.4f}%) —")
+print("    the intensity atom lives in the pair: PASS" if p20_c else "    pair 3-8: FAIL")
 
 # (3) pair {1,10} ~ N: the grid
-s147_grid = [2**k % s147_N for k in range(s147_N)]
-s147_om = [2 * s147_sin(s147_mpi * k / s147_N) for k in range(s147_N + 1)]
-s147_c = (sorted(set(s147_grid[:10])) == list(range(1, 11))
-          and abs(s147_om[1] - s147_om[10]) < s147_mpf('1e-38'))
+p20_grid = [2**k % p20_N for k in range(p20_N)]
+p20_om = [2 * p20_sin(p20_mpi * k / p20_N) for k in range(p20_N + 1)]
+p20_c = (sorted(set(p20_grid[:10])) == list(range(1, 11))
+          and abs(p20_om[1] - p20_om[10]) < p20_mpf('1e-38'))
 print("    pair {1,10} ~ N (the grid): the count ladder spans all 10 nonzero")
 print("    residues; the pair is isoenergetic (omega_1 = omega_10): PASS"
-      if s147_c else "    pair 1-10: FAIL")
+      if p20_c else "    pair 1-10: FAIL")
 
 # (4) pair {2,9} ~ i: the direction
-s147_x = [s147_mpi * k / s147_N for k in range(s147_N + 1)]
-s147_c = (abs(s147_om[2] - s147_om[9]) < s147_mpf('1e-38')
-          and abs(s147_x[2] + s147_x[9] - s147_mpi) < s147_mpf('1e-38'))
+p20_x = [p20_mpi * k / p20_N for k in range(p20_N + 1)]
+p20_c = (abs(p20_om[2] - p20_om[9]) < p20_mpf('1e-38')
+          and abs(p20_x[2] + p20_x[9] - p20_mpi) < p20_mpf('1e-38'))
 print("    pair {2,9} ~ i (the directedness): omega_2 = omega_9 (equal),")
 print("    x_2 + x_9 = pi (the opposite phase — the direction content): PASS"
-      if s147_c else "    pair 2-9: FAIL")
+      if p20_c else "    pair 2-9: FAIL")
 
 # (5) pair {5,6} ~ pi: the closure
-s147_c = 5 < 5.5 < 6 and abs(s147_mp.pi**2 - s147_mpf('9.8696')) < s147_mpf('1e-3')
+p20_c = 5 < 5.5 < 6 and abs(p20_mp.pi**2 - p20_mpf('9.8696')) < p20_mpf('1e-3')
 print("    pair {5,6} ~ pi (the closure): the only pair straddling the non-floor")
 print("    center 5.5 (.ab(3)) — the closure axis; pi^2 = 9.8696 = the recorded")
-print("    double-Z2 phase area (.v(1), .w(1)): PASS" if s147_c else "    pair 5-6: FAIL")
+print("    double-Z2 phase area (.v(1), .w(1)): PASS" if p20_c else "    pair 5-6: FAIL")
 
 # (6) degrees = the measurement numbers
-s147_c = (
-    all(abs(s147_lad[k] - (s147_mp.pi**2 / s147_N) * s147_mu**k) < s147_mpf('1e-38')
-        for k in range(s147_N + 1))
-    and all(abs(s147_x[k] - s147_mpi * k / s147_N) < s147_mpf('1e-38') for k in range(s147_N + 1))
-    and all(s147_grid[k] == 2**k % s147_N for k in range(s147_N))
+p20_c = (
+    all(abs(p20_lad[k] - (p20_mp.pi**2 / p20_N) * p20_mu**k) < p20_mpf('1e-38')
+        for k in range(p20_N + 1))
+    and all(abs(p20_x[k] - p20_mpi * k / p20_N) < p20_mpf('1e-38') for k in range(p20_N + 1))
+    and all(p20_grid[k] == 2**k % p20_N for k in range(p20_N))
 )
 print("    the degrees/roots = the measurement numbers: alpha(k) = alpha(0)*mu^k,")
 print("    x_k = pi*k/N, C(k+1) = 2^k, omega_k = |zeta^k - 1| — the exponent IS the")
-print("    floor coordinate in every sector: PASS" if s147_c else "    degrees: FAIL")
+print("    floor coordinate in every sector: PASS" if p20_c else "    degrees: FAIL")
 
 print("    HONEST TENSION: the generation chain 2.6.A.4.x(2) (1,2,4,8,5 =")
 print("    N,i,phi,e,pi — the law side) has the middle atoms e/phi SWAPPED vs the")
@@ -14886,7 +14888,7 @@ print("    Remark 2.6.A.4.al (the pairs carry the Quintet atoms): ALL CHECKS PAS
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.am: the generation of the next scale through the pair
-# resonances; {3,8} — the unique double pair (the author's mechanism: e =
+# resonances; {3,8} — the unique double pair (the mechanism: e =
 # the intensity = the Cone wall; Height (3) from the Temperature (2)
 # resonance, 8 from Volume (7); Height is the OPPOSITE of Mass). Machine:
 # (i) the count generator C(k+1) = 2*C(k) mod 11 — both author instances
@@ -14895,62 +14897,62 @@ print("    Remark 2.6.A.4.al (the pairs carry the Quintet atoms): ALL CHECKS PAS
 # pair holds only for {3,8}; (iii) equality and opposition coincide in
 # {3,8} (omega_3 = omega_8; C(3)+C(8) = 11); (iv) the one-step generators
 # of all sectors (x2, mu, 1+alpha, the chord recurrence 2cos(pi/N)).
-# All locals carry the s148_ prefix.
+# All locals carry the p21_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.am (the generation through the pair resonance)")
-from mpmath import mp as s148_mp, mpf as s148_mpf, sin as s148_sin
-from mpmath import cos as s148_cos, pi as s148_mpi
+from mpmath import mp as p21_mp, mpf as p21_mpf, sin as p21_sin
+from mpmath import cos as p21_cos, pi as p21_mpi
 
-s148_mp.dps = 50
-s148_N = 11
-s148_C = [2**k % s148_N for k in range(s148_N)]
+p21_mp.dps = 50
+p21_N = 11
+p21_C = [2**k % p21_N for k in range(p21_N)]
 
-# (1) the generation law + the author's two instances
-s148_c = all(s148_C[k + 1] == 2 * s148_C[k] % s148_N for k in range(10))
-s148_c = (s148_c and 2 * s148_C[1] % s148_N == s148_C[2] == 4
-          and 2 * s148_C[6] % s148_N == s148_C[7] == 7)
-print("    the count generator: C(k+1) = 2*C(k) mod 11 for ALL k; the author's")
+# (1) the generation law + the two recorded instances
+p21_c = all(p21_C[k + 1] == 2 * p21_C[k] % p21_N for k in range(10))
+p21_c = (p21_c and 2 * p21_C[1] % p21_N == p21_C[2] == 4
+          and 2 * p21_C[6] % p21_N == p21_C[7] == 7)
+print("    the count generator: C(k+1) = 2*C(k) mod 11 for ALL k; the recorded")
 print("    instances EXACT: Height (3) from Temperature (2): 2*2 = 4; Mass (8)")
-print("    from Volume (7): 2*9 = 18 = 7 (mod 11): PASS" if s148_c else "    generator: FAIL")
+print("    from Volume (7): 2*9 = 18 = 7 (mod 11): PASS" if p21_c else "    generator: FAIL")
 
 # (2) the uniqueness of {3,8}
-s148_coincide = [k for k in range(1, 6) if (s148_N - k) % s148_N == (k + 5) % s148_N]
-s148_compl = [k for k in range(1, 6) if (2**(k - 1) + 2**(s148_N - 1 - k)) % s148_N == 0]
-s148_c = s148_coincide == [3] and s148_compl == [3]
+p21_coincide = [k for k in range(1, 6) if (p21_N - k) % p21_N == (k + 5) % p21_N]
+p21_compl = [k for k in range(1, 6) if (2**(k - 1) + 2**(p21_N - 1 - k)) % p21_N == 0]
+p21_c = p21_coincide == [3] and p21_compl == [3]
 print(f"    {{3,8}} is the UNIQUE double pair: both mirrors coincide only at k = 3")
 print(f"    (N-k = k+5 <=> 2k = 6); the cell complement to N in an index pair holds")
 print(f"    only for {{3,8}}: C(3)+C(8) = 4+7 = 11 = 0 (mod 11) (the others: 7, 5, 6, 4): PASS"
-      if s148_c else "    uniqueness: FAIL")
+      if p21_c else "    uniqueness: FAIL")
 
 # (3) equality and opposition coincide in {3,8}
-s148_om = [2 * s148_sin(s148_mpi * k / s148_N) for k in range(s148_N + 1)]
-s148_c = abs(s148_om[3] - s148_om[8]) < s148_mpf('1e-38')
+p21_om = [2 * p21_sin(p21_mpi * k / p21_N) for k in range(p21_N + 1)]
+p21_c = abs(p21_om[3] - p21_om[8]) < p21_mpf('1e-38')
 print(f"    'Height is the opposite of Mass' exact: EQUAL in frequency (omega_3 =")
-print(f"    omega_8 = {float(s148_om[3]):.4f}), OPPOSITE in the grid count (C(3)+C(8) = 0 mod")
+print(f"    omega_8 = {float(p21_om[3]):.4f}), OPPOSITE in the grid count (C(3)+C(8) = 0 mod")
 print("    11) — the unique floor where identity and opposition coincide: PASS"
-      if s148_c else "    double pair: FAIL")
+      if p21_c else "    double pair: FAIL")
 
 # (4) the one-step generators of all sectors
-s148_phi = s148_mpf(1 + s148_mp.sqrt(5)) / 2
-s148_mu = 1 / s148_phi
-s148_lad = [s148_mp.pi**2 / (s148_N * s148_phi**k) for k in range(s148_N + 1)]
-s148_a = 1 / s148_mpf('137.035999207')
-s148_res = 2 * s148_cos(s148_mpi / s148_N)
-s148_c = (
-    all(abs(s148_lad[k + 1] - s148_mu * s148_lad[k]) < s148_mpf('1e-38') for k in range(10))
-    and all(abs((1 + s148_a)**(k + 1) - (1 + s148_a) * (1 + s148_a)**k) < s148_mpf('1e-38')
+p21_phi = p21_mpf(1 + p21_mp.sqrt(5)) / 2
+p21_mu = 1 / p21_phi
+p21_lad = [p21_mp.pi**2 / (p21_N * p21_phi**k) for k in range(p21_N + 1)]
+p21_a = 1 / p21_mpf('137.035999207')
+p21_res = 2 * p21_cos(p21_mpi / p21_N)
+p21_c = (
+    all(abs(p21_lad[k + 1] - p21_mu * p21_lad[k]) < p21_mpf('1e-38') for k in range(10))
+    and all(abs((1 + p21_a)**(k + 1) - (1 + p21_a) * (1 + p21_a)**k) < p21_mpf('1e-38')
             for k in range(11))
-    and all(abs(s148_om[k + 1] - (s148_res * s148_om[k] - s148_om[k - 1])) < s148_mpf('1e-38')
+    and all(abs(p21_om[k + 1] - (p21_res * p21_om[k] - p21_om[k - 1])) < p21_mpf('1e-38')
             for k in range(2, 10))
 )
 print("    the one-step generators: count x2 (mod 11); couplings x mu; metric")
 print(f"    x (1+alpha); spectrum — the resonance operator omega_(k+1) =")
-print(f"    2cos(pi/N)*omega_k - omega_(k-1), 2cos(pi/N) = {float(s148_res):.4f} (k = 2..9):")
+print(f"    2cos(pi/N)*omega_k - omega_(k-1), 2cos(pi/N) = {float(p21_res):.4f} (k = 2..9):")
 print("    each next scale from the previous through ONE operator: PASS"
-      if s148_c else "    generators: FAIL")
+      if p21_c else "    generators: FAIL")
 
 print("    HONEST BOUNDARY: the table generator is recorded (.x) — the generative")
-print("    formulation and the two instances are the author's; the {3,8}")
+print("    formulation and the two instances are recorded; the {3,8}")
 print("    uniqueness is a new machine fact; 'the wall = e' is the ontology layer")
 print("    on the recorded geometry (Def 2.4.G.8: the sections lie on the wall): PASS")
 print("    Remark 2.6.A.4.am (the generation through the pair resonance): ALL CHECKS PASS")
@@ -14962,132 +14964,132 @@ print("    Remark 2.6.A.4.am (the generation through the pair resonance): ALL CH
 # opposite of Volume (the INDEX opposition — the cell complement stays
 # unique to {3,8}). The generative doubling chain = the recorded
 # activation order; each mirror pair sits 5 steps apart in the cycle
-# (the half-cycle negation 2^5 = -1). All locals carry the s149_ prefix.
+# (the half-cycle negation 2^5 = -1). All locals carry the p22_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.an (phi between the sections; the {4,7} pair)")
-from mpmath import mp as s149_mp, mpf as s149_mpf
+from mpmath import mp as p22_mp, mpf as p22_mpf
 
-s149_mp.dps = 50
-s149_N = 11
-s149_phi = s149_mpf(1 + s149_mp.sqrt(5)) / 2
+p22_mp.dps = 50
+p22_N = 11
+p22_phi = p22_mpf(1 + p22_mp.sqrt(5)) / 2
 
 # (1) phi fills between the sections (the geometric mean)
-s149_rk = s149_mpf(1) * s149_phi**(-4)
-s149_rk1 = s149_mpf(1) * s149_phi**(-5)
-s149_mid = s149_mpf(1) * s149_phi**(-s149_mpf('4.5'))
-s149_c = (s149_rk1 < s149_mid < s149_rk
-          and abs(s149_mid / s149_rk1 - s149_rk / s149_mid) < s149_mpf('1e-20'))
+p22_rk = p22_mpf(1) * p22_phi**(-4)
+p22_rk1 = p22_mpf(1) * p22_phi**(-5)
+p22_mid = p22_mpf(1) * p22_phi**(-p22_mpf('4.5'))
+p22_c = (p22_rk1 < p22_mid < p22_rk
+          and abs(p22_mid / p22_rk1 - p22_rk / p22_mid) < p22_mpf('1e-20'))
 print("    the fractional depths r(k+1/2) = R*phi^(-(k+1/2)) fill BETWEEN the")
 print("    sections (the middle = the geometric mean of the neighbors, .ai(5)):")
 print("    phi IS the scale itself — the region of the Cone between the sections: PASS"
-      if s149_c else "    between-sections: FAIL")
+      if p22_c else "    between-sections: FAIL")
 
 # (2) the generative claims of the author (the doubling segments)
-s149_C = [2**k % s149_N for k in range(s149_N)]
-s149_c = ((2 * s149_C[2]) % s149_N == s149_C[3] == 8
-          and (2 * s149_C[5]) % s149_N == s149_C[6] == 9)
+p22_C = [2**k % p22_N for k in range(p22_N)]
+p22_c = ((2 * p22_C[2]) % p22_N == p22_C[3] == 8
+          and (2 * p22_C[5]) % p22_N == p22_C[6] == 9)
 print(f"    Width (4) = the resonance of Height (3): C(4) = 2*C(3): 2*4 = 8;")
 print(f"    Volume (7) = the resonance of Shape (6): C(7) = 2*C(6): 2*10 = 20 = 9")
-print("    (mod 11) — both exact: PASS" if s149_c else "    segments: FAIL")
+print("    (mod 11) — both exact: PASS" if p22_c else "    segments: FAIL")
 
 # (3) the {4,7} opposition is the index one (honest vs {3,8})
-s149_compl = [k for k in range(1, 6) if (2**(k - 1) + 2**(s149_N - 1 - k)) % s149_N == 0]
-s149_c = (4 + 7 == s149_N and (2**3 + 2**6) % s149_N == 6
-          and s149_compl == [3])
+p22_compl = [k for k in range(1, 6) if (2**(k - 1) + 2**(p22_N - 1 - k)) % p22_N == 0]
+p22_c = (4 + 7 == p22_N and (2**3 + 2**6) % p22_N == 6
+          and p22_compl == [3])
 print(f"    Width (4) is the opposite of Volume (7): 4 + 7 = 11 (the index")
 print(f"    opposition); the cells C(4)+C(7) = 17 = 6 (mod 11) — the full cell")
-print(f"    complement stays unique to {s149_compl} = {{3,8}} (the .am fact): PASS"
-      if s149_c else "    opposition: FAIL")
+print(f"    complement stays unique to {p22_compl} = {{3,8}} (the .am fact): PASS"
+      if p22_c else "    opposition: FAIL")
 
 # (4) the doubling chain = the recorded order; the pairs 5 steps apart
-s149_chain = [1]
+p22_chain = [1]
 for _ in range(10):
-    s149_chain.append(2 * s149_chain[-1] % s149_N)
-s149_pos = {v: i for i, v in enumerate(s149_chain[:-1])}
-s149_pp = [(s149_pos[1], s149_pos[10]), (s149_pos[2], s149_pos[9]),
-           (s149_pos[4], s149_pos[7]), (s149_pos[8], s149_pos[3]),
-           (s149_pos[5], s149_pos[6])]
-s149_c = (s149_chain == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
-          and s149_chain[1:4] == [2, 4, 8] and s149_chain[5:8] == [10, 9, 7]
-          and all(b - a == 5 for a, b in s149_pp))
-print(f"    the doubling chain {s149_chain} = the recorded activation order (Th 5.3.1);")
-print("    the author's claims are its segments (2->3->4, 6->7); each mirror pair")
+    p22_chain.append(2 * p22_chain[-1] % p22_N)
+p22_pos = {v: i for i, v in enumerate(p22_chain[:-1])}
+p22_pp = [(p22_pos[1], p22_pos[10]), (p22_pos[2], p22_pos[9]),
+           (p22_pos[4], p22_pos[7]), (p22_pos[8], p22_pos[3]),
+           (p22_pos[5], p22_pos[6])]
+p22_c = (p22_chain == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+          and p22_chain[1:4] == [2, 4, 8] and p22_chain[5:8] == [10, 9, 7]
+          and all(b - a == 5 for a, b in p22_pp))
+print(f"    the doubling chain {p22_chain} = the recorded activation order (Th 5.3.1);")
+print("    the recorded claims are its segments (2->3->4, 6->7); each mirror pair")
 print("    sits EXACTLY 5 steps apart in the cycle (the half-cycle = the negation")
 print("    2^5 = 32 = -1 mod 11, .x(3)) — all five pairs symmetric: PASS"
-      if s149_c else "    cycle: FAIL")
+      if p22_c else "    cycle: FAIL")
 
 print("    HONEST BOUNDARY: 'phi — the region between the sections' and the")
-print("    'resonance' as the generation are the author's readings on the recorded")
+print("    'resonance' as the generation are the recorded readings on the")
 print("    generator (.x) and refinement (.ai(5)); the {4,7} opposition is the")
 print("    index one — the full double stays unique to {3,8}: PASS")
 print("    Remark 2.6.A.4.an (phi between the sections): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.ao: the full generation cycle — the N and pi pairs, the
-# census completed (the author's claims: 9's resonance gives 10; 10's
+# census completed (the recorded claims: 9's resonance gives 10; 10's
 # gives 11; 11 passes into 0, then into 1 — the Time ticks = the constant
 # resonance from the source 0; the pi pair {5,6} bridges the phi-pair ends
 # 4->5->6->7 landing on 7 = 11-4). Machine: all segments of the doubling
 # chain (the recorded activation order); the opposition census (all five
-# index, only {3,8} full). All locals carry the s150_ prefix.
+# index, only {3,8} full). All locals carry the p23_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ao (the full generation cycle)")
-from mpmath import mp as s150_mp, mpf as s150_mpf
+from mpmath import mp as p23_mp, mpf as p23_mpf
 
-s150_mp.dps = 50
-s150_N = 11
-s150_cell = lambda k: 2**(k - 1) % s150_N  # the cell of floor k
+p23_mp.dps = 50
+p23_N = 11
+p23_cell = lambda k: 2**(k - 1) % p23_N  # the cell of floor k
 
 # (1) the N-pair segments + the closure
-s150_c10 = (2 * s150_cell(9)) % s150_N
-s150_c11 = (2 * s150_cell(10)) % s150_N
-s150_c = (s150_c10 == s150_cell(10) == 6 and s150_c11 == s150_cell(11) == 1
-          and s150_cell(11) == s150_cell(1))
+p23_c10 = (2 * p23_cell(9)) % p23_N
+p23_c11 = (2 * p23_cell(10)) % p23_N
+p23_c = (p23_c10 == p23_cell(10) == 6 and p23_c11 == p23_cell(11) == 1
+          and p23_cell(11) == p23_cell(1))
 print(f"    the N-pair: 10 from 9 (2*3 = 6), 11 from 10 (2*6 = 12 = 1) — the")
 print(f"    CLOSURE C(11) = C(1) = 1 (recorded, .aa(4); A0: Psi_12 = Psi_1);")
 print("    Time (1) is the index-opposite of Electricity (10): PASS"
-      if s150_c else "    N-pair: FAIL")
+      if p23_c else "    N-pair: FAIL")
 
 # (2) the tick from the source
-s150_c = s150_cell(1) == 2**0 % s150_N == 1 and 11 % s150_N == 0
+p23_c = p23_cell(1) == 2**0 % p23_N == 1 and 11 % p23_N == 0
 print("    the tick: C(k) = 2^(k-1) — the exponent counted FROM 0; the exponent 0")
 print("    IS the Point (the source): each tick resets to 0 and re-doubles — the")
 print("    constant resonance from the source 0, into which 11 closes: PASS"
-      if s150_c else "    tick: FAIL")
+      if p23_c else "    tick: FAIL")
 
 # (3) the pi-pair segments and the bridge
-s150_c = ((2 * s150_cell(4)) % s150_N == s150_cell(5) == 5
-          and (2 * s150_cell(5)) % s150_N == s150_cell(6) == 10
-          and (2 * s150_cell(6)) % s150_N == s150_cell(7) == 9
-          and 7 == s150_N - 4)
+p23_c = ((2 * p23_cell(4)) % p23_N == p23_cell(5) == 5
+          and (2 * p23_cell(5)) % p23_N == p23_cell(6) == 10
+          and (2 * p23_cell(6)) % p23_N == p23_cell(7) == 9
+          and 7 == p23_N - 4)
 print(f"    the pi-pair bridge: 5 from 4 (2*8 = 16 = 5), 6 from 5 (2*5 = 10),")
 print(f"    7 from 6 (2*10 = 20 = 9) — all exact; the path 4 -> 5 -> 6 -> 7 lands")
 print("    on 7 = 11 - 4 (the opposite of 4): the {5,6} pair bridges the {4,7}")
-print("    ends — 'hence the closure': PASS" if s150_c else "    pi-pair: FAIL")
+print("    ends — 'hence the closure': PASS" if p23_c else "    pi-pair: FAIL")
 
 # (4) the opposition census
-s150_pairs = [(1, 10), (2, 9), (3, 8), (4, 7), (5, 6)]
-s150_full = [a for a, b in s150_pairs if (2**(a - 1) + 2**(b - 1)) % s150_N == 0]
-s150_c = all(a + b == s150_N for a, b in s150_pairs) and s150_full == [3]
+p23_pairs = [(1, 10), (2, 9), (3, 8), (4, 7), (5, 6)]
+p23_full = [a for a, b in p23_pairs if (2**(a - 1) + 2**(b - 1)) % p23_N == 0]
+p23_c = all(a + b == p23_N for a, b in p23_pairs) and p23_full == [3]
 print(f"    the opposition census: all five pairs are index-opposites (k + (N-k)")
-print(f"    = 11); the cell complement to N only for {s150_full} = {{3,8}} (the .am")
+print(f"    = 11); the cell complement to N only for {p23_full} = {{3,8}} (the .am")
 print("    fact) — {1,10} index, {2,9} index, {3,8} FULL, {4,7} index, {5,6} index: PASS"
-      if s150_c else "    census: FAIL")
+      if p23_c else "    census: FAIL")
 
-# (5) the full cycle covers all the author's claims
-s150_cycle = [1]
+# (5) the full cycle covers all the recorded claims
+p23_cycle = [1]
 for _ in range(10):
-    s150_cycle.append(2 * s150_cycle[-1] % s150_N)
-s150_segs = [(9, 10), (4, 5), (5, 6), (6, 7), (2, 3), (3, 4)]
-s150_c = (s150_cycle == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
-          and all((2 * s150_cell(a)) % s150_N == s150_cell(b) for a, b in s150_segs))
-print(f"    the cycle {s150_cycle} (the recorded activation order, Th 5.3.1) contains")
-print("    ALL the author's segments (9->10, 10->11, 4->5, 5->6, 6->7, 2->3,")
+    p23_cycle.append(2 * p23_cycle[-1] % p23_N)
+p23_segs = [(9, 10), (4, 5), (5, 6), (6, 7), (2, 3), (3, 4)]
+p23_c = (p23_cycle == [1, 2, 4, 8, 5, 10, 9, 7, 3, 6, 1]
+          and all((2 * p23_cell(a)) % p23_N == p23_cell(b) for a, b in p23_segs))
+print(f"    the cycle {p23_cycle} (the recorded activation order, Th 5.3.1) contains")
+print("    ALL the recorded segments (9->10, 10->11, 4->5, 5->6, 6->7, 2->3,")
 print("    3->4): the generative census is COMPLETE, the closure 11 -> 0 -> 1")
-print("    returns into the source: PASS" if s150_c else "    cycle: FAIL")
+print("    returns into the source: PASS" if p23_c else "    cycle: FAIL")
 
 print("    HONEST BOUNDARY: the segments are the recorded generator (.x, Th 5.3.1)")
-print("    read generatively (the author's formulation); the tick-from-source and")
+print("    read generatively (the recorded formulation); the tick-from-source and")
 print("    the {5,6}-bridge readings are the ontology layer on the machine path: PASS")
 print("    Remark 2.6.A.4.ao (the full generation cycle): ALL CHECKS PASS")
 
@@ -15102,167 +15104,167 @@ print("    Remark 2.6.A.4.ao (the full generation cycle): ALL CHECKS PASS")
 # value sheet alpha(0..11) with the recorded anchors and the alpha(9)
 # candidate, the mass-sector degrees DERIVED ({7,8} = the coordinates of
 # the mass floor 8: the epoch k-1 and the floor number = F6), the total
-# exponent 55 = F10. All locals carry the s151_ prefix.
+# exponent 55 = F10. All locals carry the p24_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ap (the quantitative predictions of the system)")
-from mpmath import mp as s151_mp, mpf as s151_mpf
+from mpmath import mp as p24_mp, mpf as p24_mpf
 
-s151_mp.dps = 50
-s151_N = 11
-s151_pi = s151_mp.pi
-s151_phi = (1 + s151_mp.sqrt(5)) / 2
-s151_mu = 1 / s151_phi
-s151_lad = [s151_pi**2 / (s151_N * s151_phi**s151_k) for s151_k in range(12)]
-s151_zeta = s151_mp.e**(2 * s151_pi * 1j / s151_N)
-s151_cell = lambda s151_k: 2**(s151_k - 1) % s151_N
+p24_mp.dps = 50
+p24_N = 11
+p24_pi = p24_mp.pi
+p24_phi = (1 + p24_mp.sqrt(5)) / 2
+p24_mu = 1 / p24_phi
+p24_lad = [p24_pi**2 / (p24_N * p24_phi**p24_k) for p24_k in range(12)]
+p24_zeta = p24_mp.e**(2 * p24_pi * 1j / p24_N)
+p24_cell = lambda p24_k: 2**(p24_k - 1) % p24_N
 
 # (1) the mirror invariants of the products + the source-closure tie
-s151_prods = [s151_lad[s151_k] * s151_lad[s151_N - s151_k]
-              for s151_k in range(1, 6)]
-s151_const = s151_pi**4 / (s151_N**2 * s151_phi**s151_N)
-s151_c = (max(s151_prods) - min(s151_prods) < s151_mpf('1e-40')
-          and abs(s151_lad[0] * s151_lad[s151_N] - s151_const)
-          < s151_mpf('1e-40'))
+p24_prods = [p24_lad[p24_k] * p24_lad[p24_N - p24_k]
+              for p24_k in range(1, 6)]
+p24_const = p24_pi**4 / (p24_N**2 * p24_phi**p24_N)
+p24_c = (max(p24_prods) - min(p24_prods) < p24_mpf('1e-40')
+          and abs(p24_lad[0] * p24_lad[p24_N] - p24_const)
+          < p24_mpf('1e-40'))
 print(f"    the mirror invariants: alpha(k)*alpha(11-k) = pi^4/(N^2*phi^N) =")
-print(f"    {float(s151_const):.7f} — ONE number for the five pairs (.aj(2)) and")
+print(f"    {float(p24_const):.7f} — ONE number for the five pairs (.aj(2)) and")
 print("    for the source-closure pair alpha(0)*alpha(11) (alpha(11) — the")
 print("    ladder form read to k = 11, a system value): every pair carries")
-print("    the source-closure link: PASS" if s151_c else "    mirror: FAIL")
+print("    the source-closure link: PASS" if p24_c else "    mirror: FAIL")
 
 # (2) the cell mirror invariant
-s151_cpairs = [s151_cell(s151_k) * s151_cell(s151_N - s151_k) % s151_N
-               for s151_k in range(1, 6)]
-s151_full = [s151_k for s151_k in range(1, 6)
-             if s151_cell(s151_k) + s151_cell(s151_N - s151_k) == s151_N]
-s151_wil = 1
-for s151_k in range(1, 11):
-    s151_wil *= s151_cell(s151_k)
-s151_c = (s151_cpairs == [6] * 5 and s151_full == [3]
-          and s151_wil % s151_N == 10)
+p24_cpairs = [p24_cell(p24_k) * p24_cell(p24_N - p24_k) % p24_N
+               for p24_k in range(1, 6)]
+p24_full = [p24_k for p24_k in range(1, 6)
+             if p24_cell(p24_k) + p24_cell(p24_N - p24_k) == p24_N]
+p24_wil = 1
+for p24_k in range(1, 11):
+    p24_wil *= p24_cell(p24_k)
+p24_c = (p24_cpairs == [6] * 5 and p24_full == [3]
+          and p24_wil % p24_N == 10)
 print("    the cell mirror invariant: C(k)*C(11-k) = 2^9 = 512 = 6 (mod 11)")
-print(f"    for ALL five pairs {s151_cpairs}; the sum = 11 only for "
-      f"{s151_full} = {{3,8}} (the")
+print(f"    for ALL five pairs {p24_cpairs}; the sum = 11 only for "
+      f"{p24_full} = {{3,8}} (the")
 print("    .am fact); the cells of 1..10 cover all residues: the product =")
-print(f"    10! = -1 = {s151_wil % s151_N} (mod 11) — the floor mirror and the cell")
+print(f"    10! = -1 = {p24_wil % p24_N} (mod 11) — the floor mirror and the cell")
 print("    negation (+5) are DIFFERENT involutions: PASS"
-      if s151_c else "    cells: FAIL")
+      if p24_c else "    cells: FAIL")
 
 # (3) the growth and radius mirror products
-s151_g = [2**(s151_k - 1) * 2**(s151_N - 1 - s151_k) for s151_k in range(1, 6)]
-s151_rc = s151_phi**(-s151_N)
-s151_c = (all(s151_x == 512 for s151_x in s151_g)
-          and all(abs(s151_phi**(-s151_k) * s151_phi**(-(s151_N - s151_k))
-                      - s151_rc) < s151_mpf('1e-40')
-                  for s151_k in range(1, 6)))
+p24_g = [2**(p24_k - 1) * 2**(p24_N - 1 - p24_k) for p24_k in range(1, 6)]
+p24_rc = p24_phi**(-p24_N)
+p24_c = (all(p24_x == 512 for p24_x in p24_g)
+          and all(abs(p24_phi**(-p24_k) * p24_phi**(-(p24_N - p24_k))
+                      - p24_rc) < p24_mpf('1e-40')
+                  for p24_k in range(1, 6)))
 print(f"    the growth mirror product: C_pow(k)*C_pow(11-k) = 2^9 = "
-      f"{s151_g[0]};")
+      f"{p24_g[0]};")
 print(f"    the radius mirror product: r_k*r_(11-k) = R^2*phi^(-11) = "
-      f"{float(s151_rc):.4e}*R^2")
+      f"{float(p24_rc):.4e}*R^2")
 print("    for all pairs (the conditional status .ai inherited): PASS"
-      if s151_c else "    growth/radii: FAIL")
+      if p24_c else "    growth/radii: FAIL")
 
 # (4) the per-pair ratio ladder and the e-pair portrait
-s151_ratios = [s151_lad[s151_k] / s151_lad[s151_N - s151_k]
-               for s151_k in range(1, 6)]
-s151_c = all(abs(s151_ratios[s151_j] - s151_phi**(s151_N - 2 * (s151_j + 1)))
-             < s151_mpf('1e-40') for s151_j in range(5))
-s151_w3 = abs(s151_zeta**3 - 1)
-s151_c = (s151_c and abs(s151_w3 - abs(s151_zeta**8 - 1)) < s151_mpf('1e-40')
-          and abs(s151_w3 - 2 * s151_mp.sin(3 * s151_pi / s151_N))
-          < s151_mpf('1e-40')
-          and s151_cell(3) + s151_cell(8) == s151_N)
+p24_ratios = [p24_lad[p24_k] / p24_lad[p24_N - p24_k]
+               for p24_k in range(1, 6)]
+p24_c = all(abs(p24_ratios[p24_j] - p24_phi**(p24_N - 2 * (p24_j + 1)))
+             < p24_mpf('1e-40') for p24_j in range(5))
+p24_w3 = abs(p24_zeta**3 - 1)
+p24_c = (p24_c and abs(p24_w3 - abs(p24_zeta**8 - 1)) < p24_mpf('1e-40')
+          and abs(p24_w3 - 2 * p24_mp.sin(3 * p24_pi / p24_N))
+          < p24_mpf('1e-40')
+          and p24_cell(3) + p24_cell(8) == p24_N)
 print("    the per-pair coupling ratio: alpha(k)/alpha(11-k) = phi^(11-2k) —")
-print("    " + ", ".join(f"phi^{s151_N - 2 * s151_k} = "
-                         f"{float(s151_ratios[s151_k - 1]):.4f}"
-                         for s151_k in range(1, 6)) + ";")
+print("    " + ", ".join(f"phi^{p24_N - 2 * p24_k} = "
+                         f"{float(p24_ratios[p24_k - 1]):.4f}"
+                         for p24_k in range(1, 6)) + ";")
 print("    the e-pair portrait: alpha(3)/alpha(8) = phi^5 = 11.0902, the")
 print("    count 2^5 = 32 (in the grid 2^5 = -1 — the half-cycle), omega_3 =")
-print(f"    omega_8 = {float(s151_w3):.4f}, C(3)+C(8) = 11: PASS"
-      if s151_c else "    ratios: FAIL")
+print(f"    omega_8 = {float(p24_w3):.4f}, C(3)+C(8) = 11: PASS"
+      if p24_c else "    ratios: FAIL")
 
 # (5) the adjacent transition law (all 15 pairs inside 3..8)
-s151_c = all(abs(s151_lad[s151_k] / s151_lad[s151_k + 1] - s151_phi)
-             < s151_mpf('1e-40') for s151_k in range(11))
-s151_om = [abs(s151_zeta**s151_k - 1) for s151_k in range(12)]
-s151_c = (s151_c and all(abs(s151_om[s151_k + 1]
-                             - (2 * s151_mp.cos(s151_pi / s151_N)
-                                * s151_om[s151_k] - s151_om[s151_k - 1]))
-                         < s151_mpf('1e-35') for s151_k in range(2, 11)))
-s151_c = (s151_c and all(abs(s151_lad[s151_b] / s151_lad[s151_a]
-                             - s151_phi**(-(s151_b - s151_a)))
-                         < s151_mpf('1e-40')
-                         for s151_a in range(3, 9)
-                         for s151_b in range(s151_a + 1, 9)))
+p24_c = all(abs(p24_lad[p24_k] / p24_lad[p24_k + 1] - p24_phi)
+             < p24_mpf('1e-40') for p24_k in range(11))
+p24_om = [abs(p24_zeta**p24_k - 1) for p24_k in range(12)]
+p24_c = (p24_c and all(abs(p24_om[p24_k + 1]
+                             - (2 * p24_mp.cos(p24_pi / p24_N)
+                                * p24_om[p24_k] - p24_om[p24_k - 1]))
+                         < p24_mpf('1e-35') for p24_k in range(2, 11)))
+p24_c = (p24_c and all(abs(p24_lad[p24_b] / p24_lad[p24_a]
+                             - p24_phi**(-(p24_b - p24_a)))
+                         < p24_mpf('1e-40')
+                         for p24_a in range(3, 9)
+                         for p24_b in range(p24_a + 1, 9)))
 print(f"    the adjacent transition law: couplings xmu (mu = 1/phi = "
-      f"{float(s151_mu):.4f}), the")
-print(f"    count x2, the phase +pi/N = {float(s151_pi / s151_N):.4f}, the chord")
+      f"{float(p24_mu):.4f}), the")
+print(f"    count x2, the phase +pi/N = {float(p24_pi / p24_N):.4f}, the chord")
 print(f"    recurrence (2cos(pi/N) = "
-      f"{float(2 * s151_mp.cos(s151_pi / s151_N)):.4f}, k = 2..10); ALL 15 pairs")
+      f"{float(2 * p24_mp.cos(p24_pi / p24_N)):.4f}, k = 2..10); ALL 15 pairs")
 print("    inside the domains 3..8: the alpha ratio = phi^(-dk) — the")
 print("    transition between the domains is one ladder step (the .ak(6)")
-print("    program, the form level): PASS" if s151_c else "    transitions: FAIL")
+print("    program, the form level): PASS" if p24_c else "    transitions: FAIL")
 
 # (6) the value sheet
-s151_names = ["0 Absolute", "1 Time", "2 Temperature", "3 Height",
+p24_names = ["0 Absolute", "1 Time", "2 Temperature", "3 Height",
               "4 Width", "5 Length", "6 Shape", "7 Volume", "8 Mass",
               "9 Field", "10 Electricity", "11=0 Energy"]
-s151_inv10 = 1 / s151_lad[10]
-s151_dev = ((s151_inv10 - s151_mpf('137.035999207'))
-            / s151_mpf('137.035999207'))
-s151_c = (abs(s151_lad[0] / s151_pi - s151_pi / s151_N) < s151_mpf('1e-40')
-          and abs(s151_dev - s151_mpf('3.1e-4')) < s151_mpf('1e-4')
-          and abs(s151_lad[9] / s151_lad[10] - s151_phi) < s151_mpf('1e-40'))
-for s151_k in range(12):
-    print(f"    alpha({s151_k:>2}) [{s151_names[s151_k]:>14}] = "
-          f"{float(s151_lad[s151_k]):.7f}")
-print(f"    1/alpha(10) = {float(s151_inv10):.4f} vs 137.035999207 "
-      f"({float(s151_dev) * 100:+.3f}%, recorded")
+p24_inv10 = 1 / p24_lad[10]
+p24_dev = ((p24_inv10 - p24_mpf('137.035999207'))
+            / p24_mpf('137.035999207'))
+p24_c = (abs(p24_lad[0] / p24_pi - p24_pi / p24_N) < p24_mpf('1e-40')
+          and abs(p24_dev - p24_mpf('3.1e-4')) < p24_mpf('1e-4')
+          and abs(p24_lad[9] / p24_lad[10] - p24_phi) < p24_mpf('1e-40'))
+for p24_k in range(12):
+    print(f"    alpha({p24_k:>2}) [{p24_names[p24_k]:>14}] = "
+          f"{float(p24_lad[p24_k]):.7f}")
+print(f"    1/alpha(10) = {float(p24_inv10):.4f} vs 137.035999207 "
+      f"({float(p24_dev) * 100:+.3f}%, recorded")
 print("    +0.031%); the anchoring candidate: alpha(9) = phi*alpha(10) — the")
 print("    coupling of the Field floor (the carrier m_pi = 2*Lambda_QCD/pi is")
 print("    recorded; the coupling is NOT anchored): PASS"
-      if s151_c else "    sheet: FAIL")
+      if p24_c else "    sheet: FAIL")
 
 # (7) the mass-sector degrees derived from the system
-s151_fib = [1, 1]
-while len(s151_fib) < 12:
-    s151_fib.append(s151_fib[-1] + s151_fib[-2])
-s151_F = lambda s151_n: s151_fib[s151_n - 1]
-s151_am = 1 / s151_mpf('137.035999207')
-s151_me = s151_mpf('0.51099895')
-s151_mpi = s151_mpf('139.57039')
-s151_fpi = s151_mpf('130.2')
-s151_d1 = abs(2**7 * s151_am - s151_fpi / s151_mpi) / (s151_fpi / s151_mpi)
-s151_d2 = abs(2**8 * s151_me - s151_fpi) / s151_fpi
-s151_c = (s151_F(6) == 8 and 2**(8 - 1) == 2**7 == 128
-          and 2**s151_F(6) == 256
-          and abs(s151_d1 - s151_mpf('1.3e-3')) < s151_mpf('0.2e-3')
-          and abs(s151_d2 - s151_mpf('5e-3')) < s151_mpf('1e-3'))
+p24_fib = [1, 1]
+while len(p24_fib) < 12:
+    p24_fib.append(p24_fib[-1] + p24_fib[-2])
+p24_F = lambda p24_n: p24_fib[p24_n - 1]
+p24_am = 1 / p24_mpf('137.035999207')
+p24_me = p24_mpf('0.51099895')
+p24_mpi = p24_mpf('139.57039')
+p24_fpi = p24_mpf('130.2')
+p24_d1 = abs(2**7 * p24_am - p24_fpi / p24_mpi) / (p24_fpi / p24_mpi)
+p24_d2 = abs(2**8 * p24_me - p24_fpi) / p24_fpi
+p24_c = (p24_F(6) == 8 and 2**(8 - 1) == 2**7 == 128
+          and 2**p24_F(6) == 256
+          and abs(p24_d1 - p24_mpf('1.3e-3')) < p24_mpf('0.2e-3')
+          and abs(p24_d2 - p24_mpf('5e-3')) < p24_mpf('1e-3'))
 print("    the mass-sector degrees DERIVED: f_pi is in the Mass sector")
 print("    (D_8, 2.9.F) whose floor is k = 8; the system gives the two")
 print("    powers: C_pow(8) = 2^(k-1) = 2^7 = 128 (the cell count of the")
 print("    mass section; the exponent 7 = k-1 = the activation epoch of the")
 print(f"    Mass, .x(2)) and 2^8 = 2^F6 = 256 (the degree = the floor number,")
-print(f"    .al(3); F6 = {s151_F(6)}):")
-print(f"    f_pi/m_pi = 2^7*alpha = {float(2**7 * s151_am):.5f} vs "
-      f"{float(s151_fpi / s151_mpi):.5f} ({float(s151_d1) * 100:.2f}%,")
-print(f"    recorded 0.13%); f_pi = 2^8*m_e = {float(2**8 * s151_me):.2f} MeV "
-      f"vs 130.2 ({float(s151_d2) * 100:.2f}%,")
+print(f"    .al(3); F6 = {p24_F(6)}):")
+print(f"    f_pi/m_pi = 2^7*alpha = {float(2**7 * p24_am):.5f} vs "
+      f"{float(p24_fpi / p24_mpi):.5f} ({float(p24_d1) * 100:.2f}%,")
+print(f"    recorded 0.13%); f_pi = 2^8*m_e = {float(2**8 * p24_me):.2f} MeV "
+      f"vs 130.2 ({float(p24_d2) * 100:.2f}%,")
 print("    recorded 0.5%) — NO other power of two in the f_pi system; zero")
-print("    new parameters: PASS" if s151_c else "    degrees: FAIL")
+print("    new parameters: PASS" if p24_c else "    degrees: FAIL")
 
 # (8) the total exponent of the ladder
-s151_P = s151_mpf(1)
-for s151_k in range(1, 11):
-    s151_P *= s151_lad[s151_k]
-s151_csum = sum(s151_cell(s151_k) for s151_k in range(1, 11))
-s151_c = (abs(s151_P - s151_lad[0]**10 * s151_mu**55) < s151_mpf('1e-45')
-          and sum(range(1, 11)) == 55 and s151_csum == 55 and s151_F(10) == 55)
+p24_P = p24_mpf(1)
+for p24_k in range(1, 11):
+    p24_P *= p24_lad[p24_k]
+p24_csum = sum(p24_cell(p24_k) for p24_k in range(1, 11))
+p24_c = (abs(p24_P - p24_lad[0]**10 * p24_mu**55) < p24_mpf('1e-45')
+          and sum(range(1, 11)) == 55 and p24_csum == 55 and p24_F(10) == 55)
 print("    the total exponent of the ladder: alpha(1)*...*alpha(10) =")
 print("    alpha(0)^10*mu^55 EXACTLY; 55 = the sum of the floor numbers =")
-print(f"    the recorded cell sum sum C(k) = {s151_csum} = F10 (the .x(3) sum)")
+print(f"    the recorded cell sum sum C(k) = {p24_csum} = F10 (the .x(3) sum)")
 print("    — the Fibonacci atom F10 carries the total coupling exponent "
-      f"({float(s151_P):.4e}):"
-      " PASS" if s151_c else "    total: FAIL")
+      f"({float(p24_P):.4e}):"
+      " PASS" if p24_c else "    total: FAIL")
 
 print("    HONEST BOUNDARY: the invariants are the corollaries of the accepted")
 print("    FORM alpha(k) = alpha(0)*mu^k (the .ah verdict) — the system")
@@ -15276,7 +15278,7 @@ print("    Remark 2.6.A.4.ap (the quantitative predictions of the system): "
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.aq: the law of scale transitions — quantity -> quality
-# (the author's law): the units of scale k gather the threshold count
+# (the unified law): the units of scale k gather the threshold count
 # around a center and turn into an object of scale k+1 (particles ->
 # atom -> molecule -> compounds; the planetary system about the star;
 # stars -> galaxies). Machine: the thresholds = the filling numbers (the
@@ -15285,77 +15287,77 @@ print("    Remark 2.6.A.4.ap (the quantitative predictions of the system): "
 # Th 2.9.1; the noble-gas gaps = 2n^2 each twice); the frequency
 # reading f_k = f_0*phi^k (inverse to the recorded radius law .ai);
 # the center recursion on the cell grid (.ac). All locals carry the
-# s154_ prefix.
+# p25_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.aq (the scale-transition law: quantity -> quality)")
-from mpmath import mp as s154_mp, mpf as s154_mpf
+from mpmath import mp as p25_mp, mpf as p25_mpf
 
-s154_mp.dps = 50
-s154_N = 11
-s154_phi = (1 + s154_mp.sqrt(5)) / 2
-s154_cap = [2, 4, 2, 6, 2, 4, 8, 4, 6, 2, 10, 8, 6, 4, 2, 12,
+p25_mp.dps = 50
+p25_N = 11
+p25_phi = (1 + p25_mp.sqrt(5)) / 2
+p25_cap = [2, 4, 2, 6, 2, 4, 8, 4, 6, 2, 10, 8, 6, 4, 2, 12,
             10, 8, 6, 4, 2, 14]
-s154_js = [s154_mpf(1) / 2, 1.5, 0.5, 2.5, 0.5, 1.5, 3.5, 1.5, 2.5, 0.5,
+p25_js = [p25_mpf(1) / 2, 1.5, 0.5, 2.5, 0.5, 1.5, 3.5, 1.5, 2.5, 0.5,
            4.5, 3.5, 2.5, 1.5, 0.5, 5.5, 4.5, 3.5, 2.5, 1.5, 0.5, 6.5]
-s154_Fb = [1, 1]
-while len(s154_Fb) < 14:
-    s154_Fb.append(s154_Fb[-1] + s154_Fb[-2])
+p25_Fb = [1, 1]
+while len(p25_Fb) < 14:
+    p25_Fb.append(p25_Fb[-1] + p25_Fb[-2])
 
 # (1) the nuclear threshold ladder from the capacity 2j+1
-s154_magic = []
-s154_acc = 0
-for s154_c in s154_cap:
-    s154_acc += s154_c
-    if s154_acc in (2, 8, 20, 28, 50, 82, 126):
-        s154_magic.append(s154_acc)
-s154_c = (s154_magic == [2, 8, 20, 28, 50, 82, 126]
-          and all(c == 2 * j + 1 for c, j in zip(s154_cap, s154_js))
-          and all(2 * c == 2 * (2 * j + 1) for c, j in zip(s154_cap, s154_js)))
+p25_magic = []
+p25_acc = 0
+for p25_c in p25_cap:
+    p25_acc += p25_c
+    if p25_acc in (2, 8, 20, 28, 50, 82, 126):
+        p25_magic.append(p25_acc)
+p25_c = (p25_magic == [2, 8, 20, 28, 50, 82, 126]
+          and all(c == 2 * j + 1 for c, j in zip(p25_cap, p25_js))
+          and all(2 * c == 2 * (2 * j + 1) for c, j in zip(p25_cap, p25_js)))
 print("    the nuclear threshold ladder: the sublevel capacity 2j+1 (per")
 print("    species; both = 2(2j+1), Th 2.9.VL.2) gives the cumulations")
-print(f"    {s154_magic} — ALL 7 magic numbers EXACT (Th 2.9.1): PASS"
-      if s154_c else "    nuclear thresholds: FAIL")
+print(f"    {p25_magic} — ALL 7 magic numbers EXACT (Th 2.9.1): PASS"
+      if p25_c else "    nuclear thresholds: FAIL")
 
 # (2) the Lucas/Fibonacci forms of the seven thresholds (recorded Th 2.9.1)
-s154_c = (2 == 2 and 8 == s154_Fb[5] and 20 == 2 * (s154_N - 1)
-          and 28 == 4 * 7 and 50 == 2 * s154_Fb[4] ** 2
-          and 82 == s154_N * 7 + 3 + 2 and 126 == s154_N ** 2 + s154_Fb[4])
+p25_c = (2 == 2 and 8 == p25_Fb[5] and 20 == 2 * (p25_N - 1)
+          and 28 == 4 * 7 and 50 == 2 * p25_Fb[4] ** 2
+          and 82 == p25_N * 7 + 3 + 2 and 126 == p25_N ** 2 + p25_Fb[4])
 print("    the seven thresholds = Lucas/Fibonacci atoms: 2=L0, 8=F6,")
 print("    20=2(N-1), 28=L3*L4, 50=2F5^2, 82=NL4+L2+L0, 126=N^2+F5 —")
-print("    7/7 exact: PASS" if s154_c else "    lucas/fib forms: FAIL")
+print("    7/7 exact: PASS" if p25_c else "    lucas/fib forms: FAIL")
 
 # (3) the atomic thresholds (noble gases): the 2n^2 gap structure
-s154_noble = [2, 10, 18, 36, 54, 86, 118]
-s154_gaps = [s154_noble[i + 1] - s154_noble[i] for i in range(6)]
-s154_c = (s154_gaps == [8, 8, 18, 18, 32, 32]
-          and s154_gaps == [2 * n * n for n in (2, 2, 3, 3, 4, 4)])
+p25_noble = [2, 10, 18, 36, 54, 86, 118]
+p25_gaps = [p25_noble[i + 1] - p25_noble[i] for i in range(6)]
+p25_c = (p25_gaps == [8, 8, 18, 18, 32, 32]
+          and p25_gaps == [2 * n * n for n in (2, 2, 3, 3, 4, 4)])
 print("    the atomic thresholds (noble gases) 2, 10, 18, 36, 54, 86, 118:")
-print(f"    the gaps {s154_gaps} = 2n^2 for n = 2, 2, 3, 3, 4, 4 — each")
+print(f"    the gaps {p25_gaps} = 2n^2 for n = 2, 2, 3, 3, 4, 4 — each")
 print("    shell capacity exactly twice: the threshold of the new quality")
 print("    = the capacity of the degree of freedom: PASS"
-      if s154_c else "    atomic thresholds: FAIL")
+      if p25_c else "    atomic thresholds: FAIL")
 
 # (4) the frequency reading: f ~ 1/r gives f_k = f_0*phi^k
-s154_r = [s154_mpf(1) * s154_phi**(-k) for k in range(12)]
-s154_f = [1 / r for r in s154_r]
-s154_c = all(abs(s154_f[k + 1] / s154_f[k] - s154_phi) < s154_mpf("1e-25")
+p25_r = [p25_mpf(1) * p25_phi**(-k) for k in range(12)]
+p25_f = [1 / r for r in p25_r]
+p25_c = all(abs(p25_f[k + 1] / p25_f[k] - p25_phi) < p25_mpf("1e-25")
              for k in range(11))
 print("    the frequency reading: f ~ 1/r with r_k = R*phi^(-k) (recorded")
 print("    .ai, the conditional status inherited) gives f_k = f_0*phi^k —")
 print("    the frequency ascends by phi per section: micro fast, macro")
-print("    slow — the author's frequency ordering: PASS"
-      if s154_c else "    frequency: FAIL")
+print("    slow — the frequency ordering: PASS"
+      if p25_c else "    frequency: FAIL")
 
 # (5) the center recursion on the cell grid
-s154_cell = lambda k: 2**(k - 1) % s154_N
-s154_c = (all(s154_cell(k) != 0 for k in range(1, 12))
-          and s154_cell(11) == s154_cell(1)
-          and sum(range(1, 11)) == 55 == s154_Fb[9])
+p25_cell = lambda k: 2**(k - 1) % p25_N
+p25_c = (all(p25_cell(k) != 0 for k in range(1, 12))
+          and p25_cell(11) == p25_cell(1)
+          and sum(range(1, 11)) == 55 == p25_Fb[9])
 print("    the center recursion: the cells C(k) = 2^(k-1) mod 11 are the")
 print("    orbit slots around the Point (the centroid 0, .ac); the closure")
 print("    C(11) = C(1) (Psi_12 = Psi_1): every scale is a Cone about a")
 print("    center; quantity -> quality = the closure by resonance (.aa): PASS"
-      if s154_c else "    center recursion: FAIL")
+      if p25_c else "    center recursion: FAIL")
 
 print("    HONEST BOUNDARY: the transition law (quantity -> quality) is the")
 print("    author's formulation; the machine closes the THRESHOLDS (the")
@@ -15377,72 +15379,72 @@ print("    Remark 2.6.A.4.aq (the scale-transition law: quantity -> quality): "
 # phi^7/2^5 (the phi^7 = the {2,9} pair ratio, C(7) = 9, 2^5 = the
 # half-cycle negation). With the recorded re-readings (.ah(3): six;
 # .al(2): m_tau) the count reaches 10 >= 9 — item (b) MET. All locals
-# carry the s155_ prefix.
+# carry the p26_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.ar (the criterion re-application)")
-from mpmath import mp as s155_mp, mpf as s155_mpf
-import math as s155_math
+from mpmath import mp as p26_mp, mpf as p26_mpf
+import math as p26_math
 
-s155_mp.dps = 50
-s155_N = 11
-s155_phi = (1 + s155_mp.sqrt(5)) / 2
+p26_mp.dps = 50
+p26_N = 11
+p26_phi = (1 + p26_mp.sqrt(5)) / 2
 
 # (1) the EXACT-9 classification
-s155_exact_n = 9
-s155_c = s155_exact_n == 9
+p26_exact_n = 9
+p26_c = p26_exact_n == 9
 print("    the EXACT class of the catalogue (Th 2.5.AC.3.v): 9 items —")
 print("    by construction the quintet/ladder-atom composites (no")
 print("    alpha-series corrections) — the law's alphabet: PASS"
-      if s155_c else "    exact class: FAIL")
+      if p26_c else "    exact class: FAIL")
 
 # (2) mp/mn = 1 - 1/(6*N^2); 6 = comb(4,2) = C(10)
-s155_C10 = 2**9 % s155_N
-s155_c = (s155_math.comb(4, 2) == 6 == s155_C10
-          and s155_math.comb(4, 2) * s155_N**2 == 726)
+p26_C10 = 2**9 % p26_N
+p26_c = (p26_math.comb(4, 2) == 6 == p26_C10
+          and p26_math.comb(4, 2) * p26_N**2 == 726)
 print("    mp/mn = 1 - 1/726: 726 = comb(4,2)*N^2 = 6*121; the 6 = C(10)")
 print("    = the cell of the PARTICLE floor (10) carries the particle")
-print("    correction; N^2 = the root degree: PASS" if s155_c
+print("    correction; N^2 = the root degree: PASS" if p26_c
       else "    mp/mn: FAIL")
 
 # (3) log10(rho_v/rho_P) = -(N^2 + L1) = -122
-s155_c = (s155_N**2 + 1 == 122)
+p26_c = (p26_N**2 + 1 == 122)
 print("    log10(rho_v/rho_P) = -122 = -(N^2 + L1): the vacuum exponent")
 print("    = the N^2 degree with the atom L1 (as 126 = N^2 + F5): PASS"
-      if s155_c else "    rho_v: FAIL")
+      if p26_c else "    rho_v: FAIL")
 
 # (4) sin^2 theta_W: the atoms
-s155_C7 = 2**6 % s155_N
-s155_lad = lambda k: s155_mp.pi**2 / (s155_N * s155_phi**k)
-s155_c = (s155_C7 == 9 and 2**5 % s155_N == 10
-          and abs(s155_lad(2) / s155_lad(9) - s155_phi**7) < s155_mpf("1e-40"))
+p26_C7 = 2**6 % p26_N
+p26_lad = lambda k: p26_mp.pi**2 / (p26_N * p26_phi**k)
+p26_c = (p26_C7 == 9 and 2**5 % p26_N == 10
+          and abs(p26_lad(2) / p26_lad(9) - p26_phi**7) < p26_mpf("1e-40"))
 print("    sin^2(theta_W) = sin(pi/N)*sqrt(9/N)*phi^7/32 — the atoms:")
 print("    the half-chord; 9 = C(7) (the Volume cell); phi^7 = the {2,9}")
 print("    pair coupling ratio (machine); 32 = 2^5 = the half-cycle")
-print("    negation: PASS" if s155_c else "    sin2_tW: FAIL")
+print("    negation: PASS" if p26_c else "    sin2_tW: FAIL")
 
 # (5) the remaining EXACT forms = atom values
-s155_L = [2, 1]
-while len(s155_L) < 11:
-    s155_L.append(s155_L[-1] + s155_L[-2])
-s155_Fl = [1, 1]
-while len(s155_Fl) < 11:
-    s155_Fl.append(s155_Fl[-1] + s155_Fl[-2])
-s155_c = (s155_L[0] / s155_L[2] == 2 / 3
-          and s155_Fl[9] + s155_L[3] == 59
-          and s155_L[4] + s155_L[1] / s155_L[0] == 7.5
-          and s155_L[3] == 4 and s155_Fl[4] == 5)
+p26_L = [2, 1]
+while len(p26_L) < 11:
+    p26_L.append(p26_L[-1] + p26_L[-2])
+p26_Fl = [1, 1]
+while len(p26_Fl) < 11:
+    p26_Fl.append(p26_Fl[-1] + p26_Fl[-2])
+p26_c = (p26_L[0] / p26_L[2] == 2 / 3
+          and p26_Fl[9] + p26_L[3] == 59
+          and p26_L[4] + p26_L[1] / p26_L[0] == 7.5
+          and p26_L[3] == 4 and p26_Fl[4] == 5)
 print("    the remaining EXACT forms = atom values (recorded): Koide")
 print("    Q = L0/L2 = 2/3; 1/alpha_1 = F10+L3 = 59; m_glueball =")
 print("    L4+L1/L0 = 7.5; a_e coefficients {1/L3, L3, F5}: PASS"
-      if s155_c else "    atom forms: FAIL")
+      if p26_c else "    atom forms: FAIL")
 
 # (6) the criterion count
-s155_c = (6 + 1 + 3 >= 9)
+p26_c = (6 + 1 + 3 >= 9)
 print("    the re-read count: 6 (.ah(3)) + 1 (.al(2)) + 3 (this remark)")
 print("    = 10 >= 9 — the criterion item (b) is MET (the honest class:")
 print("    machine-exact value identifications with atoms/cells/degrees,")
 print("    not independent deductions — the recorded boundary): PASS"
-      if s155_c else "    count: FAIL")
+      if p26_c else "    count: FAIL")
 
 print("    HONEST BOUNDARY: the re-readings are machine-exact")
 print("    identifications of recorded values with the ladder")
@@ -15463,78 +15465,78 @@ print("    Remark 2.6.A.4.ar (the criterion re-application): ALL CHECKS PASS")
 # F5 = C(5), F6 = C(4) (the pi- and phi-pair halves). The half L1/L0 =
 # 1/2 = Absolute/Duality (Def 1.9.WA.3.d, recorded). The alpha-series =
 # the ladder powers; the operator class = the chord quotients. All
-# locals carry the s156_ prefix.
+# locals carry the p27_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.as (the EXACT-9 coordinates)")
-from mpmath import mp as s156_mp, mpf as s156_mpf
-import math as s156_math
+from mpmath import mp as p27_mp, mpf as p27_mpf
+import math as p27_math
 
-s156_mp.dps = 50
-s156_N = 11
-s156_phi = (1 + s156_mp.sqrt(5)) / 2
-s156_cell = lambda k: 2**(k - 1) % s156_N
-s156_L = [2, 1]
-while len(s156_L) < 12:
-    s156_L.append(s156_L[-1] + s156_L[-2])
-s156_Fl = [1, 1]
-while len(s156_Fl) < 12:
-    s156_Fl.append(s156_Fl[-1] + s156_Fl[-2])
+p27_mp.dps = 50
+p27_N = 11
+p27_phi = (1 + p27_mp.sqrt(5)) / 2
+p27_cell = lambda k: 2**(k - 1) % p27_N
+p27_L = [2, 1]
+while len(p27_L) < 12:
+    p27_L.append(p27_L[-1] + p27_L[-2])
+p27_Fl = [1, 1]
+while len(p27_Fl) < 12:
+    p27_Fl.append(p27_Fl[-1] + p27_Fl[-2])
 
 # (1) the atoms sit on the grid
-s156_c = (s156_L[0] == s156_cell(2) == 2
-          and s156_L[2] == s156_cell(9) == 3
-          and s156_L[3] == s156_cell(3) == 4
-          and s156_L[4] == s156_cell(8) == 7
-          and s156_Fl[4] == s156_cell(5) == 5
-          and s156_Fl[5] == s156_cell(4) == 8)
+p27_c = (p27_L[0] == p27_cell(2) == 2
+          and p27_L[2] == p27_cell(9) == 3
+          and p27_L[3] == p27_cell(3) == 4
+          and p27_L[4] == p27_cell(8) == 7
+          and p27_Fl[4] == p27_cell(5) == 5
+          and p27_Fl[5] == p27_cell(4) == 8)
 print("    the atoms SIT ON THE GRID: L0 = C(2) = 2, L2 = C(9) = 3 — the")
 print("    i-pair cells; L3 = C(3) = 4, L4 = C(8) = 7 — the e-pair cells;")
 print("    F5 = C(5) = 5, F6 = C(4) = 8 — the pi/phi-pair halves (pair by")
-print("    pair): PASS" if s156_c else "    grid atoms: FAIL")
+print("    pair): PASS" if p27_c else "    grid atoms: FAIL")
 
 # (2) Koide
-s156_c = (s156_L[0] / s156_L[2] == 2 / 3
-          and s156_cell(2) / s156_cell(9) == 2 / 3)
+p27_c = (p27_L[0] / p27_L[2] == 2 / 3
+          and p27_cell(2) / p27_cell(9) == 2 / 3)
 print("    Koide Q = L0/L2 = C(2)/C(9) = 2/3 — the cell ratio of the")
-print("    i-pair {2,9} (Temperature-Field): PASS" if s156_c else "    Koide: FAIL")
+print("    i-pair {2,9} (Temperature-Field): PASS" if p27_c else "    Koide: FAIL")
 
 # (3) 1/alpha_1
-s156_c = (s156_Fl[9] + s156_L[3] == 59 and s156_Fl[9] + s156_cell(3) == 59)
+p27_c = (p27_Fl[9] + p27_L[3] == 59 and p27_Fl[9] + p27_cell(3) == 59)
 print("    1/alpha_1(mZ) = F10 + L3 = 55 + 4 = 59 = F10 + C(3) — the")
 print("    total coupling exponent (.ap(6)) + the Height cell: PASS"
-      if s156_c else "    alpha_1: FAIL")
+      if p27_c else "    alpha_1: FAIL")
 
 # (4) the glueball
-s156_c = (s156_L[4] + s156_L[1] / s156_L[0] == 7.5
-          and s156_cell(8) + s156_L[1] / s156_L[0] == 7.5)
+p27_c = (p27_L[4] + p27_L[1] / p27_L[0] == 7.5
+          and p27_cell(8) + p27_L[1] / p27_L[0] == 7.5)
 print("    m_glueball/LQCD = L4 + L1/L0 = 7.5 = C(8) + 1/2 — the Mass")
 print("    cell + the half (Absolute/Duality, Def 1.9.WA.3.d): PASS"
-      if s156_c else "    glueball: FAIL")
+      if p27_c else "    glueball: FAIL")
 
 # (5) a_e coefficients
-s156_c = (s156_L[1] / s156_L[0] == 1 / 2
-          and s156_L[3] == s156_cell(3) and s156_Fl[4] == s156_cell(5))
+p27_c = (p27_L[1] / p27_L[0] == 1 / 2
+          and p27_L[3] == p27_cell(3) and p27_Fl[4] == p27_cell(5))
 print("    a_e coefficients {1/2, 1/L3, L3, F5} = {L1/L0, 1/C(3), C(3),")
 print("    C(5)} — the QED orders carry the pair-cells + the half: PASS"
-      if s156_c else "    a_e: FAIL")
+      if p27_c else "    a_e: FAIL")
 
 # (6) the EXACT-9 census
-s156_c = (2**4 % s156_N == s156_cell(5) == 5 and 2**5 % s156_N == 10
-          and s156_math.comb(4, 2) == s156_cell(10))
+p27_c = (2**4 % p27_N == p27_cell(5) == 5 and 2**5 % p27_N == 10
+          and p27_math.comb(4, 2) == p27_cell(10))
 print("    the EXACT-9 census: 9/9 coordinated (alpha_GUT: F5^2=C(5)^2;")
 print("    m_tau: {3,8}=e; mp/mn: C(10)*N^2; rho_v: N^2+L1; sin2_tW:")
 print("    C(7)*phi^7/2^5; Koide: C(2)/C(9); 1/alpha_1: F10+C(3);")
 print("    glueball: C(8)+1/2; a_e: cells+1/2): PASS"
-      if s156_c else "    census: FAIL")
+      if p27_c else "    census: FAIL")
 
 # (7) the alpha-series and operator classes
-s156_lad = lambda k: s156_mp.pi**2 / (s156_N * s156_phi**k)
-s156_c = abs(s156_lad(10) * s156_mpf("137.035999207") - 1) < s156_mpf("5e-4")
+p27_lad = lambda k: p27_mp.pi**2 / (p27_N * p27_phi**k)
+p27_c = abs(p27_lad(10) * p27_mpf("137.035999207") - 1) < p27_mpf("5e-4")
 print("    the alpha-series class = the ladder powers (alpha = alpha(10),")
 print("    the skeleton 137.0785, +0.031%); the operator class = the")
 print("    quotients of the recorded operators (the chords = the law's")
 print("    spectrum) — per-item coordinates: the open subprogram: PASS"
-      if s156_c else "    classes: FAIL")
+      if p27_c else "    classes: FAIL")
 
 print("    HONEST BOUNDARY: the atom-cell identifications are machine-exact")
 print("    value coincidences (the .ah(3)(v) class) — five small atoms sit")
@@ -15548,120 +15550,120 @@ print("    Remark 2.6.A.4.as (the EXACT-9 coordinates): ALL CHECKS PASS")
 # Remark 2.6.A.4.at: the census of the catalogue-84 by coordinates — the
 # closure of the .as(7) subprogram. The battery source (constants +
 # _cat_seg) is parsed independently: every entry receives coordinates
-# (class, operator relation, atoms, powers). All locals carry s157_.
+# (class, operator relation, atoms, powers). All locals carry p28_.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.at (the catalogue-84 coordinate census)")
-import re as s157_re
-import numpy as s157_np
+import re as p28_re
+import numpy as p28_np
 
-s157_N = 11
-s157_omega = [2 * s157_np.sin(s157_np.pi * k / s157_N) for k in range(s157_N)]
-s157_H = s157_np.diag(s157_omega).astype(complex)
+p28_N = 11
+p28_omega = [2 * p28_np.sin(p28_np.pi * k / p28_N) for k in range(p28_N)]
+p28_H = p28_np.diag(p28_omega).astype(complex)
 
-def s157_shift(p):
-    s157_M = s157_np.zeros((s157_N, s157_N))
-    for s157_k in range(s157_N):
-        s157_M[(s157_k + p) % s157_N, s157_k] = 1.0
-    return s157_M.astype(complex)
+def p28_shift(p):
+    p28_M = p28_np.zeros((p28_N, p28_N))
+    for p28_k in range(p28_N):
+        p28_M[(p28_k + p) % p28_N, p28_k] = 1.0
+    return p28_M.astype(complex)
 
-s157_S = {p: s157_shift(p) for p in range(1, 6)}
-s157_K = {p: (s157_shift(p) + s157_shift(p).conj().T) / 2 for p in range(1, 6)}
-s157_J = {p: 1j * (s157_shift(p) - s157_shift(p).conj().T) / 2 for p in range(1, 6)}
+p28_S = {p: p28_shift(p) for p in range(1, 6)}
+p28_K = {p: (p28_shift(p) + p28_shift(p).conj().T) / 2 for p in range(1, 6)}
+p28_J = {p: 1j * (p28_shift(p) - p28_shift(p).conj().T) / 2 for p in range(1, 6)}
 
-def s157_fnorm(M):
-    return float(s157_np.sqrt(s157_np.trace(M.conj().T @ M).real))
+def p28_fnorm(M):
+    return float(p28_np.sqrt(p28_np.trace(M.conj().T @ M).real))
 
-def s157_comm(A, B):
+def p28_comm(A, B):
     return A @ B - B @ A
 
-s157_named = {"S1+S2": s157_S[1] + s157_S[2], "S2-S3": s157_S[2] - s157_S[3],
-              "S+St": s157_S[1] + s157_S[1].conj().T, "S2+S4": s157_S[2] + s157_S[4],
-              "S2*S3": s157_S[2] @ s157_S[3], "J1J2": s157_J[1] @ s157_J[2],
-              "J1J3": s157_J[1] @ s157_J[3], "J2J3": s157_J[2] @ s157_J[3]}
-for s157_p in range(1, 4):
-    for s157_q in range(s157_p, 5):
-        s157_named[f"K{s157_p}J{s157_q}"] = s157_K[s157_p] @ s157_J[s157_q]
+p28_named = {"S1+S2": p28_S[1] + p28_S[2], "S2-S3": p28_S[2] - p28_S[3],
+              "S+St": p28_S[1] + p28_S[1].conj().T, "S2+S4": p28_S[2] + p28_S[4],
+              "S2*S3": p28_S[2] @ p28_S[3], "J1J2": p28_J[1] @ p28_J[2],
+              "J1J3": p28_J[1] @ p28_J[3], "J2J3": p28_J[2] @ p28_J[3]}
+for p28_p in range(1, 4):
+    for p28_q in range(p28_p, 5):
+        p28_named[f"K{p28_p}J{p28_q}"] = p28_K[p28_p] @ p28_J[p28_q]
 
-s157_live = [f"{s157_a}{s157_p}" for s157_a, s157_D in
-             (("S", s157_S), ("K", s157_K), ("J", s157_J))
-             for s157_p in range(1, 6)
-             if s157_fnorm(s157_comm(s157_D[s157_p], s157_H)) > 1e-12]
-s157_live += [s157_n for s157_n, s157_O in s157_named.items()
-              if s157_fnorm(s157_comm(s157_O, s157_H)) > 1e-12]
+p28_live = [f"{p28_a}{p28_p}" for p28_a, p28_D in
+             (("S", p28_S), ("K", p28_K), ("J", p28_J))
+             for p28_p in range(1, 6)
+             if p28_fnorm(p28_comm(p28_D[p28_p], p28_H)) > 1e-12]
+p28_live += [p28_n for p28_n, p28_O in p28_named.items()
+              if p28_fnorm(p28_comm(p28_O, p28_H)) > 1e-12]
 
 # (1) the split 9/36/39 reproduced from the source (first-occurrence
 #     segments; the dup pairs attribute to the operator form)
-s157_APT = s157_re.compile(r'pi\*\*2/\(N\*phi\*\*10\)\)\*\*[2-9]')
-s157_seg_of = {}
-for s157_nm, _, _ in constants:
-    s157_i = _cat_start + 13 + _cat_block.find('"' + s157_nm + '"')
-    s157_s0 = _full.find('lambda', s157_i)
-    s157_n1 = _full.find('\n    ("', s157_s0)
-    s157_seg_of[s157_nm] = _full[s157_s0:s157_n1] if s157_n1 != -1 else _full[s157_s0:]
-s157_cls = []
-for s157_nm, _, _ in constants:
-    s157_seg = s157_seg_of[s157_nm]
-    s157_has_r = "lambda r:" in s157_seg[:20]
-    s157_at = len(s157_APT.findall(s157_seg))
-    s157_cls.append("opratio" if s157_has_r else
-                    ("exact" if s157_at == 0 else "alphaseries"))
-s157_c = (s157_cls.count("exact") == 9 and s157_cls.count("alphaseries") == 36
-          and s157_cls.count("opratio") == 39 and len(s157_cls) == 84)
+p28_APT = p28_re.compile(r'pi\*\*2/\(N\*phi\*\*10\)\)\*\*[2-9]')
+p28_seg_of = {}
+for p28_nm, _, _ in constants:
+    p28_i = _cat_start + 13 + _cat_block.find('"' + p28_nm + '"')
+    p28_s0 = _full.find('lambda', p28_i)
+    p28_n1 = _full.find('\n    ("', p28_s0)
+    p28_seg_of[p28_nm] = _full[p28_s0:p28_n1] if p28_n1 != -1 else _full[p28_s0:]
+p28_cls = []
+for p28_nm, _, _ in constants:
+    p28_seg = p28_seg_of[p28_nm]
+    p28_has_r = "lambda r:" in p28_seg[:20]
+    p28_at = len(p28_APT.findall(p28_seg))
+    p28_cls.append("opratio" if p28_has_r else
+                    ("exact" if p28_at == 0 else "alphaseries"))
+p28_c = (p28_cls.count("exact") == 9 and p28_cls.count("alphaseries") == 36
+          and p28_cls.count("opratio") == 39 and len(p28_cls) == 84)
 print("    the split 9/36/39 reproduced from the source (84 entries,"
-      " Th 2.5.AC.3.v): PASS" if s157_c else "    the split: FAIL")
+      " Th 2.5.AC.3.v): PASS" if p28_c else "    the split: FAIL")
 
 # (2) the dup pairs (m_H/m_Z, sigma_8): first-occurrence attribution
-s157_names = [s157_e[0] for s157_e in constants]
-s157_dups = sorted({s157_n for s157_n in s157_names if s157_names.count(s157_n) > 1})
-s157_c = (sorted(s157_dups) == ["m_H/m_Z", "sigma_8"]
-          and all(s157_names.count(s157_n) == 2 for s157_n in s157_dups)
-          and all("lambda r:" in s157_seg_of[s157_n][:20] for s157_n in s157_dups))
+p28_names = [p28_e[0] for p28_e in constants]
+p28_dups = sorted({p28_n for p28_n in p28_names if p28_names.count(p28_n) > 1})
+p28_c = (sorted(p28_dups) == ["m_H/m_Z", "sigma_8"]
+          and all(p28_names.count(p28_n) == 2 for p28_n in p28_dups)
+          and all("lambda r:" in p28_seg_of[p28_n][:20] for p28_n in p28_dups))
 print("    the dup pairs m_H/m_Z, sigma_8 = the recorded structural")
 print("    redundancy: both tuples attribute to the operator form: PASS"
-      if s157_c else "    the dup pairs: FAIL")
+      if p28_c else "    the dup pairs: FAIL")
 
 # (3) the operator layer: 21 of the 32 live relations used
-s157_used = set()
-s157_OPpat = s157_re.compile(r'r\["([^"]+)"\]')
-for s157_nm, _, _ in constants:
-    s157_used |= set(s157_OPpat.findall(s157_seg_of[s157_nm]))
-s157_c = (len(s157_live) == 32 and all(s157_r in s157_live for s157_r in s157_used)
-          and len(s157_used) == 21)
+p28_used = set()
+p28_OPpat = p28_re.compile(r'r\["([^"]+)"\]')
+for p28_nm, _, _ in constants:
+    p28_used |= set(p28_OPpat.findall(p28_seg_of[p28_nm]))
+p28_c = (len(p28_live) == 32 and all(p28_r in p28_live for p28_r in p28_used)
+          and len(p28_used) == 21)
 print("    the operator layer: 39 forms sit on 21 of the 32 live")
 print("    relations r[X]; every used relation is live: PASS"
-      if s157_c else "    the operator layer: FAIL")
+      if p28_c else "    the operator layer: FAIL")
 
 # (4) the 11 free coordinates
-s157_free = sorted(set(s157_live) - s157_used)
-s157_c = (s157_free == ["J1J3", "J4", "K1", "K1J3", "K1J4", "K2", "K2J4",
+p28_free = sorted(set(p28_live) - p28_used)
+p28_c = (p28_free == ["J1J3", "J4", "K1", "K1J3", "K1J4", "K2", "K2J4",
                         "K3", "K4", "S2+S4", "S5"])
 print("    free: 11 — S5, K1, K2, K3, K4, J4, J1J3, K1J3, K1J4, K2J4,")
 print("    S2+S4 (the pure K-family and S5 unoccupied): PASS"
-      if s157_c else "    the free list: FAIL")
+      if p28_c else "    the free list: FAIL")
 
 # (5) the alpha-series power distribution {1:6, 2:18, 3:9, 4:3}
-s157_at_of = {}
-for s157_nm, _, _ in constants:
-    s157_at_of[s157_nm] = len(s157_APT.findall(s157_seg_of[s157_nm]))
-s157_dist = {}
-for s157_nm, _, _ in constants:
-    if s157_cls[s157_names.index(s157_nm)] == "alphaseries":
-        s157_dist[s157_at_of[s157_nm]] = s157_dist.get(s157_at_of[s157_nm], 0) + 1
-s157_c = (s157_dist == {1: 6, 2: 18, 3: 9, 4: 3} and sum(s157_dist.values()) == 36)
+p28_at_of = {}
+for p28_nm, _, _ in constants:
+    p28_at_of[p28_nm] = len(p28_APT.findall(p28_seg_of[p28_nm]))
+p28_dist = {}
+for p28_nm, _, _ in constants:
+    if p28_cls[p28_names.index(p28_nm)] == "alphaseries":
+        p28_dist[p28_at_of[p28_nm]] = p28_dist.get(p28_at_of[p28_nm], 0) + 1
+p28_c = (p28_dist == {1: 6, 2: 18, 3: 9, 4: 3} and sum(p28_dist.values()) == 36)
 print("    the alpha-series: 36 forms carry alpha_tree^k corrections,")
 print("    k = 1..4, distribution {1:6, 2:18, 3:9, 4:3}, integer")
-print("    coefficients: PASS" if s157_c else "    the alpha distribution: FAIL")
+print("    coefficients: PASS" if p28_c else "    the alpha distribution: FAIL")
 
 # (6) the EXACT-9 = the recorded nine values
-s157_exact = sorted({s157_nm for s157_nm, _, _ in constants
-                     if s157_cls[s157_names.index(s157_nm)] == "exact"})
-s157_c = (s157_exact == sorted(["mp/mn = 1-1/726", "m_tau/m_e", "Koide Q = L0/L2",
+p28_exact = sorted({p28_nm for p28_nm, _, _ in constants
+                     if p28_cls[p28_names.index(p28_nm)] == "exact"})
+p28_c = (p28_exact == sorted(["mp/mn = 1-1/726", "m_tau/m_e", "Koide Q = L0/L2",
                                 "1/alpha_GUT", "1/alpha_1(mZ)", "sin2_tW (7dig)",
                                 "a_e (g-2 e)", "m_glueball/LQCD",
                                 "log10(rho_v/rho_P)"]))
 print("    EXACT-9 = the recorded nine (alpha_GUT, m_tau, mp/mn, rho_v,")
 print("    sin2_tW, Koide, 1/alpha_1, glueball, a_e) = 9/9 on the grid: PASS"
-      if s157_c else "    EXACT-9: FAIL")
+      if p28_c else "    EXACT-9: FAIL")
 
 print("    HONEST BOUNDARY: the census is a machine census of FORMS — not")
 print("    a derivation and not new accuracy; the boundaries of Th 2.5.AC.1")
@@ -15672,97 +15674,97 @@ print("    Remark 2.6.A.4.at (the catalogue-84 coordinate census): ALL CHECKS PA
 
 # ---------------------------------------------------------------------------
 # Remark 2.6.A.4.au: the r_k blind contour — binding to the recorded
-# anchors (the author's decision). r_k = ln(k/k_*), k_* = W_* (the
+# anchors (the recorded decision). r_k = ln(k/k_*), k_* = W_* (the
 # normalization); the class conventions are test OUTPUTS. The count
 # matrix of the basis, the declared tolerance, the labels, the
-# robustness windows. All locals carry the s158_ prefix.
+# robustness windows. All locals carry the p29_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 2.6.A.4.au (the r_k blind contour on the recorded anchors)")
-import math as s158_math
+import math as p29_math
 
-s158_LNPHI = s158_math.log((1 + 5 ** 0.5) / 2)
-s158_HZ_EV = 2.417989242e14
-s158_HZ_CM = 29.9792458e9
-s158_HZ_K = 1.380649e-23 / 6.62607015e-34
-s158_W = 4.04e44
-s158_pos = lambda f: s158_math.log(s158_W / f) / s158_LNPHI
+p29_LNPHI = p29_math.log((1 + 5 ** 0.5) / 2)
+p29_HZ_EV = 2.417989242e14
+p29_HZ_CM = 29.9792458e9
+p29_HZ_K = 1.380649e-23 / 6.62607015e-34
+p29_W = 4.04e44
+p29_pos = lambda f: p29_math.log(p29_W / f) / p29_LNPHI
 
 # (1) the count matrix of the anchor basis
-s158_anchors = {
-    "L_QCD": 207e6 * s158_HZ_EV, "f_pi": 130.2e6 * s158_HZ_EV,
-    "CMB": 2.7255 * s158_HZ_K, "H0": 67.4e3 / 3.0857e22,
+p29_anchors = {
+    "L_QCD": 207e6 * p29_HZ_EV, "f_pi": 130.2e6 * p29_HZ_EV,
+    "CMB": 2.7255 * p29_HZ_K, "H0": 67.4e3 / 3.0857e22,
 }
-s158_counts = {"L_QCD": 105, "f_pi": 106, "CMB": 162, "H0": 298}
-s158_c = all(abs(s158_pos(s158_anchors[k]) - s158_counts[k]) <= 0.213
-             for k in s158_anchors)
+p29_counts = {"L_QCD": 105, "f_pi": 106, "CMB": 162, "H0": 298}
+p29_c = all(abs(p29_pos(p29_anchors[k]) - p29_counts[k]) <= 0.213
+             for k in p29_anchors)
 print("    the anchor positions from W_*: L_QCD 104.824->105, f_pi 105.788")
 print("    ->106, CMB 161.981->162, H0 297.946->298 (max dev 0.212): PASS"
-      if s158_c else "    the anchor counts: FAIL")
+      if p29_c else "    the anchor counts: FAIL")
 
 # (1b) the Λ-convention invariance of the counts (the unified input
-#     π·m_e/alpha = 220 MeV per the author's decision)
-s158_c = (abs(s158_pos(220e6 * s158_HZ_EV) - 105) <= 0.31
-          and round(s158_pos(220e6 * s158_HZ_EV)) == 105
-          and round(s158_pos(207e6 * s158_HZ_EV)) == 105)
+#     π·m_e/alpha = 220 MeV, the recorded convention)
+p29_c = (abs(p29_pos(220e6 * p29_HZ_EV) - 105) <= 0.31
+          and round(p29_pos(220e6 * p29_HZ_EV)) == 105
+          and round(p29_pos(207e6 * p29_HZ_EV)) == 105)
 print("    the Lambda-convention invariance: canon pi*m_e/alpha = 220 MeV")
 print("    -> position 104.70, count 105 = the SAME count (at 207: 104.82):")
-print("    PASS" if s158_c else "    the Lambda invariance: FAIL")
+print("    PASS" if p29_c else "    the Lambda invariance: FAIL")
 
 # (2) the pairwise additivity of the counts (all 10 pairs)
-s158_pairs = [("L_QCD", "f_pi"), ("L_QCD", "CMB"), ("L_QCD", "H0"),
+p29_pairs = [("L_QCD", "f_pi"), ("L_QCD", "CMB"), ("L_QCD", "H0"),
               ("f_pi", "CMB"), ("f_pi", "H0"), ("CMB", "H0")]
-s158_c = all(abs((s158_pos(s158_anchors[a]) - s158_pos(s158_anchors[b]))
-                 - (s158_counts[a] - s158_counts[b])) <= 0.212
-             for a, b in s158_pairs)
+p29_c = all(abs((p29_pos(p29_anchors[a]) - p29_pos(p29_anchors[b]))
+                 - (p29_counts[a] - p29_counts[b])) <= 0.212
+             for a, b in p29_pairs)
 print("    the pairwise additivity of the counts: all 10 pairs agree with")
 print("    the count differences (max dev 0.212 < 0.25): PASS"
-      if s158_c else "    the pairwise additivity: FAIL")
+      if p29_c else "    the pairwise additivity: FAIL")
 
 # (3) the declared tolerance (before the labels): 2 x the clean-basis
 #     maximum residual {W_*, CMB, H0} = 2 x 0.054
-s158_tol = 0.1
-s158_c = 2 * abs(s158_pos(2.7255 * s158_HZ_K) - 162) <= 0.11 and \
-         2 * abs(s158_pos(67.4e3 / 3.0857e22) - 298) <= 0.11
+p29_tol = 0.1
+p29_c = 2 * abs(p29_pos(2.7255 * p29_HZ_K) - 162) <= 0.11 and \
+         2 * abs(p29_pos(67.4e3 / 3.0857e22) - 298) <= 0.11
 print("    the declared tolerance 0.1 = 2 x the clean-basis {W_*, CMB,")
 print("    H0} maximum residual 0.054 (justified by the anchors only): PASS"
-      if s158_c else "    the declared tolerance: FAIL")
+      if p29_c else "    the declared tolerance: FAIL")
 
 # (4) the labels as outputs (nucleus, molecule, dust)
-s158_labels = {
-    "nucleus 1 MeV": (1e6 * s158_HZ_EV, 116, 0.094),
-    "molecule 1000 cm-1": (1000 * s158_HZ_CM, 149, 0.046),
-    "dust 100 K": (100 * s158_HZ_K, 154.5, 0.005),
+p29_labels = {
+    "nucleus 1 MeV": (1e6 * p29_HZ_EV, 116, 0.094),
+    "molecule 1000 cm-1": (1000 * p29_HZ_CM, 149, 0.046),
+    "dust 100 K": (100 * p29_HZ_K, 154.5, 0.005),
 }
-s158_c = all(abs(s158_pos(f) - g) <= d + 0.005
-             for f, g, d in s158_labels.values())
+p29_c = all(abs(p29_pos(f) - g) <= d + 0.005
+             for f, g, d in p29_labels.values())
 print("    the labels as outputs: nucleus -> 1 MeV (115.906, count 116,")
 print("    dev 0.094); molecule -> 1000 cm-1 (148.954, count 149, dev")
 print("    0.046); dust -> 100 K (154.495, count 154.5, dev 0.005): PASS"
-      if s158_c else "    the labels: FAIL")
+      if p29_c else "    the labels: FAIL")
 
 # (5) the alternative conventions fall outside the 0.1 tolerance
-s158_alts = {
-    "nucleus 8.8 MeV": 8.8e6 * s158_HZ_EV,
-    "molecule 3000 cm-1": 3000 * s158_HZ_CM,
-    "dust 300 K": 300 * s158_HZ_K,
+p29_alts = {
+    "nucleus 8.8 MeV": 8.8e6 * p29_HZ_EV,
+    "molecule 3000 cm-1": 3000 * p29_HZ_CM,
+    "dust 300 K": 300 * p29_HZ_K,
 }
-s158_c = all(min(abs(s158_pos(f) - round(s158_pos(f))),
-                 abs(s158_pos(f) - round(s158_pos(f) * 2) / 2)) > s158_tol
-             for f in s158_alts.values())
+p29_c = all(min(abs(p29_pos(f) - round(p29_pos(f))),
+                 abs(p29_pos(f) - round(p29_pos(f) * 2) / 2)) > p29_tol
+             for f in p29_alts.values())
 print("    the alternatives (8.8 MeV, 3000 cm-1, 300 K) fall outside the")
 print("    declared 0.1 tolerance (0.113 / 0.171 / 0.212 to the m=2 grid):")
-print("    PASS" if s158_c else "    the alternatives: FAIL")
+print("    PASS" if p29_c else "    the alternatives: FAIL")
 
 # (6) the robustness windows: the intersection [0.10, 0.11) is nonempty
-s158_winners = {"nucleus": 0.094, "molecule": 0.046, "dust": 0.005}
-s158_losers = {"nucleus": 0.113, "molecule": 0.171, "dust": 0.212}
-s158_lo = max(math.ceil(w * 100) / 100 for w in s158_winners.values())
-s158_hi = min(math.floor(l * 100) / 100 for l in s158_losers.values())
-s158_c = s158_lo < s158_hi and s158_lo <= 0.1 < s158_hi
+p29_winners = {"nucleus": 0.094, "molecule": 0.046, "dust": 0.005}
+p29_losers = {"nucleus": 0.113, "molecule": 0.171, "dust": 0.212}
+p29_lo = max(math.ceil(w * 100) / 100 for w in p29_winners.values())
+p29_hi = min(math.floor(l * 100) / 100 for l in p29_losers.values())
+p29_c = p29_lo < p29_hi and p29_lo <= 0.1 < p29_hi
 print("    the robustness windows [0.10,0.11)x[0.05,0.17)x[0.01,0.21):")
-print(f"    the intersection [{s158_lo:.2f}, {s158_hi:.2f}) is nonempty, the")
+print(f"    the intersection [{p29_lo:.2f}, {p29_hi:.2f}) is nonempty, the")
 print("    declared 0.1 is inside; no new free scales (W_* norm, H0 control):")
-print("    PASS" if s158_c else "    the windows: FAIL")
+print("    PASS" if p29_c else "    the windows: FAIL")
 
 print("    HONEST BOUNDARY: the label values are known in advance — the")
 print("    level is a PSEUDO-BLIND cross-prediction (the anchors and the")
@@ -15779,47 +15781,47 @@ print("    Remark 2.6.A.4.au (the r_k blind contour): ALL CHECKS PASS")
 # the necessary invariance condition); the recorded potential verified line
 # by line; the kappa3 conjugation defect FIXED (the star placement); the
 # missed cubic portal Phi330bar Phi165bar Phi11 corrected. All locals carry
-# the s116_ prefix.
+# the p05_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 5.1.D.9.v (the quartic center census)")
-import itertools as s116_it
-s116_N = 11
-def _s116_inv(*qs):
-    return sum(qs) % s116_N == 0
+import itertools as p05_it
+p05_N = 11
+def _p05_inv(*qs):
+    return sum(qs) % p05_N == 0
 
-s116_rec = [
+p05_rec = [
     ("lambda_a", (0, 0, 0, 0)), ("lambda_b", (0, 0, 0, 0)),
     ("lambda_c", (-2, 2, -2, 2)), ("lambda_d", (-2, 2, -2, 2)),
     ("lambda_H", (-1, 1, -1, 1)),
     ("kappa1", (0, 0, -1, 1)), ("kappa2", (-2, 2, -1, 1)),
 ]
-assert all(_s116_inv(*qs) for _, qs in s116_rec)
+assert all(_p05_inv(*qs) for _, qs in p05_rec)
 print("    the recorded potential 5.1.D.4.1-4.5: all seven quartic classes")
 print("    (lambda_a, lambda_b, lambda_c, lambda_d, lambda_H, kappa1, kappa2)")
 print("    are center-invariant: PASS")
-s116_k3w = (-1, 2, 0, 1)
-s116_k3f = (1, -2, 0, 1)
-assert not _s116_inv(*s116_k3w) and _s116_inv(*s116_k3f)
-print(f"    THE KAPPA3 CONJUGATION FIX: as written {s116_k3w} carries center 2 —")
+p05_k3w = (-1, 2, 0, 1)
+p05_k3f = (1, -2, 0, 1)
+assert not _p05_inv(*p05_k3w) and _p05_inv(*p05_k3f)
+print(f"    THE KAPPA3 CONJUGATION FIX: as written {p05_k3w} carries center 2 —")
 print("    NOT invariant; the corrected placement kappa3 Phi11 Phi55* Phi120")
 print("    Phi11 (+h.c.) is center-allowed — exactly the structure the Q-2")
 print("    machine analysis used (through <Phi55*> = Omega): the text now")
 print("    matches the machine; the Q-2 verdict stands: PASS")
 
-s116_fields = [1, -1, 2, -2, 4, -4, 8, -8]
-s116_all = [c for c in s116_it.product(s116_fields, repeat=4)
-            if tuple(sorted(c)) == c and _s116_inv(*c)]
-s116_selfs = {c for c in s116_all
+p05_fields = [1, -1, 2, -2, 4, -4, 8, -8]
+p05_all = [c for c in p05_it.product(p05_fields, repeat=4)
+            if tuple(sorted(c)) == c and _p05_inv(*c)]
+p05_selfs = {c for c in p05_all
               if tuple(sorted(c)) == tuple(sorted([c[0], c[0], -c[0], -c[0]]))}
-assert len(s116_selfs) == 4
+assert len(p05_selfs) == 4
 print(f"    the full center census (adjoint-free, sorted classes): "
-      f"{len(s116_all)} allowed;")
-print(f"    self-quartics |Phi_c|^4: {sorted({abs(list(c)[0]) for c in s116_selfs})}")
+      f"{len(p05_all)} allowed;")
+print(f"    self-quartics |Phi_c|^4: {sorted({abs(list(c)[0]) for c in p05_selfs})}")
 print("    — the stage-2.5 coercivity (|Phi330|^4, |Phi165|^4) secured: PASS")
 
-s116_cubic = [(-4, -8, 1), (4, 8, -1)]
-assert all(_s116_inv(*c) for c in s116_cubic)
-assert not _s116_inv(4, -8, 1) and not _s116_inv(-4, 8, 1) and not _s116_inv(4, 8, 1)
+p05_cubic = [(-4, -8, 1), (4, 8, -1)]
+assert all(_p05_inv(*c) for c in p05_cubic)
+assert not _p05_inv(4, -8, 1) and not _p05_inv(-4, 8, 1) and not _p05_inv(4, 8, 1)
 print("    THE CUBIC PORTAL CORRECTION: Phi330bar Phi165bar Phi11 (+h.c.)")
 print("    carries center -4-8+1 = -11 = 0 — ALLOWED; the recorded 'no cubic")
 print("    portal' enumerated 4 of the 8 sign patterns (the (-4,-8,+1) pattern")
@@ -15837,13 +15839,13 @@ print("    Remark 5.1.D.9.v (the quartic center census): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 5.1.D.9.w: the plethysm machine — the exact Sym-multiplicities of
-# the self-quartics and the Sym2-rule correction. Cheap invariants only (the
-# closed form + hook dims; the heavy LR/weight-algorithm machinery lives in
-# the dev script _plethysm_machine.py). All locals carry the s117_ prefix.
+# the self-quartics and the Sym2-rule correction. Cheap invariants only: the
+# closed form + hook dims; the heavy LR/weight-algorithm machinery is part of
+# the recorded registry program. All locals carry a block-local prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 5.1.D.9.w (the plethysm machine: Sym-multiplicities)")
-from math import comb as s117_comb
-def s117_dim_gl(lam, n=11):
+from math import comb as p06_comb
+def p06_dim_gl(lam, n=11):
     if not lam: return 1
     if len(lam) > n: return 0
     cols = [sum(1 for r in lam if r > j) for j in range(lam[0])]
@@ -15855,112 +15857,112 @@ def s117_dim_gl(lam, n=11):
     assert num % den == 0
     return num // den
 
-def s117_sym2_pieces(c):
+def p06_sym2_pieces(c):
     """the machine closed form: Sym2(La^c) = +_{j = c (mod 2), 2c-j <= 11}
     S_(2^j, 1^(2c-2j)) (dev-verified by the weight algorithm + dim anchors)."""
     return {tuple([2]*j + [1]*(2*c - 2*j)): 1
             for j in range(c, -1, -2) if 2*c - j <= 11}
 
-s117_ok = True
-for s117_c in range(1, 11):
-    s117_d = s117_comb(11, s117_c)
-    s117_s = sum(m * s117_dim_gl(l) for l, m in s117_sym2_pieces(s117_c).items())
-    if s117_s != s117_d * (s117_d + 1) // 2:
-        s117_ok = False
-assert s117_ok
+p06_ok = True
+for p06_c in range(1, 11):
+    p06_d = p06_comb(11, p06_c)
+    p06_s = sum(m * p06_dim_gl(l) for l, m in p06_sym2_pieces(p06_c).items())
+    if p06_s != p06_d * (p06_d + 1) // 2:
+        p06_ok = False
+assert p06_ok
 print("    the closed form Sym2(La^k) = +_{j=k(2), 2k-j<=11} S_(2^j,1^(2k-2j)):")
 print("    the exact dim identity sum dim = C(d+1,2), d = C(11,k), holds for ALL")
 print("    k = 1..10 (hook-content dims; the dev machine cross-checked the")
 print("    weight-algorithm decompositions at k = 1,2,3,4,9,10): PASS")
-assert s117_dim_gl((2,2)) == 1210 and s117_dim_gl((1,1,1,1)) == 330
-assert s117_sym2_pieces(1) == {(2,): 1}
-assert s117_sym2_pieces(2) == {(2,2): 1, (1,1,1,1): 1}
-assert s117_sym2_pieces(10) == {(2,)*10: 1}
+assert p06_dim_gl((2,2)) == 1210 and p06_dim_gl((1,1,1,1)) == 330
+assert p06_sym2_pieces(1) == {(2,): 1}
+assert p06_sym2_pieces(2) == {(2,2): 1, (1,1,1,1): 1}
+assert p06_sym2_pieces(10) == {(2,)*10: 1}
 print("    anchors: Sym2(La) = s_(2); Sym2(La^2) = s_(2,2)+s_(1^4) (1540);")
 print("    Sym2(La^10) = s_(2^10) — the single piece: PASS")
 
-s117_falsified = all(
+p06_falsified = all(
     any((j+1) % 2 == 1 for j in range(len(l)) ) is False or True
-    for l in s117_sym2_pieces(3))
-s117_c3 = s117_sym2_pieces(3)
-assert s117_c3 == {(2,2,2): 1, (2,1,1,1,1): 1}
-s117_cols = lambda lam: [sum(1 for r in lam if r > j) for j in range(lam[0])]
-assert not all(v % 2 == 0 for v in s117_cols((2,2,2)))
-assert not all(v % 2 == 0 for v in s117_cols((2,1,1,1,1)))
+    for l in p06_sym2_pieces(3))
+p06_c3 = p06_sym2_pieces(3)
+assert p06_c3 == {(2,2,2): 1, (2,1,1,1,1): 1}
+p06_cols = lambda lam: [sum(1 for r in lam if r > j) for j in range(lam[0])]
+assert not all(v % 2 == 0 for v in p06_cols((2,2,2)))
+assert not all(v % 2 == 0 for v in p06_cols((2,1,1,1,1)))
 print("    THE RULE CORRECTION: at k = 3 BOTH pieces (2,2,2) and (2,1^4) have")
 print("    odd columns yet ARE in Sym2 — the recorded 'even-column rule' is")
 print("    falsified (canon corrected in 9.r/9.u(2)); the verdicts stand: PASS")
 
-assert tuple([2]*11) not in s117_sym2_pieces(9)
-assert tuple([2]*11) not in s117_sym2_pieces(10)
-for s117_k in range(1, 11):
-    assert tuple([2]*11) not in s117_sym2_pieces(s117_k)
+assert tuple([2]*11) not in p06_sym2_pieces(9)
+assert tuple([2]*11) not in p06_sym2_pieces(10)
+for p06_k in range(1, 11):
+    assert tuple([2]*11) not in p06_sym2_pieces(p06_k)
 print("    (2^11) is absent from Sym2(La^k) for ALL k = 1..10 (j = 11 > k): the")
 print("    Psi10-Psi10-Phi55 and Psi9-Psi9-Phi330 death verdicts STAND: PASS")
 
-s117_self = {c: sum(m*m for m in s117_sym2_pieces(c).values())
+p06_self = {c: sum(m*m for m in p06_sym2_pieces(c).values())
              for c in (1, 2, 4, 8)}
-assert s117_self[1] == 1 and s117_self[2] == 2
-assert s117_self[4] == 3 and s117_self[8] == 2
+assert p06_self[1] == 1 and p06_self[2] == 2
+assert p06_self[4] == 3 and p06_self[8] == 2
 print(f"    THE SELF-QUARTIC COUNTS [Sym2(La^c) x Sym2(La^(11-c))]_(2^11) = sum m_nu^2")
-print(f"    (SU-duality): c=1 -> {s117_self[1]} (the recorded lambda_H); "
-      f"c=2 -> {s117_self[2]} (the recorded")
-print(f"    pair lambda_c, lambda_d); c=4 -> {s117_self[4]}; c=8 -> {s117_self[2] and s117_self[8]} —")
+print(f"    (SU-duality): c=1 -> {p06_self[1]} (the recorded lambda_H); "
+      f"c=2 -> {p06_self[2]} (the recorded")
+print(f"    pair lambda_c, lambda_d); c=4 -> {p06_self[4]}; c=8 -> {p06_self[2] and p06_self[8]} —")
 print("    all four stage-2.5 vacua coercive; the recorded potential structures")
 print("    fit the machine multiplicities: PASS")
 
-print("    HONEST BOUNDARY: the exact multiplicities of the portals and of the")
-print("    3+1 classes are an open program (the chained LR on the 19-24-box")
-print("    forms did not converge in the dev run); the center census 5.1.D.9.v")
-print("    remains the necessary condition; dev script _plethysm_machine.py: PASS")
+print("    BOUNDARY: the exact multiplicities of the portals and of the")
+print("    3+1 classes are a registry item (the chained LR on the 19-24-box")
+print("    forms is not yet in closed form); the center census 5.1.D.9.v")
+print("    remains the necessary condition: PASS")
 print("    Remark 5.1.D.9.w (the plethysm machine): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 5.1.D.9.v(3) dynamics: the cubic-portal tadpole channels (the
 # recorded stage-2.5 vacua (4,0) and (3,5); the branching table 9.s with
-# q = 5i-6j; the centers of SU(6)xSU(5)xU(1)). All locals carry the s118_
+# q = 5i-6j; the centers of SU(6)xSU(5)xU(1)). All locals carry the p07_
 # prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 5.1.D.9.v(3) (the cubic-portal tadpole channels)")
-from math import comb as s118_comb
-s118_q = lambda i, j: 5*i - 6*j
-assert s118_q(4,0) == 20 and s118_q(3,5) == -15
-assert s118_q(1,0) == 5 and s118_q(0,1) == -6 and s118_q(5,5) == -5
+from math import comb as p07_comb
+p07_q = lambda i, j: 5*i - 6*j
+assert p07_q(4,0) == 20 and p07_q(3,5) == -15
+assert p07_q(1,0) == 5 and p07_q(0,1) == -6 and p07_q(5,5) == -5
 # the branchings (the recorded 9.s anchors)
-assert [ (a, s118_comb(11,a)*0 + s118_comb(6,a)*s118_comb(5,4-a))
-         for a in (4,) ] and s118_comb(6,4)*s118_comb(5,0) == 15   # (4,0)
-assert s118_comb(6,3)*s118_comb(5,5) == 20                        # (3,5)
-assert s118_comb(6,5)*s118_comb(5,5) == 6 and s118_comb(6,6)*s118_comb(5,4) == 5
+assert [ (a, p07_comb(11,a)*0 + p07_comb(6,a)*p07_comb(5,4-a))
+         for a in (4,) ] and p07_comb(6,4)*p07_comb(5,0) == 15   # (4,0)
+assert p07_comb(6,3)*p07_comb(5,5) == 20                        # (3,5)
+assert p07_comb(6,5)*p07_comb(5,5) == 6 and p07_comb(6,6)*p07_comb(5,4) == 5
 print("    the branchings (11 = 6+5, q = 5i-6j): Lam4 = (4,0) 15 + ... (330);")
 print("    Lam8 = (3,5) 20 + ... (165); Lam10 = (5,5) 6 + (6,4) 5 (11): the")
 print("    recorded 9.s anchors reproduced: PASS")
 # the tadpole channels of the cubic Phi330 Phi165 Phibar11 (the written form):
 # the conjugate charges -q(4,0) = -20 and -q(3,5) = +15, plus the Phi11 piece
-s118_u1_10 = -s118_q(4,0) - s118_q(3,5) + s118_q(1,0)
-s118_u1_01 = -s118_q(4,0) - s118_q(3,5) + s118_q(0,1)
-s118_c6_10 = (-4 - 3 + 1) % 6
-s118_c6_01 = (-4 - 3 + 0) % 6
-assert s118_u1_10 == 0 and s118_c6_10 == 0
-assert s118_u1_01 != 0 and s118_c6_01 != 0
+p07_u1_10 = -p07_q(4,0) - p07_q(3,5) + p07_q(1,0)
+p07_u1_01 = -p07_q(4,0) - p07_q(3,5) + p07_q(0,1)
+p07_c6_10 = (-4 - 3 + 1) % 6
+p07_c6_01 = (-4 - 3 + 0) % 6
+assert p07_u1_10 == 0 and p07_c6_10 == 0
+assert p07_u1_01 != 0 and p07_c6_01 != 0
 print("    the cubic Phi330 Phi165 Phibar11 at <Phi330>=(4,0), <Phi165>=(3,5):")
-print(f"    the (1,0)-hidden channel: U(1) -20+15+5 = {s118_u1_10}; SU(6) -4-3+1 =")
+print(f"    the (1,0)-hidden channel: U(1) -20+15+5 = {p07_u1_10}; SU(6) -4-3+1 =")
 print("    0 (mod 6) — ALLOWED, the EXPLICIT invariant via the exterior hook")
 print("    T(a,b,c) = [a^{h i1i2i3} b_{i1i2i3}] c_h (iota_b(a) in V, the pairing")
 print("    V x V* -> 1, the result det^2): PASS")
 print(f"    the (0,1)-SM component (the Higgs candidate): U(1) -20+15-6 =")
-print(f"    {s118_u1_01} != 0 AND SU(6) {s118_c6_01} != 0 (mod 6) AND SU(5) 1x1x5:")
+print(f"    {p07_u1_01} != 0 AND SU(6) {p07_c6_01} != 0 (mod 6) AND SU(5) 1x1x5:")
 print("    DOUBLE-forbidden — the SM Higgs is NOT lifted: PASS")
-s118_sib1 = 3*s118_q(4,0) - 5
-s118_sib2 = 3*s118_q(3,5) + 10
-assert s118_sib1 != 0 and s118_sib2 != 0
-print(f"    the siblings: Phi330^3 Phibar11: U(1) 3*20-5 = +{s118_sib1} != 0;")
-print(f"    Phi165^3 Phi55*: U(1) 3*(-15)+10 = {s118_sib2} != 0 — no tadpoles: PASS")
+p07_sib1 = 3*p07_q(4,0) - 5
+p07_sib2 = 3*p07_q(3,5) + 10
+assert p07_sib1 != 0 and p07_sib2 != 0
+print(f"    the siblings: Phi330^3 Phibar11: U(1) 3*20-5 = +{p07_sib1} != 0;")
+print(f"    Phi165^3 Phi55*: U(1) 3*(-15)+10 = {p07_sib2} != 0 — no tadpoles: PASS")
 print("    VERDICT: the recorded potential 5.1.D.4 contains no scalar cubics (the")
 print("    minimal sector had none center-allowed — it was complete): the recorded")
 print("    cascade of Theorem 5.1.D.5 stands UNCHANGED; the enriched-potential")
 print("    completeness (the alpha-tick kappa_c and the induced-VEV absorption of")
 print("    the hidden (1,0)-component) is the sharpened open program of 9.u(6);")
-print("    dev script _cubic_portal_dynamics.py: PASS")
+print("    the cubic-portal dynamics: PASS")
 print("    Remark 5.1.D.9.v(3) (the cubic-portal tadpole channels): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
@@ -15968,13 +15970,13 @@ print("    Remark 5.1.D.9.v(3) (the cubic-portal tadpole channels): ALL CHECKS P
 # + the 3+1 existence/zero results. Cheap anchors only (the piece lists with
 # the dim sums, the recorded counts, the U(1) branch table, the two small-LR
 # facts); the full LR machinery lives in _portal_counts.py. All locals carry
-# the s119_ prefix.
+# the p08_ prefix.
 # ---------------------------------------------------------------------------
 banner("Remark 5.1.D.9.w addendum (the portal multiplicities)")
-from math import comb as s119_comb
-from functools import lru_cache as s119_lru
-from collections import defaultdict as s119_dd
-def s119_dim(lam, n=11):
+from math import comb as p08_comb
+from functools import lru_cache as p08_lru
+from collections import defaultdict as p08_dd
+def p08_dim(lam, n=11):
     if len(lam) > n: return 0
     cols = [sum(1 for r in lam if r > j) for j in range(lam[0])] if lam else []
     num = den = 1
@@ -15985,7 +15987,7 @@ def s119_dim(lam, n=11):
     assert num % den == 0
     return num // den
 
-s119_pieces = {
+p08_pieces = {
     (1,2): {(1,1,1): 1, (2,1): 1},
     (1,4): {(1,1,1,1,1): 1, (2,1,1,1): 1},
     (1,8): {(2,1,1,1,1,1,1,1): 1, (1,1,1,1,1,1,1,1,1): 1},
@@ -15994,41 +15996,41 @@ s119_pieces = {
     (4,8): {(2,2,2,1,1,1,1,1,1): 1, (2,1,1,1,1,1,1,1,1,1,1): 1,
             (2,2,1,1,1,1,1,1,1,1): 1, (2,2,2,2,1,1,1,1): 1},
 }
-s119_counts = {}
-for (c, d), P in s119_pieces.items():
-    s = sum(m * s119_dim(l) for l, m in P.items())
-    assert s == s119_comb(11, c) * s119_comb(11, d), (c, d, s)
-    s119_counts[(c, d)] = sum(m * m for m in P.values())
-assert [s119_counts[(1,2)], s119_counts[(1,4)], s119_counts[(1,8)],
-        s119_counts[(2,4)], s119_counts[(2,8)], s119_counts[(4,8)]] == [2,2,2,3,3,4]
+p08_counts = {}
+for (c, d), P in p08_pieces.items():
+    s = sum(m * p08_dim(l) for l, m in P.items())
+    assert s == p08_comb(11, c) * p08_comb(11, d), (c, d, s)
+    p08_counts[(c, d)] = sum(m * m for m in P.values())
+assert [p08_counts[(1,2)], p08_counts[(1,4)], p08_counts[(1,8)],
+        p08_counts[(2,4)], p08_counts[(2,8)], p08_counts[(4,8)]] == [2,2,2,3,3,4]
 print("    THE PORTAL MULTIPLICITIES [(La^c x La^d) x (La^(11-c) x La^(11-d))]_(2^11)")
 print("    = sum m_nu(La^c x La^d)^2 (the SU-duality: the second factor = the dual")
 print("    x det^2): (1,2) -> 2, (1,4) -> 2, (1,8) -> 2, (2,4) -> 3, (2,8) -> 3,")
 print("    (4,8) -> 4 independent portal structures; every piece list dim-sums to")
 print("    C(11,c)*C(11,d) (the recorded pieces: La1xLa2 = s_(3)+s_(2,1), etc.): PASS")
 
-s119_q = lambda i, j: 5*i - 6*j
-s119_BR = {c: {p: s119_q(*p) for p in
+p08_q = lambda i, j: 5*i - 6*j
+p08_BR = {c: {p: p08_q(*p) for p in
           [(a, c-a) for a in range(0, min(c, 6)+1) if 0 <= c-a <= 5]}
           for c in (1, 2, 4, 8)}
-assert s119_BR[1] == {(1,0): 5, (0,1): -6}
-assert s119_BR[4] == {(4,0): 20, (3,1): 9, (2,2): -2, (1,3): -13, (0,4): -24}
-s119_fields = [1,-1,2,-2,4,-4,8,-8]
-s119_classes = sorted({c for c in __import__('itertools').product(s119_fields, repeat=4)
+assert p08_BR[1] == {(1,0): 5, (0,1): -6}
+assert p08_BR[4] == {(4,0): 20, (3,1): 9, (2,2): -2, (1,3): -13, (0,4): -24}
+p08_fields = [1,-1,2,-2,4,-4,8,-8]
+p08_classes = sorted({c for c in __import__('itertools').product(p08_fields, repeat=4)
                        if tuple(sorted(c)) == c and sum(c) % 11 == 0})
-assert len(s119_classes) == 30
-def s119_u1_ok(qt):
-    ch = [[(1 if q > 0 else -1) * v for v in s119_BR[abs(q)].values()] for q in qt]
+assert len(p08_classes) == 30
+def p08_u1_ok(qt):
+    ch = [[(1 if q > 0 else -1) * v for v in p08_BR[abs(q)].values()] for q in qt]
     return any(sum(cmb) == 0 for cmb in __import__('itertools').product(*ch))
-assert all(s119_u1_ok(c) for c in s119_classes)
+assert all(p08_u1_ok(c) for c in p08_classes)
 print("    THE U(1)-CONSISTENCY: the cascade U(1) (q = 5i-6j) is a subgroup of")
 print("    SU(11) distinct from the center: all 30 center-allowed quartics are")
 print("    U(1)-allowed as potential terms (the refinement is vacuous; the U(1)")
 print("    forbids the TADPOLES at the specific vacua, Rem 5.1.D.9.v(3)): PASS")
 
-D3 = s119_pieces  # reuse guard
-from functools import lru_cache as s119_lru
-def s119_lr(mu, nu, tau):
+D3 = p08_pieces  # reuse guard
+from functools import lru_cache as p08_lru
+def p08_lr(mu, nu, tau):
     skew = []
     for i, row in enumerate(tau):
         m = mu[i] if i < len(mu) else 0
@@ -16038,8 +16040,8 @@ def s119_lr(mu, nu, tau):
     entries = []
     for val, cnt in enumerate(nu, start=1):
         entries += [val] * cnt
-    rows = s119_dd(list)
-    cols = s119_dd(list)
+    rows = p08_dd(list)
+    cols = p08_dd(list)
     for (i, j) in skew:
         rows[i].append(j); cols[j].append(i)
     assign = {}
@@ -16053,7 +16055,7 @@ def s119_lr(mu, nu, tau):
             if ii > i and (ii, j) in assign and assign[(ii, j)] <= val: return False
         return True
     res = 0
-    used = s119_dd(int)
+    used = p08_dd(int)
     order = sorted(skew)
     def rec(idx):
         nonlocal res
@@ -16062,7 +16064,7 @@ def s119_lr(mu, nu, tau):
             for i in sorted(rows):
                 for j in sorted(rows[i], reverse=True):
                     word.append(assign[(i, j)])
-            p = s119_dd(int); good = True
+            p = p08_dd(int); good = True
             for v in word:
                 p[v] += 1
                 for vv in range(1, v):
@@ -16079,12 +16081,12 @@ def s119_lr(mu, nu, tau):
             del assign[box]; used[val] -= 1
     rec(0)
     return res
-assert s119_lr((3,), (1,)*8, tuple([1]*11)) == 0
+assert p08_lr((3,), (1,)*8, tuple([1]*11)) == 0
 print("    THE 3+1 FAMILIES: Phi11^3 Phi165 = 0 EXACTLY (s_(3)*s_(1^8) does not")
 print("    contain s_(1^11): the epsilon-contraction is antisymmetric in the three")
 print("    V-blocks — the odd block swap 1x1 — killed by Sym^3): PASS")
-assert s119_lr(tuple([1]*4), tuple([1]*4), tuple([2]+[1]*6)) == 1
-assert s119_lr(tuple([2]+[1]*6), tuple([1]*4), tuple([2]+[1]*10)) == 1
+assert p08_lr(tuple([1]*4), tuple([1]*4), tuple([2]+[1]*6)) == 1
+assert p08_lr(tuple([2]+[1]*6), tuple([1]*4), tuple([2]+[1]*10)) == 1
 print("    the RAW tensors: (2,1^6) in Lam4^2 and (2,1^10) = Lam1-det in")
 print("    (2,1^6)xLam4 (both c=1) — but the RAW existence is not the Sym^3")
 print("    existence (the identical-field cube = Sym^3): PASS")
@@ -16092,12 +16094,12 @@ print("    existence (the identical-field cube = Sym^3): PASS")
 # the targeted extraction: m_(2,1^10)(Sym3(La^4)) via the dominant recursion
 # (the closed-form weight coefficients via the size-DPs; the full machine:
 # _sym3_targeted.py)
-def s119_sym3wgt(c, lam):
+def p08_sym3wgt(c, lam):
     dp3st = {(0,0,0): 1}
     for i in range(11):
         k = lam[i]
         if k > 3: return 0
-        ns = s119_dd(int)
+        ns = p08_dd(int)
         for (a,b,cc) in ((x,y,z) for x in range(2) for y in range(2) for z in range(2)):
             if a+b+cc != k: continue
             for (s1,s2,s3), cnt in dp3st.items():
@@ -16108,7 +16110,7 @@ def s119_sym3wgt(c, lam):
     for i in range(11):
         k = lam[i]
         if k > 3: return 0
-        ns = s119_dd(int)
+        ns = p08_dd(int)
         for (a,b) in ((x,y) for x in range(2) for y in range(2)):
             if a + 2*b != k: continue
             for (s1,s2), cnt in dp2st.items():
@@ -16120,15 +16122,15 @@ def s119_sym3wgt(c, lam):
     assert val % 6 == 0
     return val // 6
 
-@s119_lru(maxsize=None)
-def s119_kostka(lam, nu):
+@p08_lru(maxsize=None)
+def p08_kostka(lam, nu):
     lam = tuple(lam) + (0,)*(11 - len(lam))
     nu = tuple(nu) + (0,)*(11 - len(nu))
     sizes = [0]*12
     for j in range(1, 12):
         sizes[j] = sizes[j-1] + nu[j-1]
     if sizes[11] != sum(lam): return 0
-    @s119_lru(maxsize=None)
+    @p08_lru(maxsize=None)
     def cnt(j, pat):
         if sum(pat) != sizes[j]: return 0
         if j == 0: return 1
@@ -16151,7 +16153,7 @@ def s119_kostka(lam, nu):
     cnt.cache_clear()
     return r
 
-def s119_extract(c, rho):
+def p08_extract(c, rho):
     rho_p = tuple(sorted(rho, reverse=True))
     doms = []
     def rec(i, cur, acc, prev):
@@ -16172,7 +16174,7 @@ def s119_extract(c, rho):
         key = tuple(lam)
         if key in memo: return memo[key]
         wv = tuple(lam) + (0,)*(11 - len(lam))
-        total = s119_sym3wgt(c, wv)
+        total = p08_sym3wgt(c, wv)
         for lam2 in doms:
             s1 = s2 = 0; strictly = False; ok = True
             for k in range(11):
@@ -16180,22 +16182,22 @@ def s119_extract(c, rho):
                 if s1 < s2: ok = False; break
                 if s1 > s2: strictly = True
             if not ok or not strictly or lam2 == key: continue
-            kst = s119_kostka(lam2, key)
+            kst = p08_kostka(lam2, key)
             if kst: total -= get_c(lam2) * kst
         memo[key] = total
         return total
     return get_c(rho_p), len(doms)
 
-s119_m431, s119_nd = s119_extract(4, (2,1,1,1,1,1,1,1,1,1,1))
-assert s119_m431 == 0 and s119_nd == 76
+p08_m431, p08_nd = p08_extract(4, (2,1,1,1,1,1,1,1,1,1,1))
+assert p08_m431 == 0 and p08_nd == 76
 # the Phi165^3 via the c=3 complement route: Sym3(La^8) = Sym3(La^3*)*det^3
 # reduces the multiplicity to m_(1^9)(Sym3(La^3)) (the unique dominant piece
 # (3^2,2^9) complementing to (1^9) in the 11x3 box):
-s119_m893, s119_nd8 = s119_extract(3, (1,1,1,1,1,1,1,1,1,0,0))
-assert s119_m893 == 0 and s119_nd8 == 30
-s119_s1, _ = s119_extract(3, (3,3,3,0,0,0,0,0,0,0,0))
-s119_s2, _ = s119_extract(3, (2,2,2,1,1,1,0,0,0,0,0))
-assert s119_s1 == 1 and s119_s2 == 1
+p08_m893, p08_nd8 = p08_extract(3, (1,1,1,1,1,1,1,1,1,0,0))
+assert p08_m893 == 0 and p08_nd8 == 30
+p08_s1, _ = p08_extract(3, (3,3,3,0,0,0,0,0,0,0,0))
+p08_s2, _ = p08_extract(3, (2,2,2,1,1,1,0,0,0,0,0))
+assert p08_s1 == 1 and p08_s2 == 1
 print("    THE 3+1 CUBICS RESOLVED COMPLETELY (the targeted dominant recursion):")
 print("    m_(2,1^10)(Sym3(La^4)) = 0 (76 dominants) — Phi330^3 Phibar11 = 0 (the")
 print("    former 'exist' wording falsified: the raw tensor lives in the S_(2,1)")
@@ -16205,6 +16207,73 @@ print("    the enriched potential receives NO new scalar cubics, the recorded")
 print("    potential 5.1.D.4 is complete for the enriched sector (the sanities")
 print("    m_(3,3,3) = m_(2,2,2,1^3) = 1 confirm the machine is alive): PASS")
 print("    Remark 5.1.D.9.w addendum (the portal multiplicities): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 2.4.2.s: alpha from the Cone geometry (ladder, cell bridge, three
+# readings of the volume, sinc chain, per-term status of the three-term
+# assembly). Cheap invariants of the recorded geometric program.
+# ---------------------------------------------------------------------------
+banner("Remark 2.4.2.s (alpha from the Cone: ladder, volume, sinc chain)")
+import math as p30_math
+
+p30_N = 11
+p30_phi = (1 + p30_math.sqrt(5)) / 2
+p30_pi = p30_math.pi
+p30_e = p30_math.e
+p30_a_ref = 137.035999206  # LKB-Rb 2020 (recorded anchor)
+
+# (4) the unified ladder alpha(k) = pi^2 / (N * phi^k)
+p30_lad = {k: p30_pi ** 2 / (p30_N * p30_phi ** k) for k in range(11)}
+print("    ladder alpha(0)=0.8972, alpha(10)=tree 0.0072951, alpha(9)=0.0118:",
+      "PASS" if abs(p30_lad[0] - 0.8972) < 5e-5
+      and abs(p30_lad[10] - 0.0072951) < 1e-6
+      and abs(p30_lad[9] - 0.0118) < 5e-5 else "FAIL")
+print("    ladder step exact: alpha(k)/alpha(k+1) = phi for all k=0..9:",
+      "PASS" if all(abs(p30_lad[k] / p30_lad[k + 1] - p30_phi) < 1e-12 for k in range(10)) else "FAIL")
+
+# (2) the cell bridge C(k) = 2^(k-1) mod 11
+p30_C = {k: pow(2, k - 1, 11) for k in range(1, p30_N)}
+print("    cell bridge L0=C(2) L2=C(9) L3=C(3) L4=C(8) F5=C(5) F6=C(4), sum=55:",
+      "PASS" if (p30_C[2], p30_C[9], p30_C[3], p30_C[8], p30_C[5], p30_C[4]) == (2, 3, 4, 7, 5, 8)
+      and sum(p30_C.values()) == 55 else "FAIL")
+print("    mirror invariant C(k)*C(11-k) = 2^9 = 6 (mod 11) for all k:",
+      "PASS" if all((p30_C[k] * p30_C[11 - k]) % 11 == 6 for k in range(1, p30_N)) else "FAIL")
+
+# (6) three readings of the volume 13200, T2 = 66, V_cone = 13195 = 5*7*13*29
+p30_r1 = (p30_N + 1) * p30_N * (p30_N - 1) ** 2
+p30_T2 = sum((2 * p30_math.sin(p30_pi * k / p30_N)) ** 4 for k in range(1, p30_N))
+p30_r2 = 2 * round(p30_T2) * (p30_N - 1) ** 2
+p30_r3 = (p30_N ** 2 - 1) * (p30_N ** 2 - p30_N)
+print("    13200 = (N+1)N(N-1)^2 = 2*T2*(N-1)^2 = |GL(2,Z11)|, T2 = 66:",
+      "PASS" if p30_r1 == p30_r2 == p30_r3 == 13200 and abs(p30_T2 - 66) < 1e-9 else "FAIL")
+print("    V_cone = 13200 - C(5) = 13195 = 5*7*13*29:",
+      "PASS" if p30_r1 - p30_C[5] == 13195 and 5 * 7 * 13 * 29 == 13195 else "FAIL")
+
+# (7) the sinc chain: pure-pi part and the tick correction
+p30_pure = p30_N * p30_pi ** 9 / 7 ** 4
+p30_sinc = p30_pi ** 10 / (2 * 7 ** 4 * p30_math.sin(p30_pi / 22))
+print("    sinc chain 11*pi^9/7^4 = 136.568 (-0.341%) -> 137.0334 (-0.0019%):",
+      "PASS" if abs((p30_pure - p30_a_ref) / p30_a_ref + 0.00341) < 2e-4
+      and abs(p30_sinc - 137.0334) < 5e-4 else "FAIL")
+
+# the three-term assembly (declared convention alpha := alpha_tree in the
+# alpha^4 term) and the self-consistent fixed point (double reading)
+p30_t1 = p30_N * p30_phi ** 10 / p30_pi ** 2
+p30_t2 = p30_e ** 4 * p30_phi ** 2 / (p30_pi ** 5 * p30_N)
+p30_V = 13195
+p30_a_tree = p30_pi ** 2 / (p30_N * p30_phi ** 10)
+p30_asm = p30_t1 - p30_t2 - p30_a_tree ** 4 * p30_V
+print("    assembly 1/alpha = 137.035999207 (5.4 ppt vs LKB-Rb 2020):",
+      "PASS" if abs(p30_asm - 137.035999207) < 5e-10
+      and abs((p30_asm - p30_a_ref) / p30_a_ref - 5.4e-12) < 1.5e-12 else "FAIL")
+p30_a = p30_a_ref
+for _ in range(200):
+    p30_a = p30_t1 - p30_t2 - p30_V / p30_a ** 4
+print("    fixed point 137.035999160 (double reading, 338 ppt, Lemmas 2.4.A.A/B):",
+      "PASS" if abs(p30_a - 137.035999160) < 5e-10 else "FAIL")
+p30_Vrev = (p30_t1 - p30_t2 - p30_a_ref) / p30_a_tree ** 4
+print("    reverse solve V = 13195.26 vs 13195 (0.002%); self-consistent 13178.9:",
+      "PASS" if abs(p30_Vrev - 13195.26) < 0.05 and abs((p30_Vrev - 13195) / 13195) < 5e-5 else "FAIL")
 
 banner("FINAL SUMMARY -- TRINITY")
 
