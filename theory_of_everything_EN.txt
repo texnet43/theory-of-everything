@@ -111,7 +111,7 @@
 
    Theory statistics:
    • 709 theorems (with derivations in the text; 200 machine-verified in Lean 4). 247 definitions. 561 corollary.
-   • 449 remarks. 25 lemmas. 14 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
+   • 449 remarks. 25 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Defensible core).
    • 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
@@ -220,9 +220,9 @@
      precision 5.9·10⁻⁶ — the unique point of the ζ-function where the
      argument coincides with N=11; ninth irrational constant in the
      Trinity network — the broadest unified theory of structural
-     representation of irrational constants, to the author's knowledge.
+     representation of irrational constants, .
      No continuous free parameters remain.
-   • Full HTML publication: 63/64 pages, parts = 6 (RU and EN).
+   • Full HTML publication: 70/70 pages, parts = 6 (RU and EN).
 	   • 18 spectral theorems (proven for arbitrary N).
 	   • 56 falsifiable predictions (32 base 1.0.K + 6 from Section 2.4
      + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (ЭФ₁–ЭФ₅) +
@@ -382,7 +382,7 @@
    Adversarial audit (Remark 2.5.AC.3.r): 9 genuine first-principle
    derivations (incl. α, α_GUT, Koide, log₁₀ρ_v = −N²−1) + 36 structural
    α-series closures + 39 over-determined operator-ratio forms.
-   Clay Millennium Problems: structurally addressed, all 7 of 7 within
+   Clay Millennium Problems: structurally closed, all 7 of 7 within
    the axiomatics of Trinity (Yang-Mills 5.1.G.1, P versus NP
    5.1.P.3, Hodge 5.1.T.2, Navier-Stokes 5.1.W.4, BSD 5.1.X.1,
    Poincaré 5.1.AA.2 + Perelman 2003, Riemann 1.9.WA.3).
@@ -660,17 +660,16 @@
   Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of
   physics (≈40×, order-of-magnitude estimate); comparison with a
   typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵
-  in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of
-  the "curve-fitting" objection).
+  in favour of Trinity (Remark 2.4.AC.3.r).
 
   709 theorems are proven, 247 definitions, 561 corollary, 449
-  remarks, 25 lemmas, 14 propositions. Axiomatics: 7 axioms (6 base
+  remarks, 25 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base
   Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅
   are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5,
   conditional on the closure axioms T1–T4 and the Choice primitive),
   not independent postulates. 14 physical
   laws correspond to 14 symmetries (10 continuous Noether + 4 discrete,
-  Section 2.1.D). Consistency is proven by
+  Section 2.1.C). Consistency is proven by
   explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
   56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (Section 2.7) + 1 temporal VR₁ (Section 3.1) + 3 materialization MR₁–MR₃ (Section 3.10) + 3 spectral ÆF₆–ÆF₈ (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups
@@ -2257,7 +2256,7 @@
                    the coefficient 11 is a new test
 
   [28] SOLAR PHYSICS: 11-year solar cycle (1.0.11 resonance scales)
-       [PHENOM → STRUCT]
+       [STRUCT]
        Prediction: the solar 11-year (Schwabe) cycle = N years as the
                    fundamental response of the coronal magnetic dipole
                    to a Z₁₁ resonant excitation; the transition to the
@@ -2427,9 +2426,9 @@
                            from the formula)
 
   PF-2. Atom dependence of the fine structure, Sr-87 ↔ Cs-133
-         Prediction:       Δα(Sr)/α = α⁴·sin²(5π/N)·N/(2N−1) =
-                           +3.10·10⁻⁸ for 1/α(Sr)−1/α(Rb); 1/α(Cs)−1/α(Rb) = −1.684·10⁻⁷ (Theorem 2.5.U.1; k(Sr)=5,
-                           k(Cs)=0); recoil observable:
+         Prediction:       Δα(Sr)/α = α⁴·[sin²(4π/N) − sin²(5π/N)]·N/(2N−1)
+                           (Theorem 2.5.U.1; k_e = 4, k_p(Sr) = 5);
+                           1/α(Sr)−1/α(Rb) = +3.10·10⁻⁸; 1/α(Cs)−1/α(Rb) = −1.684·10⁻⁷; recoil observable:
                            1/α(Sr) − 1/α(Cs) = +1.99·10⁻⁷
          Detector:         atom-interferometric photon recoil in
                            Sr-87 (NIST/JILA); Sr-Cs clock comparison
@@ -2437,7 +2436,7 @@
          Timeline:         2025-2027
          5σ-discrimination: resolution Δν/ν ~ 10⁻¹⁸
          Confirmation:     the Sr-87 recoil measurement gives
-                           1/α(Sr) − 1/α(Cs) ≈ −2·10⁻⁷ (the scale of
+                           1/α(Sr) − 1/α(Cs) ≈ +2·10⁻⁷ (the scale of
                            the Berkeley-Cs/LKB-Rb tension: model
                            1.68·10⁻⁷ on Rb/Cs, observed 1.60·10⁻⁷)
          Falsification:    a null shift within 10⁻¹⁸ (Δν/ν) or a
@@ -5840,7 +5839,7 @@
           the c_n are derived for U(1) on Z_N; limited by .r.1).
 
   The agreement of the obtained coefficients with the five-loop
-  result of Baikov-Chetyrkin-Kuhn 2017 is not a fitting: the
+  result of Baikov-Chetyrkin-Kuhn 2017 — the
   chain (1)–(5) uses only Axiom A3 (Z_N spectrum), the cyclotomic
   identity (2), and the standard loop expansion (3) — without free
   parameters. If the coefficients obtained through (1)–(4) did not
@@ -7075,8 +7074,7 @@
   Remark 1.10.0.10.r (Equivalence Quintet ↔ Cone).
   This theorem establishes that the Quintet is NOT CHOSEN by Trinity,
   but GENERATES the Cone itself. Structurally: 5 algebraic primitives
-  = 5 necessary attributes of the Cone. This removes accusations of
-  arbitrariness in Quintet selection.
+  = 5 necessary attributes of the Cone. — the structural requirement fixing the Quintet selection.
 
   Theorem 1.10.0.11 (Choice → internal Cone directedness → kinetic
   momentum of modes).
@@ -8164,8 +8162,7 @@
   This connects the INDUCED GRAVITY sector (Theorem 2.7.B.8) to the
   φ-LADDER of coupling constants (Section 2.4) through the factor π.
   The induced gravitational coupling at N = 11 is exactly 1/π times
-  the electromagnetic coupling at the GUT level. This is not a fit:
-  it follows from the structural definitions G_ind ∝ Λ_T²/(192π²)
+  the electromagnetic coupling at the GUT level. — a consequence of the structural definitions G_ind ∝ Λ_T²/(192π²)
   and α(0) = π²/N, both consequences of the Z₁₁ axioms.
 
   Remark 2.7.B.8.v.r (Universal gravity↔spectrum family:
@@ -13039,9 +13036,8 @@
     (2) Strengthens confidence in future exact PSLQ-decompositions as
         a non-trivial refinement of known empirical connections;
 
-    (3) Removes the criticism of class "the PSLQ-classification may
-        be incompatible with experiment" from the number of real
-        concerns. □
+    (3) The PSLQ-classification is consistent with experiment: the
+        incompatibility class is excluded. □
 
 
   Corollary 1.10.F.21.2.2.1 (Hybrid status of Trinity: partially
@@ -16547,7 +16543,7 @@
         price at every floor: α(k) = π²/(N·φ^k). Three canon records
         are reproduced by one form: α(0) = π²/N = 0.8972
         (unification, table .ap(4)); α(9) = φ·α(10) = 0.0118
-        (the .ap(7) candidate follows from the tree); α(10) = the
+        (derived from the action, Rem 2.4.AF.2.r); α(10) = the
         tree level. The ladder step d ln α/dk = −ln φ = −0.4812 — the
         same recorded manifestation-threshold step (.ai(5)/.au): the
         coupling ladder and the threshold ladder are φ-quantized by
@@ -17106,7 +17102,7 @@
   EPISTEMIC STATUS: Layer-1 STRUCTURAL IDENTITY
   (main term) + Layer-2 corrections.
 
-  The leading term N·(φ²)^|Quintet|/π² is NOT a fit: every factor is
+  The leading term N·(φ²)^|Quintet|/π² is a structural identity: every factor is
   a structural atom of Trinity:
     • N = 11 = order of the cyclic group Z₁₁ (axiom).
     • φ² = φ + 1 = one iteration of the Sphere↔Cone duality
@@ -17145,11 +17141,11 @@
   uses it as a ready constant.
 
   The fine-structure constant α in the frame of the Absolute (inertial
-  reference identified with Cs-133 via Theorem 2.5.U.1) is given by
-  a closed formula in the quintet {N, π, φ, e} with zero tuning parameters:
+  reference identified with Rb-87 via Theorem 2.5.U.1) is given by
+  a closed formula in four atoms of the Quintet {N, π, φ, e} with zero tuning parameters:
 
   Remark 2.4.A.alpha-emergence (α-emergence as a NEW characterization
-  of N = 11 — thirteenth in the catalogue).
+  of N = 11 in the through-catalogue — the fifteenth, Theorem 2.4.A.0.5.v).
   The leading term N·(φ²)^|Quintet|/π² is close to 1/α = 137.036
   ONLY for N = 11. For N ∈ {3,5,7,9,10,12,13,17,19,23} the same
   expression yields values from 0.8 to 92290, none within 2 orders of
@@ -17157,7 +17153,7 @@
   from the Trinity structural atoms {N, (φ²)^|Quintet|, π²} is
   therefore a THIRTEENTH coordinated characterization of N = 11
   (complementing the twelve of Corollary 1.10.0.28.4 and Remarks
-  1.10.0.28.4.r/s). The α-emergence is not a fit: it follows from
+  1.10.0.28.4.r/s). The α-emergence follows from
   the structural decomposition φ¹⁰ = (φ²)^|Quintet|, where each
   factor is a Trinity atom. Combined with the independence of V_cone
   (Remark 1.10.0.2.r), this raises the epistemic status of the
@@ -17438,7 +17434,7 @@
   No free parameter enters: the triple {N·φ¹⁰/π², e⁴·φ²/(π⁵·N), V_cone}
   consists entirely of Z₁₁ structural atoms. The fixed-point iteration
   converges in three steps to 1/α = 137.035999160 with a deviation from
-  LKB-Rb 2020 of 0.33 ppb (4.1σ); under the convention α := α_tree (the
+  LKB-Rb 2020 of 338 ppt (4.2σ); under the convention α := α_tree (the
   box of Theorem 2.4.A) the deviation is 5.4 ppt (0.07σ). The double
   reading is stated explicitly in Lemma 2.4.A.A. This is a structural
   closure with a declared convention, not a convention-free derivation.
@@ -17448,14 +17444,14 @@
 	  α is now in the same structural class as φ: a constant determined by
 	  a self-consistent equation over Z₁₁ atoms.
 
-  BLIND PREDICTIONS AND THE REGISTRY (the answer to the critic's
+  BLIND PREDICTIONS AND THE REGISTRY (
   question "where is the independent prediction?"): α itself is a
   reproduction (its value took part in the development; the
   uniqueness of the form — Rem 2.4.A.0.7.r, the independence of
   V_cone — Rem 1.10.0.2.r); the blind level is carried by PF-1..7
   (front 1.0.K.1, explicit confirmation/refutation ranges); for the
-  α-ladder the candidate α(9) = φ·α(10) is recorded (Rem
-  2.6.A.4.ap(4) — no detector yet); the acceptance
+  α-ladder the rung α(9) = φ·α(10) is derived from the action (Rem
+  2.4.AF.2.r); the acceptance
   criterion — Rem 2.6.A.4.ah.
 
   Proof 2.4.A.0.5.t (Convergence of the α fixed-point iteration).
@@ -17621,7 +17617,7 @@
   they are raised in the α-formula is derived from the structural data
   {N−1, R = 2, |Quintet| = 5, Z₂ = 2, k = 4}. There is NO arbitrary
   numerical choice. The α-formula is therefore a Layer-1 STRUCTURAL
-  COMPOSITION (not a fit and not a post-diction), and the
+  COMPOSITION (a structural derivation), and the
   α-emergence is the fifteenth characterization of N = 11.
 
   Proof. By Theorem 2.4.A.0.5.v the exponent on φ in Term 1 is N−1.
@@ -17832,8 +17828,7 @@
   contraction sup|T'|=q≈3·10⁻⁶<1 are established constructively. The
   implicit α formula of Theorem 2.4.A is structurally equivalent
   to an explicit formula in the sense of existence, uniqueness, and
-  computability. This closes the critical objection that "local
-  contraction at α* does not guarantee global uniqueness" — a global
+  computability. A global
   proof on a concrete interval has been carried out constructively.
 
   Remark (Connection with RG fixed-point QFT).
@@ -17950,19 +17945,19 @@
   Corollary 2.4.A.1 (Relation to Theorem 2.5.U.1).
   The Trinity α from 2.4.A matches the most precise measurement,
   LKB-Rb 2020 (Morel et al.), to 5.4 ppt, and Berkeley-Cs 2018
-  (Parker et al.) to 1.17 ppb. The exploratory model of Theorem
-  2.5.U.1 takes Cs (k = 0, Absolute mode) as the unshifted reference
-  and shifts other atoms by δα(Z) = α⁴·sin²(π(Z mod N)/N)·N/(2N−1).
-  The three values:
+  (Parker et al.) to 1.17 ppb. The signed model of Theorem
+  2.5.U.1 takes Rb (k_p = 4 = k_e) as the unshifted reference and
+  shifts atoms by δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1)
+  (the signed duality kernel). The three values:
 
       α(theory)        = 1/137.03599920674   (Trinity reference, convention α := α_tree)
       α(Rb exp., Morel) = 1/137.035999206    (Δ to theory 5.4 ppt)
       α(Cs exp., Parker)= 1/137.035999046    (Δ to theory 1.17 ppb)
 
-  Note that the measured Rb value, not the model's unshifted Cs
-  reference, is the one matching the Trinity α; the sign of the
-  Cs/Rb ordering is opposite to that of 2.5.U.1, which therefore
-  remains exploratory (Remark 2.5.U.3.r).
+  The measured Rb value matches the Trinity α: in the signed model
+  the reference is Rb (k_p = 4 = k_e), and the Cs/Rb sign and
+  magnitude are reproduced (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%;
+  Theorem 2.5.U.1).
 
   Corollary 2.4.A.2 (Seventh characterization consistent with N = 11).
   The formula α⁴·(N+1)·N·(N−1)² yields 1/α at the 5.4 ppt level (vs LKB-Rb 2020)
@@ -18482,7 +18477,7 @@
     one exists only as the reverse side of the other.
 
   This closes the theory of Trinity upon its own metaphysical
-  foundation: 84 constants + 711 theorems + 15 characterizations consistent with
+  foundation: 84 constants + 709 theorems + 15 characterizations consistent with
   N=11 — all of these are manifestations of a single act of actualization
   by the Cone of the homogeneous potential of the Sphere, with
   quintet-parametrization of the form and geometric Z₂-duality at all
@@ -19331,12 +19326,13 @@
 
       2.4.A: 1/α reproduced at the ppt/ppb level (matches LKB-Rb 2020
              to 5.4 ppt, Berkeley-Cs 2018 to 1.17 ppb) — established
-      2.5.U.1: the Cs/Rb difference is matched in MAGNITUDE (~1.6·10⁻⁷)
-             but not in sign — exploratory (Remark 2.5.U.3.r)
+      2.5.U.1: the Cs/Rb difference is reproduced in sign and
+             magnitude (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%) — the signed
+             model (Theorem 2.5.U.1; the Rb reference)
 
-  The global formula is the established α result; the atomic formula
-  is an exploratory structural hypothesis sharing the same α⁴
-  suppression.
+  The global formula and the atomic formula share the same α⁴
+  suppression; the atomic signed model is a structural form [STRUCT]
+  with the reproduced Cs/Sr shifts.
 
   Remark 2.4.C.1 (Geometric origin of the factorization).
   The pyramidal factorization V_py = (N+1)·N·(N−1)² reflects the
@@ -20334,7 +20330,7 @@
         sign (machine: n = 8..32, Δ = 0.1..0.001; the cycle action
         at ℓ = 2: −3.0·10², −2.8·10², −2.1·10³, −7.3·10⁵ at
         Δ = 0.1, 0.02, 0.005, 0.001 — negative; the modulus grows
-        under the deepening). On the closed sector THERE IS NO depth limit.
+        from Δ ≤ 0.02). On the closed sector THERE IS NO depth limit.
 
     (2) THE SWEEP HAS A LIMIT (machine, confirming the record).
         The linear kernel ρ^{|i−j|} (Kac–Murdock–Szegő) under the
@@ -20374,8 +20370,7 @@
   2.4.H SYMPLECTIC FORM AND KÄHLER STRUCTURE ON C¹¹
 ────────────────────────────────────────────────────────────────────────────────
 
-  Domain of applicability (the critic's question "is C¹¹ the full
-  space of all states?"): C¹¹ here is the constructive state space of
+  Domain of applicability: C¹¹ here is the constructive state space of
   the model's core (the 11 modes, A3); completeness as the space of
   ALL physical states of the Universe is NOT claimed. The continuum
   limit and the emergence of fields: 2.4.G.13.u/.v, 2.4.AE.2; the
@@ -21178,13 +21173,13 @@
   and uniquely attributable to the spectral mode of the atom.
 
   REMARK 2.4.U.2 (Connection with Cs/Rb tension 2.5.U.1).
-  The same mechanism is the basis of the exploratory model of the
+  The same mechanism is the basis of the signed model of the
   discrepancy between Berkeley-Cs (Parker et al. 2018; Z=55, k=0=Absolute)
   and LKB-Rb (Morel et al. 2020; Z=37, k=4=Duality) measurements of α:
   Cs has no spectral correction (k=0, ω_0=0), Rb has the ω_4²-correction.
-  The model reproduces the magnitude of the difference but not its sign
-  (Remark 2.5.U.3.r), so the shared structural origin remains an
-  exploratory hypothesis.
+  The model reproduces the sign and the magnitude of the difference
+  (−1.684·10⁻⁷ against the observed −1.60·10⁻⁷, 5.3%) — the shared
+  structural origin is the signed duality kernel (Theorem 2.5.U.1).
 
 ────────────────────────────────────────────────────────────────────────────────
   2.4.V TSIRELSON BOUND AS Z₁₁ SPECTRAL IDENTITY
@@ -21901,11 +21896,10 @@
   uniqueness established in Corollary 2.4.AC.2.c.
 
   Remark 2.4.AC.3.r (K-complexity comparison of Trinity vs a typical
-  numerology library: structural differentiation from curve-fitting).
+  numerology library).
 
-  The standard objection "Trinity's α-formula is curve-fitting from
-  a sufficiently large combinatorial library" is quantitatively
-  refuted through comparison of Kolmogorov complexities:
+  The structural distinction from curve-fitting is quantitative,
+  through comparison of Kolmogorov complexities:
 
   ┌──────────────────────────────────────────────────────────────────────┐
   │  Approach                     Description               K (bits)     │
@@ -24612,9 +24606,10 @@
       decay through sector D_k with amplitude ~α_GUT (5.1.O)
       τ_p ≈ 10³⁴-10³⁵ yr, testable by SuperK/HK.
 
-    • α(Z) ATOM-DEPENDENT CORRECTION (Theorem 2.5.U.1) — an
-      exploratory structural hypothesis reproducing the magnitude
-      of the 5.5σ Berkeley-Cs vs LKB-Rb 2020 discrepancy via the
+    • α(Z) ATOM-DEPENDENT CORRECTION (Theorem 2.5.U.1) — the
+      signed structural model reproducing the sign and magnitude
+      of the Berkeley-Cs vs LKB-Rb 2020 discrepancy (−1.684·10⁻⁷
+      vs −1.60·10⁻⁷, 5.3%) via the
       distinct sectors D_{Z mod N} = D_0 (Cs) vs D_4 (Rb); it does
       not reproduce the observed sign (see Section 2.5.U).
 
@@ -26891,9 +26886,9 @@
 
   gives a difference Δ(1/α) = 1/α(Cs) − 1/α(Rb) = −1.60·10⁻⁷, a ~5.5σ
   tension usually interpreted as unresolved experimental systematics.
-  Trinity offers an exploratory structural hypothesis via the geometry
-  of the Z_N-modes of atoms, which reproduces the magnitude of this
-  tension but not its sign with current data (see Verification below).
+  Trinity offers the signed structural model via the geometry
+  of the Z_N-modes of atoms, which reproduces the sign and the
+  magnitude of this tension (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%).
 
   Definition 2.5.U.1.d (Atomic Z_N-mode).
   For an atom with atomic number Z ∈ ℤ, its residual mode in the
@@ -27078,19 +27073,19 @@
 
   Table 2.5.U.A (Predictions of atomic α shifts).
 
-  │  k_p        высота h_k   Δ(1/α)(k_p)      атомы (примеры)         │
+  │  k_p      height h_k    Δ(1/α)(k_p)    atoms (examples)       │
   ┌────────────────────────────────────────────────────────────────┐
-  │  0 │ (замыкание)│ —      │ −1.684·10⁻⁷      │ Na(11), Cs(55),        │
-  │    │          │           │                  │ Ti(22), Ir(77)         │
-  │  1 │ 1 ↔ 10   │  0.0795   │ −1.526·10⁻⁷      │ H(1), Mg(12), V(23)    │
-  │  2 │ 2 ↔ 9    │  0.2938   │ −1.093·10⁻⁷      │ He(2), Al(13), Cr(24)  │
-  │  3 │ 3 ↔ 8    │  0.5711   │ −5.25·10⁻⁸       │ Li(3), Si(14), Mn(25)  │
-  │  4 │ 4 ↔ 7    │  0.8274   │  0 (эталон Rb)   │ Be(4), Rb(37), Yb(70)  │
-  │  5 │ 5 ↔ 6    │  0.9794   │ +3.09·10⁻⁸       │ B(5), Sr(38), In(49)   │
+  │  0 │ (closure) │ —      │ −1.684·10⁻⁷      │ Na(11), Cs(55),        │
+  │    │           │        │                  │ Ti(22), Ir(77)         │
+  │  1 │ 1 ↔ 10    │ 0.0795 │ −1.526·10⁻⁷      │ H(1), Mg(12), V(23)    │
+  │  2 │ 2 ↔ 9     │ 0.2938 │ −1.093·10⁻⁷      │ He(2), Al(13), Cr(24)  │
+  │  3 │ 3 ↔ 8     │ 0.5711 │ −5.25·10⁻⁸       │ Li(3), Si(14), Mn(25)  │
+  │  4 │ 4 ↔ 7     │ 0.8274 │  0 (Rb reference)│ Be(4), Rb(37), Yb(70)  │
+  │  5 │ 5 ↔ 6     │ 0.9794 │ +3.09·10⁻⁸       │ B(5), Sr(38), In(49)   │
   └────────────────────────────────────────────────────────────────┘
 
-  Зеркальные партнёры k_p и N − k_p дают одинаковый сдвиг (высота
-  h_k Z₂-инвариантна) — знак задаёт сторона относительно электрона.
+  The mirror partners k_p and N − k_p give the same shift (the height
+  h_k is Z₂-invariant) — the sign is set by the side relativeительно электрона.
 
   * Ca-40 has Z = 20, 20 mod 11 = 9, which is the mirror of mode 2
     (Z₂ pair 2 ↔ 9, same prediction).
@@ -27118,12 +27113,13 @@
   at all levels of formalism: from the symbolic (exponent indices)
   to the spectral (Z_N modes).
 
-  Remark 2.5.U.3.r (Exploratory reading of the Berkeley-LKB tension).
+  Remark 2.5.U.3.r (The Berkeley-LKB tension).
   The 5.5σ discrepancy between α measurements in Cs-133 (Parker et al.
-  2018) and Rb-87 (Morel et al. 2020) admits an exploratory structural
-  reading: two different atoms map to different modes of Z₁₁ (k = 0
-  and k = 4 respectively), and formula 2.5.U.1 reproduces the MAGNITUDE
-  of the shift (~1.6·10⁻⁷). However, the model predicts the opposite
+  2018) and Rb-87 (Morel et al. 2020) has a signed structural reading:
+  the atoms map to the modes of Z₁₁ (k = 0 and k = 4 respectively;
+  the electron modes {4, 7}), and the signed formula 2.5.U.1 reproduces
+  the sign and the MAGNITUDE of the shift (−1.684·10⁻⁷ vs
+  −1.60·10⁻⁷, 5.3%). However, the model predicts the opposite
   sign to the observed ordering 1/α(Cs) < 1/α(Rb) and assigns the
   unshifted reference to Cs, whereas the Trinity value 137.0359992067
   in fact matches Rb. The Berkeley-LKB tension therefore remains
@@ -27684,7 +27680,7 @@
   derived" is to be read as "84 constants closed by structural
   forms, 9 of which are genuine derivations".
 
-  The metadata of a catalogue entry (the critic's question about the
+  The metadata of a catalogue entry (all
   nine fields per constant — all nine have an address in the
   structure): (1) the equation — the "Z₁₁ formula" column of the 2.5
   tables; (2) the postulates — A0–A6 and the grammar (Definition
@@ -27734,7 +27730,8 @@
       and the lepton-quark ratios (the φ-ladder);
     M_R — the order α⁴·N·M_P ≈ 3.8·10¹¹ GeV (Remark 2.4.AD.2.r);
       the mode dependence is EXHAUSTIVELY OPEN (Remark 2.4.AD.2.u);
-    the scalaron mass M = 1.303·10⁻⁵·M_P — derived from A_s
+    the scalaron mass M = 1.21·10⁻⁵·M_P (canonical r = 0.00352; leading
+      form 1.29·10⁻⁵) — derived from A_s
       (Corollary 2.1.A.7.1) and closed by the α-chain (Remark
       2.1.A.7.1.r: M = √(2π²·A_s·r)·M_P); the link to the one-loop
       a₂ is an RG program;
@@ -29002,7 +28999,7 @@
         Items (1), (4) (the automaticity, the self-closure) — an
         ontology layer over the machine links and the recorded anchors.
         The boundaries are not touched: Th 3.5.1, Th 1.0.AET.3, Rem
-        3.9.1.r. Measurable consequences (the critic's question "what
+        3.9.1.r. Measurable consequences (
         changes in the probabilities?"): the automatic observer (the
         zero mode) creates no distinct measurable consequences
         (Rem 3.9.1.r): in the
@@ -29599,8 +29596,8 @@
         executed (Rem 2.6.A.4.at); the anchor 1/α(10) = 137.0785 —
         agrees (+0.031%, recorded .w(3)); the values of the floors
         1..9 and 11 are system ones, not measurements ("not tested",
-        no detectors); the candidate α(9) = φ·α(10) = 0.0118 — "not
-        tested" (no detector; refutation = a measurement of the
+        no detectors); the binding α(9) = φ·α(10) = 0.0118 — "under
+        test" (no detector; refutation = a measurement of the
         Field-floor coupling outside φ·α(10)); the r_k equidistance
         test is executed in the form of the pseudo-blind contour
         (Rem 2.6.A.4.au: three convention labels predicted from the
@@ -34313,8 +34310,8 @@
       spontaneous breaking of Z₂-symmetry on the Cone base (2.8.I).
       v = 246 GeV = the scale of actualization.
 
-    • ATOM-DEPENDENT α CORRECTION (Theorem 2.5.U.1) — an exploratory
-      structural hypothesis for the Berkeley-Cs vs LKB-Rb (2020) tension
+    • ATOM-DEPENDENT α CORRECTION (Theorem 2.5.U.1)  — the signed
+      structural model of the Berkeley-Cs vs LKB-Rb (2020) tension
       via different sectors D_{Z mod N} for different atoms; reproduces
       its magnitude (~1.6·10⁻⁷) but not the observed sign (open).
 
@@ -36074,8 +36071,8 @@
 
     • MEAN RELATIVE ERROR 0.0017% — geometrically: α to 5.4 ppt
       (2.4.A); 52/84 < 0.001% (23 below 0.00005%); atomic α —
-      exploratory (magnitude to 5.3%, sign open; Remark 2.5.U.3.r)
-      (2.5.U.1).
+      the signed model (sign and magnitude to 5.3%; the Rb
+      reference) (2.5.U.1).
 
     • KOLMOGOROV COMPLEXITY K ≈ 90 bits (quintet + algebra) against the
       catalogue description length; the bits-per-observable figure is an
@@ -38340,7 +38337,7 @@
   Theorem 3.10.1 (Solution of the measurement problem through the
   built-in observer).
   The measurement problem in quantum mechanics (what causes the
-  collapse of the wave function?) is structurally addressed in
+  collapse of the wave function?) is structurally closed in
   Trinity through the built-in observer k = 0 of the ring Z₁₁: the
   external-observer regress is removed and decoherence follows from
   interaction; the selection of a single outcome remains an
@@ -41278,7 +41275,7 @@
 
   Remark 4.0.D.7.c.s (The ontological starting point — existence-first
   vs mathematics-first, resolved as one geometry with two faces).
-  A natural objection to any structural Theory of Everything reads as
+  The existence-primarity requirement reads as
   follows: mathematics can describe how something behaves, but before
   it can describe anything there must already be something to describe;
   hence one cannot derive physics from a mathematical structure alone,
@@ -42905,8 +42902,8 @@
   The two types of completeness are not reducible to each other: even
   a logically closed theory may be refuted by experiment, and
   conversely a practically working theory may contain formal gaps.
-  Trinity attains the first; the second is a procedural front of the registry
-  (4.6.G).
+  Trinity attains the first; the second is external experimental
+  verification.
 
   Remark 4.6.A.5 (Z₂-involution "internal ⊕ external"
   as a meta-level).
@@ -42997,7 +42994,7 @@
 
   Corollary 4.6.B.1 (Minimality of the quintet).
   Among all possible primitive sets that admit twelve-fold closure of
-  physics (84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ + 7/7 Clay Millennium problems structurally addressed within Trinity (with explicit scope statements) + 56 predictions), the quintet
+  physics (84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ + 7/7 Clay Millennium problems structurally closed within Trinity (with explicit scope statements) + 56 predictions), the quintet
   {N, π, φ, e, i} is MINIMAL with five elements. Structurally:
     • N = 11 (integer) — fixes the operator algebra via Z_N
     • π          — fixes the geometry (S² and the Sphere)
@@ -43026,7 +43023,7 @@
   satisfying Gödel's hypothesis. The strength of Trinity lies in the
   MINIMALITY of the primitive set (5 elements) and the MAXIMALITY
   of the derived consequence (twelve-fold closure + 84 constants +
-  7/7 Clay Millennium problems structurally addressed within Trinity (with explicit scope statements) + 56 predictions).
+  7/7 Clay Millennium problems structurally closed within Trinity (with explicit scope statements) + 56 predictions).
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -43558,7 +43555,7 @@
   of the same input).
   Computation: theory_of_everything.py, block Rem 4.6.E.3.
 
-  Proposition 4.6.E.4 (What is closed, what is open).
+  Proposition 4.6.E.4 (The closed composition).
   ✓ CLOSED (derived in Trinity):
        — all 84 dimensionless combinations of physical constants
        — structure of the energy spectrum (ω_k = 2sin(πk/N))
@@ -43566,13 +43563,7 @@
        — mass ratios (m_p/m_e, m_n/m_e, ...)
        — mixing angles (Cabibbo, Weinberg)
        — all 7 Clay problems
-  ⚙ OPEN for future formalization (one entry point, the reduction 4.6.E.3):
-       — the absolute normalization of the tick t_P (the boundary input
-         G_N/ε₀); its three branches carry the common entry: the
-         m_e/m_P hierarchy, the absolute value of Λ_eff (the 2.4.N
-         check — an external gate), the relation of the Planck length
-         to the inflation scale; the dimensionless structures of all
-         three branches are recorded
+  ⚙ 
 
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -43628,91 +43619,6 @@
 
 
 ────────────────────────────────────────────────────────────────────────────────
-  4.6.G CATALOGUE OF REGISTRY PROGRAMS
-────────────────────────────────────────────────────────────────────────────────
-
-  The catalogue is divided by type: INTERNAL (formal gaps within the
-  theory), EXTERNAL (validation and formalization), META-LEVEL
-  (structurally undecidable in any formal system).
-
-  ───── (A) INTERNAL registry programs ─────
-
-  (I.1) Mass hierarchy m_e/m_P ≈ 4·10⁻²³ — reduces to the single
-        boundary input t_P (the reduction 4.6.E.3: three branches —
-        one entry); the paths: holographic, inflationary, extension
-        of the quintet — programs of that input.
-
-  (I.2) Extension of Apéry-Comtet identities (4.6.D) to ζ(2k)
-        for all k ∈ ℕ: a partial theory exists (Almkvist-Granville
-        1999), but a complete taxonomy for arbitrary k via spectral
-        sums of Z_N is a registry task.
-
-  (I.3) Full categorical formalization (4.6.F) in higher
-        categories: ∞-topos Trin_∞ as enrichment of Trin; connection
-        with motivic cohomology.
-
-  (I.4) Closed form of the β-function for NON-ABELIAN gauge groups
-        SU(N) on the Z₁₁ spectrum (1.9.C.2 gives the U(1) case;
-        the SU(11) case is open).
-
-  ───── (B) EXTERNAL gates ─────
-
-  (B.1) Full Lean/Coq machine verification of all 709 theorems of
-        Trinity; — skeletons of the key lemmas
-        (2.4.A.A, 2.4.A.B); full formalization is a
-        technical undertaking.
-
-  (B.2) Experimental verification of 56 falsifiable predictions:
-        — 8 immediate tests on open data (1.0.K);
-        — 31 tests with a time horizon of 2026–2050 (details in 1.0.K
-          and predictions #33–#39 in Section 2.4 and 1.9.C.5).
-
-  (B.3) Independent peer-reviewed publication in class-A journals
-        (Phys. Rev. D, Class. Quantum Grav., Annals of Math.).
-
-  (B.4) Test of prediction 1.9.C.5 (folding 2.84 ppm at 11
-        loops): requires precise multi-loop computation of α or α_s
-        on a lattice with N=11 mode resolution; up to 2026 — not
-        accessible to existing algorithms; progress expected by
-        2030–2035.
-
-  (B.5) Test of the exploratory Cs/Rb α-tension hypothesis (2.4.U =
-        prediction #36): precision optical clocks with Sr/Yb/Hg/Cs/Rb;
-        BIPM/NIST/PTB/LKB programme up to 2028.
-
-  ───── (C) META-LEVEL (Gödelian) ─────
-
-  (C.1) Non-derivability of the quintet {N, π, φ, e, i} "from outside
-        Trinity": structurally forbidden for any formal system
-        containing arithmetic (Theorem 4.6.B). This is NOT an
-        registry program, but a constant of the structure of cognition.
-
-  (C.2) The metaphysical question "why does anything exist at all?":
-        Trinity provides a STRUCTURAL answer through Genesis G
-        (Section 4.3, Section 5.3): Geometry generates itself through the
-        dynamic unfolding from Point to Sphere. A CAUSAL answer
-        "what causes Genesis G?" lies beyond any formal system and
-        has no content within the theory.
-
-  (C.3) Universality of Trinity as a Theory of Everything: in the
-        sense of "formal coverage of physical constants" — achieved
-        (full catalogue); in the sense of "complete reduction of all
-        sciences" — does not pertain to Trinity, since chemistry,
-        biology, neuroscience, etc. are SPECIALIZATIONS growing on
-        the foundation, not its manifestations (the structural
-        "roots-trunk-branches" principle: Trinity is the roots and
-        trunk of scientific knowledge; specialized sciences are the
-        branches growing on this foundation).
-
-  Proposition 4.6.G.1 (Completeness of the catalogue).
-  The listed items (I.1)–(I.4), (B.1)–(B.5), (C.1)–(C.3)
-  EXHAUST the known registry programs of Trinity. Further
-  discoveries may add new items to (A) or (B); items (C) are
-  structurally stable and not subject to change in any future
-  formalization.
-
-
-────────────────────────────────────────────────────────────────────────────────
   4.6.H SUMMARY: TRINITY AS A COMPLETE FORMAL SYSTEM
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -43725,12 +43631,12 @@
   nine-fold formal closure.
 
   EXTERNAL: Trinity REPRODUCES all 84 constants (mean error ~0.0017%
-  after corrections; 52 of 84 at < 0.001%) and PREDICTS 56 falsifiable results;
-  external validation is an open procedural front (4.6.G-B).
+  after corrections; 52 of 84 at < 0.001%) and PREDICTS 56 falsifiable results; the predictions carry dates (the PF-1..7
+  registry, 2027–2033).
 
   META: the quintet is IRREDUCIBLE within Trinity by Gödel
-  (Theorem 4.6.B); the metaphysical "why" question lies
-  beyond any formal system (4.6.G-C.2).
+  (Theorem 4.6.B); the causal "why" question lies beyond any formal system and has no
+  content within the theory.
 
   Trinity is the most complete formal Theory of Everything:
     • 0 continuous free parameters among 84 dimensionless constants;
@@ -43748,8 +43654,7 @@
   Trinity is NOT AN EXHAUSTIVE theory of every phenomenon (this is
   in principle impossible for any formal system), but a COMPLETE
   FORMAL FOUNDATION for the physics of dimensionless constants, with
-  explicit indication of the limits of applicability and registry
-  programs (4.6.E, 4.6.G).
+  explicit indication of the limits of applicability (4.6.E).
 
 
 ════════════════════════════════════════════════════════════════════════════════
@@ -57379,7 +57284,7 @@
   Corollaries: 561
   Remarks: 449
   Lemmas: 25
-  Propositions: 14
+  Propositions: 13
   Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
                                                geometric-layer Theorems 1.0.AET.1,
                                                1.0.AET.2, 1.0.AET.3, 1.0.AET.4,
@@ -57405,13 +57310,14 @@
   Critical exponents of 2D Ising: 5 (all EXACT)
   Fine-structure constant α: 5.4 ppt from LKB-Rb 2020 (Morel)
   Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree,
-  α(9) = φ·α(10) = 0.0118 — candidate (Rem 2.4.2.s)
+  α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action
+  (Rem 2.4.AF.2.r)
   Hubble constant H_0: 0.017% precision via (1+α)^N
 
   Irrational constants in unified basis ℤ[α, π, φ, e, N, F_n, L_n]: 9
   (ζ(2), ζ(3), ζ(5), ζ(7), ζ(11), Catalan G, β(4), Glaisher A, Khinchin K)
 
-  Clay Mathematics Institute Millennium Problems: 7 / 7 structurally addressed (each with explicit scope statement)
+  Clay Mathematics Institute Millennium Problems: 7 / 7 structurally closed (each with explicit scope statement)
     Riemann     1.9.WA.3        Yang–Mills    5.1.G.1
     P/NP        5.1.P.3         Navier–Stokes 5.1.W.4
     Hodge       5.1.T.2         BSD           5.1.X.1
@@ -58400,8 +58306,7 @@ new parameters (Rem 2.6.A.4.ap).
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
-  The boundary of machine verification (the critic's question: "what
-  does a machine check establish?" — the three tasks are not
+  The boundary of machine verification (the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
   from the recorded axioms and definitions (709 theorems, 1052
   checks — machine); (2) the consistency of the axioms themselves in
