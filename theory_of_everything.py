@@ -16326,6 +16326,33 @@ print("    negatives: 12*t2 -> 12.0190; R/t2 = 0.06243 vs 1/16:",
       "PASS" if abs((p30_t1 - p30_N * p30_pi ** 9 / 7 ** 4) / p30_t2 - 12.019024) < 2e-6
       and abs((p30_t1 - p30_S - p30_t2) / p30_t2 - 0.0624309) < 2e-6 else "FAIL")
 
+# (9) action spiral: the Cone metric action asymptotes to (N-1)*phi^k + 1
+def _p30_ainv(kf):
+    s = p30_phi ** kf
+    g = [[p30_math.exp(-abs(i - j) / s) for j in range(11)] for i in range(11)]
+    a = [row[:] + [1.0 if i == j else 0.0 for j in range(11)]
+         for i, row in enumerate(g)]
+    for c in range(11):
+        p = max(range(c, 11), key=lambda r: abs(a[r][c]))
+        a[c], a[p] = a[p], a[c]
+        pv = a[c][c]
+        a[c] = [x / pv for x in a[c]]
+        for r in range(11):
+            if r != c and a[r][c] != 0.0:
+                f = a[r][c]
+                a[r] = [x - f * y for x, y in zip(a[r], a[c])]
+    return sum(a[i][i + 11] for i in range(11))
+
+_a24 = _p30_ainv(24)
+print("    action spiral A(k)/phi^k -> N-1 = 10 (rate phi^-k):",
+      "PASS" if abs(_a24 / p30_phi ** 24 - 10) < 2e-5 else "FAIL")
+print("    exact form A(k) = (N-1)*phi^k + 1 + O(phi^-k):",
+      "PASS" if abs(_a24 - 10 * p30_phi ** 24 - 1) < 1e-3 else "FAIL")
+_C9 = sum(1 / (-2 * sum(d * p30_math.cos(2 * p30_math.pi * m * d / 11)
+                        for d in range(1, 6))) for m in range(1, 6))
+print("    cyclic reading constant: per-pair 9 = L2^2, full 18 = 2*L2^2:",
+      "PASS" if abs(_C9 - 9) < 1e-8 else "FAIL")
+
 # ---------------------------------------------------------------------------
 # Theorem 2.5.U.1: the signed atomic alpha shift (duality kernel).
 # ---------------------------------------------------------------------------

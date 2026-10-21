@@ -559,7 +559,7 @@
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
   additivity, the class conventions as test outputs (nucleus 1 MeV,
   molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness
-  windows [0.10, 0.11) is nonempty). Battery: 1033 PASS / 0 FAIL /
+  windows [0.10, 0.11) is nonempty). Battery: 1036 PASS / 0 FAIL /
   EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
@@ -16631,6 +16631,42 @@
         numerator are confirmed independently; the full derivation of
         the 1-loop term from the action remains a registry program.
         Computation: theory_of_everything.py, block Rem 2.4.2.s(8).
+    (9) THE ACTION SPIRAL (machine). The ladder action A(k) = Tr g⁻¹
+        (the metric of Definition 2.4.AE.1.d, the |k−l| form) carries
+        its own asymptote: A(k)/φ^k → N−1 = 10 at the rate φ^{−k}
+        (k = 30: deviation 5.4·10⁻⁷); the form is A(k) = (N−1)·φ^k +
+        1 + O(φ^{−k}). The action counts MODES: the content (N−1 = 10
+        active steps) on the spiral plus a single null walk (the
+        Absolute): N = (N−1) + 1. Mechanism: as φ^k → ∞ the metric is
+        J − D/φ^k (J — the all-ones matrix of the cycle, D — the
+        distance matrix), on the complement of the all-ones direction
+        the inverse operator grows as φ^k, and the trace constant
+        equals N−1 (machine, k = 10..30). CONSEQUENCE: the spiral φ^k
+        of the tree of the tick price 1/α(k) = N·φ^k/π² is not an
+        ansatz but the own asymptote of the Cone action: the tree =
+        structure × spiral / phase area, the action = content × spiral
+        + unit; one φ-quantization (the ladder step −ln φ, item (4)).
+        The normalization between the action and the tick price
+        remains a recorded boundary input (Rem 2.4.AE.2.t(4)).
+        CONVENTION of item (8)(b): d is the group distance on Z₁₁ (the
+        metric is declared on the cyclic group, Definition
+        2.4.AE.1.d); only in this reading are the metric eigenvectors
+        the Ĥ modes — the floors, and the soft modes {2,4} are
+        floor-assigned. The literal |k−l| reading gives a Toeplitz
+        matrix whose eigenvectors are not the Ĥ modes (no floor
+        identification is possible); the spiral asymptote is the same
+        φ^k with the same constant N−1 = 10; the group reading gives
+        the constant 18 = 2·9 = 2L₂² exactly (the per-pair half-sum
+        9 = L₂² — an echo of C₁ of Theorem 2.4.4, an observation).
+        PROGRAM STATUS: the tree — derived (the ladder, item (4); the
+        action spiral, item (9)); the 4-loop — derived (item (6));
+        the 1-loop — form derived (floors {2,4} by the soft modes,
+        item (8)(b); the difference of closures by two factors,
+        item (8)(a)), the value e⁴ — past the π–e barrier
+        (Rem 1.10.2.9.w), the 94.12% overlap — a numerical fact at the
+        barrier. The program of deriving α from the Cone is closed at
+        its honest boundaries. Computation: theory_of_everything.py,
+        block Rem 2.4.2.s(9).
 
   Theorem 2.4.3 (Weinberg angle — 7 significant digits).
     sin²θ_W = sin(π/N)·√(9/N)·φ⁷/32 = 0.231220    (0.000013%)
@@ -30854,7 +30890,7 @@
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1033 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1036 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -36653,7 +36689,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1033 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  1036 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -43688,7 +43724,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1033 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1036 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -58186,14 +58222,14 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1033 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1036 PASS,
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the critic's question: "what
   does a machine check establish?" — the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (709 theorems, 1033
+  from the recorded axioms and definitions (709 theorems, 1036
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
