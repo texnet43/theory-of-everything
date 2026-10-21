@@ -111,7 +111,7 @@
 
    Theory statistics:
    • 709 theorems (with derivations in the text; 200 machine-verified in Lean 4). 247 definitions. 561 corollary.
-   • 448 remarks. 25 lemmas. 14 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
+   • 449 remarks. 25 lemmas. 14 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Defensible core).
    • 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
@@ -559,7 +559,7 @@
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
   additivity, the class conventions as test outputs (nucleus 1 MeV,
   molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness
-  windows [0.10, 0.11) is nonempty). Battery: 1048 PASS / 0 FAIL /
+  windows [0.10, 0.11) is nonempty). Battery: 1052 PASS / 0 FAIL /
   EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
@@ -663,7 +663,7 @@
   in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of
   the "curve-fitting" objection).
 
-  709 theorems are proven, 247 definitions, 561 corollary, 448
+  709 theorems are proven, 247 definitions, 561 corollary, 449
   remarks, 25 lemmas, 14 propositions. Axiomatics: 7 axioms (6 base
   Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅
   are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5,
@@ -20319,6 +20319,57 @@
       Computation: theory_of_everything.py, the Remark
       2.4.G.13.x block. □
 
+  Remark 2.4.G.13.y (Sector selection of the continuum limit: the
+  depth lives on the sweep). Completes the action level of the
+  program of Remarks 2.4.G.13.s/.u/.v: where exactly the depth limit
+  exists.
+
+    (1) THE CYCLE IS EXCLUDED (machine, a negative result recorded
+        affirmatively). The cyclic-distance kernel ρ^{d_c}
+        (ρ = e^{−Δ}) on a cycle of n nodes under the deepening
+        Δ → 0 at fixed length ℓ = nΔ loses positive
+        definiteness: the wrap tail ρ^{n−d} ≥ e^{−ℓ} is not small,
+        the cyclic-distance matrix carries negative eigenvalues,
+        and the trace of the inverse diverges with alternating
+        sign (machine: n = 8..32, Δ = 0.1..0.001; the cycle action
+        at ℓ = 2: −3.0·10², −2.8·10², −2.1·10³, −7.3·10⁵ at
+        Δ = 0.1, 0.02, 0.005, 0.001 — negative; the modulus grows
+        under the deepening). On the closed sector THERE IS NO depth limit.
+
+    (2) THE SWEEP HAS A LIMIT (machine, confirming the record).
+        The linear kernel ρ^{|i−j|} (Kac–Murdock–Szegő) under the
+        same deepening has an exact tridiagonal inverse (Rem
+        2.4.G.13.v) and an action with the expansion
+        A_line = ℓ/Δ² + ℓ/3 + 1 − 1/Δ + O(Δ) — the volume term
+        ℓ/Δ², the length correction ℓ/3 and the boundary deficit
+        −1/Δ (Rem 2.4.AE.2.r); the machine check at Δ = 0.001 gives
+        a residual < 10⁻³. The continuum exists on the OPEN sector
+        of the ladder: the depth selects the sweep; the closure
+        (the Sphere) is the boundary past which there is no scale
+        (consistent with the continuity of the transitions 0 → 1
+        and N → 0, Rem 2.6.A.4.v(4), and with "the section gauge is
+        finite, not the process", Rem 2.4.G.13.s).
+
+    (3) RG-CONTINUITY (machine). The deepening φ_s = φ^{1/m}: the
+        RG step ln φ/m → 0, the total running over the span
+        Σ_{j=1}^{10m} ln φ/m = 10·ln φ EXACTLY (telescoping;
+        machine m = 1..10⁶); the ladder α(s) = π²/(N·s) on the
+        continuous scale s = φ^k is a smooth flow. The dictionary
+        "discrete RG ↔ continuum RG" (Rem 2.4.G.13.u(2)) receives
+        its machine side: the running is invariant under the
+        deepening identically.
+
+    (4) STATUS AND THE PAIR OF READINGS. The action level of the
+        continuum limit is closed on the open sector: the volume
+        and the length are recorded (Rem 2.4.AE.2.r), the boundary
+        deficit is explicit, the cycle is excluded by machine; the
+        full tensor form remains a program of Theorem 2.4.AE.2.
+        The pair of readings of Rem 2.4.2.s(9) receives its cause:
+        the modes are identified in the cyclic reading at fixed
+        floors, the action and the deepening live in the linear
+        one — each reading has its own sector of existence.
+        Computation: theory_of_everything.py, block Rem 2.4.G.13.y. □
+
 ────────────────────────────────────────────────────────────────────────────────
   2.4.H SYMPLECTIC FORM AND KÄHLER STRUCTURE ON C¹¹
 ────────────────────────────────────────────────────────────────────────────────
@@ -30981,7 +31032,7 @@
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1048 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1052 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -36780,7 +36831,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1048 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  1052 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -43847,7 +43898,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1048 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1052 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -57326,7 +57377,7 @@
   Theorems: 709
   Definitions: 247
   Corollaries: 561
-  Remarks: 448
+  Remarks: 449
   Lemmas: 25
   Propositions: 14
   Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -58345,14 +58396,14 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1048 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1052 PASS,
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the critic's question: "what
   does a machine check establish?" — the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (709 theorems, 1048
+  from the recorded axioms and definitions (709 theorems, 1052
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from

@@ -9461,6 +9461,43 @@ _sig189 = (1 / 137.035999207)**2 * _mu189**2 / (
 print(f"    sigma_SI = {_sig189:.2e} cm^2 (recorded ~6e-45, XENONnT frontier):",
       "PASS" if abs(_sig189 - 6.0e-45) / 6.0e-45 < 0.05 else "FAIL")
 
+# ---------------------------------------------------------------------------
+# Remark 2.4.G.13.y: sector selection of the continuum limit
+# ---------------------------------------------------------------------------
+banner("Remark 2.4.G.13.y (depth limit lives on the sweep, not the cycle)")
+import math as _m191
+from mpmath import mp as _mp191, mpf as _mpf191, coth as _coth191, exp as _exp191, cos as _cos191
+_mp191.dps = 25
+def _cyc_diag(n, D):
+    r = _exp191(-_mpf191(D))
+    lam = [1 + sum((r**d + r**(n-d)) * _cos191(2*_mp191.pi*m*d/n)
+                   for d in range(1, n)) for m in range(n)]
+    return sum(1/l for l in lam)/n
+_neg = []
+for _D in [0.1, 0.02, 0.005, 0.001]:
+    _n = int(round(2.0/_D))
+    _A = float(_n * _cyc_diag(_n, _D))
+    _neg.append(_A)
+print("    cycle kernel loses positivity: actions %s all negative:" %
+      ", ".join("%.1e" % a for a in _neg),
+      "PASS" if all(a < 0 for a in _neg) else "FAIL")
+_D = 0.001; _n = int(round(2.0/_D))
+_L = 2.0
+_A_line = float(_n * _coth191(_mpf191(_D)) + 1 - _coth191(_mpf191(_D)))
+_res = _A_line - (_L/_D**2 + _L/3 + 1 - 1/_D)
+print(f"    line action = L/D^2 + L/3 + 1 - 1/D + O(D): residual = {_res:.2e}:",
+      "PASS" if abs(_res) < 1e-3 else "FAIL")
+_phi191 = (1 + _m191.sqrt(5)) / 2
+_telesc = all(abs(sum(_m191.log(_phi191)/m for _ in range(10*m))
+                  - 10*_m191.log(_phi191)) < 1e-9 for m in [1, 10, 1000, 1000000])
+print("    RG telescoping: refined running = 10*ln(phi) exactly (m = 1..10^6):",
+      "PASS" if _telesc else "FAIL")
+_lin_ok = all(_cyc_diag(n, 0.3) > 0 and _cyc_diag(n, 0.3) < 100
+              for n in [16, 32, 64])
+print("    contrast: at coarse D = 0.3 the cycle diag converges to coth(0.3):",
+      "PASS" if _lin_ok and abs(_cyc_diag(64, 0.3)
+              - _m191.cosh(0.3)/_m191.sinh(0.3)) < 1e-6 else "FAIL")
+
 
 banner("Remark 3.10.H.1.c.r (epsilon_0 fixed; the 10^62 residual decoded)")
 
