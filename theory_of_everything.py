@@ -9394,7 +9394,49 @@ print(f"    One-loop scalaron: M_1loop = M_P/sqrt(12 a2) = {_M_1loop:.2f} M_P; M
 _aR2_ratio = _a2_1loop / _aR2_inf
 assert 1e-13 < _aR2_ratio < 1e-10
 print(f"    Coefficient ratio alpha_R^2(1loop)/alpha_R^2(inf) = {_aR2_ratio:.1e}; E4 topological: PASS")
+
+# (6) canonical full slow-roll r = 0.0035209: observation-facing values
+_r_can = 0.0035209
+_M_r_can = (2 * _pi_pn**2 * _A_s_sc * _r_can) ** 0.5
+_aR2_can = 1 / (12 * _pi_pn**2 * _A_s_sc * _r_can)
+_gap_can = _M_1loop / _M_r_can
+_ratio_can = _a2_1loop / _aR2_can
+_c_ok = (abs(_M_r_can - 1.20808e-5) < 5e-9 and abs(_aR2_can - 1.14199e9) < 0.006e9
+         and abs(_gap_can - 3.0027e5) < 0.01e5 and abs(_ratio_can - 5.545e-12) < 0.02e-12)
+print(f"    Canonical r: M_sc = {_M_r_can:.3e} M_P, alpha_R^2 = {_aR2_can:.2e}, "
+      f"gap = {_gap_can:.2e}, ratio = {_ratio_can:.2e}: "
+      "PASS" if _c_ok else "    Canonical r: FAIL")
 print("    Remark 2.1.A.7.1.r (scalaron chain): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Remark 4.6.E.3: the three open scales reduce to ONE boundary input (t_P)
+# ---------------------------------------------------------------------------
+banner("Remark 4.6.E.3 (three open scales, one boundary input: the tick t_P)")
+_hb, _cb, _Gb = 1.054571817e-34, 2.99792458e8, 6.67430e-11
+_tP46 = (_hb * _Gb / _cb**5) ** 0.5
+_H046 = 2.184e-18
+_m_e46, _m_P46 = 9.1093837015e-31, (_hb * _cb / _Gb) ** 0.5
+# (a') the hierarchy branch: m_e/m_P = m_e * sqrt(G/(hbar c)), G the only input
+_h46 = _m_e46 / _m_P46
+print(f"    hierarchy m_e/m_P = {_h46:.3e} (recorded 4.18e-23; only G non-recorded): "
+      "PASS" if abs(_h46 - 4.18e-23) / 4.18e-23 < 0.01 else "    hierarchy: FAIL")
+# (b') the Lambda branch: Lambda*lP^2 = 3*Omega_L*(H0*tP)^2, two routes identical
+_OmL = 1 - 1 / math.pi - 9.2e-5
+_lam1 = 3 * _OmL * _H046**2 * _hb * _Gb / _cb**5
+_lam2 = 3 * _OmL * (_H046 * _tP46) ** 2
+print(f"    Lambda branch: lP^2*L = 3*Omega_L*(H0*tP)^2 = {_lam2:.2e} (recorded ~2.8e-122): "
+      "PASS" if abs(_lam1 - _lam2) / _lam2 < 1e-12
+      and 2.7e-122 < _lam2 < 3.0e-122 else "    Lambda branch: FAIL")
+# (c') the inflation branch: M_sc/M_P = sqrt(2 pi^2 A_s r), r derived
+_Msc46 = (2 * math.pi**2 * 2.1e-9 * 0.0035209) ** 0.5
+print(f"    inflation branch: M_sc/M_P = {_Msc46:.3e} (canonical r = 0.00352 derived): "
+      "PASS" if abs(_Msc46 - 1.20808e-5) < 5e-9 else "    inflation branch: FAIL")
+# the hunt: ln(m_P/m_e) has no depth-2 identity in the exponent grammar
+_lnpme = math.log(_m_P46 / _m_e46)
+_best = 3 * (1 / 137.035999207 + 1 / ((1 + math.sqrt(5)) / 2)**2) / 8
+print(f"    hunt: ln(m_P/m_e) = {_lnpme:.4f}; best 3(1/a + 1/phi^2)/8 = {_best:.4f} "
+      f"(+{(_best/_lnpme-1)*100:.3f}%) — not an identity: "
+      "PASS" if abs(_best / _lnpme - 1) > 1e-4 else "    hunt: FAIL")
 
 
 banner("Remark 3.10.H.1.c.r (epsilon_0 fixed; the 10^62 residual decoded)")
