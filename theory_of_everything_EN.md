@@ -10709,7 +10709,7 @@ This section contains a summary of the 34 most important constants of Trinity in
 #### 2.5.V FUNDAMENTAL DIMENSIONLESS CONSTANTS
 
 ```
-#  Constant                 Z₁₁ Formula              Value        Error
+ Constant                 Z₁₁ Formula              Value        Error
 ─────────────────────────────────────────────────────────────────────────
 1 Fine structure α π²/(N·φ¹⁰) 1/137.0785 0.03%
 2 α 4-loop see 2.4.AL.1 137.035999 10⁻⁸%
@@ -10724,7 +10724,7 @@ This section contains a summary of the 34 most important constants of Trinity in
 #### 2.5.W ELEMENTARY PARTICLE MASSES (IN UNITS OF m_e)
 
 ```
-#   Particle       Ratio m/m_e            Value       Error
+  Particle       Ratio m/m_e            Value       Error
 ─────────────────────────────────────────────────────────────
 8 electron e 1 1 EXACT
 9 muon μ C(8,4)·L₂−π−α-series 206.7683 10⁻⁴%
@@ -10738,7 +10738,7 @@ This section contains a summary of the 34 most important constants of Trinity in
 #### 2.5.X COSMOLOGICAL PARAMETERS
 
 ```
-#   Parameter       Z₁₁ Formula               Value    Error
+  Parameter       Z₁₁ Formula               Value    Error
 ────────────────────────────────────────────────────────────
 14 Ω_Λ (1 − 1/φ²) + 1/(L_4+F_6) 0.6847 0.0001%
 15 Ω_DM (Ω_b·(DM/b))·h² 0.1184 ~1%
@@ -10752,7 +10752,7 @@ This section contains a summary of the 34 most important constants of Trinity in
 #### 2.5.Y NUCLEAR AND ATOMIC CONSTANTS
 
 ```
-#   Parameter                 Formula            Value       Error
+  Parameter                 Formula            Value       Error
 ───────────────────────────────────────────────────────────────────
 20 m_p/m_e 6π⁵ 1836.118 1.9·10⁻³%
 21 m_p/m_n 1 − 1/(C(4,2)·N²) 0.998623 10⁻⁴%
@@ -10836,7 +10836,7 @@ Compact reference for ≥ 60 most important Trinity constants with formulas and 
 treatment — Section 2.8)
 
 ```
-#   Constant                  Z₁₁ Formula             Value
+  Constant                  Z₁₁ Formula             Value
 ─────────────────────────────────────────────────────────────
 01  α (4-loop)               N·φ¹⁰/π² − e⁴φ²/(π⁵N)   137.035999
 02  sin²θ_W                  sin(π/11)·3/(32√11)·φ⁷  0.23122
@@ -10854,7 +10854,7 @@ treatment — Section 2.8)
 #### 2.5.AM ELECTROWEAK PARAMETERS
 
 ```
-#   Constant                 Z₁₁ Formula             Value
+  Constant                 Z₁₁ Formula             Value
 ─────────────────────────────────────────────────────────────
 11  m_W / v                  (14/π)⁸·m_e/v (2.4.Y.1)  0.323
 12  m_Z / v                  (m_W/v ÷ cos θ_W)        0.368
@@ -10869,7 +10869,7 @@ treatment — Section 2.8)
 #### 2.5.AN STRONG INTERACTION AND NUCLEI
 
 ```
-#   Constant                 Z₁₁ Formula             Value
+  Constant                 Z₁₁ Formula             Value
 ─────────────────────────────────────────────────────────────
 17  α_s (m_Z)                φ⁻²/ω₃³ + α − α²/N       0.1179
 18  Λ_QCD (MeV, PDG input)   φ¹²/(K₃J₃·e¹³)·m_Z (0.0106%)  217
@@ -10884,7 +10884,7 @@ treatment — Section 2.8)
 #### 2.5.AO GRAVITY AND COSMOLOGY
 
 ```
-#   Constant                 Z₁₁ Formula             Value
+  Constant                 Z₁₁ Formula             Value
 ─────────────────────────────────────────────────────────────
 24  Ω_Λ                      (1−1/φ²)+1/(L_4+F_6)     0.6847
 25  Ω_DM·h²                  (Ω_b·(DM/b))·h²          0.1200
@@ -10901,7 +10901,7 @@ treatment — Section 2.8)
 #### 2.5.AP MATHEMATICAL CONSTANTS IN PHYSICS
 
 ```
-#   Constant                 Z₁₁ Formula             Value
+  Constant                 Z₁₁ Formula             Value
 ─────────────────────────────────────────────────────────────
 33  Feigenbaum δ             Σω_k³/F₆ + α/(L₃L₄)      4.66920
 34  Catalan G                π²/(8·L_2) + corr.       0.91596
@@ -10917,7 +10917,7 @@ treatment — Section 2.8)
 #### 2.5.AQ SI EXPONENTS (all exact through Z₁₁ numbers)
 
 ```
-#   Constant SI         Exponent    Formula from Z₁₁
+  Constant SI         Exponent    Formula from Z₁₁
 ─────────────────────────────────────────────────────
 41  c                   10⁸         2·L_2 + 2 = 8
 42  G                   10⁻¹¹       −N = −11
@@ -10935,7 +10935,7 @@ treatment — Section 2.8)
 #### 2.5.AR NON-STANDARD PREDICTIONS
 
 ```
-#   Prediction                 Z₁₁ value        Status
+  Prediction                 Z₁₁ value        Status
 ─────────────────────────────────────────────────────────
 51  m_DM (GeV)                 5.0               test
 52  σ_SI DM-nucleon (cm²)      ~6·10⁻⁴⁵          test
@@ -24857,13 +24857,13 @@ Algorithmic structure of the sympy computation:
 ```python
 import sympy as sp
 
-# Symbolic variables
+Symbolic variables
 N = sp.Symbol('N', positive=True, integer=True)
 alpha = sp.Symbol('alpha', positive=True)
 phi = (1 + sp.sqrt(5)) / 2  # golden ratio
 pi_sym = sp.pi
 
-# Trinity values of the eight quartic couplings (Theorem 5.1.D.4)
+Trinity values of the eight quartic couplings (Theorem 5.1.D.4)
 lambda_a = alpha * phi**10 / N
 lambda_b = alpha**2 * pi_sym**2 / (2 * N**2)
 lambda_c = alpha * sp.Integer(7) / sp.Integer(5)   # L_4/F_5 = 7/5
@@ -24873,15 +24873,15 @@ kappa_1 = alpha * N / pi_sym
 kappa_2 = alpha * N / (2 * pi_sym)
 kappa_3 = alpha**(sp.Rational(3,2)) * sp.sqrt(N) * phi
 
-# Yukawa couplings (PDG 2024)
+Yukawa couplings (PDG 2024)
 y_t = sp.Float('0.9369')
 y_b = sp.Float('0.02434')
 y_tau = sp.Float('0.00997')
 
-# Gauge coupling at UV scale (Planck scale)
+Gauge coupling at UV scale (Planck scale)
 g_UV = sp.sqrt(4 * pi_sym / 25)  # UV fixed point Trinity
 
-# SU(11) invariants
+SU(11) invariants
 C2_adj = N
 C2_fund = (N**2 - 1) / (2 * N)
 C2_2form = (N - 2) * (N + 1) / N
@@ -24889,7 +24889,7 @@ T_adj = N
 T_fund = sp.Rational(1, 2)
 T_2form = (N - 2) / 2
 
-# Two-loop β-function Machacek-Vaughn (M-V 1985, Eq. 5.1.D.7.6.1)
+Two-loop β-function Machacek-Vaughn (M-V 1985, Eq. 5.1.D.7.6.1)
 def beta_2loop_lambda(lam, g, yukawas, C2_R, T_R):
     Lambda_S2 = -sp.Rational(1, 4) * lam**3 * 24
     Lambda_SG = -16 * g**2 * C2_R * lam**2
@@ -24902,12 +24902,12 @@ def beta_2loop_lambda(lam, g, yukawas, C2_R, T_R):
         Lambda_SY + Lambda_Y2 + Lambda_GY
     )
 
-# Substitution for β^(2) λ_a at the Trinity point
+Substitution for β^(2) λ_a at the Trinity point
 beta_2_lambda_a = beta_2loop_lambda(
     lambda_a, g_UV, [y_t], C2_adj, T_adj
 ).subs([(N, 11), (alpha, sp.Float('1/137.035999207'))])
 
-# Numerical simplification
+Numerical simplification
 beta_2_lambda_a_value = sp.simplify(beta_2_lambda_a).evalf()
 ```
 
