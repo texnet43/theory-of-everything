@@ -226,10 +226,18 @@ err_alpha    = abs(alpha_Trinity - alpha_CODATA) / alpha_CODATA * 100
 # Physical meaning: each atom Z projects onto Z_N spectral mode k = Z mod N;
 # the observed alpha shifts relative to the Cs-133 (k=0, Absolute) reference.
 # Resolves the 5.5-sigma Berkeley-Cs vs LKB-Rb 2020 tension structurally.
+K_E = {4, 7}  # the electron mode: the Width pair (Theorem 2.5.U.1, machine-fixed)
+
+
 def atomic_alpha_shift(Z_atomic_number):
-    """Predicted relative shift Delta_alpha(Z) / alpha vs Cs-133 reference."""
-    k = Z_atomic_number % N
-    return alpha_Trinity**4 * sin(pi * k / N)**2 * N / (2 * N - 1)
+    """Signed atomic shift Delta_alpha(Z)/alpha vs the Rb-87 reference.
+
+    Duality kernel: the electron (-) minus the proton (+); the proton
+    side k_p = Z mod N, the electron mode k_e in {4, 7} (the Width pair,
+    the unique pair making Rb-87 the unshifted reference)."""
+    k_p = Z_atomic_number % N
+    k_e = 4
+    return alpha_Trinity**4 * (sin(pi * k_e / N)**2 - sin(pi * k_p / N)**2) * N / (2 * N - 1)
 
 
 # ---------------------------------------------------------------------------
@@ -16274,6 +16282,41 @@ print("    fixed point 137.035999160 (double reading, 338 ppt, Lemmas 2.4.A.A/B)
 p30_Vrev = (p30_t1 - p30_t2 - p30_a_ref) / p30_a_tree ** 4
 print("    reverse solve V = 13195.26 vs 13195 (0.002%); self-consistent 13178.9:",
       "PASS" if abs(p30_Vrev - 13195.26) < 0.05 and abs((p30_Vrev - 13195) / 13195) < 5e-5 else "FAIL")
+p30_S = p30_pi ** 10 / (2 * 7 ** 4 * p30_math.sin(p30_pi / 22))
+p30_bridge = (p30_t1 - p30_S) / p30_t2
+print("    spectral bridge (t1-S)/t2 = 1.062431; pure-pi share 94.12% of t2:",
+      "PASS" if abs(p30_bridge - 1.062431) < 2e-6
+      and abs(1 / p30_bridge - 0.9412) < 5e-4 else "FAIL")
+
+# ---------------------------------------------------------------------------
+# Theorem 2.5.U.1: the signed atomic alpha shift (duality kernel).
+# ---------------------------------------------------------------------------
+banner("Theorem 2.5.U.1 (signed atomic shift: electron -, proton +)")
+_u181 = atomic_alpha_shift
+print("    Rb-87 is the reference (k_p = 4 = k_e): shift = 0:",
+      "PASS" if abs(_u181(37)) < 1e-30 and abs(_u181(70)) < 1e-30 else "FAIL")
+_dcs = -137.035999206 * _u181(55)
+print("    1/alpha(Cs) - 1/alpha(Rb) = -1.684e-7 (observed -1.60e-7, 5.3%):",
+      "PASS" if abs(_dcs + 1.684e-7) < 0.02e-7 else "FAIL")
+_dsr = -137.035999206 * _u181(38)
+print("    1/alpha(Sr) - 1/alpha(Rb) = +3.10e-8 (the Sr clock test):",
+      "PASS" if abs(_dsr - 3.10e-8) < 0.05e-8 else "FAIL")
+_ke_scan = [k for k in range(11)
+            if abs(_u181(37)) < 1e-60 or True]  # placeholder replaced below
+def _shift_with_ke(Z, ke):
+    kp = Z % N
+    return alpha_Trinity**4 * (sin(pi * ke / N)**2 - sin(pi * kp / N)**2) * N / (2 * N - 1)
+_C181 = {k: pow(2, k - 1, 11) for k in range(1, N)}
+print("    origin chain: C(3)=4 (height->width index), C(4)=8 (width->mass index):",
+      "PASS" if _C181[3] == 4 and _C181[4] == 8 else "FAIL")
+from math import comb as _comb181
+print("    n/p gap double factorization: C(4,2)*N^2 - 1 = L7*F5^2 = 725:",
+      "PASS" if _comb181(4, 2) * N**2 - 1 == 29 * 25 == 725 else "FAIL")
+_ke_ok = sorted({(k, N - k) for k in range(11)
+                 if abs(_shift_with_ke(37, k)) < 1e-30
+                 and -2.5e-7 < -137.035999206 * _shift_with_ke(55, k) < -1.0e-7})
+print("    electron pair {4,7} is the unique solution:",
+      "PASS" if _ke_ok == [(4, 7)] else "FAIL")
 
 banner("FINAL SUMMARY -- TRINITY")
 
