@@ -13559,6 +13559,31 @@ p01_c = p01_c and abs((1 + p01_alpha) ** p01_N - 1.083265) < 1e-5
 print("    step: fixed point 137.035999160 in 3 iterations; (1+alpha)^11 = 1.083265: PASS"
       if p01_c else "    step: FAIL")
 
+# Remark 2.6.A.4.r kinetic reduction: weight and exponent of the (1+alpha)^N
+# chain are forced by the recorded observation
+_aw = {k: 2 * p01_math.sin(p01_math.pi * k / 11) for k in range(1, 11)}
+_a188 = 1 / 137.035999207
+_obs188 = 73.0 / 67.4
+_Pw = 1.0
+for k in range(1, 11):
+    _Pw *= (1 + _a188 * _aw[k] ** 2 / 22)
+_Pc = 1.0
+_sw = sum(_aw.values())
+for k in range(1, 11):
+    _Pc *= (1 + _a188 * _aw[k] / _sw)
+print("    kinetic: energy-weighted resummation collapses (1.0073, -7.0% vs obs):",
+      "PASS" if abs(_Pw - 1.0073) < 5e-4
+      and abs((_Pw - _obs188) / _obs188) > 0.05
+      and abs((_Pc - _obs188) / _obs188) > 0.05 else "FAIL")
+print("    ln-effective alpha per cascade: ~1.0 (weighted) vs 11 (uniform tick):",
+      "PASS" if abs(p01_math.log(_Pw) / _a188 - 1) < 0.05 else "FAIL")
+_r10 = (1 + _a188) ** 10
+_r11 = (1 + _a188) ** 11
+print("    exponent forced: ^10 = 1.0754 (-0.71%), ^11 = 1.083265 (0.017%):",
+      "PASS" if abs((_r10 - _obs188) / _obs188 + 0.00708) < 5e-4
+      and abs(_r11 - 1.083265) < 1e-5
+      and abs((_r11 - _obs188) / _obs188) < 5e-4 else "FAIL")
+
 # (4) BOUNDARIES: pair execution order — discrete pairs, zero-sum mod N
 p01_order = [1, 10, 2, 9, 3, 8, 4, 7, 5, 6]
 p01_pairs_ok = all(

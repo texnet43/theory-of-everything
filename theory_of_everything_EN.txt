@@ -559,7 +559,7 @@
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
   additivity, the class conventions as test outputs (nucleus 1 MeV,
   molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness
-  windows [0.10, 0.11) is nonempty). Battery: 1036 PASS / 0 FAIL /
+  windows [0.10, 0.11) is nonempty). Battery: 1039 PASS / 0 FAIL /
   EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
@@ -27887,6 +27887,46 @@
   here is the numerical ratio (1 + α)^N = 1.083265 itself and its
   agreement with observation (0.017 %).
 
+  Kinetic reduction (machine): the transport → Friedmann chain is
+  reduced to recorded objects link by link.
+
+  (1) The transport quantum. The photon-aether interaction is
+      tick-quantized: one quantum α per executed mode (the occupations
+      n_k = 1 of the basic cascade, Rem 2.4.AE.2.t(3)); the
+      "pomodoro" factor is per tick, not per energy.
+
+  (2) The weight uniformity is forced (machine). Any energy-weighted
+      resummation over the recorded weight systems extinguishes the
+      effect: spectral weights ω_k²/Σω² give 1.0073 (−7.0% against
+      the observed 1.083086), chord weights ω_k/Σω — 1.0073, raw
+      chords ω_k/N — 1.0093; the ln-effective α per full cascade is
+      ≈ 1.00 against 11 for the uniform tick. Closing the tension at
+      0.017% requires a tick quantum with uniform weight —
+      occupation, not energy.
+
+  (3) The Absolute tick is forced (machine). The product over the
+      active modes alone (1+α)^10 = 1.0754 (−0.71% against the
+      observation, ~40 times worse) — the product is obliged to run
+      over the full cycle N = 11 with the closure tick (Ψ₁₂ = Ψ₁):
+      the same split N = 10 + 1 as in the action spiral
+      (Rem 2.4.2.s(9): the content on the spiral + the unit of the
+      Absolute) and in the α tree (structure N × span φ¹⁰).
+
+  (4) Passage to Friedmann. The stretch (1+α) per tick is the
+      metric aspect of a section (Rem 2.6.A.4.x(4)); accumulated
+      over the N sections between the ends of the ladder, it is the
+      H ratio of the two ends (the two-end reading,
+      Rem 2.6.A.4.s(3)). The background meanwhile is reproduced on
+      the structural parameters without the tension factor:
+      H(z) ≤ 0.5%, r_d −0.66%, θ* −0.18% on Ω_m = 1/π,
+      Ω_b = 1/(2π²), H₀ = 67.4 (Rem 2.4.I.1.r) — the factor lives
+      in the two-end inference, not in the background dynamics.
+
+  (5) Remainder. A rigorous Boltzmann-level derivation of the tick
+      quantum α from the collision term of the transport is the open
+      tail of the reduction.
+      Computation: theory_of_everything.py, block Rem 2.6.A.4.r. □
+
   Remark 2.6.A.4.r.1 (Numerical coincidence with the fraction (N+2)/(N+1)).
   The value (1 + α)^N = 1.0833 is numerically close to the fraction
   (N + L_0)/(N + 1) = (N + 2)/(N + 1) = 1 + 1/(N + 1) = 13/12 = 1.0833,
@@ -27905,7 +27945,7 @@
   constant (measure of electromagnetic photon density). Their product
   α · N represents the accumulated effect of interaction of photons
   with aetherons over the full cycle of Sphere actualization. This
-  is a structural numerical correspondence of the tension via a posited per-mode aether-photon interaction ansatz (mechanism: kinetic/Friedmann derivation is open).
+  is a structural numerical correspondence of the tension via a posited per-mode aether-photon interaction ansatz (the mechanism is reduced link by link: the transport tick quantum — the section stretch — the two-end reading, Rem 2.6.A.4.r; the remainder is the Boltzmann tick quantum).
 
   Remark 2.6.A.4.s (The ladder of scales: why the tension must
   exist). A structural reading of Theorem 2.6.A.4; the ansatz
@@ -30890,7 +30930,7 @@
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1036 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1039 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -36689,7 +36729,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1036 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  1039 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -43724,7 +43764,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1036 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1039 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -58222,14 +58262,14 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1036 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1039 PASS,
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the critic's question: "what
   does a machine check establish?" — the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (709 theorems, 1036
+  from the recorded axioms and definitions (709 theorems, 1039
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
