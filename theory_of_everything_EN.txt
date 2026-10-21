@@ -559,7 +559,7 @@
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
   additivity, the class conventions as test outputs (nucleus 1 MeV,
   molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness
-  windows [0.10, 0.11) is nonempty). Battery: 1028 PASS / 0 FAIL /
+  windows [0.10, 0.11) is nonempty). Battery: 1033 PASS / 0 FAIL /
   EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
@@ -16592,6 +16592,45 @@
         4, 2, 5, 1), value = measured e (the π–e barrier); the 4-loop
         — derived (three readings of the volume, item (6)). Assembly:
         1/α = tree − t2 − t3 = 137.035999207 (5.4 ppt).
+    (8) VARIATIONAL PROTOTYPE (machine). The first layer of the
+        program of item (4) is executed on the Cone metric
+        (Definition 2.4.AE.1.d). (a) The form of the difference of the
+        closures is EXACT: t1 − S = t1·[1 −
+        (π^N/(L₄⁴·φ^{N−1}))·sinc⁻¹(π/2N)] — the deficit is the product
+        of exactly two pure factors: the spiral mismatch
+        1 − π¹¹/(7⁴φ¹⁰) = 0.003723 (the π-spiral of all N = 11 steps
+        against the φ-spiral of N−1 = 10 active steps, dressed by the
+        cell L₄ = C(8) = 7 to the fourth power) and the half-cycle
+        tick x/sin(x) − 1 = +0.003407 at x = π/2N (the line-to-cycle
+        edge factor, Rem 2.4.AE.2.r); the two factors nearly cancel
+        (0.372% down, 0.341% up) — the spectral closure almost returns
+        to the tree, and the small deficit 3.29·10⁻⁴·t1 is the bridge.
+        The reconstruction of the deficit is exact (machine, PASS).
+        The difference of the closures is pure π-φ-geometry: no e
+        enters it. (b) SOFT MODES. At the tree floor (the metric
+        exp(−d/φ¹⁰)) the two smallest eigenvalues are carried by modes
+        2 and 4: λ₂ = 0.002720 < λ₄ = 0.002961 < λ₅ = 0.004714 < λ₃ =
+        0.011575 < λ₁ = 0.098192; the variation of the action
+        δTr g⁻¹ = −Tr(g⁻²·δg) along the ladder (φ^k → φ^{k+1})
+        concentrates on the mirror pairs {2,9} and {4,7}: 73.2% in the
+        Tr g⁻¹ sector, 85.0% in Tr g⁻², 91.2% in Tr g⁻³ — exactly the
+        floors of the numerator of the 1-loop term (φ² — floor 2, e⁴ —
+        floor 4): the loop is routed by the soft modes, and the soft
+        modes of the Cone are floors {2,4}. An independent machine
+        confirmation of the floor form of the numerator of item (7).
+        In ladder units the 1-loop term = 6.44·10⁻⁴ of a floor (the
+        spectral closure sits at floor 9.999316). (c) The value is
+        past the barrier. The remainder R = (t1 − S) − t2 = 5.88% of
+        the deficit (6.24% of t2) has no atom in the recorded grammar:
+        the probes 12·t2 (12.0190), 1/16 (0.0625), the first spectral
+        sum Σω_k = 2cot(π/22), the electron-cell channel {3,8} (share
+        of the variation 7.41% ≠ 6.24%) — all negative (recorded
+        positively); e⁴ remains the measured channel
+        (Rem 1.10.2.9.w). Status: the form of the difference of the
+        closures is derived (pure geometry), the floors of the
+        numerator are confirmed independently; the full derivation of
+        the 1-loop term from the action remains a registry program.
+        Computation: theory_of_everything.py, block Rem 2.4.2.s(8).
 
   Theorem 2.4.3 (Weinberg angle — 7 significant digits).
     sin²θ_W = sin(π/N)·√(9/N)·φ⁷/32 = 0.231220    (0.000013%)
@@ -30815,7 +30854,7 @@
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1028 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1033 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -36614,7 +36653,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1028 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  1033 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -43649,7 +43688,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1028 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1033 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -58147,14 +58186,14 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1028 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1033 PASS,
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the critic's question: "what
   does a machine check establish?" — the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (709 theorems, 1028
+  from the recorded axioms and definitions (709 theorems, 1033
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from

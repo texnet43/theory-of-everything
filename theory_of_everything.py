@@ -16288,6 +16288,44 @@ print("    spectral bridge (t1-S)/t2 = 1.062431; pure-pi share 94.12% of t2:",
       "PASS" if abs(p30_bridge - 1.062431) < 2e-6
       and abs(1 / p30_bridge - 0.9412) < 5e-4 else "FAIL")
 
+# (8) variational prototype: exact two-factor form of the closure deficit
+p30_x22 = p30_pi / 22
+p30_r11 = p30_pi ** 11 / (7 ** 4 * p30_phi ** 10)
+p30_Drec = p30_t1 * (1 - p30_r11 * (p30_x22 / p30_math.sin(p30_x22)))
+print("    deficit = tree*(1 - pi^N/(L4^4 phi^(N-1)) invsinc(pi/2N)) exact:",
+      "PASS" if abs(p30_Drec - (p30_t1 - p30_S)) < 1e-9 else "FAIL")
+print("    two factors: mismatch 0.003723 down, tick +0.003407 up, cancel:",
+      "PASS" if abs((1 - p30_r11) - 0.00372315) < 2e-8
+      and abs(p30_x22 / p30_math.sin(p30_x22) - 1 - 0.00340673) < 2e-8 else "FAIL")
+
+def _p30_eig(kf):
+    s = p30_phi ** kf
+    w = [p30_math.exp(-d / s) for d in range(6)]
+    return [w[0] + sum(2 * w[d] * p30_math.cos(2 * p30_math.pi * m * d / 11)
+                       for d in range(1, 6)) for m in range(11)]
+
+_p30_l10 = _p30_eig(10)
+_p30_pair = {m: _p30_l10[m] for m in range(1, 6)}
+_p30_sorted = sorted(_p30_pair, key=_p30_pair.get)
+print("    soft modes of the Cone metric at the tree floor = {2, 4}:",
+      "PASS" if _p30_sorted[:2] == [2, 4]
+      and abs(_p30_pair[2] - 0.002720) < 2e-6
+      and abs(_p30_pair[4] - 0.002961) < 2e-6 else "FAIL")
+
+def _p30_share(p):
+    l9, l10 = _p30_eig(9), _p30_eig(10)
+    dv = {m: -p * l10[m] ** (-(p + 1)) * (l10[m] - l9[m]) * 2
+          for m in range(1, 6)}
+    return (dv[2] + dv[4]) / sum(dv.values())
+
+print("    variation channels {2,9}+{4,7}: 73.2/85.0/91.2% (Tr g^-1/2/3):",
+      "PASS" if abs(_p30_share(1) - 0.7317) < 2e-3
+      and abs(_p30_share(2) - 0.8499) < 2e-3
+      and abs(_p30_share(3) - 0.9120) < 2e-3 else "FAIL")
+print("    negatives: 12*t2 -> 12.0190; R/t2 = 0.06243 vs 1/16:",
+      "PASS" if abs((p30_t1 - p30_N * p30_pi ** 9 / 7 ** 4) / p30_t2 - 12.019024) < 2e-6
+      and abs((p30_t1 - p30_S - p30_t2) / p30_t2 - 0.0624309) < 2e-6 else "FAIL")
+
 # ---------------------------------------------------------------------------
 # Theorem 2.5.U.1: the signed atomic alpha shift (duality kernel).
 # ---------------------------------------------------------------------------
