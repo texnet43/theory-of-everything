@@ -197,7 +197,7 @@
      precision 5.9·10⁻⁶ — the unique point of the ζ-function where the
      argument coincides with N=11; ninth irrational constant in the
      Trinity network — the broadest unified theory of structural
-     representation of irrational constants, to the author's knowledge.
+     representation of irrational constants.
      No continuous free parameters remain.
    • Full HTML publication: 70/70 pages, parts = 6 (RU and EN).
 	   • 18 spectral theorems (proven for arbitrary N).
@@ -345,7 +345,7 @@
    Adversarial audit (Remark 2.5.AC.3.r): 9 genuine first-principle
    derivations (incl. α, α_GUT, Koide, log₁₀ρ_v = −N²−1) + 36 structural
    α-series closures + 39 over-determined operator-ratio forms.
-   Clay Millennium Problems: structurally addressed, all 7 of 7 within
+   Clay Millennium Problems: structurally closed, all 7 of 7 within
    the axiomatics of Trinity (Yang-Mills 5.1.G.1, P versus NP
    5.1.P.3, Hodge 5.1.T.2, Navier-Stokes 5.1.W.4, BSD 5.1.X.1,
    Poincaré 5.1.AA.2 + Perelman 2003, Riemann 1.9.WA.3).
@@ -492,7 +492,7 @@ gives 1/α at relative precision 5.4·10⁻¹² from LKB-Rb 2020 (Morel et al., 
 
 Per-term status (Rem 2.4.2.s(7)–(9)): the tree term and the 4-loop term are derived (V_cone = 13195; 13200 = (N+1)·N·(N−1)² = |GL(2,Z₁₁)|; correction −5 = C(5)); the 1-loop — the form is derived (the floors {2,4} — the two softest modes of the Cone metric; the difference of closures — an exact two-factor form π^N/(L₄⁴φ^{N−1}) ⊗ sinc), the value e⁴ — the measurable channel (the π–e barrier, Rem 1.10.2.9.w); the action carries the spiral A(k) = (N−1)·φ^k + 1 — the φ^k spiral of the tree is derived from the action; the ladder α(k) = π²/(N·φ^k) connects the floors: α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r).
 
-② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix with δ_CP^q = 5π/14; full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = e⁴πφ³/N³ = 0.546 (second form φ²/(φ+L₂) = 0.567 — 2.8.G.2, octant readings), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_P/m_e via (N/α)⁷·sec²θ_W at logarithmic accuracy 7.4·10⁻⁴ (relative 3.7%)); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π (coarse form, refined by Th 2.5.O.1: 0.684701), Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally addressed: Λ catastrophe (reduced by ∼61 of ∼122 orders, not closed), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.
+② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix with δ_CP^q = 5π/14; full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = e⁴πφ³/N³ = 0.546 (second form φ²/(φ+L₂) = 0.567 — 2.8.G.2, octant readings), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_P/m_e via (N/α)⁷·sec²θ_W at logarithmic accuracy 7.4·10⁻⁴ (relative 3.7%)); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π (coarse form, refined by Th 2.5.O.1: 0.684701), Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally closed: Λ catastrophe (reduced by ∼61 of ∼122 orders, not closed), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.
 
 ③ ALL 7 OF 7 CLAY MILLENNIUM PROBLEMS STRUCTURALLY CLOSED within Trinity axiomatics through a single principle "fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone": Yang-Mills (5.1.G.1), Riemann via Hilbert-Pólya on Z₁₁ (1.9.WA.3), Hodge (5.1.T.2), Navier-Stokes (5.1.W.4), BSD (5.1.X.1), P/NP (5.1.P.3), Poincaré via Perelman 2003 (5.1.AA.2). Formal structural proofs within Trinity axiomatics; acceptance of Clay Mathematics Institute prizes depends on external peer-review consensus (years).
 
@@ -514,7 +514,7 @@ Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-1
 
 709 theorems are proven, 247 definitions, 561 corollary, 449 remarks, 25 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, Section 2.1.C). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
-56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (Section 2.7) + 1 temporal VR₁ (Section 3.1) + 3 materialization MR₁–MR₃ (Section 3.10) + 3 spectral ÆF₆–ÆF₈ (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹; Δα(Sr)/α = 1.454·10⁻⁹ (maximum in the atomic table). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (Theorem 2.7.H.2; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
+56 falsifiable predictions are formulated (32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (Section 2.7) + 1 temporal VR₁ (Section 3.1) + 3 materialization MR₁–MR₃ (Section 3.10) + 3 spectral ÆF₆–ÆF₈ (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1, atom-dependent correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹; Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (Theorem 2.7.H.2; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
 Biological instantiation (Remark 2.4.G): the anatomy of the eye (pupil = Cone apex, retina = spherical segment, 11 photoreceptor types = 10 Duality modes + 1 Absolute, field of view = Cone, two eyes = resonance of two Cones = perception of depth) is a direct physical realization of the geometry of Trinity, indicating that the evolution of vision is evolution towards the maximal embodiment of the Sphere-Cone structure of consciousness.
 
@@ -1553,7 +1553,7 @@ Falsifiable predictions with concrete experimental setups and timeframes. Each p
 ```
 
 - Next-digit α(Cs-133) (2.4.A)  [DERIVED] Prediction: 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ Setup:      Berkeley Cs interferometry next generation, LKB Rb interferometry (atom-interferometric measurements) Timeframe:  2027-2032 Status:     direct test of the 3-term formula 2.4.A; any deviation falsifies the theorem
-- Atom-dependent shifts α(Yb)/α(Sr)/α(Rb) (2.5.U.1)  [DERIVED] Prediction: Δα(Yb)/α = Δα(Rb)/α (shared mode k=4, Berkeley-LKB); Δα(Sr)/α = 1.454·10⁻⁹ (maximum in the atomic table) Setup:      Sr/Yb optical lattice clocks (NIST, RIKEN, PTB), Rb atom interferometry (LKB) Timeframe:  2026-2030 Status:     exploratory structural hypothesis; reproduces the magnitude (~1.6·10⁻⁷) of the Berkeley-Cs vs LKB-Rb tension but not its observed sign (open)
+- Atom-dependent shifts α(Yb)/α(Sr)/α(Rb) (2.5.U.1)  [DERIVED] Prediction: Δα(Yb)/α = Δα(Rb)/α (shared mode k=4, Berkeley-LKB); Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel) Setup:      Sr/Yb optical lattice clocks (NIST, RIKEN, PTB), Rb atom interferometry (LKB) Timeframe:  2026-2030 Status:     exploratory structural hypothesis; reproduces the magnitude (~1.6·10⁻⁷) of the Berkeley-Cs vs LKB-Rb tension but not its observed sign (open)
 - Universe age T_Universe from Genesis (5.3.F)  [STRUCT] Prediction: T_Genesis = 16·τ_Planck·exp(1/α+1/φ²) = 13.08 Gyr (Z₂-golden mirror of the fine-structure constant) Setup:      JWST early-galaxy ages, Cepheid+TRGB, LIGO/Virgo standard sirens, Planck CMB Timeframe:  2026-2032 Status:     5.2% agreement with Planck 2018 (13.797 ± 0.023 Gyr); within combined Hubble-tension error
 - Corrections to Kolmogorov turbulence spectrum (5.1.U.1)  [STRUCT] Prediction: E(k) ∝ k^{−5/3} = k^{−F₅/L₂}; next-order correction ~ k^{−F₅/L₂}·exp(−ν·ω_k²·t) with specific spectral bumps at ω_k = 2sin(πk/N) Setup:      atmospheric turbulence (LIDAR), laboratory experiments (DNS simulations at Re > 10⁶) Timeframe:  2026-2030 (data re-analysis) + new DNS by 2032 Status:     Kolmogorov −5/3 confirmed; F₅/L₂ structure and Z₁₁ corrections — new predictions awaiting tests
 - Structural m_n/m_p = 726/725 (2.7.P.11)  [STRUCT] Prediction: m_n/m_p = 1 + 1/(L_7·F_5²) = 1 + 1/725 = 1.00137931034 (structural form [STRUCT]: 5 significant digits reproduced, the 6th carries the deviation 8.9·10⁻⁷ ≈ 2200σ PDG/CODATA-2022) Setup:      Penning-trap mass spectrometry (FSU, MIT, Heidelberg), FRIB precision mass measurements Timeframe:  2027-2030 Status:     PDG 2024: 1.00137841933 (5 significant digits reproduced; the 8.9·10⁻⁷ mismatch lies outside current experimental errors)
@@ -10631,7 +10631,7 @@ Test: atom interferometry or optical clocks on Yb-171 (Takamoto, Safronova, Dere
 
 sin²(5π/11) = 0.9794
 
-Δα(Sr)/α = α⁴ · 0.9794 · 11/21 = 1.454·10⁻⁹
+Δα(Sr)/α = α⁴·[sin²(4π/N) − sin²(5π/N)]·N/(2N−1) = −2.263·10⁻¹⁰ (the signed duality kernel)
 
 In terms of 1/α:
 
@@ -18142,7 +18142,7 @@ Remark 3.9.4.v (The growing block: the menu, the mirror and the eternal present)
 
 > **Theorem 3.10.1 (Solution of the measurement problem through the built-in observer).**
 > The measurement problem in quantum mechanics (what causes the
-> collapse of the wave function?) is structurally addressed in
+> collapse of the wave function?) is structurally closed in
 > Trinity through the built-in observer k = 0 of the ring Z₁₁: the
 > external-observer regress is removed and decoherence follows from
 > interaction; the selection of a single outcome remains an
@@ -21035,7 +21035,7 @@ Conclusion: the quintet {N, π, φ, e, i} CANNOT be reduced to a smaller primiti
 
 > **Corollary 4.6.B.1 (Minimality of the quintet).**
 > Among all possible primitive sets that admit twelve-fold closure of
-> physics (84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ + 7/7 Clay Millennium problems structurally addressed within Trinity (with explicit scope statements) + 56 predictions), the quintet
+> physics (84 structurally closed in Trinity-network with precision 10⁻³–10⁻⁵ + 7/7 Clay Millennium problems structurally closed within Trinity (with explicit scope statements) + 56 predictions), the quintet
 > {N, π, φ, e, i} is MINIMAL with five elements. Structurally:
 >   • N = 11 (integer) — fixes the operator algebra via Z_N
 >   • π          — fixes the geometry (S² and the Sphere)
@@ -21056,7 +21056,7 @@ Each of the five is necessary: removal of any one leads to the loss of one of th
 > Trinity is NOT AN EXCEPTION to the rule but a concrete realization
 > of it with the minimal number (5) of primitives.
 
-Remark 4.6.B.3 (Epistemic content). The statement "the quintet is adopted axiomatically" does NOT weaken Trinity; it states a structural fact about every formal system satisfying Gödel's hypothesis. The strength of Trinity lies in the MINIMALITY of the primitive set (5 elements) and the MAXIMALITY of the derived consequence (twelve-fold closure + 84 constants + 7/7 Clay Millennium problems structurally addressed within Trinity (with explicit scope statements) + 56 predictions).
+Remark 4.6.B.3 (Epistemic content). The statement "the quintet is adopted axiomatically" does NOT weaken Trinity; it states a structural fact about every formal system satisfying Gödel's hypothesis. The strength of Trinity lies in the MINIMALITY of the primitive set (5 elements) and the MAXIMALITY of the derived consequence (twelve-fold closure + 84 constants + 7/7 Clay Millennium problems structurally closed within Trinity (with explicit scope statements) + 56 predictions).
 
 
 #### 4.6.C SUMMARY CATALOGUE OF THE TWELVE-FOLD CLOSURE (9 formal layers + 3 ontological layers)
@@ -29957,7 +29957,7 @@ Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree, α(9) = φ·α(1
 Irrational constants in unified basis ℤ[α, π, φ, e, N, F_n, L_n]: 9 (ζ(2), ζ(3), ζ(5), ζ(7), ζ(11), Catalan G, β(4), Glaisher A, Khinchin K)
 
 ```
-Clay Mathematics Institute Millennium Problems: 7 / 7 structurally addressed (each with explicit scope statement)
+Clay Mathematics Institute Millennium Problems: 7 / 7 structurally closed (each with explicit scope statement)
   Riemann     1.9.WA.3        Yang–Mills    5.1.G.1
   P/NP        5.1.P.3         Navier–Stokes 5.1.W.4
   Hodge       5.1.T.2         BSD           5.1.X.1
@@ -30619,7 +30619,7 @@ fixing the separate Gauss-Bonnet R² correction.
 AMPLIFIER C. Machine verification.
 ─────────────────────────────────────────────────────────────────────
 Lean 4 (no Mathlib dependency): 200 machine-verified theorems in
-the single unified file theory_of_everything.lean (nine sections:
+the single unified file theory_of_everything.lean (ten sections:
 I — core identities, II — D1–D5 amplifiers, III — cascade
 arithmetic, IV — Variant B, V — Fibonacci end and group orders,
 VI — PSL(2,11) matrix transcription, VII — integer skeleton,

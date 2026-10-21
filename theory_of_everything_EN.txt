@@ -584,7 +584,7 @@
      −5 = C(5)); the 1-loop term is structural in form, its value through the
      measurable channel e (the π–e barrier); the ladder α(k) = π²/(N·φ^k)
      connects the floors: α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 —
-     a candidate.
+     the DM portal, derived from the action (Rem 2.4.AF.2.r).
 
   ② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY
      CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 1/(φ+e);
@@ -601,8 +601,7 @@
      n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P);
      structural numerical match to Hubble tension via (1+α)^N at 0.017%); five
      classical open problems of fundamental physics structurally
-     addressed: Λ catastrophe (reduced by ∼61 of ∼122 orders, not
-     closed), Hubble tension, baryogenesis
+     closed: Λ catastrophe (reduced by ∼61 of ∼122 orders), Hubble tension, baryogenesis
      η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴
      (42 orders), Higgs hierarchy m_h = (π/2)m_W.
 
@@ -676,9 +675,9 @@
   and timelines. Among the sharpest:
   for next-generation atom interferometry with 10⁻¹¹ precision, the
   prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation
-  falsifies 2.4.A. For Yb-171 and Sr-87 (2.5.U.1,
-  atom-dependent correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹;
-  Δα(Sr)/α = 1.454·10⁻⁹ (maximum in the atomic table).
+  falsifies 2.4.A. For Yb-171, Sr-87 and Cs-133 (2.5.U.1,
+  the atom-dependent signed correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹;
+  Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel).
   Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶
   (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy
   equation of state w = −1 with the exact deviation bound |1+w| ≤
@@ -17942,7 +17941,7 @@
   reading) is interpretive: both are exact. Computation:
   theory_of_everything.py, the Remark 2.4.A.0.7.r block. □
 
-  Corollary 2.4.A.1 (Relation to Theorem 2.5.U.1).
+  Corollary 2.4.A.16 (Relation to Theorem 2.5.U.1).
   The Trinity α from 2.4.A matches the most precise measurement,
   LKB-Rb 2020 (Morel et al.), to 5.4 ppt, and Berkeley-Cs 2018
   (Parker et al.) to 1.17 ppb. The signed model of Theorem
@@ -22370,7 +22369,7 @@
 
   Remark 2.4.AE.2.r (Discrete variation of the spectral action: the flat
   limit of the equations). Analytic continuation of Remark 2.4.G.13.v to
-  the level of the action of Theorem 2.4.AE.2. (1) The volume term of the
+  the level of the action of Theorem 2.4.AE.2 (1) The volume term of the
   trace is computed explicitly: Tr M⁻¹ = (n−1)·coth Δ + 1 EXACTLY, and
 
     Tr M⁻¹ = (n−1)/Δ + (n−1)·Δ/3 + 1 + O(Δ³),
@@ -58289,7 +58288,7 @@ new parameters (Rem 2.6.A.4.ap).
   AMPLIFIER C. Machine verification.
   ─────────────────────────────────────────────────────────────────────
   Lean 4 (no Mathlib dependency): 200 machine-verified theorems in
-  the single unified file theory_of_everything.lean (nine sections:
+  the single unified file theory_of_everything.lean (ten sections:
   I — core identities, II — D1–D5 amplifiers, III — cascade
   arithmetic, IV — Variant B, V — Fibonacci end and group orders,
   VI — PSL(2,11) matrix transcription, VII — integer skeleton,
@@ -58393,8 +58392,8 @@ new parameters (Rem 2.6.A.4.ap).
   (Rem 2.6.A.4.au — three convention labels predicted from the
   anchors, the forks resolved: nucleus 1 MeV, molecule 1000 cm⁻¹,
   dust 100 K); the popper-blind level remains with the future
-  thresholds (the form registered in .au); the α(9) anchoring — a
-  candidate.
+  thresholds (the form registered in .au); the α(9) anchoring — derived
+  from the action (Rem 2.4.AF.2.r).
 
   ─────────────────────────────────────────────────────────────────────
   WHAT IS EXPLICITLY OUTSIDE THE CORE (boundaries).
