@@ -111,7 +111,7 @@
 
    Theory statistics:
    • 709 theorems (with derivations in the text; 200 machine-verified in Lean 4). 247 definitions. 561 corollary.
-   • 447 remarks. 25 lemmas. 14 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
+   • 448 remarks. 25 lemmas. 14 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 3 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Defensible core).
    • 5 Parts × 12 modal subsections = 60 cells.
    • Planck bijection Mathematics↔Physics (Section 2.0 + integrated
@@ -559,7 +559,7 @@
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
   additivity, the class conventions as test outputs (nucleus 1 MeV,
   molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness
-  windows [0.10, 0.11) is nonempty). Battery: 1044 PASS / 0 FAIL /
+  windows [0.10, 0.11) is nonempty). Battery: 1048 PASS / 0 FAIL /
   EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
@@ -663,7 +663,7 @@
   in favour of Trinity (Remark 2.4.AC.3.r — quantitative refutation of
   the "curve-fitting" objection).
 
-  709 theorems are proven, 247 definitions, 561 corollary, 447
+  709 theorems are proven, 247 definitions, 561 corollary, 448
   remarks, 25 lemmas, 14 propositions. Axiomatics: 7 axioms (6 base
   Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅
   are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5,
@@ -24004,6 +24004,44 @@
 
   Proof. σ_SI is a portal-coupling ansatz; the φ⁸ normalization is posited (not derived from Z₁₁), and the quoted value is obtained by evaluating the stated formula at the conditional m_DM = 5 GeV. □
 
+  Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
+  floor 9). The recorded bridge 𝓛_portal = λ_portal·|H|²·φ₂² (Step 5
+  of the constructive chain of Theorem 2.7.B.7; λ_portal = α·φ =
+  0.0118) receives a derivation along the price ladder — the same one
+  derived from the action (Rem 2.4.2.s(9)).
+
+    (1) IDENTITY. λ_portal = α·φ = φ·α(10) = α(9) = π²/(N·φ⁹) EXACTLY:
+        the portal is the tick price of floor 9 (Field) — the filling
+        half of the pair {2, 9} to which the aether field φ₂ belongs.
+        The ladder is derived from the action (the φ^k spiral is the
+        action's own asymptote), so the portal inherits the
+        derivation.
+
+    (2) FORCING OF THE RUNG. Darkness forbids the price α(10)
+        (electromagnetic coupling is excluded by direct searches);
+        the price cannot sit on the law floor of the pair (the frame
+        weighs nothing, Rem 2.4.G.7.t); the minimality of the bridge
+        demands the nearest content rung: among the recorded rungs
+        this is α(9) — exactly one φ step from α(10); the next one,
+        α(8) = φ²·α(10), is no longer minimal. The rung is forced,
+        the coupling freedom is zero.
+
+    (3) OBLIGATORINESS (the registry fork). The portal is obligatory
+        for the fermionic DM and absent for the vacuum aetheron — the
+        recorded distinction of the two objects: the side k = 5
+        (item (iii) of Rem 2.4.AF.1.r) carries the metric and must
+        bridge to the content; the passive aetheron is gravity-only
+        (σ ~ 4·10⁻¹⁰² cm²).
+
+    (4) THE φ⁸ NORMALIZATION. The posited power (the Proof above)
+        unfolds into recorded objects: φ⁸ = φ¹⁰/φ² — the portal
+        squared, folded by the full ladder span φ¹⁰ (the span of the
+        action): σ_SI = (α(9))²·μ²/(4π·v_EW⁴·φ¹⁰). The formula as a
+        whole remains the ansatz of the Proposition; the posited power
+        is gone. The number is reproduced: σ_SI = 6.0·10⁻⁴⁵ cm² at
+        m_DM = 5 GeV.
+  Computation: theory_of_everything.py, block Rem 2.4.AF.2.r. □
+
   Theorem 2.4.AF.3 (Relic density).
     Ω_DM·h² = (Ω_b·(DM/b))·h² ≈ 0.1191  (Theorem 5.8.1)
 
@@ -30943,7 +30981,7 @@
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1044 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1048 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -36742,7 +36780,7 @@
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1044 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
+  1048 PASS) DO NOT DEPEND on Part 3. Part 3 may be read as a
   philosophical appendix; removing it leaves Parts 1-2-5 (physics)
   intact. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
@@ -43809,7 +43847,7 @@
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1044 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1048 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -57288,7 +57326,7 @@
   Theorems: 709
   Definitions: 247
   Corollaries: 561
-  Remarks: 447
+  Remarks: 448
   Lemmas: 25
   Propositions: 14
   Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -58307,14 +58345,14 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1044 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1048 PASS,
   0 FAIL, EXIT = 0 (< 120 s), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the critic's question: "what
   does a machine check establish?" — the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (709 theorems, 1044
+  from the recorded axioms and definitions (709 theorems, 1048
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from

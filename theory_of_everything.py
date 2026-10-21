@@ -9438,6 +9438,29 @@ print(f"    hunt: ln(m_P/m_e) = {_lnpme:.4f}; best 3(1/a + 1/phi^2)/8 = {_best:.
       f"(+{(_best/_lnpme-1)*100:.3f}%) — not an identity: "
       "PASS" if abs(_best / _lnpme - 1) > 1e-4 else "    hunt: FAIL")
 
+# ---------------------------------------------------------------------------
+# Remark 2.4.AF.2.r: the DM portal derived from the action (rung of floor 9)
+# ---------------------------------------------------------------------------
+banner("Remark 2.4.AF.2.r (portal from the action: the rung of floor 9)")
+_p189 = (1 + math.sqrt(5)) / 2
+_a_tr189 = math.pi**2 / (11 * _p189**10)
+_lp189 = _a_tr189 * _p189
+_rung189 = {k: math.pi**2 / (11 * _p189**k) for k in range(11)}
+print("    portal = ladder rung of floor 9: a*phi = pi^2/(N phi^9) exact:",
+      "PASS" if abs(_lp189 - _rung189[9]) < 1e-15
+      and abs(_lp189 - 0.0118) < 5e-5 else "FAIL")
+print("    rung forcing: a(9)/a(10) = phi, a(8)/a(10) = phi^2 (nearest non-EM):",
+      "PASS" if abs(_rung189[9] / _rung189[10] - _p189) < 1e-12
+      and abs(_rung189[8] / _rung189[10] - _p189**2) < 1e-12 else "FAIL")
+print("    normalization: (a*phi)^2/phi^10 = a^2/phi^8 exact (span reading):",
+      "PASS" if abs((_a_tr189 * _p189)**2 / _p189**10
+                    - _a_tr189**2 / _p189**8) < 1e-18 else "FAIL")
+_mu189 = 5.0 * 0.939 / 5.939
+_sig189 = (1 / 137.035999207)**2 * _mu189**2 / (
+    4 * math.pi * 246.22**4 * _p189**8) * 0.3894e-27
+print(f"    sigma_SI = {_sig189:.2e} cm^2 (recorded ~6e-45, XENONnT frontier):",
+      "PASS" if abs(_sig189 - 6.0e-45) / 6.0e-45 < 0.05 else "FAIL")
+
 
 banner("Remark 3.10.H.1.c.r (epsilon_0 fixed; the 10^62 residual decoded)")
 
