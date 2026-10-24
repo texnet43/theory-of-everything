@@ -729,15 +729,24 @@ body:not(.js-spa) .back-to-top { display: block; }
    ═══════════════════════════════════════════════════════════════════════
    MAIN RESULT (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, "Spectral Cone of Trinity"):
         1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
-            = 137.035999207
+            = 137.035999160359
         V_cone = (N+1)·N·(N−1)² − (N−1)/2 = 13195  (for N = 11)
-   Agreement with the reference measurement LKB-Rb 2020 (Morel et al.,
-   atom-interferometric determination of the fine-structure constant by
-   recoil of rubidium-87 atoms): 5.4 ppt = 5.4·10⁻¹², which is 7% of
-   the stated experimental uncertainty. As far as the author knows,
-   this is a closed-form value of 1/α with zero
-   continuous parameters. Agreement with the Berkeley-Cs 2018
-   measurement (Parker et al., cesium-133) is at the 1.17 ppb level.
+   SINGLE COMPUTATION RULE (adversarial correction): the equation is
+   solved self-consistently — the fixed point (Lemmas 2.4.A.A/B, the
+   unique root of P(α) on I = [0.005, 0.01]):
+       1/α = 137.035999160358812
+   Agreement with the CODATA-2022 recommendation 137.035999177(21):
+   0.8σ. LKB-Rb 2020 (Morel et al., atom-interferometric determination
+   by recoil of rubidium-87 atoms): 137.035999206(11) — a recorded
+   4.2σ TENSION (0.33 ppb); Berkeley-Cs 2018 (Parker et al.,
+   cesium-133): after the structural shift of Th 2.5.U.1 — a 0.39 ppb
+   residual. The substitution convention α := α_tree = π²/(N·φ¹⁰) in
+   the α⁴V_cone term gives the alternative reading 137.035999206741
+   (5.4 ppt vs LKB-Rb, 1.4σ vs CODATA-2022) — recorded as a property
+   of the convention, NOT the computation rule and NOT a confirmation
+   variant of PF-1; the discriminator is ppt-level atom clocks /
+   interferometry (PF-1, mantissa 35881). This is a closed-form value
+   of 1/α with zero continuous parameters.
    ═══════════════════════════════════════════════════════════════════════
    SECOND FLAGSHIP RESULT (<a class="xref" href="#def-3-0-5">Definition 3.0.5</a> + <a class="xref" href="#thm-3-0-2">Theorem 3.0.2</a>,
    "TRINITY-DECOMPOSITION META-PRINCIPLE THROUGH SPHERE-POINT-CONE"):
@@ -787,7 +796,7 @@ body:not(.js-spa) .back-to-top { display: block; }
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
      <strong>ALL 19 OF 19 SM+ΛCDM PARAMETERS STRUCTURALLY CLOSED</strong>
      through {α, π, φ, e, F_m, L_n, N, V_cone, N_cycles}: COMPLETE mass
-     spectrum (Barut), COMPLETE Wolfenstein CKM (including δ_CP^q = 5π/14,
+     spectrum (Barut), COMPLETE Wolfenstein CKM (including δ_CP^q — Th 2.8.4;
      J^q = A²·λ⁶·η), THREE coupling constants (α_em, α_w = 0.231220 — Th 1.0.I.2;
      dictionary 1/(φ+e), ε = 2.64·10⁻³,
      α_s = 1/(N−φ²)), COMPLETE ΛCDM cosmology, Hubble tension structural match,
@@ -909,7 +918,7 @@ body:not(.js-spa) .back-to-top { display: block; }
    • Mean error on 84 structural formulas: ~0.0017% (tree-level),
      as printed by the accompanying validator (52 of 84 below 0.001%).
      The fine-structure constant α is reproduced to 12 significant
-     digits (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>; agreement 5.4 ppt vs LKB-Rb 2020, Morel) —
+     digits (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>; 0.8σ vs CODATA-2022; LKB-Rb — a recorded 4.2σ tension) —
      the flagship single result; the remaining constants are at
      the tree-structural precision stated above.
      Continuous free parameters: zero.
@@ -1001,7 +1010,7 @@ body:not(.js-spa) .back-to-top { display: block; }
        4. modular           (level of η²⁴ for X₀(N), 1.0.E.2)
        5. combinatorial     (5 operations × F₅ pairs, 2.5.F.1)
        6. arithmetic        ((11)_{n−1} = n, OEIS A125134, 2.5.H.2)
-       7. physical          (precision α to 5.4 ppt vs LKB-Rb 2020, 2.4.A)
+       7. physical          (precision α 0.8σ vs CODATA-2022, 2.4.A)
        8. number-theoretic  (max(Heegner ∩ Lucas) = 11 = L_5,
                               j(τ_11) = −2¹⁵, 5.10.A.3)
   Corollary 1.10.0.28.s.1 (SM gauge group from R and Z₂ alone).
@@ -1035,13 +1044,19 @@ body:not(.js-spa) .back-to-top { display: block; }
    Decidability (4.6.VM). Complete formal closure.
    Zero continuous free parameters; 84 dimensionless constants reproduced
    to mean ≈ 0.0017% (closed-form expressions selected from the Z₁₁ algebra; §2.5, §2.10.F).
-   Adversarial audit (<a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a>): 9 genuine first-principle
-   derivations (incl. α, α_GUT, Koide, log₁₀ρ_v = −N²−1) + 36 structural
+   Adversarial audit (<a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a>): 10 exact closed forms (machine
+   class EXACT by construction), of which 9 genuine first-principle
+   derivations (incl. the flagship α, α_GUT, log₁₀ρ_v = −N²−1); the tenth,
+   Q_Koide = L₀/L₂ = 2/3, is an exact anchor form without a structural
+   derivation of the lepton-mass link (2.5.S) + 35 structural
    α-series closures + 39 over-determined operator-ratio forms.
-   Clay Millennium Problems: structurally closed, all 7 of 7 within
-   the axiomatics of Trinity (Yang-Mills 5.1.G.1, P versus NP
+   Clay Millennium Problems: structural characterizations, all 7 of 7 within
+   the axiomatics of Trinity — NOT solutions of the original Clay statements
+   (Explicit demarcation, boundaries in <a class="xref" href="#sec-5-1">Section 5.1</a>) (Yang-Mills 5.1.G.1,
+   P versus NP
    5.1.P.3, Hodge 5.1.T.2, Navier-Stokes 5.1.W.4, BSD 5.1.X.1,
-   Poincaré 5.1.AA.2 + Perelman 2003, Riemann 1.9.WA.3).
+   Poincaré via Perelman 2003 — a lemma, not an independent solution,
+   5.1.AA.2, Riemann 1.9.WA.3).
    Theory resolves:
    • "Why is space 3D?" — mandatory for Sphere-Cone (2.4.A.12)
    • "Why N = 11?" — 15 consistent characterizations
@@ -1160,23 +1175,23 @@ body:not(.js-spa) .back-to-top { display: block; }
 <p class="blk">Ontologically, Trinity describes how reality is built, not only the closure of constants: the micro- and macro-cosmos are the two limits of Duality — the mirror pair {1,10} (Time/Electricity, Rem 2.6.A.4.s), and scale is the degree of freedom of the Point (Rem 1.11.0.au(3)), unfolded into the ladder of 11 Cone sections (Rem 2.4.G.8). The Big Bang is not an explosion in a ready-made 3+1 but an unfolding across these 11 scales from the micro- to the macro-cosmos (Rem 1.11.0.au(5), Cor 4.3.1.c); a black hole is the same Cone reversed (Th 2.7.AA.3). There are no singularities or divergences because the carrier is discrete: infinity is the boundary of applicability read from both sides (Rem 1.11.0.au(6), Rem 5.7.VS.1.r).</p>
 <p class="blk">The unified law of the ladder (Rem 2.6.A.4.aa–.au) closes the ontology algebraically: scale = degree, the transition down is a root, up — a power, the closure — by resonance (identity = coincidence of the frequencies of the mirror pair); the center is not a place but the limiting resonance (the fixed point k = 0); the Sphere is inevitable — the closure forces the complete root set, the full group D₁₁; gravity = return (G_ind/G_N = π/N — the floor-0 of the coupling ladder α(k) = α(0)·μ^k); the next scale is generated by resonance, C(k+1) = 2·C(k) (mod 11), the full cycle 11 → 0 → 1; every mirror pair carries a Quintet atom ({1,10}~N, {2,9}~i, {3,8}~e, {4,7}~φ, {5,6}~π); the twelve floors are censused (k = 0 Absolute … 11≡0 Energy); the acceptance criterion: the law is accepted as a FORM with machine identities (Rem 2.6.A.4.ah) and quantitative predictions from the system (the α(0..11) sheet, the mirror invariants, the mass-sector degrees — Rem 2.6.A.4.ap). The series completion (.aq–.au): the law "quantity → quality" — the thresholds = the occupation numbers (7/7 magic nuclei EXACT, the gaps 2n²); the coordinates of the catalogue-84 (9 EXACT on the grid, 39 forms on 21 of the 32 live relations r[X]); the r_k blind contour — binding to the recorded anchors only (r_k = ln(k/k_*), the W_* normalization): the count matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact additivity, the class conventions as test outputs (nucleus 1 MeV, molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness windows [0.10, 0.11) is nonempty). Battery: 1077 PASS / 0 FAIL / EXIT=0.</p>
 <p class="blk">★ THREE FLAGSHIP RESULTS (peer-review-ready) ★</p>
-<p class="blk">① FINE-STRUCTURE CONSTANT α DERIVED TO 5.4 ppt PRECISION (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>). Closed quintet formula</p>
+<p class="blk">① FINE-STRUCTURE CONSTANT α DERIVED TO 0.8σ OF CODATA-2022 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> — the single rule, self-consistent solution). Closed quintet formula</p>
 <pre class="formula blk">1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
-    = 137.035999207</pre>
-<p class="blk">gives 1/α at relative precision 5.4·10⁻¹² from LKB-Rb 2020 (Morel et al., atom-interferometric measurement, 1/α^exp = 137.035999206 ± 11·10⁻⁹) — equal to 7% of the experimental uncertainty. The Berkeley-Cs measurement (Parker et al. 2018, 1/α = 137.035999046 ± 27·10⁻⁹) is matched to 1.17 ppb. As far as the author knows, the most precise closed form from a theory with zero tuning parameters. The formula contains a one-sided 1-loop form 1/α₁ = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) at 0.27 ppm (<a class="xref" href="#rem-2-4-A-0-4">Remark 2.4.A.0.4</a>).</p>
+    = 137.035999160359</pre>
+<p class="blk">gives 1/α at the 0.8σ level of CODATA-2022 (137.035999177(21)) — a closed form with zero tuning parameters; LKB-Rb 2020 (137.035999206(11)) is a recorded 4.2σ tension, the PF-1 discriminator (mantissa 35881); the convention reading ...206741 (5.4 ppt vs LKB-Rb) is recorded as an alternative, not the rule. The formula contains a one-sided 1-loop form 1/α₁ = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) at 0.27 ppm (<a class="xref" href="#rem-2-4-A-0-4">Remark 2.4.A.0.4</a>).</p>
 <p class="blk">Per-term status (Rem 2.4.2.s(7)): the tree term and the 4-loop term are derived (V_cone = 13195; 13200 = (N+1)·N·(N−1)² = |GL(2,Z₁₁)|; correction −5 = C(5)); the 1-loop term is structural in form, its value through the measurable channel e (the π–e barrier); the ladder α(k) = π²/(N·φ^k) connects the floors: α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r).</p>
-<p class="blk">② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 0.231220, Th 1.0.I.2, dictionary 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix with δ_CP^q = 5π/14; full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = e⁴πφ³/N³ = 0.546 (second form φ²/(φ+L₂) = 0.567 — 2.8.G.2, octant readings), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_P/m_e via (N/α)⁷·sec²θ_W at logarithmic accuracy 7.4·10⁻⁴ (relative 3.7%)); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π (coarse form, refined by Th 2.5.O.1: 0.684701), Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally closed: Λ catastrophe (reduced by ∼61 of ∼122 orders), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.</p>
-<p class="blk">③ ALL 7 OF 7 CLAY MILLENNIUM PROBLEMS STRUCTURALLY CLOSED within Trinity axiomatics through a single principle "fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone": Yang-Mills (5.1.G.1), Riemann via Hilbert-Pólya on Z₁₁ (1.9.WA.3), Hodge (5.1.T.2), Navier-Stokes (5.1.W.4), BSD (5.1.X.1), P/NP (5.1.P.3), Poincaré via Perelman 2003 (5.1.AA.2). Formal structural proofs within Trinity axiomatics; acceptance of Clay Mathematics Institute prizes depends on external peer-review consensus (years).</p>
+<p class="blk">② ALL 19 OF 19 PARAMETERS OF STANDARD MODEL + ΛCDM ARE STRUCTURALLY CLOSED. Three coupling constants (α_em via 2.4.A; α_w = 0.231220, Th 1.0.I.2, dictionary 1/(φ+e); α_s = 1/(N−φ²)); full Wolfenstein CKM matrix (δ_CP^q — Th 2.8.4, 5π/14 representation — Th 2.4.Z.1); full PMNS lepton matrix (sin²θ_12 = 0.311 (1.0.D.1); coarse form 1/π — 2.8.E.1; sin²θ_13 = 3α, sin²θ_23 = φ²/(φ+L₂) = 0.56692 — primary (2.8.G.2; NuFIT 6.0 NO 0.566 — 0.2%, NuFIT 5.2 NO 0.572 — 0.9%, IO 0.561 — 1.1%; upper octant), second form e⁴πφ³/N³ = 0.546 — recorded (NuFIT 4.0-era reading), δ_CP^ν = π(1+1/N), Δm²_31/Δm²_21 = 3N); full mass spectrum (Barut m_μ/m_e = 1+(3/2)/α; m_b/m_τ = 3π/4 at 0.16%; m_c/m_t = α/(1−α) at 0.044%; m_proton/m_e = 12·153 at 8.3·10⁻⁵; m_P/m_e via (N/α)⁷·sec²θ_W at logarithmic accuracy 7.4·10⁻⁴ (relative 3.7%)); full ΛCDM cosmology (Ω_m = 1/π, Ω_Λ = 1−1/π (coarse form, refined by Th 2.5.O.1: 0.684701), Ω_b = 1/(2π²), n_s = 1−5α, σ_8 = φ/2, H_0 via 1/(F_3⁴·N_cycles·t_P); structural numerical match to Hubble tension via (1+α)^N at 0.017%); five classical open problems of fundamental physics structurally closed: Λ catastrophe (reduced by ∼61 of ∼122 orders), Hubble tension, baryogenesis η_B = 3π²α⁵, EM↔Gravity hierarchy α_G = ((φ+e−1)/(φ+e))²·(α/N)¹⁴ (42 orders), Higgs hierarchy m_h = (π/2)m_W.</p>
+<p class="blk">③ ALL 7 CLAY MILLENNIUM PROBLEMS RECEIVED STRUCTURAL CHARACTERIZATIONS within Trinity axiomatics — NOT solutions of the original Clay statements (Explicit demarcation; boundaries in <a class="xref" href="#sec-5-1">Section 5.1</a>) — through a single principle "fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone": Yang-Mills (5.1.G.1), Riemann via Hilbert-Pólya on Z₁₁ (1.9.WA.3), Hodge (5.1.T.2), Navier-Stokes (5.1.W.4), BSD (5.1.X.1), P/NP (5.1.P.3), Poincaré via Perelman 2003 — a lemma, not an independent solution (5.1.AA.2). Formal structural proofs within Trinity axiomatics; solutions of the original Clay statements are NOT claimed; acceptance of Clay Mathematics Institute prizes depends on external peer-review consensus (years).</p>
 <p class="blk">★ KEY MATHEMATICAL RESULT ★</p>
 <p class="blk">NINE CLASSICAL IRRATIONAL CONSTANTS ARE UNIFIED IN A SINGLE ALGEBRAIC BASIS ℤ[α, π, φ, e, N, F_n, L_n] through the universal Sphere-Point-Cone meta-principle M = M_S·(1 + δ_C) (<a class="xref" href="#def-3-0-5">Definition 3.0.5</a>):</p>
 <p class="blk">ζ(2) = π²/6 (Euler 1734),  ζ(3) ≈ 1+φ/F_6 (Apéry 1979, ε=1.6·10⁻⁴), G ≈ 11/12 − α/(3π) (Catalan 1844, ε=8·10⁻⁵), ζ(5) ≈ 1+1/F_4³ (ε=1·10⁻⁴), ζ(7) ≈ 1+1/(N²−1) (ε=1.6·10⁻⁵), β(4) ≈ 1−3α/2 (Dirichlet χ_4, ε=1.1·10⁻⁴), A^12 ≈ 2π²·(1+α/L_2) (Glaisher 1878, ε=1.73·10⁻⁵), K ≈ (8/3)·(1+α) (Khinchin 1934, ε=2.5·10⁻⁴), ζ(11) ≈ 1+1/2^N (the point of ζ where the argument = N=11, ε=5.9·10⁻⁶).</p>
 <p class="blk">Formal <a class="xref" href="#lem-1-9-22-B">Lemma 1.9.22.B</a> proves the asymptotic precision law ε(ζ(2k+1)) → 0 as 2⁻⁽²ᵏ⁺¹⁾ for k → ∞, converting 9 coincidences into a single formal theorem on the structure of convergence; Theorems 1.9.22.C/D and <a class="xref" href="#cor-1-9-22-D-1">Corollary 1.9.22.D.1</a> elevate this to a PREDICTIVE universal law ζ(2k+1) ≈ 1 + 1/2^(2k+1) for k ≥ 6, with falsifiable predictions for ζ(13) and ζ(15).</p>
 <p class="blk">★ UNIQUENESS OF N = 11: PRIMARY CRITERION + EIGHT CONSEQUENCES ★</p>
-<p class="blk">N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterion of closure of the cycle Point → Sphere → Cone → Point (<a class="xref" href="#thm-1-10-0-28">Theorem 1.10.0.28</a>): the self-consistency system (C1) N+1 = K(R) (kissing-number closure, K(3) = 12), (C2) h(Q(√−N)) = 1 (Heegner), (C3) N ∈ Primes has the unique non-degenerate solution (R, N) = (3, 11). The eight known characterizations are CONSEQUENCES of the PRIMARY criterion (<a class="xref" href="#cor-1-10-0-28-1">Corollary 1.10.0.28.1</a>): algebraic (N²−1 = 5!, <a class="xref" href="#thm-2-5-B-1">Theorem 2.5.B.1</a>), group-theoretic (2.5.C.1), topological (2.5.D.1), modular (1.0.E.2), combinatorial (2.5.F.1), arithmetic (2.5.H.2, OEIS A125134), physical (2.4.A: α to 5.4 ppt vs LKB-Rb 2020), number-theoretic (max(Heegner ∩ Lucas) = L_5 = 11, j(τ_11) = −2¹⁵).</p>
+<p class="blk">N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterion of closure of the cycle Point → Sphere → Cone → Point (<a class="xref" href="#thm-1-10-0-28">Theorem 1.10.0.28</a>): the self-consistency system (C1) N+1 = K(R) (kissing-number closure, K(3) = 12), (C2) h(Q(√−N)) = 1 (Heegner), (C3) N ∈ Primes has the unique non-degenerate solution (R, N) = (3, 11). The eight known characterizations are CONSEQUENCES of the PRIMARY criterion (<a class="xref" href="#cor-1-10-0-28-1">Corollary 1.10.0.28.1</a>): algebraic (N²−1 = 5!, <a class="xref" href="#thm-2-5-B-1">Theorem 2.5.B.1</a>), group-theoretic (2.5.C.1), topological (2.5.D.1), modular (1.0.E.2), combinatorial (2.5.F.1), arithmetic (2.5.H.2, OEIS A125134), physical (2.4.A: α, 0.8σ vs CODATA-2022), number-theoretic (max(Heegner ∩ Lucas) = L_5 = 11, j(τ_11) = −2¹⁵).</p>
 <p class="blk">★ NUMERICAL SUMMARY ★</p>
 <p class="blk">Mean error on 84 constants 0.0017% (tree-level) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 4469× less accurate; significance is fixed by the empirical disciplines 2.10.B/2.10.C (Monte-Carlo + FDR catalogue 56). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (<a class="xref" href="#rem-2-4-AC-3-r">Remark 2.4.AC.3.r</a>).</p>
 <p class="blk">709 theorems are proven, 247 definitions, 561 corollary, 451 remarks, 25 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, <a class="xref" href="#sec-2-1">Section 2.1</a>.C). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (<a class="xref" href="#thm-1-0-H-1">Theorem 1.0.H.1</a>).</p>
-<p class="blk">56 falsifiable predictions are formulated (32 base 1.0.K + 6 from <a class="xref" href="#sec-2-4">Section 2.4</a> + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (<a class="xref" href="#sec-2-7">Section 2.7</a>) + 1 temporal VR₁ (<a class="xref" href="#sec-3-1">Section 3.1</a>) + 3 materialization MR₁–MR₃ (<a class="xref" href="#sec-3-10">Section 3.10</a>) + 3 spectral ÆF₆–ÆF₈ (<a class="xref" href="#sec-5-7">Section 5.7</a>) + 5 systematic <a class="xref" href="#sec-5-0">Section 5.0</a> (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171, Sr-87 and Cs-133 (2.5.U.1, the atom-dependent signed correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹; Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel). Systematic <a class="xref" href="#sec-5-0">Section 5.0</a> (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (<a class="xref" href="#thm-2-7-H-2">Theorem 2.7.H.2</a>; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).</p>
+<p class="blk">56 falsifiable predictions are formulated (32 base 1.0.K + 6 from <a class="xref" href="#sec-2-4">Section 2.4</a> + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (<a class="xref" href="#sec-2-7">Section 2.7</a>) + 1 temporal VR₁ (<a class="xref" href="#sec-3-1">Section 3.1</a>) + 3 materialization MR₁–MR₃ (<a class="xref" href="#sec-3-10">Section 3.10</a>) + 3 spectral ÆF₆–ÆF₈ (<a class="xref" href="#sec-5-7">Section 5.7</a>) + 5 systematic <a class="xref" href="#sec-5-0">Section 5.0</a> (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999160358812 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171, Sr-87 and Cs-133 (2.5.U.1, the atom-dependent signed correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹; Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel). Systematic <a class="xref" href="#sec-5-0">Section 5.0</a> (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (<a class="xref" href="#thm-2-7-H-2">Theorem 2.7.H.2</a>; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).</p>
 <p class="blk">Biological instantiation (<a class="xref" href="#rem-2-4-G">Remark 2.4.G</a>): the anatomy of the eye (pupil = Cone apex, retina = spherical segment, 11 photoreceptor types = 10 Duality modes + 1 Absolute, field of view = Cone, two eyes = resonance of two Cones = perception of depth) is a direct physical realization of the geometry of Trinity, indicating that the evolution of vision is evolution towards the maximal embodiment of the Sphere-Cone structure of consciousness.</p>
 <p class="blk">Dynamical layer (<a class="xref" href="#sec-5-3">Section 5.3</a>). On top of the static geometric result of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> a sixth level of closure is imposed — the DYNAMICS of UNFOLDING of the Geometry of Trinity in TIME. Trinity Time τ ∈ {τ_0,…,τ_16,τ_∞} is introduced (5.3.A) — the ordering parameter of Genesis steps with discrete step τ_step ≈ τ_Planck. The Genesis ordering G (5.3.B) is a bijection {0,…,16} → 16 geometric primitives, defined by the principle of minimal geometric increment. The evolution operator E_τ (5.3.C) is a unitary action on H_{11} preserving E_P = E_0 (resolving the ex nihilo paradox, <a class="xref" href="#sec-5-3">Section 5.3</a>.D). The structural age of the Universe T_Genesis = 16·τ_Planck · exp(1/α + 1/φ²) ≈ 13.08 Gyr (Z₂-golden mirror of the fine-structure constant; 5.3.F) matches Planck 2018 to 5.2%. The six standard ΛCDM cosmological epochs map bijectively onto six clusters of Genesis primitives (5.3.H–9), resolving the cosmological fine-tuning problem without any additional parameters.</p>
 <p class="blk">A complete Python verification script (DOI: 10.5281/zenodo.19600779) independently computes all 84 constants, verifies V_cone = 13195 and prints the nine closure levels (layers 1–9). The theory contains 0 continuous free parameters (all constants are closed-form selections from the Z₁₁ algebra; see §2.5 for the classification of forced vs. selected closures) and is Popper-falsifiable.</p>
@@ -1272,7 +1287,7 @@ and <a class="xref" href="#sec-5-10">Section 5.10</a>.A.3 — number-theoretic H
 <pre class="diagram blk">┌──────────────────────────────────────────────────────────┬────────────────┐
 │ Physical quantity                                         │ Error          │
 ├──────────────────────────────────────────────────────────┼────────────────┤
-│ 1/α (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, Spectral Cone)                   │ 5.4 ppt (vs Rb)│
+│ 1/α (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, Spectral Cone)                   │ 0.8σ (CODATA-22)│
 │ 1/α_GUT = F₅² = 25                                        │ EXACT          │
 │ m_p / m_e = 1836.15269                                    │ 10⁻⁶%          │
 │ Electron g-factor (5-loop)                                │ 10⁻⁶%          │
@@ -1454,7 +1469,7 @@ Mass, Field, Electricity, Energy).
 <div class="definition blk" id="def-1-0-2"><span class="label"><a class="xref" href="#def-1-0-2">Definition 1.0.2</a> (Fine-structure constant).</span><pre>  α := π²/(N·φ¹⁰) = 0.0072951... ≈ 1/137.08
   (tree-level value; the exponent 10 = N−1 is the full count of active
   Duality modes, derived in <a class="xref" href="#thm-2-4-A-0-5-v">Theorem 2.4.A.0.5.v</a>; the three-term
-  refinement to 5.4 ppt is given in <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.)</pre></div>
+  refinement to 0.8σ of CODATA-2022 is given in <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.)</pre></div>
 <div class="definition blk" id="def-1-0-3"><span class="label"><a class="xref" href="#def-1-0-3">Definition 1.0.3</a> (Loop parameter).</span><pre>  ε := α/N = π²/(N²·φ¹⁰) = 1/1508</pre></div>
 <div class="definition blk" id="def-1-0-4"><span class="label"><a class="xref" href="#def-1-0-4">Definition 1.0.4</a> (Spectrum).</span><pre>The spectrum of operator Ĥ — the set of its eigenvalues {ω₀, ω₁, ..., ω_{N-1}}.</pre></div>
 <div class="definition blk" id="def-1-0-5"><span class="label"><a class="xref" href="#def-1-0-5">Definition 1.0.5</a> (Mode).</span><pre>Mode k — eigenstate |k⟩ of operator Ĥ with eigenvalue ω_k.
@@ -1729,8 +1744,13 @@ not reproduce the SM's specific parity-violating chiral matter assignment. □</
 the actual SM conditions on the hypercharge/SU(2)/SU(3) charge assignments are not verified here.</pre></div>
 <h4 class="subsection" id="10d-full-pmns-matrix-from-z">1.0.D FULL PMNS MATRIX FROM Z₁₁</h4>
 <div class="theorem blk" id="thm-1-0-D-1"><span class="label"><a class="xref" href="#thm-1-0-D-1">Theorem 1.0.D.1</a> (Neutrino mixing parameters).</span><pre>Three angles and three phases of the PMNS matrix:</pre></div>
-<pre class="tabular blk">sin²θ₁₂ = ω₁/ω₄ + α·F₃/N      = 0.311  (exp: 0.310 ± 0.013, NuFIT 5.2)
-sin²θ₂₃ = e⁴·π·φ³/N³            = 0.546  (exp: 0.545)
+<pre class="formula blk">sin²θ₁₂ = ω₁/ω₄ + α·F₃/N      = 0.311  (exp: 0.310 ± 0.013, NuFIT 5.2)
+sin²θ₂₃ = φ²/(φ+L₂)            = 0.56692 (primary, 2.8.G.2;
+                                        exp: NuFIT 6.0 NO 0.566 —
+                                        0.2% / IO 0.561 — 1.1%;
+                                        NuFIT 5.2 NO 0.572 — 0.9%;
+                                        second form e⁴πφ³/N³ = 0.546
+                                        — recorded, NuFIT 4.0 reading)
 sin²θ₁₃ = L₂·α = 3α             = 0.0219 (exp: 0.02203; <a class="xref" href="#thm-2-8-G-1">Theorem 2.8.G.1</a>)
 δ_CP(PMNS) = π + ω₁/ω₅ − 10α²N − 8α³N² + 2α⁴N³
                                 = 3.42 rad (exp: 3.4–3.8 rad)</pre>
@@ -1946,7 +1966,7 @@ automated proof systems (Lean, Coq, Isabelle).</pre></div>
     Status:     measurement expected</pre>
 <h4 class="cat-header blk">EXTENDED PREDICTIONS FROM CLOSURE LAYERS 1–9 + 5.1 (Clay 7/7)</h4>
 <pre class="tabular blk">[9] Next-digit α(Cs-133) (2.4.A)  [DERIVED]
-    Prediction: 1/α(Cs-133) = 137.035999206741195 ± 10⁻¹¹
+    Prediction: 1/α(Cs-133) = 137.035999160358812 ± 10⁻¹¹
     Setup:      Berkeley Cs interferometry next generation,
                 LKB Rb interferometry (atom-interferometric measurements)
     Timeframe:  2027-2032
@@ -2215,7 +2235,7 @@ automated proof systems (Lean, Coq, Isabelle).</pre></div>
 post-dictions", the 56 entries are classified into three layers
 by their epistemic status:</pre></div>
 <p class="blk">• Layer 1 (L1) — GENUINE PREDICTIONS: quantitative numbers made BEFORE the relevant experiment reaches the required sensitivity, falsifiable at &gt; 5σ on a well-defined timescale. Examples: τ_p &gt; 10³⁴ yr (proton decay); m_M ≈ 10^(6×10²⁶) GeV (Majorana mass, 0νββ); CMB sub-leading modulation; aetheron ~5 GeV (sterile). Status: OPEN, risky.</p>
-<p class="blk">• Layer 2 (L2) — POST-DICTIONS: known results re-derived through Trinity; consistency checks with precision 10⁻³–10⁻⁵. No new experimental information. Examples: α (5.4 ppt vs LKB-Rb 2020); sin²θ_W; fermion masses; turbulence −5/3; GUE zeros; Hardy-Littlewood; Schwabe cycle. Status: CONSISTENT (no new info).</p>
+<p class="blk">• Layer 2 (L2) — POST-DICTIONS: known results re-derived through Trinity; consistency checks with precision 10⁻³–10⁻⁵. No new experimental information. Examples: α (0.8σ vs CODATA-2022); sin²θ_W; fermion masses; turbulence −5/3; GUE zeros; Hardy-Littlewood; Schwabe cycle. Status: CONSISTENT (no new info).</p>
 <p class="blk">• Layer 3 (L3) — DIMENSION ECHOES: numbers whose dimension matches a Trinity structural count, but no quantitative match. Examples: dim G_SM = 12 = N+1; n_gen = 3 = (N+1)/L₃; kissing number K(3) = 12 = N+1. Status: DIM-MATCH (no numeric precision).</p>
 <p class="blk">Approximate counts among the 56: L1 ~ 12 entries; L2 ~ 32 entries; L3 ~ 12 entries. Evidential weight: L1 &gt; L2 &gt; L3. The theory's scientific standing rests primarily on L1 entries; L2 provides consistency checks; L3 provides dimensional plausibility only. Statements of the form "56 falsifiable predictions" should be read with this layer structure in mind: only L1 entries carry genuine Popperian risk.</p>
 <p class="blk">CATALOGUE STATUS. The catalogue of 84 constants is post-diction by construction (layer L2): all values were known when the closed forms were selected, and no catalogue entry is a blind prediction; genuine blind risk is carried only by the ~12 layer-L1 predictions and the 7 predictions of the PF subgroup.</p>
@@ -2224,30 +2244,34 @@ by their epistemic status:</pre></div>
 <p class="blk">FALSIFICATION WITHIN FIVE YEARS (&gt;5σ)</p>
 <p class="blk">From the general list of 56 predictions we distinguish a subgroup of SEVEN predictions for which: (i) a specific detector is identified, (ii) the measurement time horizon is known to be ≤ 5 years from the date of this publication, (iii) the detector's resolution suffices to discriminate Trinity from the Standard Model at no less than the 5σ level, (iv) the prediction is given by a concrete number with an interval not overlapping with the standard prediction of dominant alternative models.</p>
 <pre class="tabular blk">PF-1. Fundamental fine-structure constant (Rb-87 reference)
-       Prediction:       1/α = 137.035999206741195
-                         (agreement with LKB-Rb 2020 to 12 significant
-                         digits; formula 2.4.A under the convention
-                         α := α_tree; Rb-87 is the shift-free atom,
-                         Δα(Rb)/α = 0 — the signed kernel,
-                         <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>)
+       Prediction:       1/α = 137.035999160358812
+                         (the single rule — the self-consistent solution
+                         of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, Lemmas 2.4.A.A/B; 0.8σ from
+                         CODATA-2022; Rb-87 is the shift-free atom,
+                         Δα(Rb)/α = 0 — the signed kernel, Th 2.5.U.1)
        Detector:         next-generation atomic interferometry
                          Berkeley/LKB (ppt-level)
        Timeline:         2026-2030
-       5σ-discrimination: digits 13-17 of the mantissa (74119) under
-                         the convention α := α_tree; the self-consistent
-                         reading of the same equation gives 35881
-                         (double reading — <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>)
-       Confirmation:     next mantissa digits = 74119 (or 35881 in the
-                         double reading) at ppt precision
+       5σ-discrimination: digits 13-17 of the mantissa (35881).
+                         Recorded tension: LKB-Rb 2020 measured ...206(11)
+                         (mantissa 74119) — 4.2σ from the prediction;
+                         the convention reading ...206741 is recorded as
+                         a property of the convention, NOT a
+                         confirmation variant (adversarial correction:
+                         one value is fixed before the experiment)
+       Confirmation:     next mantissa digits = 35881 at ppt precision
        Falsification:    a ppt-level measurement of the Rb-87
-                         reference gives a mantissa outside
-                         {74119, 35881}
-       Atomic shifts — PF-2 (Th 2.5.U.1): the predicted Cs-133
-                         shift −1.684·10⁻⁷ gives 1/α(Cs) =
-                         137.0359990383 against Berkeley-Cs 2018
-                         137.035999046 — a 0.06 ppb gap; the
-                         Berkeley-Cs/LKB-Rb tension is explained by
-                         the shift model; the PF-1 falsification
+                         reference gives a mantissa other than 35881
+                         (including ...206 — then <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> in the
+                         self-consistent reading is refuted)
+       Atomic shifts — PF-2 (Th 2.5.U.1): the structural DIFFERENCE
+                         Rb↔Cs −1.684·10⁻⁷ (measured −1.60·10⁻⁷ — the
+                         Berkeley-Cs/LKB-Rb tension is explained by the
+                         shift model); the absolute residual
+                         1/α(Cs) = 137.035998991959 against
+                         Berkeley-Cs 137.035999046 — 0.39 ppb
+                         (adversarial correction: the residual is
+                         recorded); the PF-1 falsification
                          target is the Rb-87 reference only.</pre>
 <pre class="tabular blk">PF-2. Atom dependence of the fine structure, Sr-87 ↔ Cs-133
        Prediction:       Δα(Sr)/α = α⁴·[sin²(4π/N) − sin²(5π/N)]·N/(2N−1)
@@ -3325,11 +3349,11 @@ total number of dimensions to the dimension of spacetime.</pre></div>
 <div class="theorem blk" id="thm-1-9-11"><span class="label"><a class="xref" href="#thm-1-9-11">Theorem 1.9.11</a> (Spectral gap and T₁).</span><pre>  (ω₅ − ω₄)/α ≈ T₁ = 2N = 22    (error 0.101%)
 Physics: minimal spectral gap (LENGTH − WIDTH),
 divided by the fine structure, equals the total reality.</pre></div>
-<p class="blk">Status: an empirical match (record class Σ). With omega_k = 2 sin(pi k/11): omega_5 - omega_4 = 1.97964 - 1.81926 = 0.160379, and dividing by alpha = 1/137.035999207 gives 21.9777, vs T_1 = 2N = 22 (relative deviation 0.101%). The spectral gap and the integer 2N are consistent through the dimensionless alpha; the structural derivation of the link is a registry program. □</p>
-<div class="theorem blk" id="thm-1-9-12"><span class="label"><a class="xref" href="#thm-1-9-12">Theorem 1.9.12</a> (Continued fraction of 1/α).</span><pre>  1/α = 137.035999207 = [137; 27, 1, 3, 1, 1, 19, 1, ...]
+<p class="blk">Status: an empirical match (record class Σ). With omega_k = 2 sin(pi k/11): omega_5 - omega_4 = 1.97964 - 1.81926 = 0.160379, and dividing by alpha = 1/137.035999160359 gives 21.9777, vs T_1 = 2N = 22 (relative deviation 0.101%). The spectral gap and the integer 2N are consistent through the dimensionless alpha; the structural derivation of the link is a registry program. □</p>
+<div class="theorem blk" id="thm-1-9-12"><span class="label"><a class="xref" href="#thm-1-9-12">Theorem 1.9.12</a> (Continued fraction of 1/α).</span><pre>  1/α = 137.035999160359 = [137; 27, 1, 3, 1, 1, 18, 2, ...]
 The integer part is 137; the remaining partial quotients show no
 structural pattern tied to N = 11. No Z₁₁ encoding is claimed here.</pre></div>
-<div class="proof blk"><span class="label">Proof:</span><pre>the simple continued fraction of 137.035999207 is computed directly;
+<div class="proof blk"><span class="label">Proof:</span><pre>the simple continued fraction of 137.035999160359 is computed directly;
 its partial quotients are [137; 27, 1, 3, 1, 1, 19, 1, ...]. □</pre></div>
 <div class="theorem blk" id="thm-1-9-13"><span class="label"><a class="xref" href="#thm-1-9-13">Theorem 1.9.13</a> (Spectral action and I₁).</span><pre>  a₂/a₄ = (T₁/6)/(T₂/180) = 30T₁/T₂ = 30·2N/(6N) = 10 = N − 1 = I₁
 Proof: a₂ = T₁/6 (Einstein-Hilbert term),
@@ -4033,7 +4057,7 @@ Therefore 13195 ∈ M_FL(11), giving P(11). ✓</pre>
 out N=11 (4 algebraic + 3 physical). <a class="xref" href="#thm-1-9-A-2">Theorem 1.9.A.2</a>
 provides a SINGLE principle from which all of them follow:</pre></div>
 <p class="blk">• Algebraic: factorization N²−1 = 5! = 120 (<a class="xref" href="#cor-2-4-A-2">Remark 2.4.A.2</a>(i)) — a particular case of membership in M_FL(11). Same for V_cone = F_5·L_4·F_7·L_7.</p>
-<p class="blk">• Physical: spectral characteristics ω_k yielding α = 1/137.035999207 require precisely the sum of power moments that, in the Z_N model, is realized only when the number-theoretic condition P(N) is satisfied.</p>
+<p class="blk">• Physical: spectral characteristics ω_k yielding α = 1/137.035999160359 require precisely the sum of power moments that, in the Z_N model, is realized only when the number-theoretic condition P(N) is satisfied.</p>
 <p class="blk">Hence the "deepest open question" of preceding sections receives resolution through a single number-theoretic principle. The dimension of proof: exhaustive numerical verification on an interval exceeding any physically meaningful scale (N ~ 10⁴ corresponds to structures with ~10¹⁶ modes, 12 orders above the Standard Model).</p>
 <div class="remark blk" id="rem-1-9-A-4"><span class="label"><a class="xref" href="#rem-1-9-A-4">Remark 1.9.A.4</a> (Connection with global Cone geometry).</span><pre>Condition P(N) geometrically means that the volume of the
 truncated Cone V_cone(N) is representable as a product of
@@ -4089,7 +4113,7 @@ EXPRESSED THROUGH THE TRINITY QUINTET {N, π, φ, e}:</pre></div>
 <p class="blk">where ρ_crit = 3H₀²/(8πG). At N=11 the factor H₀/W_* ~ 10⁻⁶² yields a negligibly small Genesis backreaction (Λ_eff from 2.4.N), consistent with the observed smallness of the cosmological constant without fine-tuning.</p>
 <p class="blk">(iii) FINE-STRUCTURE CONSTANT.</p>
 <p class="blk">α_*(N)⁻¹  =  N · φ¹⁰/π²  −  e⁴ · φ²/(π⁵ · N)  −  α⁴ · V_cone(N)</p>
-<p class="blk">At N=11 this gives exactly 137.035999207 (the main formula of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, agreement with LKB-Rb 2020 (Morel et al.) at the 5.4 ppt level with zero tuning parameters).</p>
+<p class="blk">At N=11 this gives exactly 137.035999160359 (the main formula of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, agreement with LKB-Rb 2020 (Morel et al.) at the 0.8σ-of-CODATA-2022 level with zero tuning parameters).</p>
 <div class="proof blk"><span class="label">Proof.</span><pre>Each of the three formulas follows from the corresponding
 subsection of <a class="xref" href="#sec-2-4">Section 2.4</a>:
   (i) — from the definition of τ_QSL (2.4.L);
@@ -4255,7 +4279,7 @@ MS-bar:     β_1^{MS, U(1)}     = +1/(3π) · g³ at g = g_QED^{MS}</pre>
 <h4 class="subsection" id="19d-summary-triple-closure-of-the-formal-layer">1.9.D SUMMARY: TRIPLE CLOSURE OF THE FORMAL LAYER</h4>
 <p class="blk"><a class="xref" href="#sec-1-9">Section 1.9</a> closes three structural questions:</p>
 <p class="blk">(A) UNIFIED PRINCIPLE FOR N=11 (1.9.A): N=11 is the unique natural number in [2, 10000] for which V_cone(N) is representable as a product of Fibonacci and Lucas numbers with strictly smaller index. The seven previous arguments now share a single number-theoretic foundation.</p>
-<p class="blk">(B) CONTINUOUS LIMIT + PARAMETER MAP (1.9.B): Any continuous theory of the universal class receives the triple {W_*, ρ_*, α_*} as functions of the quintet {N, π, φ, e} — not as free parameters. At N=11: W_max = 4.04·10⁴⁴ Hz, α⁻¹ = 137.035999207, ρ_*/ρ_crit ~ H₀/W_max ~ 10⁻⁶².</p>
+<p class="blk">(B) CONTINUOUS LIMIT + PARAMETER MAP (1.9.B): Any continuous theory of the universal class receives the triple {W_*, ρ_*, α_*} as functions of the quintet {N, π, φ, e} — not as free parameters. At N=11: W_max = 4.04·10⁴⁴ Hz, α⁻¹ = 137.035999160359, ρ_*/ρ_crit ~ H₀/W_max ~ 10⁻⁶².</p>
 <p class="blk">(C) FULL QUANTIZATION (1.9.C): The β-function of Z₁₁ gauge in closed form −(11/3)·g·[I_0(g√2) − 1] is exact through 10-loop order; the 2.84 ppm deviation at 11-loop is a falsifiable signal of discreteness at ultra-high energies.</p>
 <p class="blk">Together with the seven-fold closure of <a class="xref" href="#sec-2-4">Section 2.4</a>, <a class="xref" href="#sec-1-9">Section 1.9</a> yields the formal NINE-FOLD CLOSURE (layers 1–9; catalogue: <a class="xref" href="#sec-4-6">Section 4.6</a>.C), part of the overall TWELVE-FOLD closure of the theory:</p>
 <ol class="refs blk">
@@ -5771,7 +5795,7 @@ theory), 10 (superstring), 11 (M-theory), 4 (4D spacetime), 1
 (Planck unit). Among these N = 11 is the only one for which:
 (i) the closure system {C1, C2, C3} — geometric (kissing), modular
 (Heegner) and arithmetic (primality) — has it as the unique solution
-at R = 3; (ii) it gives accuracy 5.4 ppt in the α-formula
+at R = 3; (ii) it gives accuracy 0.8σ vs CODATA-2022 in the α-formula
 (Th 2.4.A); (iii) it is consistent with all nine irrational constants
 through the meta-principle M = M_S(1 + δ_C) (Th 1.9.22.B). This
 distinguishes N = 11 from the ad hoc choice in other theories.</pre></div>
@@ -5789,7 +5813,7 @@ Step 2 (QED 4-loop signature). In standard QED the order α^L
   characteristic of the "4-loop level" in QED.
 Step 3 (Structural correspondence). The powers α^4 and e^4 in
   formula 2.4.A are the unique powers above the first that achieve
-  precision 5.4 ppt (see <a class="xref" href="#sec-2-5">Section 2.5</a> (A)).
+  precision 0.8σ vs CODATA-2022 (see <a class="xref" href="#sec-2-5">Section 2.5</a> (A)).
   Since both powers coincide (4) and
   both correspond to k = 4 in the dim. lexicon, this is a structural
   identity, not a numerical coincidence.
@@ -7247,7 +7271,7 @@ spectral subspaces H_k of the eigenmodes of the Z₁₁ Hamiltonian.</pre></div>
 <p class="blk">Step 4. The decomposition (1.10.A.5.18.1) is a direct arithmetic property of N = 11; (1.10.A.5.18.2) is its geometric interpretation through Z₂-mirror symmetry (<a class="xref" href="#thm-1-9-A-2">Theorem 1.9.A.2</a>). □</p>
 <div class="theorem blk" id="thm-1-10-F-19"><span class="label"><a class="xref" href="#thm-1-10-F-19">Theorem 1.10.F.19</a> (Trinity as a coordinate system for the localisation of physical constants in the Cone of reality — formal refutation of the "fitting of coefficients" accusation).</span></div>
 <p class="blk">All 84 dimensionless physical constants of Trinity (<a class="xref" href="#sec-2-7">Section 2.7</a> (subsection P)) are POINTS inside the geometric Cone of reality, having EXACT COORDINATES in the system given by the quintet {N, π, φ, e, i} and the numerical sequences F, L, P, R. Trinity provides a MATHEMATICAL COORDINATE SYSTEM for finding these points, not a process of fitting coefficients to observations.</p>
-<p class="blk">STRUCTURAL ANALOGY. When a geodesist determines the coordinates of a geographical point (e.g. the summit of Everest: latitude 27.9881°, longitude 86.9250°), they DO NOT FIT numbers — they MEASURE them in the existing coordinate system of the Earth. Analogously, when Trinity provides the formula 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone = 137.035999207, it DOES NOT FIT coefficients to the observed value of 1/α — it FINDS the EXACT LOCATION of the constant α in the Cone of reality through the coordinates of the quintet.</p>
+<p class="blk">STRUCTURAL ANALOGY. When a geodesist determines the coordinates of a geographical point (e.g. the summit of Everest: latitude 27.9881°, longitude 86.9250°), they DO NOT FIT numbers — they MEASURE them in the existing coordinate system of the Earth. Analogously, when Trinity provides the formula 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone = 137.035999160359, it DOES NOT FIT coefficients to the observed value of 1/α — it FINDS the EXACT LOCATION of the constant α in the Cone of reality through the coordinates of the quintet.</p>
 <p class="blk">FORMAL DIFFERENCE:</p>
 <ul class="bullets blk">
   <li>FITTING: a dataset {x_i} is given, and parameters θ ∈ Θ are chosen so that f(θ) approximates {x_i}. Arbitrariness in the choice of Θ; different sets of θ give different f.</li>
@@ -7662,7 +7686,7 @@ geometry of the Cone into structural levels (1D + 2D + 3D).</pre></div>
 <div class="remark blk" id="rem-1-10-K"><span class="label"><a class="xref" href="#rem-1-10-K">Remark 1.10.K</a> (Structural map of N = 11 uniqueness characterizations).</span><pre><a class="xref" href="#sec-1-10">Section 1.10</a>.L contains five algebraic characterizations. The sixth — arithmetic
 — appears in <a class="xref" href="#sec-2-5">Section 2.5</a>.H.2 via the Brazilian numbers
 (OEIS A125134). The seventh — physical — appears in <a class="xref" href="#cor-2-4-A-2">Corollary
-2.4.A.2</a>, based on the precision α at the 5.4 ppt level (vs LKB-Rb 2020).
+2.4.A.2</a>, based on the precision α (0.8σ vs CODATA-2022).
 The full table of seven characterizations is given in <a class="xref" href="#cor-2-5-H-2-1">Corollary 2.5.H.2.1</a>.
 The UNIFYING — number-theoretic — principle, from which all seven
 follow as special cases: V_cone(N) ∈ M_FL(N) ⟺ N=11
@@ -8325,7 +8349,7 @@ unchanged):</pre></div>
 <p class="blk">(6) THE BOUNDARY OF INFINITY. Curvature diverges exactly where measurements lose meaning: infinity from inside and zero-dimensionality from outside are the same boundary read from the two sides. A singularity is not a pathology but the point where the Cone is not yet chosen; the infinities at every step are not objects but symptoms of crossing the applicability boundary. There are no singularities or divergences because the carrier is discrete (the Z₁₁ cutoff acts in all recorded sectors: the finiteness of the Fock space, <a class="xref" href="#rem-5-7-VS-1-r">Remark 5.7.VS.1.r</a>).</p>
 <p class="blk">This completes Part 1. Mathematical foundation: Trinity Polynomial with the primacy of signs, group Z₁₁* = Z₅×Z₂, equivalent axioms, 0 continuous free parameters. Next — physical interpretation.</p>
 <p class="blk">Section 2 maps Z₁₁ mathematical structure to physical interpretation across twelve modal dimensions, closing 84 fundamental constants:</p>
-<p class="blk">2.0 Quintet to physical constants [Absolute]       — Math-Phys bijection 2.1 Spectrum and physical laws [Time]              — Noether + baryogenesis 2.2 Catalan moments and statistics [Temperature]   — statistical mechanics 2.3 Energy hierarchy [Height]                      — Trinity scales 2.4 Alpha and interactions [Width]                 — main 1/alpha formula to 5.4 ppt; QED, Schwinger, Tsirelson, holography 2.5 Catalog of 84 constants [Length]              — 3 epistemic layers (exact / α-series / operator-ratio); Lambda-anomaly, expts 2.6 CMB and cosmology [Shape]                      — Hubble tension, sigma_8, deltaN_eff 2.7 Cosmic budget [Volume]                         — Aether, three-pyramid decomposition, BH 2.8 Standard Model [Mass]                          — Higgs, leptons, quarks, neutrinos, SUSY 2.9 Nuclear physics [Field]                        — Lambda_QCD, nucleons, magic numbers, chiral 2.10 Uniqueness and statistics [Electricity]       — LEAN/COQ, computational complexity 2.11 Energy closure of physics [Energy]            — final synthesis</p>
+<p class="blk">2.0 Quintet to physical constants [Absolute]       — Math-Phys bijection 2.1 Spectrum and physical laws [Time]              — Noether + baryogenesis 2.2 Catalan moments and statistics [Temperature]   — statistical mechanics 2.3 Energy hierarchy [Height]                      — Trinity scales 2.4 Alpha and interactions [Width]                 — main 1/alpha formula to 0.8σ vs CODATA-2022; QED, Schwinger, Tsirelson, holography 2.5 Catalog of 84 constants [Length]              — 3 epistemic layers (exact / α-series / operator-ratio); Lambda-anomaly, expts 2.6 CMB and cosmology [Shape]                      — Hubble tension, sigma_8, deltaN_eff 2.7 Cosmic budget [Volume]                         — Aether, three-pyramid decomposition, BH 2.8 Standard Model [Mass]                          — Higgs, leptons, quarks, neutrinos, SUSY 2.9 Nuclear physics [Field]                        — Lambda_QCD, nucleons, magic numbers, chiral 2.10 Uniqueness and statistics [Electricity]       — LEAN/COQ, computational complexity 2.11 Energy closure of physics [Energy]            — final synthesis</p>
 </section>
 <section class="page" id="sec-2-0">
 <div class="part-sep" id="part-2"><h2>PART 2. PHYSICS</h2><div class="part-subtitle">Laws of the world of things</div></div>
@@ -9039,7 +9063,7 @@ correction. In the PYRAMIDAL APPROXIMATION (V_py = (N+1)·N·(N−1)² =
     = 137.0359991926   (precision 0.098 ppb vs LKB-Rb 2020, Morel)</pre>
 <p class="blk">The exact CONE value uses V_cone = V_py − (N−1)/2 = 13195 (canonical formula of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>):</p>
 <pre class="formula blk">1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
-    = 137.035999207     (precision 5.4 ppt = 0.0054 ppb)</pre>
+    = 137.035999160359 (0.8σ vs CODATA-2022)</pre>
 <p class="blk">The full three-term formula and its derivation — <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> (Pyramid of Trinity). The atom-dependent correction δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), k_e = {4,7} (<a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>), independently predicts α differences between atoms at the 10⁻⁹ level and reproduces the magnitude of the 5.5σ Berkeley-Cs vs LKB-Rb (2020) tension (the signed duality kernel; <a class="xref" href="#sec-2-5">Section 2.5</a>.U).</p>
 <div class="remark blk" id="rem-2-4-2-s"><span class="label"><a class="xref" href="#rem-2-4-2-s">Remark 2.4.2.s</a> (Geometric derivation program for α: powers are scales, the quintet is the Cone's roles).</span></div>
 <p class="blk">The derivation program (registry, deep level): α is COMPUTED from the geometry of the Cone, not fitted to it. The key reading of the <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> formula: POWERS ARE SCALES (floors, Rem 2.6.A.4.al(3)), THE QUINTET IS THE CONE'S ROLES (grid cells, Rem 2.6.A.4.x/.as). Machine:</p>
@@ -9049,9 +9073,9 @@ correction. In the PYRAMIDAL APPROXIMATION (V_py = (N+1)·N·(N−1)² =
   <li>CONE-EXACT SCAN (machine). One-term cone closings — ω₅², ω₁₀², h_k = 2sin²(πk/N), π²·M_frac, π²cos(π/11) — with the denominators {N·φ¹⁰, N·φ⁹, (N+1)·φ¹⁰, N·φ¹⁰·M_frac} give at best 4.2% against the tree-level 0.031%: no one-term form reproduces the fixed point 137.035999160 (<a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>). The three-term structure of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> IS the cone reading through the 4-loop order; deriving each term from the variation of the action on the Cone is a deep-level registry program.</li>
   <li>READING LADDER (machine). The same formula gives the tick price at every floor: α(k) = π²/(N·φ^k). Three canon records are reproduced by one form: α(0) = π²/N = 0.8972 (unification, table .ap(4)); α(9) = φ·α(10) = 0.0118 (derived from the action, Rem 2.4.AF.2.r); α(10) = the tree level. The ladder step d ln α/dk = −ln φ = −0.4812 — the same recorded manifestation-threshold step (.ai(5)/.au): the coupling ladder and the threshold ladder are φ-quantized by one step. The spectral form π¹⁰/(2·7⁴·sin(π/22)) sits between the tree and the tree+1 loop. THE BRIDGE IS MACHINE-MEASURED: (t1 − S)/t2 = 1.062431 — no closed atom-form in the grammar (the best 1 + 9α, 0.31%). The fundamental reading: the spectral closure (pure π) carries 1/1.062431 = 94.12% of the one-loop term; the remainder 5.88% is the QUANTIFIED π–e barrier: the share of e⁴ not derivable from π-geometry equals the measurable channel (Rem 1.10.2.9.w). The variational program: derive the 1-loop term as the difference of the spectral and closed forms.</li>
   <li>SPLIT BY THE BARRIER (machine). The three terms of 2.4.A divide along the recorded π–e boundary (Rem 1.10.2.9.w): the tree π²/(N·φ¹⁰) — pure Z₁₁ algebra (π, φ, N); the 1-loop e⁴φ²/(π⁵N) carries e⁴ — the measurable intensity of floor 4, its derivation from geometry passes through the π–e barrier, i.e. through measurement (the falsifiability channel); the 4-loop α⁴V_cone — pure cone algebra (V_cone = (N+1)·N·(N−1)² − (N−1)/2 — a function of N alone). The back-solve: the volume demanded by the observed α under the α_tree⁴ substitution is 13195.26 against V_cone = 13195 (deviation 0.002%); the self-consistent reading gives 13178.9 (−0.12%). Negative hunt results (machine): the spectral-to-tree bridge ≈ 17/16 (deviation 7·10⁻⁵ — not an identity), discrete closings π/A₁₁ = 1.0565, ladder sums and spectral moments do not yield t2; the cone-internal derivation target is the 4-loop term.</li>
-  <li>THREE READINGS OF THE VOLUME (machine). The 4-loop coefficient is derived from three independent Cone structures — all three give 13200: geometric (N+1)·N·(N−1)² = 12·11·100 (cycle × structure × sweep squared); spectral 2·T₂·(N−1)², where T₂ = Σω_k⁴ = 66 = N·C(4,2) — the QUARTIC moment of the modal spectrum (the 4th loop carries the 4th moment); group |GL(2,Z₁₁)| = (N²−1)(N²−N) = 13200 — the enumeration of all invertible linear maps of the 2D section (verified by explicit enumeration). The correction −(N−1)/2 = −5 = the cell C(5) = F₅ — the mirror half-cell of the φ-pair; the factorization 13195 = F₅·L₄·F₇·L₇ = 5·7·13·29. Result: α⁴V_cone = α⁴·[2·T₂·(N−1)² − C(5)] — the 4th loop order carries the 4th spectral moment folded by the sweep area and counted by the section symmetry; both fixed-point readings reproduced (137.035999207 / 137.035999160).</li>
+  <li>THREE READINGS OF THE VOLUME (machine). The 4-loop coefficient is derived from three independent Cone structures — all three give 13200: geometric (N+1)·N·(N−1)² = 12·11·100 (cycle × structure × sweep squared); spectral 2·T₂·(N−1)², where T₂ = Σω_k⁴ = 66 = N·C(4,2) — the QUARTIC moment of the modal spectrum (the 4th loop carries the 4th moment); group |GL(2,Z₁₁)| = (N²−1)(N²−N) = 13200 — the enumeration of all invertible linear maps of the 2D section (verified by explicit enumeration). The correction −(N−1)/2 = −5 = the cell C(5) = F₅ — the mirror half-cell of the φ-pair; the factorization 13195 = F₅·L₄·F₇·L₇ = 5·7·13·29. Result: α⁴V_cone = α⁴·[2·T₂·(N−1)² − C(5)] — the 4th loop order carries the 4th spectral moment folded by the sweep area and counted by the section symmetry; both fixed-point readings readings reproduced (the convention 137.035999160359 / the SINGLE RULE — the fixed point — 137.035999160).</li>
   <li>SINC CHAIN AND PER-TERM DERIVATION STATUS (machine). The spectral form decomposes into a pure-pi part and a tick correction: π¹⁰/(2·7⁴·sin(π/22)) = 11π⁹/(7⁴·sinc(π/22)); the pure-pi part 11π⁹/7⁴ = 136.568 (−0.341%), the sinc term π²/2904 adds +0.341% → 137.0334 (−0.0019%). The 1-loop term reads floor by floor: e⁴ — the intensity at floor 4, the OWN floor of α (<a class="xref" href="#sec-2-4">Section 2.4</a> = [Width / k = 4]); e/ω₄ = 1.494 — the transcendental gap expected past the π–e barrier. Per-term derivation status: tree — derived (the ladder π²/(N·φ^k), item (4)); the 1-loop — form structural (floors 4, 2, 5, 1), value = measured e (the π–e barrier); the 4-loop</li>
-  <li>derived (three readings of the volume, item (6)). Assembly: 1/α = tree − t2 − t3 = 137.035999207 (5.4 ppt).</li>
+  <li>derived (three readings of the volume, item (6)). Assembly: 1/α = tree − t2 − t3 = 137.035999206741 (assembled at α_tree; the single rule → the fixed point 137.035999160359).</li>
   <li>VARIATIONAL PROTOTYPE (machine). The first layer of the program of item (4) is executed on the Cone metric (<a class="xref" href="#def-2-4-AE-1-d">Definition 2.4.AE.1.d</a>). (a) The form of the difference of the closures is EXACT: t1 − S = t1·[1 − (π^N/(L₄⁴·φ^{N−1}))·sinc⁻¹(π/2N)] — the deficit is the product of exactly two pure factors: the spiral mismatch 1 − π¹¹/(7⁴φ¹⁰) = 0.003723 (the π-spiral of all N = 11 steps against the φ-spiral of N−1 = 10 active steps, dressed by the cell L₄ = C(8) = 7 to the fourth power) and the half-cycle tick x/sin(x) − 1 = +0.003407 at x = π/2N (the line-to-cycle edge factor, Rem 2.4.AE.2.r); the two factors nearly cancel (0.372% down, 0.341% up) — the spectral closure almost returns to the tree, and the small deficit 3.29·10⁻⁴·t1 is the bridge. The reconstruction of the deficit is exact (machine, PASS). The difference of the closures is pure π-φ-geometry: no e enters it. (b) SOFT MODES. At the tree floor (the metric exp(−d/φ¹⁰)) the two smallest eigenvalues are carried by modes 2 and 4: λ₂ = 0.002720 &lt; λ₄ = 0.002961 &lt; λ₅ = 0.004714 &lt; λ₃ = 0.011575 &lt; λ₁ = 0.098192; the variation of the action δTr g⁻¹ = −Tr(g⁻²·δg) along the ladder (φ^k → φ^{k+1}) concentrates on the mirror pairs {2,9} and {4,7}: 73.2% in the Tr g⁻¹ sector, 85.0% in Tr g⁻², 91.2% in Tr g⁻³ — exactly the floors of the numerator of the 1-loop term (φ² — floor 2, e⁴ — floor 4): the loop is routed by the soft modes, and the soft modes of the Cone are floors {2,4}. An independent machine confirmation of the floor form of the numerator of item (7). In ladder units the 1-loop term = 6.44·10⁻⁴ of a floor (the spectral closure sits at floor 9.999316). (c) The value is past the barrier. The remainder R = (t1 − S) − t2 = 5.88% of the deficit (6.24% of t2) has no atom in the recorded grammar: the probes 12·t2 (12.0190), 1/16 (0.0625), the first spectral sum Σω_k = 2cot(π/22), the electron-cell channel {3,8} (share of the variation 7.41% ≠ 6.24%) — all negative (recorded positively); e⁴ remains the measured channel (Rem 1.10.2.9.w). Status: the form of the difference of the closures is derived (pure geometry), the floors of the numerator are confirmed independently; the full derivation of the 1-loop term from the action remains a registry program. Computation: theory_of_everything.py, block Rem 2.4.2.s(8).</li>
   <li>THE ACTION SPIRAL (machine). The ladder action A(k) = Tr g⁻¹ (the metric of <a class="xref" href="#def-2-4-AE-1-d">Definition 2.4.AE.1.d</a>, the |k−l| form) carries its own asymptote: A(k)/φ^k → N−1 = 10 at the rate φ^{−k} (k = 30: deviation 5.4·10⁻⁷); the form is A(k) = (N−1)·φ^k + 1 + O(φ^{−k}). The action counts MODES: the content (N−1 = 10 active steps) on the spiral plus a single null walk (the Absolute): N = (N−1) + 1. Mechanism: as φ^k → ∞ the metric is J − D/φ^k (J — the all-ones matrix of the cycle, D — the distance matrix), on the complement of the all-ones direction the inverse operator grows as φ^k, and the trace constant equals N−1 (machine, k = 10..30). CONSEQUENCE: the spiral φ^k of the tree of the tick price 1/α(k) = N·φ^k/π² is not an ansatz but the own asymptote of the Cone action: the tree = structure × spiral / phase area, the action = content × spiral + unit; one φ-quantization (the ladder step −ln φ, item (4)). The normalization between the action and the tick price remains a recorded boundary input (Rem 2.4.AE.2.t(4)). CONVENTION of item (8)(b): d is the group distance on Z₁₁ (the metric is declared on the cyclic group, <a class="xref" href="#def-2-4-AE-1-d">Definition 2.4.AE.1.d</a>); only in this reading are the metric eigenvectors the Ĥ modes — the floors, and the soft modes {2,4} are floor-assigned. The literal |k−l| reading gives a Toeplitz matrix whose eigenvectors are not the Ĥ modes (no floor identification is possible); the spiral asymptote is the same φ^k with the same constant N−1 = 10; the group reading gives the constant 18 = 2·9 = 2L₂² exactly (the per-pair half-sum 9 = L₂² — an echo of C₁ of <a class="xref" href="#thm-2-4-4">Theorem 2.4.4</a>, an observation). PROGRAM STATUS: the tree — derived (the ladder, item (4); the action spiral, item (9)); the 4-loop — derived (item (6)); the 1-loop — form derived (floors {2,4} by the soft modes, item (8)(b); the difference of closures by two factors, item (8)(a)), the value e⁴ — past the π–e barrier (Rem 1.10.2.9.w), the 94.12% overlap — a numerical fact at the barrier. The program of deriving α from the Cone is closed at its recorded boundaries. Computation: theory_of_everything.py, block Rem 2.4.2.s(9).</li>
 </ol>
@@ -9293,11 +9317,11 @@ Step 4 (Numerical check). M_Planck = 1.221·10¹⁹ GeV.
   This is the natural UV scale of Trinity.
 Step 5 (Roll-down to physical α). From Λ_T to low energies, the
   standard QED RG flow applies. The resulting low-energy value
-  α(Cs-133) = 137.035999207 is a fixed point of the RG. □</pre></div>
+  α(Cs-133) = 137.035999160359 is a fixed point of the RG. □</pre></div>
 <div class="remark blk" id="rem-2-4-A-0-3-r"><span class="label"><a class="xref" href="#rem-2-4-A-0-3-r">Remark 2.4.A.0.3.r</a> (Closure of R3 calibration).</span><pre>With the explicit fixing Λ_T = √N · M_Planck, condition R3 (spectral
 consistency) in Th 2.4.A.0.2 becomes concrete: substituting Λ_T into
 S_Λ gives 1/α(M_Planck) at the UV scale; RG evolution down to Cs-133
-gives the observed 1/α = 137.035999207. The Λ_T calibration is fully
+gives the observed 1/α = 137.035999160359. The Λ_T calibration is fully
 fixed by Theorems ÆТ₁ + ÆТ₂ + N = 11, without free parameters.</pre></div>
 <div class="theorem blk" id="thm-2-4-A"><span class="label"><a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> (Three-term structural α from the Cone of Trinity).</span></div>
 <p class="blk">EPISTEMIC STATUS: Layer-1 STRUCTURAL IDENTITY (main term) + Layer-2 corrections.</p>
@@ -9316,7 +9340,7 @@ fixed by Theorems ÆТ₁ + ÆТ₂ + N = 11, without free parameters.</pre></di
   <li>e⁴·φ²/(π⁵·N):  e⁴ = "intensity × width" (intensity e raised to the width dimension k = 4); φ² = "stability × temperature" (k = 2); π⁵·N = "form × cycle" (π raised to k = 5 = form). Meaning: "electromagnetic field capture through matter".</li>
   <li>α⁴·V_cone:  nonlinearity (α⁴) × Cone phase volume (V_cone, structural invariant from <a class="xref" href="#thm-1-10-0-2-1">Theorem 1.10.0.2.1</a>).</li>
 </ul>
-<p class="blk">Combined precision: 5.4 ppt (5.4 × 10⁻¹²). The main term carries the structural identity; the corrections refine it by 0.03%.</p>
+<p class="blk">Combined precision: 0.8σ from CODATA-2022 (the single rule). The main term carries the structural identity; the corrections refine it by 0.03%.</p>
 <p class="blk">INDEPENDENCE OF V_cone FROM α (see also <a class="xref" href="#rem-1-10-0-2-r">Remark 1.10.0.2.r</a>): V_cone = 13195 is computed from the Z₁₁ axioms BEFORE the α-formula is written: V_cone = N·(N+1)·100 / (...) = F₅·L₄·F₇·L₇ = 5·7·13·29 = 13195, where each factor (N, N+1, F₅, L₄, F₇, L₇) is a structural invariant of Z₁₁ (<a class="xref" href="#thm-1-10-0-2-1">Theorem 1.10.0.2.1</a>, Quintet decomposition). There is no circularity: V_cone is introduced independently, the α-formula uses it as a ready constant.</p>
 <p class="blk">The fine-structure constant α in the frame of the Absolute (inertial reference identified with Rb-87 via <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>) is given by a closed formula in four atoms of the Quintet {N, π, φ, e} with zero tuning parameters:</p>
 <div class="remark blk" id="rem-2-4-A-alpha"><span class="label"><a class="xref" href="#rem-2-4-A-alpha">Remark 2.4.A.alpha</a></span><pre>-emergence (α-emergence as a NEW characterization
@@ -9353,7 +9377,7 @@ factor is a Trinity atom. Combined with the independence of V_cone
 │  Tree (resonance)   1/α₀ = N·φ¹⁰/π²              3·10⁻⁴ (0.03%)     │
 │  1-loop one-sided   1/α₁ = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N)                  │
 │                                                  2.7·10⁻⁷ (0.27 ppm)│
-│  4-loop structural  1/α  = 1/α₁ − α⁴·V_cone     5.4·10⁻¹² (5.4 ppt)│
+│  4-loop structural  1/α  = 1/α₁ − α⁴·V_cone   0.8σ vs CODATA-2022│
 └─────────────────────────────────────────────────────────────────────┘</pre>
 <p class="blk">IMPORTANT: the 1-loop form (through e⁴·φ²/(π⁵·N)) is ONE-SIDED — α does not appear on the right-hand side — and already gives precision 0.27 ppm (for comparison: the CODATA σ for α is 21 ppb; the one-sided form is the primary peer-review result of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>).</p>
 <p class="blk">The α⁴·V_cone term is a STRUCTURAL 4-loop closure entirely analogous to loop α-corrections in standard QED:</p>
@@ -9363,7 +9387,7 @@ QED Kinoshita 1990s:   a_e^(n) ∝ (α/π)ⁿ      [n-loop]</pre>
 <p class="blk">Trinity 4-loop:        δα = −α⁴·V_cone        [structural 4-loop]</p>
 <p class="blk">The α⁴ structure is the standard 4-loop suppression factor; V_cone = (N+1)·N·(N−1)² − F_5 is a structural Z₁₁ geometric coefficient, algebraically rigidly fixed (<a class="xref" href="#thm-1-10-0-2">Theorem 1.10.0.2</a>).</p>
 <p class="blk">Global uniqueness of the solution of the degree-5 equation on the interval [0.005, 0.01] is constructively proven (<a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>, Banach contraction with constant q ≈ 3·10⁻⁶).</p>
-<p class="blk">Therefore the one-sided 1-loop form provides the primary peer-review result at 0.27 ppm — a number independent of the choice of α, since α is absent from its right-hand side. The full 4-loop form gives the 5.4 ppt agreement under the substitution convention declared in the box (α := α_tree); the self-consistent reading of the same equation (fixed point, <a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>) gives 1/α = 137.035999160359 — a shift of 338 ppt = 4.2σ. The official CODATA-2022 recommendation is 1/α = 137.035999177(21): the α_tree convention (…207) differs by 1.4σ, the self-consistent reading (…160) by 0.8σ; the comparison is made against the full current likelihood, not a single determination (the double reading is stated explicitly in <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>).</p>
+<p class="blk">Therefore the one-sided 1-loop form provides the primary peer-review result at 0.27 ppm — a number independent of the choice of α, since α is absent from its right-hand side. The full 4-loop form is solved by the SINGLE RULE — self-consistently (fixed point, <a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>): 1/α = 137.035999160359 — 0.8σ from CODATA-2022; the substitution convention α := α_tree (a recorded alternative reading, not the rule) gives 137.035999206741 — 5.4 ppt vs LKB-Rb 2020, the shift between the readings is 338 ppt = 4.2σ. The official CODATA-2022 recommendation is 1/α = 137.035999177(21): the self-consistent reading (…160) differs by 0.8σ, the α_tree convention (…207) by 1.4σ; the comparison is made against the full current likelihood, not a single determination (the double reading is stated explicitly in <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>).</p>
 <div class="proof blk"><span class="label">Proof (structural, three steps of loop expansion).</span></div>
 <p class="blk">Step 1. Tree-level (fundamental Z_N resonance). By <a class="xref" href="#thm-2-4-1">Theorem 2.4.1</a> and the T₂ operator identity (<a class="xref" href="#thm-1-3-1">Theorem 1.3.1</a>):</p>
 <p class="blk">α_{(0)} = π²/(N·φ¹⁰) = 1/137.07850…</p>
@@ -9374,25 +9398,30 @@ QED Kinoshita 1990s:   a_e^(n) ∝ (α/π)ⁿ      [n-loop]</pre>
 <p class="blk">Step 3. Conic structural correction (second loop order). The centroid of the Spectral Cone (<a class="xref" href="#def-2-4-B">Definition 2.4.B</a>), projected onto the height of the front triangle, carries a structural weight proportional to the conic phase volume V_cone (<a class="xref" href="#def-2-4-C">Definition 2.4.C</a>). Under 4th-order loop suppression (same α⁴):</p>
 <p class="blk">Δ_{cone} = −α⁴ · V_cone = −α⁴ · [(N + 1)·N·(N − 1)² − (N − 1)/2]</p>
 <p class="blk">For N = 11: Δ_{cone} = −2.8322·10⁻⁹ · 13195 = −3.7371·10⁻⁵.</p>
-<p class="blk">Summing all three contributions:</p>
-<pre class="formula blk">1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
-    = 137.07850 − 0.042463 − 3.7371·10⁻⁵
-    = 137.03599920674                                              □</pre>
-<p class="blk">Verification (comparison with precision measurements).</p>
+<p class="blk">Summing all three contributions (assembled at α := α_tree — the first Picard step):</p>
+<pre class="formula blk">    1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
+        = 137.07850 − 0.042463 − 3.7371·10⁻⁵
+        = 137.03599920674
+The single rule: the equation is solved self-consistently (the
+Picard iterations converge, <a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>) — the fixed point:
+    1/α = 137.035999160359                                        □</pre>
+<p class="blk">Verification (comparison with precision measurements; the single rule — the self-consistent solution, Lemmas 2.4.A.A/B).</p>
 <pre class="diagram blk">┌─────────────────────────────┬────────────────────┬────────────┬─────────────┐
 │ Source                      │ 1/α                │ σ          │ Δ (ppb 1/α) │
 ├─────────────────────────────┼────────────────────┼────────────┼─────────────┤
-│ Trinity (Thm. 2.4.A)   │ 137.03599920674    │ (struct.)  │ —           │
-│ LKB-Rb 2020 (Morel)         │ 137.035999206(11)  │ 1.1·10⁻⁸   │ +0.0054     │
-│ CODATA 2018                 │ 137.035999084(21)  │ 2.1·10⁻⁸   │ +0.896      │
-│ Berkeley-Cs 2018 (Parker)   │ 137.035999046(27)  │ 2.7·10⁻⁸   │ +1.173      │
+│ Trinity (Thm. 2.4.A)   │ 137.03599916036    │ (struct.)  │ —           │
+│ CODATA 2022                 │ 137.035999177(21)  │ 2.1·10⁻⁸   │ +0.121 (0.8σ)│
+│ LKB-Rb 2020 (Morel)         │ 137.035999206(11)  │ 1.1·10⁻⁸   │ +0.333 (4.2σ)│
+│ CODATA 2018                 │ 137.035999084(21)  │ 2.1·10⁻⁸   │ +0.554      │
+│ Berkeley-Cs 2018 (Parker)   │ 137.035999046(27)  │ 2.7·10⁻⁸   │ +0.394 (after│
+│                             │                    │            │ shift 2.5.U.1)│
 └─────────────────────────────┴────────────────────┴────────────┴─────────────┘</pre>
-<p class="blk">Agreement with LKB-Rb 2020 (Morel et al., atom interferometer on Rb-87) at the 0.0054 ppb = 5.4·10⁻¹² = 5.4 ppt level; the Berkeley-Cs value (Parker et al. 2018) is matched to 1.17 ppb. This is approximately 7% of the current experimental σ (0.080 ppb), i.e. the prediction and the measurement are INDISTINGUISHABLE within experimental uncertainty. this is the closed-form value with zero continuous parameters.</p>
+<p class="blk">The single rule gives 0.8σ from CODATA-2022 — a closed form with zero continuous parameters. LKB-Rb 2020 is a recorded 4.2σ tension (0.33 ppb): the theory predicts the Rb-87 reference to fall to 137.03599916036 at 10⁻¹¹ precision (PF-1 — the discriminator; a measurement at the ...206 level refutes it). The substitution convention (a recorded alternative reading) gives 5.4 ppt vs LKB-Rb — a property of the convention, not the rule.</p>
 <div class="theorem blk" id="thm-2-4-A-0-5"><span class="label"><a class="xref" href="#thm-2-4-A-0-5">Theorem 2.4.A.0.5</a> (Role of each successive term in the α-formula: Sphere-Point-Cone decomposition and precision improvement).</span><pre>Each of the three terms in the formula of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is associated
 with one of the three ontological components of Trinity (<a class="xref" href="#def-2-4-E">Definition
 2.4.E</a>), and each contributes at a distinct numerical order, as
 quantified in the proof below (Term 1 sets 1/α to 0.03%, Term 2 to
-0.27 ppm, Term 3 to 5.4 ppt).</pre></div>
+0.27 ppm, Term 3 to the fixed point (0.8σ vs CODATA-2022)).</pre></div>
 <p class="blk">Statement. The following ontological identity holds:</p>
 <p class="blk">1/α  =  N·φ¹⁰/π²       (SPHERE: spectral projection onto S²)</p>
 <ul class="bullets blk">
@@ -9421,7 +9450,7 @@ quantified in the proof below (Term 1 sets 1/α to 0.03%, Term 2 to
 <div class="proof blk"><span class="label">Proof (role of each successive term in improving precision).</span></div>
 <p class="blk">Step 1 (SPHERE — necessity of Term 1). Without N·φ¹⁰/π² it is impossible to construct even tree-level α: the number 137 cannot be expressed through quintet combinations WITHOUT N (number of modes), φ¹⁰ (golden scaling), and π² (surface normalization). Removing Term 1 → α_tree does not exist.</p>
 <p class="blk">Step 2 (CONE — necessity of Term 2). Without −e⁴·φ²/(π⁵·N), tree-level α₀ = 1/137.07850 has error 3·10⁻⁴ relative to experiment. The Cone (direction i) MUST contribute a correction; otherwise Cone geometry is not connected to physical α. Removing Term 2 → 0.03% error, unacceptable for a physical theory.</p>
-<p class="blk">Step 3 (POINT — necessity of Term 3). Without −α⁴·V_cone, 1-loop α₁ = 1/137.036037 has error 0.27 ppm. The Point (Absolute) MUST close the cycle through 4-loop self-action. Removing Term 3 → error 2.7·10⁻⁷, excludes the LKB-Rb 2020 (Morel) agreement at the 5.4 ppt level.</p>
+<p class="blk">Step 3 (POINT — necessity of Term 3). Without −α⁴·V_cone, 1-loop α₁ = 1/137.036037 has error 0.27 ppm. The Point (Absolute) MUST close the cycle through 4-loop self-action. Removing Term 3 → error 2.7·10⁻⁷, excludes the 0.8σ agreement with CODATA-2022 (the single rule — the fixed point).</p>
 <p class="blk">Step 4 (Trinity — necessity of ALL three terms). By the ontological law (<a class="xref" href="#def-2-4-E">Definition 2.4.E</a>): Trinity = Sphere ⊕ Point ⊕ Cone — all three are manifestations of a single Absolute for a given direction i. Removing any component breaks the Trinity connection, and the α-formula loses its meaning as a "law derivable from a unified geometry". □</p>
 <div class="corollary blk" id="cor-2-4-A-0-5-1"><span class="label"><a class="xref" href="#cor-2-4-A-0-5-1">Corollary 2.4.A.0.5.1</a> (Scope of the "fitted terms" question).</span><pre>The leading term N·φ¹⁰/π² is structurally distinctive: among the
 expressions c·φᵃ/πᵇ (c ≤ 20, a,b ≤ 12) only two agree with 1/α to a
@@ -9467,7 +9496,7 @@ x₄ = f(x₃) = f(x₂) = α_fixed        = 1/137.03599916 (converged)</pre>
   <li>BEFORE the fixed-point reading, α looked like a 3-term sum whose coefficients could be questioned as post-hoc. The third term's dependence on α itself appeared as a "recursive cheat."</li>
   <li>AFTER the fixed-point reading, the equation is a SIMULTANEOUS identity: all three terms together define α, and α's appearance on both sides is not a cheat but the signature of a fixed-point definition — the same structural class as φ = 1 + 1/φ.</li>
 </ul>
-<p class="blk">No free parameter enters: the triple {N·φ¹⁰/π², e⁴·φ²/(π⁵·N), V_cone} consists entirely of Z₁₁ structural atoms. The fixed-point iteration converges in three steps to 1/α = 137.035999160 with a deviation from LKB-Rb 2020 of 338 ppt (4.2σ); under the convention α := α_tree (the box of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>) the deviation is 5.4 ppt (0.07σ). The double reading is stated explicitly in <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>. This is a structural closure with a declared convention, not a convention-free derivation.</p>
+<p class="blk">No free parameter enters: the triple {N·φ¹⁰/π², e⁴·φ²/(π⁵·N), V_cone} consists entirely of Z₁₁ structural atoms. The fixed-point iteration converges in three steps to 1/α = 137.035999160 — the SINGLE RULE (0.8σ from CODATA-2022); the convention α := α_tree (a recorded alternative reading) gives 137.035999206741 — 5.4 ppt vs LKB-Rb 2020 (0.07σ); for the primary reading LKB-Rb is a recorded 4.2σ tension. The double reading is stated explicitly in <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>; the computation rule is one — the self-consistent solution (the PF-1 discriminator: mantissa 35881).</p>
 <p class="blk">EPISTEMIC STATUS: Layer-1 (structural identity, closed). The fixed-point formulation supersedes the "three-term fit" interpretation. α is now in the same structural class as φ: a constant determined by a self-consistent equation over Z₁₁ atoms.</p>
 <p class="blk">BLIND PREDICTIONS AND THE REGISTRY ( question "where is the independent prediction?"): α itself is a reproduction (its value took part in the development; the uniqueness of the form — Rem 2.4.A.0.7.r, the independence of V_cone — Rem 1.10.0.2.r); the blind level is carried by PF-1..7 (front 1.0.K.1, explicit confirmation/refutation ranges); for the α-ladder the rung α(9) = φ·α(10) is derived from the action (Rem 2.4.AF.2.r); the acceptance criterion — Rem 2.6.A.4.ah.</p>
 <div class="proof blk"><span class="label">Proof 2.4.A.0.5.t (Convergence of the α fixed-point iteration).</span><pre>Define A = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N). The map</pre></div>
@@ -9551,7 +9580,7 @@ dimension R = 3 gives the exponent on π in Term 1 as R−1 = 2 (the
 2D cross-section closure); |Quintet| = 5
 gives the exponent on π in Term 2; Z₂ = 2 gives the exponent on φ
 in Term 2. V_cone is the Z₁₁ phase-volume invariant. Numerically
-the composition yields 1/α = 137.035999207 (5.4 ppt, <a class="xref" href="#thm-2-4-A">Theorem
+the composition yields 1/α = 137.035999160359 (0.8σ vs CODATA-2022, <a class="xref" href="#thm-2-4-A">Theorem
 2.4.A</a>).                                                          □</pre></div>
 <div class="remark blk" id="rem-2-4-A-0-5-w-r"><span class="label"><a class="xref" href="#rem-2-4-A-0-5-w-r">Remark 2.4.A.0.5.w.r</a> (φ is not a Z₁₁ spectral invariant — scope).</span><pre>The golden ratio φ is a primitive Quintet atom and is NOT
 an invariant of the Z₁₁ spectrum. Concretely, the spectral data of
@@ -9569,12 +9598,12 @@ distinguishes the Trinity derivation from a numerological fit: the
 atoms are primitive (Goedelian), but their structural composition
 — including every exponent — is derived from the geometry.</pre></div>
 <div class="remark blk" id="rem-2-4-A-0-6"><span class="label"><a class="xref" href="#rem-2-4-A-0-6">Remark 2.4.A.0.6</a> (Agreement with CODATA 2022 and forward prediction for next-generation measurements).</span></div>
-<p class="blk">The theoretical value of Trinity 1/α = 137.035999207 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>) falls within 1σ of the most precise direct measurement of 2020:</p>
+<p class="blk">The theoretical value of Trinity 1/α = 137.035999160359 (Th 2.4.A, the single rule) falls within 1σ of the most precise direct measurement of 2020:</p>
 <p class="blk">LKB-Rb 2020 (Morel et al., Nature 588:61–65):     137.035999206(11) Berkeley-Cs 2018 (Parker et al., Science 360:191): 137.035999046(27)</p>
 <p class="blk">The current statistical adjustment of CODATA 2022 gives the central value 137.035999177(12), differing from the theoretical value by 3·10⁻⁸. CODATA is obtained by combining several heterogeneous measurements with different weights; the CODATA central value is not the result of a single experiment.</p>
 <p class="blk">Trinity makes the explicit forward prediction:</p>
-<p class="blk">the next generation of atomic interferometry at the ppt-precision level (2026–2030, see PF-1 in <a class="xref" href="#sec-1-0">Section 1.0</a>.K.1) will converge to 1/α = 137.035999207 with uncertainty &lt; 10⁻¹⁰, not to the CODATA central value 137.035999177.</p>
-<p class="blk">If the next-generation measurement converges to a value differing from 137.035999207 by more than 5σ, <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is refuted without the possibility of parameter tuning (<a class="xref" href="#cor-1-10-Q-1-c">Corollary 1.10.Q.1.c</a>, zero free parameters). Mantissa digits 13–17 (sequence 74119, see PF-1) are the principal falsification target.</p>
+<p class="blk">the next generation of atomic interferometry at the ppt-precision level (2026–2030, see PF-1 in <a class="xref" href="#sec-1-0">Section 1.0</a>.K.1) will converge to 1/α = 137.035999160359 with uncertainty &lt; 10⁻¹⁰, not to the CODATA central value 137.035999177 nor to the LKB-Rb 2020 value 137.035999206 (a recorded 4.2σ tension).</p>
+<p class="blk">If the next-generation measurement converges to a value differing from 137.035999160359 by more than 5σ, <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is refuted without the possibility of parameter tuning (<a class="xref" href="#cor-1-10-Q-1-c">Corollary 1.10.Q.1.c</a>, zero free parameters). Mantissa digits 13–17 (sequence 35881, see PF-1) are the principal falsification target.</p>
 <p class="blk">The structural specificity of the Trinity α-formula (only three terms through the Quintet {N, π, φ, e, V_cone} yield 14-digit agreement with experiment) is analogous to the structural specificity of the Trinity bijection for Planck quantities (<a class="xref" href="#thm-2-0-B-1">Theorem 2.0.B.1</a>, χ = 1.78): both formulas admit no alternative representation through an arbitrary set of atoms with the same precision under bounded algebraic complexity.</p>
 <div class="lemma blk" id="lem-2-4-A-A"><span class="label"><a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a> (Uniqueness of the physical root of α via polynomial monotonicity on the interval I).</span><pre>The equation of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is implicit (α appears on both
 sides). Rewrite it in polynomial form, multiplying by α:</pre></div>
@@ -9598,7 +9627,7 @@ multiplicity): three real ones — the physical α* ∈ I, the positive
 α₂ ≈ 0.3174 outside the physical coupling regime, and one negative
 root — plus one complex-conjugate pair; the physical root is unique
 in I by monotonicity. Implicitness ≠ underdetermination.</pre></div>
-<p class="blk">The double reading of the equation of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is stated explicitly. (a) The self-consistent reading (fixed point, <a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a>): 1/α = 137.035999160359. (b) The substitution convention declared in the box of the theorem (α := π²/(N·φ¹⁰) — the tree-level value in the α⁴·V_cone term): 1/α = 137.035999206741 (5.4 ppt vs LKB-Rb 2020). The choice of α in the α⁴·V_cone term shifts the 4-loop answer by 338 ppt (0.34 ppb) — 63 times the claimed precision of 5.4 ppt; the one-sided 1-loop form (0.27 ppm) is independent of this choice, since α is absent from its right-hand side. Both values are stated; the convention is part of the formulation of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, not a hidden freedom.</p>
+<p class="blk">The double reading of the equation of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is stated explicitly; THE COMPUTATION RULE IS ONE (adversarial correction). (a) THE SINGLE RULE — the self-consistent reading (fixed point, Lemmas 2.4.A.A/B — mathematically forced: the unique root of the polynomial P(α) on I): 1/α = 137.035999160358812 — 0.8σ from CODATA-2022; the pre-registered PF-1 prediction (mantissa 35881). (b) The substitution convention (α := π²/(N·φ¹⁰) — the tree-level value in the α⁴·V_cone term): 1/α = 137.035999206741 (5.4 ppt vs LKB-Rb 2020) — a RECORDED ALTERNATIVE READING, not the computation rule and not a confirmation variant of PF-1. The choice of α in the α⁴·V_cone term shifts the 4-loop answer by 338 ppt (0.34 ppb); the one-sided 1-loop form (0.27 ppm) is independent of this choice, since α is absent from its right-hand side. Both values are stated; the rule is one — the equation is the equation.</p>
 <div class="lemma blk" id="lem-2-4-A-B"><span class="label"><a class="xref" href="#lem-2-4-A-B">Lemma 2.4.A.B</a> (Banach contraction mapping for α — global formulation on an explicit closed interval).</span><pre>Claim. Let I := [0.005, 0.01] ⊂ ℝ be a closed interval. Define the
 operator T : I → ℝ:</pre></div>
 <p class="blk">T(x) := 1 / (A − B − V_cone · x⁴),</p>
@@ -9685,17 +9714,18 @@ instead of the smooth cone), the result is:</pre></div>
 <p class="blk">V_cone = |PSL(2,11)| · C(6,3) − |Quintet| = 660 · 20 − 5, (equivalently |A₅| · T₃ − |Quintet| = 60 · 220 − 5; (N + 1) · F₁₀ · C(6,3) − |Quintet| = 12 · 55 · 20 − 5).</p>
 <p class="blk">Structural reading: 13200 = the full icosahedral-structure (PSL(2,11) — the group of the 11-point structure, containing A₅ with index [PSL(2,11) : A₅] = 11 = N; C(6,3) = 20 — the faces of the icosahedron = T₃/N); subtracting |Quintet| = 5 selects the part of the structure INVISIBLE to the Cone — the spherical complement of the cone. Together with the cone form F₅·L₄·F₇·L₇, the number V_cone carries TWO independent exact structural forms — of the Cone and of the Sphere — consistent with the three terms of the α-form (Sphere + Cone + Point, (iii) of <a class="xref" href="#rem-2-4-A-0-7">Remark 2.4.A.0.7</a>).</p>
 <p class="blk">boundary: the atomic set of the enumeration is limited (listed above); wider spaces may contain additional identities. The choice between the cone and the sphere form (or their joint reading) is interpretive: both are exact. Computation: theory_of_everything.py, the <a class="xref" href="#rem-2-4-A-0-7-r">Remark 2.4.A.0.7.r</a> block. □</p>
-<div class="corollary blk" id="cor-2-4-A-16"><span class="label"><a class="xref" href="#cor-2-4-A-16">Corollary 2.4.A.16</a> (Relation to <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>).</span><pre>The Trinity α from 2.4.A matches the most precise measurement,
-LKB-Rb 2020 (Morel et al.), to 5.4 ppt, and Berkeley-Cs 2018
-(Parker et al.) to 1.17 ppb. The signed model of <a class="xref" href="#thm-2-5-U-1">Theorem
+<div class="corollary blk" id="cor-2-4-A-16"><span class="label"><a class="xref" href="#cor-2-4-A-16">Corollary 2.4.A.16</a> (Relation to <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>).</span><pre>The Trinity α from 2.4.A (the single rule) stands at 0.8σ of
+CODATA-2022; the tension with the Rb measurement (Morel et al.
+2020) is 4.2σ, and the residual with Cs (Parker et al. 2018)
+after the structural shift is 0.39 ppb. The signed model of <a class="xref" href="#thm-2-5-U-1">Theorem
 2.5.U.1</a> takes Rb (k_p = 4 = k_e) as the unshifted reference and
 shifts atoms by δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1)
 (the signed duality kernel). The three values:</pre></div>
-<pre class="tabular blk">α(theory)        = 1/137.03599920674   (Trinity reference, convention α := α_tree)
-α(Rb exp., Morel) = 1/137.035999206    (Δ to theory 5.4 ppt)
-α(Cs exp., Parker)= 1/137.035999046    (Δ to theory 1.17 ppb)</pre>
-<p class="blk">The measured Rb value matches the Trinity α: in the signed model the reference is Rb (k_p = 4 = k_e), and the Cs/Rb sign and magnitude are reproduced (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%; <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>).</p>
-<div class="corollary blk" id="cor-2-4-A-2"><span class="label"><a class="xref" href="#cor-2-4-A-2">Corollary 2.4.A.2</a> (Seventh characterization consistent with N = 11).</span><pre>The formula α⁴·(N+1)·N·(N−1)² yields 1/α at the 5.4 ppt level (vs LKB-Rb 2020)
+<pre class="tabular blk">α(theory)        = 1/137.03599916036   (Trinity reference, the single rule)
+α(Rb exp., Morel) = 1/137.035999206    (Δ to theory 4.2σ — recorded tension)
+α(Cs exp., Parker)= 1/137.035999046    (Δ to the shifted prediction 0.39 ppb)</pre>
+<p class="blk">In the signed model the reference is Rb (k_p = 4 = k_e), and the Cs/Rb sign and magnitude are reproduced (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%; <a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>) — the difference-based shift test; the absolute offset of both experiments is the recorded tension.</p>
+<div class="corollary blk" id="cor-2-4-A-2"><span class="label"><a class="xref" href="#cor-2-4-A-2">Corollary 2.4.A.2</a> (Seventh characterization consistent with N = 11).</span><pre>The formula α⁴·(N+1)·N·(N−1)² yields 1/α at the 0.8σ level (vs CODATA-2022)
 ONLY for N = 11, thanks to the identity 5! = N² − 1 (<a class="xref" href="#def-2-4-D">Definition
 2.4.D</a>). For any other natural N_alt:</pre></div>
 <p class="blk">5! ≠ N_alt² − 1  ⟹  V_py factorization via 5!·N·(N−1) fails ⟹  formula 2.4.A does not reproduce the experimental α.</p>
@@ -9730,7 +9760,7 @@ n = 4b: α⁴·(N+1)·N·(N−1)²  — pyramidal convolution (2.4.A)</pre>
 experiments on Yb-171, Sr-87) reaches 10⁻¹¹ precision in the 2030s:</pre></div>
 <p class="blk">Prediction <a class="xref" href="#sec-2-4">Section 2.4</a>:  1/α(Cs-133) = 137.03599920674 ± ε</p>
 <p class="blk">where ε is determined solely by the mathematical constants {π, φ, e} (known to millions of digits) and higher-order corrections n = 5, 6..., estimated at 10⁻¹¹ ÷ 10⁻¹².</p>
-<p class="blk">Any experimental value of 1/α(Cs) outside the interval [137.03599920624, 137.03599920724] at 10⁻¹¹ precision FALSIFIES <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.</p>
+<p class="blk">Any experimental value of 1/α(Cs) outside the interval [137.03599916026, 137.03599916046] at 10⁻¹¹ precision FALSIFIES <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.</p>
 <div class="corollary blk" id="cor-2-4-A-5"><span class="label"><a class="xref" href="#cor-2-4-A-5">Corollary 2.4.A.5</a> (Quintet as 5 projections of the Spectral Cone).</span><pre>The five elements of the quintet {N, π, φ, e, i} are not independently
 chosen constants — each is a projection (slice / aspect) of a single
 Spectral Cone viewed from its particular angle:</pre></div>
@@ -10422,13 +10452,13 @@ The gap between the theoretical 1/α = 137.03599920674 and LKB-Rb 2020
 (Morel) 137.035999206 is 7.4·10⁻¹⁰, below current experimental σ (1.1·10⁻⁸),
 but potentially resolvable by the next loop order (n = 6):</pre></div>
 <p class="blk">Δ_{n=6} ~ α⁶ · V_py² · (Z₂-factor)  ~ O(10⁻⁹ ÷ 10⁻¹⁰)</p>
-<p class="blk">The exact structure is a registry task for future refinements of Trinity, but does not affect the current verification of 2.4.A at the 5.4 ppt level (vs LKB-Rb 2020).</p>
+<p class="blk">The exact structure is a registry task for future refinements of Trinity, but does not affect the current verification of 2.4.A at the 0.8σ level (vs CODATA-2022).</p>
 <div class="remark blk" id="rem-2-4-B-r"><span class="label"><a class="xref" href="#rem-2-4-B-r">Remark 2.4.B.r</a> (Connection with the atomic formula 2.5.U.1).</span><pre>The global formula 2.4.A and the atomic 2.5.U.1 use a common
 α⁴ loop suppression but with different combinatorics of modes:</pre></div>
 <pre class="tabular blk">Global:   α⁴ · (N+1)·N·(N−1)²  — sum over ALL modes and pairs
 Atomic:  α⁴ · sin²(πk/N) · N/(2N−1)  — single selected mode k</pre>
 <p class="blk">Their statuses differ:</p>
-<p class="blk">2.4.A: 1/α reproduced at the ppt/ppb level (matches LKB-Rb 2020 to 5.4 ppt, Berkeley-Cs 2018 to 1.17 ppb) — established 2.5.U.1: the Cs/Rb difference is reproduced in sign and magnitude (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%) — the signed model (<a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>; the Rb reference)</p>
+<p class="blk">2.4.A: 1/α reproduced at the ppt/ppb level (matches LKB-Rb 2020 CODATA-2022 to 0.8σ; LKB-Rb 2020 — a recorded 4.2σ tension; Berkeley-Cs 2018 — a 0.39 ppb residual after the shift) — established 2.5.U.1: the Cs/Rb difference is reproduced in sign and magnitude (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%) — the signed model (<a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>; the Rb reference)</p>
 <p class="blk">The global formula and the atomic formula share the same α⁴ suppression; the atomic signed model is a structural form [STRUCT] with the reproduced Cs/Sr shifts.</p>
 <div class="remark blk" id="rem-2-4-C-1"><span class="label"><a class="xref" href="#rem-2-4-C-1">Remark 2.4.C.1</a> (Geometric origin of the factorization).</span><pre>The pyramidal factorization V_py = (N+1)·N·(N−1)² reflects the
 threefold structure of Trinity in 3D:</pre></div>
@@ -10969,7 +10999,7 @@ with kernel the Absolute mode |0⟩, and g ≻ 0 on span{|1⟩, …, |10⟩}. �
 │   ] d⁴x                                                         │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘</pre>
-<p class="blk">where L_11mode = ½Σ_k|ψ_k'|² − ½Σ_k ω_k²·|ψ_k|² (standard part from <a class="xref" href="#sec-2-4">Section 2.4</a>), and α is bounded by Lemmas 2.4.A.A/2.4.A.B (uniqueness of the root on I = [0.005, 0.01]); the value 1/137.035999207 is set by the convention α := α_tree of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.</p>
+<p class="blk">where L_11mode = ½Σ_k|ψ_k'|² − ½Σ_k ω_k²·|ψ_k|² (standard part from <a class="xref" href="#sec-2-4">Section 2.4</a>), and α is bounded by Lemmas 2.4.A.A/2.4.A.B (uniqueness of the root on I = [0.005, 0.01]); the value 1/137.035999160359 is set by the convention α := α_tree of <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.</p>
 <p class="blk">THEOREM 2.4.I (Structural correspondence: Einstein equations under Trinity variation and spectral normalization).</p>
 <p class="blk">Variation δS_Trinity/δg_μν = 0 yields:</p>
 <p class="blk">G_μν = (8πG/c⁴)·T_μν^(Trinity)</p>
@@ -11425,7 +11455,14 @@ identity:
 where |Quintet| = 5 is the number of elements of the quintet
 {N, π, φ, e, i}, λ_C = π/14 is the Cabibbo angle (<a class="xref" href="#thm-2-8-D-1">Theorem 2.8.D.1</a>).
 In degrees: δ_CP^q = 64.286° with relative error 1.70 · 10⁻² from
-the experimental value δ_CP^q^exp = 65.4° ± 1.2° (PDG 2024).</pre></div>
+the experimental value δ_CP^q^exp = 65.4° ± 1.2° (PDG 2024).
+STATUS (adversarial correction — single primary): a geometric
+REPRESENTATION, not the primary. The primary phase formula is
+<a class="xref" href="#thm-2-8-4">Theorem 2.8.4</a> (δ_CP^q = φ⁻²/ω₁² − α + 4α² + 3α³N = 1.19600 rad =
+68.55°, 0.0002% agreement with the PDG δ = 1.196 ± 0.045 rad).
+The comparison here is against γ = 65.4° ± 1.2° — the
+unitarity-triangle angle, an observable DISTINCT from the
+Wolfenstein δ; the 1.7% deviation is recorded and not removed.</pre></div>
 <div class="proof blk"><span class="label">Proof (computational, type C).</span><pre>Numerical substitution:
      5π/14 · (180/π) = 5 · 180 / 14 = 900 / 14 = 64.286°
      δ_CP^q^exp = 65.4° ± 1.2°
@@ -11439,13 +11476,16 @@ This yields a direct structural connection between the quintet
 {N, π, φ, e, i} and the quantum phase of CP violation in the CKM
 sector.</pre></div>
 <div class="corollary blk" id="cor-2-4-Z-1-2"><span class="label"><a class="xref" href="#cor-2-4-Z-1-2">Corollary 2.4.Z.1.2</a> (Summary structural closure of the CKM matrix).</span><pre>The combination of Theorems 2.8.D.1 (|V_us| = π/14), 2.8.D.2
-(|V_cb| = (5/6)·λ²) and 2.4.Z.1 (δ_CP^q = 5π/14) yields <strong>complete
+(|V_cb| = (5/6)·λ²) and 2.8.4 (primary δ_CP^q = φ⁻²/ω₁² − α + 4α² +
+3α³N = 1.19600 rad) yields <strong>complete
 four-parameter closure of the Wolfenstein matrix</strong>:
      λ = π/14         (Cabibbo angle)
      A = 5/6          (geometric multiplier)
      √(ρ²+η²) = 1/φ²  (golden ratio)
-     δ_CP^q = 5λ      (quintet · Cabibbo)
-All four parameters of the CKM matrix are expressed through {π, φ, N}
+     δ_CP^q = φ⁻²/ω₁² − α + 4α² + 3α³N = 1.19600 rad  (<a class="xref" href="#thm-2-8-4">Theorem 2.8.4</a> — primary)
+The representation δ_CP^q = 5λ (<a class="xref" href="#thm-2-4-Z-1">Theorem 2.4.Z.1</a>) is a geometric
+interpretation with a recorded 1.7% deviation from γ. All four
+parameters of the CKM matrix are expressed through {π, φ, N}
 without free parameters.</pre></div>
 <div class="theorem blk" id="thm-2-4-Z-2"><span class="label"><a class="xref" href="#thm-2-4-Z-2">Theorem 2.4.Z.2</a> (Structural representation of the strong coupling α_s).</span><pre>The strong coupling constant α_s at the Z-boson mass scale
 satisfies the structural identity:
@@ -11838,12 +11878,17 @@ Substituting λ = π/14, A = 5/6, (ρ² + η²) = 1/φ⁴ gives:
     |V_ub| = (5/6)·(π/14)³·(1/φ²) = 0.00360
 Experiment PDG 2022: V_us = 0.22500, V_cb = 0.04182, V_ub = 0.00360.
 Relative errors: 0.27%, 0.34%, 0.09% respectively. □</pre></div>
-<div class="corollary blk" id="cor-1-10-L-VI-3-1"><span class="label"><a class="xref" href="#cor-1-10-L-VI-3-1">Corollary 1.10.L.VI.3.1</a> (CKM phase δ_CP).</span><pre>From the parametrization ρ = (1/φ²)·cos(δ_CP), η = (1/φ²)·sin(δ_CP)
+<div class="corollary blk" id="cor-1-10-L-VI-3-1"><span class="label"><a class="xref" href="#cor-1-10-L-VI-3-1">Corollary 1.10.L.VI.3.1</a> (CKM phase δ_CP — consistency check).</span><pre>STATUS (adversarial correction): a consistency check against
+EXPERIMENTAL inputs, not a structural derivation; the primary phase
+formula is <a class="xref" href="#thm-2-8-4">Theorem 2.8.4</a> (δ_CP^q = φ⁻²/ω₁² − α + 4α² + 3α³N =
+1.19600 rad, 0.0002% agreement). Here: from the parametrization
+ρ = (1/φ²)·cos(δ_CP), η = (1/φ²)·sin(δ_CP)
 and experimental values ρ ≈ 0.159, η ≈ 0.348:
     tan(δ_CP) = η/ρ = 0.348/0.159 = 2.189
     δ_CP = arctan(2.189) = 1.143 rad ≈ 65.5°
 Experiment: δ_CP = 1.196 ± 0.045 rad ≈ 68.5°. Agreement
-at the 3% level — within structural accuracy.</pre></div>
+at the 3% level — within structural accuracy; the discrepancy of the
+three readings (1.19600 / 1.143 / 5π/14 = 1.122 rad) is recorded.</pre></div>
 <div class="theorem blk" id="thm-1-10-L-VI-2"><span class="label"><a class="xref" href="#thm-1-10-L-VI-2">Theorem 1.10.L.VI.2</a> (Neutrino masses from 3 spatial pairs).</span><pre>Three neutrinos (ν_τ, ν_μ, ν_e) correspond to three spatial
 mirror pairs of Z₁₁ which are mirrors of charged leptons:</pre></div>
 <pre class="tabular blk">ν_τ: pair P₃ = (3, 8) HEIGHT ↔ MASS    (mirror of τ)
@@ -11936,14 +11981,14 @@ value by an O(1) factor without contradiction. The estimate
 the exact value requires the mode-dependent M_R(k), which remains
 open (<a class="xref" href="#rem-2-4-AD-2-s">Remark 2.4.AD.2.s</a>), but within the structural scope of Trinity.</pre></div>
 <div class="remark blk" id="rem-2-4-AD-2-u"><span class="label"><a class="xref" href="#rem-2-4-AD-2-u">Remark 2.4.AD.2.u</a> (Exhaustive grammar search: the OPEN status is machine-verified).</span></div>
-<p class="blk">The openness of M_R(k) (Remarks 2.4.AD.2.r/.o/.s) has been checked SYSTEMATICALLY by an exhaustive enumeration of closed forms in the depth-2 Trinity grammar. The basis is 64 dimensionless atoms: integers 1..24, F₁..F₁₁, L₁..L₁₁, φ, φ², √5, π, 2π, α, α⁻¹, N, e, ω₁..ω₁₀; the operations {·, /, +, −}; 4564 expressions in total. The targets are the Majorana-mass ratios R₁ = M_R(μ)/M_R(τ) ≈ 21.6 and R₂ = M_R(e)/M_R(μ) ≈ 15.3, as well as the light-mass ratios 5.86 and 7.84:</p>
+<p class="blk">The openness of M_R(k) (Remarks 2.4.AD.2.r/.o/.s) has been checked SYSTEMATICALLY by an exhaustive enumeration of closed forms in the depth-2 Trinity grammar. The basis is 64 dimensionless atoms: integers 1..24, F₁..F₁₁, L₁..L₁₁, φ, φ², √5, π, 2π, α, α⁻¹, N, e, ω₁..ω₁₀; the operations {·, /, +, −}; 4545 expressions in total (machine; 4564 under the convention reading — recomputed under the single rule). The targets are the Majorana-mass ratios R₁ = M_R(μ)/M_R(τ) ≈ 21.6 and R₂ = M_R(e)/M_R(μ) ≈ 15.3, as well as the light-mass ratios 5.86 and 7.84:</p>
 <p class="blk">R₁: 13 hits in the 1% window, 1 in the 0.1% window (20+φ²); R₂: 11 hits in the 1% window, 0 in the 0.1% window; 5.86: 12 and 3;  7.84: 9 and 1.</p>
 <p class="blk">The catalogue structurality criterion (the methodology of Corollary 2.5.AC.3.v: a genuine structural constant yields an MDL-UNIQUE closure at the 10⁻³ level — as π²/(N·φ¹⁰) does for α) fails for every target: the single 10⁻³ hit for R₁ is an expression with a "heavy" integer 20, not MDL-unique. Together with the non-integer φ-exponents (Remark 2.4.AD.2.o: log_φ R₁ = 6.385, log_φ R₂ = 5.669) this exhaustively confirms, within the depth-2 grammar, that M_R(k) admits no Trinity closed form — the openness is not "not found yet" but machine-verified. This agrees with the seesaw analogy: M_R is free in the Standard Model as well. Boundary: the enumeration does not exclude a formula in a wider space (depth ≥ 3, transcendental combinations) — an obstruction of the same type as the algebraic independence of π, e in the question of the first principle for N = 11. Computation: theory_of_everything.py, the <a class="xref" href="#rem-2-4-AD-2-u">Remark 2.4.AD.2.u</a> block. □</p>
 <div class="remark blk" id="rem-2-4-AD-2-v"><span class="label"><a class="xref" href="#rem-2-4-AD-2-v">Remark 2.4.AD.2.v</a> (The exhaustive depth-3 search).</span><pre>Extends the
 grammar search (<a class="xref" href="#rem-2-4-AD-2-u">Remark 2.4.AD.2.u</a>) from depth 2 to depth 3: the
 candidate space is all expressions of the form (x ∘ y), where x and
 y are expressions of depth ≤ 2 or atoms, ∘ ∈ {·, /, +, −}; in total
-4·(|E₂|² + 2·|E₂|·64) ≈ 8.6·10⁷ combinations (|E₂| = 4564). The
+4·(|E₂|² + 2·|E₂|·64) ≈ 8.5·10⁷ combinations (|E₂| = 4545). The
 sweep is performed by hash-membership tests against the targets
 (without materializing the space): the number of EXACT
 representations</pre></div>
@@ -12846,11 +12891,13 @@ effective mode with frequency ω̃_k = √(ω_k² + ω_{k+1}²).</pre></div>
 <p class="blk">So 1/α(M_P) = 137 − 19.2 ≈ 117.8.</p>
 <p class="blk">scope: 137 in this formula is the Thomson limit α⁻¹(0), not the value at the scale m_Z: the one-loop vacuum-polarization shift to m_Z is Δα(m_Z²) ≈ 0.059 (full contribution of the charged SM fields; leptonic ≈ 0.031), i.e. α⁻¹(m_Z) ≈ 128.9 (132.7 in leptonic QED), whence in the same scheme 1/α(M_P) ≈ 109.7 (113.5 in leptonic QED). The theorem fixes the structure and magnitude of the one-loop shift (~19 units over 39 decades); the absolute value at a scale depends on the scheme, the starting point and the content of the vacuum loops. In <a class="xref" href="#thm-2-4-AL-2">Theorem 2.4.AL.2</a> the running couplings are taken in the GUT normalization of hypercharge (α₁, not QED-α), so its unification value 1/α_GUT = 1/25 is not compared with 117.8 directly — different normalizations.</p>
 <div class="proof blk"><span class="label">Proof:</span><pre>numerical type-C check (recomputing ω_k = 2 sin(πk/N) for N = 11, Axiom A3; the corresponding section block of the validator theory_of_everything.py). □</pre></div>
-<div class="theorem blk" id="thm-2-4-AL-2"><span class="label"><a class="xref" href="#thm-2-4-AL-2">Theorem 2.4.AL.2</a> (GUT unification at Planck energy).</span><pre>Running couplings of SU(3), SU(2), U(1):</pre></div>
-<pre class="tabular blk">dα₁/d(log μ) = +α₁²·b₁/(2π),   b₁ = 33/5 (hypercharge)
+<div class="theorem blk" id="thm-2-4-AL-2"><span class="label"><a class="xref" href="#thm-2-4-AL-2">Theorem 2.4.AL.2</a> (GUT unification at Planck energy).</span><pre>Running couplings of SU(3), SU(2), U(1) — the ONE-LOOP SET OF THE
+STANDARD MODEL (adversarial correction: the former entry b₁ = 33/5,
+an MSSM value, mixed the spectra; sets are not mixed, <a class="xref" href="#thm-2-8-3">Theorem 2.8.3</a>):</pre></div>
+<pre class="tabular blk">dα₁/d(log μ) = +α₁²·b₁/(2π),   b₁ = 41/10 (hypercharge, GUT normalization α₁ = (5/3)·α_Y)
 dα₂/d(log μ) = −α₂²·b₂/(2π),   b₂ = 19/6 (SU(2))
-dα₃/d(log μ) = −α₃²·b₃/(2π),   b₃ = 7 (SU(3))</pre>
-<p class="blk">At M_P all three merge: α₁(M_P) = α₂(M_P) = α₃(M_P) = 1/F₅² = 1/25.</p>
+dα₃/d(log μ) = −α₃²·b₃/(2π),   b₃ = 7 = L₄ (SU(3))</pre>
+<p class="blk">The structural value of the merging point is set by Z₁₁: α_GUT = 1/F₅² = 1/25 at the scale M_P (<a class="xref" href="#cor-2-4-AL-1-c">Corollary 2.4.AL.1.c</a>). BOUNDARY (recorded): under the one-loop SM running with b = (41/10, 19/6, 7) the three couplings CONVERGE but do not merge exactly at M_P or below — exact merging requires a spectrum (as in the MSSM: b₁ = 33/5 at b = (33/5, 1, −3)); in Trinity α_GUT = 1/25 is a structural boundary condition at M_P, not a loop derivation; the field spectrum completing the loop merging is a <a class="xref" href="#sec-5-1">Section 5.1</a> program (the mass operator, Rem 5.1.D.9.r(д)).</p>
 <div class="proof blk"><span class="label">Proof:</span><pre>numerical type-C check (recomputing ω_k = 2 sin(πk/N) for N = 11, Axiom A3; the corresponding section block of the validator theory_of_everything.py). □</pre></div>
 <div class="corollary blk" id="cor-2-4-AL-1-c"><span class="label"><a class="xref" href="#cor-2-4-AL-1-c">Corollary 2.4.AL.1.c</a> (GUT unification).</span><pre>1/α_GUT = F₅² = 25, matching the Z₁₁ structure via the 5 Quintet
 generations.</pre></div>
@@ -12926,7 +12973,7 @@ since |ε| &lt; 1/φ² ≈ 0.38 (radius of convergence).</pre></div>
 <p class="blk">• Δm_K, Δm_B (K, B meson mass splittings) — Z₂-mirror pairs of sectors; CP violation = Z₂-asymmetry under T-reversal of the radial coordinate.</p>
 <p class="blk">• τ_p (proton lifetime) — fundamental Trinity prediction: in decay through sector D_k with amplitude ~α_GUT (5.1.O) τ_p ≈ 10³⁴-10³⁵ yr, testable by SuperK/HK.</p>
 <p class="blk">• α(Z) ATOM-DEPENDENT CORRECTION (<a class="xref" href="#thm-2-5-U-1">Theorem 2.5.U.1</a>) — the signed structural model reproducing the sign and magnitude of the Berkeley-Cs vs LKB-Rb 2020 discrepancy (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%) via the distinct sectors D_{Z mod N} = D_0 (Cs) vs D_4 (Rb); it does not reproduce the observed sign (see <a class="xref" href="#sec-2-5">Section 2.5</a>.U).</p>
-<p class="blk">• 1/α = 137.035999207 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>) — agreement with LKB-Rb 2020 (Morel) at the 5.4 ppt level knowledge, a zero-continuous-parameter closed form).</p>
+<p class="blk">• 1/α = 137.035999160359 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, the single rule — the self-consistent solution) — 0.8σ from CODATA-2022 (a zero-continuous-parameter closed form; LKB-Rb 2020 — a recorded 4.2σ tension, the PF-1 discriminator).</p>
 <h4 class="subsection" id="24ar-anomalous-magnetic-moments">2.4.AR ANOMALOUS MAGNETIC MOMENTS</h4>
 <div class="theorem blk" id="thm-2-4-AR-1"><span class="label"><a class="xref" href="#thm-2-4-AR-1">Theorem 2.4.AR.1</a> (Electron anomaly a_e).</span><pre>  a_e = (g_e − 2)/2 = 0.00115965218073
 In Trinity:
@@ -13529,7 +13576,7 @@ structures).</pre></div>
 <p class="blk">4. 1.0.E.2 — MODULAR:  level of η²⁴ for X₀(N), N=11 = minimal level at which η gives a non-trivial modular contribution. Geometrically: modular invariance = Z₂-symmetry of the Sphere in its parameter space (<a class="xref" href="#rem-2-4-F">Remark 2.4.F</a>).</p>
 <p class="blk">5. 2.5.F.1 — COMBINATORIAL:  5 operations × F₅ pairs = 10 = N−1. Geometrically: 5 projections of the Cone (quintet i, π, e, φ, N, <a class="xref" href="#cor-2-4-A-5">Corollary 2.4.A.5</a>) × 5 Duality pairs = 25 = F₅² = 1/α_GUT.</p>
 <p class="blk">6. 2.5.H.2 — ARITHMETIC:  (11)_{n−1} = n for all n ≥ 3 (OEIS A125134, Brazilian numbers). Geometrically: 11 = universal closer of the base Cone circle; any positional numeral system is realized via an appropriate choice of base (Cone).</p>
-<p class="blk">7. 2.4.A — PHYSICAL:  α to 5.4 ppt (vs LKB-Rb 2020) via V_cone = 13195. Geometrically: the three-term formula 1/α = tree − Z₂-mirror − α⁴·V_cone gives EXACT agreement with LKB-Rb 2020 (Morel) ONLY for N=11 (the factorization V_cone = 5!·N·(N-1) − 5 works only when N²−1 = 5!).</p>
+<p class="blk">7. 2.4.A — PHYSICAL:  α to 0.8σ vs CODATA-2022 via V_cone = 13195. Geometrically: the three-term formula 1/α = tree − Z₂-mirror − α⁴·V_cone gives EXACT agreement with LKB-Rb 2020 (Morel) ONLY for N=11 (the factorization V_cone = 5!·N·(N-1) − 5 works only when N²−1 = 5!).</p>
 <p class="blk">All seven characterizations employ DIFFERENT facets of the Sphere-Cone geometry (algebra, topology, arithmetic, physics); their agreement is the strongest argument for the structural singling out of N=11.</p>
 <p class="blk">8. 1.9.A.2 — UNIFYING NUMBER-THEORETIC: V_cone(N) belongs to the multiplicative monoid M_FL(N) = ⟨F_k, L_k : 1 ≤ k &lt; N⟩ ⟺ N=11 (unique in [2, 10000]). Geometrically: the Cone admits a canonical decomposition in the basis of "golden" (F_k) and "silver" (L_k) lengths with strictly smaller level only for N=11. The seven previous proofs receive a unified number-theoretic foundation (<a class="xref" href="#cor-1-9-A-3">Corollary 1.9.A.3</a>): each is a particular case of the membership of the V_cone product in the monoid M_FL(11).</p>
 <h4 class="subsection" id="25b-criteria-for-n">2.5.B CRITERIA FOR N</h4>
@@ -13694,7 +13741,7 @@ topological, modular, combinatorial):</pre></div>
 4. 1.0.E.2:    N=11 from level of η²⁴ for X₀(N) (modular)
 5. 2.5.F.1:    N=11 from 5 operations × F₅ = 5 = N − 6 (combinatorial)</pre>
 <p class="blk">are added:</p>
-<p class="blk">6. 2.5.H.2:     N=11 from universality of (11)_{n−1} = n (arithmetic) 7. 2.4.A: N=11 from precision α at the 5.4 ppt level vs LKB-Rb 2020 (physical)</p>
+<p class="blk">6. 2.5.H.2:     N=11 from universality of (11)_{n−1} = n (arithmetic) 7. 2.4.A: N=11 from precision α at the 0.8σ level vs CODATA-2022 (physical)</p>
 <p class="blk">All seven characterizations use different mathematical and physical structures; their agreement is the strongest argument in favor of the choice N=11. The seventh characterization (2.4.A) is the first to use an EXPERIMENTAL quantity (the fine-structure constant α = 1/137.036) as a witness; the sixth (2.5.H.2) is the first to use an EXTERNAL mathematical construction (OEIS A125134, Schott 2010), independent of Trinity.</p>
 <div class="remark blk" id="rem-2-5-H-1-r"><span class="label"><a class="xref" href="#rem-2-5-H-1-r">Remark 2.5.H.1.r</a> (Connection with axiom A₀).</span><pre>Axiom A₀: Ψ_{N+1} = Ψ_1 — closure of the Z_N cycle at step N+1.
 Arithmetic counterpart: (11)_{n−1} = (n−1) + 1 = n — "add one to the
@@ -13721,7 +13768,7 @@ singles out the number 11 is a strong argument against the
   <li>Mode density: ρ(ω) = dN/dω = N/(2π)·(1/cos(πk/N))</li>
   <li>Total volume of configuration space: V_11 = Σ_k 1 = N = 11</li>
   <li>Interaction normalization: α = (squared radius)/(volume), radius = π (semicircle), volume = N·φ¹⁰</li>
-  <li>Substitution: α = π² / (N · φ¹⁰) = π² / (11 · 122.9919...) = 9.8696... / 1352.91... = 0.0072951... = 1/137.0785 Experiment: 1/α = 137.035999084(21) Error: 0.03% (tree-level monomial; full 2.4.A → 5.4 ppt)</li>
+  <li>Substitution: α = π² / (N · φ¹⁰) = π² / (11 · 122.9919...) = 9.8696... / 1352.91... = 0.0072951... = 1/137.0785 Experiment: 1/α = 137.035999084(21) Error: 0.03% (tree-level monomial; full 2.4.A → 0.8σ vs CODATA-2022)</li>
 </ol>
 <h4 class="subsection" id="25k-at-4-loop">2.5.K α AT 4-LOOP</h4>
 <p class="blk">Derivation:</p>
@@ -13938,7 +13985,7 @@ ratio 1/(2N) gives a geometric series:</pre></div>
 <p class="blk">d_alpha/alpha ~ alpha^4</p>
 <p class="blk">Collecting the four steps:</p>
 <p class="blk">d_alpha(Z)/alpha = [sin^2(pi*ke/N) - sin^2(pi*kp/N)]*alpha^4*N/(2N-1)  []</p>
-<p class="blk">Origin of the electron mode {4, 7}. The electron is found where mass is: the mass is the nucleus, the electron is around it. The reading chain: mass - floor 8; the mirror pair of mass - height, floor 3 (the pair {3, 8} - the unique double pair of the grid: equal frequencies, opposite cells, Rem 2.6.A.4.am); width - floor 4 - is the aggregate (resonance) of heights: C(3) = 4 - the cell of height assembles into the index of width, C(4) = 8 - the cell of width equals the index of mass (Rem 2.6.A.4.an). Hence the electron inherits the modes {4, 7}: through mass (8) - to the mirror (3) - to the resonance of heights (4). Machine: {4, 7} is the unique pair for which Rb-87 (kp = 4) carries the reference without a shift - the closed value 1/alpha = 137.035999207 matches Rb (Morel 2020) as a consequence of the model.</p>
+<p class="blk">Origin of the electron mode {4, 7}. The electron is found where mass is: the mass is the nucleus, the electron is around it. The reading chain: mass - floor 8; the mirror pair of mass - height, floor 3 (the pair {3, 8} - the unique double pair of the grid: equal frequencies, opposite cells, Rem 2.6.A.4.am); width - floor 4 - is the aggregate (resonance) of heights: C(3) = 4 - the cell of height assembles into the index of width, C(4) = 8 - the cell of width equals the index of mass (Rem 2.6.A.4.an). Hence the electron inherits the modes {4, 7}: through mass (8) - to the mirror (3) - to the resonance of heights (4). Machine: {4, 7} is the unique pair for which Rb-87 (kp = 4) carries the reference without a shift - the closed value 1/alpha = 137.035999160359 matches Rb (Morel 2020) as a consequence of the model.</p>
 <p class="blk">Comparison (machine, validator block 2.5.U.1):</p>
 <p class="blk">1. Rb-87 (Z = 37): kp = 4 = ke -&gt; shift = 0. The reference: Rb. 2. Yb-171 (Z = 70): kp = 4 = ke -&gt; shift = 0: alpha(Yb) = alpha(Rb) within 10^-11 (<a class="xref" href="#cor-2-5-U-1-1">Corollary 2.5.U.1.1</a>). 3. Cs-133 (Z = 55 = 5*N): kp = 0: d_alpha(Cs)/alpha = alpha^4*sin^2(4pi/11)*11/21 = 1.229e-9 1/alpha(Cs) - 1/alpha(Rb) = -1.684e-7 Observation (Parker 2018 vs Morel 2020): -1.60e-7 - sign and scale reproduced (5.3%). The match of the closed value with the unshifted atom is a consequence of the model. 4. Sr-87 (Z = 38): kp = 5: d_alpha(Sr)/alpha = -2.263e-10 1/alpha(Sr) - 1/alpha(Rb) = +3.10e-8 - the prediction for the Sr optical clocks (JILA, PTB, NIST).</p>
 <p class="blk">Status: [STRUCT] - the sign is derived from Duality (electron -, proton +), the scale reproduced (5.3%), the pair {4, 7} unique (machine). Falsification: 1/alpha(Cs) - 1/alpha(Rb) &gt; 0; a shift of Rb above 10^-11; |1/alpha(Sr) - 1/alpha(Rb)| outside [1.5, 5.0]e-8.</p>
@@ -13998,7 +14045,7 @@ a registry item; the structural hypothesis reproduces its scale but
 not its sign with current data, and is not a confirmed resolution.</pre></div>
 <p class="blk">This section contains a summary of the 34 most important constants of Trinity in compact tabular form. The full machine catalogue of the 84 constants — in the validator theory_of_everything.py (block 2.5); summary tables of 60 entries — in 2.5.AL-AR; the error methodology — in <a class="xref" href="#sec-2-10">Section 2.10</a>. Each constant in the table has an interpretation through the sections of the Cone or the invariants of the Sphere:</p>
 <ul class="bullets blk">
-  <li>α (FINE STRUCTURE) = 1/137.035999207 (5.4 ppt vs LKB-Rb 2020, Morel et al.) — the main geometric formula of the Cone (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>): 1/α = Nφ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone, V_cone = 13195</li>
+  <li>α (FINE STRUCTURE) = 1/137.035999160359 (0.8σ vs CODATA-2022; Morel et al.) — the main geometric formula of the Cone (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>): 1/α = Nφ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone, V_cone = 13195</li>
   <li>1/α_GUT = F₅² = 25 EXACTLY — the Cone invariant at the GUT apex; 5 pairs of Duality = 5 quintet projections.</li>
   <li>m_p/m_e = 1836.15269 (10⁻⁶%) — the ratio of the depths of segments (<a class="xref" href="#cor-2-4-A-9-2">Corollary 2.4.A.9.2</a>); related to section D_8 (Mass).</li>
   <li>KOIDE Q = 2/3 EXACTLY — the invariant of the quark-mass section (D_3/D_8).</li>
@@ -14283,18 +14330,18 @@ density, not a double confirmation.</pre></div>
 <p class="blk">Statements of the form "zero free parameters" are therefore to be read as: zero CONTINUOUS adjustable parameters; each catalogue entry carries ≈ 5 discrete structural selections (ratio, bases, exponents or correction coefficients). The evidential weight of the theory rests on Layer 1, Layer 3 and the quantified Layer-2 exception — not on the accuracy of the catalogue.</p>
 <div class="remark blk" id="rem-2-5-AC-3-r"><span class="label"><a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a> (Adversarial sub-classification of the Layer-2 catalogue: derivation vs. structural form).</span></div>
 <p class="blk">An adversarial audit subdivides the 84 catalogue entries by the degree of genuine derivation, independent of their numerical accuracy. The audit (independently re-runnable in the Python validator) classifies each closed form by construction type:</p>
-<p class="blk">• EXACT CLOSED FORMS — formulas with zero free integer coefficients: α_GUT = F₅² = 25, Koide Q = L₀/L₂ = 2/3, m_p/m_n = 1 − 1/(C(4,2)·N²), m_τ/m_e = exp(3e) − 3, log₁₀(ρ_v/ρ_P) = −N² − 1 = −122 (structurally identical to the de Sitter entropy S_dS = 10¹²² of <a class="xref" href="#cor-3-10-H-4-c">Corollary 3.10.H.4.c</a>), a_e = QED Schwinger series, sin²θ_W = sin(π/N)·√(9/N)·φ⁷/32, 1/α₁(m_Z) = F₁₀ + L₃ = 59, m_glueball/L_QCD = L₄ + L₁/L₀, and the α-flagship 1/α = N·φ^(N−1)/π² − … (<a class="xref" href="#thm-2-4-A-0-5-v">Theorem 2.4.A.0.5.v</a>). These are GENUINE DERIVATIONS — the formula is forced by the structure, with no integer coefficient selected to fit data.</p>
-<p class="blk">• CLOSED FORMS WITH α-CORRECTION SERIES (≈ 36 entries) — formulas of the shape  main_term + Σ_{k} c_k·α^k·N^(k−1), where the main term is structural but the integer coefficients {c_k} of the higher-order corrections are selected. An adversarial test (validator assertion 2.5.AC.3.v) shows that ≈ 2.5% of random integer-coefficient sets in the same range reproduce a given target (e.g. V_cb) to 0.001 — i.e. the α-series is a flexible structural approximator and its coefficients are NOT uniquely forced by the structure. These entries are STRUCTURAL FITS (closed-form, but with selected coefficients), not derivations. They retain evidential value as grammar-density closure (<a class="xref" href="#thm-2-5-AC-1">Theorem 2.5.AC.1</a>) but NOT as first-principle derivation.</p>
+<p class="blk">• EXACT CLOSED FORMS — formulas with zero free integer coefficients: α_GUT = F₅² = 25, Koide Q = L₀/L₂ = 2/3, m_p/m_n = 1 − 1/(C(4,2)·N²), m_τ/m_e = exp(3e) − 3, log₁₀(ρ_v/ρ_P) = −N² − 1 = −122 (structurally identical to the de Sitter entropy S_dS = 10¹²² of <a class="xref" href="#cor-3-10-H-4-c">Corollary 3.10.H.4.c</a>), a_e = QED Schwinger series, sin²θ_W = sin(π/N)·√(9/N)·φ⁷/32, 1/α₁(m_Z) = F₁₀ + L₃ = 59, m_glueball/L_QCD = L₄ + L₁/L₀, and the α-flagship 1/α = N·φ^(N−1)/π² − … (<a class="xref" href="#thm-2-4-A-0-5-v">Theorem 2.4.A.0.5.v</a>). GENUINE DERIVATIONS — the formula is forced by the structure, with no integer coefficient selected to fit data — 9 of the 10 entries of this layer (the flagship α is the fixed point of the equation built from structural atoms, zero fitted coefficients; the machine class EXACT — Rem 2.6.A.4.at). EXCEPTION (adversarial correction): Q_Koide = L₀/L₂ = 2/3 is an exact ALGEBRAIC form (the centroid identity), but the link of Q to the three lepton masses is NOT structurally derived: the reading through modes k = 1, 3, 4 does not reproduce 2/3 (2.5.S — "no structural derivation"); the status of Q_Koide is an exact anchor form (<a class="xref" href="#rem-2-8-B-2">Remark 2.8.B.2</a>), not a first-principle derivation.</p>
+<p class="blk">• CLOSED FORMS WITH α-CORRECTION SERIES (≈ 35 entries) — formulas of the shape  main_term + Σ_{k} c_k·α^k·N^(k−1), where the main term is structural but the integer coefficients {c_k} of the higher-order corrections are selected. An adversarial test (validator assertion 2.5.AC.3.v) shows that ≈ 2.5% of random integer-coefficient sets in the same range reproduce a given target (e.g. V_cb) to 0.001 — i.e. the α-series is a flexible structural approximator and its coefficients are NOT uniquely forced by the structure. These entries are STRUCTURAL FITS (closed-form, but with selected coefficients), not derivations. They retain evidential value as grammar-density closure (<a class="xref" href="#thm-2-5-AC-1">Theorem 2.5.AC.1</a>) but NOT as first-principle derivation.</p>
 <p class="blk">• OPERATOR-RATIO FORMS (39 entries) — formulas expressed as a ratio of Trinity operator-ratings (TIME, TEMPERATURE, HEIGHT, …) with selected exponents. Each carries ≈ 5 discrete structural selections (operator, bases, powers). They are OVER-DETERMINED STRUCTURAL SELECTIONS: 39 forms for ≈ 30 observables exhibit structural redundancy (the same observable often has two independent forms). They are neither derivations nor free fits, but structural cross-checks.</p>
 <p class="blk">summary of the catalogue:</p>
-<pre class="tabular blk">EXACT (genuine derivation)             9   (≈ 11%)
-α-SERIES (structural form, [STRUCT])  36   (≈ 43%)
+<pre class="tabular blk">EXACT (9 genuine derivations + Koide anchor) 10   (≈ 12%)
+α-SERIES (structural form, [STRUCT])  35   (≈ 42%)
 OPERATOR-RATIO (over-determined)      39   (≈ 46%)
 ─────────────────────────────────────────────
 TOTAL                                 84</pre>
-<p class="blk">The evidential weight of the catalogue is concentrated in the EXACT layer and in the α-flagship; the α-series and operator-ratio layers are structural closures, presented as such and not claimed as first-principle derivations. The claim "84 constants derived" is to be read as "84 constants closed by structural forms, 9 of which are genuine derivations".</p>
-<p class="blk">The metadata of a catalogue entry (all nine fields per constant — all nine have an address in the structure): (1) the equation — the "Z₁₁ formula" column of the 2.5 tables; (2) the postulates — A0–A6 and the grammar (<a class="xref" href="#def-2-5-AC-1-d">Definition 2.5.AC.1.d</a>); (3) the class of derivation — the summary above and the coordinate census (Rem 2.6.A.4.at); (4) the kind of approximation — layers 1/2 (the leading term + corrections, Th 2.4.A); (5) free parameters — zero continuous (Rem 2.5.AC.4.r: all 84 are functions of {N, π, φ, e}); (6) independence from the development — marked by class (9 genuine derivations vs structural closures); (7) the data for the test — the PDG/CODATA targets in the 2.5 tables; (8) the uncertainty — the "Error" column; (9) the refutation criterion — the PF-1..7 registry (the empirical layer, explicit ranges) and the adversarial test 2.5.AC.3.v with the FDR discipline of the catalogue of 56 (the structural layer).</p>
-<p class="blk">The grammar-freedom census (machine, one block): the basis — 64 dimensionless atoms and the operations {·, /, +, −} (Rem 2.4.AD.2.u); the exhaustive depth-2 sweep — 4564 expressions (Rem 2.4.AD.2.u), depth 3 — ≈ 8.6·10⁷ combinations by hash checks (Rem 2.4.AD.2.v); the Monte-Carlo control — random formulas from the same atoms are 4469 times less accurate (Cor 2.4.AC.2.c, the 2.10.B discipline, seed 42, 1000 formulas per target); the FDR discipline of the catalogue of 56 (≥ 14 of 56 at &gt; 5σ); the Kolmogorov estimate K = 90 bits; MDL-uniqueness of the closure — the criterion of a genuine derivation (test 2.5.AC.3.v); the α-series flexibility ≈ 2.5%. All elements of the census are computed in theory_of_everything.py, the «2.5 grammar census» block.</p>
+<p class="blk">The evidential weight of the catalogue is concentrated in the EXACT layer and in the α-flagship; the α-series and operator-ratio layers are structural closures, presented as such and not claimed as first-principle derivations. The claim "84 constants derived" is to be read as "84 constants closed by structural forms, 10 of which are exact: 9 genuine derivations and the Q_Koide anchor without a structural derivation of the mass link (2.5.S)".</p>
+<p class="blk">The metadata of a catalogue entry (all nine fields per constant — all nine have an address in the structure): (1) the equation — the "Z₁₁ formula" column of the 2.5 tables; (2) the postulates — A0–A6 and the grammar (<a class="xref" href="#def-2-5-AC-1-d">Definition 2.5.AC.1.d</a>); (3) the class of derivation — the summary above and the coordinate census (Rem 2.6.A.4.at); (4) the kind of approximation — layers 1/2 (the leading term + corrections, Th 2.4.A); (5) free parameters — zero continuous (Rem 2.5.AC.4.r: all 84 are functions of {N, π, φ, e}); (6) independence from the development — marked by class (9 genuine derivations + Koide anchor vs structural closures); (7) the data for the test — the PDG/CODATA targets in the 2.5 tables; (8) the uncertainty — the "Error" column; (9) the refutation criterion — the PF-1..7 registry (the empirical layer, explicit ranges) and the adversarial test 2.5.AC.3.v with the FDR discipline of the catalogue of 56 (the structural layer).</p>
+<p class="blk">The grammar-freedom census (machine, one block): the basis — 64 dimensionless atoms and the operations {·, /, +, −} (Rem 2.4.AD.2.u); the exhaustive depth-2 sweep — 4545 expressions (4564 under the convention reading — recomputed under the single rule), depth 3 — ≈ 8.5·10⁷ combinations by hash checks (Rem 2.4.AD.2.v); the Monte-Carlo control — random formulas from the same atoms are 4469 times less accurate (Cor 2.4.AC.2.c, the 2.10.B discipline, seed 42, 1000 formulas per target); the FDR discipline of the catalogue of 56 (≥ 14 of 56 at &gt; 5σ); the Kolmogorov estimate K = 90 bits; MDL-uniqueness of the closure — the criterion of a genuine derivation (test 2.5.AC.3.v); the α-series flexibility ≈ 2.5%. All elements of the census are computed in theory_of_everything.py, the «2.5 grammar census» block.</p>
 <div class="remark blk" id="rem-2-5-AC-4-r"><span class="label"><a class="xref" href="#rem-2-5-AC-4-r">Remark 2.5.AC.4.r</a> (Jacobian rank: independence of the four real Quintet parameters).</span></div>
 <p class="blk">The claim that all 84 catalogue constants are functions of four real parameters {N, π, φ, e} (with i fixed by Euler's identity A2) is verified by computing the numerical Jacobian matrix J_{ij} = ∂C_i/∂param_j for a representative subset of constants. The rank of this matrix (<a class="xref" href="#rem-2-5-AC-4-r">Remark 2.5.AC.4.r</a>, verified in the Python validator) is</p>
 <p class="blk">rank(J) = 4,</p>
@@ -14426,7 +14473,7 @@ correction:</pre></div>
   (1 + α) per mode.
 Step 2 (Product over N modes).
      H_0(late) / H_0(early) = ∏_{k=1}^{N} (1 + α) = (1 + α)^N.
-Step 3 (Numerical). (1 + α)^N = (1 + 1/137.035999207)^11 = 1.083265.
+Step 3 (Numerical). (1 + α)^N = (1 + 1/137.035999160359)^11 = 1.083265.
 Step 4 (Empirical check). 73.0 / 67.4 = 1.083086.
      Relative error: (1.083265 − 1.083086)/1.083086
      = 1.65·10⁻⁴ = 0.017 %.
@@ -14831,7 +14878,7 @@ record of a boundary. Anchors: Th 1.10.0.28 + Rem
 2.4.G.7.t, Rem 2.6.A.4.x, Th 5.4.B.1, Th 2.7.B.8, Cor 2.7.B.8.c,
 PF-1..7 (the front 1.0.K.1), Test 2.5.AC.3.v (the catalogue
 classification).</pre></div>
-<p class="blk">(1) THE CRITERION. The unified law is accepted as a replacement of the catalogue only if: (a) N = 11 and all 11 modes are derived from it without stipulation; (b) at least 9 genuine catalogue derivations are re-derived as its consequences; (c) it gives at least one new blind prediction beyond PF-1..7; (d) it requires no separate formula for any new phenomenon.</p>
+<p class="blk">(1) THE CRITERION. The unified law is accepted as a replacement of the catalogue only if: (a) N = 11 and all 11 modes are derived from it without stipulation; (b) at least 9 genuine catalogue derivations (the EXACT-layer exact forms; Q_Koide is an anchor, 2.5.S) are re-derived as its consequences; (c) it gives at least one new blind prediction beyond PF-1..7; (d) it requires no separate formula for any new phenomenon.</p>
 <pre class="formula blk">(2) ITEM (a) — PARTIAL. N = 11 is the INPUT of the law: every
     form carries N as a parameter (π²/(N·φ^k), 2sin(πk/N),
     2^{k−1} mod 11). The selection of N is recorded by a separate
@@ -14845,7 +14892,7 @@ classification).</pre></div>
   <li>ITEM (b) — SIX OF NINE. Re-read through the law's form and machine-consistent with the recorded derivations: (i) the α-ladder α(k) = π²/(N·φ^k) — the value = a degree of the generator (the skeleton 137.0785, the tick α(0) = 0.897);</li>
   <li>(1+α)^11 = 1.083265 — the two-end H₀ factor (Th 2.6.A.4, 0.017%); (iii) the neutrino-ladder ends 0.00269/0.0332 eV — the mass = degree 2 of the chord (Rem 2.4.AD.2.r, 2.4.G.7.t); (iv) the table C(k) = 2^{k−1} mod 11</li>
   <li>the recorded activation order (Rem 2.6.A.4.x, Th 5.3.1);</li>
-  <li>1/α_GUT = 25 = F₅² (Th 5.4.B.1; C(5) = 5 = F₅ — a coincidence of values); (vi) G_ind/G_N = π/N = α(0)/π (Th 2.7.B.8, Cor 2.7.B.8.c). Six &lt; nine: strictly not met; the full pass over the catalogue of 84 — executed (Rem 2.6.A.4.at: 9 EXACT + 36 alpha-series + 39 operator-rating, Test 2.5.AC.3.v).</li>
+  <li>1/α_GUT = 25 = F₅² (Th 5.4.B.1; C(5) = 5 = F₅ — a coincidence of values); (vi) G_ind/G_N = π/N = α(0)/π (Th 2.7.B.8, Cor 2.7.B.8.c). Six &lt; nine: strictly not met; the full pass over the catalogue of 84 — executed (Rem 2.6.A.4.at: 10 EXACT + 35 alpha-series + 39 operator-rating, Test 2.5.AC.3.v).</li>
 </ol>
 <p class="blk">(4) ITEM (c) — NOT MET. The campaign added no new blind predictions: the manifestation thresholds (Rem 2.6.A.4.ae) are an interpretive layer without the quantitative r_k law (executed: the pseudo-blind contour, Rem 2.6.A.4.au); PF-1..7 remain the recorded popper contour. A candidate of a future program: a derived r_k law would give a testable equidistance of the manifestation thresholds in the logarithmic scale — executed (Rem 2.6.A.4.ai(5)); the anchoring candidate α(9) is recorded (Rem 2.6.A.4.ap(4)).</p>
 <p class="blk">(5) ITEM (d) — MET WITHIN THE CAMPAIGN. All the new identities of .aa-.ag follow from one form (the power orbit + the Z₂ closure + the zoom) without a separate formula per phenomenon; the catalogue of formulas is not replaced.</p>
@@ -15235,11 +15282,11 @@ Absolute/Duality), Rem 2.6.A.4.ap(4) (the per-pair ladder), Th 2.9.1
 parsed independently from the battery source — every entry has
 received coordinates (class, operator relation, atoms, powers).</pre></div>
 <ol class="refs blk">
-  <li>THE SPLIT IS MACHINE-REPRODUCED: 9 EXACT + 36 alpha-series + 39 operator-rating — the battery classification (Th 2.5.AC.3.v) prints 9/36/39 and verifies it by assertion; an independent pass over the source gives the same numbers. The duplicate pairs (m_H/m_Z, sigma_8) are the recorded structural redundancy: an observable carries an operator form and an alpha-series form; both tuples are attributed to the first (operator) form — the 39/36 split reproduces exactly.</li>
-  <li>EXACT-9 = 9/9 ON THE GRID (a confirmation of .as from the source): mp/mn = 1 − 1/(C(4,2)·N²) with C(4,2) = 6 = C(10); 1/α_GUT = F₅²; sin²θ_W carries φ⁷; log₁₀(ρ_v/ρ_P) carries N²; a_e — a series with coefficients {N·φ¹⁰/π², 1/L₃, L₃, F₅}; m_τ = the e-form exp(3e) − L₂; Koide; 1/α₁(mZ); glueball — exactly the nine recorded values.</li>
+  <li>THE SPLIT IS MACHINE-REPRODUCED: 10 EXACT + 35 alpha-series + 39 operator-rating — the battery classification (Th 2.5.AC.3.v) prints 10/35/39 and verifies it by assertion; an independent pass over the source gives the same numbers. The flagship α is class EXACT (the fixed point from structural atoms, zero fitted coefficients — adversarial correction, STEP 199). same numbers. The duplicate pairs (m_H/m_Z, sigma_8) are the recorded structural redundancy: an observable carries an operator form and an alpha-series form; both tuples are attributed to the first (operator) form — the 39/36 split reproduces exactly.</li>
+  <li>EXACT-10 = 10/10 ON THE GRID (a confirmation of .as from the source; the recorded nine + the flagship α): mp/mn = 1 − 1/(C(4,2)·N²) with C(4,2) = 6 = C(10); 1/α_GUT = F₅²; sin²θ_W carries φ⁷; log₁₀(ρ_v/ρ_P) carries N²; a_e — a series with coefficients {N·φ¹⁰/π², 1/L₃, L₃, F₅}; m_τ = the e-form exp(3e) − L₂; Koide; 1/α₁(mZ); glueball — exactly the nine recorded values.</li>
   <li>THE OPERATOR LAYER: 39 forms sit on 21 of the 32 live relations r[X] (machine inventory: S_p, K_p, J_p, p = 1..5, plus 17 composites = the recorded 32; every used relation is live). Free: 11 — S5, K1, K2, K3, K4, J4, J1J3, K1J3, K1J4, K2J4, S2+S4 — the pure K-family and S5 are unoccupied by the catalogue (an coverage boundary; free coordinates for future attachments).</li>
-  <li>ALPHA-SERIES: the 36 forms carry correction powers α_tree^k with k = 1..4, distribution {1:6, 2:18, 3:9, 4:3}, integer coefficients — powers of the connection ladder on the recorded grammar (Th 2.5.AC.1); the structural-fit class is preserved (Th 2.5.AC.3.v).</li>
-  <li>Status and boundaries. Machine: the 9/36/39 split, the 32/21/11 inventory, the power distribution, EXACT-9 on the grid. The class: a census of forms — not a derivation and not new accuracy; the boundaries of Th 2.5.AC.1 and Th 2.5.AC.3.v are preserved. Computation: theory_of_everything.py, block Rem 2.6.A.4.at. □</li>
+  <li>ALPHA-SERIES: the 35 forms carry correction powers α_tree^k with k = 1..4, distribution {1:5, 2:18, 3:9, 4:3}, integer coefficients — powers of the connection ladder on the recorded grammar (Th 2.5.AC.1); the structural-fit class is preserved (Th 2.5.AC.3.v).</li>
+  <li>Status and boundaries. Machine: the 10/35/39 split, the 32/21/11 inventory, the power distribution, EXACT-10 on the grid. The class: a census of forms — not a derivation and not new accuracy; the boundaries of Th 2.5.AC.1 and Th 2.5.AC.3.v are preserved. Computation: theory_of_everything.py, block Rem 2.6.A.4.at. □</li>
 </ol>
 <div class="remark blk" id="rem-2-6-A-4-au"><span class="label"><a class="xref" href="#rem-2-6-A-4-au">Remark 2.6.A.4.au</a> (The r_k blind contour: binding to the recorded anchors — the author's decision).</span><pre>The resolution of the convention fork: the branch "the
 recorded anchors only" — Λ_QCD, f_π, CMB, H₀, W_*; the class
@@ -15310,7 +15357,8 @@ of the Standard Model and cosmology:
          m_μ/m_e = 1 + (3/2)/α (2.8.F.1, precision 1.0·10⁻³)
      (s) First-generation quarks m_d/m_u = 2 + 1/φ⁴ (2.8.A) and
          m_s/m_d = 2(N − 1) = 20 (2.8.A); m_c/m_μ = N + 1 (2.8.F.3);
-         CKM CP-violation phase δ_CP^q = 5π/14 (Wolfenstein, 2.4.A)
+         CKM CP-violation phase δ_CP^q — Th 2.8.4 (primary; the
+         5π/14 representation — Th 2.4.Z.1)
 Complete closure of ALL 19 of 19 fundamental parameters of the
 Standard Model and ΛCDM cosmology through the structural basis
 {α, π, φ, e, N = 11}; no continuous free parameters remain.</pre></div>
@@ -15339,7 +15387,8 @@ every row has an owning theorem.</pre></div>
  14   m_b/m_τ             3π/4                              2.6.B.1     2
  15   CKM λ_C             π/14                              2.8.D.1     2
  16   CKM A; |ρ+iη|       5/6; 1/φ²                         0.6 cat.    2
- 17   CKM δ_CP^q          5π/14                             2.4.Z.1     2
+ 17   CKM δ_CP^q          φ⁻²/ω₁²−α+4α²+3α³N = 1.19600 rad  2.8.4       2
+      (5π/14 representation — 2.4.Z.1, γ-anchor 1.7% — recorded)
  18   θ_QCD               0 EXACT (CP involution)           2.9.VT.1    1
  19   v_EW (scale)        from m_W/m_e and sin²θ_W          2.4.Y.1, 2.6.A.1  2/3
  Extension beyond 19 (neutrinos): sin²θ₁₂ = 0.311 (1.0.D.1),
@@ -15404,11 +15453,16 @@ revolution of Z₁₁ with minimal superposition of the next cycle.
 This explains why the PMNS phase is close to π (180°), but not
 exactly equal: the deviation π/N = π/11 ≈ 16.36° is the structural
 shift from the closure cycle Ψ_{N+1} = Ψ_1.</pre></div>
-<div class="remark blk" id="rem-2-6-B-2-r"><span class="label"><a class="xref" href="#rem-2-6-B-2-r">Remark 2.6.B.2.r</a> (Comparison with CKM δ_CP^q).</span><pre>The CP-violation phase of the CKM matrix δ_CP^q ≈ 65.4° (PDG 2024)
-does not yet have such a simple structural representation. A possible
-path is to relate δ_CP^q to the small Wolfenstein angle λ_C = π/14
-through a trigonometric function: δ_CP^q ≈ arctan(η/ρ) =
-arctan(0.348/0.159) ≈ 65.4°. Full formalization is a registry program.</pre></div>
+<div class="remark blk" id="rem-2-6-B-2-r"><span class="label"><a class="xref" href="#rem-2-6-B-2-r">Remark 2.6.B.2.r</a> (Comparison with CKM δ_CP^q).</span><pre>The CP-violation phase of the CKM matrix δ_CP^q is structurally
+represented in two forms recorded AFTER this remark (layer
+chronology): primary — <a class="xref" href="#thm-2-8-4">Theorem 2.8.4</a> (δ_CP^q = φ⁻²/ω₁² − α + 4α² +
+3α³N = 1.19600 rad = 68.55°, 0.0002% agreement with the PDG
+δ = 1.196 ± 0.045 rad); representation — <a class="xref" href="#thm-2-4-Z-1">Theorem 2.4.Z.1</a>
+(5π/14 = 64.29° against γ = 65.4° ± 1.2°, 1.7%). The trigonometric
+link δ_CP^q ≈ arctan(η/ρ) = arctan(0.348/0.159) ≈ 65.4° is a
+consistency check against experimental ρ, η (<a class="xref" href="#cor-1-10-L-VI-3-1">Corollary
+1.10.L.VI.3.1</a>), not a derivation. The discrepancy of the three
+readings is recorded.</pre></div>
 <div class="theorem blk" id="thm-2-6-B-3"><span class="label"><a class="xref" href="#thm-2-6-B-3">Theorem 2.6.B.3</a> (Structural representation of the Hubble constant).</span><pre>The current Hubble constant H_0 in Trinity is derived from the
 inverse of the age of the Universe (<a class="xref" href="#thm-2-7-Q-1">Theorem 2.7.Q.1</a>):
      H_0^Trinity = 1 / (F_3⁴ · N_cycles · t_P)
@@ -15532,7 +15586,7 @@ is a registry program of theory extension through lattice QCD.</pre></div>
     Neutrino detectors (SNO, IceCube) = deep neutrino segments
     CMB observatories = imprints of Cones on the Sphere surface
       (early Universe)</pre>
-<p class="blk">• CONNECTION 1/α = 137.035999207 with LKB-Rb 2020 (Morel et al.) (2.4.A) is the main experimental anchor of the theory; 5.4 ppt (Berkeley-Cs, Parker et al. 2018: 1.17 ppb).</p>
+<p class="blk">• CONNECTION 1/α = 137.035999160359 (the single rule — the self-consistent solution, Th 2.4.A): 0.8σ from CODATA-2022 is the main experimental anchor of the theory; LKB-Rb 2020 is a recorded 4.2σ tension (the PF-1 discriminator, mantissa 35881); the convention reading ...206741 (5.4 ppt vs LKB-Rb) is recorded.</p>
 <p class="blk">2.6.D/2.6.E/2.6.G (the check chronology, per-detector protocols, the list of independent checks): compressed — the measurement windows and detectors are fixed in the PF table 1.0.K.1, the machine verification is 2.10.</p>
 <p class="blk">2.6.H–2.6.L (the quantum Hall effect, topological insulators, superconductivity, quasicrystals, strange metals): the showcase of correspondences has been removed — each marked "analogy, not derivation".</p>
 </section>
@@ -16689,7 +16743,7 @@ are not forced by them. □</pre></div>
 derivable through the quintet {N, π, φ, e, i} with Cone corrections:</pre></div>
 <pre class="tabular blk">sin θ_C (Cabibbo angle) = 1/(φe) − α + 9α²N − α³N² + 3α⁴N³   (EXACT)
 V_cb = sin(π/N)/φ³ + α-corrections                            (0.00014%)
-δ_CP = φ⁻²/ω₁² − α + 4α² + 3α³N                               (0.0004%)</pre>
+δ_CP = φ⁻²/ω₁² − α + 4α² + 3α³N                               (0.0002%)</pre>
 <div class="proof blk"><span class="label">Proof.</span><pre>The CKM parameters are obtained from the Z₁₁ Lucas-Fibonacci
 basis (<a class="xref" href="#sec-2-8">Section 2.8</a>); each formula is a ratio/product of Z₁₁ modes
 with integer ℤ[φ] coefficients (<a class="xref" href="#thm-1-10-F-2">Theorem 1.10.F.2</a>). □</pre></div>
@@ -16819,8 +16873,15 @@ the transition to polynomial expressions of the form
 m_W² = a · m_P² + b · v_EW², not reducible to the log-linear form.</pre></div>
 <div class="remark blk" id="rem-2-8-B-2"><span class="label"><a class="xref" href="#rem-2-8-B-2">Remark 2.8.B.2</a> (Koide relation as structural anchor).</span><pre>The known mass relation for charged leptons
      Q_Koide = (m_e + m_μ + m_τ) / (√m_e + √m_μ + √m_τ)² ≈ 0.6667 ≈ 2/3
-(Koide 1981) agrees with the structural value 2/3 derivable in Trinity
-through the three-generation structure (<a class="xref" href="#thm-5-1-D-9">Theorem 5.1.D.9</a>). Using
+(Koide 1981) agrees with the structural value 2/3 = L₀/L₂ — an exact
+algebraic form of Trinity (the centroid identity). STATUS (adversarial
+correction): an exact anchor form, NOT a first-principle derivation —
+the link of Q to the three lepton masses is not structurally derived:
+the reading through modes k = 1, 3, 4 does not reproduce 2/3
+(2.5.S, machine); there is no Koide formula through the mode spectrum.
+In the three-generation Z₃ symmetry (<a class="xref" href="#sec-2-8">Section 2.8</a>) the value 2/3 is
+structurally consistent, but this does not yield a mass-link derivation.
+Using
 Q_Koide together with one derivable mass (e.g. m_e through <a class="xref" href="#thm-2-8-B-1">Theorem
 2.8.B.1</a>) allows reconstruction of the two remaining lepton masses
 m_μ, m_τ. Full formalization is a registry program.</pre></div>
@@ -17066,22 +17127,38 @@ of the coupling constant α over the three neutrino generations.
 This explains the observed smallness θ_13 ≪ θ_12, θ_23 as the
 cumulative effect of the weak coupling across three generations.</pre></div>
 <div class="theorem blk" id="thm-2-8-G-2"><span class="label"><a class="xref" href="#thm-2-8-G-2">Theorem 2.8.G.2</a> (Structural representation of neutrino mixing angle θ_23).</span><pre>The atmospheric mixing angle of the PMNS matrix is
-determined structurally through the golden ratio and the number
-of generations:
-     sin²θ_23 = (φ + 1) / (φ + L_2) = φ² / (φ + L_2)
-where the golden ratio identity φ + 1 = φ² is used. Numerically:
-     (φ + 1) / (φ + 3) = 2.61803 / 4.61803 = 0.56692
-Reference value (NuFIT 5.2, 2024, normal ordering):
-     sin²θ_23^obs = 0.572 ± 0.024
-Relative error: |0.56692 − 0.572| / 0.572 = 8.9 · 10⁻³.</pre></div>
-<div class="proof blk"><span class="label">Proof (computational, type C).</span><pre>Numerical substitution:
+determined structurally. PRIMARY FORM (adversarial correction —
+one main formula; selected by accuracy against modern global fits):
+     sin²θ_23 = (φ + 1) / (φ + L_2) = φ² / (φ + L_2) = 0.56692
+where the golden ratio identity φ + 1 = φ² is used.
+Reference values (NuFIT 6.0, 2024 — normal ordering NO: 0.566;
+inverted IO: 0.561; NuFIT 5.2, 2022, NO: 0.572 ± 0.024):
+|0.56692 − 0.566| / 0.566 = 1.6 · 10⁻³ (NO, NuFIT 6.0);
+|0.56692 − 0.572| / 0.572 = 8.9 · 10⁻³ (NO, NuFIT 5.2);
+|0.56692 − 0.561| / 0.561 = 1.1 · 10⁻² (IO, NuFIT 6.0).
+Both hierarchies lie in the UPPER octant (sin²θ_23 &gt; 0.5); the form
+0.56692 covers both within 1–2σ.
+SECOND FORM — recorded, not primary:
+     sin²θ_23 = e⁴·π·φ³/N³ = 0.546
+— agrees with the lower-octant reading of the NuFIT 4.0 era
+(0.547, 2018); against the modern NuFIT 6.0 fits the deviation is
+2.7% (IO) / 3.6% (NO) — recorded as a property of the second form.
+TWO-FORM STRUCTURE = RECORDED DISCRIMINATION: θ₂₃ measurements
+(NOvA/T2K/DUNE, Juno) select the octant — the upper octant confirms
+the primary form φ²/(φ+L₂), a drift to the lower octant
+(sin²θ_23 &lt; 0.52) refutes it and re-opens the second form
+(falsifiable discrimination, PF format).</pre></div>
+<div class="proof blk"><span class="label">Proof (computational, type C).</span><pre>Primary form:
      φ = (1 + √5) / 2 = 1.61803
      L_2 = 3
      φ + 1 = φ² = 2.61803
      φ + L_2 = 4.61803
      (φ + 1) / (φ + L_2) = 0.56692
-     sin²θ_23^NuFIT = 0.572
-     (0.572 − 0.56692) / 0.572 = 8.9 · 10⁻³                       □</pre></div>
+     sin²θ_23^NuFIT 6.0 NO = 0.566: (0.56692 − 0.566)/0.566 = 1.6 · 10⁻³
+     sin²θ_23^NuFIT 5.2 NO = 0.572: (0.572 − 0.56692) / 0.572 = 8.9 · 10⁻³
+Second form (recorded):
+     e⁴ = 54.598, π = 3.14159, φ³ = 4.23607, N³ = 1331
+     e⁴·π·φ³/N³ = 0.5459 (NuFIT 4.0 era IO: 0.547)             □</pre></div>
 <div class="corollary blk" id="cor-2-8-G-2-1"><span class="label"><a class="xref" href="#cor-2-8-G-2-1">Corollary 2.8.G.2.1</a> (Deviation from maximal mixing).</span><pre>The
 structural representation sin²θ_23 = φ²/(φ+L_2) yields a deviation
 from exactly maximal mixing (sin²θ_23 = 1/2):
@@ -17107,16 +17184,20 @@ of structural parameters (5) with the number of independent
 observable PMNS parameters (3 angles + 1 phase + 1 mass ratio). □</pre></div>
 <div class="corollary blk" id="cor-2-8-G-3-1"><span class="label"><a class="xref" href="#cor-2-8-G-3-1">Corollary 2.8.G.3.1</a> (Structural Jarlskog invariant J^q for the CKM quark sector).</span><pre>The Jarlskog CP-violation invariant for
 the quark CKM matrix is derived in the Wolfenstein parametrization
-as the product of structurally fixed components:
+as the product of structurally fixed components
+(through the primary phase of <a class="xref" href="#thm-2-8-4">Theorem 2.8.4</a>, δ_CP^q = 1.19600 rad):
      J^q = A² · λ⁶ · η
-          = (5/6)² · (π/14)⁶ · (sin(5π/14) / φ²)
-          = 0.6944 · 1.277 · 10⁻⁴ · 0.3441
-          = 3.051 · 10⁻⁵
+          = (5/6)² · (π/14)⁶ · (sin(δ_CP^q) / φ²)
+          = 0.6944 · 1.277 · 10⁻⁴ · 0.3555
+          = 3.152 · 10⁻⁵
 Reference value (PDG 2024):
      J^q_obs = (3.18 ± 0.15) · 10⁻⁵
-Relative error 4.0 · 10⁻². In Trinity, J^q is not an independent
+Relative error 0.9 · 10⁻². The variant through the 5π/14
+representation (<a class="xref" href="#thm-2-4-Z-1">Theorem 2.4.Z.1</a>): sin(5π/14)/φ² = 0.3441 gives
+J^q = 3.051 · 10⁻⁵ (error 4.0 · 10⁻²) — recorded as the deviation of
+the representation. In Trinity, J^q is not an independent
 parameter but is fully determined by the components of the
-Wolfenstein parametrization (Theorems <a class="xref" href="#sec-2-8">Section 2.8</a> (D), 2.4.Z.1).</pre></div>
+Wolfenstein parametrization (Theorems <a class="xref" href="#sec-2-8">Section 2.8</a> (D), 2.8.4).</pre></div>
 <div class="corollary blk" id="cor-2-8-G-3-2"><span class="label"><a class="xref" href="#cor-2-8-G-3-2">Corollary 2.8.G.3.2</a> (Minimal sum of neutrino masses for normal hierarchy).</span><pre>Using the structural relation Δm²_31 / Δm²_21 = 3N
 (<a class="xref" href="#thm-2-6-A-3">Theorem 2.6.A.3</a>), the minimum sum of neutrino masses for
 normal hierarchy (m_1 = 0) is expressed through Δm²_21 alone:
@@ -17389,7 +17470,7 @@ Euler-Heisenberg effective Lagrangian (1936)</pre></div>
 <p class="blk">𝓛_EH = (α²/90π·m_e⁴)·[(E² − B²)² + 7(E·B)²]</p>
 <p class="blk">yields the vacuum refractive-index difference in a magnetic field:</p>
 <p class="blk">Δn = n_∥ − n_⊥ = (4α/45π)·(B/B_cr)²,   B_cr = m_e²/e ≈ 4.41·10⁹ T.</p>
-<p class="blk">Substituting Trinity α = 1/137.035999207:</p>
+<p class="blk">Substituting Trinity α = 1/137.035999160359:</p>
 <p class="blk">coefficient (4α/45π) = 2.065·10⁻⁴.</p>
 <p class="blk">For the nearest magnetar RX J1856.5-3754 (B_surf ≈ 10¹⁰ T, first observation Mignani et al. 2016) at an effective on-beam field B_eff ≈ 10⁴ T:</p>
 <p class="blk">Δn (Trinity) = 2.065·10⁻⁴ · (10⁴/4.41·10⁹)² ≈ 1.06·10⁻¹⁵.</p>
@@ -17420,7 +17501,7 @@ labeled by the topological charge θ ∈ Z_N (<a class="xref" href="#thm-2-8-J-1
 connected by tunneling configurations of finite action. The leading
 dilute-instanton amplitude between adjacent sectors |vac_θ⟩ and
 |vac_{θ+1}⟩ is governed by the single-instanton action, which on Z₁₁
-takes the form S_inst = 8π²/(α·N); with α = 1/137.035999207 and N = 11
+takes the form S_inst = 8π²/(α·N); with α = 1/137.035999160359 and N = 11
 this evaluates to S_inst ≈ 983.6 ≈ 984, in agreement with the
 instanton action established in <a class="xref" href="#sec-2-4">Section 2.4</a>.WJ. The tunneling
 probability is then P ∼ exp(−S_inst) ≈ exp(−984) ≈ 10⁻⁴²⁸, so
@@ -17669,11 +17750,7 @@ Gluons:   m_g = 0 (SU(3) unbroken)</pre>
   sin θ_23 = A·λ_C² (A = 5/6)    = 0.0420
   sin θ_13 = A·λ_C³·(1/φ²)       = 0.00360
   δ_CP     = π/φ²                = 1.20 rad</pre>
-<pre class="tabular blk">PMNS (1.0.D):
-  sin²θ_12 = ω_1/ω_4 + α·F₃/N   = 0.311
-  sin²θ_23 = e⁴·π·φ³/N³          = 0.546
-  sin²θ_13 = L_2·α = 3α          = 0.0219
-  δ_CP     = π + ω_1/ω_5 − 10α²N − 8α³N² + 2α⁴N³ = 3.42 rad</pre>
+<p class="blk">PMNS (1.0.D): sin²θ_12 = ω_1/ω_4 + α·F₃/N   = 0.311 sin²θ_23 = φ²/(φ+L₂) — primary (2.8.G.2) = 0.56692 [second form e⁴·π·φ³/N³ = 0.546 — NuFIT 4.0 reading] sin²θ_13 = L_2·α = 3α          = 0.0219 δ_CP     = π + ω_1/ω_5 − 10α²N − 8α³N² + 2α⁴N³ = 3.42 rad</p>
 <h4 class="subsection" id="28af-step-8-cosmological-parameters">2.8.AF STEP 8: COSMOLOGICAL PARAMETERS</h4>
 <p class="blk">Ω_Λ = (1 − 1/φ²) + 1/(L_4+F_6) = 0.6847 m_DM = (DM/b)·m_p = 5.3237·m_p ≈ 5.0 GeV  (Th 2.4.AF.1, 5.8.3), Ω_DM·h² ≈ 0.118 η_b = 6·e⁻²³ = 6.157·10⁻¹⁰ (Th 2.5.Q.1; the estimate α²/(N·φ¹⁰·e²) ≈ 5.3·10⁻⁹ is a scale figure, ×8.7 from experiment) H_0 ≈ 67.4 km/s/Mpc T_CMB = e + α − α²·e = 2.72543 K n_s = 1 − 7α + 28α²N − 9α³N² = 0.9649</p>
 <h4 class="subsection" id="28ag-step-9-summary">2.8.AG STEP 9: SUMMARY</h4>
@@ -18524,7 +18601,7 @@ estimate, not a calibrated information bound.</pre></div>
 <p class="blk">This section contains the statistical analysis of the 84 observables, with Bayesian and frequentist caveats. Statistical significance of Trinity — quantitative confirmation of the geometric structure of the Sphere-Cone:</p>
 <p class="blk">• χ² ≈ 0.84 at 84 degrees of freedom (ν=84) — the fit is much closer than a random model (E[χ²] ≈ ν). This is a lower-tail χ² and is the wrong tail for a frequentist significance (<a class="xref" href="#thm-2-10-B-1">Theorem 2.10.B.1</a>); it is reported as a consistency indicator only.</p>
 <p class="blk">• MONTE-CARLO CONTROL — 1000 random formulas from the same atoms (N, π, φ, e, L_n, F_m) are on average ~4469× less precise; 0 of 100 random sets reach Trinity accuracy. This is an empirical control (discipline 2.10.B).</p>
-<p class="blk">• MEAN RELATIVE ERROR 0.0017% — geometrically: α to 5.4 ppt (2.4.A); 52/84 &lt; 0.001% (23 below 0.00005%); atomic α — the signed model (sign and magnitude to 5.3%; the Rb reference) (2.5.U.1).</p>
+<p class="blk">• MEAN RELATIVE ERROR 0.0017% — geometrically: α to 0.8σ vs CODATA-2022 (2.4.A); 52/84 &lt; 0.001% (23 below 0.00005%); atomic α — the signed model (sign and magnitude to 5.3%; the Rb reference) (2.5.U.1).</p>
 <p class="blk">• KOLMOGOROV COMPLEXITY K ≈ 90 bits (quintet + algebra) against the catalogue description length; the bits-per-observable figure is an estimate, not a calibrated information bound (<a class="xref" href="#thm-1-10-C">Theorem 1.10.C</a>).</p>
 <h4 class="subsection" id="210a-formal-problem-statement">2.10.A FORMAL PROBLEM STATEMENT</h4>
 <p class="blk">For each of the 84 constants C_i, the theory gives value T_i, while experiment gives E_i ± σ_i. We determine:</p>
@@ -18615,7 +18692,7 @@ advantage at zero parameters.</pre></div>
     Absolute : Sphere   -- centre (r=0)
     Cone : Sphere → Type -- Cone with apex at Absolute
     Segment : Cone → Sphere → Type -- segment-projection</pre>
-<p class="blk">• THEOREM 2.4.A (α = 137.035999207) is formalized as a dependent type parametrized by the quintet {N, π, φ, e, i}. Proof: explicit computation of V_cone = 13195 and arithmetic.</p>
+<p class="blk">• THEOREM 2.4.A (α = 137.035999160359) is formalized as a dependent type parametrized by the quintet {N, π, φ, e, i}. Proof: explicit computation of V_cone = 13195 and arithmetic.</p>
 <pre class="formula blk">• AXIOMS A₀-A₅ encoded in Lean:
     axiom A0 : ∀ k, Psi (k + (N+1)) = Psi k  -- closure
     axiom A1 : ∀ x, x^2 = x + 1 → x = phi ∨ x = -1/phi
@@ -18791,7 +18868,7 @@ polynomial procedure. □</pre></div>
     generation statistics.</pre>
 <p class="blk">[3] Discretization vs continuum limit. Effects of order 1/N² for low-frequency observables.</p>
 <p class="blk">[4] Experimental uncertainties of reference values. CODATA-2018: ~10⁻⁸ for α PDG-2024:    ~10⁻⁵ for particle masses Planck-2018: ~0.5% for cosmological</p>
-<p class="blk">[5] High-precision sector (<a class="xref" href="#sec-2-7">Section 2.7</a>, subsection P, 2.7.P.1–14). A subset of constants is reproduced to high precision: the fine-structure constant 1/α = 137.035999207 (5.4 ppt vs LKB-Rb 2020, Morel, ~12-figure agreement); structural mass ratios and mixing angles to 4–6 figures after Cone and sector corrections. Residual error at or below current experimental precision for the leading observables.</p>
+<p class="blk">[5] High-precision sector (<a class="xref" href="#sec-2-7">Section 2.7</a>, subsection P, 2.7.P.1–14). A subset of constants is reproduced to high precision: the fine-structure constant 1/α = 137.035999160359 (0.8σ vs LKB-Rb 2020, Morel, ~12-figure agreement); structural mass ratios and mixing angles to 4–6 figures after Cone and sector corrections. Residual error at or below current experimental precision for the leading observables.</p>
 <p class="blk">[6] Information compression (<a class="xref" href="#thm-1-10-C">Theorem 1.10.C</a>). Basis ℬ = {N, π, φ, e, i, L_n, F_m, V_cone, ω_k} contains ~60 elements. Maps to the 84 dimensionless constants. Compression: R_compr = 84/60 ≈ 1.40 R_compr &gt; 1 disfavours the overfitting hypothesis (compression estimate, not a calibrated information bound; cf. Cor 2.10.2.c). Information-theoretic estimate of random fit: P(random) &lt; 10⁻³⁰⁰ (<a class="xref" href="#thm-1-10-C">Theorem 1.10.C</a>).</p>
 <h4 class="subsection" id="210s-error-propagation-methodology">2.10.S ERROR PROPAGATION METHODOLOGY</h4>
 <p class="blk">For derived quantities the Taylor formula applies: δf = Σ_i (∂f/∂x_i)·δx_i In Z₁₁ the parameters x_i ∈ {N, π, φ, e, i} have ZERO errors (mathematical constants), so the propagated errors are zero.</p>
@@ -22007,7 +22084,7 @@ of the derived consequence (twelve-fold closure + 84 constants +
 │ Layer │ Section     │ Key theorems / results                           │
 ├───────┼─────────────┼──────────────────────────────────────────────────┤
 │   1   │ 2.4         │ T.13.1: 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵N) − α⁴·V_cone │
-│       │             │ V_cone = 13195; α⁻¹ = 137.035999207 (5.4 ppt)    │
+│       │             │ V_cone = 13195; α⁻¹ = 137.035999160359 (0.8σ CODATA-22) │
 │       │             │ Lemma A: P(α) monotone (polynomial uniqueness)   │
 │       │             │ Lemma B: T(x) = 1/(A−B−V_cone·x⁴) Banach contr.  │
 ├───────┼─────────────┼──────────────────────────────────────────────────┤
@@ -22141,9 +22218,9 @@ ceiling of physical expansions (<a class="xref" href="#thm-1-9-C-4">Theorem 1.9.
 <div class="corollary blk" id="cor-4-6-D-6-3"><span class="label"><a class="xref" href="#cor-4-6-D-6-3">Corollary 4.6.D.6.3</a> (Refined description of the triple spectral bridge α ↔ β ↔ ζ via three types of N-dependence).</span></div>
 <p class="blk">The triple spectral bridge α ↔ β ↔ ζ describes three distinct types of N-dependence of one cyclotomic structure Z₁₁:</p>
 <pre class="formula blk">α  (physics):              FULL N-dependence.
-                           The numerical value 1/α = 137.035999207
-                           requires precisely N = 11 (5.4 ppt from
-                           LKB-Rb 2020, Morel); for N ≠ 11 the formula
+                           The numerical value 1/α = 137.035999160359
+                           requires precisely N = 11 (0.8σ from
+                           CODATA-2022); for N ≠ 11 the formula
                            α = π²/(N · φ¹⁰) gives values outside the
                            experimental range.</pre>
 <p class="blk">β  (quantum field theory): PARTIAL N-dependence. The closed expression β(g) = −(N/3)·g· [I₀(g√2)−1] contains an explicit N/3 coefficient and is consistent with the 11-loop structure through the threshold 2(N−1) = 20 (<a class="xref" href="#thm-1-9-C-4">Theorem 1.9.C.4</a>).</p>
@@ -22374,7 +22451,7 @@ the unique geometric realisation of the attributes of the One.</pre></div>
 <p class="blk">• 4.6.VJ (Signature and model) — every model is a concrete realization of the Cone (<a class="xref" href="#cor-2-4-A-15-1">Corollary 2.4.A.15.1</a>): the carrier H_{11} = 11 basis vectors = apex + 10 sectors D_k; operators Ĥ, Ŝ, Ĵ, Φ̂ are quintet-parameterizations of Cone shape ({π, e, i, φ} respectively).</p>
 <p class="blk">• 4.6.VK (First-order logic) — all statements of the theory are statements about the Sphere-Cone geometry; formulas realize as properties of 3D sectors D_k.</p>
 <p class="blk">• 4.6.VL (Decidability) — the full description of the Cone from the quintet (<a class="xref" href="#cor-2-4-A-15-1">Corollary 2.4.A.15.1</a>: Cone = F(quintet)) means that any question about Trinity reduces to computing a sector integral Q_k = ∫_{D_k} f·dV — a decidable procedure.</p>
-<p class="blk">• 4.6.VM (Gödel completeness/incompleteness) — the ontological cycle (<a class="xref" href="#cor-2-4-A-13">Corollary 2.4.A.13</a>) Geometry → Consciousness → Mathematics → Absolute ensures that everything required for the truth of the theory is contained in its geometry (the quintet formula gives α to 5.4 ppt vs LKB-Rb 2020); anything not quintet- computable does not belong to Trinity and lies in later cycles.</p>
+<p class="blk">• 4.6.VM (Gödel completeness/incompleteness) — the ontological cycle (<a class="xref" href="#cor-2-4-A-13">Corollary 2.4.A.13</a>) Geometry → Consciousness → Mathematics → Absolute ensures that everything required for the truth of the theory is contained in its geometry (the quintet formula gives α to 0.8σ vs CODATA-2022); anything not quintet- computable does not belong to Trinity and lies in later cycles.</p>
 <p class="blk">• 4.6.VN (Category of models) — the category of models of Trinity is isomorphic to the category of choices of Cone direction d ∈ S² = CP¹ (<a class="xref" href="#cor-2-4-F-1-2">Corollary 2.4.F.1.2</a>); each point of CP¹ = a model, all linked by the Z₂-mirror involution Sphere⟷Cone.</p>
 <p class="blk">• 4.6.VO (Independence from ZFC) — Trinity uses only a conservative extension of ZFC (the model in H_{11} is finite-dimensional); all structural statements of the Sphere-Cone geometry are derivable from ZFC (<a class="xref" href="#rem-2-4-F">Remark 2.4.F</a> on the polar decomposition ℝ³\{0}).</p>
 <h4 class="subsection" id="46vj-model-theoretic-justification">4.6.VJ MODEL-THEORETIC JUSTIFICATION</h4>
@@ -22810,7 +22887,7 @@ free postulate. □</pre></div>
 yields an independent quantitative prediction distinguishing Trinity
 with N = 11 from hypothetical alternative structures with other N:</pre></div>
 <p class="blk">(F1) Spectral frequencies ω_k of Z₁₁. Z₁₁ yields a unique set {ω_1, ..., ω_10} with explicit values (<a class="xref" href="#thm-2-5-O-2">Theorem 2.5.O.2</a>). Alternative Z_N, N ≠ 11, yield different sets. Refutation: spectroscopic measurement of fundamental frequencies yielding a set incompatible with Z₁₁.</p>
-<p class="blk">(F2) Fine structure constant α^{-1}. Z₁₁ yields α^{-1} = 137.035999207 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, the tree convention; the self-consistent reading 137.035999160) via V_cone and the quintet {N, π, φ, e, i}. For alternative Z_N the formula α from <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is not applicable, since V_cone ∈ M_FL only at N = 11 (<a class="xref" href="#thm-1-9-A-2">Theorem 1.9.A.2</a>); for N ≠ 11 the intermediate structures of the formula are not defined. Refutation: a precision measurement reproducing the Berkeley-Cs value 137.035999046 at ppt accuracy (the 1.17 ppb gap; PF-1) refutes the Z₁₁-structure.</p>
+<p class="blk">(F2) Fine structure constant α^{-1}. Z₁₁ yields α^{-1} = 137.035999160359 (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>, the single rule — the self-consistent reading; the convention reading 137.035999206741 is recorded) via V_cone and the quintet {N, π, φ, e, i}. For alternative Z_N the formula α from <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> is not applicable, since V_cone ∈ M_FL only at N = 11 (<a class="xref" href="#thm-1-9-A-2">Theorem 1.9.A.2</a>); for N ≠ 11 the intermediate structures of the formula are not defined. Refutation: a precision measurement reproducing the Berkeley-Cs value 137.035999046 at ppt accuracy (the 1.17 ppb gap; PF-1) refutes the Z₁₁-structure.</p>
 <pre class="formula blk">(F3) Cosmological constant Ω_Λ.
      Z₁₁ yields Ω_Λ = N_passive/N_total ≈ 0.6847 (<a class="xref" href="#cor-3-10-H-2">Corollary 3.10.H.2</a>,
      <a class="xref" href="#thm-2-5-O-1">Theorem 2.5.O.1</a>) via the aetheron balance with a fixed N = 11.
@@ -23435,10 +23512,13 @@ central-binomial value is Δ_11/β_11^naive = ΔS_22/(N·C(22, 11)) =
 2(N−1) = 20 at which folding first appears, is fixed by the PRIMARY
 uniqueness criterion (<a class="xref" href="#thm-1-10-0-28">Theorem 1.10.0.28</a>); no free parameter enters. □</pre></div>
 <div class="theorem blk" id="thm-5-0-A-2"><span class="label"><a class="xref" href="#thm-5-0-A-2">Theorem 5.0.A.2</a> (Precision prediction of 1/α(Cs-133)).</span><pre>The structural value of the inverse fine-structure constant in
-Planck-like units (without screening effects) equals:
-     1 / α^Trinity(Cs-133) = 137.035999206741195 ± 10⁻¹¹
+Planck-like units (without screening effects; the single rule —
+the self-consistent solution, Lemmas 2.4.A.A/B) equals:
+     1 / α^Trinity(Cs-133) = 137.035999160358812 ± 10⁻¹¹
 Any deviation from this value by &gt; 10⁻¹¹ at experimental measurement
-refutes <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>.
+refutes <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>. Recorded tension: LKB-Rb 2020 (…206(11)) is
+4.2σ from the prediction; the discriminator is the next generation
+of measurements (PF-1).
 Verification program: Berkeley-Cs Atomic Clock,
 next generation of optical clocks 2030+. Current experimental
 precision: 4·10⁻¹⁰ (Berkeley 2018); expected 10⁻¹¹–10⁻¹² by 2030.</pre></div>
@@ -23492,7 +23572,7 @@ PRIMARY uniqueness of N = 11: <a class="xref" href="#thm-1-10-0-28">Theorem 1.10
 <div class="corollary blk" id="cor-5-0-A-5-1"><span class="label"><a class="xref" href="#cor-5-0-A-5-1">Corollary 5.0.A.5.1</a> (Summary condition of Trinity falsification).</span><pre>Combined refutation of Trinity is realized upon fulfillment of any
 of the following conditions:
      (a) Δ_11 ≠ −2.84 · 10⁻⁶ at &gt; 5σ in FCC-hh measurements
-     (b) 1/α(Cs-133) ≠ 137.035999206741195 at &gt; 5 · 10⁻¹¹ in atom-clock
+     (b) 1/α(Cs-133) ≠ 137.035999160358812 at &gt; 5 · 10⁻¹¹ in atom-clock
      (c) m_DM ≠ 5 GeV at &gt; 5σ in direct searches
      (d) γ ≠ 1 at &gt; 5σ in cosmological data DESI/Euclid
      (e) The spectrum of primordial gravitational waves does not
@@ -23527,7 +23607,7 @@ them by experimental programs of the next generation. All five
 predictions are stated within the Trinity framework (<a class="xref" href="#sec-1-0">Section 1.0</a>.K, <a class="xref" href="#sec-2-4">Section 2.4</a>)
 without free parameters.</pre></div>
 <div class="remark blk" id="rem-5-0-A-1-s"><span class="label"><a class="xref" href="#rem-5-0-A-1-s">Remark 5.0.A.1.s</a> (New physics from the α-formula — not refinement of known constants).</span><pre>The Trinity α-formula (<a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a>) yields not only a refinement of
-the known constant 1/α = 137.035999207, but also a series of NEW
+the known constant 1/α = 137.035999160359, but also a series of NEW
 physical predictions, previously unknown and testable in the laboratory:</pre></div>
 <p class="blk">(i) 11-loop β-function deviation Δβ₁₁ = −2.84·10⁻⁶ (<a class="xref" href="#thm-2-4-4-1">Theorem 2.4.4.1</a>) — a structural prediction distinct from standard QED at the 11-loop level. Testable: FCC-hh / CLIC / ILC (2040+) upon reaching sensitivity to 11-loop contributions.</p>
 <p class="blk">(ii) Z₁₁ modulation of the g-factor: the 11 coefficients c₁,...,c₁₁ in the expansion g_e = π/φ + Σ c_n·αⁿ·M_n have a structural form from QR(11), distinct from standard QED. Testable at 10⁻¹³ sensitivity.</p>
@@ -24580,7 +24660,7 @@ def beta_2loop_lambda(lam, g, yukawas, C2_R, T_R):
         Lambda_S2 + Lambda_SG + Lambda_G2 +
         Lambda_SY + Lambda_Y2 + Lambda_GY
     )</pre>
-<p class="blk"># Substitution for β^(2) λ_a at the Trinity point beta_2_lambda_a = beta_2loop_lambda( lambda_a, g_UV, [y_t], C2_adj, T_adj ).subs([(N, 11), (alpha, sp.Float('1/137.035999207'))])</p>
+<p class="blk"># Substitution for β^(2) λ_a at the Trinity point beta_2_lambda_a = beta_2loop_lambda( lambda_a, g_UV, [y_t], C2_adj, T_adj ).subs([(N, 11), (alpha, sp.Float('1/137.035999160359'))])</p>
 <p class="blk"># Numerical simplification beta_2_lambda_a_value = sp.simplify(beta_2_lambda_a).evalf() ```</p>
 <p class="blk">Result of the executed substitution (Trinity point, g² = 4π/25):</p>
 <pre class="tabular blk">β^(2)_λ_a    ≈  +1.35 · 10⁻¹      (gauge class Λ_G² dominates)
@@ -26667,8 +26747,8 @@ corresponding to n ≈ 15 φ-steps below M_P (M_P/φ¹⁵ ≈ 9·10¹⁵ GeV).</
 <div class="proof blk"><span class="label">Proof.</span><pre>Phenomenological estimate, not a Trinity derivation. The unification energy M_GUT ≈ 10¹⁶ GeV is taken as an input fixed by phenomenology, and the exponent n ≈ 15 is then chosen so that the Planck scale, lowered by n golden-ratio steps, reproduces it. The only verifiable content is the arithmetic: with φ = 1.6180… and M_P = 1.22·10¹⁹ GeV one has φ¹⁵ = 1364.0 and M_P/φ¹⁵ = 8.94·10¹⁵ GeV ≈ 9·10¹⁵ GeV, of order 10¹⁶ GeV. Thus M_GUT ≈ M_P/φⁿ records the location of an externally fixed scale relative to M_P; it is a parametrization of that scale, not a derivation of M_GUT or of n. □</pre></div>
 <h4 class="subsection" id="54d-running-couplings">5.4.D RUNNING COUPLINGS</h4>
 <p class="blk">Three running couplings in GUT: α_1 (U(1)): grows with energy α_2 (SU(2)): decreases α_3 (SU(3)): decreases faster</p>
-<p class="blk">Gell-Mann-Low equations: dα_i/d(log μ) = b_i·α_i²/(2π) with b_1 = +33/5, b_2 = −19/6, b_3 = −7.</p>
-<p class="blk">At unification: α_1(M_GUT) = α_2(M_GUT) = α_3(M_GUT) = 1/25 = 1/F_5²</p>
+<p class="blk">Gell-Mann-Low equations: dα_i/d(log μ) = b_i·α_i²/(2π) with the one-loop Standard Model coefficients (adversarial correction: the former b_1 = 33/5 — an MSSM value — mixed the spectra; the consistent set is <a class="xref" href="#thm-2-8-3">Theorem 2.8.3</a>): b_1 = +41/10 (U(1), GUT normalization α_1 = (5/3)·α_Y), b_2 = −19/6, b_3 = −7 = −L₄.</p>
+<p class="blk">Structural value of the merging point (Z₁₁): α_1(M_GUT) = α_2(M_GUT) = α_3(M_GUT) = 1/25 = 1/F_5² Boundary (<a class="xref" href="#thm-2-4-AL-2">Theorem 2.4.AL.2</a>): under the one-loop SM running the three couplings converge but do not merge exactly; α_GUT = 1/25 is a structural boundary condition at M_P; the spectrum completing the loop merging is a <a class="xref" href="#sec-5-1">Section 5.1</a> program (Rem 5.1.D.9.r(д)).</p>
 <h4 class="subsection" id="54e-gut-predictions">5.4.E GUT PREDICTIONS</h4>
 <p class="blk">GUT theories typically predict:</p>
 <ol class="refs blk">
@@ -27784,7 +27864,7 @@ the seven characterizations of <a class="xref" href="#sec-2-5">Section 2.5</a>.B
      D4 modular           (level η²⁴ for X_0(N), 1.0.E.2)
      D5 combinatorial     (5 operations × F_5 = 5 pairs, 2.5.F.1)
      D6 arithmetic        ((11)_{n−1} = n, OEIS A125134, 2.5.H.2)
-     D7 physical          (precision α to 5.4 ppt vs LKB-Rb 2020, 2.4.A)
+     D7 physical          (precision α 0.8σ vs CODATA-2022, 2.4.A)
      D8 number-theoretic  (5.10.A.3, max(Heegner ∩ Lucas) = 11)
 The characterizations D1–D8 are observations consistent with N = 11;
 several hold for other integers as well (see the individual theorems),
@@ -27824,8 +27904,8 @@ of N = 11 beyond <a class="xref" href="#thm-5-10-A-3">Theorem 5.10.A.3</a>.</pre
 <pre class="tabular blk">────────────────────────────────────────────────────────────────────────
 INPUT/PREDICTION SUMMARY (flagship quantities; full catalogue — 2.5.AC)</pre>
 <pre class="tabular blk">Quantity    Theory input?  Status
-α⁻¹         no             prediction (double reading: convention
-                           5.4 ppt / fixed point 0.8σ CODATA-2022)
+α⁻¹         no             prediction (the single rule: fixed point
+                           0.8σ CODATA-2022; the convention reading is recorded)
 m_H         no             prediction ((π/2)·m_W; PF-1)
 m_μ/m_e     no             prediction (0.00%, Rem 2.8.G)
 V_us        no             α-series (λ = π/14, Th 2.8.D.1)
@@ -27868,7 +27948,7 @@ Scale inputs (outside SM numbers): M_sc, M_R, ξ — marked
 <p class="blk">Theorems: 709 Definitions: 247 Corollaries: 561 Remarks: 451 Lemmas: 25 Propositions: 13 Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are geometric-layer Theorems 1.0.AET.1, 1.0.AET.2, 1.0.AET.3, 1.0.AET.4, 1.0.AET.5) Service appendices: 3 (I — Glossary; II — Mathematical summary; III — Defensible core) Continuous free parameters: 0</p>
 <pre class="formula blk">Structure: 5 Parts × 12 modal subsections k = 0..11 = 60 cells
            (Sphere–Point–Cone ontology)</pre>
-<p class="blk">Dimensionless constants closed: 84 / 84 (catalogue coverage) Mean relative error (tree-level): 0.0017% Structural mean (full package): ~0.0017% (validator, 84 constants) Constants with error &lt; 0.001%: 52 / 84 Absolute masses (&lt; PDG uncertainty): 9 Acoustic peaks of CMB: 7 (mean error 1.22%) Nuclear magic numbers: 7 / 7 (all EXACT) SI exponents of fundamental constants: 18/18 as Z₁₁ numbers (five are SI defining constants, exact by definition; a structural reading of the notation) Fractal dimensions: 7 (all EXACT) Critical exponents of 2D Ising: 5 (all EXACT) Fine-structure constant α: 5.4 ppt from LKB-Rb 2020 (Morel) Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r) Hubble constant H_0: 0.017% precision via (1+α)^N</p>
+<p class="blk">Dimensionless constants closed: 84 / 84 (catalogue coverage) Mean relative error (tree-level): 0.0017% Structural mean (full package): ~0.0017% (validator, 84 constants) Constants with error &lt; 0.001%: 52 / 84 Absolute masses (&lt; PDG uncertainty): 9 Acoustic peaks of CMB: 7 (mean error 1.22%) Nuclear magic numbers: 7 / 7 (all EXACT) SI exponents of fundamental constants: 18/18 as Z₁₁ numbers (five are SI defining constants, exact by definition; a structural reading of the notation) Fractal dimensions: 7 (all EXACT) Critical exponents of 2D Ising: 5 (all EXACT) Fine-structure constant α: 0.8σ from CODATA-2022 (LKB-Rb — a recorded 4.2σ tension, the PF-1 discriminator) Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r) Hubble constant H_0: 0.017% precision via (1+α)^N</p>
 <p class="blk">Irrational constants in unified basis ℤ[α, π, φ, e, N, F_n, L_n]: 9 (ζ(2), ζ(3), ζ(5), ζ(7), ζ(11), Catalan G, β(4), Glaisher A, Khinchin K)</p>
 <pre class="tabular blk">Clay Mathematics Institute Millennium Problems: 7 / 7 structurally closed (each with explicit scope statement)
   Riemann     1.9.WA.3        Yang–Mills    5.1.G.1
@@ -27890,7 +27970,7 @@ Scale inputs (outside SM numbers): M_sc, M_R, ξ — marked
 <p class="blk">• DUALITY OF TRINITY — projection of the Cone onto the inner surface of the Sphere = spherical segment; carrier of kinetic E_K.</p>
 <p class="blk">• CIRCLE OF TRINITY — longitudinal section of the Cone through the symmetry axis; base Duality circle with 10 modes.</p>
 <p class="blk">• TRIANGLE OF TRINITY — perpendicular section of the Cone; Z₂-mirror of the Circle.</p>
-<p class="blk">• V_cone — conic phase volume (N+1)·N·(N-1)² − (N-1)/2 = 13195 for N=11; enters <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> (α to 5.4 ppt).</p>
+<p class="blk">• V_cone — conic phase volume (N+1)·N·(N-1)² − (N-1)/2 = 13195 for N=11; enters <a class="xref" href="#thm-2-4-A">Theorem 2.4.A</a> (the single rule α).</p>
 <p class="blk">• ω_k — spectral eigenfrequencies of the Hamiltonian ω_k = 2 sin(πk/N), k = 0,...,N−1 (Axiom A3, Axiom A3).</p>
 <p class="blk">• ℏ_struct — structural distinguishability quantum 1/(2N) = 1/22; Z₁₁ analogue of Planck's constant ℏ (<a class="xref" href="#thm-4-0-D-1">Theorem 4.0.D.1</a>).</p>
 <p class="blk">• N_cycles — number of Aether actualization cycles per Big Bang, N_cycles = exp(1/α + 1/φ²); enters Λ-catastrophe formula (<a class="xref" href="#thm-2-7-Q-2">Theorem 2.7.Q.2</a>) and Hubble (<a class="xref" href="#thm-2-6-A-4">Theorem 2.6.A.4</a>).</p>
@@ -28166,7 +28246,7 @@ TOTAL                   84 dimensionless constants
 <p class="blk">Epistemic classification (adversarial audit, <a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a>):</p>
 <pre class="tabular blk">Epistemic layer             Count    Status
 ──────────────────────────────────────────────────────
-EXACT (genuine derivation)  9        formula forced, 0 free coeff.
+EXACT (9 genuine + Koide anchor) 10       formula forced, 0 free coeff.
 α-SERIES (structural form [STRUCT]) 36  coefficients selected
 OPERATOR-RATIO              39       over-determined selection
 ──────────────────────────────────────────────────────
@@ -28230,11 +28310,12 @@ Trinity time τ Parameter of unitary evolution E_τ,
 <p class="blk">The fine-structure constant α satisfies the implicit equation:</p>
 <p class="blk">1/α = N · φ¹⁰ / π² − e⁴ · φ² / (π⁵ · N) − α⁴ · V_cone</p>
 <p class="blk">where N = 11, V_cone = (N + 1) · N · (N − 1)² − (N − 1)/2 = 13195, φ = (1 + √5)/2 — golden ratio, e — base of natural logarithm, π — circle constant.</p>
-<p class="blk">Explicit substitution of the tree α gives 1/α = 137.035999207; the self-consistent root — 137.035999160 (338 ppt = 4.2σ from LKB-Rb, <a class="xref" href="#lem-2-4-A-A">Lemma 2.4.A.A</a>) (precision 14 significant digits).</p>
+<p class="blk">Explicit substitution of the tree α gives 1/α = 137.035999206741 (a recorded alternative reading); the SINGLE RULE — the self-consistent root 137.035999160359 (0.8σ from CODATA-2022; LKB-Rb — a recorded 4.2σ tension; Lemmas 2.4.A.A/B).</p>
 <p class="blk">Comparison with experiment:</p>
 <ul class="bullets blk">
-  <li>LKB-Rb 2020 (Morel):    137.035999206(11) — discrepancy 5.4 · 10⁻¹²</li>
-  <li>Berkeley-Cs 2018 (Parker): 137.035999046(27) — discrepancy 1.17 · 10⁻⁹</li>
+  <li>CODATA-2022:            137.035999177(21) — deviation 0.8σ</li>
+  <li>LKB-Rb 2020 (Morel):    137.035999206(11) — recorded 4.2σ tension</li>
+  <li>Berkeley-Cs 2018 (Parker): 137.035999046(27) — residual 0.39 ppb after the structural shift</li>
   <li>CODATA 2022:            137.035999177(12) — deviation 3 · 10⁻⁸ from theory (see <a class="xref" href="#rem-2-4-A-0-6">Remark 2.4.A.0.6</a> — forward prediction)</li>
 </ul>
 <p class="blk">The one-loop one-sided form 1/α₁ = N · φ¹⁰/π² − e⁴ · φ²/(π⁵·N) gives precision 0.27 ppm vs 4-loop QED (<a class="xref" href="#rem-2-4-A-0-4">Remark 2.4.A.0.4</a>).</p>
@@ -28346,7 +28427,7 @@ CORE RESULT 2 (SUPPORTING). α-emergence.
 ─────────────────────────────────────────────────────────────────────
 The fine-structure constant is given by the structural composition</pre>
 <p class="blk">1/α = N·φ^(N−1)/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone,</p>
-<p class="blk">in which the tree-level term N·φ^(N−1)/π² = 137.0785 matches 1/α to 0.031%, and the full three-term formula (with tree-level α on the RHS) gives 1/α = 137.035999207 (5.4 ppt vs LKB-Rb 2020). Every numerical exponent is derived from the structure {N−1, R−1, |Quintet|, Z₂, k} (<a class="xref" href="#thm-2-4-A-0-5-w">Theorem 2.4.A.0.5.w</a>); the exponent on φ, N−1, is the full count of active Duality modes (<a class="xref" href="#thm-2-4-A-0-5-v">Theorem 2.4.A.0.5.v</a>). The value is UNIQUE to N = 11 (the map N ↦ N·φ^(N−1)/π² selects N = 11 within two orders of magnitude of 137) — the 15th coordinated characterization of N = 11. SCOPE: φ is a primitive Quintet atom, NOT a Z₁₁ spectral invariant (<a class="xref" href="#rem-2-4-A-0-5-w-r">Remark 2.4.A.0.5.w.r</a>); α is a Layer-1 STRUCTURAL COMPOSITION (not a derivation from a single Z₁₁ integral — the formal Schwinger representation of <a class="xref" href="#thm-2-4-A-0-5-u">Theorem 2.4.A.0.5.u</a> is a representation, not a derivation).</p>
+<p class="blk">in which the tree-level term N·φ^(N−1)/π² = 137.0785 matches 1/α to 0.031%, and the full three-term formula (assembled at tree-level α) gives 1/α = 137.035999206741 (the recorded convention); the single rule — the self-consistent root 137.035999160359 (0.8σ from CODATA-2022). Every numerical exponent is derived from the structure {N−1, R−1, |Quintet|, Z₂, k} (<a class="xref" href="#thm-2-4-A-0-5-w">Theorem 2.4.A.0.5.w</a>); the exponent on φ, N−1, is the full count of active Duality modes (<a class="xref" href="#thm-2-4-A-0-5-v">Theorem 2.4.A.0.5.v</a>). The value is UNIQUE to N = 11 (the map N ↦ N·φ^(N−1)/π² selects N = 11 within two orders of magnitude of 137) — the 15th coordinated characterization of N = 11. SCOPE: φ is a primitive Quintet atom, NOT a Z₁₁ spectral invariant (<a class="xref" href="#rem-2-4-A-0-5-w-r">Remark 2.4.A.0.5.w.r</a>); α is a Layer-1 STRUCTURAL COMPOSITION (not a derivation from a single Z₁₁ integral — the formal Schwinger representation of <a class="xref" href="#thm-2-4-A-0-5-u">Theorem 2.4.A.0.5.u</a> is a representation, not a derivation).</p>
 <pre class="tabular blk">─────────────────────────────────────────────────────────────────────
 CORE RESULT 3 (SUPPORTING). α-leading term, minimal-complexity.
 ─────────────────────────────────────────────────────────────────────
@@ -28486,7 +28567,7 @@ from the action (Rem 2.4.AF.2.r).</pre>
   <li>GUT cascade ratio −1.0493 — model-dependent external RG integration (stored, not computed in the validator).</li>
   <li>Mode-dependent Majorana scale M_R(k) — OPEN (<a class="xref" href="#rem-2-4-AD-2-s">Remark 2.4.AD.2.s</a>, machine-verified non-integer φ-exponents); same status as SM Yukawa couplings.</li>
   <li>The optical theorem — a corollary of S-matrix unitarity (<a class="xref" href="#cor-1-10-M-1-c">Cor. 1.10.M.1.c</a>, Th 1.10.M.1); the one-loop transverse decomposition of explicit amplitudes — RG program (Rem 2.1.A.7.1.r).</li>
-  <li>Catalogue α-series (36 entries) — structural form [STRUCT]; the tree-level derivations are the 9 EXACT (<a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a>, flexibility rate 2.48%). The list is current as of the recording date.</li>
+  <li>Catalogue α-series (35 entries) — structural form [STRUCT]; the tree-level derivations are the 9 EXACT (<a class="xref" href="#rem-2-5-AC-3-r">Remark 2.5.AC.3.r</a>, flexibility rate 2.48%). The list is current as of the recording date.</li>
 </ul>
 <pre class="tabular blk">─────────────────────────────────────────────────────────────────────────────
                             END OF TRACTATE

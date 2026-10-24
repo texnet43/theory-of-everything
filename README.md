@@ -17,7 +17,7 @@ From **7 axioms** (A0–A6: the base Hilbert A0–A5 + the dimensional lexicon A
 
 > **Eight structural results:**
 >
-> 1. **α as a self-consistent equation:** 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone is a **self-consistent relation α = f(α)** (analogous to φ = 1+1/φ). Its fixed point converges to 1/α = 137.035999160 (0.338 ppb = 338 ppt, 4.1σ from LKB-Rb 2020; under the tree-substitution convention 5.4 ppt = 0.07σ — the double reading is stated in Lemma 2.4.A.A); the value 137.035999207 is reached by substituting the tree-level α = π²/(N·φ¹⁰) on the right-hand side (5.4 ppt). Theorem 2.4.A.0.5.t.
+> 1. **α as a self-consistent equation:** 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone is a **self-consistent relation α = f(α)** (analogous to φ = 1+1/φ). The single computation rule is the self-consistent solution: **1/α = 137.035999160359** (0.8σ from CODATA-2022; LKB-Rb 2020 — a recorded 4.2σ tension, the PF-1 discriminator). The tree-substitution convention α := α_tree gives the recorded alternative reading 137.035999206741 (5.4 ppt vs LKB-Rb) — a property of the convention, not the rule (Lemmas 2.4.A.A/B). Theorem 2.4.A.0.5.t.
 >
 > 2. **Λ suppression exponent:** ρ_Λ = M_P⁴·(R/Z₂)/π^(2N²) = (3/2)·M_P⁴/π^242, where the exponent 2N² = 2N·N factors as (Cone: matter+space halves, 2N) × (Z₁₁ structure, N) and R/Z₂ = 3/2 = spatial dimension / mirror involution. log₁₀(ρ_Λ) = −46.588 vs observed −46.59 — deviation **0.002 dex** (0.4%). The 10¹²² discrepancy is sharply reduced (a residual 2N signature of induced gravity is honestly noted, Remark 3.10.H.5.r).
 >
@@ -45,9 +45,9 @@ From **7 axioms** (A0–A6: the base Hilbert A0–A5 + the dimensional lexicon A
 
 > **ORIGINAL FIVE FLAGSHIP RESULTS:**
 >
-> 1. **Fine-Structure Constant 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone = 137.035999207** — agreement with the atom-interferometric measurement LKB-Rb 2020 (Morel et al., Rb-87): 1/α = 137.035999206 ± 11·10⁻⁹, at **5.4 ppt** (= 7% of the experimental σ; agreement with Berkeley-Cs 2018 (Parker et al., Cs-133): 1/α = 137.035999046 ± 27·10⁻⁹ is 1.17 ppb). The value 137.035999207 is obtained by substituting the tree-level α = π²/(N·φ¹⁰) on the right-hand side; the two-term predictive formula (without the α⁴·V_cone correction) gives 0.27 ppm. The most precise known closed-form value of α with zero continuous parameters. Theorem 2.4.A. Ontological decomposition (Theorem 2.4.A.0.5): the three terms correspond to the three components of Trinity geometry — Sphere, Cone, Point.
+> 1. **Fine-Structure Constant 1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone = 137.035999160359** (the single rule — the self-consistent solution of the equation, Lemmas 2.4.A.A/B) — **0.8σ from CODATA-2022** (137.035999177(21)); LKB-Rb 2020 (Morel et al., Rb-87): 137.035999206(11) — a recorded 4.2σ tension, the pre-registered PF-1 discriminator (mantissa 35881); Berkeley-Cs 2018 (Parker et al., Cs-133) — a 0.39 ppb residual after the structural shift (Th 2.5.U.1). The tree-substitution convention gives the recorded alternative reading 137.035999206741 (5.4 ppt vs LKB-Rb) — not the rule and not a confirmation variant. The two-term predictive formula (without the α⁴·V_cone correction) gives 0.27 ppm. A closed-form value of α with zero continuous parameters. Theorem 2.4.A. Ontological decomposition (Theorem 2.4.A.0.5): the three terms correspond to the three components of Trinity geometry — Sphere, Cone, Point.
 >
-> 2. **All 7 Clay Millennium Problems structurally closed in a single framework (with explicit scope statements)** through one principle: fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone = 13195. Yang-Mills, Riemann, Hodge, Navier-Stokes, BSD, P/NP, Poincaré (structural interpretation assuming Perelman 2003).
+> 2. **All 7 Clay Millennium Problems carry structural characterizations in a single framework — NOT solutions of the original Clay statements (explicit scope statements)** through one principle: fixed points of Z₂-involutions + Genesis flow E_τ + bounded phase volume V_cone = 13195. Yang-Mills, Riemann, Hodge, Navier-Stokes, BSD, P/NP, Poincaré (via Perelman 2003 — a lemma, not an independent solution).
 >
 > 3. **Sphere-Point-Cone Meta-Principle M = M_S · (1 + δ_C)** (Definition 3.0.5) unifies **9 classical irrational mathematical constants** — ζ(2), ζ(3), G, ζ(5), ζ(7), ζ(11), β(4), Glaisher A, Khinchin K — in a single algebraic basis ℤ[α, π, φ, e, N=11, F_n, L_n]. The asymptotic law ε(ζ(2k+1)) ∝ 2⁻⁽²ᵏ⁺¹⁾ (Lemma 1.9.22.B) **predicts** ζ(13), ζ(15) before verification — predictive structure, not post-hoc fitting. The broadest known unified structural representation of irrational constants.
 >
@@ -220,7 +220,7 @@ Physics, quantum field theory, and number theory — three projections of one Tr
 
 ## Clay Millennium Problems — single framework
 
-All 7 of 7 problems structurally closed by a single principle (Z₂ fixed-point + Genesis flow E_τ + bounded V_cone = 13195; explicit scope statements in the preprint — structural interpretation, not Clay-formulation proofs):
+All 7 of 7 problems carry structural characterizations by a single principle (Z₂ fixed-point + Genesis flow E_τ + bounded V_cone = 13195; explicit scope statements in the preprint — structural interpretation, not Clay-formulation proofs):
 
 | # | Problem | Theorem | Key result |
 |---|---|---|---|
@@ -235,9 +235,10 @@ All 7 of 7 problems structurally closed by a single principle (Z₂ fixed-point 
 ## Key results (teaser)
 
 ```
-1/α =  N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone  =  137.035999207
+1/α =  N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone  =  137.035999160359
         where V_cone = (N+1)·N·(N-1)² − (N-1)/2 = 13195
-        agreement with LKB-Rb 2020 (Morel et al.) to 5.4 ppt (zero continuous free parameters)
+        the single rule (self-consistent solution): 0.8σ from CODATA-2022
+        (zero continuous free parameters; LKB-Rb — a recorded 4.2σ tension)
 
 Ω_Λ = 1 − 1/π                              ≈ 0.6817
 Ω_m = 1/π                                  ≈ 0.3183

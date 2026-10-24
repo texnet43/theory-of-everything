@@ -200,24 +200,35 @@ F = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144] # F_n, Fibonacci numbers
 #   (2)  POINT   : -alpha^4 * V_cone      4-loop self-interaction (k=0)
 #                  (Absolute self-coupling through Cone phase volume)
 #
-# Result: 1/alpha = 137.035999207 under the declared convention
-# alpha := alpha_tree in the third term (Theorem 2.4.A box) — agreement
-# with LKB-Rb 2020 (Morel et al., atom-interferometric) at 5.4 ppt =
-# 7% of experimental sigma. The self-consistent reading of the same
-# equation (fixed point, Lemmas 2.4.A.A/B) gives 1/alpha = 137.035999160:
-# the choice of alpha in the alpha^4 term shifts the 4-loop answer by
-# 338 ppt (double reading stated in Lemma 2.4.A.A / Theorem 2.4.A).
+# Result: 1/alpha = 137.035999160358812 — the equation of Theorem 2.4.A is
+# solved SELF-CONSISTENTLY (single computation rule: the fixed point of
+# Lemmas 2.4.A.A/B, the unique root of P(alpha) = (A-B)*alpha - V_cone*alpha^5
+# - 1 on I = [0.005, 0.01]). Adversarial correction: the former entry mixed
+# two readings — the tree-substitution convention alpha := alpha_tree in the
+# alpha^4 term gave 137.035999206741 (5.4 ppt vs LKB-Rb 2020); it is RECORDED
+# as the alternative reading (inv_alpha_convention below), not the rule and
+# not a confirmation variant of PF-1. The fixed-point value stands at 0.79
+# sigma of CODATA-2022 (137.035999177(21)); LKB-Rb 2020 (137.035999206(11))
+# is a recorded 4.2-sigma tension — the pre-registered atom-clock/recoil
+# discrimination (PF-1) settles it at 10^-11 accuracy.
 #
 # Zero continuous free parameters. The quintet {N, pi, phi, e, i} is the
 # unique minimal set closed under the five operations of Z_N (Thm 2.5.G.1).
 alpha_tree  = pi**2 / (N * phi**10)                        # tree-level (0.03% error)
 V_cone      = (N+1)*N*(N-1)**2 - (N-1)//2                  # = 13195 for N=11
-inv_alpha_3term = (
+# Single computation rule (Lemmas 2.4.A.A/B): the 3-term equation is solved
+# self-consistently — the unique fixed point on I = [0.005, 0.01] (Picard).
+_x_fp = pi**2 / (N * phi**10)
+for _it in range(6):
+    _x_fp = 1.0 / (N * phi**10 / pi**2 - e**4 * phi**2 / (pi**5 * N) - V_cone * _x_fp**4)
+inv_alpha_3term = _x_fp**-1                                # fixed point (canonical)
+# Alternative reading (recorded, NOT the rule): tree-substitution convention
+inv_alpha_convention = (
     N * phi**10 / pi**2                                    # tree
     - e**4 * phi**2 / (pi**5 * N)                          # Z_2-mirror (Thm 2.4.2)
     - alpha_tree**4 * V_cone                               # cone (Thm 2.4.A)
 )
-alpha_Trinity    = 1.0 / inv_alpha_3term                       # 3-term structural alpha
+alpha_Trinity    = 1.0 / inv_alpha_3term                       # 3-term structural alpha (fixed point)
 alpha_CODATA = 1 / 137.035999084                           # CODATA 2018 central value
 err_alpha    = abs(alpha_Trinity - alpha_CODATA) / alpha_CODATA * 100
 
@@ -274,14 +285,14 @@ def _alpha_polynomial_check():
     for _ in range(6):
         x_fp = 1.0 / (AmB - V_cone * x_fp**4)
     P_at_fp = P(x_fp)                             # ~0 (root, machine precision)
-    P_at_alpha = P(a)                             # ~0 (tree-convention alpha, 338 ppt away)
+    P_at_alpha = P(a)                             # ~0 (alpha_Trinity = the fixed point)
     P_deriv_at_fp = AmB - 5 * V_cone * x_fp**4    # P'(α) > 0 on I ⇒ monotone there
     P_at_Ilo = P(0.005)                           # < 0
     P_at_Ihi = P(0.01)                            # > 0
     return {
         "alpha_fp":             x_fp,                  # fixed point (self-consistent)
         "P(alpha_fp)":          P_at_fp,               # ~0 (root)
-        "P(alpha_Trinity)":     P_at_alpha,            # ~0 (tree-convention alpha)
+        "P(alpha_Trinity)":     P_at_alpha,            # ~0 (alpha_Trinity = fixed point)
         "P'(alpha_fp)":         P_deriv_at_fp,         # > 0 on I (monotonicity)
         "P(0.005)":             P_at_Ilo,              # < 0
         "P(0.01)":              P_at_Ihi,              # > 0
@@ -340,7 +351,7 @@ _lemma_B = _alpha_banach_check()
 # Honest self-checks: the polynomial must vanish AT the claimed roots —
 # monotonicity and sign change alone do not certify a root.
 assert abs(_lemma_A["P(alpha_fp)"]) < 1e-11, "Lemma 2.4.A.A: alpha_fp is not a root of P"
-assert abs(_lemma_A["P(alpha_Trinity)"]) < 1e-9, "Lemma 2.4.A.A: tree-convention alpha not at root"
+assert abs(_lemma_A["P(alpha_Trinity)"]) < 1e-9, "Lemma 2.4.A.A: alpha_Trinity (fixed point) not at root"
 assert _lemma_A["unique_root_in_I"], "Lemma 2.4.A.A: unique root in I must hold"
 assert _lemma_B["image_inside_I"], "Lemma 2.4.A.B: image invariance T(I) subset I must hold"
 assert _lemma_B["is_uniform_contraction"], "Lemma 2.4.A.B: uniform contraction q<1 must hold"
@@ -787,7 +798,7 @@ def _xxxvi19_parameter_map():
     """1.9.B.2 — Continuous-class parameter map {W_*, ρ_*, α_*}
     expressed via the Trinity quintet {N, π, φ, e}.
     Result at N=11:
-      W_* = 4.04e44 Hz, α_*^(-1) = 137.035999207, ρ_*/ρ_crit ~ H_0/W_* ~ 1e-62.
+      W_* = 4.04e44 Hz, α_*^(-1) = 137.035999160358812, ρ_*/ρ_crit ~ H_0/W_* ~ 1e-62.
     Demonstrates: 3 'free parameters' of any continuous theory of
     the universal class become DERIVED from the Trinity quintet."""
     omega_max = 2 * sin(pi * (N // 2) / N)
@@ -812,8 +823,8 @@ def _xxxvi19_parameter_map():
         "rho_star_kg_m3":           rho_star,
         "rho_star_over_rho_crit":   rho_ratio,
         "alpha_inv_Trinity":        alpha_inv_Trinity,
-        "alpha_inv_target":         137.035999207,
-        "alpha_inv_diff":           alpha_inv_Trinity - 137.035999207,
+        "alpha_inv_target":         137.035999160358812,
+        "alpha_inv_diff":           alpha_inv_Trinity - 137.035999160358812,
         "all_three_derived":        True,  # not free parameters
         "quintet":                  "{N=11, pi, phi, e}",
     }
@@ -1193,12 +1204,12 @@ _lB_supTp   = _lemma_B["sup_I |T'(x)|"]
 _lB_iscon   = _lemma_B["is_uniform_contraction"]
 _lB_iters   = _lemma_B["Picard_iterates"]
 _lB_conv    = _lemma_B["|alpha_5 - alpha*|"]
-_lA_dppt    = abs(1.0 / _lA_fp - inv_alpha_3term) / inv_alpha_3term * 1e12
+_lA_dppt    = abs(1.0 / _lA_fp - inv_alpha_convention) / inv_alpha_convention * 1e12
 
 print("  Lemma 2.4.A.A (uniqueness of the physical alpha root on I = [0.005, 0.01]):")
 print(f"    P(alpha) = (A-B)*alpha - V_cone*alpha^5 - 1  (Theorem 2.4.A times alpha)")
 print(f"    P(alpha_fp)      = {_lA_P:.3e}  (~0, root; self-consistent 1/alpha_fp = {1.0/_lA_fp:.12f})")
-print(f"    P(alpha_Trinity) = {_lA_PT:.3e}  (~0; tree-convention 1/alpha = {inv_alpha_3term:.12f})")
+print(f"    P(alpha_Trinity) = {_lA_PT:.3e}  (~0; alpha_Trinity = the fixed point = the single rule)")
 print(f"    P(0.005) = {_lA_P0:.6f} < 0 < P(0.01) = {_lA_P1:.6f}  (sign change on I)")
 print( "    Strict monotonicity on I + Bolzano-Cauchy => unique root in I:")
 print(f"    monotone_on_I = {_lA_mono}, unique_root_in_I = {_lA_unique}  PASS")
@@ -1217,8 +1228,9 @@ print(f"    (iii) Picard convergence from tree-level alpha_0 = pi^2/(N*phi^10) i
 for _i, _v in enumerate(_lB_iters):
     print(f"      alpha_{_i} = {_v:.15f}")
 print(f"    |alpha_5 - alpha_fp| = {_lB_conv:.3e}  (Picard limit = fixed point)")
-print(f"    dual reading: self-consistent 1/alpha = {1.0/_lA_fp:.12f} vs tree-convention "
-      f"{inv_alpha_3term:.12f}; delta = {_lA_dppt:.0f} ppt (0.34 ppb)")
+print(f"    single rule: self-consistent fixed point 1/alpha = {inv_alpha_3term:.12f}; "
+      f"tree-convention reading (recorded alternative, not the rule) = "
+      f"{inv_alpha_convention:.12f}; delta = {_lA_dppt:.0f} ppt (0.34 ppb)")
 print(f"    => Banach FPT: existence + uniqueness + geometric convergence on I.")
 print()
 
@@ -1620,12 +1632,12 @@ constants = [
     # Each formula: analytical expression via Quintet + eigenfrequencies
     # Physical interpretation: tree-level = main physical mechanism
 
-    # 1/alpha: 3-term structural formula (Theorem 2.4.A, Spectral Cone)
+    # 1/alpha: 3-term structural equation (Theorem 2.4.A, Spectral Cone)
     #   (0) tree   +  (1) Z_2-mirror  +  (2) conic convolution with V_cone = 13195
-    # Result: 137.03599920674 (5.4 ppt = 7% of sigma vs Berkeley Cs 2020)
-    ("1/alpha (Cone)",    137.035999206,   lambda _: (N*phi**10/pi**2
-                                                      - e**4*phi**2/(pi**5*N)
-                                                      - (pi**2/(N*phi**10))**4 * ((N+1)*N*(N-1)**2 - (N-1)//2))),
+    # Single rule: solved self-consistently (fixed point, Lemmas 2.4.A.A/B)
+    # => 137.035999160359 (0.79 sigma vs CODATA-2022; LKB-Rb 2020 recorded 4.2-sigma tension).
+    # Tree-convention reading (recorded alternative): 137.035999206741 (5.4 ppt vs LKB-Rb).
+    ("1/alpha (Cone)",    137.035999206,   lambda _: inv_alpha_3term),
     # mp/mn: 1 - 1/(C(4,2)*N^2) = scale set by T_2=66
     ("mp/mn = 1-1/726",   0.998623478,     lambda _: 1 - 1/(comb(4,2) * N**2)),
     # Muon/electron: C(8,4)*TEMPERATURE - GEOMETRY + alpha-corrections
@@ -1756,7 +1768,7 @@ for _nm, _tg, _fm in constants:
         _n_exact += 1
     else:
         _n_alphaseries += 1
-print(f"    EXACT (genuine derivation):     {_n_exact}")
+print(f"    EXACT (zero-coeff. form; 9 genuine incl. flagship + Koide anchor): {_n_exact}")
 print(f"    alpha-SERIES (structural fit):  {_n_alphaseries}")
 print(f"    OPERATOR-RATIO:                 {_n_opratio}")
 print(f"    TOTAL:                          {_n_exact + _n_alphaseries + _n_opratio}")
@@ -2486,7 +2498,7 @@ print(f"")
 #   the Universe is set by the same 1/alpha that fixes microscopic
 #   atomic spectra (Theorem 2.4.A).
 _T_universe_yr   = 13.797e9                 # Planck 2018, central value
-_alpha_inv       = 137.035999207            # 1/alpha (2.4.A)
+_alpha_inv       = 137.035999160358812            # 1/alpha (2.4.A)
 _phi             = (1 + 5**0.5) / 2         # golden ratio
 _phi_minus2      = 1 / _phi**2              # = 1 - 1/phi = 0.381966...
 _exponent        = _alpha_inv + _phi_minus2 # 1/alpha + 1/phi^2 (Z_2 golden mirror)
@@ -2781,7 +2793,7 @@ assert _rem_s_ok, "Remark 1.10.0.28.5.s: geometric h=1 via reduced forms"
 
 # Remark 1.10.L.VI.1.r: Koide formula Q=2/3 <-> 45-degree angle geometric interpretation
 _phi_koide = (1 + np.sqrt(5)) / 2
-_alpha_koide = 1 / 137.035999207
+_alpha_koide = 1 / 137.035999160358812
 _v_koide = 246220.0  # MeV
 # Trinity masses from phi-ladder with alpha corrections (Corollary 1.10.L.VI.1.b)
 _m_tau_k = _v_koide * _alpha_koide * (1 - _alpha_koide)
@@ -3431,7 +3443,7 @@ print("\n  2.5 grammar census (assembled machine block)")
 _mc_ratio = avg_rand / mean_err
 print(f"    basis: {len(_basis_u)} dimensionless atoms, operations {{*, /, +, -}}")
 print(f"    depth-2 exhaustive sweep: {len(_E_u)} expressions (Rem 2.4.AD.2.u)")
-print(f"    depth-3 hashed sweep: ~8.6e7 combinations (Rem 2.4.AD.2.v)")
+print(f"    depth-3 hashed sweep: ~8.5e7 combinations (Rem 2.4.AD.2.v)")
 print(f"    Monte-Carlo control (seed 42, 1000 formulas/target): "
       f"random/Trinity = {_mc_ratio:.0f}x (recorded 4469)")
 print(f"    FDR discipline: >= 14 of 56 predictions at > 5 sigma (25% control)")
@@ -4678,7 +4690,7 @@ print(f"    SM dimension = N+1: {'PASS' if dim_SM == N + 1 else 'FAIL'}")
 print("\n  5.1.D.5.X  VACUUM ALIGNMENT FOR SU(11) -> SU(6) x SU(5) x U(1)")
 
 # Trinity-derived coefficients (Theorem 5.1.D.4)
-alpha_value = 1.0 / 137.035999207
+alpha_value = 1.0 / 137.035999160358812
 phi_golden = (1 + 5**0.5) / 2
 lambda_a_trinity = alpha_value * phi_golden**10 / N             # ~ 0.0815
 lambda_b_trinity = alpha_value**2 * pi**2 / (2 * N**2)          # ~ 2.17e-6
@@ -4793,7 +4805,7 @@ alpha_GUT = g_GUT_sq / (4 * np.pi)
 print(f"    alpha_GUT = g^2/(4*pi) = 1/F_5^2 = {alpha_GUT:.4f}  (loop expansion parameter at M_GUT)")
 assert abs(alpha_GUT - 1/25) < 1e-12, "alpha_GUT must equal 1/25 exactly"
 assert alpha_GUT < 1, "loop expansion parameter must be < 1 for perturbativity"
-alpha_val_num = 1 / 137.035999207
+alpha_val_num = 1 / 137.035999160358812
 
 # Trinity prediction lambda_H(M_EW)
 phi_val = (1 + np.sqrt(5)) / 2
@@ -4928,7 +4940,7 @@ print(f"    [30] 4N/pi^2 = {_fsum_bn:.3f}; ITER: standard beta = {_fsum_bstd:.2f
       f"Trinity beta = {_fsum_btri:.2f}%, ratio {_fsum_bn/2.8:.3f}: "
       f"{'PASS' if _fsum_troy_ok else 'FAIL'}")
 # [32] BEC T_c: standard prefactor form + (1+alpha*N) factor
-_fsum_bec = 1 + (1/137.035999207)*N
+_fsum_bec = 1 + (1/137.035999160358812)*N
 print(f"    [32] T_c = (2*pi*hbar^2/(m*k_B))*(n/zeta(3/2))^(2/3)*(1+alpha*N), "
       f"(1+alpha*N) = {_fsum_bec:.4f} vs 1.080: "
       f"{'PASS' if abs(_fsum_bec - 1.080) < 5e-4 else 'FAIL'}")
@@ -4937,19 +4949,25 @@ _fsum_mnp = abs(726/725 - 1.00137841933)/1.00137841933
 print(f"    [13] 726/725 dev from PDG 1.00137841933 = {_fsum_mnp:.2e} (recorded ~9e-7): "
       f"{'PASS' if 8e-7 < _fsum_mnp < 1e-6 else 'FAIL'}")
 # [14] r direction vs upper limit
-_fsum_r = 75*(1/137.035999207)**2
+_fsum_r = 75*(1/137.035999160358812)**2
 print(f"    [14] r = 75*alpha^2 = {_fsum_r:.5f} < 0.036 (recorded: below the limit): "
       f"{'PASS' if _fsum_r < 0.036 and abs(_fsum_r - 0.004) < 1e-4 else 'FAIL'}")
 
 # --- IX.7F.3 PF-1..PF-7 confirmation/falsification thresholds ---
 print("\n  IX.7F.3  PF-1..PF-7 confirmation/falsification threshold checks")
-_alpha_w4 = 1/137.035999207
-# PF-1: fundamental constant, Rb-87 reference (shift-free atom, Th 2.5.U.1)
-_pf1_shift_cs = 137.035999206741195 - 1.684e-7
-_pf1_gap = abs(_pf1_shift_cs - 137.035999046)/137.035999206741195*1e9
+_alpha_w4 = 1/inv_alpha_3term
+# PF-1: fundamental constant, Rb-87 reference (shift-free atom, Th 2.5.U.1).
+# Single rule: fundamental = self-consistent fixed point (Th 2.4.A).
+# Pre-registered prediction: 1/alpha = 137.035999160358812 (mantissa digits 35881);
+# the tree-convention reading ...206741 (74119) is a recorded alternative, NOT a
+# confirmation variant. LKB-Rb 2020 (...206) is a recorded 4.2-sigma tension;
+# the atom-clock/recoil discrimination at 1e-11 settles it.
+_pf1_shift_cs = inv_alpha_3term - 1.684e-7
+_pf1_gap = abs(_pf1_shift_cs - 137.035999046)/inv_alpha_3term*1e9
 print(f"    PF-1: shift-model Cs = 1/alpha(fund) - 1.684e-7 = {_pf1_shift_cs:.9f}; "
-      f"gap vs Berkeley-Cs 2018 = {_pf1_gap:.3f} ppb (recorded 0.06): "
-      f"{'PASS' if abs(_pf1_gap - 0.06) < 0.01 else 'FAIL'}")
+      f"gap vs Berkeley-Cs 2018 = {_pf1_gap:.3f} ppb (recorded 0.39; the shift-model "
+      f"test is the Rb<->Cs difference: structural -1.684e-7 vs measured -1.60e-7): "
+      f"{'PASS' if abs(_pf1_gap - 0.39) < 0.01 else 'FAIL'}")
 # PF-2: Rb/Cs shift magnitude matches the discrimination resolution claim
 print(f"    PF-2: shift 1.684e-7 vs resolution 10^-18: distinguishable: "
       f"{'PASS' if 1.684e-7 > 5e-18*5 else 'FAIL'}")
@@ -6730,26 +6748,40 @@ print(f"                struct = {_sin2_t13_struct:.6f} vs NuFIT 5.2 = {_sin2_t1
 print(f"                err    = {_err_t13:.3e}")
 assert _err_t13 < 1e-2, "2.8.G.1 sin^2(theta_13) = 3*alpha"
 
-# Theorem 2.8.G.2: sin^2(theta_23) = phi^2 / (phi + L_2)
+# Theorem 2.8.G.2: sin^2(theta_23) — PRIMARY form phi^2/(phi+L_2) (adversarial
+# correction: one primary form selected by accuracy vs modern global fits;
+# the e^4*pi*phi^3/N^3 form is recorded as second, NuFIT 4.0-era reading)
 _sin2_t23_struct = (_phi_lxx + 1) / (_phi_lxx + _L2)
-_sin2_t23_obs = 0.572   # NuFIT 5.2, normal ordering
+_sin2_t23_obs = 0.566     # NuFIT 6.0 (2024), normal ordering
+_sin2_t23_obs_52 = 0.572  # NuFIT 5.2 (2022), normal ordering
+_sin2_t23_obs_io = 0.561  # NuFIT 6.0 (2024), inverted ordering (upper octant both)
 _err_t23 = abs(_sin2_t23_struct - _sin2_t23_obs) / _sin2_t23_obs
-print(f"    2.8.G.2 sin^2(theta_23) = (phi+1)/(phi+L_2) = phi^2/(phi+L_2)")
-print(f"                struct = {_sin2_t23_struct:.6f} vs NuFIT 5.2 = {_sin2_t23_obs}")
-print(f"                err    = {_err_t23:.3e}")
+_sin2_t23_second = math.e**4 * math.pi * _phi_lxx**3 / _N_lxx**3
+print(f"    2.8.G.2 sin^2(theta_23) = (phi+1)/(phi+L_2) = phi^2/(phi+L_2)  (PRIMARY)")
+print(f"                struct = {_sin2_t23_struct:.6f} vs NuFIT 6.0 NO = {_sin2_t23_obs} "
+      f"(err {_err_t23:.3e}); NuFIT 5.2 NO = {_sin2_t23_obs_52} (err "
+      f"{abs(_sin2_t23_struct-_sin2_t23_obs_52)/_sin2_t23_obs_52:.3e}); "
+      f"NuFIT 6.0 IO = {_sin2_t23_obs_io} (upper octant both)")
+print(f"                second form e^4*pi*phi^3/N^3 = {_sin2_t23_second:.4f} "
+      f"(recorded, NuFIT 4.0-era lower-octant reading)")
 assert _err_t23 < 2e-2, "2.8.G.2 sin^2(theta_23) = phi^2/(phi+L_2)"
 
 # Corollary 2.8.G.3.1: Jarlskog invariant J^q from Wolfenstein components
 _A_wolf = 5/6
 _lambda_wolf = _m_lxx.pi / 14
-_delta_CP_q = 5 * _m_lxx.pi / 14
+# primary CP phase: Theorem 2.8.4 (adversarial correction: ONE primary reading;
+# the 5pi/14 form of Theorem 2.4.Z.1 is a geometric representation, recorded variant)
+_delta_CP_q = (1/_phi_lxx**2) / (2*_m_lxx.sin(_m_lxx.pi/_N_lxx))**2 \
+              - alpha_Trinity + 4*alpha_Trinity**2 + 3*alpha_Trinity**3*_N_lxx
 _eta_q = _m_lxx.sin(_delta_CP_q) / _phi_lxx**2
 _J_q_struct = _A_wolf**2 * _lambda_wolf**6 * _eta_q
+_J_q_variant = _A_wolf**2 * _lambda_wolf**6 * (_m_lxx.sin(5*_m_lxx.pi/14) / _phi_lxx**2)
 _J_q_obs = 3.18e-5   # PDG 2024
 _err_J = abs(_J_q_struct - _J_q_obs) / _J_q_obs
 print(f"    2.8.G.3.1 Jarlskog J^q = A^2*lambda^6*eta (CKM CP-violation)")
-print(f"                struct = {_J_q_struct:.5e} vs PDG = {_J_q_obs:.3e}")
-print(f"                err    = {_err_J:.3e}")
+print(f"                primary delta (Th 2.8.4) = {_delta_CP_q:.5f} rad; "
+      f"struct = {_J_q_struct:.5e} vs PDG = {_J_q_obs:.3e}")
+print(f"                err    = {_err_J:.3e}  (variant 5pi/14: {_J_q_variant:.5e}, recorded)")
 assert _err_J < 5e-2, "2.8.G.3.1 Jarlskog J^q from Wolfenstein"
 
 # Corollary 2.8.G.3.2: Sum m_nu minimum (normal hierarchy, m_1 = 0)
@@ -8241,7 +8273,7 @@ print(f"    Step 3: G_cr = 12/(N^2-1) = {_G_cr_formula:.4f} "
 assert _identity_sum_ok and _Gcr_ok
 
 # --- Step 4: G = alpha*V_cone >> G_cr (condensate guaranteed) ---
-_alpha_dm = 1.0 / 137.035999207
+_alpha_dm = 1.0 / 137.035999160358812
 _V_cone_dm = 13195
 _G_full = _alpha_dm * _V_cone_dm
 _condensate_guaranteed = _G_full > 100 * _G_cr_formula   # three orders of magnitude
@@ -8333,7 +8365,7 @@ print("    inflation shape from alpha; amplitude fixes scalaron scale; f_NL unob
 banner("Theorem 5.1.D.7.8 (executed two-loop projection)")
 import sympy as _sp
 _pi = _sp.pi
-_alpha = _sp.Float(1) / _sp.Float('137.035999207')
+_alpha = _sp.Float(1) / _sp.Float('137.035999160358812')
 _phi = (1 + _sp.sqrt(5)) / 2
 _Ng = _sp.Integer(11)
 
@@ -8722,9 +8754,14 @@ def experiment_2_alpha_pslq():
       1/α = N·φ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone
       ⟺ 1·(1/α) − 1·(N·φ¹⁰/π²) + 1·(e⁴·φ²/(π⁵·N)) + 1·(α⁴·V_cone) = 0
 
-    ВАЖНО. α-формула Триединства даёт СОГЛАСИЕ с экспериментом на
-    точности 5.4 ppt ≈ 7.6·10⁻⁸ (Berkeley-Cs 2020). Поэтому PSLQ
-    с tol < 7.6·10⁻⁸ НЕ должен находить точного соотношения — это
+    ВАЖНО. α-формула Триединства (ЕДИНОЕ ПРАВИЛО: самосогласованное
+    решение — неподвижная точка, Леммы 2.4.A.A/B) даёт
+    1/α = 137.035999160359; отклонение от CODATA-2018 = 7.6·10⁻⁸
+    (0.55 ppb; от CODATA-2022 = 1.7·10⁻⁸ = 0.8σ; LKB-Rb 2020 —
+    записанное напряжение 4.2σ, дискриминатор ПФ-1). Здесь член A3
+    вычислен при измеренном α (стандартная петлевая практика) —
+    численно совпадает с неподвижной точкой. Поэтому PSLQ
+    с tol < 10⁻⁸ НЕ должен находить точного соотношения — это
     корректное поведение алгоритма. Соотношение появляется при
     tol соответствующей точности теоретического предсказания.
     """
@@ -8752,7 +8789,8 @@ def experiment_2_alpha_pslq():
     print(f"  Эксперимент: 1/α (CODATA-2018)        = {A0}")
     print(f"  Разность Δ = |Trinity − CODATA|       = {delta_trinity_codata}")
     print(f"  Относительное отклонение              = {float(delta_trinity_codata / A0):.2e}")
-    print(f"  Заявленная точность Trinity-формулы   = ~7.6·10⁻⁸ (5.4 ppt)")
+    print(f"  Заявленная точность Trinity-формулы   = 7.6·10⁻⁸ от CODATA-2018 "
+          f"(единое правило: неподвижная точка; 0.8σ от CODATA-2022)")
 
     # PSLQ при разных tol
     basis = [A0, A1, A2, A3]
@@ -9342,7 +9380,7 @@ assert _sv_eff_b < 1e-26
 print(f"    n_chibar/n_chi = {100*_sup_b:.1f}%; sigma_v_eff(bbbar) = {_sv_eff_b:.2e} cm3/s < 1e-26: PASS")
 
 # (4) leptogenesis window (Davidson-Ibarra) on the theory's own M_R
-_alpha_b = 1 / 137.035999207
+_alpha_b = 1 / 137.035999160358812
 _MR_b = _alpha_b**4 * 11 * 1.2209e19
 _m3_b, _v_b = 0.05e-9, 174.0
 _eps_b = (3 / (16 * _pi_pn)) * _MR_b * _m3_b / _v_b**2
@@ -9390,7 +9428,7 @@ print("    Remark 2.4.AF.1.r (DM selection): ALL CHECKS PASS")
 banner("Remark 2.1.A.7.1.r (closed alpha-scalaron chain; two R^2 coefficients)")
 
 # (1) algebraic identity r = 75*alpha^2 = 12/N_e^2
-_al_sc = 1 / 137.035999207
+_al_sc = 1 / 137.035999160358812
 _Ne_sc = 2 / (5 * _al_sc)
 _r_sc = 75 * _al_sc**2
 assert abs(_Ne_sc - 54.81) < 0.01
@@ -9461,7 +9499,7 @@ print(f"    inflation branch: M_sc/M_P = {_Msc46:.3e} (canonical r = 0.00352 der
       "PASS" if abs(_Msc46 - 1.20808e-5) < 5e-9 else "    inflation branch: FAIL")
 # the hunt: ln(m_P/m_e) has no depth-2 identity in the exponent grammar
 _lnpme = math.log(_m_P46 / _m_e46)
-_best = 3 * (1 / 137.035999207 + 1 / ((1 + math.sqrt(5)) / 2)**2) / 8
+_best = 3 * (1 / 137.035999160358812 + 1 / ((1 + math.sqrt(5)) / 2)**2) / 8
 print(f"    hunt: ln(m_P/m_e) = {_lnpme:.4f}; best 3(1/a + 1/phi^2)/8 = {_best:.4f} "
       f"(+{(_best/_lnpme-1)*100:.3f}%) — not an identity: "
       "PASS" if abs(_best / _lnpme - 1) > 1e-4 else "    hunt: FAIL")
@@ -9484,7 +9522,7 @@ print("    normalization: (a*phi)^2/phi^10 = a^2/phi^8 exact (span reading):",
       "PASS" if abs((_a_tr189 * _p189)**2 / _p189**10
                     - _a_tr189**2 / _p189**8) < 1e-18 else "FAIL")
 _mu189 = 5.0 * 0.939 / 5.939
-_sig189 = (1 / 137.035999207)**2 * _mu189**2 / (
+_sig189 = (1 / 137.035999160358812)**2 * _mu189**2 / (
     4 * math.pi * 246.22**4 * _p189**8) * 0.3894e-27
 print(f"    sigma_SI = {_sig189:.2e} cm^2 (recorded ~6e-45, XENONnT frontier):",
       "PASS" if abs(_sig189 - 6.0e-45) / 6.0e-45 < 0.05 else "FAIL")
@@ -10367,7 +10405,7 @@ banner("Remark 2.4.AD.2.v (exhaustive depth-3 grammar search: OPEN deepened)")
 # depth-2 value set from the Theorem 2.4.AD.2.u block, reused
 _E2_v = set(_E_u)
 _B_v = set(_basis_u.values())
-assert len(_E2_v) == 4564 and len(_B_v) == 48
+assert len(_E2_v) == 4545 and len(_B_v) == 48  # 4564 under the convention reading; 4545 under the single rule (fixed-point alpha)
 _space_v = 4 * (len(_E2_v) ** 2 + 2 * len(_E2_v) * 64)
 assert 8.0e7 < _space_v < 9.0e7
 
@@ -10402,7 +10440,7 @@ print("    Remark 2.4.AD.2.v (depth-3 search): ALL CHECKS PASS")
 # ---------------------------------------------------------------------------
 banner("Remark 2.4.AD.2.w (M_R(k) profile: values, ratios, leptogenesis window)")
 
-_alpha_w = 1/137.035999207
+_alpha_w = 1/137.035999160358812
 _v_EW = 246.22
 _w_om = {k: 2 * math.sin(math.pi * k / N) for k in range(1, 4)}
 # phi-ladder masses (GeV): Theorem 1.10.L.VI.2
@@ -10495,7 +10533,7 @@ print(f"    VR1 rough-form cross-check (Omega_L = 1 - 1/pi): {_vr_rough:.4f} —
       f"inside the recorded 1-sigma window: "
       f"{'PASS' if abs(_vr_rough - 2.172) < 0.073 else 'FAIL'} (two readings consistent)")
 # Saha recombination anchor on the structural eta_B (item (4) of Rem 2.4.I.1.r)
-_vr_eta = 3*math.pi**2*(1/137.035999207)**5
+_vr_eta = 3*math.pi**2*(1/137.035999160358812)**5
 _vr_eta_planck = 6.11e-10
 _kB_ = 1.380649e-23; _me_ = 9.1093837e-31; _hbar_ = 1.054571817e-34
 _B_ = 13.6*1.602176634e-19; _ng0_ = 410.7
@@ -10564,7 +10602,7 @@ def _pb_zstar(eta, Om, H0):
     tau = np.concatenate([[0], np.cumsum(0.5*(dtau[1:]+dtau[:-1])*np.diff(zg))])
     return zg[np.argmax(dtau*np.exp(-tau))]
 
-_pb_eta = 3*math.pi**2*(1/137.035999207)**5
+_pb_eta = 3*math.pi**2*(1/137.035999160358812)**5
 _pb_zp = _pb_zstar(6.11e-10, 0.3153, 67.36)
 _pb_zst = _pb_zstar(_pb_eta, 1/math.pi, 67.4)
 _pb_lag = 1378.8 - _pb_zst
@@ -10827,7 +10865,7 @@ print(f"    Bare one-loop scalaron: M_1loop = M_P/sqrt(12 a2) = 2 pi/sqrt(3) M_P
       f"{mp.nstr(_M_1l_41, 20)} M_P (closed form exact): PASS")
 
 # (4) the two gaps: mass gap ~10^5.45; the eleven orders sit in the COEFFICIENT ratio
-_al_41 = 1 / mp.mpf('137.035999207')
+_al_41 = 1 / mp.mpf('137.035999160358812')
 _M_sc41 = (2 * mp.pi ** 2 * mp.mpf('2.1e-9') * 75 * _al_41 ** 2) ** mp.mpf('0.5')
 _gap_m_41 = _M_1l_41 / _M_sc41
 _gap_c_41 = _a2_1l_41 / (1 / (12 * mp.pi ** 2 * mp.mpf('2.1e-9') * 75 * _al_41 ** 2))
@@ -11690,7 +11728,7 @@ assert _rk_min == 440 and _rk_enr == 561
 print("    capacity: minimal rank 440 (kernel 121, inside Lam^4) -> enriched rank 561 "
       "(kernel 0): rank bound dissolves: PASS")
 # (4) Q-2 verdict: the canon kappa3 portal cannot open a GUT-VEV in Phi11^(6bar,1)
-_alpha112 = 1 / 137.035999207
+_alpha112 = 1 / 137.035999160358812
 _phi112 = (1 + 5 ** 0.5) / 2
 _MG112 = 1.2209e19 / _phi112 ** 15
 _v1 = 8.1 * _MG112
@@ -11752,7 +11790,7 @@ print("    Remark 2.8.1.t (Stage-2 minimum): ALL CHECKS PASS")
 # ---------------------------------------------------------------------------
 banner("Remark 2.1.A.5.r (inflation package from the potential itself)")
 _mp70 = _mp.mp; _mp70.dps = 30
-_al70 = _mp70.mpf(1)/_mp70.mpf('137.035999207')
+_al70 = _mp70.mpf(1)/_mp70.mpf('137.035999160358812')
 _Ne70 = 2/(5*_al70)
 assert abs(_Ne70 - 54.81) < 0.01
 def _V70x(x): return _mp70.mpf(3)/4*(1 - _mp70.e**(-x))**2
@@ -12491,7 +12529,7 @@ for _a in (_g79, _gt79, np.pi / 11, 1 - _g79, 2 * _g79, _g79 ** 2, np.sqrt(_g79)
 assert _hits79 <= 2
 print(f"    V2 verdict: gamma = {_g79:.6f} and 1 - pi/N = {_gt79:.6f} carry NO simple identity")
 print("    (12x16 brute force: only trivial self-ratios) - DIFFERENT boundary objects: PASS")
-_a79 = 1 / 137.035999207
+_a79 = 1 / 137.035999160358812
 _le79 = _a79 ** 4 * 13195
 assert _le79 < 16 * np.pi / 1e5
 _w79 = np.array([2 * math.sin(math.pi * min(k, 11 - k) / 11) for k in range(1, 11)])
@@ -12565,7 +12603,7 @@ assert 34 % 5 == 4 and 39 % 5 == 4
 print("    any continuation (levels 34, 39) stays on the boundary (4 = pi) — the ladder")
 print("    cannot re-enter the content: 'nothing beyond the form' (Rem 1.10.2.9.y): PASS")
 _phi81 = (1 + 5 ** 0.5) / 2
-_a81 = 1 / 137.035999207
+_a81 = 1 / 137.035999160358812
 _v81 = 246220.0  # MeV
 _m81 = [_v81 * _a81 * (1 - _a81),
         _v81 * _a81 * _phi81 ** (-6) * _phi81 ** (1 / 11) * (1 + _a81),
@@ -12607,7 +12645,7 @@ print(f"    the resonance-averaged candidate = {mp.nstr(_res82, 10)} — no clos
 print("    nearest simple form (N/(N-1))^3 = 1.331 is 4.5e-4 away — outside the basis: PASS")
 print("    the isotropic candidate 1 is the degenerate reading, contradicted by the recorded")
 print("    non-degenerate moments — outside the basis: PASS")
-_a82 = 1 / 137.035999207
+_a82 = 1 / 137.035999160358812
 _lam82 = _a82 ** 4 * 13195
 assert abs(_lam82 - 3.74e-5) / 3.74e-5 < 0.01
 print(f"    the base coupling reproduces the recorded verdict: lambda = alpha^4 V_cone = {_lam82:.3e}: PASS")
@@ -12769,7 +12807,7 @@ banner("Remark 2.4.AE.2.ak (the interacting functional: the tadpole)")
 _mu85 = 1 / _phi84
 _C85 = lambda t: np.exp(-_mu85 * abs(t)) / (2 * _phi84)
 assert abs(_C85(0.0) - _mu85 / 2) < 1e-15
-_lam85 = (1 / 137.035999207) ** 4 * 13195 * 3
+_lam85 = (1 / 137.035999160358812) ** 4 * 13195 * 3
 print("    the interacting functional: S = S_mu + (lambda_eff/4) int Phi^4 with lambda_eff =")
 print(f"    (T2/T1) alpha^4 V_cone = {_lam85:.3e} (the UNIQUE selection of Rem 1.10.2.9.ab) — the")
 print("    interaction is the recorded contact, not an ansatz; lambda > 0 bounds S from below: PASS")
@@ -12994,7 +13032,7 @@ _mid89 = _c189 + 2*_c289
 assert abs(_K1089[0,0] - _edge89) < 1e-12 and abs(_K1089[4,4] - _mid89) < 1e-12
 print(f"    K10 diagonal: edge {_K1089[0,0]:.6f} = tanh + 2b - gamma; interior {_K1089[4,4]:.6f} =")
 print("    tanh + 2b (machine, exact to 1e-12) — the three-term structure at the diagonal: PASS")
-_lam89eff = 3*(1/137.035999207)**4*13195
+_lam89eff = 3*(1/137.035999160358812)**4*13195
 _S89 = (1/(2*_phi84)) * 10 + (_lam89eff/4) * 1.0
 print(f"    the tensor lift: 10 Sym^2 copies x (the free measure of mass 1/phi, Rem .aj) + ONE recorded")
 print(f"    contact on the sum (lambda_eff = {_lam89eff:.3e}); the trace sector: kappa_T = 2 kappa (derived,")
@@ -13191,7 +13229,7 @@ print("    Remark 2.4.BA.1.u (all 2-to-2 channels): ALL CHECKS PASS")
 # chi = Lambda_QCD^4 from the recorded 2.9.D; the sector gap = omega_1^2/2.
 # ---------------------------------------------------------------------------
 banner("Remark 2.9.VT.1.s (the E(theta) functional: scale and gap)")
-_L95 = np.pi * 0.510998950e-3 / (1 / 137.035999207)
+_L95 = np.pi * 0.510998950e-3 / (1 / 137.035999160358812)
 assert abs(_L95 - 0.220) < 5e-4
 print(f"    the recorded scale: Lambda_QCD = pi m_e / alpha = {_L95*1000:.1f} MeV (2.9.D): PASS")
 _chi95 = _L95 ** 4
@@ -13853,7 +13891,7 @@ p01_N = 11
 p01_phi = (1 + p01_math.sqrt(5)) / 2
 p01_phi10 = p01_phi ** 10
 p01_alpha_tree = p01_math.pi ** 2 / (p01_N * p01_phi10)
-p01_alpha = 1 / 137.035999207
+p01_alpha = 1 / 137.035999160358812
 p01_V_cone = 13195
 p01_A = p01_N * p01_phi10 / p01_math.pi ** 2
 p01_B = p01_math.e ** 4 * p01_phi ** 2 / (p01_math.pi ** 5 * p01_N)
@@ -13869,7 +13907,7 @@ print("    price: alpha = pi^2/(N phi^10); alpha(0) = pi^2/N = 0.897 (unificatio
 p01_c = abs(p01_A - 137.07850) < 1e-4 and abs(p01_B - 0.04246) < 1e-4
 p01_skel = p01_A - p01_B
 p01_c = p01_c and abs(p01_skel - 137.036037) < 1e-5
-p01_theta = p01_math.degrees(p01_math.acos(1 - 2 / 137.035999207))
+p01_theta = p01_math.degrees(p01_math.acos(1 - 2 / 137.035999160358812))
 p01_c = p01_c and abs(p01_theta - 9.801) < 0.01
 print(f"    count: skeleton {p01_skel:.6f}; solid-angle cone half-angle {p01_theta:.3f} deg: PASS"
       if p01_c else "    count: FAIL")
@@ -13886,7 +13924,7 @@ print("    step: fixed point 137.035999160 in 3 iterations; (1+alpha)^11 = 1.083
 # Remark 2.6.A.4.r kinetic reduction: weight and exponent of the (1+alpha)^N
 # chain are forced by the recorded observation
 _aw = {k: 2 * p01_math.sin(p01_math.pi * k / 11) for k in range(1, 11)}
-_a188 = 1 / 137.035999207
+_a188 = 1 / 137.035999160358812
 _obs188 = 73.0 / 67.4
 _Pw = 1.0
 for k in range(1, 11):
@@ -13937,7 +13975,7 @@ print(f"    near-miss observations (0.28% each, NOT identities): ticks-to-span "
       if p01_c else "    near-miss: FAIL")
 
 # (7) 4pi^3+pi^2+pi observation (2.2 ppm, recorded coincidence)
-p01_c = abs(4 * p01_math.pi ** 3 + p01_math.pi ** 2 + p01_math.pi - 137.035999207) / 137.035999207 < 3e-6
+p01_c = abs(4 * p01_math.pi ** 3 + p01_math.pi ** 2 + p01_math.pi - 137.035999160358812) / 137.035999160358812 < 3e-6
 print("    4pi^3+pi^2+pi = 137.036304 (2.2 ppm, recorded coincidence, not identity): PASS"
       if p01_c else "    4pi^3: FAIL")
 
@@ -14018,14 +14056,14 @@ print("    harmonic reading, exact at the curvature level): PASS")
 
 p02_lad = [p02_mp.pi**2 / (p02_N * p02_phi**k) for k in range(p02_N + 1)]
 assert abs(float(p02_lad[0]) - 0.897) < 1e-3
-assert abs((float(p02_lad[10]) - 1 / 137.035999207) / (1 / 137.035999207)) < 5e-4
+assert abs((float(p02_lad[10]) - 1 / 137.035999160358812) / (1 / 137.035999160358812)) < 5e-4
 p02_A = p02_N * p02_phi**10 / p02_mp.pi**2
 p02_B = p02_mp.e**4 * p02_phi**2 / (p02_mp.pi**5 * p02_N)
 p02_x = p02_alpha
 for _ in range(3):
     p02_x = 1 / (p02_A - p02_B - p02_x**4 * 13195)
 assert abs(float(1 / p02_x) - 137.035999160) < 1e-6
-assert abs((1 + 1 / 137.035999207)**p02_N - 1.083265) < 1e-5
+assert abs((1 + 1 / 137.035999160358812)**p02_N - 1.083265) < 1e-5
 print(f"    the anchors closed: alpha(0) = pi^2/N = {float(p02_lad[0]):.6f} (the union tick),")
 print("    alpha(10) deviates from the measured by -0.031%, the fixed point")
 print("    137.035999160 in 3 iterations, (1+alpha)^11 = 1.083265: PASS")
@@ -14201,7 +14239,7 @@ from mpmath import mp as p09_mp, mpf as p09_mpf
 p09_mp.dps = 50  # explicit precision (the ambient-precision lesson)
 p09_N = 11
 p09_phi = p09_mpf(1 + p09_mp.sqrt(5)) / 2
-p09_alpha_full = 1 / p09_mpf('137.035999207')
+p09_alpha_full = 1 / p09_mpf('137.035999160358812')
 
 # (1) THE ORBIT OF THE DEGREE: each floor value is a degree of its generator
 p09_grid = [2 ** k % p09_N for k in range(p09_N)]
@@ -14547,7 +14585,7 @@ from mpmath import mp as p12_mp, mpf as p12_mpf
 p12_mp.dps = 50
 p12_N = 11
 p12_phi = p12_mpf(1 + p12_mp.sqrt(5)) / 2
-p12_alpha = 1 / p12_mpf('137.035999207')
+p12_alpha = 1 / p12_mpf('137.035999160358812')
 p12_pts = [complex(p12_cmath.exp(2j * p12_cmath.pi * k / p12_N)) for k in range(p12_N)]
 
 # (1) powers == roots (the ladder identity)
@@ -14635,7 +14673,7 @@ from mpmath import mp as p13_mp, mpf as p13_mpf
 p13_mp.dps = 50
 p13_N = 11
 p13_phi = p13_mpf(1 + p13_mp.sqrt(5)) / 2
-p13_alpha = 1 / p13_mpf('137.035999207')
+p13_alpha = 1 / p13_mpf('137.035999160358812')
 
 # (1) the zoom = the law operations; round trips exact
 p13_c = all(
@@ -14865,7 +14903,7 @@ from mpmath import mp as p16_mp, mpf as p16_mpf
 p16_mp.dps = 50
 p16_N = 11
 p16_phi = p16_mpf(1 + p16_mp.sqrt(5)) / 2
-p16_alpha = 1 / p16_mpf('137.035999207')
+p16_alpha = 1 / p16_mpf('137.035999160358812')
 
 # the six orbital re-readings of the campaign, re-checked
 p16_lad = [p16_mp.pi**2 / (p16_N * p16_phi**k) for k in range(p16_N + 1)]
@@ -15021,7 +15059,7 @@ from mpmath import mp as p18_mp, mpf as p18_mpf, pi as p18_pi
 p18_mp.dps = 50
 p18_N = 11
 p18_phi = p18_mpf(1 + p18_mp.sqrt(5)) / 2
-p18_alpha = 1 / p18_mpf('137.035999207')
+p18_alpha = 1 / p18_mpf('137.035999160358812')
 p18_me = p18_mpf('0.51099895')
 p18_mpi = p18_mpf('139.57039')
 p18_fpi = p18_mpf('130.41')
@@ -15046,7 +15084,7 @@ print("    consistent system without free parameters: PASS"
       if p18_c else "    mirror system: FAIL")
 
 # (3) the floor-10 coupling
-p18_dev = (p18_lad[10] - 1 / p18_mpf('137.035999207')) / (1 / p18_mpf('137.035999207'))
+p18_dev = (p18_lad[10] - 1 / p18_mpf('137.035999160358812')) / (1 / p18_mpf('137.035999160358812'))
 p18_c = abs(float(p18_dev)) < 0.0004
 print(f"    floor 10 (Electricity, the charge pole) carries the coupling alpha(10)")
 print(f"    matching the measured alpha within {float(p18_dev)*100:+.3f}% (recorded .w(3)):")
@@ -15132,7 +15170,7 @@ print("    floors k = 0..10 (one formula covers the whole system): PASS"
       if p19_c else "    transition: FAIL")
 
 # (4) the field carrier through equality
-p19_alpha = 1 / p19_mpf('137.035999207')
+p19_alpha = 1 / p19_mpf('137.035999160358812')
 p19_me = p19_mpf('0.51099895')
 p19_mpi_pdg = p19_mpf('139.57039')
 p19_mpi_from_l = 2 * (p19_pi * p19_me / p19_alpha) / p19_pi
@@ -15293,7 +15331,7 @@ print("    11) — the unique floor where identity and opposition coincide: PASS
 p21_phi = p21_mpf(1 + p21_mp.sqrt(5)) / 2
 p21_mu = 1 / p21_phi
 p21_lad = [p21_mp.pi**2 / (p21_N * p21_phi**k) for k in range(p21_N + 1)]
-p21_a = 1 / p21_mpf('137.035999207')
+p21_a = 1 / p21_mpf('137.035999160358812')
 p21_res = 2 * p21_cos(p21_mpi / p21_N)
 p21_c = (
     all(abs(p21_lad[k + 1] - p21_mu * p21_lad[k]) < p21_mpf('1e-38') for k in range(10))
@@ -15566,15 +15604,15 @@ p24_names = ["0 Absolute", "1 Time", "2 Temperature", "3 Height",
               "4 Width", "5 Length", "6 Shape", "7 Volume", "8 Mass",
               "9 Field", "10 Electricity", "11=0 Energy"]
 p24_inv10 = 1 / p24_lad[10]
-p24_dev = ((p24_inv10 - p24_mpf('137.035999207'))
-            / p24_mpf('137.035999207'))
+p24_dev = ((p24_inv10 - p24_mpf('137.035999160358812'))
+            / p24_mpf('137.035999160358812'))
 p24_c = (abs(p24_lad[0] / p24_pi - p24_pi / p24_N) < p24_mpf('1e-40')
           and abs(p24_dev - p24_mpf('3.1e-4')) < p24_mpf('1e-4')
           and abs(p24_lad[9] / p24_lad[10] - p24_phi) < p24_mpf('1e-40'))
 for p24_k in range(12):
     print(f"    alpha({p24_k:>2}) [{p24_names[p24_k]:>14}] = "
           f"{float(p24_lad[p24_k]):.7f}")
-print(f"    1/alpha(10) = {float(p24_inv10):.4f} vs 137.035999207 "
+print(f"    1/alpha(10) = {float(p24_inv10):.4f} vs 137.035999160358812 "
       f"({float(p24_dev) * 100:+.3f}%, recorded")
 print("    +0.031%); the anchoring candidate: alpha(9) = phi*alpha(10) — the")
 print("    coupling of the Field floor (the carrier m_pi = 2*Lambda_QCD/pi is")
@@ -15586,7 +15624,7 @@ p24_fib = [1, 1]
 while len(p24_fib) < 12:
     p24_fib.append(p24_fib[-1] + p24_fib[-2])
 p24_F = lambda p24_n: p24_fib[p24_n - 1]
-p24_am = 1 / p24_mpf('137.035999207')
+p24_am = 1 / p24_mpf('137.035999160358812')
 p24_me = p24_mpf('0.51099895')
 p24_mpi = p24_mpf('139.57039')
 p24_fpi = p24_mpf('130.2')
@@ -15888,7 +15926,7 @@ print("    glueball: C(8)+1/2; a_e: cells+1/2): PASS"
 
 # (7) the alpha-series and operator classes
 p27_lad = lambda k: p27_mp.pi**2 / (p27_N * p27_phi**k)
-p27_c = abs(p27_lad(10) * p27_mpf("137.035999207") - 1) < p27_mpf("5e-4")
+p27_c = abs(p27_lad(10) * p27_mpf("137.035999160358812") - 1) < p27_mpf("5e-4")
 print("    the alpha-series class = the ladder powers (alpha = alpha(10),")
 print("    the skeleton 137.0785, +0.031%); the operator class = the")
 print("    quotients of the recorded operators (the chords = the law's")
@@ -15964,9 +16002,13 @@ for p28_nm, _, _ in constants:
     p28_at = len(p28_APT.findall(p28_seg))
     p28_cls.append("opratio" if p28_has_r else
                     ("exact" if p28_at == 0 else "alphaseries"))
-p28_c = (p28_cls.count("exact") == 9 and p28_cls.count("alphaseries") == 36
+p28_c = (p28_cls.count("exact") == 10 and p28_cls.count("alphaseries") == 35
           and p28_cls.count("opratio") == 39 and len(p28_cls) == 84)
-print("    the split 9/36/39 reproduced from the source (84 entries,"
+# adversarial correction (STEP 199): the flagship 1/alpha entry is now the
+# self-consistent fixed-point reference (zero fitted coefficients) -> EXACT;
+# the machine class matches the catalogue bullet list (10 items) for the
+# first time: 9 genuine derivations (incl. the flagship) + the Koide anchor
+print("    the split 10/35/39 reproduced from the source (84 entries,"
       " Th 2.5.AC.3.v): PASS" if p28_c else "    the split: FAIL")
 
 # (2) the dup pairs (m_H/m_Z, sigma_8): first-occurrence attribution
@@ -16006,8 +16048,8 @@ p28_dist = {}
 for p28_nm, _, _ in constants:
     if p28_cls[p28_names.index(p28_nm)] == "alphaseries":
         p28_dist[p28_at_of[p28_nm]] = p28_dist.get(p28_at_of[p28_nm], 0) + 1
-p28_c = (p28_dist == {1: 6, 2: 18, 3: 9, 4: 3} and sum(p28_dist.values()) == 36)
-print("    the alpha-series: 36 forms carry alpha_tree^k corrections,")
+p28_c = (p28_dist == {1: 5, 2: 18, 3: 9, 4: 3} and sum(p28_dist.values()) == 35)
+print("    the alpha-series: 35 forms carry alpha_tree^k corrections,")
 print("    k = 1..4, distribution {1:6, 2:18, 3:9, 4:3}, integer")
 print("    coefficients: PASS" if p28_c else "    the alpha distribution: FAIL")
 
@@ -16017,10 +16059,11 @@ p28_exact = sorted({p28_nm for p28_nm, _, _ in constants
 p28_c = (p28_exact == sorted(["mp/mn = 1-1/726", "m_tau/m_e", "Koide Q = L0/L2",
                                 "1/alpha_GUT", "1/alpha_1(mZ)", "sin2_tW (7dig)",
                                 "a_e (g-2 e)", "m_glueball/LQCD",
-                                "log10(rho_v/rho_P)"]))
-print("    EXACT-9 = the recorded nine (alpha_GUT, m_tau, mp/mn, rho_v,")
-print("    sin2_tW, Koide, 1/alpha_1, glueball, a_e) = 9/9 on the grid: PASS"
-      if p28_c else "    EXACT-9: FAIL")
+                                "log10(rho_v/rho_P)", "1/alpha (Cone)"]))
+print("    EXACT-10 = the recorded nine (alpha_GUT, m_tau, mp/mn, rho_v,")
+print("    sin2_tW, Koide, 1/alpha_1, glueball, a_e) + the flagship")
+print("    1/alpha (Cone) (the fixed-point reference) = 10/10 on the grid: PASS"
+      if p28_c else "    EXACT-10: FAIL")
 
 print("    HONEST BOUNDARY: the census is a machine census of FORMS — not")
 print("    a derivation and not new accuracy; the boundaries of Th 2.5.AC.1")
@@ -16620,13 +16663,15 @@ p30_t2 = p30_e ** 4 * p30_phi ** 2 / (p30_pi ** 5 * p30_N)
 p30_V = 13195
 p30_a_tree = p30_pi ** 2 / (p30_N * p30_phi ** 10)
 p30_asm = p30_t1 - p30_t2 - p30_a_tree ** 4 * p30_V
-print("    assembly 1/alpha = 137.035999207 (5.4 ppt vs LKB-Rb 2020):",
+print("    convention reading 1/alpha = 137.035999207 (recorded alternative; "
+      "5.4 ppt vs LKB-Rb 2020):",
       "PASS" if abs(p30_asm - 137.035999207) < 5e-10
       and abs((p30_asm - p30_a_ref) / p30_a_ref - 5.4e-12) < 1.5e-12 else "FAIL")
 p30_a = p30_a_ref
 for _ in range(200):
     p30_a = p30_t1 - p30_t2 - p30_V / p30_a ** 4
-print("    fixed point 137.035999160 (double reading, 338 ppt, Lemmas 2.4.A.A/B):",
+print("    fixed point 137.035999160 = SINGLE RULE (Lemmas 2.4.A.A/B); "
+      "convention reading 338 ppt away:",
       "PASS" if abs(p30_a - 137.035999160) < 5e-10 else "FAIL")
 p30_Vrev = (p30_t1 - p30_t2 - p30_a_ref) / p30_a_tree ** 4
 print("    reverse solve V = 13195.26 vs 13195 (0.002%); self-consistent 13178.9:",
@@ -16709,10 +16754,10 @@ banner("Theorem 2.5.U.1 (signed atomic shift: electron -, proton +)")
 _u181 = atomic_alpha_shift
 print("    Rb-87 is the reference (k_p = 4 = k_e): shift = 0:",
       "PASS" if abs(_u181(37)) < 1e-30 and abs(_u181(70)) < 1e-30 else "FAIL")
-_dcs = -137.035999206 * _u181(55)
+_dcs = -inv_alpha_3term * _u181(55)
 print("    1/alpha(Cs) - 1/alpha(Rb) = -1.684e-7 (observed -1.60e-7, 5.3%):",
       "PASS" if abs(_dcs + 1.684e-7) < 0.02e-7 else "FAIL")
-_dsr = -137.035999206 * _u181(38)
+_dsr = -inv_alpha_3term * _u181(38)
 print("    1/alpha(Sr) - 1/alpha(Rb) = +3.10e-8 (the Sr clock test):",
       "PASS" if abs(_dsr - 3.10e-8) < 0.05e-8 else "FAIL")
 _ke_scan = [k for k in range(11)
@@ -16728,7 +16773,7 @@ print("    n/p gap double factorization: C(4,2)*N^2 - 1 = L7*F5^2 = 725:",
       "PASS" if _comb181(4, 2) * N**2 - 1 == 29 * 25 == 725 else "FAIL")
 _ke_ok = sorted({(k, N - k) for k in range(11)
                  if abs(_shift_with_ke(37, k)) < 1e-30
-                 and -2.5e-7 < -137.035999206 * _shift_with_ke(55, k) < -1.0e-7})
+                 and -2.5e-7 < -inv_alpha_3term * _shift_with_ke(55, k) < -1.0e-7})
 print("    electron pair {4,7} is the unique solution:",
       "PASS" if _ke_ok == [(4, 7)] else "FAIL")
 
@@ -16925,7 +16970,7 @@ print(f"""
    50. Theorem 1.9.B.2: parameter map (W_*, ρ_*, α_*) of any
        continuous theory of the universal class becomes a function of
        quintet (N, π, φ, e). At N=11: W_* = 4.04e44 Hz, α_*^(-1) =
-       137.035999207, ρ_*/ρ_crit ~ 1e-62. No 'free' parameters.
+       137.035999160358812, ρ_*/ρ_crit ~ 1e-62. No 'free' parameters.
    51. Theorem 1.9.C.1: cyclotomic spectral identity
        sum_(k=0..N-1) (2*sin(pi*k/N))^(2n) = N · C(2n, n)
        holds exactly for 2n ≤ 2(N-1). At N=11 valid through 2n = 20.
