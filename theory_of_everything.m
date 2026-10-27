@@ -6,7 +6,7 @@
 (* This file defines the complete SU(11) model with:                     *)
 (*   - Gauge group SU(11)                                               *)
 (*   - Higgs sector: Phi_11 (fund), Phi_55 (antisym^2 fund), Phi_120 (adj)  *)
-(*   - Yukawa sector: y_t, y_b, y_tau (PDG 2024)                        *)
+(*   - Yukawa sector: y_t, y_b, y_tau + six portal Yukawas (Rem 5.1.D.9.u) *)
 (*   - Fermion content: Lambda^4 + Lambda^8 + Lambda^9 + Lambda^10      *)
 (*                       (561 Weyl fermions, 3 SU(5) families)          *)
 (*                                                                      *)
