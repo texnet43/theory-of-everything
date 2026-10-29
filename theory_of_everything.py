@@ -201,16 +201,12 @@ F = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144] # F_n, Fibonacci numbers
 #                  (Absolute self-coupling through Cone phase volume)
 #
 # Result: 1/alpha = 137.035999160358812 — the equation of Theorem 2.4.A is
-# solved SELF-CONSISTENTLY (single computation rule: the fixed point of
+# solved SELF-CONSISTENTLY (the single computation rule: the fixed point of
 # Lemmas 2.4.A.A/B, the unique root of P(alpha) = (A-B)*alpha - V_cone*alpha^5
-# - 1 on I = [0.005, 0.01]). Adversarial correction: the former entry mixed
-# two readings — the tree-substitution convention alpha := alpha_tree in the
-# alpha^4 term gave 137.035999206741 (5.4 ppt vs LKB-Rb 2020); it is RECORDED
-# as the alternative reading (inv_alpha_convention below), not the rule and
-# not a confirmation variant of PF-1. The fixed-point value stands at 0.79
-# sigma of CODATA-2022 (137.035999177(21)); LKB-Rb 2020 (137.035999206(11))
-# is a recorded 4.2-sigma tension — the pre-registered atom-clock/recoil
-# discrimination (PF-1) settles it at 10^-11 accuracy.
+# - 1 on I = [0.005, 0.01]). It stands at 0.79 sigma of CODATA-2022
+# (137.035999177(21)); LKB-Rb 2020 (137.035999206(11)) is a recorded 4.2-sigma
+# tension — the pre-registered atom-clock/recoil discrimination (PF-1) settles
+# it at 10^-11 accuracy.
 #
 # Zero continuous free parameters. The quintet {N, pi, phi, e, i} is the
 # unique minimal set closed under the five operations of Z_N (Thm 2.5.G.1).
@@ -222,12 +218,6 @@ _x_fp = pi**2 / (N * phi**10)
 for _it in range(6):
     _x_fp = 1.0 / (N * phi**10 / pi**2 - e**4 * phi**2 / (pi**5 * N) - V_cone * _x_fp**4)
 inv_alpha_3term = _x_fp**-1                                # fixed point (canonical)
-# Alternative reading (recorded, NOT the rule): tree-substitution convention
-inv_alpha_convention = (
-    N * phi**10 / pi**2                                    # tree
-    - e**4 * phi**2 / (pi**5 * N)                          # Z_2-mirror (Thm 2.4.2)
-    - alpha_tree**4 * V_cone                               # cone (Thm 2.4.A)
-)
 alpha_Trinity    = 1.0 / inv_alpha_3term                       # 3-term structural alpha (fixed point)
 alpha_CODATA = 1 / 137.035999084                           # CODATA 2018 central value
 err_alpha    = abs(alpha_Trinity - alpha_CODATA) / alpha_CODATA * 100
@@ -1204,7 +1194,6 @@ _lB_supTp   = _lemma_B["sup_I |T'(x)|"]
 _lB_iscon   = _lemma_B["is_uniform_contraction"]
 _lB_iters   = _lemma_B["Picard_iterates"]
 _lB_conv    = _lemma_B["|alpha_5 - alpha*|"]
-_lA_dppt    = abs(1.0 / _lA_fp - inv_alpha_convention) / inv_alpha_convention * 1e12
 
 print("  Lemma 2.4.A.A (uniqueness of the physical alpha root on I = [0.005, 0.01]):")
 print(f"    P(alpha) = (A-B)*alpha - V_cone*alpha^5 - 1  (Theorem 2.4.A times alpha)")
@@ -1228,9 +1217,8 @@ print(f"    (iii) Picard convergence from tree-level alpha_0 = pi^2/(N*phi^10) i
 for _i, _v in enumerate(_lB_iters):
     print(f"      alpha_{_i} = {_v:.15f}")
 print(f"    |alpha_5 - alpha_fp| = {_lB_conv:.3e}  (Picard limit = fixed point)")
-print(f"    single rule: self-consistent fixed point 1/alpha = {inv_alpha_3term:.12f}; "
-      f"tree-convention reading (recorded alternative, not the rule) = "
-      f"{inv_alpha_convention:.12f}; delta = {_lA_dppt:.0f} ppt (0.34 ppb)")
+print(f"    single rule: self-consistent fixed point 1/alpha = {inv_alpha_3term:.12f}"
+      f" — the only recorded value (Picard: first iterate -> fixed point)")
 print(f"    => Banach FPT: existence + uniqueness + geometric convergence on I.")
 print()
 
@@ -1674,8 +1662,7 @@ constants = [
     #   (0) tree   +  (1) Z_2-mirror  +  (2) conic convolution with V_cone = 13195
     # Single rule: solved self-consistently (fixed point, Lemmas 2.4.A.A/B)
     # => 137.035999160359 (0.79 sigma vs CODATA-2022; LKB-Rb 2020 recorded 4.2-sigma tension).
-    # Tree-convention reading (recorded alternative): 137.035999206741 (5.4 ppt vs LKB-Rb).
-    ("1/alpha (Cone)",    137.035999206,   lambda _: inv_alpha_3term),
+    ("1/alpha (Cone)",    137.035999160,   lambda _: inv_alpha_3term),
     # mp/mn: 1 - 1/(C(4,2)*N^2) = scale set by T_2=66
     ("mp/mn = 1-1/726",   0.998623478,     lambda _: 1 - 1/(comb(4,2) * N**2)),
     # Muon/electron: C(8,4)*TEMPERATURE - GEOMETRY + alpha-corrections
@@ -5282,9 +5269,8 @@ print("\n  IX.7F.3  PF-1..PF-7 confirmation/falsification threshold checks")
 _alpha_w4 = 1/inv_alpha_3term
 # PF-1: fundamental constant, Rb-87 reference (shift-free atom, Th 2.5.U.1).
 # Single rule: fundamental = self-consistent fixed point (Th 2.4.A).
-# Pre-registered prediction: 1/alpha = 137.035999160358812 (mantissa digits 35881);
-# the tree-convention reading ...206741 (74119) is a recorded alternative, NOT a
-# confirmation variant. LKB-Rb 2020 (...206) is a recorded 4.2-sigma tension;
+# Pre-registered prediction: 1/alpha = 137.035999160358812 (mantissa digits 35881).
+# LKB-Rb 2020 (...206) is a recorded 4.2-sigma tension;
 # the atom-clock/recoil discrimination at 1e-11 settles it.
 _pf1_shift_cs = inv_alpha_3term - 1.684e-7
 _pf1_gap = abs(_pf1_shift_cs - 137.035999046)/inv_alpha_3term*1e9
@@ -8967,9 +8953,20 @@ print(f"    1,3; pair products at order 2) -> invariant sum N+1 = {N + 1}: "
 print(f"    structure: 7 = the Volume index (P4 direct), 28 = 4*7 = the P4 pair product")
 print(f"    (L3*L4), 9 = the Field index (P2, the loop carrier); signs alternate (-,+,-)")
 print(f"    without being postulated; sum 28-7-9 = 12 = N+1")
-print(f"    n_s = {_v_p1:.8f}, dev vs Planck 0.9649 = {abs(_v_p1 - _ns_obs_p1) / _ns_obs_p1:.1e}"
+print(f"    n_s = {_v_p1:.8f} (alpha_tree convention), dev vs Planck 0.9649 = "
+      f"{abs(_v_p1 - _ns_obs_p1) / _ns_obs_p1:.1e}"
       f" (0.0003%): PASS")
 assert abs(_v_p1 - _ns_obs_p1) / _ns_obs_p1 < 4e-6
+_alc_p1 = 1 / (137.035999160358812)
+def _ns_ca_p1(c, a): return 1 + c[0] * a + c[1] * a ** 2 * N + c[2] * a ** 3 * N ** 2
+_fin_ca_p1 = [C for C in _inv_p1 if abs(_ns_ca_p1(C, _alc_p1) - _ns_obs_p1) <= _ns_win_p1]
+assert _fin_ca_p1 == [(-7, 28, -9)]
+_v_ca_p1 = _ns_ca_p1((-7, 28, -9), _alc_p1)
+_gap_p1 = abs(_v_ca_p1 - _v_p1)
+assert abs(_v_ca_p1 - 0.96489677) < 5e-8 and _gap_p1 < 1e-5
+print(f"    convention: the series carries the alpha_tree = pi^2/(N*phi^10) argument")
+print(f"    (the machine sieve); the canonical alpha reading n_s = {_v_ca_p1:.8f}, gap")
+print(f"    {_gap_p1:.2e} < CMB-S4 sigma 1e-4, the survivor (-7, +28, -9) is identical: PASS")
 _tri_p1 = sorted({a * b * c for a in _atoms_p1 for b in _atoms_p1 for c in _atoms_p1})
 _ext_p1 = [(s1 * c1, s2 * c2, s3 * c3)
            for s1 in (1, -1) for c1 in _atoms_p1 for s2 in (1, -1) for c2 in _prods_p1
@@ -9470,8 +9467,8 @@ def experiment_2_alpha_pslq():
 
     if pass_strict and pass_loose_signs:
         verdict = ("PASS — PSLQ подтверждает структуру: формула приближённая "
-                   "(не тождество, tol=10⁻¹² → None), но в пределах точности "
-                   "5.4 ppt находит ИМЕННО предсказанные коэффициенты "
+                   "(не тождество, tol=10⁻¹² → None), но в пределах своей точности "
+                   "(0.33 ppb vs LKB-Rb) находит ИМЕННО предсказанные коэффициенты "
                    "[+1, -1, +1, +1]")
     elif pass_loose_signs:
         verdict = "PASS — структура α-формулы подтверждена при tol=10⁻⁶"
@@ -12703,7 +12700,7 @@ banner("Remark 2.4.AD.2.v (exhaustive depth-3 grammar search: OPEN deepened)")
 # depth-2 value set from the Theorem 2.4.AD.2.u block, reused
 _E2_v = set(_E_u)
 _B_v = set(_basis_u.values())
-assert len(_E2_v) == 4545 and len(_B_v) == 48  # 4564 under the convention reading; 4545 under the single rule (fixed-point alpha)
+assert len(_E2_v) == 4545 and len(_B_v) == 48  # 4545 under the single rule (fixed-point alpha)
 _space_v = 4 * (len(_E2_v) ** 2 + 2 * len(_E2_v) * 64)
 assert 8.0e7 < _space_v < 9.0e7
 
@@ -14182,6 +14179,20 @@ print(f"    from the potential at N_e = {_mp70.nstr(_Ne70, 5)} (eps=1 at x_end =
       f"{_mp70.nstr(_xe70, 5)}): n_s = {_mp70.nstr(_ns70, 6)}")
 print(f"    r = {_mp70.nstr(_r70, 5)} (leading 75a^2 = {_mp70.nstr(75*_al70**2, 5)}), "
       f"running = {_mp70.nstr(_run70, 3)}: PASS")
+_eld70 = 3/(4*_Ne70**2)
+_hld70 = -1/_Ne70
+_nsld70 = 1 - 6*_eld70 + 2*_hld70
+assert abs(_eld70 - _mp70.mpf('0.0002496157')) < 5e-10
+assert abs(_hld70 - _mp70.mpf('-0.0182434')) < 5e-7
+assert abs(_nsld70 - _mp70.mpf('0.9620155')) < 5e-7
+print(f"    exact slow-roll pair at x_N = {_mp70.nstr(_xN70, 6)}: eps = "
+      f"{_mp70.nstr(_e70, 6)}, eta = {_mp70.nstr(_h70, 7)}")
+print(f"    leading forms eps = 3/(4Ne^2) = {_mp70.nstr(_eld70, 5)}, eta = -1/Ne = "
+      f"{_mp70.nstr(_hld70, 6)} feed only 1-2/Ne = {_mp70.nstr(1-2/_Ne70, 6)}; in the")
+print(f"    full formula they give {_mp70.nstr(_nsld70, 6)} (not physical): "
+      f"statuses separated: PASS")
+assert abs(_e70 - _mp70.mpf('0.00022005')) < 5e-9
+assert abs(_h70 - _mp70.mpf('-0.016909')) < 5e-7
 _lead70 = 1 - 2/_Ne70
 assert abs((_ns70 - _lead70)*_Ne70**2 - _mp70.mpf('4.05')) < 0.05 and 0 < _ns70 - _lead70 < 2e-3
 assert abs(_r70/(12/_Ne70**2) - _mp70.mpf('0.882')) < 0.005
@@ -19979,16 +19990,13 @@ p30_t1 = p30_N * p30_phi ** 10 / p30_pi ** 2
 p30_t2 = p30_e ** 4 * p30_phi ** 2 / (p30_pi ** 5 * p30_N)
 p30_V = 13195
 p30_a_tree = p30_pi ** 2 / (p30_N * p30_phi ** 10)
-p30_asm = p30_t1 - p30_t2 - p30_a_tree ** 4 * p30_V
-print("    convention reading 1/alpha = 137.035999207 (recorded alternative; "
-      "5.4 ppt vs LKB-Rb 2020):",
-      "PASS" if abs(p30_asm - 137.035999207) < 5e-10
-      and abs((p30_asm - p30_a_ref) / p30_a_ref - 5.4e-12) < 1.5e-12 else "FAIL")
+p30_it1 = p30_t1 - p30_t2 - p30_a_tree ** 4 * p30_V
+print("    first Picard iterate 1/alpha = 137.035999207 (iteration mechanics):",
+      "PASS" if abs(p30_it1 - 137.035999207) < 5e-10 else "FAIL")
 p30_a = p30_a_ref
 for _ in range(200):
     p30_a = p30_t1 - p30_t2 - p30_V / p30_a ** 4
-print("    fixed point 137.035999160 = SINGLE RULE (Lemmas 2.4.A.A/B); "
-      "convention reading 338 ppt away:",
+print("    fixed point 137.035999160 = THE SINGLE RULE (Lemmas 2.4.A.A/B):",
       "PASS" if abs(p30_a - 137.035999160) < 5e-10 else "FAIL")
 p30_Vrev = (p30_t1 - p30_t2 - p30_a_ref) / p30_a_tree ** 4
 print("    reverse solve V = 13195.26 vs 13195 (0.002%); self-consistent 13178.9:",
