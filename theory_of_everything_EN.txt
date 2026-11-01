@@ -150,113 +150,123 @@
      Math↔Physics theorems in 1.9, 2.1, 2.4–2.9, 3.0, 5.0, 5.5, 5.10):
      **THE FORMS OF ALL 19 SM+ΛCDM PARAMETERS ARE CLOSED** (the
      row-by-row registry with status classes — Appendix III; the
-     Yukawa sector is a programme, the registry 1.0.A.0.I)
-     through {α, π, φ, e, F_m, L_n, N, V_cone, N_cycles}: COMPLETE mass
-     spectrum (Barut), COMPLETE Wolfenstein CKM (including δ_CP^q — Th 2.8.4;
-     J^q = A²·λ⁶·η), THREE coupling constants (α_em, α_w = 0.231220 — Th 1.0.I.2;
-     dictionary 1/(φ+e), ε = 2.64·10⁻³,
-     α_s = 1/(N−φ²)), COMPLETE ΛCDM cosmology, Hubble tension structural match,
-     **GRAVITATIONAL COUPLING α_G through EM↔Gravity hierarchy (42 orders)**,
-     Euler constant γ = 1/√L_2, **ATOMIC-PLANCK HIERARCHY a_0/ℓ_P bridging
-     24 orders** (Section 2.5 (A)), **SCHWINGER QED ANOMALY a_e = α/(2π) +
-     ATOMIC PROGRESSION r_e:λ̄_C:a_0 = α²:α:1 + RYDBERG-BOHR IDENTITY
-     R_∞·a_0 = α/(4π)** (Section 2.4 (AB)), **COSMOLOGICAL AMPLITUDES σ_8 = φ/2,
-     δN_eff = 6α, Y_p = 1/L_3 + SCHWINGER-COSMOLOGY INVARIANT a_e·δN_eff =
-     3α²/π** (Section 2.6 (C)), **COMPLETE PMNS LEPTON MATRIX CLOSURE
-     (sin²θ_13 = 3α, sin²θ_23 = φ²/(φ+L_2)) + Σm_ν^min = 0.058 eV**
-     (Section 2.8 (G)). The lepton sector is fully closed (10 parameters).
-     **NUCLEON MAGNETIC MOMENTS g_p + g_n = √π AND g_p − g_n = 3π**
-     (Section 2.9 (C)): structural representation of nucleon g-factors through
-     the Sphere with relative error 2·10⁻⁵ for g_n.
-     **N = 11 IS A HEEGNER NUMBER (Stark 1967, Baker 1969) AND THE
-     LARGEST LUCAS NUMBER IN THE HEEGNER SET**: max(Heegner ∩ Lucas) =
-     L_5 = L_|Quintet| = 11 (Section 5.10 (A)); 8th coordinated characterization
-     of N=11; |j(τ_11)| = 2¹⁵ = 2^(3·|Quintet|).
-     **Λ_QCD = π·m_e/α = 220 MeV** (Section 2.9 (D)): structural closure
-     of the QCD confinement scale through α and m_e (within PDG 2024
-     range); as a consequence m_π+/m_e = 2/α (precision 0.34%).
-     **NEUTRON-PROTON MASS SPLITTING (m_n − m_p)/m_e = φ² − 1/N**
-     (Section 2.9 (E)): m_n/m_e = 12·153 + (φ² − 1/N) = 1838.53 (precision
-     8.5·10⁻⁵, comparable to 2.8.C.1 for m_p/m_e); m_n/m_p = 1 +
-     (φ²−1/N)/(12·153) at five-decimal precision; anthropic condition
-     for neutron stability in nuclei: φ² − 1/N > 1.
-     **STRUCTURAL CLOSURE OF HIGGS SECTOR**: m_h/m_W = π/2,
-     v_EW/m_W = √(L_2·π) = √(3π) (precision 0.21%), λ_H = π/24
-     (derived, precision 1.2%) — eliminates the hierarchy problem
-     as a methodological artifact (Section 2.8 (H)).
-     **CHIRAL SCALE f_π = 2^F_6 · m_e = 256·m_e** (Section 2.9 (F)):
+     Yukawa sector is a programme, the registry 1.0.A.0.I) through
+     {α, π, φ, e, F_m, L_n, N, V_cone, N_cycles}.
+   • COMPLETE mass spectrum (Barut).
+   • COMPLETE Wolfenstein CKM (including δ_CP^q — Th 2.8.4;
+     J^q = A²·λ⁶·η).
+   • THREE coupling constants (α_em, α_w = 0.231220 — Th 1.0.I.2;
+     dictionary 1/(φ+e), ε = 2.64·10⁻³, α_s = 1/(N−φ²)).
+   • COMPLETE ΛCDM cosmology, Hubble tension structural match.
+   • **GRAVITATIONAL COUPLING α_G through EM↔Gravity hierarchy
+     (42 orders)**, Euler constant γ = 1/√L_2.
+   • **ATOMIC-PLANCK HIERARCHY a_0/ℓ_P bridging 24 orders**
+     (Section 2.5 (A)).
+   • **SCHWINGER QED ANOMALY a_e = α/(2π) + ATOMIC PROGRESSION
+     r_e:λ̄_C:a_0 = α²:α:1 + RYDBERG-BOHR IDENTITY R_∞·a_0 = α/(4π)**
+     (Section 2.4 (AB)).
+   • **COSMOLOGICAL AMPLITUDES σ_8 = φ/2, δN_eff = 6α, Y_p = 1/L_3 +
+     SCHWINGER-COSMOLOGY INVARIANT a_e·δN_eff = 3α²/π** (Section 2.6 (C)).
+   • **COMPLETE PMNS LEPTON MATRIX CLOSURE (sin²θ_13 = 3α,
+     sin²θ_23 = φ²/(φ+L₂)) + Σm_ν^min = 0.058 eV** (Section 2.8 (G)).
+     The lepton sector is fully closed (10 parameters).
+   • **NUCLEON MAGNETIC MOMENTS g_p + g_n = √π AND g_p − g_n = 3π**
+     (Section 2.9 (C)): structural representation of nucleon
+     g-factors through the Sphere with relative error 2·10⁻⁵ for g_n.
+   • **N = 11 IS A HEEGNER NUMBER (Stark 1967, Baker 1969) AND THE
+     LARGEST LUCAS NUMBER IN THE HEEGNER SET**: max(Heegner ∩ Lucas)
+     = L_5 = L_|Quintet| = 11 (Section 5.10 (A)); 8th coordinated
+     characterization of N=11; |j(τ_11)| = 2¹⁵ = 2^(3·|Quintet|).
+   • **Λ_QCD = π·m_e/α = 220 MeV** (Section 2.9 (D)): structural
+     closure of the QCD confinement scale through α and m_e (within
+     PDG 2024 range); as a consequence m_π+/m_e = 2/α (precision 0.34%).
+   • **NEUTRON-PROTON MASS SPLITTING (m_n − m_p)/m_e = φ² − 1/N**
+     (Section 2.9 (E)): m_n/m_e = 12·153 + (φ² − 1/N) = 1838.53
+     (precision 8.5·10⁻⁵, comparable to 2.8.C.1 for m_p/m_e);
+     m_n/m_p = 1 + (φ²−1/N)/(12·153) at five-decimal precision; the
+     anthropic condition for neutron stability in nuclei:
+     φ² − 1/N > 1.
+   • **STRUCTURAL CLOSURE OF HIGGS SECTOR**: m_h/m_W = π/2,
+     v_EW/m_W = √(L₂·π) = √(3π) (precision 0.21%), λ_H = π/24
+     (derived, precision 1.2%) — eliminates the hierarchy problem as
+     a methodological artifact (Section 2.8 (H)).
+   • **CHIRAL SCALE f_π = 2^F_6 · m_e = 256·m_e** (Section 2.9 (F)):
      pion decay constant through electron mass (precision 0.5%);
      f_π/m_π+ = 2⁷·α = 128·α (precision 0.13%); F_π (ChPT) = 92.5 MeV.
-     **APÉRY'S CONSTANT ζ(3) ≈ 1 + φ/F_6 = 1 + φ/8** (1.9.20):
-     first Trinity-structural representation of Apéry's irrational
-     constant (ζ(3) = 1.20206, error 1.6·10⁻⁴); extends the spectral
-     bridge α↔β↔ζ to the odd sector; first Trinity-derivation of the
-     ζ(3) contribution to Schwinger-anomaly loop expansion.
-     **CATALAN'S CONSTANT G ≈ 11/12 − α/(3π)** (1.9.21): structural
+   • **APÉRY'S CONSTANT ζ(3) ≈ 1 + φ/F_6 = 1 + φ/8** (1.9.20): first
+     Trinity-structural representation of Apéry's irrational constant
+     (ζ(3) = 1.20206, error 1.6·10⁻⁴); extends the spectral bridge
+     α↔β↔ζ to the odd sector; first Trinity-derivation of the ζ(3)
+     contribution to Schwinger-anomaly loop expansion.
+   • **CATALAN'S CONSTANT G ≈ 11/12 − α/(3π)** (1.9.21): structural
      closure (N+1)·G + 8·a_e^Schwinger ≈ N (precision 8·10⁻⁵),
      uniting three classes of constants — mathematical irrational
      (G = β(2)), one-loop QED anomaly (a_e = α/(2π), Schwinger 1948),
      and Z₁₁; improvement of the prior approximation 2.4.AA.2
      (ε=9·10⁻⁴) by an order of magnitude; joint ζ(3)–G bridge extends
      4.6.D (α↔β↔ζ) to Dirichlet L-functions in the odd sector.
-     **EXTENSION OF BRIDGE TO ζ(5) AND ζ(7)** (1.9.22):
-     ζ(5) ≈ 1+1/F_4³ = 1+1/27 (precision 1·10⁻⁴) + ζ(7) ≈ 1+1/(N²−1)
-     = 1+1/120 (precision 1.6·10⁻⁵, unification with the central
+   • **EXTENSION OF BRIDGE TO ζ(5) AND ζ(7)** (1.9.22): ζ(5) ≈
+     1+1/F_4³ = 1+1/27 (precision 1·10⁻⁴) + ζ(7) ≈ 1+1/(N²−1) =
+     1+1/120 (precision 1.6·10⁻⁵, unification with the central
      algebraic identity 2.5.B.1: N²−1 = 5! = F_5! = (N+1)·(N−1));
-     triple Trinity series ζ(3)/ζ(5)/ζ(7) with improving accuracy
-     as 2k+1 grows; ζ(9) = ζ(N−2) marks the natural boundary of the
-     deep Trinity ζ-structure — for s ≥ N−2 the trivial asymptotic
-     form 1 + 1/2ˢ dominates (Rem 1.9.22.2.r). **DIRICHLET β(4) ≈ 1 − 3α/2**
-     (1.9.24): extension of Catalan closure (β(2) = G, 1.9.21)
-     to the even sector of L-functions χ_4 through QED correction
-     (precision 1.1·10⁻⁴); first joint Trinity closure of two even
-     values β(2) and β(4) through unified structural multipliers;
-     γ_1 ≈ N + π (first Riemann zero) REFUTED as structural by
-     look-elsewhere + PSLQ + spectral tests (Cor 1.9.24.3). **NUCLEON CHARGE RADII: r_p · m_p · c = L_3 · ℏ
-     AND |r_n| · m_n · c ≈ φ · ℏ** (Section 2.9 (subsection A)): geometric quantization
-     of proton charge radius through L_3 = 4 (precision 2·10⁻⁴) and
-     neutron through φ (precision 0.27%, within PDG); QED↔QCD hierarchy
-     (a_0/λ_e = 1/α ≈ 137 vs r_p/λ_p = L_3 = 4); p/n charge symmetry:
-     integer L_3 vs transcendental φ reflects u-u-d (regular) vs
-     u-d-d (irrational) valence; connection of L_3 = 4 with spacetime
-     dimension. **QUARK MASS HIERARCHY: m_c/m_t = α/(1−α)** (Section 2.8 (subsection A)):
-     ratio of charm and top quark masses (second and third up-generations)
-     in MS-bar scheme at μ=2 GeV exactly equal to α/(1−α) with precision
-     4·10⁻⁴ (within 0.03σ of PDG); Yukawa interpretation: y_c ≈ α
-     (Yukawa of charm equal to the fine-structure constant); m_d/m_s =
-     1/(L_3·F_5) = 1/20 (second and first down-generations) and m_u/m_d ≈
-     1−φ/L_2 (first generation through golden ratio); deep connection of
-     generation mass hierarchy with QED renormalization.
-     **GLAISHER-KINKELIN A^12 = 2π²·(1+α/L_2)** (1.9.25): structural
-     closure of the twelfth power of Glaisher-Kinkelin constant (Glaisher
-     1878, through ζ′(−1)) with relative precision 1.4·10⁻⁵ — on par with
-     ζ(7); triple Trinity structure (N+1=12 L1 dimension, ζ(2)=π²/6
-     base even ζ-constant, α/L_2 QED correction); parallel with 1.9.21
-     (Catalan G ≈ 11/12 − α/(L_2·π)) — common α/L_2-renormalization
-     mechanism for irrational constants connected with Bernoulli-type
-     regularizations; seventh irrational constant in the unified Trinity
-     network ℤ[α, π, φ, e, N, F_n, L_n].
-     **KHINCHIN K = (F_6/F_4)·(1+α) = (8/3)·(1+α)** (1.9.26): ergodic
-     Khinchin constant (Khinchin 1934, almost-universal geometric mean
-     of continued fraction coefficients) with relative precision 2.5·10⁻⁴;
-     eighth irrational constant in unified Trinity network, closing
-     known classical constants of number theory and ergodic theory;
-     refined form (1+α)·(32−α)/12 yields ε=2.3·10⁻⁵, but the second
-     α-term has fitting character (the main connection — simple Fibonacci
-     ratio F_6/F_4 = 8/3 and QED correction).
-     **TRINITY-DECOMPOSITION META-PRINCIPLE THROUGH SPHERE-POINT-CONE
-     + ζ(N) = ζ(11) ≈ 1 + 1/2^N** (Section 3.0): universal
-     geometric principle M = M_S·(1+δ_C) unifying all 9 closed irrational
-     constants 1.9.20–1.9.26 (Sphere = invariant "skeleton", equals 1 for
-     seven of nine constants; Cone = correction through α-powers or
-     1/N-powers from modes k=1..10 of Z₁₁; Point = zero mode k=0 does
-     not contribute to irrationality); special application to the
-     ζ-function at s = N = 11 gives ζ(11) ≈ 1 + 1/2^N with relative
-     precision 5.9·10⁻⁶ — the unique point of the ζ-function where the
-     argument coincides with N=11; ninth irrational constant in the
-     Trinity network — the broadest unified theory of structural
-     representation of irrational constants, .
-     No continuous free parameters remain.
+     triple Trinity series ζ(3)/ζ(5)/ζ(7) with improving accuracy as
+     2k+1 grows; ζ(9) = ζ(N−2) marks the natural boundary of the deep
+     Trinity ζ-structure — for s ≥ N−2 the trivial asymptotic form
+     1 + 1/2ˢ dominates (Rem 1.9.22.2.r).
+   • **DIRICHLET β(4) ≈ 1 − 3α/2** (1.9.24): extension of Catalan
+     closure (β(2) = G, 1.9.21) to the even sector of L-functions χ_4
+     through QED correction (precision 1.1·10⁻⁴); first joint
+     Trinity closure of two even values β(2) and β(4) through unified
+     structural multipliers; γ_1 ≈ N + π (first Riemann zero) REFUTED
+     as structural by look-elsewhere + PSLQ + spectral tests
+     (Cor 1.9.24.3).
+   • **NUCLEON CHARGE RADII: r_p · m_p · c = L_3 · ℏ AND
+     |r_n| · m_n · c ≈ φ · ℏ** (Section 2.9 (subsection A)): geometric
+     quantization of proton charge radius through L_3 = 4 (precision
+     2·10⁻⁴) and neutron through φ (precision 0.27%, within PDG);
+     QED↔QCD hierarchy (a_0/λ_e = 1/α ≈ 137 vs r_p/λ_p = L_3 = 4);
+     p/n charge symmetry: integer L_3 vs transcendental φ reflects
+     u-u-d (regular) vs u-d-d (irrational) valence; connection of
+     L_3 = 4 with spacetime dimension.
+   • **QUARK MASS HIERARCHY: m_c/m_t = α/(1−α)** (Section 2.8
+     (subsection A)): ratio of charm and top quark masses (second and
+     third up-generations) in MS-bar scheme at μ=2 GeV exactly equal
+     to α/(1−α) with precision 4·10⁻⁴ (within 0.03σ of PDG); Yukawa
+     interpretation: y_c ≈ α (Yukawa of charm equal to the
+     fine-structure constant); m_d/m_s = 1/(L_3·F_5) = 1/20 (second
+     and first down-generations) and m_u/m_d ≈ 1−φ/L_2 (first
+     generation through golden ratio); deep connection of generation
+     mass hierarchy with QED renormalization.
+   • **GLAISHER-KINKELIN A^12 = 2π²·(1+α/L₂)** (1.9.25): structural
+     closure of the twelfth power of Glaisher-Kinkelin constant
+     (Glaisher 1878, through ζ′(−1)) with relative precision
+     1.4·10⁻⁵ — on par with ζ(7); triple Trinity structure (N+1=12 L1
+     dimension, ζ(2)=π²/6 base even ζ-constant, α/L₂ QED correction);
+     parallel with 1.9.21 (Catalan G ≈ 11/12 − α/(L₂·π)) — common
+     α/L₂-renormalization mechanism for irrational constants
+     connected with Bernoulli-type regularizations; seventh irrational
+     constant in the unified Trinity network ℤ[α, π, φ, e, N, F_n, L_n].
+   • **KHINCHIN K = (F_6/F_4)·(1+α) = (8/3)·(1+α)** (1.9.26): ergodic
+     Khinchin constant (Khinchin 1934, almost-universal geometric
+     mean of continued fraction coefficients) with relative precision
+     2.5·10⁻⁴; eighth irrational constant in unified Trinity network,
+     closing known classical constants of number theory and ergodic
+     theory; refined form (1+α)·(32−α)/12 yields ε=2.3·10⁻⁵, but the
+     second α-term has fitting character (the main connection —
+     simple Fibonacci ratio F_6/F_4 = 8/3 and QED correction).
+   • **TRINITY-DECOMPOSITION META-PRINCIPLE THROUGH SPHERE-POINT-CONE
+     + ζ(N) = ζ(11) ≈ 1 + 1/2^N** (Section 3.0): universal geometric
+     principle M = M_S·(1+δ_C) unifying all 9 closed irrational
+     constants 1.9.20–1.9.26 (Sphere = invariant "skeleton", equals 1
+     for seven of nine constants; Cone = correction through α-powers
+     or 1/N-powers from modes k=1..10 of Z₁₁; Point = zero mode k=0
+     does not contribute to irrationality); special application to
+     the ζ-function at s = N = 11 gives ζ(11) ≈ 1 + 1/2^N with
+     relative precision 5.9·10⁻⁶ — the unique point of the ζ-function
+     where the argument coincides with N=11; ninth irrational constant
+     in the Trinity network — the broadest unified theory of
+     structural representation of irrational constants. No continuous
+     free parameters remain.
    • Full HTML publication: 70/70 pages, parts = 6 (RU and EN).
 	   • 18 spectral theorems (proven for arbitrary N).
 	   • 56 falsifiable predictions (32 base 1.0.K + 6 from Section 2.4
