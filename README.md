@@ -214,7 +214,7 @@ Trinity attains internal closure on **twelve nested levels** (Theorem 4.6.A.1):
 3. **Methodological + Bohr complementarity** (Section 4.0) — three interpretation scales L1/L2/L3; non-commuting projections π_L2/π_L3 of the Absolute (Theorem 4.0.C, structural quantum ℏ_struct = 1/(2N) = 1/22)
 4. **Ontological** (Section 4.3) — Geometry of Trinity = All That Exists, 16 geometric primitives, Genesis G in 16 steps
 5. **Dynamical** (Section 5.3) — Trinity Time τ, Genesis G, age T = 13.08 Gyr
-6. **Variational-stochastic** (Section 2.4) — Kähler structure (g, ω, J) on ℂ¹¹; master functional → Einstein equations; Born rule via Z₁₁-Doob martingale; perfect [[11,1,5]] quantum code
+6. **Variational-stochastic** (Section 2.4) — Kähler structure (g, ω, J) on ℂ¹¹; master functional → Einstein equations; Born rule via Z₁₁-Doob martingale; the [[11,1,5]]₃ quantum code (the Rains construction from QR(11); the distance d = 5 computed by a normalizer scan — NOT perfect)
 7. **Number-theoretic + spectral-quantum** (Section 1.9) — unified principle for N = 11 via Fibonacci-Lucas monoid; closed β-function β = −(N/3)·g·[I₀(g√2) − 1] exact through 10-loop order
 8. **Meta-closure** (Section 4.6) — internal vs external closure; Gödelian justification of the irreducibility of the quintet; spectral bridge Z₁₁ → ζ(s) via Apéry-Comtet identities; topos formulation
 9. **Formal ontological closure** (Section 1.10) — topological uniqueness of Sphere-Point-Cone in ℝ³; information-theoretic uniqueness with compression R_compr = 84/60 ≈ 1.40 and R_K ≈ 4; PRIMARY criterion N = 11 (Theorem 1.10.0.28) with three balance equations B1+B2+B3
