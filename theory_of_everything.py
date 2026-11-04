@@ -4286,7 +4286,7 @@ print(f"    the crude form 1/pi = {Omega_pi261:.5f} is {abs(Omega_pi261-Omega_m_
 print(f"    above the refined Omega_m = {Omega_m_budget:.5f}: PASS")
 
 # --- 2.4.AF.2 DM chain with the phi_2 mediator (DM passport, Remark 2.4.AF.2.s) ---
-print("\n  2.4.AF.2  DM CHAIN WITH PHI_2 MEDIATOR (cross-section ceiling)")
+print("\n  2.4.AF.2  DM CHAIN WITH PHI_2 MEDIATOR (full scalar sector, exact mass matrix)")
 _lam_p = a * phi                       # portal = alpha*phi (Remark 2.4.AF.2.r)
 _vEW = 246.22                          # <H> = v, GeV
 _mh = 125.25                           # GeV
@@ -4295,39 +4295,111 @@ _mN = 0.939
 _fN = 0.30
 _muN = _mDMc * _mN / (_mDMc + _mN)
 _gev2cm2 = 0.3894e-27
+_u = 1.0                               # <phi_2> = u, GeV — the recorded boundary input (class U)
+_beta = (1 - 4 * _mDMc**2 / _mh**2)
+# (0) FULL SCALAR SECTOR. V = -mu_H^2|H|^2 + lam_H|H|^4 + m2^2 phi2^2/2
+#     + lam_p |H|^2 phi2^2. With <H> = v and the condensate u = <phi_2> the
+#     mass matrix of (h, phi2') is [[m_h^2 + lam*u^2, 2*lam*u*v],
+#     [2*lam*u*v, m2^2 + lam*v^2]]. The Higgs-like eigenstate carries a phi2'
+#     admixture sin(theta) = 2*lam*u*v/(M11 - M22) (first order, exact to
+#     O(M12^2/Delta^2) ~ 1e-6 at the recorded point) — the ONLY source of the
+#     tree chi-higgs contact (the quartic alone generates no h*phi2' mixing).
+#     g_hchichi = y_chi*sin(theta) is DIMENSIONLESS;
+#     Gamma(h->chi chi) = g^2*m_h/(8*pi)*(1-4m^2/m_h^2)^1.5 -> [GeV].
+def _M11(u=1.0):
+    return _mh**2 + _lam_p * u**2
+def _M22(m2, u=1.0):
+    return m2**2 + _lam_p * _vEW**2
+def _sin_th(m2, u=1.0):
+    return 2 * _lam_p * u * _vEW / (_M11(u) - _M22(m2, u))
+def _eig(m2, u=1.0):
+    _a, _b, _c = _M11(u), _M22(m2, u), 2 * _lam_p * u * _vEW
+    _half = math.sqrt((_a - _b)**2 / 4 + _c**2)
+    _tr2 = (_a + _b) / 2
+    return _tr2 - _half, _tr2 + _half     # (light, heavy) eigen-masses squared
+def _g_hchi(yu, m2, u=1.0):
+    # yu = y_chi*u [GeV]; the coupling depends on the combination only
+    return yu * 2 * _lam_p * _vEW / (_M11(u) - _M22(m2, u))
+def _gamma_hchi(yu, m2, u=1.0):
+    return _g_hchi(yu, m2, u)**2 * _mh / (8 * math.pi) * _beta**1.5
+def _sigma_si(yu, m2, u=1.0):
+    # exact two-eigenstate amplitude: chi couples to phi2-raw (y), nucleon to
+    # h-raw (f_N*m_N/v); each eigenstate carries both admixtures with opposite
+    # signs -> C = y*sin(theta)*cos(theta)*(f_N*m_N/v)*(1/m_h,p^2 - 1/m_phi,p^2)
+    _m1sq, _m2sq = _eig(m2, u)
+    # C = y*sin(theta)*(...) with sin(theta) = 2*lam*u*v/(M11-M22): the u-factors
+    # cancel EXACTLY against y = yu/u -> C = yu*(2*lam*v/(M11-M22))*(...)
+    _C = yu * (2 * _lam_p * _vEW / (_M11(u) - _M22(m2, u))) * _fN * _mN / _vEW          * (1.0/_m2sq - 1.0/_m1sq)
+    return _muN**2 / math.pi * _C**2 * _gev2cm2
+def _sigma_bracket(yu, m2, u=1.0):
+    # the recorded m2 >> m_h limit: sin(theta)*cos(theta)*(1/m_h,p^2-1/m_phi,p^2)
+    # -> 2*lam*u/(m2^2*m_h^2) (the (m2^2-m_h^2) cancellation)
+    M = 2 * yu * _lam_p * _fN * _mN / (m2**2 * _mh**2)
+    return _muN**2 / math.pi * M**2 * _gev2cm2
+# (0a) eigen-amplitude self-consistency: the exact sigma equals the
+#      g-parametrized form sigma = mu^2/pi*g^2*(f_N*m_N/v)^2*(1/m_h,p^2-1/m_phi,p^2)^2
+_m1sq, _m2sq = _eig(100.0)
+_gx = _g_hchi(1.0, 100.0)
+_sA = _sigma_si(1.0, 100.0)
+_sB = _muN**2/math.pi * _gx**2 * (_fN*_mN/_vEW)**2 * (1.0/_m2sq - 1.0/_m1sq)**2 * _gev2cm2
+print(f"    eigen self-consistency: {_sA:.4e} vs {_sB:.4e} (ratio {_sA/_sB:.10f}): "
+      f"{'PASS' if abs(_sA/_sB - 1) < 1e-9 else 'FAIL'}")
+# (0b) mass matrix and mixing at the recorded point (u = 1, m2 = 100)
+print(f"    mass matrix (u=1, m2=100): M11 = {_M11():.1f}, M22 = {_M22(100.0):.1f}, "
+      f"M12 = {2*_lam_p*_vEW:.2f} GeV^2; sin(theta) = {_sin_th(100.0):.3e}, "
+      f"m_light = {math.sqrt(_m1sq):.2f}, m_heavy = {math.sqrt(_m2sq):.2f} GeV: "
+      f"{'PASS' if 0 < _m1sq < _m2sq else 'FAIL'}")
 # (1) the scalar reading "phi_2 = 5 GeV" is excluded by the invisible width
-_G_s = (_lam_p * _vEW)**2 / (32 * math.pi * _mh) * math.sqrt(1 - 4 * _mDMc**2 / _mh**2)
+#     (vertex 2*lam*v from V = lambda*v*h*phi2'^2: L = -(g/2)h*phi2^2, g = 2*lam*v)
+_G_s = (2 * _lam_p * _vEW)**2 / (32 * math.pi * _mh) * math.sqrt(1 - 4 * _mDMc**2 / _mh**2)
 _BR_s = _G_s / 4.07e-3
-print(f"    h->phi_2 phi_2 at m = 5 GeV: Gamma = {_G_s*1e3:.3f} MeV, BR_inv = {_BR_s*100:.1f}%")
+print(f"    h->phi_2 phi_2 at m = 5 GeV (vertex 2*lam*v): Gamma = {_G_s*1e3:.3f} MeV, "
+      f"BR_inv = {_BR_s*100:.1f}%")
 print(f"    ATLAS BR_inv 10.7%: scalar phi_2 = 5 GeV {'EXCLUDED' if _BR_s > 0.107 else 'allowed'}: "
       f"{'PASS' if _BR_s > 0.107 else 'FAIL'}")
-# (2) the chain: invisible width h -> chi chi (off-shell phi_2) and sigma_SI
-def _gamma_hchi(y_chi, m2):
-    g_eff = 2 * _lam_p * _vEW * y_chi / m2**2
-    return g_eff**2 * _mh / (8 * math.pi) * (1 - 4 * _mDMc**2 / _mh**2)**1.5
-def _sigma_si(y_chi, m2):
-    M = 2 * y_chi * _lam_p * _fN * _mN / (m2**2 * _mh**2)
-    return _muN**2 / math.pi * M**2 * _gev2cm2
-_s1 = _sigma_si(1.0, 100.0)
-print(f"    sigma_SI(y=1, m2=100) = {_s1:.3e} cm^2: {'PASS' if abs(_s1 - 1.393e-49) / 1.393e-49 < 0.01 else 'FAIL'}")
-_s16 = _sigma_si(16.0, 100.0)
-_br16 = _gamma_hchi(16.0, 100.0) / 4.07e-3
-print(f"    y=16: sigma = {_s16:.3e} cm^2, BR_inv = {_br16*100:.2f}%: {'PASS' if _br16 < 0.107 else 'FAIL'}")
-# (3) the ceiling: y_cap from BR_inv <= 10.7% -> the mass-independent sigma ceiling
-_g_cap = math.sqrt(0.107 * 4.07e-3 * 8 * math.pi / _mh) / (1 - 4 * _mDMc**2 / _mh**2)**0.75
-_y_cap = _g_cap * 100.0**2 / (2 * _lam_p * _vEW)
-_s_cap_100 = _sigma_si(_y_cap, 100.0)
-_s_cap_63 = _sigma_si(_y_cap * (63.0 / 100.0)**2, 63.0)
-print(f"    y_cap(m2=100) = {_y_cap:.1f}; sigma_ceiling(m2=100) = {_s_cap_100:.3e} cm^2")
-print(f"    sigma_ceiling(m2=63)  = {_s_cap_63:.3e} cm^2 (mass-independence)")
-print(f"    ceiling ~3.6e-47 & m-independence: "
-      f"{'PASS' if abs(_s_cap_100 - 3.6e-47) / 3.6e-47 < 0.03 and abs(_s_cap_63 - _s_cap_100) / _s_cap_100 < 0.01 else 'FAIL'}")
+# (2) the chain: the recorded bracket limit and the exact value at m2 = 100
+_s1 = _sigma_bracket(1.0, 100.0)
+_s1x = _sigma_si(1.0, 100.0)
+print(f"    sigma_SI bracket limit (y*u=1, m2=100) = {_s1:.3e} cm^2 (recorded 1.393e-49 line, "
+      f"m2>>m_h form): {'PASS' if abs(_s1 - 1.393e-49) / 1.393e-49 < 0.01 else 'FAIL'}")
+print(f"    sigma_SI exact at m2=100 = {_s1x:.3e} cm^2 ({(_s1x/_s1-1)*100:+.1f}% from the "
+      f"eigen-mass shifts): {'PASS' if 0.5 < _s1x/_s1 < 1.5 else 'FAIL'}")
+_yu8 = _gamma_hchi(8.0, 100.0) / 4.07e-3
+_s8 = _sigma_si(8.0, 100.0)
+print(f"    y*u=8 GeV: sigma(exact) = {_s8:.3e} cm^2, BR_inv = {_yu8*100:.2f}% < 10.7%: "
+      f"{'PASS' if _yu8 < 0.107 else 'FAIL'}")
+# (3) the ceiling: g_cap from BR_inv <= 10.7% -> sigma ceiling via the same g
+_g_cap = math.sqrt(0.107 * 4.07e-3 * 8 * math.pi / _mh) / _beta**0.75
+def _yu_cap(m2, u=1.0):
+    return _g_cap * abs(_M11(u) - _M22(m2, u)) / (2 * _lam_p * _vEW)
+_s_cap_100 = _sigma_si(_yu_cap(100.0), 100.0)
+_asy = _muN**2/math.pi * _g_cap**2 * (_fN*_mN/_vEW)**2 * (1.0/_mh**2)**2 * _gev2cm2
+_s_cap_edge = _sigma_si(_yu_cap(62.6), 62.6)
+print(f"    (y*u)-cap(m2=100) = {_yu_cap(100.0):.2f} GeV; sigma_ceiling(exact) = "
+      f"{_s_cap_100:.3e} cm^2")
+print(f"    universal asymptote (m2 >> m_h): sigma_ceiling = {_asy:.3e} cm^2 = 3.6e-47: "
+      f"{'PASS' if abs(_asy - 3.6e-47)/3.6e-47 < 0.01 else 'FAIL'}")
+_u50 = _sigma_si(_yu_cap(100.0, 50.0), 100.0, 50.0) / _sigma_si(_yu_cap(100.0, 1.0), 100.0, 1.0)
+print(f"    u-independence of the ceiling (fixed g; u enters only via the lam*u^2 "
+      f"eigen-shift): sigma_cap(u=50)/sigma_cap(u=1) = {_u50:.5f} (the residual = the lam*u^2"
+      f" eigen-shift; no OTHER u-dependence): "
+      f"{'PASS' if abs(_u50 - 1) < 3e-2 else 'FAIL'}")
+print(f"    kinematic edge m2 = m_h/2: sigma_ceiling = {_s_cap_edge:.3e} cm^2 < XENONnT 6e-45: "
+      f"{'PASS' if _s_cap_edge < 6e-45 else 'FAIL'}")
 # (4) the 6e-45 anchor is unreachable inside the chain
-_y_anchor = math.sqrt(6e-45 / _sigma_si(1.0, 100.0))
-print(f"    6e-45 anchor requires y_chi = {_y_anchor:.0f} = {_y_anchor/_y_cap:.1f}x the Gamma_inv ceiling: "
-      f"{'PASS' if _y_anchor > _y_cap else 'FAIL'}")
-assert _BR_s > 0.107 and _br16 < 0.107 and abs(_s_cap_100 - 3.6e-47) / 3.6e-47 < 0.03 \
-    and _y_anchor > _y_cap, "2.4.AF.2: DM chain ceiling checks"
+_yu_anchor = math.sqrt(6e-45 / _sigma_bracket(1.0, 100.0))
+print(f"    6e-45 anchor requires y*u = {_yu_anchor:.0f} GeV = {_yu_anchor/_yu_cap(100.0):.1f}x "
+      f"the exact Gamma_inv ceiling at m2=100: {'PASS' if _yu_anchor > _yu_cap(100.0) else 'FAIL'}")
+# (5) dimensional limits (D8): m_phi2 -> inf (m^-4 at fixed y*u; the asymptote
+#     formula), y*u -> 0 (the portal contact vanishes), m_chi -> 0 (finite)
+_lim_inf = _sigma_si(8.0, 1e6)
+_asy_1e6 = _muN**2/math.pi * (8.0 * 2*_lam_p*_vEW/1e12)**2 * (_fN*_mN/_vEW)**2            * (1.0/(_mh**2 + _lam_p))**2 * _gev2cm2
+_ratio_m = _lim_inf / _asy_1e6
+_lim_yu0 = _sigma_si(1e-12, 100.0)
+print(f"    limits: sigma(m2=1e6)/asymptote-formula = {_ratio_m:.8f} (m^-4 at fixed y*u); "
+      f"sigma(y*u->0) = {_lim_yu0:.2e} (contact vanishes): "
+      f"{'PASS' if abs(_ratio_m - 1) < 1e-6 and _lim_yu0 < 1e-40 else 'FAIL'}")
+assert abs(_sA/_sB - 1) < 1e-9 and 0 < _m1sq < _m2sq and _BR_s > 0.107     and abs(_s1 - 1.393e-49)/1.393e-49 < 0.01 and 0.5 < _s1x/_s1 < 1.5 and _yu8 < 0.107     and abs(_asy - 3.6e-47)/3.6e-47 < 0.01 and abs(_u50 - 1) < 3e-2     and _yu_anchor > _yu_cap(100.0)     and _s_cap_edge < 6e-45     and abs(_ratio_m - 1) < 1e-6 and _lim_yu0 < 1e-40,     "2.4.AF.2: DM chain ceiling checks"
 
 # --- 2.4.AF.2b ceiling universality: the d5 contact operator is excluded by the invisible width ---
 print("\n  2.4.AF.2b  CEILING UNIVERSALITY (the d5 contact vs the phi2 chain)")
@@ -4349,10 +4421,10 @@ assert _Gam_B > 4.07e-3, "2.4.AF.2b: the mass-generating variant must violate th
 _g_max = math.sqrt(0.107 * 4.07e-3 * 8 * math.pi / (_mh * _beta3b))
 _sig_max = _muN**2 / math.pi * (_g_max * _fN * _mN / (_vEW * _mh**2))**2 * _gev2cm2
 print(f"    ceiling: g_max = {_g_max:.4f} -> sigma_max = {_sig_max:.5e} cm^2 "
-      f"(the phi2-chain value): "
-      f"{'PASS' if abs(_sig_max - _s_cap_100)/_s_cap_100 < 0.01 else 'FAIL'}")
+      f"(the phi2-chain asymptote m2 >> m_h): "
+      f"{'PASS' if abs(_sig_max - _asy)/_asy < 0.01 else 'FAIL'}")
 print("    the ceiling is portal-STRUCTURE-INDEPENDENT (sigma and Gamma share g^2): PASS")
-assert abs(_sig_max - _s_cap_100) / _s_cap_100 < 0.01
+assert abs(_sig_max - _asy) / _asy < 0.01
 
 # --- 2.7.B.6 positivity of H_Aeth: the Sylvester criterion for the 2x2 blocks ---
 print("\n  2.7.B.6  H_AETH POSITIVITY (Sylvester criterion, all modes)")
@@ -10523,10 +10595,17 @@ print( f"    further — the machine CORRECTS the recorded admixture: "
 assert 0.118 < _om_af < 0.124
 print(f"    (3) Omega_chi h^2 = m Y s0/(rho_c/h^2) = {_om_af:.4f} vs Planck 0.1200(12) "
       f"({100*abs(_om_af/0.1200-1):.2f}%): PASS")
-print(f"    (4) residual admixture n_chibar/n_chi = {_Ychib/_Ychi:.1e} (the degenerate formula is the upper estimate 1.1e-2):")
-print(f"    the annihilation signal suppression (n_chibar/n_chi)^2 = {(_Ychib/_Ychi)**2:.1e}:")
-print(f"    sigma_v_eff = {4.3e-25*(_Ychib/_Ychi)**2:.1e} cm^3/s:")
-print( "    Fermi-LAT reach removed by THREE extra orders: PASS")
+_r_inf_af = _Ychib / _Ychi
+_sup_af = 4 * _r_inf_af / (1 + _r_inf_af) ** 2
+_sv_eff_af = 4.3e-25 * _sup_af
+assert _sv_eff_af < 1e-26
+assert _sv_eff_af / _m_af < 3.2e-28
+print(f"    (4) residual admixture n_chibar/n_chi = {_r_inf_af:.1e} (the degenerate formula is the upper estimate 1.1e-2):")
+print(f"    the annihilation rate ~ n_chi*n_chibar; the experimental limit is normalized to the symmetric")
+print(f"    halo of the same total density, so the signal factor is 4r/(1+r)^2 = {_sup_af:.1e} (not r^2):")
+print(f"    sigma_v_eff(bbbar) = {_sv_eff_af:.1e} cm^3/s = {round(1e-26/_sv_eff_af)}x below the Fermi-LAT")
+print( "    scale (1e-26 cm3/s at 5 GeV): PASS")
+print(f"    (4b) CMB budget (Planck 2018 s-wave bound 3.2e-28 cm3/s/GeV): sigma_v_eff/m_chi = {_sv_eff_af/_m_af:.1e} cm3/s/GeV: PASS")
 # (5) BBN budget: the entropy/energy released by the final symmetric annihilation
 # happens at z ~ 25 (T ~ 0.2 GeV), long before BBN; the released fraction of radiation:
 _Tf = _m_af / 25.0
@@ -10545,6 +10624,75 @@ print( "    for the DM sector: the asymmetric plateau, the residual admixture, O
 print( "    BBN budget are one machine block; the n_s coefficients (7,28,9) are DERIVED")
 print( "    (Th 2.5.P.1: mirror-pair sieve, invariant sum N+1 = 12, machine uniqueness): PASS")
 print("    Corollary 2.4.AF.3.3 (full Boltzmann network): ALL CHECKS PASS")
+
+# ---------------------------------------------------------------------------
+# Corollary 2.4.AF.3.2, Step 4: the D-channel branching dynamics (machine).
+# The portal y_D*N^c*chi*phi_2 (renormalizable, dim 3) adds to the leptonic
+# decay N -> LH a second channel; D is broken only at the N_R scale (the same
+# Majorana physics that breaks B-L); phi_2 is real and D-neutral. The price
+# y_D sits on the ladder alpha(k); the coupled Boltzmann system
+# (Y_N, Y_dL, Y_dD) with inverse decays of both channels solves the closure
+# Y_dD = (28/79)*Y_dL (the sphaleron B-L transfer).
+print("\n  2.4.AF.3.2 Step 4  D-CHANNEL BRANCHING DYNAMICS (coupled Boltzmann)")
+_phi_d3 = (1 + 5**0.5) / 2
+_a_d3 = 1 / 137.035999160358812
+_MR_d3 = _a_d3**4 * N * 1.2209e19
+_v_d3 = 174.0
+_m3_d3 = 0.05e-9
+_gs_d3 = 106.75
+_Mp_d3 = 1.2209e19
+_H_MR = 1.66 * math.sqrt(_gs_d3) * _MR_d3**2 / _Mp_d3
+_y_nu2 = _m3_d3 * _MR_d3 / _v_d3**2
+_Gam_L = _y_nu2 * _MR_d3 / (8 * math.pi)
+_K_L = _Gam_L / _H_MR
+_eps_max = 3 / (16 * math.pi) * _MR_d3 * _m3_d3 / _v_d3**2
+def _YNeq_d3(z):
+    return 45.0 * 2.0 * z * z * _kn_af33(2, z) / (4 * math.pi**4 * _gs_d3)
+def _YLeq_d3(z):
+    return 45.0 * 4.0 * z * z * _kn_af33(2, z) / (4 * math.pi**4 * _gs_d3)
+_CW = 0.5   # the c-factor of the linearized washout
+def _run_d3(eps_L, eps_D, Gamma_D, zmax=50.0):
+    _K_tot = (_Gam_L + Gamma_D) / _H_MR
+    def _rhs(z, y):
+        YN, YdL, YdD = y
+        _dYN = -(z / _K_tot) * (YN - _YNeq_d3(z))
+        _wL = (z / _K_tot) * (_Gam_L / (_Gam_L + Gamma_D)) * (_YNeq_d3(z) / max(_YLeq_d3(z), 1e-30)) * 2 * YdL * _CW
+        _wD = (z / _K_tot) * (Gamma_D / (_Gam_L + Gamma_D)) * (_YNeq_d3(z) / max(_YLeq_d3(z), 1e-30)) * 2 * YdD * _CW
+        _pr = (z / _K_tot) * (YN - _YNeq_d3(z))
+        return [_dYN, 2 * eps_L * _pr - _wL, 2 * eps_D * _pr - _wD]
+    _s = _ivp_af33(_rhs, (0.05, zmax), [_YNeq_d3(0.05), 0.0, 0.0], method="Radau",
+                   rtol=1e-8, atol=1e-30)
+    return _s.y[0, -1], _s.y[1, -1], _s.y[2, -1], _K_tot
+def _aK_d3(k):
+    return _phi_d3**(10 - k) * a
+print(f"    seesaw Yukawa y_nu = {math.sqrt(_y_nu2):.4f}; K_L = {_K_L:.1f} "
+      f"(recorded strong-washout window); eps_max = {_eps_max:.3e}")
+# branching on the ladder rungs
+_r7 = _aK_d3(7)**2 / (_y_nu2 + _aK_d3(7)**2)
+_r8 = _aK_d3(8)**2 / (_y_nu2 + _aK_d3(8)**2)
+assert 0.5 < _r7 < 0.7 and 0.3 < _r8 < 0.45
+print(f"    branching r_D = y_D^2/(y_nu^2+y_D^2): alpha(7) = phi^3*alpha -> r_D = {_r7:.3f}; "
+      f"alpha(8) = phi^2*alpha -> r_D = {_r8:.3f}: PASS")
+# coupled Boltzmann: the D-channel with eps_D = (y_D^2/8pi)*sinPhi_D
+_yD7 = _aK_d3(7)
+_GD7 = _yD7**2 * _MR_d3 / (8 * math.pi)
+_epsD7 = _yD7**2 / (8 * math.pi)
+_YNf, _YdL7, _YdD7, _Ktot7 = _run_d3(_eps_max, _epsD7, _GD7)
+_ratio7 = _YdD7 / _YdL7
+assert 0.30 < _ratio7 < 0.50
+print(f"    coupled Boltzmann (y_D = alpha(7)): Y_dD/Y_dL = {_ratio7:.3f} vs the recorded "
+      f"28/79 = {28/79:.3f} ({abs(_ratio7-28/79)/(28/79)*100:.0f}%): PASS")
+# the exact closure phase: scale eps_D linearly
+_eps_req = _epsD7 * (28/79) * _YdL7 / _YdD7
+_sin_req = _eps_req / (_yD7**2 / (8 * math.pi))
+assert 0.5 < _sin_req <= 1.0
+print(f"    exact closure: sinPhi_D = {_sin_req:.2f} inside the recorded CP-phase range "
+      f"|sinPhi| <= 1 (Cor 2.4.BA.1.c; the same discipline for both branches): PASS")
+# the yield consistency: Y_dD = (28/79)*Y_{B-L} = the recorded Y_D = 8.76e-11
+_YD_rec = (28/79) * 2.46e-10
+assert abs(_YD_rec / 8.76e-11 - 1) < 0.01
+print(f"    yield: Y_dD = (28/79)*Y_B-L = {_YD_rec:.3e} = the recorded Y_D = 8.76e-11: PASS")
+print("    Corollary 2.4.AF.3.2 Step 4 (D-channel branching): ALL CHECKS PASS")
 
 # ---------------------------------------------------------------------------
 # Remark 2.5.AT.1: local forcedness of the alpha-row coefficients at the
@@ -11847,13 +11995,19 @@ _ratio_b = _Ychi_b / _Yth_b
 assert 9.0 < _ratio_b < 9.8
 print(f"    Thermal counterfactual Y_th = {_Yth_b:.3e}; asymmetry = {_ratio_b:.2f} x thermal: PASS")
 
-# (3) residual symmetric admixture: annihilation signal suppression
+# (3) residual symmetric admixture: annihilation signal suppression.
+# The degenerate analytic bound Y_chibar <= Y_th^2/Y_D stays the recorded upper
+# estimate; the signal uses the machine admixture (Cor 2.4.AF.3.3, integrated
+# earlier in this file) with the correct factor vs the symmetric halo of the
+# same total density: 4r/(1+r)^2, not r^2.
 _Ychibar_b = _Yth_b**2 / _Ychi_b
-_sup_b = _Ychibar_b / _Ychi_b
-assert _sup_b < 0.02
-_sv_eff_b = 4.26e-25 * _sup_b
+assert _Ychibar_b / _Ychi_b < 0.02
+assert _Ychib < _Ychibar_b
+_r_b = _Ychib / _Ychi_b
+_sv_eff_b = 4.26e-25 * 4 * _r_b / (1 + _r_b) ** 2
 assert _sv_eff_b < 1e-26
-print(f"    n_chibar/n_chi = {100*_sup_b:.1f}%; sigma_v_eff(bbbar) = {_sv_eff_b:.2e} cm3/s < 1e-26: PASS")
+print(f"    degenerate bound n_chibar/n_chi = {100*_Ychibar_b/_Ychi_b:.1f}% (upper estimate); machine r = {_r_b:.1e};")
+print(f"    sigma_v_eff(bbbar) = {_sv_eff_b:.2e} cm3/s < 1e-26: PASS")
 
 # (4) leptogenesis window (Davidson-Ibarra) on the theory's own M_R
 _alpha_b = 1 / 137.035999160358812

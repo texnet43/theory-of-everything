@@ -119,7 +119,7 @@
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
 
    Theory statistics:
-   • 714 theorems (with derivations in the text; 200 machine-verified in Lean 4). 249 definitions. 563 corollary.
+   • 714 theorems (with derivations in the text; 210 machine-verified in Lean 4). 249 definitions. 563 corollary.
    • 507 remarks. 26 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Structural core: the flagship status
      table — 18 main results, each with formula, prerequisites, data,
@@ -639,7 +639,7 @@
   is tuned). Grammar-density control: random formulas from the same atoms
   are 4391× less accurate (Monte Carlo, §2.10.B); the selection criterion
   — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation
-  criteria; the machine: 1528 checks (0 FAIL), 200 Lean theorems.
+  criteria; the machine: 1540 checks (0 FAIL), 210 Lean theorems.
 
   Ontologically, Trinity describes how reality is built, not
   only the closure of constants: the micro- and macro-cosmos are
@@ -673,7 +673,7 @@
   Rem 2.6.A.4.ap). The series completion (.aq–.au): the law
   "quantity → quality" — the thresholds = the occupation numbers (7/7
   magic nuclei EXACT, the gaps 2n²); the coordinates of the
-  catalogue-84 (9 EXACT on the grid, 39 forms on 21 of the 32 live
+  catalogue-84 (10 EXACT on the grid, 39 forms on 21 of the 32 live
   relations r[X]); the r_k blind contour — binding to the recorded
   anchors only (r_k = ln(k/k_*), the W_* normalization): the count
   matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact
@@ -703,7 +703,7 @@
   identity — resonance); the mirror pairs of operations carry the quintet
   atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all
   operations.
-  Battery: 1528 PASS / 0 FAIL / EXIT=0.
+  Battery: 1540 PASS / 0 FAIL / EXIT=0.
 
   The sign kernel of duality —
   Δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), the Rb reference,
@@ -811,7 +811,7 @@
   φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no
   finite closure (Rem .av(4)); the weight of choice across the scales —
   the author's synthesis: rigidity at the edges of the spectrum, the
-  density of choice at the center (Rem .ay). Battery: 1528 PASS / 0 FAIL / EXIT=0.
+  density of choice at the center (Rem .ay). Battery: 1540 PASS / 0 FAIL / EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
 
@@ -2176,7 +2176,11 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   improvement ×8); Rem 2.8.F.2.r — 4.6·10⁻⁵ (≈ 0.9σ) instead of
   7.7·10⁻⁶. Not resynced in this pass (registry items): N_eff, Y_p
   (the PDG-2026 BBN review was not retrieved at download), the s/u/d
-  quarks, CODATA-2026 (the α anchor cites CODATA-2022 explicitly).
+  quarks, CODATA-2026 (the α anchor cites CODATA-2022 explicitly),
+  the joint cosmological fit (CMB+BAO+SNe with covariance matrices,
+  systematics and nuisances — an external structure-program; the
+  individual anchors: Ω_b Th 5.8.1, the H₀ contour Rem 2.6.A.4.au,
+  the epochs Th 5.3.1).
   The revision criterion for a flagship — a target shift beyond the
   recorded uncertainty that changes the σ-status.
 
@@ -2548,7 +2552,11 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   1.0.H.1). Independence is by construction (Cor 1.0.A.1.c/1.0.A.2:
   different types of structure); below is the operational form of
   independence: for each axiom — what vanishes upon its removal (every
-  entry is a recorded result).
+  entry is a recorded result). The axiom types: A0–A3 — mathematical
+  (the carrier, the φ constant, the triple binding, the spectrum);
+  A4 — physical (the coupling-balance equation); A5 — physical (the
+  probability and energy normalization); A6 — calibrational (the
+  reading dictionary k ↔ names).
 
     A0 (closure, Z11): the cycle and the tick vanish — the genesis
         cascade (Th 2.4.G.7), the closure Psi_12 = Psi_1, the N
@@ -9419,9 +9427,9 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
     The portal coupling 𝓛_aether-SM = λ_portal·|H|²·φ₂² is the
     unique renormalizable term connecting the aether and SM
     sectors, with λ_portal = α·φ = 0.0118 (Remark 2.8.O.1.r); the
-    DM-chain closure is y_χ·φ₂·χ̄χ (y_χ — a boundary input; the
-    window y_χ ≤ 16.2·(m_φ₂/100 GeV)² from the invisible width —
-    Remark 2.4.AF.2.s).
+    DM-chain closure is y_χ·φ₂·χ̄χ (y_χ, u = ⟨φ₂⟩ — boundary inputs; the
+    window y_χ·u ≤ 16.2·(m_φ₂/100 GeV)² GeV from the invisible width
+    (the m_φ₂ ≫ m_h asymptotics) — Prop 2.4.AF.2, Remark 2.4.AF.2.s).
 
   Thus 𝓛_Trinity is not an assembly but a SEQUENTIAL EMERGENCE
   from Z₁₁: each step's output is the next step's input. The chain
@@ -27790,30 +27798,46 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   scale is baryonic. STATUS: a structural prediction under the condition
   of Th 5.8.3; the blind check is LZ/XLZD. □
 
-  Proposition 2.4.AF.2 (DM scattering cross-section: the φ₂-mediator chain).
+  Proposition 2.4.AF.2 (DM scattering cross-section: the φ₂-mediator
+  chain; the full scalar sector).
   The DM fermion χ (mode k = 5, an SU(3)×SU(2)×U(1) singlet, spin 1/2)
   couples to the SM through the renormalizable chain (the mediator is
   the aether scalar φ₂):
 
       𝓛_portal = λ_portal·|H|²·φ₂² + y_χ·φ₂·χ̄χ,
       λ_portal = α·φ = 0.0118 (derived — Remark 2.4.AF.2.r),
-      y_χ — a boundary input (class У).
+      y_χ, m_φ₂, u = ⟨φ₂⟩ — boundary inputs (class У).
 
-  Invisible width (h → χχ through the off-shell φ₂):
-      g_eff = 2·λ_portal·v·y_χ/m_φ₂²,
-      Γ(h→χχ) = g_eff²·m_h/(8π)·(1 − 4m_DM²/m_h²)^{3/2}.
-  The spin-independent DM-nucleon cross-section (the chain
-  χ → φ₂ → hφ₂φ₂ → h → N, q → 0, the chain's Feynman rules):
-      σ_SI = μ_N²/π·[2·y_χ·λ_portal·f_N·m_N/(m_φ₂²·m_h²)]²·0.3894·10⁻²⁷
-           = 1.393·10⁻⁴⁹·y_χ²·(100 GeV/m_φ₂)⁴ cm²
-  with f_N = 0.30 (the Higgs fraction of the nucleon mass),
-  μ_N = 0.79 GeV.
+  THE FULL SCALAR SECTOR: V ⊃ ½m₂²φ₂² + λ_portal·|H|²·φ₂²; with
+  ⟨H⟩ = v and the condensate ⟨φ₂⟩ = u the mass matrix of (h, φ₂′):
+      M² = [[m_h² + λu², 2λuv], [2λuv, m₂² + λv²]]
+  — without the condensate the quartic generates no linear h·φ₂′
+  term and the tree χ–Higgs contact is absent; the condensate is the
+  only source of the mixing, sinθ = 2λuv/(M11 − M22) (exact to
+  O(M12²/Δ²) ~ 10⁻⁶). The effective coupling is dimensionless:
+      g_hχχ = y_χ·sinθ = (y_χ·u)·2λ_portal·v/(M11 − M22),
+      Γ(h→χχ) = g_hχχ²·m_h/(8π)·(1 − 4m_DM²/m_h²)^{3/2}.
+  The spin-independent DM-nucleon cross-section (the two-eigenstate
+  chain; the (m_φ₂² − m_h²) cancellation between the mixing and the
+  two propagators is exact):
+      σ_SI = μ_N²/π·[2·y_χ·u·λ_portal·f_N·m_N/(m_φ₂²·m_h²)]²·0.3894·10⁻²⁷
+           = 1.393·10⁻⁴⁹·(y_χ·u/GeV)²·(100 GeV/m_φ₂)⁴ cm²
+  (the m_φ₂ ≫ m_h limit) with f_N = 0.30 (the Higgs fraction of the
+  nucleon mass), μ_N = 0.79 GeV; the eigen-mass form at
+  m_φ₂ = 100 GeV: 1.21·10⁻⁴⁹·(y_χ·u/GeV)² cm² (−13%, the
+  λu²/λv² shifts).
 
   The ceiling from the invisible width (BR_inv ≤ 10.7%, ATLAS):
-      y_χ ≤ 16.2·(m_φ₂/100 GeV)²  ⟹  σ_SI ≤ 3.6·10⁻⁴⁷ cm²
-  — the bound does NOT depend on m_φ₂ (the y_χ ceiling and σ grow with
-  m_φ₂ in opposite directions); with f_N = 0.30 ± 0.02 —
-  (3.6 ± 0.5)·10⁻⁴⁷.
+      y_χ·u ≤ g_max·|M11 − M22|/(2λ_portal·v),  g_max = 9.38·10⁻³,
+      σ_SI ≤ 3.6·10⁻⁴⁷·[(1/m_h² − 1/m_φ₂²)·m_h²]² cm²  (the m_φ₂ ≫ m_h
+      limit; the exact form carries the eigenvalues of M²)
+  — the universal asymptote 3.6·10⁻⁴⁷ depends on neither m_φ₂ nor u
+  (u enters only through the λu² eigen-shift of the light state:
+  σ_ceil(u=50)/σ_ceil(u=1) = 1.023 — machine); at the recorded point
+  m_φ₂ = 100 GeV the exact ceiling is 7.8·10⁻⁴⁸ cm², at the
+  kinematic boundary m_φ₂ = m_h/2 — 2.1·10⁻⁴⁶ cm²; the whole
+  allowed range lies below XENONnT (6·10⁻⁴⁵ at 5 GeV); with
+  f_N = 0.30 ± 0.02 the asymptote is (3.6 ± 0.5)·10⁻⁴⁷.
 
   Universality of the ceiling (structural independence): the bound
   3.6·10⁻⁴⁷ cm² does not depend on the STRUCTURE of the portal
@@ -27828,7 +27852,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   (BR = 200%) — also excluded; it would predict
   σ_SI = 6.78·10⁻⁴⁶ cm² with zero parameters. The maximum allowed
   by the invisible width (BR_inv ≤ 10.7%) is σ_SI = 3.634·10⁻⁴⁷ cm² —
-  the same ceiling as in the φ₂-mediator chain (a 0.035% match).
+  the same ceiling as the asymptote of the φ₂-mediator chain (a 0.035% match).
   The frontier 6·10⁻⁴⁵ is unattainable in ANY Higgs-coupled
   structure; going beyond the ceiling requires abandoning the Higgs
   portal (a new light field + a new registry input). Computation:
@@ -27837,7 +27861,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
 
   The mediator mass: m_φ₂ ≥ m_h/2 = 62.6 GeV — the kinematics of the
   scalar channel (for m_φ₂ < m_h/2 the h→φ₂φ₂ channel opens:
-  Γ = 0.67 MeV, BR_inv = 16.4% > 10.7% ATLAS — excluded; hence φ₂ is
+  Γ = 2.7 MeV, BR_inv = 65.8% > 10.7% ATLAS — excluded; hence φ₂ is
   NOT the 5 GeV particle — the DM is the fermion χ, Remark 2.4.AF.2.s).
 
   Status: σ_SI ≤ 3.6·10⁻⁴⁷ cm² is BELOW the XENONnT sensitivity
@@ -27848,14 +27872,19 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   irreducible 8B CEvNS solar-neutrino fog enters.
 
   Proof. A direct evaluation by the chain's Feynman rules (vertices:
-  −i·y_χ·χ̄φ₂χ; −2i·λ_portal·v·hφ₂φ₂; −i·f_N·m_N/v·hN̄N); the amplitude
-  at q → 0: M = 2·y_χ·λ_portal·f_N·m_N/(m_φ₂²·m_h²);
-  σ_SI = μ_N²/π·|M|²·0.3894·10⁻²⁷ cm². Numbers: y_χ = 1 —
-  σ = 1.39·10⁻⁴⁹ cm², BR_inv = 0.04%; y_χ = 3 — 1.25·10⁻⁴⁸, 0.37%;
-  y_χ = 16 — 3.57·10⁻⁴⁷, 10.50%; the ceiling y_χ = 16.2 —
-  σ = 3.64·10⁻⁴⁷. The early φ⁸ ansatz is machine-refuted: the
-  6·10⁻⁴⁵ anchor would require y_χ ≈ 208 — a factor 12.8 above the
-  Γ_inv ceiling. Computation: theory_of_everything.py, block 2.4.AF.2. □
+  −i·y_χ·χ̄φ₂χ; −2i·λ_portal·v·hφ₂φ₂; −i·f_N·m_N/v·hN̄N; the
+  diagonalization of the mass matrix — both eigenstates carry both
+  admixtures with opposite signs); the amplitude at q → 0:
+  M = 2·y_χ·u·λ_portal·f_N·m_N/(m_φ₂²·m_h²) — the
+  (m_φ₂² − m_h²) cancellation is exact;
+  σ_SI = μ_N²/π·|M|²·0.3894·10⁻²⁷ cm². Numbers (y_χ·u = 1 GeV):
+  σ = 1.39·10⁻⁴⁹ cm² (the m_φ₂ ≫ m_h limit) / 1.21·10⁻⁴⁹ (exact,
+  m_φ₂ = 100 GeV), BR_inv = 0.04%; y_χ·u = 8 GeV — BR_inv = 10.62%
+  (the boundary); the universal asymptote of the ceiling
+  3.64·10⁻⁴⁷. The early φ⁸ ansatz is machine-refuted: the
+  6·10⁻⁴⁵ anchor would require y_χ·u ≈ 208 GeV — a factor 25.8
+  above the exact Γ_inv ceiling (8.03 GeV at m_φ₂ = 100 GeV).
+  Computation: theory_of_everything.py, block 2.4.AF.2. □
 
   Remark 2.4.AF.2.s (The DM passport: three objects, the boundaries).
   A single sheet on the nature of the dark sector.
@@ -27866,8 +27895,8 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
         (Remark 2.4.AF.1.r); m_χ = 5 GeV (Th 5.8.1, precision
         0.00006%).
     (2) THE MEDIATOR: the aether scalar φ₂ of the pair {2, 9}
-        (Remark 2.8.O.1.r). m_φ₂ — a boundary input (class У), the
-        lower bound m_φ₂ ≥ m_h/2 = 62.6 GeV (the h→φ₂φ₂ kinematics).
+        (Remark 2.8.O.1.r). m_φ₂ and the condensate ⟨φ₂⟩ = u — boundary inputs (class У),
+        the lower bound m_φ₂ ≥ m_h/2 = 62.6 GeV (the h→φ₂φ₂ kinematics).
         φ₂ is NOT the dark matter particle.
     (3) THE PASSIVE ETHERON (vacuum): the third object — gravity
         only, σ ~ 4·10⁻¹⁰² cm²; the carrier of dark energy
@@ -27875,10 +27904,16 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
         cross-section.
     (4) THE OBSERVABLE CHAINS OF χ: σ_SI ≤ 3.6·10⁻⁴⁷ cm²
         (Prop. 2.4.AF.2); Γ(h→χχ): BR_inv ≤ 10.7% (the y_χ ceiling);
-        annihilation σv_eff ≈ 3.5·10⁻³³ cm³/s
+        annihilation σv_eff ≈ 1.5·10⁻²⁸ cm³/s
         (Corollary 2.4.AF.3.3); DM/b = 5.3237 (Th 5.8.1/5.8.3).
         The active/passive separation is observable: (1) produces
-        nuclear recoils, (3) does not. □
+        nuclear recoils, (3) does not.
+    (5) STABILITY: conservation of the dark charge D (sphaleron-blind,
+        generated at T ~ M_R — Cor 2.4.AF.3.2, Step 1); χ is the
+        lightest D-charged object: the decays χ → SM are forbidden by
+        the D charge; φ₂ is unstable (φ₂ → χχ̄ through y_χ — fast);
+        allowed: χχ̄ → SM (annihilation) and χχ → χχ (scattering
+        through φ₂). □
 
 Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   floor 9). The recorded bridge 𝓛_portal = λ_portal·|H|²·φ₂² (Step 5
@@ -27915,7 +27950,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         action): σ_SI = (α(9))²·μ²/(4π·v_EW⁴·φ¹⁰). The formula as a
         whole remains the ansatz of the Proposition; the posited power
         is gone. The number is reproduced: σ_SI = 6.0·10⁻⁴⁵ cm² at
-        m_DM = 5 GeV.
+        m_DM = 5 GeV (the combination y_χ·u ≈ 208 GeV — Prop 2.4.AF.2).
   Computation: theory_of_everything.py, block Rem 2.4.AF.2.r. □
 
   Theorem 2.4.AF.3 (Relic density).
@@ -27929,8 +27964,9 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   arithmetic product of Ω_b and the DM/b ratio; the historical
   status of the density equality n_DM ≈ n_b as a postulate is
   withdrawn: the equality of yields follows from the linked
-  asymmetry of the sphaleron epoch under the survival hypothesis
-  on the charge D (Corollary 2.4.AF.3.2), and the sector and mode
+  asymmetry of the sphaleron epoch under the D-channel branching
+  on the price ladder (Corollary 2.4.AF.3.2, Step 4), and the
+  sector and mode
   selection — Remark 2.4.AF.1.r; the thermal component is computed
   in Corollary 2.4.AF.3.1 and is subdominant (10.7%); the
   cross-section σ_SI is a portal ansatz (Proposition 2.4.AF.2).
@@ -28004,25 +28040,39 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   earlier estimate (Y_th/Y_D)² = 1.1% is an upper bound).
 
   Step 3 (consequence for detection signals). Present-day
-  annihilation ∝ n_χ·n_χ̄ is suppressed by the factor
-  (n_χ̄/n_χ)² ≈ 8·10⁻⁹:
+  annihilation ∝ n_χ·n_χ̄; the experimental limit is normalized to the
+  symmetric halo of the same total density (n_χ = n_χ̄ = ρ/(2m_χ)),
+  so the signal factor is 4r/(1+r)² with r = n_χ̄/n_χ = 9.0·10⁻⁵:
 
-      σv_eff(bb̄) = 4.3·10⁻²⁵ · 8·10⁻⁹ ≈ 3.5·10⁻³³ cm³/s,
+      σv_eff(bb̄) = 4.3·10⁻²⁵ · 4r/(1+r)² ≈ 4.3·10⁻²⁵ · 3.6·10⁻⁴ ≈ 1.5·10⁻²⁸ cm³/s,
 
-  below the current Fermi-LAT sensitivity in the bb̄ channel at
+  ~65x below the current Fermi-LAT sensitivity in the bb̄ channel at
   5 GeV (~10⁻²⁶ cm³/s): the reach of the annihilation signal is
   withdrawn (a correction to item (2) of Remark 5.8.AE.r — see
   there). Direct detection σ_SI (Proposition 2.4.AF.2) and the
   graviton channel are unaffected: they do not depend on n_χ̄.
 
-  Step 4 (boundary). The charge D and its generation in
-  the N_R decays (the branching of the D channel versus the
-  leptonic one) is a structural survival hypothesis (as in
-  Remark 5.1.D.9.s): the equality Y_D = Y_b at 0.4% is a
-  consistency, not a dynamical derivation, since m_χ was derived
-  from the equality of densities (Theorem 5.8.1). A full
-  Boltzmann network with 2→2 scattering and temperature
-  thresholds is CLOSED NUMERICALLY (Corollary 2.4.AF.3.3). □
+  Step 4 (the dynamics of the D-channel branching). The charge D
+  is broken only at the N_R scale — the same Majorana physics that
+  breaks B−L (below M_R the charge D is conserved: χ is stable);
+  φ₂ is real and D-neutral (the portal of Prop 2.4.AF.2 is
+  untouched). The portal y_D·N^c·χ·φ₂ (renormalizable, dimension 3)
+  adds to the leptonic decay N_R → LH a second channel with the
+  branching r_D = y_D²/(y_ν² + y_D²), y_ν = 0.0251 (the seesaw:
+  m₃·M_R/v²). The price of y_D — the rungs of the ladder α(k):
+  α(7) = φ³·α gives r_D = 0.603, α(8) = φ²·α — r_D = 0.367. The
+  coupled Boltzmann system (Y_N, Y_ΔL, Y_ΔD; inverse decays of both
+  channels, thermal thresholds, K₁/K₂) is solved by the machine:
+  Y_ΔD/Y_ΔL = 0.391 (y_D = α(7)) — the recorded ratio
+  28/79 = 0.354, a 10% agreement; the exact closure at
+  sinΦ_D = 0.91 — inside the recorded CP-phase range |sinΦ| ≤ 1
+  (Cor 2.4.BA.1.c, the same discipline for both branches; the
+  phases — the cyclic KM core, Rem 2.4.BA.1.r; the loop level
+  ε_D = (y_D²/8π)·sinΦ_D — a registry program). The output
+  Y_ΔD = (28/79)·Y_{B−L} = 8.76·10⁻¹¹ — the recorded value
+  reproduced from the dynamics. A full Boltzmann network with
+  2→2 scattering and temperature thresholds is CLOSED NUMERICALLY
+  (Corollary 2.4.AF.3.3). □
 
   Corollary 2.4.AF.3.3 (The full two-component Boltzmann network;
   machine). Closes the step-4 boundary of Cor 2.4.AF.3.2:
@@ -28044,9 +28094,11 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
       n_χ̄/n_χ = 9.0·10⁻⁵ (the degenerate formula is the upper
       estimate 1.1·10⁻²).
   (3) THE DENSITY: Ω_χ·h² = 0.1202 against Planck 0.1200(12) (0.15%).
-  (4) THE SIGNAL: σv_eff(bb̄) = 3.5·10⁻³³ cm³/s —
-      the Fermi-LAT reach is withdrawn by THREE further orders;
-      the direct detection σ_SI (Prop 2.4.AF.2) is unchanged.
+  (4) THE SIGNAL: σv_eff(bb̄) = 1.5·10⁻²⁸ cm³/s (the factor 4r/(1+r)² = 3.6·10⁻⁴
+      against the symmetric halo of the same density) — ~65x below
+      the Fermi-LAT limit (~10⁻²⁶ at 5 GeV); the CMB budget (Planck 2018,
+      s-wave): σv_eff/m_χ = 3.1·10⁻²⁹ < 3.2·10⁻²⁸ cm³/s/GeV; the direct
+      detection σ_SI (Prop 2.4.AF.2) is unchanged.
   (5) THE BBN BUDGET: the energy released by burning the symmetric
       admixture = 6.3·10⁻¹⁰ of the radiation density (T ~ 0.2 GeV);
       ΔN_eff < 10⁻⁸ — the primordial nucleosynthesis budget is
@@ -28946,7 +28998,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
       contribution to the ΔL = 0 washout of Y_{B−L} is
       identically ZERO (not small but zero by quantum numbers);
       the recorded channels belong to the aetheron sector
-      (σv_eff(bb̄) = 3.5·10⁻³³ cm³/s — Cor 2.4.AF.3.3), not to the
+      (σv_eff(bb̄) = 1.5·10⁻²⁸ cm³/s — Cor 2.4.AF.3.3), not to the
       ℓΦ arm of leptogenesis.
 
   (2) THE O(1) ENVELOPE OF THE YUKAWA 2↔2. The leptogenesis
@@ -31899,13 +31951,14 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     Definition                   | .d labels (249 definitions; notation
                                  | inputs, not claims)
     Mathematical theorem         | class [DERIVED]/EXACT: 9 genuine
-                                 | derivations + 200 Lean theorems +
+                                 | derivations + the Koide anchor (class 10)
+                                 | + 210 Lean theorems +
                                  | Th 2.5.AT (explicit proofs from A0–A6)
     Physical hypothesis          | [STRUCT] (the prediction registry +
                                  | structural closures; model-to-nature
                                  | links are hypotheses with recorded
                                  | boundaries)
-    Empirical formula            | 35 α-series (+ the Q_Koide anchor):
+    Empirical formula            | 35 α-series:
                                  | flexibility ≈ 2.5%, MC control 4391×,
                                  | accuracy classes and windows recorded
   Success levels are not merged: an exact identity ≠ an approximation
@@ -32891,7 +32944,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         observation; the spans φ^10, 2^{10}, (1+α)^N. The
         remainder: the full pass over the catalogue of 84 (which
         constants are degrees/roots of the recorded generators) is
-        executed (Rem 2.6.A.4.at: the 9 EXACT on the grid, 39 forms on
+        executed (Rem 2.6.A.4.at: the 10 EXACT on the grid, 39 forms on
         21 of the 32 live relations r[X], the α-powers k = 1..4); the
         intermediate floors of
         the refinement (m ≥ 2) are uninhabited by recorded values —
@@ -33833,8 +33886,9 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         {the epoch, the floor} of the mass floor — derived from the
         cell table and the degree principle. The two in m_π =
         2·Λ_QCD/π is the pair factor of the recorded form, not a cell;
-        extending the cells to the remaining mass forms is an open
-        program.
+        extending the cells to the remaining mass forms is EXECUTED by
+        the catalogue-coordinate census (Rem 2.6.A.4.at: the 10 EXACT
+        on the grid, 35 α-series, 39 operator-rating).
 
     (6) THE TOTAL EXPONENT OF THE LADDER (machine). The product of the
         couplings of the floors 1..10: ∏_{k=1}^{10} α(k) = α(0)^10·μ^55
@@ -33951,12 +34005,12 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         (the Volume cell), φ⁷ = the coupling ratio of the pair {2,9}
         (.ap(4)), 32 = 2⁵ (the half-cycle negation, .an(5)).
 
-    (2) THE ALPHABET (machine). All 9 EXACT items of the catalogue are
+    (2) THE ALPHABET (machine). All 10 EXACT items of the catalogue are
         the composites of the Quintet/ladder atoms (the classification
         Th 2.5.AC.3.v — no α-series corrections): Koide Q = L₀/L₂,
         1/α₁ = F₁₀ + L₃, m_glueball = L₄ + L₁/L₀, a_e — the
         coefficients {1/L₃, L₃, F₅}. The law's alphabet = the alphabet
-        of the exact forms: 9/9.
+        of the exact forms: 10/10.
 
     (3) ITEM (b) — MET. Six + one + three = 10 re-readings (≥ 9), each
         machine-exact; the class: the identifications of values
@@ -34022,7 +34076,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         = {L1/L0, 1/C(3), C(3), C(5)} — the series orders carry the
         pair-cells + the half.
 
-    (6) THE EXACT-9 CENSUS (machine): 9/9 coordinated — alpha_GUT:
+    (6) THE HISTORICAL EXACT-9 CORE CENSUS (machine): 9/9 coordinated — alpha_GUT:
         F5^2 = C(5)^2; m_tau: the e-form {3, 8}; mp/mn: C(10)*N^2;
         rho_v: N^2 + L1; sin2_tW: C(7)*phi^7/2^5; Koide: C(2)/C(9);
         1/alpha_1: F10 + C(3); glueball: C(8) + 1/2; a_e: cells + 1/2.
@@ -34064,12 +34118,13 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         an operator form and an alpha-series form; both tuples are
         attributed to the first (operator) form — the 39/36 split
         reproduces exactly.
-    (2) EXACT-10 = 10/10 ON THE GRID (a confirmation of .as from the
-        source; the recorded nine + the flagship α): mp/mn = 1 − 1/(C(4,2)·N²) with C(4,2) = 6 = C(10);
+    (2) EXACT-10 = 10/10 ON THE GRID (the historical .as core — the nine
+        recorded, incl. the Koide anchor; the EXACT class = 10 = nine
+        genuine derivations, incl. the flagship α, and the Koide anchor): mp/mn = 1 − 1/(C(4,2)·N²) with C(4,2) = 6 = C(10);
         1/α_GUT = F₅²; sin²θ_W carries φ⁷; log₁₀(ρ_v/ρ_P) carries
         N²; a_e — a series with coefficients {N·φ¹⁰/π², 1/L₃, L₃,
         F₅}; m_τ = the e-form exp(3e) − L₂; Koide; 1/α₁(mZ);
-        glueball — exactly the nine recorded values.
+        glueball — the historical EXACT-9 core.
     (3) THE OPERATOR LAYER: 39 forms sit on 21 of the 32 live
         relations r[X] (machine inventory: S_p, K_p, J_p,
         p = 1..5, plus 17 composites = the recorded 32; every used
@@ -35630,7 +35685,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (1528 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (1540 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -41694,7 +41749,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  1528 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS
+  1540 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
   mirrors experiential irreducibility), not a theorem.
 
@@ -48938,7 +48993,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 1528 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 1540 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -62438,7 +62493,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         Fermi-LAT / CTA observations of the Galactic Centre. In the
         mandatory asymmetric picture (Corollary 2.4.AF.3.3) the
         present-day flux is suppressed by the residual symmetric
-        admixture n_χ̄/n_χ = 9.0·10⁻⁵: σv_eff(bb̄) ≈ 3.5·10⁻³³ cm³/s —
+        admixture n_χ̄/n_χ = 9.0·10⁻⁵: σv_eff(bb̄) ≈ 1.5·10⁻²⁸ cm³/s —
         below current reach; the signal instead marks the
         asymmetric nature of the aetheron. Axions do not
         annihilate to bb̄; sterile neutrinos do so only through
@@ -63359,7 +63414,9 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     τ       lifetime / modular parameter           τ ∈ H
     υ       electroweak VEV                        246 GeV
     Φ̂       scaling operator                       diag(φ^k)
-    χ       group character / spinors              χ(g)
+    χ       group character / spinors χ(g); the DM fermion of
+            mode k = 5 (2.4.AF); the Euler characteristic (χ = N from
+            the action)
     ψ       wave function                          Ψ_k
     Ψ       state vector                           |Ψ⟩
     ω       eigenfrequency                         ω_k = 2sin(πk/N)
@@ -63372,7 +63429,8 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     B       baryon number / magnetic field
     c       speed of light
     C       charge conjugation / Catalan number
-    D       dimension / scaling charge
+    D       dimension / scaling charge; the dark charge
+            (Cor 2.4.AF.3.2); D_k — the k-th 3D section of the Cone (3.10)
     e       Euler's number / electron charge
     E       energy
     F       force / flux / Fibonacci number
@@ -63388,6 +63446,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     M_P     Planck mass                            2.435e18 GeV
     n       number / density
     N       group order                            11
+            (N_R, N_eff, N_e, N_passive — always indexed)
     p       momentum / p-value
     P       parity operator / shift charge
     q       charge / q-series
@@ -63947,7 +64006,7 @@ new parameters (Rem 2.6.A.4.ap).
   ─────────────────────────────────────────────────────────────────────
   AMPLIFIER C. Machine verification.
   ─────────────────────────────────────────────────────────────────────
-  Lean 4 (no Mathlib dependency): 200 machine-verified theorems in
+  Lean 4 (no Mathlib dependency): 210 machine-verified theorems in
   the single unified file theory_of_everything.lean (ten sections:
   I — core identities, II — D1–D5 amplifiers, III — cascade
   arithmetic, IV — Variant B, V — Fibonacci end and group orders,
@@ -63961,13 +64020,13 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 1528 PASS,
+  exit 0. Python validator: theory_of_everything.py — 1540 PASS,
   0 FAIL, EXIT = 0 (≈ 5–8 min), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (714 theorems, 1528
+  from the recorded axioms and definitions (714 theorems, 1540
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
@@ -64006,7 +64065,7 @@ new parameters (Rem 2.6.A.4.ap).
   The aetheron (mode k = 5, m_DM = 5 GeV) has five experimentally
   discriminable signatures (Remark 5.8.AE.r): mass precision 0.00006%,
   bb̄ annihilation σ·v = 4.3·10⁻²⁵ cm³/s (the effective signal is
-  suppressed by the asymmetry to σv_eff ≈ 3.5·10⁻³³ cm³/s —
+  suppressed by the asymmetry to σv_eff ≈ 1.5·10⁻²⁸ cm³/s —
   Corollary 2.4.AF.3.3), low-energy nuclear recoil peak
   (E_R ~ 1.3 keV), σ_SI ≤ 3.6·10⁻⁴⁷ cm² (bound), and a graviton-mediated
   channel V(5)⁴/M_P⁴ unique to Trinity.
@@ -64077,7 +64136,7 @@ new parameters (Rem 2.6.A.4.ap).
       decomposition of explicit amplitudes — RG program
       (Rem 2.1.A.7.1.r).
     • Catalogue α-series (35 entries) — structural form [STRUCT];
-      the tree-level derivations are the 9 EXACT
+      the tree-level derivations are 9 of the 10 EXACT (the Koide anchor is the tenth)
       (Remark 2.5.AC.3.r, flexibility rate 2.48%).
   The list is current as of the recording date.
 
@@ -64140,7 +64199,7 @@ new parameters (Rem 2.6.A.4.ap).
       Refutation: a refined lattice extrapolation outside the window.
 
   [8] Dark matter — the aether fermion χ (k = 5) ....STATUS: AGREEMENT (prediction)
-      Formulas: m = 5.0 GeV; σ_SI ≤ 3.6·10⁻⁴⁷ cm² (bound); σv_eff ≈ 3.5·10⁻³³
+      Formulas: m = 5.0 GeV; σ_SI ≤ 3.6·10⁻⁴⁷ cm² (bound); σv_eff ≈ 1.5·10⁻²⁸
       cm³/s; DM/b = 5.3237 — conditional (Th 5.8.1/5.8.3, the input
       registry).
       Refutation: LZ/XENONnT/XLZD — a 5σ signal with a different mass
@@ -64387,7 +64446,7 @@ new parameters (Rem 2.6.A.4.ap).
      (md/html/docx/pdf/png — generated from the txt, not edited). The
      machine layer: theory_of_everything.py — the single validator,
      self-contained (one file, zero external inputs);
-     theory_of_everything.lean — the arithmetic core, 200 theorems
+     theory_of_everything.lean — the arithmetic core, 210 theorems
      without Mathlib; theory_of_everything.m — a MATLAB version of the
      same core. Showcase: README.md. The checksums of all package files
      (MD5) accompany the archive as a separate manifest file; the check
@@ -64400,11 +64459,11 @@ new parameters (Rem 2.6.A.4.ap).
          Python 3.12.6, numpy 2.4.2, scipy 1.17.1, sympy 1.14.0
          Lean 4.35.0 (elan; WITHOUT Mathlib and external dependencies)
 
-         python theory_of_everything.py   → 1528 PASS / 0 FAIL / EXIT=0
+         python theory_of_everything.py   → 1540 PASS / 0 FAIL / EXIT=0
                                           (≈ 5–8 min; the time is carried by
                                           the recorded deep sweeps 2.4.G.13.y
                                           and 2.4.AD.2.v)
-         lean  theory_of_everything.lean  → exit 0, "ALL 200
+         lean  theory_of_everything.lean  → exit 0, "ALL 210
                                           MACHINE-VERIFIED THEOREMS PASS"
 
   3. EXPECTED OUTPUTS. Every PASS token of the battery carries a canon-ID
@@ -64417,7 +64476,7 @@ new parameters (Rem 2.6.A.4.ap).
      theorem), no external packages.
 
   4. INDEPENDENT TESTS OF KEY FORMULAS. Three levels of independence:
-     (a) Lean 4 — another prover: 200 theorems of the Z₁₁ arithmetic core
+     (a) Lean 4 — another prover: 210 theorems of the Z₁₁ arithmetic core
      (native_decide/rfl over integer lists); (b) the Monte-Carlo control
      of grammar density (seed 42, 1000 formulas/target; the random/
      Trinity ratio = 4391× — a live value reproduced by every run);
@@ -64427,7 +64486,7 @@ new parameters (Rem 2.6.A.4.ap).
      conventions (Rem 2.6.A.4.au).
 
   5. WHAT CHECKS ARITHMETIC AND WHAT CHECKS PHYSICS. Arithmetic and
-     mathematics: Lean 200 and the identity blocks of the validator (the
+     mathematics: Lean 210 and the identity blocks of the validator (the
      spectrum ω_k, the ladders, the λ³/λ⁴ censuses, the machine comparator
      of N, checks at exact values) — machine verification of the LOGICAL
      CONSEQUENCES of the recorded definitions; the truth of the

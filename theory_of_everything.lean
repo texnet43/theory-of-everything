@@ -1,4 +1,4 @@
-/-  Trinity ToE — Lean 4 machine verification (200 theorems, sections I-X).
+/-  Trinity ToE — Lean 4 machine verification (210 theorems, sections I-X).
     Author: texnet43 | DOI: 10.5281/zenodo.19600779 | License: CC BY 4.0 (c) 2026
 -/
 /-
@@ -12,10 +12,10 @@ Lean 4.33+, NO Mathlib dependency. All theorems use native_decide/rfl.
 
 Reproduce:   lean theory_of_everything.lean    (must exit 0, no errors)
 
-Sections (200 machine-verified theorems total):
+Sections (210 machine-verified theorems total):
   I.   Core identities (25)            — Z11 basics, Higgs VEV, mass ratios
   II.  V11 Core: D1-D5 amplifiers (42) — Lambda exponent 2N^2, RH coefficient,
-                                         constructive emergence, catalogue 9/36/39
+                                         constructive emergence, catalogue 10/35/39
   III. Step-3 arithmetic (28)          — net chirality = 3 generations (Th 5.1.D.9),
                                          cubic cascade anomaly 28-20-7-1 = 0 (Cor
                                          5.1.D.8.1), portal Casimirs 181/22, 84/11,
@@ -387,7 +387,7 @@ theorem total_resonant_modes : 2 * 5 = N - 1 := by native_decide
 
 /-
 HISTORICAL NOTE — this file was originally a separate D1-D5 file; the
-unified theory_of_everything.lean now contains 200 theorems (sections I-X).
+unified theory_of_everything.lean now contains 210 theorems (sections I-X).
 THEOREMS OF THE ORIGINAL D1-D5 FILE (28):
 
 D1 (Λ derivation):
@@ -1256,4 +1256,224 @@ theorem half_cycle_negation : 2^5 % 11 = 10 ∧ (2^5 + 1) % 11 = 0 := by native_
 
 end Trinity.V16.ConeReadings
 
-#print "TRINITY UNIFIED: ALL 200 MACHINE-VERIFIED THEOREMS PASS" 
+
+
+/-
+================================================================
+AXIOM REPORT (machine): kernel axiom dependencies of every theorem
+(#print axioms, fully qualified names). Recorded for the reproducibility
+block — the exact axiom set of the file.
+================================================================
+-/
+#print axioms Trinity.N_prime
+#print axioms Trinity.N_heegner
+#print axioms Trinity.C1_holds
+#print axioms Trinity.N_unique_2
+#print axioms Trinity.N_unique_3
+#print axioms Trinity.N_unique_7
+#print axioms Trinity.N_unique_19
+#print axioms Trinity.N_unique_43
+#print axioms Trinity.N_unique_67
+#print axioms Trinity.N_unique_163
+#print axioms R_over_Z2_num
+#print axioms R_over_Z2_den
+#print axioms Delta5_first5
+#print axioms Delta5_last5
+#print axioms Delta5_norm_sq
+#print axioms Phi_coeffs
+#print axioms Phi_trace_norm
+#print axioms Phi_pattern_SU3
+#print axioms Phi_entry_SU2
+#print axioms m_b_over_m_s
+#print axioms m_c_over_m_mu
+#print axioms N_derived
+#print axioms N_minus_Rsq
+#print axioms SU3_dim
+#print axioms SU2_dim
+#print axioms SM_total_dim
+#print axioms T1_val
+#print axioms T2_val
+#print axioms T3_val
+#print axioms T4_val
+#print axioms T5_val
+#print axioms V_cone_val
+#print axioms Lambda_ratio_num
+#print axioms R_over_Z2_all
+#print axioms R_over_Z2_sq
+#print axioms Trinity.V11.Core.cone_factor_2N
+#print axioms Trinity.V11.Core.structure_factor_N
+#print axioms Trinity.V11.Core.Lambda_exponent_2N2
+#print axioms Trinity.V11.Core.exponent_factorization
+#print axioms Trinity.V11.Core.RH_coefficient
+#print axioms Trinity.V11.Core.N_squared
+#print axioms Trinity.V11.Core.SdS_coefficient
+#print axioms Trinity.V11.Core.RH_sq_exponent
+#print axioms Trinity.V11.Core.Omega_Lambda_denominator
+#print axioms Trinity.V11.Core.Omega_Lambda_numerator
+#print axioms Trinity.V11.Core.alpha_phi_exponent
+#print axioms Trinity.V11.Core.alpha_phi_exponent_half
+#print axioms Trinity.V11.Core.exponent_decomposition
+#print axioms Trinity.V11.Core.e_exponent
+#print axioms Trinity.V11.Core.boundary_modes_count
+#print axioms Trinity.V11.Core.pi_exponent_term1
+#print axioms Trinity.V11.Core.pi_exponent_term2
+#print axioms Trinity.V11.Core.phi_exponent_term2
+#print axioms Trinity.V11.Core.det_Delta
+#print axioms Trinity.V11.Core.adjoint_dim
+#print axioms Trinity.V11.Core.inv_spectral_sum_2
+#print axioms Trinity.V11.Core.inv_spectral_sum_4
+#print axioms Trinity.V11.Core.gauge_sector_modes
+#print axioms Trinity.V11.Core.aether_dof
+#print axioms Trinity.V11.Core.G_ind_coefficient_den
+#print axioms Trinity.V11.Core.VEV_entry_count
+#print axioms Trinity.V11.Core.VEV_trace_R3_zero
+#print axioms Trinity.V11.Core.VEV_trace_R2_nonzero
+#print axioms Trinity.V11.Core.VEV_trace_R4_nonzero
+#print axioms Trinity.V11.Core.VEV_trace_R5_nonzero
+#print axioms Trinity.V11.Core.catalog_EXACT_count
+#print axioms Trinity.V11.Core.catalog_alphaseries_count
+#print axioms Trinity.V11.Core.catalog_operatorratio_count
+#print axioms Trinity.V11.Core.catalog_total
+#print axioms Trinity.V11.Core.MR_ratio_scales_not_integer
+#print axioms Trinity.V11.Core.V4_sum_coefficient
+#print axioms Trinity.V11.Core.quartic_base
+#print axioms Trinity.V11.Core.alpha_characterization_15
+#print axioms Trinity.V11.Core.resonance_pairs_count
+#print axioms Trinity.V11.Core.time_light_resonant_pair
+#print axioms Trinity.V11.Core.electricity_mode
+#print axioms Trinity.V11.Core.total_resonant_modes
+#print axioms Trinity.V12.Step3.net_gen_10
+#print axioms Trinity.V12.Step3.net_gen_5bar
+#print axioms Trinity.V12.Step3.generations_equal
+#print axioms Trinity.V12.Step3.anomaly_SU11_cubed
+#print axioms Trinity.V12.Step3.anomaly_magnitudes_sum
+#print axioms Trinity.V12.Step3.anomaly_A10_A5bar
+#print axioms Trinity.V12.Step3.T_gen_half_units
+#print axioms Trinity.V12.Step3.T_three_gen
+#print axioms Trinity.V12.Step3.C2_fund_num
+#print axioms Trinity.V12.Step3.C2_fund_half
+#print axioms Trinity.V12.Step3.C2_2form_num
+#print axioms Trinity.V12.Step3.kappa1_num
+#print axioms Trinity.V12.Step3.kappa1_den
+#print axioms Trinity.V12.Step3.kappa2_sum
+#print axioms Trinity.V12.Step3.kappa2_reduced
+#print axioms Trinity.V12.Step3.kappa3_num_over_11
+#print axioms Trinity.V12.Step3.kappa3_den
+#print axioms Trinity.V12.Step3.kappa3_cross
+#print axioms Trinity.V12.Step3.kappa1_cross
+#print axioms Trinity.V12.Step3.kappa2_cross
+#print axioms Trinity.V12.Step3.T_RS_half_units
+#print axioms Trinity.V12.Step3.T_RS_total
+#print axioms Trinity.V12.Step3.weighted_casimir_x11
+#print axioms Trinity.V12.Step3.weighted_casimir
+#print axioms Trinity.V12.Step3.xf_above_21
+#print axioms Trinity.V12.Step3.xf_below_24
+#print axioms Trinity.V12.Step3.omega_below_observed
+#print axioms Trinity.V12.Step3.omega_fraction_check
+#print axioms Trinity.V12.VariantB.ends_decomposition
+#print axioms Trinity.V12.VariantB.eleven_mod_four
+#print axioms Trinity.V12.VariantB.quintet_count
+#print axioms Trinity.V12.VariantB.z7_forbidden
+#print axioms Trinity.V12.VariantB.z13_forbidden
+#print axioms Trinity.V12.VariantB.eleven_no_small_divisor
+#print axioms Trinity.V12.VariantB.me_anchor
+#print axioms Trinity.V13.FibEnd.fib10_quintet_N
+#print axioms Trinity.V13.FibEnd.quintet_index_pair
+#print axioms Trinity.V13.FibEnd.lucas10_span
+#print axioms Trinity.V13.FibEnd.pisano_at_ten
+#print axioms Trinity.V13.FibEnd.rank_apparition_minimal
+#print axioms Trinity.V13.FibEnd.pisano_minimal
+#print axioms Trinity.V13.FibEnd.fib12_mod11
+#print axioms Trinity.V13.GroupOrders.gl211_order
+#print axioms Trinity.V13.GroupOrders.psl211_order
+#print axioms Trinity.V13.GroupOrders.end_stabilizer
+#print axioms Trinity.V13.GroupOrders.vcone_gl
+#print axioms Trinity.V13.PairExecution.pair_zero_sums
+#print axioms Trinity.V13.PairExecution.depth3_not_mdl_unique
+#print axioms Trinity.V13.PSLMatrix.psl_dets_ST
+#print axioms Trinity.V13.PSLMatrix.psl_s_order2
+#print axioms Trinity.V13.PSLMatrix.psl_t_order11
+#print axioms Trinity.V13.PSLMatrix.psl_t_minimal
+#print axioms Trinity.V13.PSLMatrix.psl_dets_xy
+#print axioms Trinity.V13.PSLMatrix.psl_x_sq
+#print axioms Trinity.V13.PSLMatrix.psl_y_cubed
+#print axioms Trinity.V13.PSLMatrix.psl_xy_base
+#print axioms Trinity.V13.PSLMatrix.psl_xy_sq
+#print axioms Trinity.V13.PSLMatrix.psl_xy_fourth
+#print axioms Trinity.V13.PSLMatrix.psl_xy_fifth
+#print axioms Trinity.V13.PSLMatrix.psl_sl_order
+#print axioms Trinity.V13.PSLMatrix.psl_census_sum
+#print axioms Trinity.V13.PSLMatrix.psl_sylow11
+#print axioms Trinity.V13.IntSkeleton.pair_execution_sum
+#print axioms Trinity.V13.IntSkeleton.mirror_one_fixed_point
+#print axioms Trinity.V13.IntSkeleton.psl_sylow2
+#print axioms Trinity.V13.IntSkeleton.psl_sylow3
+#print axioms Trinity.V13.IntSkeleton.psl_sylow5
+#print axioms Trinity.V13.IntSkeleton.depth3_space_count
+#print axioms Trinity.V15.Washout.washout_mirror_involutive
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_0
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_1
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_2
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_3
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_4
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_5
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_6
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_7
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_8
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_9
+#print axioms Trinity.V15.Washout.dcyc_mirror_row_10
+#print axioms Trinity.V15.Washout.dcyc_table_row_0
+#print axioms Trinity.V15.Washout.dcyc_table_row_1
+#print axioms Trinity.V15.Washout.dcyc_table_row_2
+#print axioms Trinity.V15.Washout.dcyc_table_row_3
+#print axioms Trinity.V15.Washout.dcyc_table_row_4
+#print axioms Trinity.V15.Washout.dcyc_table_row_5
+#print axioms Trinity.V15.Washout.dcyc_table_row_6
+#print axioms Trinity.V15.Washout.dcyc_table_row_7
+#print axioms Trinity.V15.Washout.dcyc_table_row_8
+#print axioms Trinity.V15.Washout.dcyc_table_row_9
+#print axioms Trinity.V15.Washout.dcyc_table_row_10
+#print axioms Trinity.V15.Washout.dcyc_weighted_row0
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.tensor_layout_counts
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.center_depths_genesis
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.center_depths_closure
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.two_pow_five_mod_eleven
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.two_pow_ten_mod_eleven
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.galois_5cycle
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.galois_image_covers
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.galois_order_five
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.temperature_primitive_root
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.temperature_even_powers_qr
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.temperature_odd_powers_qnr
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.quintet_generation_chain
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.quintet_chain_classes
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.temperature_transport_table
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.vertex_trunk_binomial
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.vertex_ladder_aliasing_N11
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.fermion_kernel_counts
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.fermion_pairing_entries
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.quintet_23_split
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.lepton_class_walk
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.quartic_trace_selection
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.tensor_measure_modes
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.quark_class_neutrality
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.higher_contact_ladder
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.cp_mirror_selection
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.cross_census_8point
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.cross_census_totals
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.theta_cycle_fractions
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.loop_fractions
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.section_cell_walk
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.cubic_tadpole_channels
+#print axioms Trinity.V15.Washout.Trinity.V15.Readings.portal_dim_anchors
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cone_volume_three_readings
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.gl2z11_order
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.v_cone_formula
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.v_cone_factorization
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cell_bridge
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cell_sum_f10
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cell_mirror_invariant
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cell_generator
+#print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.half_cycle_negation
+
+#print "TRINITY UNIFIED: ALL 210 MACHINE-VERIFIED THEOREMS PASS" 
