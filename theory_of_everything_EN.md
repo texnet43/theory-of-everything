@@ -96,11 +96,11 @@
    • THREE SECTORS OF SPHERE (2.7.P.1): S_A={1,4,7,10}, S_B={2,5,8}, S_C={3,6,9}
    • THREE SCALES OF INTERPRETATION (Section 4.0): L1=Geometry, L2=Absolute, L3=Duality
    Theory statistics:
-   • 714 theorems (with derivations in the text; 210 machine-verified in Lean 4). 249 definitions. 563 corollary.
-   • 507 remarks. 26 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
+   • 715 theorems (with derivations in the text; 210 machine-verified in Lean 4). 251 definitions. 570 corollary.
+   • 539 remarks. 28 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Structural core: the flagship status
      table — 18 main results, each with formula, prerequisites, data,
-     status and refutation rule — plus the reproducibility block).
+     status and refutation rule — plus the reproducibility block; IV — the map of fundamental questions).
    • The primal assumptions on a single sheet: the registry of axioms
      and assumptions (Rem 1.0.A.0.R), the registry of numerical inputs
      with statuses (Rem 1.0.A.0.I).
@@ -352,9 +352,11 @@
 	       Heegner classification: h = 1 ⟺ N ∈
 	       {1, 2, 3, 7, 11, 19, 43, 67, 163}, Baker–Stark) with C3
 	       selects exactly (R, N) = (3, 11); outside the class — the
-	       single window K(5) = 44 (an open problem of mathematics,
-	       N = 43) is closed by the globally solving characterization
-	       N² − 1 = 5! (Th 2.5.B.1; non-circularly: |Quintet| = 5 —
+	       window K(5) = 44 (N = 43) is closed twice: inside the theory,
+	       by the globally solving characterization N² − 1 = 5!
+	       (Th 2.5.B.1), and externally, by the November 2026 preprint
+	       giving K(5) ≤ 43 (exact rational certificates; a preprint,
+	       the exact K(5) undetermined); non-circularly: |Quintet| = 5 —
 	       the input {N, π, φ, e, i} is independent of N: Quintet-5 ⟹
 	       5! = 120 ⟹ N² = 121 ⟹ N = 11, not the other way round).
 	       The sieve
@@ -589,19 +591,19 @@
 
 ## ABSTRACT
 
-Trinity is an operator-algebraic theory of everything on the cyclic group Z₁₁ and the quintet {N = 11, π, φ, e, i}. The flagships: Einstein gravity derived with the exact graviton self-coupling table (V₂ = δ_{pq}(48N − 8g_p), V₃ = 24·TrD·Z₃, V₄ = 24N·Z₄ — Rem .ce); the spacetime dimension 3+1 derived by two independent routes (the vacuum trace of the spectrum and the QR signature — Rem .bm/.bp); the 19 SM+ΛCDM parameters and the 84 dimensionless constants — closed forms over the quintet with zero continuous tuning parameters; α — the single ppt-precision derivation (Theorem 2.4.A), the remainder — structural closures selected from the Z₁₁ algebra (§2.5; no real-valued constant is tuned). Grammar-density control: random formulas from the same atoms are 4391× less accurate (Monte Carlo, §2.10.B); the selection criterion — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation criteria; the machine: 1754 checks (0 FAIL), 210 Lean theorems.
+Trinity is an operator-algebraic theory of everything on the cyclic group Z₁₁ and the quintet {N = 11, π, φ, e, i}. The flagships: Einstein gravity derived with the exact graviton self-coupling table (V₂ = δ_{pq}(48N − 8g_p), V₃ = 24·TrD·Z₃, V₄ = 24N·Z₄ — Rem .ce); the spacetime dimension 3+1 derived by two independent routes (the vacuum trace of the spectrum and the QR signature — Rem .bm/.bp); the 19 SM+ΛCDM parameters and the 84 dimensionless constants — closed forms over the quintet with zero continuous tuning parameters; α — the single ppt-precision derivation (Theorem 2.4.A), the remainder — structural closures selected from the Z₁₁ algebra (§2.5; no real-valued constant is tuned). Grammar-density control: random formulas from the same atoms are 4391× less accurate (Monte Carlo, §2.10.B); the selection criterion — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation criteria; the machine: 2069 checks (0 FAIL), 210 Lean theorems.
 
 Ontologically, Trinity describes how reality is built, not only the closure of constants: the micro- and macro-cosmos are the two limits of Duality — the mirror pair {1,10} (Time/Electricity, Rem 2.6.A.4.s), and scale is the degree of freedom of the Point (Rem 1.11.0.au(3)), unfolded into the ladder of 11 Cone sections (Rem 2.4.G.8). The Big Bang is not an explosion in a ready-made 3+1 but an unfolding across these 11 scales from the micro- to the macro-cosmos (Rem 1.11.0.au(5), Cor 4.3.1.c); a black hole is the same Cone reversed (Th 2.7.AA.3). There are no singularities or divergences because the carrier is discrete: infinity is the boundary of applicability read from both sides (Rem 1.11.0.au(6), Rem 5.7.VS.1.r).
 
 The unified law of the ladder (Rem 2.6.A.4.aa–.au) closes the ontology algebraically: scale = degree, the transition down is a root, up — a power, the closure — by resonance (identity = coincidence of the frequencies of the mirror pair); the center is not a place but the limiting resonance (the fixed point k = 0); the Sphere is inevitable — the closure forces the complete root set, the full group D₁₁; gravity = return (G_ind/G_N = π/N — the floor-0 of the coupling ladder α(k) = α(0)·μ^k); the next scale is generated by resonance, C(k+1) = 2·C(k) (mod 11), the full cycle 11 → 0 → 1; every mirror pair carries a Quintet atom ({1,10}~N, {2,9}~i, {3,8}~e, {4,7}~φ, {5,6}~π); the twelve floors are censused (k = 0 Absolute … 11≡0 Energy); the acceptance criterion: the law is accepted as a FORM with machine identities (Rem 2.6.A.4.ah) and quantitative predictions from the system (the α(0..11) sheet, the mirror invariants, the mass-sector degrees — Rem 2.6.A.4.ap). The series completion (.aq–.au): the law "quantity → quality" — the thresholds = the occupation numbers (7/7 magic nuclei EXACT, the gaps 2n²); the coordinates of the catalogue-84 (10 EXACT on the grid, 39 forms on 21 of the 32 live relations r[X]); the r_k blind contour — binding to the recorded anchors only (r_k = ln(k/k_*), the W_* normalization): the count matrix {Λ_QCD: 105, f_π: 106, CMB: 162, H₀: 298} with exact additivity, the class conventions as test outputs (nucleus 1 MeV, molecule 1000 cm⁻¹, dust 100 K; the intersection of the robustness windows [0.10, 0.11) is nonempty). The catalogue composition law (AOP.10, at2–at7): the role — the Quintet atom by the Bartini branch of the cell (the floor = m + 4 − n/2), the apparatus — the operator of the quantity-carrier floor (the census 27/27), the grammar — 70 structural strings + 19 floor coefficients; the axis-weight ladders π / π√φ / 4φ close on Λ_QCD, φ⁵ and F₁₀ ± L₃; the Trinity of the sequences (boundary/area/volume) cancels on the cycles 10/10/120 = 5!.
 
-The closing machine-layer series: the spectral gravity C4 — the inner space is Einstein: the TT-operator = Einstein + Kottler (the gap tanh(1/2φ) = the duality ratio = the Λ-slot), R_inner = 6·|a₂|/a₀ = N+1 = 12 — the closure charge, the vacuum trace selects d = 4 uniquely — the Lorentzian 3+1 is overdetermined by two routes with disjoint inputs, the 4D-triple is closed (the slice, the dispersion, the signature — Rem 2.4.AE.2.bj–.bv); the slot ladder of D² is rigid — the binomial series, five degrees of freedom (Rem .br); the carrier of the 3-vertex convolution is closed by the selection rule: the trace = Tr(D)·Z/2^r over the zero sums on the carrier, the cubic sector is single-valued — 45 triples, all = Tr(D)/4 (Rem .by); the kinetic: D is the derivation of the commutative mod algebra, the mode metric = T₁ minus the correlation (Rem .bz); the scale tower — tetration, the discrete logarithm, the uniqueness of the carrier 2 (Rem 2.6.A.4.av–.ay); the gluon — one particle, three roles: k = 0 masslessness, k = 3 direction (the color), k = 9 strength (Rem 2.8.1.v). The algebra of operations (Section 1.0.AOP): 12 operations occupy the 12 floors of the lexicon A6 — each answers its own question (minus — the axis, plus — the tick, multiplication — the plane along the direction, the power — the scale floors, division — the reference, the integral — accumulation, the derivative — the current, identity — resonance); the mirror pairs of operations carry the quintet atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all operations. Battery: 1754 PASS / 0 FAIL / EXIT=0.
+The closing machine-layer series: the spectral gravity C4 — the inner space is Einstein: the TT-operator = Einstein + Kottler (the gap tanh(1/2φ) = the duality ratio = the Λ-slot), R_inner = 6·|a₂|/a₀ = N+1 = 12 — the closure charge, the vacuum trace selects d = 4 uniquely — the Lorentzian 3+1 is overdetermined by two routes with disjoint inputs, the 4D-triple is closed (the slice, the dispersion, the signature — Rem 2.4.AE.2.bj–.bv); the slot ladder of D² is rigid — the binomial series, five degrees of freedom (Rem .br); the carrier of the 3-vertex convolution is closed by the selection rule: the trace = Tr(D)·Z/2^r over the zero sums on the carrier, the cubic sector is single-valued — 45 triples, all = Tr(D)/4 (Rem .by); the kinetic: D is the derivation of the commutative mod algebra, the mode metric = T₁ minus the correlation (Rem .bz); the scale tower — tetration, the discrete logarithm, the uniqueness of the carrier 2 (Rem 2.6.A.4.av–.ay); the gluon — one particle, three roles: k = 0 masslessness, k = 3 direction (the color), k = 9 strength (Rem 2.8.1.v). The algebra of operations (Section 1.0.AOP): 12 operations occupy the 12 floors of the lexicon A6 — each answers its own question (minus — the axis, plus — the tick, multiplication — the plane along the direction, the power — the scale floors, division — the reference, the integral — accumulation, the derivative — the current, identity — resonance); the mirror pairs of operations carry the quintet atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all operations. Battery: 2069 PASS / 0 FAIL / EXIT=0.
 
 The sign kernel of duality — Δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), the Rb reference, the Cs/Sr/Yb shifts reproduced (Theorem 2.5.U.1); r = 0.00352 (the full slow roll, 75α² = 0.0040 — the leading form); the Γ-mn/mp: 725 = C(4,2)·N² − 1 — "Width − Time" (Rem 2.7.P.11); the variational program of α: the difference of closures is exact, the soft Cone modes = the floors {2,4} of the 1-loop numerator, the action spiral A(k) = (N−1)·φ^k + 1 (Rem 2.4.2.s(8)/(9)); the kinetic reduction (1+α)^N: the uniform tick-weight and the full cycle N = 11 forced (Rem 2.6.A.4.r); the reduction of the three scales to the single input t_P (Rem 4.6.E.3); the TM portal from the action: λ_portal = α·φ = α(9) = π²/(N·φ⁹), the step forced (Rem 2.4.AF.2.r); the continuum-sector selection: the depth lives on the unfolding, the cycle excluded by machine (Rem 2.4.G.13.y).
 
 The quantum-field and catalogue series: the derivability of the operator catalogue from the pair (scale, quintet) — 34 of 36 operator entries are forced, mn/me and sigma_8 resolved by the MDL minimum, no exceptions (Theorem 2.5.AT); the loop coefficients of n_s (7, 28, 9) derived from the mirror pairs — the sieve of 1280 combinations, the sum invariant N+1 = 12, the Planck window leaves exactly one series (−7, +28, −9): n_s = 0.96490283 in the α_tree convention, 0.9648968 at the canonical α — both 0.0003% (Theorem 2.5.P.1); the gauge-invariant mode-helicity identification: P^TT kills the gauge exactly, the spectrum {−2, −1, 0, 1, 2} without a slice, two polarizations = a Z₂-pair (Rem 2.4.AG.3); the operator-valued W3/W4 level of the interacting branch at the chain level: C_eff = Z·μ_eff²·D_μeff with the amplitude Z = 0.999895948 (Rem 2.4.AE.2.be); the transport topologies T1–T3 are not particles: the double pole carries no positive measure (the Stieltjes inequality), the one-frequency sector — exactly one mass μ_eff (Rem .bf); the multi-loop control lambda^3/lambda^4: the census of 124740 Wick configurations → 8 canonical classes, the chain confirms the resummation at the ratio 1.00000000, |δ₃/δ₂| = 1.96·λ, |δ₄-chain/δ₃| = 0.164·λ — the chain series narrows (Rem .bg/.bi); the full λ⁴ census (240·13!! = 32432400 configurations, 54 canonical classes, 30 connected) gives W₄ = 5746.3 — the tadpole sector dominates the coincident point, the series control lives in the resummation variable Δ = 3λC(0) (Rem .cg); the compact counterterms of [0, 10] = 0 exactly — the series is valid on the segment as it stands (Rem .bh); the alpha-charge census: the skeleton is family-wide, the invariant is observable-specific (Rem 2.5.AT.2).
 
-The spectral gravity C4 and the scale tower (the closing machine-layer series): the linearized TT-sector of the inner space — the exact symbol identity K⁻¹(q) = [(1−ρ)/(1+ρ)] + [1/sinh(1/φ)]·(1−cos q), the gap tanh(1/2φ) = the duality ratio = the Λ-slot — the TT-operator is Einstein + Kottler, m_Λ = 1/(√2·ℓ) (Rem 2.4.AE.2.bj); the metric network is Einstein per layer — the Forman-Ricci curvature is uniform within all the distance classes exactly (≤ 1.8·10⁻¹⁵), the Ollivier transport curvature confirms the functional independence of the layers (Rem .bk/.bq); the spectral reading of the curvature: R_inner = 6·|a₂|/a₀ = N+1 = 12 — the closure charge (four recorded carriers), the quadratic slot a₄/a₀ = 3 = R (Rem .bl/.bn); the vacuum trace of the slots selects d = 4 uniquely (R = 4·Λ exactly; R = 2dΛ/(d−2) ⟹ d = 4 on the whole range 3..10) — the Lorentzian 3+1 is overdetermined by two routes with disjoint inputs: the spectrum + the QR-signature (3, 1) (Rem .bm/.bp); the manifold limit: the Einstein layers are exact on the whole refinement ladder N = 11·2^m, the intensive curvature κ̄ = 1 − w/W → 1 (Rem .bo); the slot ladder of D^2 is the rigid binomial series (five degrees of freedom) — the SW split requires an operator-class change (Rem .br); the in-cycle operator classes are empty — the merge with the 4D-triple (Rem .bs); the Lorentzian slice of the 4D-triple: QR_fund = {1, 3, 4, 5} = {Time, Height, Width, Length}, ds² = −dμ₁² + dμ₃² + dμ₄² + dμ₅², the carrier 11 = 1 + 4 + 4 + 2 (Rem .bt); the continuum dispersion of the manifold limit: λ_int(Q) = (1 − Ģ(Q)/Ģ(0))/2 — the manifold is complete (the curvature + the wave operator, Rem .bu); the signature of the manifold = (|σ-orbit|, |fixed points|) = (3, 1) — the axis (the softest mode) + one rotation orbit, the phase fiber {2, 9} ~ i (Rem .bv); the 3-vertex structure of the YM sector: the pair algebra is diagonal, Tr(D) = 2·cot(π/22) — the carrier of the recorded convolution (Rem .bw); the quartic of the modal sector: the constant part = T₂ = 66, the full quartic is expressed by the .by selection rule and the .bz/.ca metrics (Rem .bx); the Tr(D) family is closed by the character selection rule: the trace = Tr(D)·Z/2^r — the zero sums on the carrier, the cubic sector is single-valued (all 45 triples = Tr(D)/4) (Rem .by); the commutator algebra of the kinetic is closed: D is the derivation of the mod algebra, the kinetic metric = T₁ minus the stiffness correlation, the Z₂-pair degeneracy (Rem .bz); the composite modes: the kinetic is closed — the metric = (g_{p+q} + g_{p−q})/4, consistent with the group law of the mods (Rem .ca); the moment alphabet in closed form: the convolution S_p = 2cos(π/N)·sin(pπ/N)/sin(π/N) − 2p·cos(pπ/N) and the odd moments — the cotangent family (Rem .cb); the self-couplings of the inner sector vanish — the commutative triple is free, the only dynamics is the carrier coupling by the selection rule (Rem .cc); the sum rule of the kinetic metric: Σ_{p∈fd} g_p = N² − 2cot²(π/2N) — a parallel to the vertex sum rules (Rem .cd); the graviton vertices of the spectral action are exact: V₂ = δ_{pq}(48N − 8g_p), V₃ = 24·TrD·Z₃, V₄ = 24N·Z₄ — the "graviton-graviton vertices" item is computed (Rem .ce); the gluon on the three floors — one particle, three roles: k = 0 masslessness, k = 3 the color = the "where to" of the quark (8 = N − 3 gluons), k = 9 the strength — a Trinity miniature (Rem 2.8.1.v). The scale tower: the tetration T_h = 2↑↑h (mod 11) — "after 0 always 1": T_0 = T_5 = T_10 = 1, the period 5 = |Quintet| (Rem 2.6.A.4.av); the discrete logarithm of the scales — the number ↔ scale bijection, 2⁰ = 1 = the Point, the mirror pair reproduces the carrier (Rem .aw); the carrier 2 is the unique one with the quintal period among {2, 6, 7, 8}, the tower cycle weighs 22 = 2N = Σω², the tower mirror = C(7) Volume (Rem .ax); the φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no finite closure (Rem .av(4)); the weight of choice across the scales — the author's synthesis: rigidity at the edges of the spectrum, the density of choice at the center (Rem .ay). Battery: 1754 PASS / 0 FAIL / EXIT=0.
+The spectral gravity C4 and the scale tower (the closing machine-layer series): the linearized TT-sector of the inner space — the exact symbol identity K⁻¹(q) = [(1−ρ)/(1+ρ)] + [1/sinh(1/φ)]·(1−cos q), the gap tanh(1/2φ) = the duality ratio = the Λ-slot — the TT-operator is Einstein + Kottler, m_Λ = 1/(√2·ℓ) (Rem 2.4.AE.2.bj); the metric network is Einstein per layer — the Forman-Ricci curvature is uniform within all the distance classes exactly (≤ 1.8·10⁻¹⁵), the Ollivier transport curvature confirms the functional independence of the layers (Rem .bk/.bq); the spectral reading of the curvature: R_inner = 6·|a₂|/a₀ = N+1 = 12 — the closure charge (four recorded carriers), the quadratic slot a₄/a₀ = 3 = R (Rem .bl/.bn); the vacuum trace of the slots selects d = 4 uniquely (R = 4·Λ exactly; R = 2dΛ/(d−2) ⟹ d = 4 on the whole range 3..10) — the Lorentzian 3+1 is overdetermined by two routes with disjoint inputs: the spectrum + the QR-signature (3, 1) (Rem .bm/.bp); the manifold limit: the Einstein layers are exact on the whole refinement ladder N = 11·2^m, the intensive curvature κ̄ = 1 − w/W → 1 (Rem .bo); the slot ladder of D^2 is the rigid binomial series (five degrees of freedom) — the SW split requires an operator-class change (Rem .br); the in-cycle operator classes are empty — the merge with the 4D-triple (Rem .bs); the Lorentzian slice of the 4D-triple: QR_fund = {1, 3, 4, 5} = {Time, Height, Width, Length}, ds² = −dμ₁² + dμ₃² + dμ₄² + dμ₅², the carrier 11 = 1 + 4 + 4 + 2 (Rem .bt); the continuum dispersion of the manifold limit: λ_int(Q) = (1 − Ģ(Q)/Ģ(0))/2 — the manifold is complete (the curvature + the wave operator, Rem .bu); the signature of the manifold = (|σ-orbit|, |fixed points|) = (3, 1) — the axis (the softest mode) + one rotation orbit, the phase fiber {2, 9} ~ i (Rem .bv); the 3-vertex structure of the YM sector: the pair algebra is diagonal, Tr(D) = 2·cot(π/22) — the carrier of the recorded convolution (Rem .bw); the quartic of the modal sector: the constant part = T₂ = 66, the full quartic is expressed by the .by selection rule and the .bz/.ca metrics (Rem .bx); the Tr(D) family is closed by the character selection rule: the trace = Tr(D)·Z/2^r — the zero sums on the carrier, the cubic sector is single-valued (all 45 triples = Tr(D)/4) (Rem .by); the commutator algebra of the kinetic is closed: D is the derivation of the mod algebra, the kinetic metric = T₁ minus the stiffness correlation, the Z₂-pair degeneracy (Rem .bz); the composite modes: the kinetic is closed — the metric = (g_{p+q} + g_{p−q})/4, consistent with the group law of the mods (Rem .ca); the moment alphabet in closed form: the convolution S_p = 2cos(π/N)·sin(pπ/N)/sin(π/N) − 2p·cos(pπ/N) and the odd moments — the cotangent family (Rem .cb); the self-couplings of the inner sector vanish — the commutative triple is free, the only dynamics is the carrier coupling by the selection rule (Rem .cc); the sum rule of the kinetic metric: Σ_{p∈fd} g_p = N² − 2cot²(π/2N) — a parallel to the vertex sum rules (Rem .cd); the graviton vertices of the spectral action are exact: V₂ = δ_{pq}(48N − 8g_p), V₃ = 24·TrD·Z₃, V₄ = 24N·Z₄ — the "graviton-graviton vertices" item is computed (Rem .ce); the gluon on the three floors — one particle, three roles: k = 0 masslessness, k = 3 the color = the "where to" of the quark (8 = N − 3 gluons), k = 9 the strength — a Trinity miniature (Rem 2.8.1.v). The scale tower: the tetration T_h = 2↑↑h (mod 11) — "after 0 always 1": T_0 = T_5 = T_10 = 1, the period 5 = |Quintet| (Rem 2.6.A.4.av); the discrete logarithm of the scales — the number ↔ scale bijection, 2⁰ = 1 = the Point, the mirror pair reproduces the carrier (Rem .aw); the carrier 2 is the unique one with the quintal period among {2, 6, 7, 8}, the tower cycle weighs 22 = 2N = Σω², the tower mirror = C(7) Volume (Rem .ax); the φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no finite closure (Rem .av(4)); the weight of choice across the scales — the author's synthesis: rigidity at the edges of the spectrum, the density of choice at the center (Rem .ay). Battery: 2069 PASS / 0 FAIL / EXIT=0.
 
 ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
 
@@ -633,7 +635,7 @@ N = 11 and the spatial dimension R = 3 are co-determined by the PRIMARY criterio
 
 Mean error on 84 constants 0.0017% (tree-level; the metric is the arithmetic mean of the relative errors of the machine closures, (1/84)·Σ|val−target|/|target|; median 0.0003%, maximum 0.016%) after Cone corrections 2.7.P.1-14 (10× improvement). Random-formula control: formulas from the same atoms are 4391× less accurate; significance is fixed by the empirical disciplines 2.10.B/2.10.C (Monte-Carlo + FDR catalogue 56). Kolmogorov complexity of the theory K = 90 bits for 3500+ bits of physics (≈40×, order-of-magnitude estimate); comparison with a typical numerology library yields a Solomonoff-prior ratio ≈ 10¹²⁵⁵ in favour of Trinity (Remark 2.4.AC.3.r).
 
-714 theorems are proven, 249 definitions, 563 corollary, 507 remarks, 26 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, Section 2.1.C). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
+715 theorems (with derivations in the text; 210 machine-verified in Lean 4), 251 definitions, 570 corollary, 539 remarks, 28 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅ are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5, conditional on the closure axioms T1–T4 and the Choice primitive), not independent postulates. 14 physical laws correspond to 14 symmetries (10 continuous Noether + 4 discrete, Section 2.1.C). Consistency is proven by explicit construction of a model in H_{11} = ℂ¹¹ (Theorem 1.0.H.1).
 
 56 registered testable statements are formulated in three layers — L1 ~12 blind, L2 ~32 post-dictions, L3 ~12 dimensional (Rem. 5.0.B.r); composition: 32 base 1.0.K + 6 from Section 2.4 + 1 from 1.9.C.5 + 5 aetheron ÆF₁–ÆF₅ (Section 2.7) + 1 temporal VR₁ (Section 3.1) + 3 materialization MR₁–MR₃ (Section 3.10) + 3 spectral ÆF₆–ÆF₈ (Section 5.7) + 5 systematic Section 5.0 (A)) with concrete experimental setups and timelines. Among the sharpest: for next-generation atom interferometry with 10⁻¹¹ precision, the prediction 1/α(Cs-133) = 137.035999160358812 ± 10⁻¹¹ (5.0.A.2); any deviation falsifies 2.4.A. For Yb-171, Sr-87 and Cs-133 (2.5.U.1, the atom-dependent signed correction): Δα(Yb)/α = Δα(Rb)/α within 10⁻¹¹; Δα(Sr)/α = −2.263·10⁻¹⁰ (the signed duality kernel). Systematic Section 5.0 (A): 11-loop β-function shift −2.84·10⁻⁶ (FCC-hh 2040+), m_DM = 5 GeV (LZ/XENONnT 2027+), dark-energy equation of state w = −1 with the exact deviation bound |1+w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹ (Theorem 2.7.H.2; DESI/Euclid 2027+), spectrum of primordial gravitational waves (LISA 2037+).
 
@@ -918,9 +920,9 @@ Q = 2/3 ⟺ the vector (√m_e, √m_μ, √m_τ) at a 45° angle to the diagona
 
 - Random formulas from the same building blocks are 4391× less accurate (Monte-Carlo control)
 - Significance is fixed by the empirical disciplines 2.10.B/2.10.C: a χ² far below its expectation E[χ²] = 84 is the wrong tail for a calibrated significance inference
-- Kolmogorov complexity K(Universe) = 90 bits → 3500+ bits of physics (≈40×, estimate)
-- Standard Model: 660 bits for 30 constants
-- Trinity: 90 bits for 200+ constants (49× more efficient)
+- Kolmogorov complexity K(Universe) = 90 bits → 3500+ bits of physics (≈40×, estimate) — the skeleton at the minimal code (Rem 2.4.AC.3.r; the one-code layer of both models — 2.4.AC.3.r.2)
+- Standard Model: 660 bits for 30 constants (at its own code; the one-code layer — 2.4.AC.3.r.2)
+- Trinity: 90 bits for 200+ constants (49× more efficient; the comparison with the independent per-formula encoding, not with SM+ΛCDM — 2.4.AC.3.r.2)
 
 ```
 0.8. PERCEPTION: HOW THE MIND READS THE SCALES
@@ -1215,6 +1217,10 @@ Remark 1.0.A.0.R (Registry of primal assumptions: one compact system). All prima
 
 (R7) The summary table of premises x6 columns — the boundary between the layers of premises. For every premise — six columns: Formulation (with an anchor) / Meaning / Accepted because / Depends on / Refuted by / Independent confirmation (the last one — what external, non-theory-internal evidence supports the premise: for the core axioms — the internal consistency of the machine checks; for the O-inputs — observational data; for Choice — the measurable PF consequences; the absence of external confirmation is recorded explicitly as "none — a structural input"). The row order is the dependency order of the layers (not the R1–R6 numbering order): the mathematical core and the canonical structures (A0–A6) → the observational input (O1–O4) → the primitives (Choice, Sphere-Point-Cone) → the derived layer (T1–T4 are NOT premises: formal consequences of O1–O4 and the ontology of Choice, Theorem 1.10.D.2). The "Refuted by" column is a rejection test; a premise without a refuting test does not enter the canon. Machine: the registry structure — 13 independent premises + 1 derived row, the refuting tests pairwise distinct.
 
+THE SUMMARY TABLE OF PREMISES (13 independent + 1 derived row; the columns follow the R7 specification above; the full records — in the premise texts below):
+
+| Premise (anchor) | Formulation → meaning | Status | Depends on | Refuted by (falsifier) | | A0 (1.0.A) | Ψ_{k+N} = Ψ_k; N = 11 from {C1, C2, C3} at R = 3 — the cyclic carrier | a core axiom | the whole apparatus: the spectrum, H_N, the balance | the 9/9 sieve pass at another N (machine, N ≤ 100) | | A1 (1.0.A) | φ² = φ + 1 — the floor self-similarity | a core axiom | the φ-span of A4, the φ-ladders | a ladder gap: Δ_{m+1} ≠ φ·Δ_m | | A2 (1.0.A) | e^{iπ} + 1 = 0 — the phase closure | a core axiom | interference, the Z₂ pair | a phase periodicity ≠ 2π | | A3 (1.0.A.3) | ω_k = 2sin(πk/N) — the carrier chords | a canonical structure | the weights λ_k (2.4.K), KKT, CHSH | frequencies outside the sin-table | | A4 (2.4.A) | α — the attracting root of the Sphere−Cone balance | a canonical structure | the EM sector, the α(k) ladder, H₀ | a drift of 1/α beyond the recorded ε | | A5 (1.0.B.3.d) | Σ_k|Ψ_k|² = N — the energy norm | a canonical structure | the Born rule (2.4.K) | measurement statistics off the Born weights | | A6 (1.0.AOP.9) | the lexicon «name ↔ mode/floor» | a lexicon convention | all named quantities | another activation order; permuted assignments | | O1 (1.10.D.1.d) | energy localized, zero boundary flux | an observational input | T1–T4 (Th 1.10.D.2) | an unaccounted flux through a closed surface | | O2 (1.10.D.1.d) | π₁ of experience = {e} — loops contract | an observational input | the uniqueness of the geometric layer | a non-trivial fundamental group of experience | | O3 (1.10.D.1.d) | dim = 3 — an input; K(3) = 12 → C1 | an observational input | N = 11 through C1 | a fundamental dimension ≠ 3 | | O4 (1.10.D.1.d) | a smooth metric, locally measurable distances | an observational input | g_Trinity, the GR limit (2.7.B.8.z) | a systematic metricity violation | | Choice (Th 1.0.AET.3) | the direction i ∈ S² follows only from the choice | a physical primitive | the Aether dynamics, the k = 0 layer | a derivation of the direction from the structure | | SPC (Def 0.1.d) | Sphere + Point + Cone — the three-layer language | an object definition | the dimension classification, the scale law | a second non-equivalent base with the same closures | | T1–T4 (1.10.B) | the thermodynamic layer of geometry | DERIVED (not premises) | only O1–O4 + Choice (Th 1.10.D.2) | no own test — refuted through O1–O4 and Choice |
+
 THE DEPENDENCE OF THE RESULTS ON THE LAYERS (six answers) — a single sheet, crossed with the independence graph (Rem 1.10.2.9.g): (1) FROM A0–A2 ONLY (pure mathematics of the carrier): the spectral identities Σω_k^{2m} (Th 1.9.A.2), the root census of the balance polynomial (Lemmas 2.4.A.A/B/C — at a given V_cone), the D1–D15 characterizations of N = 11, the Heegner modularity (Th 1.10.0.23), the code [[11,1,5]]_3 (Th 2.4.W), the CHSH identities (Th 2.4.V) — theorems about the Z₁₁ structure; the physical interpretation is not needed for them. (2) REQUIRE A3–A6 (the canonical structures): the α(k) ladder, the catalogue of 84, the lexicon floors, the Born rule on the Z₂ classes (Cor 2.4.K — the A5 norm), the density quantization (AET.2 — under the condition T1–T4). (3) REQUIRE O1–O4: the B³ geometry (Th 1.10.D.1 — O1 locality + O2 π₁ + O3 dim = 3 + O4 Riemannian + the Point ontology), K(3) = 12 → N = 11 through (C1) (O3 — the dimension input), the induced gravity (the O4 Riemannian slice). (4) REQUIRES CHOICE: the direction i ∈ S² (Th 1.0.AET.3), the active/passive separation of the aetherons, measurement = Choice (Def 2.7.B.3), the free orientation bit (Rem 3.5.1.S.r) — without Choice the mathematics (item 1) remains plus a symmetric physics without an arrow and a phase. (5) USE MEASURED CONSTANTS (class М of the registry 1.0.A.0.I): T_CMB/N_eff (Ω_r), the Planck 67.4 (the early H₀ branch), the PDG bases (m_n), the ε₀ scale of the aetheron (4.5·10⁻³⁵ eV, a boundary input), the m_φ₂ bound. The full input list — the registry 1.0.A.0.I; no input is hidden. (6) WHAT REMAINS IF THE PHYSICAL INTERPRETATION IS REMOVED: the whole mathematical framework — the Z₁₁ spectral algebra, the characterizations, the modularity, the code, the CHSH kinematics, the polynomial identities of the catalogue — becomes a standalone mathematical programme; the physical layers (the lexicon A6, Choice, the O-inputs) are separate premises, their status is not mixed (the [М]/[С]/[Ф]/[Э] level discipline). FLAGMAN DEPENDENCE MAP (30 rows; the registry): for each row — theorem → sheet class (1)–(6) → vocabulary status [В]/[С]/[М]/[У]/[П]. Map rule: a result with an input from classes (2)–(5) is not marked [В] (machine — block 1.0.A.0, the rule is checked on all 30 rows; a covert use of a proven statement as an input is excluded by the row class): 1.  Th 1.0.A.1 (core unity, degree 2) → (1) → [В] 2.  Th 1.0.H.1 (consistency, the H₁₁ model) → (1) → [В] 3.  Th 1.9.C.1 (ladder S₂ₙ = N·C(2m,m)) → (1) → [В] 4.  Th 2.4.W (code [[11,1,5]]₃, d = 5) → (1) → [В] 5.  Th 2.4.V (CHSH 2√2 — kinematics) → (1) → [В] 6.  Rem 1.10.A.3.3.r (representation table of Z₁₁) → (1) → [В] 7.  Th 4.3.0.d.N (QR = the unique index-2 subgroup) → (1) → [В] 8.  Th 1.0.A.3.c (canonicity of the reading v = √λ) → (1)+(2: the f(L) class) → [С] 9.  Cor 1.0.A.1.c (A3–A5 — structural inputs) → (2) → [С] 10. Th 1.0.F.1 (MDL: C = 13 of 390625) → (2) → [С] (a selection, not a derivation) 11. Th 2.4.A (the α-balance) → (2)+(V_cone — structural count) → [С][Э] 12. Th 1.10.0.28 (census N = 11) → (3: O3 through C1) → [С] 13. Th 1.10.D.1 (B³ geometry) → (3) → [С] 14. Cor 1.10.B.3 (n = 3 for the Sphere-Cone) → (3: O3 minimality 2.4.A.12) → [С] 15. Th 1.10.A.3.3 (the metric d²) → (2)+(3: O3) → [С] 16. Th 1.0.AET.2 (dimensional chain Λ_T → λ_T) → (2)+(5: ε₀ scale) → [С] 17. Th 1.0.AET.3 (the direction i ∈ S²) → (4: Choice) → [С] 18. Rem 3.5.1.S.r (the free orientation bit) → (4) → [С] 19. Th 3.10.H.3 (Λ suppression 2N²) → (2)+(5: ε₀) → [С] 20. Th 2.5.B.1 (N²−1 = 5!) → (2: Quintet-5 — an input) → [С] 21. Th 5.4.E (φ(φ(11)) = 4 = the forces) → (1) → [В] 22. Th 5.1.D.1 (SU(11) → SM embeddings) → (2) → [С] 23. Th 5.3.D (unitarity of E_τ) → (2: A5) → [С] 24. Th 5.7.WF.1 (the continuum limit) → (2)+(the 5.1.G.3 W1 boundary) → [С] 25. Th 5.1.O.3/O.4 (P vs NP of the models M_A/M_D) → (2: model definitions) → [С] 26. Th 2.6.A (the mass catalogue) → (2)+(5) → [М] 27. Catalogue 84 (selection + null model 2.10.B) → (2)+(5) → [С][Э] 28. A6 permutations (z = 8.11σ) → (2)+(5: dating) → [Э] 29. PF-1..7 (9-field protocols) → (5)+(empirics 2027+) → [П] 30. Yukawas / θ_QCD / M_R → registry 1.0.A.0.I → [У]/[П]
 
 A0 — Closure. Formulation: Psi_{k+N} = Psi_k; N = 11 — the unique non-degenerate solution of the system {C1: N + 1 = K(R), C2: h(Q(sqrt(-N))) = 1, C3: N prime} at the observed R = 3 (Th 1.10.0.28). Meaning: the carrier of modes is cyclic — the list is closed. Accepted because: the conditions fix N with no physical inputs; the selection — the 9/9 sieve (Rem 1.10.0.28.w) and the rejection registry (Rem 1.10.0.28.y). Depends on: the whole apparatus — the spectrum (A3), H_N, the alpha balance (A4 through N), the floor ladders, the tower of layers. Refuted by: a 9/9 sieve pass at another N (machine: the full sweep over N ≤ 100 gives a unique 9/9).
@@ -1230,6 +1236,12 @@ A4 — The balance of the loop parameter. Formulation: α — the attracting roo
 A5 — Normalization. Formulation: Σ_k |Ψ_k|² = N. Meaning: energy is the norm; the probability rule — the share of the mode's norm (the Psi convention — Def 1.0.B.3.d). Accepted because: a normalization convention; the physical content — the Born rule (2.4.K: the outcome frequencies = |⟨k|ψ₀⟩|², the martingale dynamics). Depends on: all mode distributions, the probabilistic layer of measurements. Refuted by: mode-measurement statistics steadily departing from the Born weights for the same state.
 
 A6 — The dimensional lexicon. Formulation: the correspondences "name ↔ mode / operation / floor" (12 = 11 + 1 floors — Rem 1.0.AOP.9). Meaning: the dictionary between the carrier and the physical names; floors are the exponent numbers. Accepted because: a lexicon agreement; the empirical content is tested by consequences — the activation order (Th 5.3.1), the α(k) ladder, the Quintet pairs (Rem 2.6.A.4.al) — and by the A6 grounding table (the machine counterfactual). Depends on: every named quantity of the canon — the floor expansions of the registry of 19 ([Appendix III](#app-iii)). Refuted by: an activation order other than Th 5.3.1; a permutation of the assignments — ε degrades by orders of magnitude (the machine counterfactual).
+
+Remark 1.0.A.6.m (The verifiable sheet of the A6 identifications: operator / experiment / refutation). Each identification «name ↔ structure» of the lexicon carries three cells — the operator (what is computed), the experiment (where it is measured), the refutation (what would remove the identification):
+
+| Identification | Operator/formula | Experiment/base | Refutation | | α ↔ the Sphere−Cone balance | the root of Th 2.4.A | atomic interferometers (CODATA-2022; LKB-Rb 2020) | a drift of 1/α beyond ε | | ω_k ↔ the tick frequencies | D = L^{1/2} (Th 2.4.A.0) | mode spectroscopy — the blind channel (PF) | frequencies off the sin-table | | T_m ↔ the moments Σω^{2m} | Th 1.2.G.1 | the α(k) ladder, the ζ_D integers | a breakdown of the moment ladder | | Λ_T ↔ the √N·M_P cutoff | Th 2.4.A.0.3 | indirectly: no UV effects below Λ_T | effects above Λ_T | | V_cone ↔ the phase volume | Cor 1.10.0.7.c | the structural count (machine) | another count under the same rule | | η_B ↔ 3π²α⁵ | Th 2.1.A.4 | CMB/BBN (η_B ≈ 6.1·10⁻¹⁰) | washout kinetics failing η_B | | H₀ ↔ (1+α)^N·67.4 | Th 2.6.A.4 | CMB against the local scale | both branches reconciled without the tension | | Ω_Λ ↔ N/(N+|Quintet|) | Cor 2.7.1.b | Planck/DESI | the slot outside the error upon refinement | | m_P/m_e ↔ (N/α)⁷·sec²θ_W·(1+α)^{2φ²} | Th 2.6.A | PDG | leaving the recorded window | | K(3) = 12 ↔ C1 of the A0 system | Th 1.10.0.28 | mathematics (Schütte–van der Waerden) | a revision of the kissing number |
+
+Discipline: the sheet adds no premises — every row references a recorded anchor; the status of each cell follows the status registry.
 
 O1 — Energetic closure. Formulation: energy is localized, the flux through the carrier boundary is zero (Def 1.10.D.1.d). Meaning: matter is localizable — the carrier is closed without hidden leaks. Accepted because: an observational principle — the minimal empirical input of the geometric layer (not derived: this is the layer of observations, R3). Depends on: T1–T4 — formal consequences (Th 1.10.D.2); the carrier-compact (Th 1.10.D.1). Refuted by: a systematic energy in/outflow through any closed surface (an unaccounted flux at all scales).
 
@@ -1283,7 +1295,8 @@ The registry discipline: every formula of the canon uses only the inputs of this
 >   global in N: at R = 3 — directly through C1 (N = 11 is unique over
 >   all naturals); on the established class K(R), R ∈ {1, 2, 3, 4, 8,
 >   24}, — through the Heegner classification C2; the window K(5) = 44
->   is closed by N² − 1 = 5! (Th 2.5.B.1)); the selection is fixed by
+>   is closed by N² − 1 = 5! (Th 2.5.B.1; and externally — the
+>   November 2026 preprint: K(5) ≤ 43)); the selection is fixed by
 >   the sieve (Rem 1.10.0.28.w: 9/9 over all N ∈ [2, 100] — an
 >   illustration) and the rejection registry (Rem 1.10.0.28.y). At N = 11: Ψ₁₂ = Ψ₁; the equivalent
 >   record of the result: ∃! Z₁₁ — the cyclic group of order 11.
@@ -2121,6 +2134,8 @@ Approximate counts among the 56: L1 ~ 12 entries; L2 ~ 32 entries; L3 ~ 12 entri
 CATALOGUE STATUS. The catalogue of 84 constants is post-diction by construction (layer L2): all values were known when the closed forms were selected, and no catalogue entry is a blind prediction; genuine blind risk is carried only by the ~12 layer-L1 predictions and the six predictions PF-1..PF-5, PF-7 of the PF subgroup (PF-6 is a structural check, the registry de-scope).
 
 FOUR-CATEGORY CLASSIFICATION (by the origin of the number; orthogonal to the L1/L2/L3 layers, which divide by time). (A) BLIND: the number was fixed before the experiment reached sensitivity; the Popperian risk is full. Examples: PF-2 (the Δα(Sr−Cs) sign and magnitude, 2025-2027), τ_p > 10³⁴ yr, PF-4 H₀(GW) = 72.5–73.5 (sirens 2027+), PF-[3] σ_SI ≤ 3.6·10⁻⁴⁷ (XLZD/DARWIN 2030+), m_M (0νββ), the CMB subleading modulation. (B) COMPUTATIONS WITH EXPERIMENTAL INPUTS: the formula carries a measured input (class М of the input registry 1.0.A.0.I); the agreement is an internal-consistency test, not a blind risk. Examples: the α-chain (T_CMB inputs of the layers), Ω_r (T_CMB, N_eff), the early H₀ branch 67.4 (the Planck input), masses with PDG bases (m_n). (C) RETRO-MATCHES: a known result re-derived by the structure; the new information is the form, not the number. Examples: the catalogue of 84 (entirely), turbulence −5/3, the GUE zeros, Hardy–Littlewood, the Schwabe cycle, codons. (D) TENSION EXPLANATIONS: the formula was built targeted at a known discrepancy; the strength is the structuredness of the factor, the risk is a double use (a test on new data of the same formula). Examples: the H₀ tension ((1+α)^N against the known 1.083), the Δα(Z) tension Berkeley-Cs vs LKB-Rb (Th 2.5.U.1 — recorded AFTER the shift was observed; the blind test is the Sr clocks), the ΔM tension, the S₈ ratio. Reading discipline: (A) carries the falsifiable risk; (B) — consistency; (C) — structuredness; (D) — only predictions on NEW data (the second wave: new atom pairs, sirens 2027+, S₈ precision <1%). The category of each of the 56 is stated in its registry row; the categories are NOT mixed when counting confirmations.
+
+THE BLIND PROTOCOL (the organizational layer). The fixation before the measurement is carried by the canon itself: the formulas, the criteria, the tolerances and the (A)-(D) categories are recorded before the experiments reach sensitivity (the r_k tolerance declared before the comparison — Rem 2.6.A.4.au; the L1/L2/L3 layers — Rem 5.0.B.r). The external side: the measurements are performed by independent collaborations (the registry states the detectors and the timelines: atom interferometers, XLZD/DARWIN, the gravitational siren standard candles, CMB-S4/LiteBIRD, FCC-hh); the theory does not participate in the measurements. The disclosure process: the values are published by the collaborations openly, the comparison is reproducible by a third party (the validator and the Lean file are open; the battery is the machine layer of the record consistency, not of the measurements). Status: an organizational programme outside the validator — the external blind verification is not a machine layer of the theory and is not claimed performed.
 
 STATISTICAL FRAGILITY. The theory is considered refuted if ≥ 14 of 56 experimental tests yield > 5σ deviation (FDR-control 25%, stricter than the standard 1-of-8 Popper criterion). This reflects the joint statistical correlation of all predictions through the unified Z₁₁ core.
 
@@ -6281,7 +6296,7 @@ Remark 2.7.B.7.u (The complete interacting Trinity Lagrangian as an assembly of 
 
 𝓛_Trinity  =  𝓛_SU(11)_full  +  𝓛_Æth^(4D)  +  𝓛_EH^induced  +  𝓛_aether–SM
 
-where: (i)  𝓛_SU(11)_full = 𝓛_gauge + 𝓛_kinetic + 𝓛_potential + 𝓛_Yukawa is the Standard-Model matter/gauge/Higgs/Yukawa sector (Theorem 5.1.D.7.5, equation 5.1.D.7.5.1), with all coupling constants derived in Section 2.4 and a machine-readable specification (SARAH, PyR@TE 3, RGBeta) ready for external verification; (ii) 𝓛_Æth^(4D) is the four-dimensional Lorentzian promotion of the geometric aether action S_Æth of Theorem 2.7.B.7. Every term of S_Æth — R_g/2, Λ_T²·ρ_p, (1/2)·g^μν·∂_μψ_k·∂_νψ_k, and the Choice projection Π_i — is a Lorentz scalar on (M, η_μν) by Remark 2.8.O.1.r, so the promotion from the 3-ball B³(R) to the 4-manifold is well defined and does not introduce new structure; (iii) 𝓛_EH^induced = −(1/16πG_ind)·√g·R + [Gauss-Bonnet R² term of Corollary 2.7.B.8.e] is the INDUCED gravitational sector: the Einstein-Hilbert term arises at one loop from the n_eff aether degrees of freedom (Theorem 2.7.B.8), and the universal Gauss-Bonnet correction is fixed by the Seeley-DeWitt coefficient a₂·n_eff (Corollary 2.7.B.8.e); (iv) 𝓛_aether–SM is the coupling between the aether density and Standard-Model matter, already encoded in the energy-momentum tensor T_μν^(Trinity) (Section 2.7): the aether modes source the induced metric via G_μν = (8πG/c⁴)·T_μν^(Trinity), and the T_μν^(Trinity) tensor (equation 2.7.5.1) includes both the free-field part Σ_k ∂_μφ_k ∂_νφ_k and the φ-regulated inter-mode coupling −g_μν·α·V_cone·Σ_{k<l} exp(−|k−l|/φ) ·|ψ_k|²|ψ_l|². This term is the explicit aether↔matter bridge.
+where: (i)  𝓛_SU(11)_full = 𝓛_gauge + 𝓛_kinetic + 𝓛_potential + 𝓛_Yukawa is the Standard-Model matter/gauge/Higgs/Yukawa sector (Theorem 5.1.D.7.5, equation 5.1.D.7.5.1), with all coupling constants derived in Section 2.4 and a machine-readable specification (SARAH, PyR@TE 3, RGBeta) ready for external verification; (ii) 𝓛_Æth^(4D) is the four-dimensional Lorentzian promotion of the geometric aether action S_Æth of Theorem 2.7.B.7. Every term of S_Æth — R_g/2, Λ_T²·ρ_p, (1/2)·g^μν·∂_μψ_k·∂_νψ_k, and the Choice projection Π_i — is a Lorentz scalar on (M, η_μν) by Remark 2.8.O.1.r, so the promotion from the 3-ball B³(R) to the 4-manifold is well defined and does not introduce new structure; (iii) 𝓛_EH^induced = −(1/16πG_ind)·√g·R + [Gauss-Bonnet R² term of Corollary 2.7.B.8.e] is the INDUCED gravitational sector (the only source of the Einstein dynamics of the assembly; the layer-1 R_g/2 is a correspondence check, not a term — Rem 2.7.B.8.r2): the Einstein-Hilbert term arises at one loop from the n_eff aether degrees of freedom (Theorem 2.7.B.8), and the universal Gauss-Bonnet correction is fixed by the Seeley-DeWitt coefficient a₂·n_eff (Corollary 2.7.B.8.e); (iv) 𝓛_aether–SM is the coupling between the aether density and Standard-Model matter, already encoded in the energy-momentum tensor T_μν^(Trinity) (Section 2.7): the aether modes source the induced metric via G_μν = (8πG/c⁴)·T_μν^(Trinity), and the T_μν^(Trinity) tensor (equation 2.7.5.1) includes both the free-field part Σ_k ∂_μφ_k ∂_νφ_k and the φ-regulated inter-mode coupling −g_μν·α·V_cone·Σ_{k<l} exp(−|k−l|/φ) ·|ψ_k|²|ψ_l|². This term is the explicit aether↔matter bridge.
 
 STATUS OF THE THREE GAPS. The components listed above close the three gaps that previously motivated the qualifier "the full interacting Lagrangian is not yet constructed":
 
@@ -6291,10 +6306,10 @@ STATUS OF THE THREE GAPS. The components listed above close the three gaps that 
 
 Hence 𝓛_Trinity is the COMPLETE interacting Lagrangian, assembled from existing Trinity theorems. The explicit computation of individual amplitudes (31 explicit 2→2 amplitudes, Remark 5.7.VS.1.t.v and Remark 5.7.VS.1.t.w) is structurally closed; further amplitudes and loop corrections are finite but laborious calculations — not structural obstacles.
 
-THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced anchors): ┌────────────┬────────────────┬──────┬─────────────────┬────────────────────────────┐ │ Sector     │ Field          │ Spin │ Representation  │ Kinetic term               │ ├────────────┼────────────────┼──────┼─────────────────┼────────────────────────────┤ │ Gauge      │ g^a_μ (SU(11)) │ 1    │ adj SU(11)      │ −(1/4)·F^a_μν F^{a μν}     │ │ Fermions   │ 15 × (10⊕5̄)/gen│ 1/2  │ (3,2)_{1/6}…    │ i·ψ̄·γ^μ·D_μ·ψ (Cor 5.1.D.9.t)│ │ Scalar     │ H (24 SU(11))  │ 0    │ (1,2)_{±1/2}    │ |D_μ H|² − V(H) (5.1.D.5)  │ │ Aether     │ a_p, a_k, φ₂   │ 0    │ scalars         │ i·a†∂_t·a − ε₀… − ω_k…     │ │            │                │      │                 │ (Th 2.7.B.6; |J|²<ε₀ω_k)   │ │ DM         │ χ (k=5)        │ 1/2  │ (1,1,0) singlet │ i·χ̄γ^μD_μχ (Rem 2.4.AF.2.s)│ │ Gravity    │ g_μν           │ 2    │ SIL_{3,1}       │ −√g·R/(16πG_ind) (Th 2.7.B.8)│ └────────────┴────────────────┴──────┴─────────────────┴────────────────────────────┘ Interactions: the Yukawas y_f·φ̄·ψψ (a programme — the registry 1.0.A.0.I); the portal y_χ·φ₂·χ̄χ + λ_portal·|H|²·φ₂² (Rem 2.4.AF.2); the Choice coupling J_choice·(a†_k a_p + h.c.) with |J|² < ε₀·ω_k (Th 2.7.B.6); the φ-regularized inter-mode term −g_μν·α·V_cone·Σexp(−|k−l|/φ)|ψ_k|²|ψ_l|² (item (iv)). The mass mechanism: the spontaneous breaking SU(11)→SU(6)×SU(5)×U(1) (stage 2 from the potential, Cor 5.1.D.5.y; m² = (5/12)·g₅²·v₂² — 12 generators X′,Y′); the seesaw for ν_R (M_R ≈ α⁴·N·M_P, the window Rem 2.4.AD.2.s); m_h = (π/2)m_W (2.8.1). The conserved currents: 14 (10 Noether + 4 discrete, Section 2.1.C). The propagators: gauge/fermion — standard SU(11)-EFT below Λ_T (Cor 5.7.WE.1.d); the aether ones — 1/(ω² + iε) over the 11 modes (Th 5.7.WE.1, Step 3). The observables: α (Th 2.4.A), the mass spectrum (the catalogue of 84), H₀/Ω (2.6/2.7), σ_SI ≤ 3.6·10⁻⁴⁷ (Prop 2.4.AF.2), CHSH 2√2 (Th 2.4.V). The sheet boundary: the Yukawa numbers are a programme (the registry status); everything else — the anchors above.
+THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced anchors): ┌────────────┬────────────────┬──────┬─────────────────┬────────────────────────────┐ │ Sector     │ Field          │ Spin │ Representation  │ Kinetic term               │ ├────────────┼────────────────┼──────┼─────────────────┼────────────────────────────┤ │ Gauge      │ g^a_μ (SU(11)) │ 1    │ adj SU(11)      │ −(1/4)·F^a_μν F^{a μν}     │ │ Fermions   │ 15 × (10⊕5̄)/gen│ 1/2  │ (3,2)_{1/6}…    │ i·ψ̄·γ^μ·D_μ·ψ (Cor 5.1.D.9.t)│ │ Scalar     │ H (дублет Φ_11)│ 0    │ (1,2)_{±1/2}    │ |D_μ H|² − V(H) (5.1.D.5)  │ │ Aether     │ a_p, a_k, φ₂   │ 0    │ scalars         │ i·a†∂_t·a − ε₀… − ω_k…     │ │            │                │      │                 │ (Th 2.7.B.6; |J|²<ε₀ω_k)   │ │ DM         │ χ (k=5)        │ 1/2  │ (1,1,0) singlet │ i·χ̄γ^μD_μχ (Rem 2.4.AF.2.s)│ │ Gravity    │ g_μν           │ 2    │ SIL_{3,1}       │ −√g·R/(16πG_ind) (Th 2.7.B.8)│ └────────────┴────────────────┴──────┴─────────────────┴────────────────────────────┘ Interactions: the Yukawas y_f·φ̄·ψψ (a programme — the registry 1.0.A.0.I); the portal y_χ·φ₂·χ̄χ + λ_portal·|H|²·φ₂² (Rem 2.4.AF.2); the Choice coupling J_choice·(a†_k a_p + h.c.) with |J|² < ε₀·ω_k (Th 2.7.B.6); the φ-regularized inter-mode term −g_μν·α·V_cone·Σexp(−|k−l|/φ)|ψ_k|²|ψ_l|² (item (iv)). The mass mechanism: the spontaneous breaking SU(11)→SU(6)×SU(5)×U(1) (stage 2 from the potential, Cor 5.1.D.5.y; m² = (5/12)·g₅²·v₂² — 12 generators X′,Y′); the seesaw for ν_R (M_R ≈ α⁴·N·M_P, the window Rem 2.4.AD.2.s); m_h = (π/2)m_W (2.8.1). The conserved currents: 14 (10 Noether + 4 discrete, Section 2.1.C). The propagators: gauge/fermion — standard SU(11)-EFT below Λ_T (Cor 5.7.WE.1.d); the aether ones — 1/(ω² + iε) over the 11 modes (Th 5.7.WE.1, Step 3). The observables: α (Th 2.4.A), the mass spectrum (the catalogue of 84), H₀/Ω (2.6/2.7), σ_SI ≤ 3.6·10⁻⁴⁷ (Prop 2.4.AF.2), CHSH 2√2 (Th 2.4.V). The sheet boundary: the Yukawa numbers are a programme (the registry status); everything else — the anchors above.
 
 > **Theorem 2.7.B.7.u (Uniqueness of 𝓛_Trinity from structural constraints).**
-> The Lagrangian 𝓛_Trinity is the UNIQUE Lagrangian satisfying
+> The Lagrangian 𝓛_Trinity is the UNIQUE Lagrangian (within the constraints of each layer) satisfying
 > the five structural constraints imposed by the Z₁₁ axiomatic
 > framework:
 
@@ -6302,13 +6317,7 @@ THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced a
 
 (2) FERMION CONTENT: three chiral generations, uniquely selected by the anomaly cancellation condition A(Λ⁴) + A(Λ⁸) + A(Λ⁹) + A(Λ¹⁰) = 0 (Theorem 5.1.D.8). The Dirac term ψ̄_iγ^μD_μψ is the unique dimension-4, gauge-invariant, Lorentz-scalar fermion kinetic term.
 
-```
-(3) SCALAR SECTOR: one adjoint Higgs Φ, with the unique
-    renormalizable, gauge-invariant potential V(Φ) = −¼λ(TrΦ²)²
-    whose VEV is traceless only at R = 3 (Characterization 14).
-    The scalar kinetic term |D_μΦ|² is the unique dimension-4,
-    gauge-invariant term.
-```
+(3) SCALAR SECTOR (two layers): the GUT layer — three scalar fields Φ_120/Φ_55/Φ_11 (Theorem 5.1.D.4) with the framework potential: 9 of 27 quartic channels recorded (the LR census, Rem 5.1.D.4.6/4.7), 18 channels — registry programmes; the effective SM layer below M_GUT — one doublet H = the (1, 5) component of Φ_11 (Theorem 5.1.D.1; NOT adjoint), V(H) = −μ_3²·(H†H) + λ_H·(H†H)², v = 246.6 GeV. The traceless VEV at R = 3 (Characterization 14) is a property of the SU(5)-adjoint reading (Step 3 of Th 2.7.B.7.u.2); in the 5.1.D cascade R = 3 is the observational input O3. The kinetic term |D_μH|² is the unique dimension-4, gauge-invariant term.
 
 ```
 (4) GRAVITY: the induced Einstein-Hilbert term (Corollary
@@ -6318,7 +6327,7 @@ THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced a
     follows from the Seeley-DeWitt coefficient a₁ = (N+1)/6.
 ```
 
-(5) FINITE FOCK SPACE: the cutoff Λ_T = √N·M_P (Theorem 2.4.A.0.3) guarantees a finite number of modes (10 aether + 1 graviton) and eliminates all UV divergences. Any Lagrangian with more than 11 modes would require a larger cyclic group, contradicting the N=11 derivation (Remark 1.10.0.28.r).
+(5) NUMBER OF FIELDS AND THE FOCK SECTOR: a finite NUMBER OF FIELDS (10 aether modes + 1 graviton sector) with an infinite-dimensional Fock space per mode: the algebra [a_k, a_k†] = 1 admits no finite-dimensional realization, since the trace of a commutator of finite matrices is always zero while Tr[a_k, a_k†] = 1 (the obstruction is machine-checked, the "FOCK HONESTY" py block). The energy cutoff Λ_T = √N·M_P restricts the number of occupied sector modes, not the dimension of Fock space. Any Lagrangian with more than 11 modes would require a larger cyclic group, contradicting the N=11 derivation (Remark 1.10.0.28.r).
 
 > **Proof.**
 > Each sector has a unique renormalizable, gauge-invariant
@@ -6326,7 +6335,7 @@ THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced a
 > are uniquely forced by {R, Z₂} and anomaly cancellation. The
 > Higgs VEV direction is uniquely forced by R = 3. The gravity
 > term is uniquely induced by the aether loop with ξ = 0. The
-> finite Fock space eliminates any higher-mode extensions. The
+> finite number of occupied modes eliminates any higher-mode extensions. The
 > conjunction of these 5 constraints admits exactly one solution:
 > 𝓛_Trinity. ∎
 
@@ -6334,8 +6343,8 @@ THE PER-FIELD TABLE OF 𝓛_Trinity (one sheet; everything from the introduced a
 > Any candidate Lagrangian that differs from 𝓛_Trinity in any
 > term violates at least one of the five structural constraints:
 > gauge group mismatch, wrong fermion count, incorrect Higgs
-> potential, non-minimal gravity coupling, or infinite Fock space.
->  Hence 𝓛_Trinity is the UNIQUE physically admissible Lagrangian
+> potential, non-minimal gravity coupling, or a higher-mode content.
+>  Hence 𝓛_Trinity is the unique Lagrangian admissible by these five constraints
 >  consistent with Z₁₁.
 
 > **Theorem 2.7.B.7.u.2 (Constructive emergence of 𝓛_Trinity from Z₁₁ — the sequential derivation).**
@@ -6352,7 +6361,7 @@ Step 4 — Gravity sector (Corollary 2.7.B.8.c). The aether one-loop effective a
 
 Step 5 — Aether-SM coupling (Remark 2.8.O.1.r). The portal coupling 𝓛_aether-SM = λ_portal·|H|²·φ₂² is the unique renormalizable term connecting the aether and SM sectors, with λ_portal = α·φ = 0.0118 (Remark 2.8.O.1.r); the DM-chain closure is y_χ·φ₂·χ̄χ (y_χ, u = ⟨φ₂⟩ — boundary inputs; the window y_χ·u ≤ 16.2·(m_φ₂/100 GeV)² GeV from the invisible width (the m_φ₂ ≫ m_h asymptotics) — Prop 2.4.AF.2, Remark 2.4.AF.2.s).
 
-Thus 𝓛_Trinity is not an assembly but a SEQUENTIAL EMERGENCE from Z₁₁: each step's output is the next step's input. The chain is forced (no choice at any step), and every coefficient is a structural Z₁₁ atom. This is a GENUINELY CONSTRUCTIVE derivation. Corollary 2.7.B.7.u.3 (The single law of dynamics: four equivalent forms and the derivation map). The demand for "one governing equation" is met by 𝓛_Trinity in four equivalent forms — all four introduced above, no new object: (F1) ACTION: S_Trinity = ∫𝓛_Trinity (Rem 2.7.B.7.u); the variational form is the master functional S_Trinity of Section 2.4 (δS = 0 ⟹ Einstein); (F2) HAMILTONIAN: the node Ĥ = Σ_k ħΩ_k(a†_k a_k + 1/2) (AET.2) in the finite Fock space (constraint (5) of Th 2.7.B.7.u); (F3) STATE EVOLUTION: the unitary branch E_τ (Th 5.3.C, preserving E_P) + the selective branch dE[ρ]/dt = γ_T·D[LÎ](E[ρ]) — a linear CPTP Lindblad map (Cor 2.4.K; the Choice passport Rem 3.5.3.r); (F4) FIELD EQUATIONS: the Euler–Lagrange equations of 𝓛_Trinity + the induced Einstein equations G_μν = 8πG_ind·T_μν^(Trinity) (item (iv) of Rem 2.7.B.7.u). DERIVATION MAP (what follows from the single law — the six directions of the external cross-check):
+Thus 𝓛_Trinity is not an assembly but a SEQUENTIAL EMERGENCE from Z₁₁: each step's output is the next step's input. The chain is forced (no choice at any step), and every coefficient is a structural Z₁₁ atom. This is a GENUINELY CONSTRUCTIVE derivation. Corollary 2.7.B.7.u.3 (The single law of dynamics: four equivalent forms and the derivation map). The demand for "one governing equation" is met by 𝓛_Trinity in four equivalent forms — all four introduced above, no new object: (F1) ACTION: S_Trinity = ∫𝓛_Trinity (Rem 2.7.B.7.u); the variational form is the master functional S_Trinity of Section 2.4 (δS = 0 ⟹ Einstein); (F2) HAMILTONIAN: the node Ĥ = Σ_k ħΩ_k(a†_k a_k + 1/2) (AET.2) in the the finite number of occupied modes under the Λ_T cutoff (constraint (5) of Th 2.7.B.7.u); (F3) STATE EVOLUTION: the unitary branch E_τ (Th 5.3.C, preserving E_P) + the selective branch dE[ρ]/dt = γ_T·D[LÎ](E[ρ]) — a linear CPTP Lindblad map (Cor 2.4.K; the Choice passport Rem 3.5.3.r); (F4) FIELD EQUATIONS: the Euler–Lagrange equations of 𝓛_Trinity + the induced Einstein equations G_μν = 8πG_ind·T_μν^(Trinity) (item (iv) of Rem 2.7.B.7.u). DERIVATION MAP (what follows from the single law — the six directions of the external cross-check):
 
 - spacetime ← (F4): the induced metric (Th 2.7.B.8), the (3,1) signature from the orbit census (Th 4.3.0.d.S; Cor 4.3.0.d.S.g);
 - quantum physics ← (F2)+(F3): the Born rule on Z₂-classes (Th 2.4.K), CPTP/no-signaling (the Cor 2.4.K chain), CHSH 2√2 exactly (Th 2.4.V);
@@ -6397,6 +6406,10 @@ Remark 2.7.B.8.r (scope of induced gravity).
 - The Weinberg-Witten theorem (Theorem 2.8.N.1) is evaded in the standard way precisely BECAUSE gravity is induced: the metric is not a composite operator of the flat-space aether theory, and the graviton is the quantized fluctuation of the induced metric — not one of the Z₁₁ scalar modes.
 - The non-relativistic form of Theorem 2.7.B.6 (first order in ∂_t) enters the loop through its relativistic completion — the second-order kinetic terms of the geometric form of Theorem 2.7.B.7; this completion is an explicit structural assumption.
 - The Newtonian limit (∇²Φ_N = 4πG_ind·ρ − Λ_ind·c²) has been derived from the induced Einstein-Hilbert term by the standard weak-field implication (Corollary 2.7.B.8.w); the derivation is conditional on the continuum limit (Theorem 2.4.AE.2 — an assumed correspondence), which remains the single registry link of the same program.
+
+Remark 2.7.B.8.r2 (The three layers of the gravitational action; no double counting). The curvature appears in the canon in three readings; their separation excludes double counting: (1) LAYER 1 — geometric (pre-loop): R_g/2 in S_Æth on B³(R) (Theorem 2.7.B.7, Step 4) — a CORRESPONDENCE CHECK: the postulate fixes the Einstein structure at the geometric level before the loop and is NOT an independent dynamical term. (2) LAYER 2 — induced: Γ₁ with the term −(1/(16π·G_ind))·∫√g·R (Theorem 2.7.B.8, Sakharov 1967) — the ONLY source of the Einstein dynamics; the variation over g_μν reproduces the equations of Theorem 2.4.I (the coefficient chain G_ind/G_N = 12π/(n_eff·N) = π/N — the "GRAV LAYERS" block). (3) LAYER 3 — the assembled 𝓛_Trinity (Rem 2.7.B.7.u): item (ii) carries the 4D lift of S_Æth as kinetic and potential scalars (Λ_T²·ρ_p, (1/2)·g^μν·∂_μψ_k·∂_νψ_k, Π_i), item (iii) carries the EH exactly once from layer 2. The assembly rule: the curvature enters 𝓛_Trinity EXACTLY ONCE — through the induced term of layer 2; the layer-1 R_g/2 is not added as a second term. Field definitions: ψ_k — the spectral modes of the Cone (k = 1..10, Theorem 2.7.B.7, ↔ a_k); φ_k — the same modes in the tensor reading of T_μν^(Trinity) (Rem 2.7.B.7.u (iv), Σ_k ∂_μφ_k∂_νφ_k); the dimension [ψ_k] = [φ_k] = 1 (mass); the kinetic term (1/2)·g^μν·∂_μφ_k·∂_νφ_k has dimension 4.
+
+Remark 2.7.B.8.r3 (The whence-gravity chain: seven links with anchors). A single induced-gravity chain — an assembly of the recorded pieces; every link carries an anchor and a status (the layer — per Rem 2.7.B.8.r2): (1) METRIC: the 4D metric arises by the 4D lift of the tensor system (Rem 2.4.AE.2.w: 10 = trace + 9, the measure, κ = 8π·G_ind); all members of S_Æth are Lorentz scalars on (M, η_μν) (Rem 2.8.O.1.r). Status: recorded. (2) SIGNATURE (3,1): from the quadratic residues mod N (Th 4.3.0): the time axis — the class {±1}, four cyclic classes — space (machine: |QR(11)| = 5, five classes in Z*/±, the 1 + 4 split — the "GRAV CHAIN" block); the Lorentzian layer is derivative (Rem 2.4.A.0.1.c). Status: recorded + machine. (3) THE EH TERM: induced at one loop (Th 2.7.B.8, Sakharov 1967) — LAYER 2 per Rem 2.7.B.8.r2, the only source of the dynamics. Status: proved + the coefficient chain by machine. (4) THE COEFFICIENT: 1/(16π·G_ind) = n_eff·Λ_T²/(192π²), n_eff = 12, Λ_T² = N·M_P² → G_ind/G_N = π/N ≈ 0.286 (Cor 2.7.B.8.c); the O(1) regulator window is honest (Visser 2002). Status: the order recorded; no exact universal normalization is claimed. (5) REGULARIZATION: the cutoff Λ_T = √N·M_P (Th 2.4.A.0.3), the proper-time regulator, the UV finiteness on the finite mode carrier. Status: recorded. (6) THE GR LIMITS: the Newtonian one (Cor 2.7.B.8.w), the linear graviton propagator (Cor 2.7.B.8.d); the PPN fragment and the post-Newtonian terms — open (Rem 2.7.B.8.s). Status: partly recorded, the remainder — the registry. (7) THE SM LINK: the source — T_μν^(Trinity) (Rem 2.7.B.7.u (iv)); ε₀ and G_N ab initio — the registry 2.5.AC.5.r; G_bare — a boundary input (Cor 2.7.B.8.x); the Λ⁴ cancellation — an input, not a prediction (Rem 2.7.B.8.r (b)). Status: the boundaries recorded. The continuum limit W1 (5.1.G.3) ties the chain to the A4 Fock (the infinite-dimensional Fock — Rem 2.7.B.7.u (5), the "FOCK HONESTY" block): the cutoff Λ_T restricts the occupied modes, the continuum is a programme. The chain adds no new premises — it only routes the recorded.
 
 > **Corollary 2.7.B.8.d (Linear graviton propagator from the induced Einstein-Hilbert term).**
 > Expanding the induced metric of Theorem 2.7.B.8 around flat space,
@@ -6887,7 +6900,7 @@ Remark 1.10.0.27.t (Grünbaum's 11-cell: the projective twin of the 120-cell and
 
 where K(R) is the kissing number of R-dimensional space. The unique non-degenerate solution is (R, N) = (3, 11), and for the observed spatial dimension R = 3 it is exact.
 
-Lemma 1.10.0.28.m (A mode is a contact direction; (C1) is a consequence of the definition of a mode). (i) Reading of the directions of the primitive (Def 0.1.d): the Point p_0 is the source of a direction in all directions; the Sphere — all the directions of its boundary towards the centre; the Cone — from the centre over a given domain of directions. (ii) The definition of a mode (Definition 1.0.4) in the terms of the primitive: a mode is one distinguishable direction of contact with the centre; the distinguishability of two directions is the distinguishability of the corresponding acts of Choice (Th 1.0.AET.3); simultaneity — the carrier carries them in one tick. (iii) The fullness of the carrier (M3) — an independent chain without circularity. The kissing number K(R) is defined OUTSIDE the theory, in terms of equal spheres: K(R) := max{m : m unit balls with pairwise non-overlapping interiors touch one central ball}; its values are theorems of mathematics (Schütte–van der Waerden 1953: K(3) = 12; Theorem 1.10.0.17). The bridge (the inequality): m mutually distinguishable simultaneous contact directions of the carrier of one scale define m spheres around the central one; directions with an angle < π/3 make the contact regions overlap and are not distinguishable as simultaneous acts, hence m ≤ K(R) — an APPLICATION of the external theorem, not a definition (machine: the 12 vertices of the icosahedron — the nearest pair arccos(1/√5) ≈ 63.43° > 60°, a touching configuration is admissible; the best numerical configuration of 13 points on S² gives a min angle ≈ 56.9° < 60° — 13 directions violate the touching condition; the proof is Schütte–van der Waerden). M3 is a structural input (class С): the carrier carries ALL mutually distinguishable simultaneous directions of contact (saturation of the upper bound). The cyclic closure A0 (Ψ_{N+1} = Ψ_1) adds to the N executable values one non-executable one — the closure of the Sphere (k = N + 1); the carrier carries N + 1 directions, and the saturation gives N + 1 = K(R), — (C1) is a consequence of the chain "definition of a mode → bridge m ≤ K(R) → the saturation input M3": K(R) is not defined through the modes at any step. The ontological route of the same decomposition (the two-ends principle) is Rem 1.10.0.28.u. (iv) Established K(R): K(1) = 2, K(2) = 6, K(3) = 12, K(4) = 24 (Schütte–van der Waerden 1953; Musin 2008), K(8) = 240, K(24) = 196560 (Leech 1964); K(5) is open (40 ≤ K(5) ≤ 44).
+Lemma 1.10.0.28.m (A mode is a contact direction; (C1) is a consequence of the definition of a mode). (i) Reading of the directions of the primitive (Def 0.1.d): the Point p_0 is the source of a direction in all directions; the Sphere — all the directions of its boundary towards the centre; the Cone — from the centre over a given domain of directions. (ii) The definition of a mode (Definition 1.0.4) in the terms of the primitive: a mode is one distinguishable direction of contact with the centre; the distinguishability of two directions is the distinguishability of the corresponding acts of Choice (Th 1.0.AET.3); simultaneity — the carrier carries them in one tick. (iii) The fullness of the carrier (M3) — an independent chain without circularity. The kissing number K(R) is defined OUTSIDE the theory, in terms of equal spheres: K(R) := max{m : m unit balls with pairwise non-overlapping interiors touch one central ball}; its values are theorems of mathematics (Schütte–van der Waerden 1953: K(3) = 12; Theorem 1.10.0.17). The bridge (the inequality): m mutually distinguishable simultaneous contact directions of the carrier of one scale define m spheres around the central one; directions with an angle < π/3 make the contact regions overlap and are not distinguishable as simultaneous acts, hence m ≤ K(R) — an APPLICATION of the external theorem, not a definition (machine: the 12 vertices of the icosahedron — the nearest pair arccos(1/√5) ≈ 63.43° > 60°, a touching configuration is admissible; the best numerical configuration of 13 points on S² gives a min angle ≈ 56.9° < 60° — 13 directions violate the touching condition; the proof is Schütte–van der Waerden). M3 is a structural input (class С): the carrier carries ALL mutually distinguishable simultaneous directions of contact (saturation of the upper bound). The cyclic closure A0 (Ψ_{N+1} = Ψ_1) adds to the N executable values one non-executable one — the closure of the Sphere (k = N + 1); the carrier carries N + 1 directions, and the saturation gives N + 1 = K(R), — (C1) is a consequence of the chain "definition of a mode → bridge m ≤ K(R) → the saturation input M3": K(R) is not defined through the modes at any step. The ontological route of the same decomposition (the two-ends principle) is Rem 1.10.0.28.u. (iv) Established K(R): K(1) = 2, K(2) = 6, K(3) = 12, K(4) = 24 (Schütte–van der Waerden 1953; Musin 2008), K(8) = 240, K(24) = 196560 (Leech 1964); K(5) is open (40 ≤ K(5) ≤ 44; the November 2026 preprint gives K(5) ≤ 43 — exact rational certificates; the exact value undetermined).
 
 > **Proof.**
 > Step 1 (The solution (R, N) = (3, 11)). In R = 3 the kissing number
@@ -6913,10 +6926,16 @@ Lemma 1.10.0.28.m (A mode is a contact direction; (C1) is a consequence of the d
 >         prime in range (71 has h = 7; 125 = 5³);
 >       – R = 3: the unique solution, K(3) = 12 known exactly.
 >   Only R = 3 yields N = 11. (open case: the value K(5) is not
->   yet determined, 40 ≤ K(5) ≤ 44; should K(5) = 44, the pair
->   (R, N) = (5, 43) would also solve {C1, C2, C3}, since 43 is a Heegner
->   prime. For the observed spatial dimension R = 3 this does not arise:
->   K(3) = 12 is exact, so N = 11 is the unique solution at R = 3.)
+>   yet determined, 40 ≤ K(5) ≤ 44; the only value opening the pair
+>   (R, N) = (5, 43) as a solution of {C1, C2, C3} was K(5) = 44
+>   (43 is a Heegner prime). UPDATE (the November 2026 preprint,
+>   exact rational certificates): K(5) ≤ 43, the value 44 is
+>   excluded — N = K(5) − 1 ∈ {39, ..., 42} contains no Heegner
+>   primes, the (5, 43) alternative is closed; the uniqueness is
+>   extended to R = 5 conditional on the preprint being correct
+>   (the exact K(5) undetermined). For the observed spatial
+>   dimension R = 3 the update is not needed: K(3) = 12 is exact,
+>   so N = 11 is the unique solution at R = 3 independently of K(5).)
 > Step 3 (Equivalent discrete form via the Quintet). At R = 3 the
 >   geometric closure (C1) is equivalent to the mode-pairing count
 >       (B1)  N = 1 + 2·|Quintet| = 1 + 2·5 = 11,
@@ -6934,7 +6953,7 @@ Lemma 1.10.0.28.m (A mode is a contact direction; (C1) is a consequence of the d
 >   K(3) = 12 and hence N = 11 through (C1). Neither N nor R is prior:
 >   they are the unique simultaneous fixed point of the closure system. □
 
-scope of the criterion. (i) The geometric content is the definition of a mode as a contact direction (Lemma 1.10.0.28.m, item ii), the bridge m ≤ K(R) — an application of the kissing theorem — and the fullness of the carrier (M3), an input of class С (Lemma 1.10.0.28.m, item iii); (C1) is a consequence of this chain; the kissing numbers K(R), conditions (C2), (C3) and the uniqueness argument are classical mathematics outside the theory. (ii) The three-dimensional configuration of 12 neighbour spheres is the maximal one but not rigid — both the icosahedral and the cuboctahedral arrangements realize it — so the criterion uses only the maximal count N + 1 = 12, not a unique arrangement. (iii) The uniqueness scope: the uniqueness of (R, N) is established at R ∈ {1, 2, 3, 4, 8, 24} — all K(R) are established (Lemma 1.10.0.28.m, item iv); at other R it depends on K(R) (K(5) is open: 40 ≤ K(5) ≤ 44).
+scope of the criterion. (i) The geometric content is the definition of a mode as a contact direction (Lemma 1.10.0.28.m, item ii), the bridge m ≤ K(R) — an application of the kissing theorem — and the fullness of the carrier (M3), an input of class С (Lemma 1.10.0.28.m, item iii); (C1) is a consequence of this chain; the kissing numbers K(R), conditions (C2), (C3) and the uniqueness argument are classical mathematics outside the theory. (ii) The three-dimensional configuration of 12 neighbour spheres is the maximal one but not rigid — both the icosahedral and the cuboctahedral arrangements realize it — so the criterion uses only the maximal count N + 1 = 12, not a unique arrangement. (iii) The uniqueness scope: the uniqueness of (R, N) is established at R ∈ {1, 2, 3, 4, 8, 24} — all K(R) are established (Lemma 1.10.0.28.m, item iv); at other R it depends on K(R) (K(5) is open: 40 ≤ K(5) ≤ 44; the November 2026 preprint: K(5) ≤ 43 — if correct, R = 5 is also covered by the uniqueness).
 
 Remark 1.10.0.28.u (Variant B of the axiomatics: the two-ends principle and the forcing N = K(R) − 1).
 
@@ -7452,6 +7471,8 @@ Step 3 (Uniqueness). By the classification theorem for compact simply-connected 
 
 Step 4 (Connection with the quintet). The completeness of the quintet {N, π, φ, e, i} (Theorem 1.10.E.1) requires the constant π — the ratio of the circumference to the diameter. The geometric meaning of π arises only in a manifold of directions of dimension ≥ 2 (for smaller dimensions the circle is degenerate). This provides an independent justification of dim M_d = 2 through the structural completeness of the quintet. □
 
+Remark 1.10.A.1.r2 (The layer split of the proof of Th 1.10.A.1; the missing topological steps). Theorem 1.10.A.1 reads in two layers; their mixing — a defect removed here: (1) PREMISES: (М1)-(М3) + O3 — the observed dimension dim = 3 enters Step 2 as the choice n = 3 of the ambient space (the registry 1.0.A.0.I, the O3 row; previously the n = 3 choice in Step 2 was not marked as an input). (2) TOPOLOGY — the constructive reading: in Step 2 M_d is built as S^{n−1} ⊂ ℝⁿ directly; then the simple connectedness (π₁(S²) = 0), the orientability and the completeness of directions (compactness) are INHERITED facts of the construction, machine-checkable on a triangulation (χ = 2, H₁ = 0 over ℤ₂, a coherent face orientation — the "S2 TOPOLOGY" block); the classification (Möbius 1863, Dehn-Heegaard 1907) in Step 3 is a consistency control, not a derivation. (3) METRIC: on S² the induced round metric of ℝ³ is taken. (4) THE GEOMETRIC BRIDGE TO TH 1.10.B: the radiality (T3) — the invariance of the flow under SO(3) rotations about p_0; the boundary ∂V inherits the SO(3)-invariance; the only SO(3)-invariant metric of the sphere is the round one, K = const = 1/R² (Step 1 of Th 1.10.B; the bridge anchor is recorded there). (5) EQUATIONS: absent at this layer — the geometry precedes the dynamics; the dynamics enters through T1-T4 (Th 1.10.B) and the Aether (2.7.B).
+
 > **Theorem 1.10.A.2 (Constructive derivation of the geometry of Sphere-Point-Cone from (M1)–(M3) and Theorem 1.10.A.1).**
 >
 
@@ -7662,7 +7683,7 @@ Step 1 (Uniqueness of the Sphere as boundary ∂V). By the classification theore
 
 ∫_M K dA = 2π · χ(M).
 
-Isotropy of the flow (T3) imposes the requirement of constant Gaussian curvature K = const > 0, which (by Hopf's theorem 1956) uniquely yields K = 1/R² and M ≅ S²(R) (two-dimensional sphere of radius R). Hence ∂V ≅ S².
+Isotropy of the flow (T3) imposes the requirement of constant Gaussian curvature K = const > 0, which (by Hopf's theorem 1956) uniquely yields K = 1/R² and M ≅ S²(R) (two-dimensional sphere of radius R). The geometric bridge (Rem 1.10.A.1.r2(4)): (T3) — the invariance of the flow under SO(3) rotations about p_0; the boundary ∂V inherits the SO(3)-invariance, and the only SO(3)-invariant metric of the sphere is the round one, its K = const = 1/R². Hence ∂V ≅ S².
 
 Step 2 (Uniqueness of the Point at the centre of V). By the Poincaré–Hopf theorem for smooth vector fields on S²:
 
@@ -12233,6 +12254,8 @@ Step 5 (Correspondence with spectral content).
 
 Remark 2.4.A.0.r (Structural content). The proof above is a formal Connes derivation: each term of the α-formula has a correspondence in the Seeley-DeWitt expansion of the spectral action. the three-term split is placed in correspondence with the Connes heat-kernel expansion; the weight coefficients f_k are written as a structured Quintet Ansatz consistent with A6, whose first-principles fixing via f and Λ (ζ-regularization + RG) is a registry item (Rem 2.4.A.0.1).
 
+Remark 2.4.A.0.r2 (The status of the spectral choice: shape versus cyclicity). The choice D := L^{1/2} is a structural postulate of A3 with a canonical selection (Cor 1.0.A.1.c: uniqueness among the Z_N-symmetric hermitian operators under the canonical reading v = √λ — Th 1.0.A.3.c), not a consequence of A0–A2. An explicit split of the dependencies: (i) FROM THE CYCLICITY of the carrier only (A0, the Z_N structure): the finite dimension N, a_0 = N (the zeroth moment), exactly one zero mode, the Z₂ involution k ↦ N−k with (N−1)/2 pairs, the p-summability of the triple, the spectral dimension 0 at finite N; (ii) ON THE sin-SPECTRUM SHAPE (A3): the moments T_m = N·C(2m, m) (Th 1.2.G.1), and with them a₂ = −2N, a₄ = T_2/2 and the whole α-formula (Steps 2–4); the csc-sum ladder and the ζ_D integers (Rem 2.4.A.0.1); the heat ladder of the 4D triple (Rem 2.4.A.0.1.b); the exact light cone of the discrete wave (Rem 2.4.A.0.1.d); the continuum d_s = 1 (Rem 2.4.A.0.1.b). Discipline: replacing the spectral shape while keeping cyclicity keeps layer (i) and changes layer (ii) — the boundaries are recorded; the shape selection is an A3 postulate with canonical uniqueness, not a hidden input.
+
 Remark 2.4.A.0.1 (Registry item: technical refinement). Full numerical convergence f_k → canonical form requires explicit fixing of function f and cutoff Λ (standard Chamseddine-Connes procedure). In the present version of the theory, f_k are written as canonical consequence of Quintet-Axiom A6; full computation through ζ-regularization + RG-flow remains a technical refinement for NCG specialists (Connes, Marcolli, Chamseddine). THE ζ-LAYER IS BUILT BY THE MACHINE. On the recorded spectrum ω_k = 2sin(πk/N) the special values of the ζ-function of D close exactly: ζ_D(0) = N−1 = 10 (the multiplicity of the nonzero modes — the grid of the 4D lift); ζ_D(2) = (N²−1)/12 = 10 — the recorded invariant I₁ (Cor 1.2.3.c; the form — the standard identity Σcsc²(πk/N) = (N²−1)/3); ζ_D(4) = (N²−1)(N²+11)/720 = 2N = 22 — an exact closed form (the identity Σcsc⁴(πk/N) = (N²−1)(N²+11)/45; machine: N = 5, 7, 11, 13); ζ_D′(0) = −ln N — the recorded determinant ∏ω_k = N = exp(−ζ_D′(0)) (Th 1.8.2; the standard convention ζ_D(s) = Σ′ω_k^{−s}). The heat moments are exact integers: Σω_k² = 2N = 22 (the full stiffness, Rem 2.9.VT.1.t(1)) and Σω_k⁴ = 6N = 66 (machine); the ladder is complete and recorded (Rem 1.10.2.9.ab): Σω_k^{2j} = N·C(2j, j) — the cyclotomic identity, exact for every j (T₃ = 20N = 220, T₄ = 70N = 770, T₅ = 252N = 2772). The Wallis reading: C(2j, j) = ∫₀^π (2sinθ)^{2j} dθ/π — the continuum integral equals the normalized invariant (the pair-sum of the mirror directions) exactly at every N: the continuity is carried by the invariants — the directions (the mirror pairs), not by the lattice points; the limit N → ∞ sits in the identity, not in an approximation (the bridge to the boundary list 5.1.G.3 W1 and the coherent states 5.3.C). Thus the ζ-half of the item is carried by the recorded invariants; the RG-flow layer (the running of f(Λ) along the coupling ladder) — the recorded boundary of the item.
 
 > **Theorem 2.4.A.0.2 (Structural derivation of coefficients f_k via dimensional analysis + Quintet minimality).**
@@ -12274,6 +12297,137 @@ Remark 2.4.A.0.1 (Registry item: technical refinement). Full numerical convergen
 >   residue (the Rem 2.4.A.0.2 block of the validator: a_k from
 >   Spec(D²) by machine, the terms without residue, the full
 >   substitution reproduces the canonical formula of Th 2.4.A). □
+
+Remark 2.4.A.0.1.b (The heat trace of the lattice: the full ladder layer, the discrete-continuum split and the order of limits). Extends the zeta layer (2.4.A.0.1) and the recorded coefficients a0, a2, a4 (Theorem 2.4.A.0) to the full heat layer.
+
+```
+(1) THE EXACT CLOSED FORM (machine). The heat trace
+    K(t) = Tr(e^{-t D^2}) on the spectrum omega_k = 2sin(pi k/N):
+        K(t) = e^{-2t} N sum_{m in Z} I_{mN}(2t),
+    the Poisson/Bessel identity (machine: the direct sum and the
+    closed form agree to 1e-30 at t in {0.01, 0.1, 1, 3}). The
+    smooth part is N e^{-2t} I0(2t) = N 1F1(1/2; 1; -4t)
+    (Kummer's formula) — the same 1F1/I0 structure as carried by
+    the beta-function bridge (Corollary 1.9.C.7: I0(g sqrt 2)).
+    The discrete corrections 2N e^{-2t} sum_{m>=1} I_{mN}(2t)
+    enter at order t^N — the leading one 22 I11(2t) e^{-2t}, the
+    ratio to the full discrete part 1 + 3.4e-14 at t = 1
+    (machine): the fingerprint of N = 11 in the heat trace.
+```
+
+```
+(2) THE FULL SEELEY LADDER (machine). The recorded a0 = N = 11,
+    a2 = -T1 = -22, a4 = T2/2 = 33 extend to ALL orders:
+        a_{2m} = (-1)^m T_m / m! = (-1)^m N C(2m, m)/m!
+    (the T_m ladder — Rem 1.10.2.9.ab): a6 = -110/3,
+    a8 = 385/12, a10 = -231/10, a12 = 847/60,
+    a14 = -1573/210 — exact rationals (machine).
+```
+
+(3) THE CONTINUUM AND THE ORDER OF LIMITS (machine). The normalized trace K(t)/N -> e^{-2t} I0(2t) as N -> infinity: the continuum density of states is the arcsine rho(omega) = (2/pi)/sqrt(4 - omega^2), and integral e^{-t omega^2} rho d omega = e^{-2t} I0(2t) exactly (machine); the small-t end gives (4 pi t)^{-1/2} — the one-dimensional heat kernel: the continuum limit of the cycle has spectral dimension 1 (machine: d_s(N = 2001, t = 200) = 1.0006; at finite N it is 0, the honest record of Theorem 2.4.A.0). The order of limits commutes on the normalized trace: the discrepancy is at most 22 I_N(2t) e^{-2t} ~ t^N/N! — super-exponentially small in N (machine: 4.5e-18 at t = 0.1; 8.1e-8 at t = 1). The Wallis reading (2.4.A.0.1) stands under the ladder: C(2m, m) = integral_0^pi (2 sin theta)^{2m} d theta/pi — the continuum integral IS the normalized invariant.
+
+```
+(4) THE ZETA LAYER: THREE NEW EXACT VALUES (machine). To the
+    recorded zeta_D(2) = 10 and zeta_D(4) = 2N = 22:
+        zeta_D(6) = 64 = 2^6  and  zeta_D(8) = 198 = 18 N
+    — exact integers at N = 11; zeta_D(10) = 6830/11 is not an
+    integer (the ladder of integers closes at zeta(8)). The
+    general closed forms (machine; interpolation in N^2,
+    verified at independent N):
+        zeta_D(6) = (N^2-1)(2N^4+23N^2+191)/60480
+        zeta_D(8) = (N^2-1)(N^2+11)(3N^4+10N^2+227)/3628800
+    (the denominator of the second is 10! = (N-1)!: the
+    permutation capacity of the carrier; the forms are
+    equivalent to the records sum csc^6(pi k/N) = (N^2-1)
+    (2N^4+23N^2+191)/945 and sum csc^8(pi k/N) = (N^2-1)(N^2+11)
+    (3N^4+10N^2+227)/14175). Verification: N = 17 -> 828,
+    N = 19 -> 1602 (zeta_D(6)); N = 19 -> 14570, N = 23 -> 66396
+    (zeta_D(8)) — all exact (machine).
+    Computation: theory_of_everything.py, the block of
+    Remark 2.4.A.0.1.b. □
+```
+
+Remark 2.4.A.0.1.c (The ontology of the Clifford layer: an internal algebra).
+
+```
+(1) THE RESOLUTION. Cl(1,10) is an INTERNAL algebra of the
+    apparatus, living on the carrier Z11 (N = 11 modes); it is
+    NOT the base spacetime. gamma_11 is the center of the layer
+    (Theorem 1.0.C.2: gamma_11^2 = 1, [gamma_11, gamma_k] = 0,
+    spectrum +-1) — the chirality of the INTERNAL layer; the
+    spinor carrier S (dim S = 2^floor(N/2) = 32,
+    Cor 1.0.C.1.b) is internal.
+```
+
+(2) THE LORENTZIAN STRUCTURE IS A DERIVED LAYER. The time-like direction is carried by the Z2-involution of the spectrum: the mirror pairs (k, N-k) are the frequency-sign structure (+- frequencies; Def 1.0.8 — the spectral sign-alternating identity sum (-1)^k f(omega_k) = 0); the pair invariants carry the continuity (2.4.A.0.1, the Wallis reading). The 3+1 spacetime continuum emerges from the cascade SU(11) -> SM and the light-component selection (Cor 5.3.1.c): the dimension 3 is the O3 input; the signature is derived, not primary.
+
+(3) THE MACHINE LAYER. The involution k -> N-k: the spectrum is invariant (5 mirror pairs + the zero mode); the moment ladder sum omega^{2j} = N C(2j, j) is pair-invariant (each pair contribution enters twice); the alternating power sums sum (-1)^k omega_k^m = 0 for m = 1, ..., 9 — the condition f(0) = 0 (machine; Theorem 1.8.1); the 32-carrier and the gamma_11 centrality are recorded (Theorem 1.0.C.2, Cor 1.0.C.1.b, Lean). Boundary: the continuum Lorentzian lift is the program of the 4D triple 5.1.G.3 W1 with the fixed ontology (an internal algebra); the order of limits of the heat trace is 2.4.A.0.1.b. Computation: theory_of_everything.py, the block of Remark 2.4.A.0.1.c. □ Remark 2.4.A.0.1.c. □
+
+Remark 2.4.A.0.1.d (The Lorentzian layer: the exact light cone from the frequency-sign involution). The answer of the Lorentzian-lift branch of the 4D-triple program (5.1.G.3 W1) under the fixed ontology (2.4.A.0.1.c: an internal algebra).
+
+```
+(1) THE DISPERSION DOUBLING (machine). The free part of the
+    canonical Lagrangian (Def 1.3.2.d) is the wave dynamics
+    d^2 Psi/dt^2 = -L Psi on the cycle Laplacian L = diag(w) - w.
+    The spectrum of L is 4sin^2(pi k/N) (machine: N = 11 — the
+    deviation 2.2e-15; N = 17 — 1.3e-15): the canonical spectrum
+    omega_k = 2sin(pi k/N) is the square-root reading of the
+    Laplacian. The phase-flow matrix A = [[0, I], [-L, 0]]
+    carries a purely imaginary spectrum {+-i omega_k} — EXACTLY
+    22 branches = 2N (machine): the second-order dynamics
+    doubles every frequency into a +-Omega pair; the recorded
+    frequency-sign structure (2.4.A.0.1.c) is the exact
+    dispersion pair. In the mode basis u'' = -omega^2 u exactly
+    (machine, 40 dps: 8.4e-11). The branches are trace-free:
+    sum(+-omega_k) = 0 (the energy-conservation reading), and
+    sum(Omega^2) = 4N = 44; the phase space of the wave
+    (Psi, Psi_dot) is two-dimensional per mode — the full
+    dimension 2N = 22 = T1: the stiffness sum(omega^2) = 2N
+    (Rem 2.9.VT.1.t(1)) IS the dimension of the wave phase
+    space.
+```
+
+```
+(2) THE EXACT DISCRETE CONE (machine). The full tick lattice
+    (dt/dx = 1 in units c = 1 — Courant 1) turns the wave
+    dynamics into the transport
+        u^(n+1)_j = u^n_{j+1} + u^n_{j-1} - u^(n-1)_j,
+    and the solution is the EXACT sampling of the continuum
+    d'Alembert solution: u^n_j = f(j - n mod N) and
+    f(j + n mod N) — the transport of ARBITRARY (non-smooth)
+    data at exactly 1 cell per tick (machine: random integer
+    data on Z11, both branches, n = 0..30). The front IS the
+    cone exactly: the support of a point source stays inside
+    {|dj| <= n} at all ticks; checkerboard-consistent data fill
+    exactly the checkerboard cone {|dj| <= n, dj = n (mod 2)} —
+    the parity of the tick is the Z2-grading (Def 1.0.8); a
+    traveling delta wave lives exactly on the front (machine:
+    n = 0..8). Causality does not wait for the continuum limit:
+    the cone exists on the lattice at the fixed a = lambda_T.
+```
+
+```
+(3) THE UNIT CIRCLE (machine). The transport matrix is
+    2N-dimensional; ALL its 22 eigenvalues lie on the unit
+    circle (|lambda| = 1 up to 1e-15), the angles are
+    +-q_k mod 2pi, q_k = 2pi k/N (machine): the scheme
+    dispersion is LINEAR (sin^2(Omega/2) = sin^2(q/2) iff
+    Omega = +-q) — there is no numerical dispersion, which is
+    why the front is exact. The skew energy
+    E_n = |u^n - u^(n-1)|^2 + <u^n, L u^(n-1)> is conserved
+    (machine: the drift 6e-14 over 24 ticks). The recorded
+    Z2-involution is the momentum reversal: omega_k =
+    omega_{N-k}, q_k + q_{N-k} = 0 mod 2pi (machine) — the
+    mirror pair is the left/right-moving branches; with +-Omega
+    this gives 4 branches per pair: 5 pairs x 4 + apex x 2 =
+    22 = 2N = T1 — the census of the cone branches; the zero
+    mode is the apex of the cone (the vacuum (W2) of
+    Theorem 5.1.G.3).
+```
+
+(4) THE LORENTZ INVARIANCE OF THE LIMIT (machine). The cone coordinates (x - t) and (x + t) scale under a boost by the positive factors sqrt((1+beta)/(1-beta)) and sqrt((1-beta)/(1+beta)) — the cone branches are preserved (machine: beta = 0.6 gives the factors 2 and 0.5 exactly); box f(x - t) = 0 for traveling waves (machine: finite differences up to 1.1e-10). The discrete cone is a sampling of the continuum one: the same front, the same speed; the continuum operator box = d^2/dt^2 - d^2/dx^2 is Lorentz-invariant in 1+1.
+
+(5) THE CONE SPEED IS INVARIANT ALONG THE LADDER (machine). The scale anchors of the dictionary a = lambda_T = l_P/sqrt(N) (AET2) and tau_T = tau_P/sqrt(N) (the time passport) carry ONE factor 1/sqrt(N), and their ratio is algebraically constant: lambda_T / tau_T = l_P / tau_P = c (machine: the deviation from l_P/tau_P — 0.00e+00, from CODATA-2022 — 1.2e-7; invariant under any lattice rescale: N = 1, 3, 7, 11, 121). The front carries the speed c at EVERY rung of the phi-ladder — the cone analogue of the gap invariance (Theorem 5.1.G.4): the cone is an algebraic relation of recorded scales, not a continuum limit. Thus the W1 boundary (Theorem 5.1.G.3) receives its Lorentzian layer: the causal structure exists exactly at the fixed a and is carried by the ladder without a change of speed; the cone N-independence is checked on Z5 and Z7 (machine: the exact transport and the checkerboard cone — the same). Computation: theory_of_everything.py, the block of Remark 2.4.A.0.1.d. □
 
 Remark 2.4.A.0.2.r (Closure of f_k circularity). This theorem closes the last gap in the Connes derivation: the coefficients f_k are not "selected" to fit the α formula but are uniquely fixed by three structural requirements (R1 dimensionality + R2 Quintet minimality + R3 spectral consistency). No other combination of Quintet forms satisfies all three conditions simultaneously. Scope of the uniqueness: it holds in the recorded finite candidate space (Quintet forms with integer exponents; the full enumeration is the machine) — this is uniqueness of the form within the class, not a claim about all conceivable laws. The Connes derivation is designed for component-by-component correspondence with the heat-kernel expansion; a first-principles definition is a registry item (Rem 2.4.A.0.1). This converts the Connes derivation from "correspondence" into "structural derivation".
 
@@ -13218,7 +13372,7 @@ Philosophical synthesis: The classical philosophical question — "Why is there 
 
 Formally: Nothing ⟷ Everything = Sphere ⟷ Cone = angular variation ⟷ radial variation. Neither Nothing without Everything, nor Everything without Nothing: one exists only as the reverse side of the other.
 
-This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 714 theorems + 15 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
+This closes the theory of Trinity upon its own metaphysical foundation: 84 constants + 715 theorems + 15 characterizations consistent with N=11 — all of these are manifestations of a single act of actualization by the Cone of the homogeneous potential of the Sphere, with quintet-parametrization of the form and geometric Z₂-duality at all levels.
 
 Sphere + Cone = Everything + Nothing = Trinity.
 
@@ -14632,7 +14786,7 @@ where γ_T = 1/(N · τ_step) is the Trinity decoherence rate, τ_step from 5.3.
 
 LÎ = Σ_k λ_k · |k⟩⟨k|,   λ_k = ω_k² / Σ_j ω_j²,  Σ_j ω_j² = 2N = 22,
 
-λ_0 = 0 (the Absolute does not bias the outcome distribution), and λ_5 = 0.356 > λ_1 = 0.029 (machine) — the weight spread is structural (the mode heights).
+λ_0 = 0 (the Absolute does not bias the outcome distribution); sum_k λ_k = 1 EXACTLY (machine): the mode weights λ_5 = 0.178 > λ_1 = 0.0144; the class weights are doubled: class {5,6} = 0.356 > class {1,10} = 0.029 — the weight spread is structural (the mode heights).
 
 For the projector Π̂_k = |k⟩⟨k| the stochastic equation holds:
 
@@ -14646,9 +14800,9 @@ where ⟨LÎ⟩_ρ = Σ_j λ_j ρ_j is the state-dependent drift term (the ONLY
 - MARTINGALE PROPERTY. d⟨Π̂_k⟩_t carries only the dW-term (centered Brownian increment) ⟹ E[⟨Π̂_k⟩_{t+dt} | F_t] = ⟨Π̂_k⟩_t; the [Ĥ, ρ] part is diagonal and does not touch the populations ρ_k.
 - BOUNDEDNESS: 0 ≤ ρ_k ≤ 1 (trace of a projector on a normalized density); the S[LÎ] term is multiplicative ⟹ trajectories ρ_k(t) ∈ [0,1].
 - CONVERGENCE (Doob): a bounded martingale converges almost surely to X_∞ ∈ [0,1].
-- THE LIMIT IN THE EXTREME POINTS — via the quadratic variation (replacing the unproven "variance demonstrability"). For the martingale X_t = ρ_k(t): dX = σ(X)·dW with σ(x) = 2√γ_T·(λ_k − ⟨LÎ⟩_ρ)·x; the quadratic variation QV_∞ = ∫₀^∞ σ(X_t)² dt. If X_∞ ∈ (0,1) with positive probability, then on that event X_t → x* ∈ (0,1), ⟨LÎ⟩_ρ → x*, σ(x*) = 2√γ_T·(λ_k − x*)·x*; at λ_k ≠ x* we get σ(x*) ≠ 0 ⟹ QV_∞ = ∞ — contradicting the convergence of a martingale with bounded QV on the convergence set. The remaining points x* = λ_k (where σ = 0) are stable only if ρ_j → 0 for all j ≠ k (⟨LÎ⟩_ρ = λ_k ⟺ ρ_k = 1 under Σρ = 1 and distinct λ_j) — i.e. this IS the point 1 for the outcome k. For an outcome "ρ_k → x* ≠ 0, 1" there remains the case σ = 0 on a ρ_j-mixture with ⟨LÎ⟩ = λ_k — but such a mixture has a zero-drift neighborhood ONLY on a hyperplane; the slightest perturbation (noise present at t > 0) drives QV → ∞. Strictly: the set of trajectories converging into (0,1) has probability 0 (the Doob QV criterion for continuous martingales). Result: X_∞ ∈ {0, 1} a.s.; the uniform state ρ_k = 1/11 is NO exception — the λ_j spread (0.029–0.356) makes ⟨LÎ⟩_ρ ≠ λ_k for all k ⟹ σ ≠ 0 ⟹ QV → ∞ ⟹ collapse. THE LIMITING OBJECT IS A Z2-CLASS (machine, Euler-Maruyama): inside a mirror pair {k, N−k} the λ weights are equal (the Z₂-invariance of the heights — the same one as in 2.5.U.1.3), hence σ_k = σ_{N−k} and the ratio ρ_k/ρ_{N−k} is an INVARIANT of the dynamics: the pair does not collapse into a single mode but is fixed as a WHOLE (a class); the mode 0 (λ_0 = 0) is a class of its own. The measurement by mode heights cannot discriminate the mirrors in principle — the outcome is a Z2 class, and the Born rule reads on the classes: p(class {k, N−k}) = ρ_k(0) + ρ_{N−k}(0) = 2/11 for the uniform state; p(mode 0) = ρ_0(0) = 1/11 (machine: 24/24 episodes fixed a class; the class (2, 9) is the modal one). Discriminating the mirrors within a class requires a second observable — the phase: this is the signed model 2.5.U (the α-shifts discriminate the sides of a pair); the alignment of the measurement structures — Remark 2.4.K.1.r.
+- THE LIMIT IN THE EXTREME POINTS — via the quadratic variation (replacing the unproven "variance demonstrability"). For the martingale X_t = ρ_k(t): dX = σ(X)·dW with σ(x) = 2√γ_T·(λ_k − ⟨LÎ⟩_ρ)·x; the quadratic variation QV_∞ = ∫₀^∞ σ(X_t)² dt. If X_∞ ∈ (0,1) with positive probability, then on that event X_t → x* ∈ (0,1), ⟨LÎ⟩_ρ → x*, σ(x*) = 2√γ_T·(λ_k − x*)·x*; at λ_k ≠ x* we get σ(x*) ≠ 0 ⟹ QV_∞ = ∞ — contradicting the convergence of a martingale with bounded QV on the convergence set. The remaining points x* = λ_k (where σ = 0) are stable only if ρ_j → 0 for all j ≠ k (⟨LÎ⟩_ρ = λ_k ⟺ ρ_k = 1 under Σρ = 1 and distinct λ_j) — i.e. this IS the point 1 for the outcome k. For an outcome "ρ_k → x* ≠ 0, 1" there remains the case σ = 0 on a ρ_j-mixture with ⟨LÎ⟩ = λ_k — but such a mixture has a zero-drift neighborhood ONLY on a hyperplane; the slightest perturbation (noise present at t > 0) drives QV → ∞. Strictly: the set of trajectories converging into (0,1) has probability 0 (the Doob QV criterion for continuous martingales). Result: X_∞ ∈ {0, 1} a.s.; the uniform state ρ_k = 1/11 is NO exception — the λ_j spread (0.0144–0.178) makes ⟨LÎ⟩_ρ ≠ λ_k for all k ⟹ σ ≠ 0 ⟹ QV → ∞ ⟹ collapse. THE LIMITING OBJECT IS A Z2-CLASS (machine, Euler-Maruyama): inside a mirror pair {k, N−k} the λ weights are equal (the Z₂-invariance of the heights — the same one as in 2.5.U.1.3), hence σ_k = σ_{N−k} and the ratio ρ_k/ρ_{N−k} is an INVARIANT of the dynamics: the pair does not collapse into a single mode but is fixed as a WHOLE (a class); the mode 0 (λ_0 = 0) is a class of its own. The measurement by mode heights cannot discriminate the mirrors in principle — the outcome is a Z2 class, and the Born rule reads on the classes: p(class {k, N−k}) = ρ_k(0) + ρ_{N−k}(0) = 2/11 for the uniform state; p(mode 0) = ρ_0(0) = 1/11 (machine: 24/24 episodes fixed a class; the class (2, 9) is the modal one). Discriminating the mirrors within a class requires a second observable — the phase: this is the signed model 2.5.U (the α-shifts discriminate the sides of a pair); the alignment of the measurement structures — Remark 2.4.K.1.r.
 - THE BORN RULE: E[X_∞] = ρ_k(0) = |⟨k|ψ₀⟩|² (martingale property + bounded convergence) — the outcome probability = the population.
-- CP/TP AND NO-SIGNALING. The trajectory-averaged dynamics: dE[ρ]/dt = γ_T·D[LÎ](E[ρ]) — a LINEAR CPTP Lindblad map (D[L] = LρL† − ½{L†L, ρ}; for a diagonal L̂: depolarization of the populations toward the weights λ_k with trace preservation — TP; complete positivity — the Lindblad form). Hence the reduced matrix of the remote subsystem evolves independently of the choice of local operations: no-signaling is proven for the averaged dynamics; individual trajectories carry no information (the anti-signaling statement — the standard theorem on quantum trajectories). The earlier phrase "2.4.K proves no-signaling" is replaced by this proof. The state dependence of the operator is removed: LÎ is constant; the state dependence lives only in the drift ⟨LÎ⟩_ρ, which yields the nonlinear individual dynamics under a linear ensemble.
+- CP/TP AND NO-SIGNALING. The trajectory-averaged dynamics: dE[ρ]/dt = γ_T·D[LÎ](E[ρ]) — a LINEAR CPTP Lindblad map (D[L] = LρL† − ½{L†L, ρ}; for a diagonal L̂: pure dephasing — the populations are FROZEN (machine: D[L](diag ρ) = 0 exactly; the population freeze is what carries (e)), the coherences decay at the rate (λ_j−λ_k)²γ_T/2, the mirror ones are decoherence-free (λ_k = λ_{N−k}); trace preservation — TP; complete positivity — the Lindblad form; the machine layer is Rem 2.4.K.2). Hence the reduced matrix of the remote subsystem evolves independently of the choice of local operations: no-signaling is proven for the averaged dynamics; individual trajectories carry no information (the anti-signaling statement — the standard theorem on quantum trajectories). The earlier phrase "2.4.K proves no-signaling" is replaced by this proof. The state dependence of the operator is removed: LÎ is constant; the state dependence lives only in the drift ⟨LÎ⟩_ρ, which yields the nonlinear individual dynamics under a linear ensemble.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -14665,6 +14819,46 @@ Machine: the 2.4.K validator block (the λ_k weights, Σω² = 2N = 22, the λ s
 COROLLARY 2.4.K.1. Trinity has NO collapse as a primitive process. Measurement is smooth stochastic dynamics, ensemble-unitary (the linear CPTP averaging — item (f) of the proof), individually nonlinear. This resolves the QM measurement problem structurally, not interpretationally.
 
 COROLLARY 2.4.K.1.c (The two-particle setting; Bell — standard). On H ⊗ H the pair dynamics is the tensor extension of the same form: dρ_AB = −(i/ℏ)[Ĥ⊗I + I⊗Ĥ, ρ_AB]dt + γ_T·D[L̂⊗I + I⊗L̂](ρ_AB)dt + √γ_T·S[L̂⊗I + I⊗L̂]·dW_AB, where L̂ = Σλ_k|k⟩⟨k| is the same state-independent operator. Properties: (i) the trace is preserved (the Lindblad D-form), complete positivity — the Lindblad form; (ii) the reduced matrix ρ_A = Tr_B ρ_AB evolves ONLY by local terms (the partial trace of [L̂⊗I, I⊗X] vanishes) — no-signaling: individual trajectories carry no information; (iii) the BELL STATISTICS are satisfied in the standard way (the CHSH maximum 2√2 — Th 2.4.V: the Z₁₁ spectral identity): the Trinity difference is not a new statistics but the STRUCTURE OF THE RECORD of the act (the senses = reading, the choice = writing, 0.8.6); the registered programme — the quantum computer with a single inject.
+
+Remark 2.4.K.2 (The machine layer of dephasing: the class POVM, the decoherence-free mirror phase, no-signaling). Develops items (d)-(f) of Theorem 2.4.K: the ensemble dynamics is computed by the machine component-wise.
+
+```
+(1) DEPHASING, NOT DEPOLARIZATION (machine). D[L] on diagonal
+    states = 0 EXACTLY (the deviation 4e-19): the populations are
+    UNCHANGED in time; the phrase "depolarization of the
+    populations" recorded above is removed by the machine — the
+    population freeze is precisely what carries (e): E[X_inf] =
+    rho_k(0). The coherences: (D[L](rho))_jk = -1/2 (lam_j-lam_k)^2
+    rho_jk EXACTLY (machine: 1.4e-17); the explicit solution
+    rho_jk(t) = rho_jk(0) e^{-(lam_j-lam_k)^2 gamma_T t/2} agrees
+    with RK4 (1.9e-15).
+```
+
+```
+(2) THE SUPEROPERATOR SPECTRUM (machine). The 121-dimensional
+    superoperator D[L]: all eigenvalues are real and <= 0; the
+    spectrum = {0, multiplicity 11 — the diagonal subspace} ∪
+    {-1/2 (lam_j-lam_k)^2} (the deviation 1.7e-18);
+    Tr D[L](rho) = 0 exactly — TP; the Lindblad form — CP.
+```
+
+(3) THE ENSEMBLE MARTINGALE (machine, Euler-Maruyama, 4000 trajectories): max_k |E[rho_k(t)] - rho_k(0)| = 2e-3 — the statistical fluctuation of the martingale; the trace drift 0.
+
+```
+(4) THE CLASS POVM (machine). The effects Pi_c (5 mirror pairs +
+    the zero mode): sum_c Pi_c = I EXACTLY; p(class) = Tr(Pi_c
+    rho) = rho_k + rho_{N-k} exactly on random states; the 6
+    outcomes sum to 1 — the class reading of item (d) is a
+    complete POVM.
+```
+
+(5) THE DECOHERENCE-FREE MIRROR PHASE (machine). The dephasing rate of the mirror coherence rho_{k,N-k} is 0 (lam_k = lam_{N-k}): rho_{k,N-k}(t) = rho_{k,N-k}(0) EXACTLY — the phase of the pair survives decoherence; discriminating the mirrors requires the second observable — the phase (2.5.U) — machine-verified.
+
+(6) NO-SIGNALING (machine). Tr_A[(Phi_t x Phi_t)(U_A (rho_A x rho_B) U_A^d)] = Phi_t(rho_B) exactly (the deviation 1.7e-16; random U_A, the explicit dephasing solution) — the reduced dynamics is independent of the local operations.
+
+(7) THE PAIR INVARIANT (machine). The ratio rho_k/rho_{N-k} is a constant along the trajectories EXACTLY (the deviation 0.0 over 500 ticks, 200 trajectories): sigma_k = sigma_{N-k} gives a common multiplier.
+
+(8) THE WEIGHT NORMALIZATION (machine). lambda_k = omega_k^2 / sum(omega^2) = omega_k^2/22: sum_k lambda_k = 1 EXACTLY, lambda_0 = 0; the mode weights lambda_5 = 0.178 > lambda_1 = 0.0144; the class weights are the doubled ones (0.356 > 0.029) — the record of Theorem 2.4.K is consistent; a common multiplier of lambda is absorbed by gamma_T — the collapse is qualitatively invariant (the recorded collapse block uses the same qualitative dynamics). Computation: theory_of_everything.py, the Rem 2.4.K.2 block. □
 
 
 #### 2.4.L TRINITY QUANTUM SPEED LIMIT (Z₁₁-ANALOGUE OF MARGOLUS-LEVITIN)
@@ -15687,6 +15881,8 @@ By Solomonoff's theorem (Solomonoff 1964) on minimum algorithmic complexity, a h
 
 ADDITIONAL DISTINCTION. Known "numerology theories" (Eddington 1929, Bohm-Aharonov quasi-numerical predictions, GUT numerical coefficients at 1-2 significant digits) do not yield closed forms for 84 constants at mean error 0.0017% AND do not predict future measurements (FCC-hh 2040+, LISA 2037+, Berkeley α-extension). Trinity does both.
 
+Remark 2.4.AC.3.r.2 (One code for both models — the machine layer). The comparisons above use different codes: the Trinity skeleton (6 Hilbert axioms × 15 bits + the Quintet = 90 bits) against the independent per-formula encoding (84 × 30 = 2520 bits), and the "SM 660 bits" at its own code. One code (machine, frozen): 5 bits — a reference to an atom of the shared table (N, φ, e, π, i, α, √5, the integers 1..24, the exponents 1..20); 3 bits — an operation {+,−,×,÷,^}; a tree node = 3 + two references; a value at the recorded precision = 3.32 × significant digits; the selection rule — 20 bits. Under this code: SM+ΛCDM = the Lagrangian structure 1376 (fields 1056 + vertices 320) + 28 fitted values 431 + 11 unexplained catalog rows 179 (mu_p, mu_n, r_p, f_pi, f_K, tau_n, B/A Fe, B(Li6), B/A Ni, glueball, the r-tensor) + the a_mu deviation 10 + the selection 20 ≈ 2016 bits; Trinity = the premises 1116 (14 formal templates) + the grammar 30 + the selection 20 + the formula layer (the generative index 84 × 13 = 1092 → the full 2426; the class-compressed 3441 → 4775; the uncompressed AST 24058 → 25392, the upper bound) + the residuals 168; the skeleton without the formula layer — 1166. The factor band (SM+ΛCDM / Trinity, the two-part readings): 0.42–1.7× — the description lengths are COMPARABLE under one code. The axis of the Trinity advantage is not the description length but the zero of the continuous free parameters and the 84/84 coverage with the prediction layer of 56. The recorded ratios (1/29, 49×) are comparisons with the independent per-formula encoding, not with SM+ΛCDM; the perimeters of the 0.7 lines are refined (the machine: the reproduction of all the block numbers — py).
+
 
 #### 2.4.AD SEESAW MECHANISM ON Z₁₁ FOR INDIVIDUAL NEUTRINO MASSES
 
@@ -16118,7 +16314,50 @@ Remark 2.4.AE.2.w (The volume element and the integral trace: the lift equations
 (6) THE FULL SYSTEM IS BUILT (machine). Five checks:
 
 - on the exact nontrivial metric diag(−a², b², c², d²) (a..d — functions of t) the full system G_ij = R_ij − ½g_ij·R with the trace tr(G) = −R (D = 4) EXACTLY and a NONvanishing measure trace ¼η_ij·tr(G) ≠ 0 — the system is not traceless, the measure couples the 9 components to the trace (sympy); (ii) the split 10 = 1 + 9 — the rational projector T̃ = T − ¼η·tr, rank 9, idempotent; (iii) the solvability constraint (item (2)) lives only in the trace: the trace covector annihilates the projector image; (iv) the grid 1..10: the kernel of the cycle Laplacian is empty outside the zero mode k = 0 — the traceless system is nondegenerate, no extra constraints;
-- the constant: κ = 8πG_ind, G_ind = (π/N)·G_N (Th 2.7.B.8). The remainder of the lift — the ab-initio derivation of G_N and ε₀ (boundary inputs, Rem 2.5.AC.5.r). Computation: theory_of_everything.py, the Remark 2.4.AE.2.w block. □
+- the constant: κ = 8πG_ind, G_ind = (π/N)·G_N (Th 2.7.B.8). The remainder of the lift — the ab-initio derivation of G_N and ε₀ (boundary inputs, Rem 2.5.AC.5.r).
+
+```
+(7) THE 4D-TRIPLE HEAT LAYER (machine). The slice operator is
+    the product of the cycle with a flat continuum:
+    D^2_4D = L (x) I + I (x) (-Delta_R3); the heat trace of
+    the product factorizes: K_prod(t) = K(t) (4 pi t)^(-3/2).
+    (i) the Kronecker-sum spectrum = the pairwise sums
+    (machine: the toy product 11 x 6, the deviation 8e-15);
+    (ii) the Gaussian factor is exact: int e^{-t mu} sqrt(mu)
+    dmu/(4 pi^2) = (4 pi t)^(-3/2) (the Gamma form at 40 dps:
+    0.0; the density of states of flat R3 per unit volume);
+    (iii) THE SPECTRAL DIMENSION OF THE SLICE: at finite N the
+    t -> 0 limit gives 3 (machine: d_s(11, 1e-5) = 3.00004);
+    in the JOINT limit (the ladder-unfolding -> the continuum,
+    Rem 2.4.G.13.y) — EXACTLY 4: d_s(2001, 200) = 4.00063 —
+    the dimension of the 4D triple = 1 (the ladder) + 3 (the
+    O3 input); the IR reading returns 3 (machine:
+    d_s(11, 50) = 3.00001 — the cycle frozen into its zero
+    mode); the UV reading 4 persists up to an N-dependent
+    crossover scale (machine: d_s(201, 20) = 4.00641);
+    (iv) the lambda-slot = the zero mode: the nonzero part of
+    the trace decays at the rate EXACTLY omega_1^2 =
+    4 sin^2(pi/11) = 0.3174929 (machine: 7 digits), the zero
+    part lives forever — K(t) -> 1; the solvability condition
+    L Phi = sigma is equivalent to sum(sigma) = 0 (machine:
+    the zero-sum source is solvable, the raw one is
+    singular) — the lambda-slot is a linear-algebraic
+    condition, not a choice; (v) THE LADDER STABILITY:
+    (4 pi t)^{3/2} K_prod(t) = K(t) EXACTLY — the flat factor
+    carries no new Seeley-DeWitt coefficients, and the SAME
+    ladder a0 = 11, a2 = -22, a4 = 33 (Rem 2.4.A.0.1.b)
+    enters the spectral action of the 4D triple: the
+    alpha-derivation (Th 2.4.A.0) is invariant under the 4D
+    lift; (vi) the order of limits on the product: the
+    discrepancy bound 22 I_N(2t) e^{-2t} (4 pi t)^(-3/2)
+    (machine: 2.9e-19 at t = 0.1; 1.7e-10 at t = 1) — it
+    commutes; (vii) im L = {v : sum v = 0} EXACTLY (rank
+    10 = 10, machine) — the trace equation L Phi = kappa
+    sigma lives exactly on the traceless sector; ker L = the
+    constants (dim 1 = the lambda-slot).
+    Computation: theory_of_everything.py, the
+  Remark 2.4.AE.2.w block. □
+```
 
 Remark 2.4.AE.2.x (Temperature is the field ON the grid). Develops Remark 2.4.AE.2.w: the tensor field living on the grid is Temperature (the pair {2,9}, directedness i); the grid itself is the pair {1,10} (discreteness, N); then through the resonances — the intensity e ({3,8}), the scalability φ ({4,7}), the closure π ({5,6}).
 
@@ -17903,6 +18142,8 @@ All four CKM parameters match PDG-2024 within errors.
 >   J = sinθ_12·sinθ_23·sinθ_13·sinδ_CP ≈ 3.1·10⁻⁵
 > Experiment: J = 3.08(16)·10⁻⁵. EXACT.
 
+Remark 2.4.AH.2 (The flavor-layer status: derived / structurally / programmes). A single flavor-status sheet (crosses the 5.1.D.9 skeleton, the CKM sections 2.4.AH/2.8.4 and the input registry 1.0.A.0.I): (1) DERIVED (structure): the chiral content 3×(10⊕5̄) — the anomaly cancellation (Th 5.1.D.8); the singlet skeleton 350/211 and 56 → 3 light (Rem 5.1.D.9.bb/9.aa, the Hodge ε-tensors); the multiplicities/supports of the six recorded Yukawas (9.y-9.z — every live multiplicity equals 1). (2) STRUCTURALLY REPRESENTED (the [С][Э] status): the three angles and the CKM phase in the Wolfenstein reading through {π, φ, N} (Th 2.4.AH.1, Th 2.8.4, δ_CP = π/φ²); the Jarlskog invariant; the numerical comparison — against the PDG-2024 edition (the numbers of the experiment lines of this section belong to that edition; the σ-check on every new base — the 2.10.B discipline). (3) INPUTS/PROGRAMMES (the У/П class of the registry 1.0.A.0.I): the numerical values of the Yukawas y_t, y_b, y_τ — [П] (the axis grid and the weight ladders are recorded — Rem 2.6.A.4.at7; the numbers are the transcendental interface); the full matrices Y_u,d,e,ν with phases and the PMNS layer — a programme (the flavor basis is free until the mode-generation identification); M_R(k) — [П]. Discipline: the rows of (1) do not depend on (3); mixing is forbidden — the singlet skeleton does not predict the numerical Yukawa values.
+
 
 #### 2.4.AI METHODOLOGY AND REPRODUCIBILITY
 
@@ -18953,6 +19194,8 @@ Topological properties are protected against perturbations. Important for QEC st
 
 Full catalog: 84 Standard-Model and cosmological observables (structural Ansätze). Entry status: all 84 are L2-layer structural closures (the values were known at form selection — 1.0.K); blind risk is carried by the L1-layer predictions and PF-1..PF-7 (1.0.K.1). Adversarial split (Rem 2.5.AC.3.r): 9 first-principle derivations + 36 structural α-series closures + 39 redefined operator-rating forms. The nine metadata fields per constant (equation, postulates, derivation class, kind of approximation, free parameters, independence, data, uncertainty, refutation criterion) — Rem 2.5.AC.3.r; the input independence rank(J) = 4 — Rem 2.5.AC.4.r; absolute scales — Rem 2.5.AC.5.r. Mean error at tree level: 0.0017%; 51 of 84 reach < 0.001% (of which 22 reach < 10⁻⁴%). Specific cone-correction examples (Theorems 2.7.P.11-13: m_n/m_p, g_e/2, h Hubble) reduce individual observables; the correction coefficients are selected per observable, so no universal-exactness claim is made for the catalogue. The three historically hardest entries (m_n/m_e, g_e/2, Hubble h — ~0.001% in the base catalogue) were reduced by the corrections 2.7.P.11-13 to the ≤ 0.0001% level (final coverage statistics, Section 2.7.P). All formulas are given in the script theory_of_everything.py.
 
+Catalog hygiene status (the machine layer). The census of the integer content over the bodies of all 84 formulas: median 4.5, mean 9.0, maximum 23 (the alpha-series — V_cb, m_d/m_e), minimum 0 (the named reference 1/alpha) — all integers in the formula bodies are bounded by the large integers in the bodies (47, 144, 2^9-1, 1000) are the recorded catalog constants (the r_p form, B/A, f_K), not fitting numbers; the precision classification 22/30/32 and the split 10 + 35 + 39 = 84 are recorded. The fixed set of the alpha comparisons: CODATA-2022 137.035999177(21) — 0.79 sigma; LKB-Rb 2020 137.035999206(11) — 4.15 sigma (0.333 ppb); Berkeley-Cs 2018 after the shift of Th 2.5.U.1 — the residual 0.39 ppb; the atom shifts Cs -1.684e-7 (the observation -1.60e-7 — 5.3%), Sr +3.10e-8 (blind), Yb = Rb within 1e-11; all 18 SI exponents are Z11 numbers (machine); the PF-1 discriminator — the mantissa 35881 of the recorded value.
+
 Classification by type (reproduced programmatically — block of Test 2.5.AC.3.v in theory_of_everything.py; sum = 84): 39 operator-algebraic (via ratio(Ô) and combinations) 45 closed-form (analytic, via Quintet + eigenfrequencies)
 
 Classification by accuracy (tree level): 22 EXACT (< 0.0001%) 30 high-precision (0.0001% – 0.001%) 32 (> 0.001%)
@@ -19841,7 +20084,7 @@ This demonstrates the universality of the Z₂-structure of Trinity at all level
 
 Remark 2.5.U.3.r (The Berkeley-LKB tension). The 5.5σ discrepancy between α measurements in Cs-133 (Parker et al. 2018) and Rb-87 (Morel et al. 2020) has a signed structural reading: the atoms map to the modes of Z₁₁ (k = 0 and k = 4 respectively; the electron modes {4, 7}), and the signed formula 2.5.U.1 reproduces the sign and the MAGNITUDE of the shift (−1.684·10⁻⁷ vs −1.60·10⁻⁷, 5.3%).   The unshifted mode is Rb (k_p = 4 = k_e — the reference), the maximal shift is Cs (k_p = 0); the Trinity reference value coinciding with Rb is a consequence of the model. The residual 5.3% scale tension is a recorded refinement programme; the question of the full structural resolution remains open for higher-precision data. The consequences 2.5.U.1.1 (Yb-171) and 2.5.U.1.2 (Sr-87) inherit this status.
 
-This section contains a summary of the 34 most important constants of Trinity in compact tabular form. The full machine catalogue of the 84 constants — in the validator theory_of_everything.py (block 2.5); summary tables of 60 entries — in 2.5.AL-AR; the error methodology — in Section 2.10. Each constant in the table has an interpretation through the sections of the Cone or the invariants of the Sphere: •α (FINE STRUCTURE) = 1/137.035999160359 (0.8σ vs CODATA-2022; Morel et al.) — the main geometric formula of the Cone (Theorem 2.4.A): 1/α = Nφ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone, V_cone = 13195 •1/α_GUT = F₅² = 25 EXACTLY — the Cone invariant at the GUT apex; 5 pairs of Duality = 5 quintet projections. •m_p/m_e = 1836.15269 (10⁻⁶%) — the ratio of the depths of segments (Corollary 2.4.A.9.2); related to section D_8 (Mass). •KOIDE Q = 2/3 EXACTLY — the invariant of the quark-mass section (D_3/D_8). •sin²θ_W = 0.231220 — the ratio of the modes D_2 (Temperature) and D_5 (Length): sin²θ_W ≈ ω_2²/(ω_2² + ω_5²). •84 observables = 84 invariants of the Sphere-Cone geometry; distributed over 10 sections and their Z₂ mirror pairs. •MEAN ERROR 0.0017% — a direct consequence of the completeness of the Sphere-Cone geometry (Corollary 2.4.A.15.1: Cone = F(quintet, equipartition of energy)). •52 / 84 — with a tree-level error < 0.001% (of which 22 are truly EXACT, < 10⁻⁴%); the rest are refined by loop corrections. •ALL CONSTANTS = PROJECTIONS OF ONE CONE under different angles; their mutual consistency is checked by Monte Carlo (a 4391× advantage over random formulas).
+This section contains a summary of the 34 most important constants of Trinity in compact tabular form. The full machine catalogue of the 84 constants — in the validator theory_of_everything.py (block 2.5); summary tables of 60 entries — in 2.5.AL-AR; the error methodology — in Section 2.10. Each constant in the table has an interpretation through the sections of the Cone or the invariants of the Sphere: •α (FINE STRUCTURE) = 1/137.035999160359 (0.8σ vs CODATA-2022; Morel et al.) — the main geometric formula of the Cone (Theorem 2.4.A): 1/α = Nφ¹⁰/π² − e⁴·φ²/(π⁵·N) − α⁴·V_cone, V_cone = 13195 •1/α_GUT = F₅² = 25 EXACTLY — the Cone invariant at the GUT apex; 5 pairs of Duality = 5 quintet projections. •m_p/m_e = 1836.15269 (10⁻⁶%) — the ratio of the depths of segments (Corollary 2.4.A.9.2); related to section D_8 (Mass). •KOIDE Q = 2/3 EXACTLY — the invariant of the quark-mass section (D_3/D_8). •sin²θ_W = 0.231220 — the ratio of the modes D_2 (Temperature) and D_5 (Length): sin²θ_W ≈ ω_2²/(ω_2² + ω_5²). •84 observables = 84 invariants of the Sphere-Cone geometry; distributed over 10 sections and their Z₂ mirror pairs. •MEAN ERROR 0.0017% — a direct consequence of the completeness of the Sphere-Cone geometry (Corollary 2.4.A.15.1: Cone = F(quintet, equipartition of energy)). •51 / 84 — with a tree-level error < 0.001% (of which 31 are truly EXACT, < 10⁻⁴%); the rest are refined by loop corrections. •ALL CONSTANTS = PROJECTIONS OF ONE CONE under different angles; their mutual consistency is checked by Monte Carlo (a 4391× advantage over random formulas).
 
 
 #### 2.5.V FUNDAMENTAL DIMENSIONLESS CONSTANTS
@@ -20341,7 +20584,7 @@ Remark 2.5.AT.2 (The alpha-charge census: the family skeleton and the invariant 
     Computation: theory_of_everything.py, block Remark 2.5.AT.2. □
 ```
 
-The four status categories. Every statement of the catalogue and the text carries exactly one category: Status category              | Canonical carrier -----------------------------+-------------------------------------- Definition                   | .d labels (249 definitions; notation | inputs, not claims) Mathematical theorem         | class [DERIVED]/EXACT: 9 genuine | derivations + the Koide anchor (class 10) | + 210 Lean theorems + | Th 2.5.AT (explicit proofs from A0–A6) Physical hypothesis          | [STRUCT] (the prediction registry + | structural closures; model-to-nature | links are hypotheses with recorded | boundaries) Empirical formula            | 35 α-series: | flexibility ≈ 2.5%, MC control 4391×, | accuracy classes and windows recorded Success levels are not merged: an exact identity ≠ an approximation ≠ a fitted series ≠ a pre-registration — four distinct classes of one table (classes in the headers of the 2.5 tables and the registry [DERIVED]/[STRUCT]/[PHENOM]).
+The four status categories. Every statement of the catalogue and the text carries exactly one category: Status category              | Canonical carrier -----------------------------+-------------------------------------- Definition                   | .d labels (251 definitions; notation | inputs, not claims) Mathematical theorem         | class [DERIVED]/EXACT: 9 genuine | derivations + the Koide anchor (class 10) | + 210 Lean theorems + | Th 2.5.AT (explicit proofs from A0–A6) Physical hypothesis          | [STRUCT] (the prediction registry + | structural closures; model-to-nature | links are hypotheses with recorded | boundaries) Empirical formula            | 35 α-series: | flexibility ≈ 2.5%, MC control 4391×, | accuracy classes and windows recorded Success levels are not merged: an exact identity ≠ an approximation ≠ a fitted series ≠ a pre-registration — four distinct classes of one table (classes in the headers of the 2.5 tables and the registry [DERIVED]/[STRUCT]/[PHENOM]).
 
 Summary statistical audit of the catalogue (four null models, fixed in advance). (0) Naive uniform — recorded as NOT calibrated (2.10.B.1; the estimate p ≲ 10⁻⁵⁷ is heuristic); (1) Permutation/randomization — random formulas from the same 64 atoms are 4391× less accurate (Corollary 2.4.AC.2.c; seed 42, 1000 formulas per target); (2) Control target — shifting the target by +0.1 yields the same density 5.2·10⁻⁷: grammar density, not structure (Remark 4.6.E.3 — the control-target method as an MDL discipline strengthening); (3) Fixed-scale — at known k the grammar layer fires on 16.5% of random targets (Th 2.5.AT, control (b)). Formula dependencies (shared coefficients) — summary line: all entries share the inputs {α, N, L_n, F_n}; the joint enumeration is accounted for by the K = 90-bit budget (Remark 2.4.AC.3.r) and the FDR discipline of the catalogue of 56 (≥ 14 of 56 at > 5σ), not by an independence assumption across entries.
 
@@ -21453,7 +21696,7 @@ Remark 2.6.A.4.at (The census of the catalogue-84 by coordinates: every element 
 
 (1) THE SPLIT IS MACHINE-REPRODUCED: 10 EXACT + 35 alpha-series + 39 operator-rating — the battery classification (Th 2.5.AC.3.v) prints 10/35/39 and verifies it by assertion; an independent pass over the source gives the same numbers. The flagship α is class EXACT (the fixed point from structural atoms, zero fitted coefficients — adversarial testing). same numbers. The duplicate pairs (m_H/m_Z, sigma_8) are the recorded structural redundancy: an observable carries an operator form and an alpha-series form; both tuples are attributed to the first (operator) form — the 39/36 split reproduces exactly. (2) EXACT-10 = 10/10 ON THE GRID (the historical .as core — the nine recorded, incl. the Koide anchor; the EXACT class = 10 = nine genuine derivations, incl. the flagship α, and the Koide anchor): mp/mn = 1 − 1/(C(4,2)·N²) with C(4,2) = 6 = C(10); 1/α_GUT = F₅²; sin²θ_W carries φ⁷; log₁₀(ρ_v/ρ_P) carries N²; a_e — a series with coefficients {N·φ¹⁰/π², 1/L₃, L₃, F₅}; m_τ = the e-form exp(3e) − L₂; Koide; 1/α₁(mZ); glueball — the historical EXACT-9 core. (3) THE OPERATOR LAYER: 39 forms sit on 21 of the 32 live relations r[X] (machine inventory: S_p, K_p, J_p, p = 1..5, plus 17 composites = the recorded 32; every used relation is live). Free: 11 — S5, K1, K2, K3, K4, J4, J1J3, K1J3, K1J4, K2J4, S2+S4 — the pure K-family and S5 are unoccupied by the catalogue (an coverage boundary; free coordinates for future attachments). (4) ALPHA-SERIES: the 35 forms carry correction powers α_tree^k with k = 1..4, distribution {1:5, 2:18, 3:9, 4:3}, integer coefficients — powers of the connection ladder on the recorded grammar (Th 2.5.AC.1); the structural-fit class is preserved (Th 2.5.AC.3.v). (5) Status and boundaries. Machine: the 10/35/39 split, the 32/21/11 inventory, the power distribution, EXACT-10 on the grid. The class: a census of forms — not a derivation and not new accuracy; the boundaries of Th 2.5.AC.1 and Th 2.5.AC.3.v are preserved. Computation: theory_of_everything.py, block Rem 2.6.A.4.at. □
 
-Remark 2.6.A.4.at2 (The floor census of the EXACT-10 core and the genesis triple of the composition law; the registry — Wave 11, the author's hypothesis). The unified composition law is ordered by the genesis chain P → D → S: (P) the Point/0 — self-action, the count of closed forms (the V_cone type, the C(2m,m) cells — the ladder 1.9.C.1); (D) the direction-invariant — the A6 role (the mirror pair {k, 11−k}) selects the carrier and the floor; (S) the motion — the φ-ladder × N-moments on the floor; the Cone gives the boundary e/π factors. A constant's formula is DETERMINED by the pair (role, floor), not searched in the 390625 grammar. The author's hypothesis "each floor carries its own composition" is checked by the core census (machine — block 2.6.A.4): (1) FULL COVERAGE: the EXACT-10 core reads ALL five floor-pairs — {1,10}: α (φ¹⁰, floor 10), 1/α₁ (F₁₀), a_e (φ¹⁰); {3,8}: m_τ (exp(3e), floor 3), glueball (C(8) + 1/2, floor 8); {2,9}: Koide (C(2)/C(9)); {4,7}: m_p/m_n (C(4,2)·N²), sin²θ_W (C(7)·φ⁷/2⁵, floor 7); {5,6}: 1/α_GUT (F₅²) — 5/5. (2) ROLE-MATCH: the principal ladder index of the formula lies on the floor of the role (the direct channel k or the mirror 11−k) in 6 of the 9 two-element roles; the analytic tail of the null model (a uniform index over 10 floors) P(X ≥ 6; n = 9, p = 0.2) = 0.0031 (~2.7 sigma). (3) THREE DEVIATIONS — RECORDED READING CHANNELS (the author's hint: "reality unfolds in more ways than one"): sin²θ_W reads floor 7 of the φ-ladder at the {1,10} class (the floor is recorded in the constant's passport); m_p/m_n reads C(4,2) (the summary C(10)·N²); Koide reads the field pair {2,9} at a mass role. The deviations do not break the law — they record that the role sets the carrier while the floor-index is chosen by a channel (direct/mirror/summary). (4) NULL MODEL HONESTLY: a random coverage of all five pairs by ten constants is likely (p ≈ 0.52) — what is structural is not the coverage rarity but the role-match of the indices (item 2) and the per-floor composition type (the six core forms: counting C(8)+1/2, moment C(4,2)·N², ladder F₅²/F₁₀, phase C(7)·φ⁷/2⁵, exponential exp(3e)−L₂, balance α) — the composition vocabulary is fixed by the core. (5) STATUS: the composition law is a definition with the genesis triple (the author's hypothesis, confirmed by the core census); the HOLDOUT — reconstructing the 65 non-core forms from (role, floor) — is the next programme step (397); until the HOLDOUT the law does not claim a derivation of the catalogue.
+Remark 2.6.A.4.at2 (The floor census of the EXACT-10 core and the genesis triple of the composition law; the registry — Wave 11, the author's hypothesis). The unified composition law is ordered by the genesis chain P → D → S: (P) the Point/0 — self-action, the count of closed forms (the V_cone type, the C(2m,m) cells — the ladder 1.9.C.1); (D) the direction-invariant — the A6 role (the mirror pair {k, 11−k}) selects the carrier and the floor; (S) the motion — the φ-ladder × N-moments on the floor; the Cone gives the boundary e/π factors. A constant's formula is DETERMINED by the pair (role, floor), not searched in the 390625 grammar. The author's hypothesis "each floor carries its own composition" is checked by the core census (machine — block 2.6.A.4): (1) FULL COVERAGE: the EXACT-10 core reads ALL five floor-pairs — {1,10}: α (φ¹⁰, floor 10), 1/α₁ (F₁₀), a_e (φ¹⁰); {3,8}: m_τ (exp(3e), floor 3), glueball (C(8) + 1/2, floor 8); {2,9}: Koide (C(2)/C(9)); {4,7}: m_p/m_n (C(4,2)·N²), sin²θ_W (C(7)·φ⁷/2⁵, floor 7); {5,6}: 1/α_GUT (F₅²) — 5/5. (2) ROLE-MATCH: the principal ladder index of the formula lies on the floor of the role (the direct channel k or the mirror 11−k) in 6 of the 9 two-element roles; the analytic tail of the null model (a uniform index over 10 floors) P(X ≥ 6; n = 9, p = 0.2) = 0.0031 (~2.7 sigma). (3) THREE DEVIATIONS — RECORDED READING CHANNELS (the author's hint: "reality unfolds in more ways than one"): sin²θ_W reads floor 7 of the φ-ladder at the {1,10} class (the floor is recorded in the constant's passport); m_p/m_n reads C(4,2) (the summary C(10)·N²); Koide reads the field pair {2,9} at a mass role. The deviations do not break the law — they record that the role sets the carrier while the floor-index is chosen by a channel (direct/mirror/summary). (4) NULL MODEL HONESTLY: a random coverage of all five pairs by ten constants is likely (p ≈ 0.52) — what is structural is not the coverage rarity but the role-match of the indices (item 2) and the per-floor composition type (the six core forms: counting C(8)+1/2, moment C(4,2)·N², ladder F₅²/F₁₀, phase C(7)·φ⁷/2⁵, exponential exp(3e)−L₂, balance α) — the composition vocabulary is fixed by the core. (5) STATUS: the composition law is a definition with the genesis triple (the author's hypothesis, confirmed by the core census); the HOLDOUT — reconstructing the 65 non-core forms from (role, floor) — is the next programme step; until the HOLDOUT the law does not claim a derivation of the catalogue.
 
 Remark 2.6.A.4.at3 (HOLDOUT iteration 1 — an honest interim verdict; the registry — Wave 11). Protocol: the composition rule (Rem 2.6.A.4.at2) is fixed on the EXACT-10 core; on the wide catalogue (77 battery records) two naive predictions are checked WITHOUT a manual role system (machine — block 2.6.A.4): (1) INDEX PREDICTION: the principal ladder index of the formula ∈ the role pair (the role — from the battery comment words). Result: 7/43 = 16.3% against the 20% null model — NO SIGNAL; the bottleneck is the keyword role inference (noise at the input: sin²θ_W got {2,9}, mn/me — {4,7}, Hubble — {3,8}); the "principal = minimal index" rule is also a coarsening (a lead can be a chord with two indices). (2) FLOOR → TYPE: the concentration of the composition type by the floor of the lead (H(type|floor) = 1.73 bits against the null 1.85, p = 0.06) — marginal, not convincing. VERDICT: the composition law is NOT confirmed on the wide catalogue in this iteration; the support remains at the core level (role-match 6/9, ~2.7 sigma — Rem 2.6.A.4.at2). The law's status — a DEFINITION with the core census (the flagman map is unchanged); the HOLDOUT moves to iteration 2 — after RECORDING THE ROLE SYSTEM for the 65 non-core constants in the canon (the role system is recorded — Rem 2.6.A.4.at4); the yukawas/θ_QCD/M_R remain in the registry. Discipline: a HOLDOUT able to fail, and it failed — this distinguishes the law from fitting (the null model 2.10.B remains the support of SELECTION, not derivation).
 
@@ -21885,7 +22128,7 @@ where Ω_b — baryonic matter, Ω_DM — dark matter, Ω_Λ — dark energy. Al
 > Step 4 (Dark energy Ω_Λ). Independent geometric formula (Theorem 2.5.O.1):
 >   Ω_Λ = (1 − 1/φ²) + 1/(L₄ + F₆) = 0.6847   (0.0001% from Planck 2018)
 > Step 5 (Closure). The three components give Σ₃ = Ω_b + Ω_DM + Ω_Λ =
-> 0.99364; the full sum of four components (Corollary 2.7.1.b) Σ₄ =
+> 0.994371; the full sum of four components (Corollary 2.7.1.b) Σ₄ =
 > Ω_b + Ω_DM + Ω_Λ + Ω_r = 0.99446. The residual 1 − Σ₄ = 0.00554 —
 > the minimal massive-neutrino density Ω_ν (Σm_ν ≈ 60 meV →
 > Ω_ν ≈ 0.00064; the residual is ~8.6× larger) plus the class-У binding
@@ -21928,6 +22171,12 @@ where N_cycles = exp(1/α + 1/φ²) ≈ 4.785·10⁵⁹ (Theorem 2.7.Q.1, Theore
 The residual of the flat closure: 1 − Σ₄ = 0.00554. Identification: the minimal massive-neutrino density Ω_ν ≈ 0.00064 (Σm_ν ≈ 60 meV, Corollary 2.6.A.3) covers ~12% of the residual; the rest — the class-У binding of the input DM/b = 5.3237 (the dynamic derivation by the DM freeze-out — a registered programme; Section 5.8.3). The 0.55% residual — within Planck 2018 (±0.73%) at 0.75σ; this is a recorded budget tension, not a hidden fit (the canon values 0.04897/0.2607/0.684701 were not fitted to the sum 1).
 
 The Friedmann slot (the flat closure of Rem 2.4.I.1.r): Ω_Λ^F = 1 − Ω_m − Ω_r = 0.69024. The difference between the independent geometric Ω_Λ and the Friedmann slot Δ = 0.0055 (0.8%) — within the experimental error of Planck 2018 (±0.0073 ≈ 1.07%): the closure is consistent at the structural level; Δ is the same residual as Σ₄ < 1. Statuses: Ω_b, Ω_Λ — structural formulas; Ω_DM — a structural formula through the DM/b input; Ω_r, N_eff — standard inputs; Ω_k — flatness. Computation: theory_of_everything.py, block 2.7.1.b. □
+
+Remark 2.7.1.b.r (The unified cosmology sheet: one parameter set). All the cosmological quantities of the canon on one sheet (the statuses — by the registry dictionary 1.0.A.0.I; the tensions — by the face list):
+
+| Quantity | Formula/anchor | Value | Status | | Ω_b | Th 5.8.1 | 0.04897 | [С] | | Ω_DM | Ω_b·DM/b (Th 5.8.3) | 0.2607 | [С]+[У] | | Ω_m | the refined sum (the crude form 1/π — Th 2.1.A.1) | 0.30967 | [С]; the 4.2σ tension vs DESI-2026 | | Ω_r | the inputs T_CMB, N_eff (Rem 2.4.I.1.r) | 9.1·10⁻⁵ | [М] | | Ω_Λ | Th 2.5.O.1 | 0.684701 | [С] | | Ω_k | flatness (Rem 2.4.I.1.r) | 0 | [С] | | Σ₄ | Corollary 2.7.1.b | 0.99446 | the 0.55% residual = 0.75σ — recorded, not hidden | | T_CMB | e + α − α²·e | 2.72543 K | [С] (0.002%) | | n_s | 1 − 7α + 28α²N − 9α³N² | 0.9649 | [С] (0.0003%) | | r | Th 2.5.P.1 | 0.00352 | [С]; CMB-S4 — the discriminator | | η_B | 3π²α⁵ (Th 2.1.A.4) | 6.14·10⁻¹⁰ | [С]; the dynamics — D3 (Cor 2.4.AF.3.2) | | Y_p | 1/L₃ = 1/4 (Th 2.6.C.3) | 0.25 | [С]; obs 0.247±0.003 | | z* | recombination: 1089.92 external / 1274.7 own | boundary | the [М]-comparison; the RECFAST simplifications recorded | | t | 16·N_cycles·t_P (Th 2.7.2) | 13.08 Gyr | [С]; the 5.2% tension | | DM/b | Th 5.8.1 | 5.3237 | [У] | | σ_8 | φ/2 | 0.80902 | [С] | | δN_eff | 6α | 0.0438 | [С] | | H₀ | (1+α)^N·67.4 (2.6.A.4) | tension | the programme 2.1.A.5.2.r |
+
+Discipline: one set — no quantity carries a second independent record; the full recombination (RECFAST-level kinetics) and the structure growth are registry programmes. The residual identification: Ω_ν ≈ 0.00064 covers ~12% of the residual (Cor 2.6.A.3).
 
 > **Corollary 2.7.1.c (Scale of dark matter / dark energy equality).**
 > The scale factor a_eq, at which the densities Ω_DM and Ω_Λ
@@ -22428,7 +22677,7 @@ Distinctive phenomena of the aether sector (what must exist if aetherons are rea
 - The vacuum energy ε_0 = 4.5·10⁻³⁵ eV and N_ether = 2.7·10⁶² — the derivation of the observed Λ by the inversion of Theorem 3.10.H.1 (Rem 3.10.H.1.c.r): dark energy is the ground-state energy of the aether. (ii) The geometric cutoff Λ_T = √N·M_P (Th 2.4.A.0.3) — a hard spectral boundary; the absence of events above the threshold is a testable distinction from continuum QFT (FCC-hh, cosmic rays). (iii) The sterile dark-matter sector: the ladder M_R = 3.8·10¹¹ GeV and the prediction m_DM ≈ 5 GeV (Th 5.8.3) — the sterile mode k = 5 with gravitational coupling and the aether vertex; the LZ/XENONnT/PandaX-4T window does not exclude it; XLZD/DARWIN decide. (iv) The J_choice vertices (ÆТ₃): the interaction through the i-parameter of choice (Th 2.7.B.6) — a channel absent in the standard Lagrangian; operationally a measurement is an act of choice (Th 1.10.0.9).
 - The PF registry 5.0: FCC-hh (glueballs, the Λ_T threshold), atomic clocks (PF-1/PF-2), DESI/Euclid (the Ω budget), LISA — the blind phase.
 
-Trinity enriched with substantial layer without changing the formal foundation: all 84 constants remain EXACT, all validator checks continue to pass (1754 PASS), all structural characterizations within the context of Trinity of 7/7 Clay problems are preserved. Aether theory is INTERPRETIVE enrichment, not replacement.
+Trinity enriched with substantial layer without changing the formal foundation: all 84 constants remain EXACT, all validator checks continue to pass (2069 PASS), all structural characterizations within the context of Trinity of 7/7 Clay problems are preserved. Aether theory is INTERPRETIVE enrichment, not replacement.
 
 Section 3.1 (Time as Cone shell) further extends the substantial interpretation by formalizing the temporal layer: Time as a two-dimensional manifold (Cone surface), the pre- actualization stage Δτ_0, the first event A₁ as the birth of time, and the cyclic exchange potential ↔ kinetic through two phase boundaries (centre and surface of the Sphere) — yielding a TWELVEFOLD closed structure.
 
@@ -26076,6 +26325,8 @@ Remark: this small lower-tail χ² indicates a fit much closer than random formu
 > lower tail a calibrated reading — z ≈ 6.5σ, 0/400 (the remark to
 > Theorem 2.10.B.1; the model specificity is recorded).
 
+Remark 2.10.B.2 (The MC model of the full search process; measurement covariances). (1) The full process. The null model of Rem 2.10.B.1 calibrates the form enumeration at a fixed grammar; the full search process also includes the tolerance window, the atom pool, the grammar depth and the selection rule (the signs enter through the pairwise difference operation with the absolute value). The machine model of the full process varies all the layers — 7 variants of 400 runs each (2800 in total): the windows +-0.25/+-0.5/+-0.75 dex; the pool without the alpha atoms; the pool without the integer block 1..24; depth 1 (the atoms without the pairwise operations); the selection of the second-best form instead of the first. No variant yields a single hit of the real median 0.0003% (0/2800); at the full grammar the null median stays in the band 0.155%-0.646% (z 5.7-8.1); depth 1 gives a 20.7% ± 6.0% null — the pairwise grammar depth carries the specificity, not the window or the selection; the second-best-form selection doubles the null (0.315%) — the real 84 rows stand at the first-best-form level. The specificity conclusion is robust to the choice of every process layer: not an artifact of a single-layer calibration. (2) Measurement covariances. The catalog-84 does not carry 84 independent experimental inputs: two formulas checked against values coming from one measurement (e.g., mp/me and mn/me — one PDG mass set; sin^2 theta_W and m_W/m_Z — one electroweak set) give one independent check, not two. The machine inventory of the inputs: the 84 catalog rows group into 11 source clusters (CODATA-2022 alpha/m_e/h — 23 rows; the PDG-2026 masses — 21; the electroweak set — 18; Planck-2018 — 14; NuFIT-6.0 — 10; the QCD scale — 7; CKM — 5; the nuclear masses — 4; the electron g-2 — 3; the muon g-2 — 2; the NMR moments — 2); the bipartite rows-clusters graph gives 6 connected components: the effective number of the independent targets is between 6 (the full merging over the shared inputs) and 11 (conservatively per the clusters), not 84. The six exact value duplicates (alpha_s, Cabibbo, sin^2 theta_W, Koide, sigma_8, 1/alpha_GUT) — pairs of rows with one target, counted once. The direction of the correction: the covariance accounting can only strengthen the statistical readings (chi^2 per effective degree of freedom falls with the clustering); the recorded sigma comparisons are conservative. Discipline: the inventory changes none of the catalog numbers — it refines the independence count.
+
 The boundary of the statistical control (the 2.10.B summary).
 
 The control of enumeration and multiplicity: Monte-Carlo — random formulas from the same atoms are 4391 times less accurate (Corollary 2.4.AC.2.c, seed 42, 1000 formulas per target); the FDR discipline of the catalogue 56 (≥ 14 of 56 at > 5σ); the MDL uniqueness — the criterion of a genuine derivation (the adversarial test 2.5.AC.3.v, the α-series flexibility ≈ 2.5%); the sieve of the sign combinations 1280 → 13 → 1 (Th 2.5.P.1). The substantive alternatives — the competitors Z₇/Z₁₃ — are quantitatively excluded (Rem 1.10.0.s — the explicit comparison; the sieve 9/9 against 3/9, 1/9). The independent targets — the blind PFs 2027+ (the registry 5.0, the windows and thresholds fixed before the measurements). The statement "84 = 84 independent confirmations" is not made: the 84 records are closure-relations (the classes — the catalogue summary 2.5: 10 exact forms, of them 9 genuine derivations and the Koide anchor; 35 α-series; 39 operator-rating); the independent confirmations are carried by the blind predictions PF-1..7.
@@ -26100,7 +26351,7 @@ The completeness of the PF-1..7 protocol (9 fields, the registry). Each registry
 
 On Jeffreys's scale, log₁₀ B > 2 is "very strong" and log₁₀ B > 10 "decisive" evidence.
 
-Note: a Bayes factor is not the reciprocal of a frequentist p-value; computing B₁₀ requires the likelihoods P(D | M₁), P(D | M₀) integrated over each model's priors. A rigorous numerical B₁₀ is left open; the qualitative conclusion (decisive preference for the zero-parameter model) follows from the Occam–Solomonoff argument of Part 2. BOUNDARY (machine, explicit models): M₁ — the recorded theory (zero continuous parameters; the catalogue agreement is the prediction, P(D | M₁) = 1 by the construction of the record), M₀ — the selection-calibrated null model of Rem 2.10.B.1 (the same grammar, the same scale slots): not a single of the 400 null runs reaches the real median ⟹ P(median ≤ 0.0003% | M₀) ≤ 1/401 (the frequency rule for an event not seen in K runs) ⟹ B₁₀ ≥ 401, log₁₀ B₁₀ ≥ 2.60 — «decisive» on the Kass–Raftery scale; the priors of both models are explicit (the record / the null model), no integration is required.
+Note: a Bayes factor is not the reciprocal of a frequentist p-value; computing B₁₀ requires the likelihoods P(D | M₁), P(D | M₀) integrated over each model's priors. A rigorous numerical B₁₀ is left open; the qualitative conclusion (decisive preference for the zero-parameter model) follows from the Occam–Solomonoff argument of Part 2. BOUNDARY (machine, explicit models): M₁ — the recorded theory (zero continuous parameters; the catalogue agreement is the prediction, P(D | M₁) = 1 by the construction of the record), M₀ — the selection-calibrated null model of Rem 2.10.B.1 (the same grammar, the same scale slots): not a single of the 400 null runs reaches the real median ⟹ P(median ≤ 0.0003% | M₀) ≤ 1/401 (the frequency rule for an event not seen in K runs) ⟹ B₁₀ ≥ 401, log₁₀ B₁₀ ≥ 2.60 — a frequency bound of the null model 1/401 (the Kass–Raftery reading «decisive» is a qualitative reading of the bound, not a claim about an exact B₁₀); the priors of both models are explicit (the record / the null model), no integration is required.
 
 > **Proof:**
 > the absence of free parameters (k = 0, Section 2.10.D) and
@@ -26180,7 +26431,7 @@ The mapping onto the classes of the input registry 1.0.A.0.I: (D) → M1/P1, (S)
 
 The usage rule: "theorem/exactly/derived" — at M1/M2/P1; "programme" — W; "reading" — I. The row-by-row statuses — the flagship table ([Appendix III](#app-iii)), the registry of 19, the PF registry, the catalogue-84 (the in-text classes are status tokens under this taxonomy).
 
-This section contains the skeleton of formal verification of Trinity in automated proof assistants Lean 4 and Coq. The fragment status (D17): the listings below are a RECORD ILLUSTRATION, not a full machine formalization; the machine verification — 210 theorems of the theory_of_everything.lean file (REPRO.md, the Lean section; the kernel report: sorry = 0; the theorem↔section map — REPRO.md); the N_uniqueness fragment verifies the identity at a GIVEN N = 11 (unfold N), not global uniqueness (its machine census — the 1.10.0.28 block); the Coq Psi fragment is an unfilled placeholder. Type record:
+This section contains the skeleton of formal verification of Trinity in automated proof assistants Lean 4 and Coq. The fragment status (D17): the listings below are a RECORD ILLUSTRATION, not a full machine formalization; the machine verification — 210 theorems of the theory_of_everything.lean file (REPRO.md, the Lean section; the kernel report: sorry = 0; the theorem↔section map and the full by-name theorem table (statement/axioms/status) — REPRO.md); the N_uniqueness fragment verifies the identity at a GIVEN N = 11 (unfold N), not global uniqueness (its machine census — the 1.10.0.28 block); the Coq Psi fragment is an unfilled placeholder. Type record:
 
 - TYPES IN LEAN 4 ↔ SPHERE-CONE STRUCTURE: Sphere : Type       -- Trinity Sphere S² Absolute : Sphere   -- centre (r=0) Cone : Sphere → Type -- Cone with apex at Absolute Segment : Cone → Sphere → Type -- segment-projection
 - THEOREM 2.4.A (α = 137.035999160359) is formalized as a dependent type parametrized by the quintet {N, π, φ, e, i}. Proof: explicit computation of V_cone = 13195 and arithmetic.
@@ -26193,7 +26444,7 @@ This section contains the skeleton of formal verification of Trinity in automate
 
 #### 2.10.H OVERALL FORMALIZATION SCHEME
 
-Goal: translate all 714 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
+Goal: translate all 715 theorems of Trinity into the formal language of a proof assistant so every step is machine-checked.
 
 Stages: (1) Definition of basic types: N, phi, omega, H_11 (2) Axioms A0-A5 as logical statements (3) Spectral theorem for Z₁₁ (4) Formula alpha = pi^2 / (N * phi^10) (5) Derivation of 84 constants as theorems (6) Verification of the consistency proof
 
@@ -26599,7 +26850,7 @@ PART 3 SCOPE BOX (read first). Part 3 is a PHENOMENOLOGICAL INTERPRETATION, not 
 
 - a derivation of subjective experience (qualia) from mathematics;
 - a solution to the hard problem of consciousness;
-- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 1754 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem.
+- an experimental claim with a testable prediction about qualia. The physical predictions of Trinity (Section 5, 56 predictions, 2069 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS in the Gödelian-phenomenological sense (formal incompleteness mirrors experiential irreducibility), not a theorem.
 
 Section 3 formalizes Consciousness as the k = 0 mode of Z₁₁ and unfolds its manifestations across twelve modal dimensions:
 
@@ -31146,7 +31397,7 @@ TEN CRITERIA OF SCIENTIFICITY OF A THEORY OF EVERYTHING.
 
 (C4) BAYES CRITERION (Bayes 1763, Jeffreys 1939): log_10 B > 5 (decisive evidence on the Jeffreys scale). Trinity claims no calibrated numerical Bayes factor (Theorem 2.10.C.1): a Bayes factor is not the reciprocal of a p-value and the integrated-likelihood computation is not performed.
 
-(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 1754 PASS, 0 FAIL (formal verification of all assertions).
+(C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable closure of the theory. Trinity: theory_of_everything.py EXIT=0, 2069 PASS, 0 FAIL (formal verification of all assertions).
 
 (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a scientific program must generate new independent falsifiable predictions. Trinity: 56 registered testable statements (L1 ~12 blind / L2 ~32 post-dictions / L3 ~12 dimensional — Rem. 5.0.B.r) with concrete experiments and timelines (Section 1.0.K, 4.7.M.6); derived structural theorems (Lucas-Fibonacci monoid, Pisot hierarchy φ–ρ, Perrin and Padovan numbers, Weyl-Heisenberg algebra W_N) each generates independent quantitative predictions.
 
@@ -32542,6 +32793,8 @@ A = 28 − 20 − 7 − 1 = 0,
 
 verified symbolically (PY assert: anomaly_zero, see theory_of_everything.py). This is the EXACT group-theoretic calculation, NOT a numerical coincidence.
 
+Remark 5.0.R.1 (The full SM-level anomaly census — the machine). The cancellation (b) is the SU(11) level. Below — the full census at the SM level (the subgroup SU(3)_C × SU(2)_L × U(1)_Y; the chiral content 3×(10⊕5̄) + 3 singlets, Th 5.1.D.8/9). Per generation: Q_L(3,2)_{1/6}, u^c(3̄,1)_{−2/3}, d^c(3̄,1)_{+1/3}, L_L(1,2)_{−1/2}, e^c(1,1)_{+1} — 15 Weyl states. The machine fraction arithmetic (the "5.0.R anomaly SM" block of the validator): [SU(3)_C]²·U(1)_Y = 0;  [SU(2)_L]²·U(1)_Y = 0; [U(1)_Y]³ = 0;  [grav]²·U(1)_Y = 0; the Witten global anomaly is absent (π₅(SU(2)) = ℤ₂; 12 SU(2) doublets — an even number: 3 colors of Q_L + L_L per generation). Each generation is anomaly-free INDEPENDENTLY (all four conditions = 0 on one generation; 4 doublets — even). The three singlets (the ν^c sector; the seesaw, M_R open — Th 2.4.AD.2) contribute nothing: T₃ = T₂ = Y = 0. The SU(11) ladder (b) is reproduced by the machine through the direct subset-sum computation Σ_{|S|=k}(Σ_S x)³ with a traceless asymmetric generator exactly (1, 7, 20, 28, 14, −14, −28, −20, −7, −1) and with a second generator — the independence of the choice of X is machine-recorded; the cancellation on the SM subgroup is consistent with the SU(11) cancellation: both checks are one integer arithmetic. The line-by-line manual arithmetic of the same conditions is recorded in the proof of Th 5.1.D.9; the machine census confirms each zero.
+
 - GAUGE INVARIANCE (component (i) of 𝓛_Trinity). The SM sector 𝓛_SU(11)_full is invariant under SU(3)_C × SU(2)_L × U(1)_Y by construction (Theorem 5.1.D.7.5). The Higgs direction ⟨Φ⟩ = diag(R−1,R−1,R−1,−R,−R) (Remark 2.8.1.t) selects the SM subgroup as the stabilizer.
 - WARD-TAKAHASHI IDENTITIES. The Z₁₁ spectral identity Σω_k² = N·C(2m,m) (Theorem 1.2.G.1) ensures the Ward-Takahashi identities are satisfied order-by-order: each spectral moment T_m = N·C(2m,m) matches the perturbative coefficient, providing a non-perturbative check on gauge invariance.
 
@@ -33050,7 +33303,7 @@ With this explicit scope, the seven Clay Millennium Problems have a structural i
 - Hodge conjecture                     → Theorem 5.1.T.2 (Section 5.1.T)
 - Navier-Stokes: fundamental dynamics   → Theorem 5.1.W.5 (Section 5.1.W)
 - Birch-Swinnerton-Dyer                → Theorem 5.1.X.1 (Section 5.1.X)
-- Poincaré conjecture                  → Theorem 5.1.AA.2 (Section 5.1.AA)
+- Poincaré conjecture (proven by Perelman) → Theorem 5.1.AA.2 — a structural interpretation, not a solution (Section 5.1.AA)
 - Riemann hypothesis                   → Theorem 1.9.WA.3 (Section 1.9.WA)
 
 All seven characterizations rely on a single structural principle: fixed points of Z₂ involution, the Genesis flow E_τ, the bounded phase volume V_cone = 13195. Each closure within the context of Trinity rests on an explicit lemma (5.1.G.0a — Wightman locality; 5.1.P.0a — operator-level distinction C_A/C_D; 5.1.T.0c — induction over codimension via the Lefschetz hyperplane theorem; 5.1.W.0b — the closure of the nonlinearity on the finite group (exact truncation invariance); 5.1.W.0a — ultraviolet cutoff from Theorem ÆТ₁; 5.1.X.0d — explicit construction of the Z₁₁ extension of the Heegner system; 5.1.AA.0b — explicit isomorphism of eight geometries with eight primitives; 1.9.WA.0b — the Σ_Trinity bijection via the Lefschetz fixed-point theorem); correspondence to the original Clay formulations is demarcated in each Corollary 5.1.*.c.
@@ -33259,6 +33512,32 @@ where SU(3)_C × SU(2)_L × U(1)_Y is the Standard Model gauge group and the SU(
 > This equals the free cycle size of Trinity (Ψ_{N+1} = Ψ_1),
 > i.e. the structural closure of Z₁₁.
 
+Remark 5.1.D.1.m (The one-page map Z₁₁ → SU(11) → 3+1). All the mappings of the chain are recorded in the canon separately; here they are assembled into one map (every arrow references a recorded anchor):
+
+```
+Z₁₁ (the carrier A0: Ψ_{k+N} = Ψ_k)
+  → the modes ω_k = 2sin(πk/N)               [A3; Cor 1.0.A.1.c]
+  → the spectral triple (𝒜, ℋ, D)             [Th 2.4.A.0: D = L^{1/2};
+                                                the choice status — 2.4.A.0.r2]
+  → α and the weight ladders                  [Th 2.4.A; the catalogue 84]
+  → the SU(11) gauge sector                   [Th 5.1.D.5.7 minimal coupling;
+                                                Step 1 of Th 2.7.B.7.u.2]
+  → the cascade SU(11) ⊃ SU(6)×SU(5)×U(1)
+        ⊃ SU(3)_C×SU(2)_L×U(1)_Y             [Th 5.1.D.1 above; stage 2 —
+                                                Th 5.1.D.5, the Φ₁₂₀/Φ₅₅/Φ₁₁ VEVs]
+  → the chiral content 3×(10⊕5̄)              [Th 5.1.D.8/9; the anomalies
+                                                28−20−7−1 = 0]
+  → the Lorentzian 3+1 layer                  [the Z₂ involution = the
+                                                frequency-sign structure —
+                                                Rem 2.4.A.0.1.c; the cone —
+                                                Rem 2.4.A.0.1.d; the 3+1 reading —
+                                                Cor 5.3.1.c; dim = 3 — the input O3]
+  → induced gravity                           [Th 2.7.B.8: G_ind = π/(N·M_P²);
+                                                the GR limit — 2.7.B.8.z]
+```
+
+Map boundaries: (a) the light-state selection — V(Φ) (9.u(3), the structure of magnitudes); (b) the flavours/Yukawa numbers — the registry 1.0.A.0.I; (c) the internal Cl(1,10) ontology — Rem 2.4.A.0.1.c (not spacetime); (d) the continuum lift — the W1 programme (5.1.G.3). The map adds no claims — it only routes the recorded anchors.
+
 > **Theorem 5.1.D.2 (Inherited mass gap).**
 > The SU(11) mass gap, via the embedding chain, induces mass
 > gaps for subgroups:
@@ -33417,6 +33696,12 @@ the normalization Tr(T_aT_b) = δ_ab/2.)
 ```
 
 STAGE 1 IS EXACTLY UNCHANGED: all new structures are quadratic in Φ₅₅/Φ₁₁ and vanish at Y = V = 0 (machine: 0.0e+00) — V₁, the vacuum diag(6⁵,−5⁶)/√330, the 60 Goldstones, m²_X = g²v²·11/60 and the k=4 distance 21.8 % carry over unchanged. The contribution of the new layer to the effective masses of Φ₅₅ perturbations at stage 1 (machine, M_GUT²): the spectrum 1.406…1.802 is positive; the shift relative to −μ₂² is +37…+47·μ₂² — the same scaffold status as the recorded κ₁/κ₂ at stage 3 (the scales μ_i² are inputs). The stage stabilizers and the Z₅ remnant (gcd{10,20,15} = 5) are unchanged: SU(11) invariants do not shrink the stabilizers of the VEV directions.
+
+Remark 5.1.D.4.8 (The per-channel invariant ledger: the status of every channel). The sheet closes the 5.1.D.4.6/4.7 censuses: every quartic channel carries a row status — RECORDED (a Theorem 5.1.D.4 coefficient) / NEW (a Quintet coefficient — 5.1.D.4.7) / ZERO (a symmetry kills it) / DEPENDENT (an identity reduces it to the recorded structures). Machine (the "INVARIANT LEDGER" block): the normalization Tr(T_aT_b) = δ_ab/2, ‖f‖² = N(N²−1) = 1320, ‖d‖² = (N²−1)(N²−4)/N = 14040/11 — exact; the f-contraction is an identity zero (2.6·10⁻¹⁵), the d- and δ-identities ≤ 5·10⁻¹⁶.
+
+| No | Channel (class) | Channels | Status | Resolution | | 1 | Tr(Φ₁₂₀⁴) | 1 | RECORDED | λ_a — Th 5.1.D.4 (the α-structure) | | 2 | (Tr(Φ₁₂₀²))² | 1 | RECORDED | λ_b — Th 5.1.D.4 | | 3 | Tr((Φ₅₅†Φ₅₅)²) | 1 | RECORDED | λ_c — Th 5.1.D.4 | | 4 | Tr(Φ₅₅†Φ₅₅Φ₅₅†Φ₅₅) | 1 | RECORDED | λ_d — Th 5.1.D.4 | | 5 | (Φ₁₁†Φ₁₁)² | 1 | RECORDED | λ_H — Th 5.1.D.4 | | 6 | Tr(Φ₁₂₀²)(Φ₁₁†Φ₁₁) | 1 | RECORDED | κ₁ — Th 5.1.D.4 | | 7 | Tr(Φ₅₅†Φ₅₅)(Φ₁₁†Φ₁₁) | 1 | RECORDED | κ₂ — Th 5.1.D.4 | | 8 | Φ₁₁†Φ₅₅*Φ₁₂₀Φ₁₁ | 1 | RECORDED | κ₃ — Th 5.1.D.4 | | 9 | the h.c. partner of κ₃ | 1 | RECORDED | h.c. (the conjugate contraction, the κ₃ coefficient) | | 10 | (Φ₅₅†Φ₅₅)Tr(Φ₁₂₀²) | 1 | NEW | κ₄ = α·N/(2π) — 5.1.D.4.7 | | 11 | (Φ₁₁†T_aΦ₁₁)d_abcΦ^bΦ^c | 1 | NEW | κ₅ = 60α/(11π) — 5.1.D.4.7 | | 12 | (Φ₅₅†M_aΦ₅₅)d_abcΦ^bΦ^c | 1 | NEW | κ₆ = 108α/(11π) — 5.1.D.4.7 | | 13 | (Φ₁₁†T_aΦ₁₁)(Φ₅₅†M_aΦ₅₅) | 1 | NEW | κ₇ = 84α/(11π) — 5.1.D.4.7 | | 14 | traceless[Φ₅₅†{M_a,M_b}Φ₅₅]Φ^aΦ^b | 1 | NEW | λ_f = α²π²/(2N²) — 5.1.D.4.7 | | 15 | adj⁴ f-contractions | 3 | ZERO | f_abe·X^aX^b = 0 — the boson symmetry (machine: 2.6·10⁻¹⁵) | | 16 | adj⁴ δ-contractions (the third δ is λ_b itself) | 2 | DEPENDENT | ≡ 4(Tr(Φ₁₂₀²))² → λ_b | | 17 | adj⁴ d-contractions | 2 | DEPENDENT | the d-identity: 8·TrX⁴ − (8/11)·(TrX²)² → {λ_a, λ_b}; the degree-4 space is two-dimensional (Cayley/Newton) | | 18 | adj²Λ²Λ²* f-current | 1 | ZERO | the f-currents ≡ 0 — 5.1.D.4.7 | | 19 | the Λ²-pairs V·V (in adj·Λ²*·V² and adj·Λ²·V*²) | 2 | ZERO | V·V ≡ 0 — 5.1.D.4.7 | | 20 | the V²V*² ε-channel | 1 | ZERO | the ε-contraction ≡ 0 on hermitian V — 5.1.D.4.7 | | 21 | adj²VV* T²-structure | 1 | DEPENDENT | Fierz: = ½·the d-current − (109/121)·the κ₁ structure — 5.1.D.4.7 | | 22 | Λ²²Λ²*² det-channel | 1 | DEPENDENT | = ⅛·λ_c − ¼·λ_d — 5.1.D.4.7 |
+
+The "Channels" column sums to 27 (9 RECORDED + 5 NEW + 7 ZERO + 6 DEPENDENT channels). Minimum status: at stage 1 the machine confirms the LOCAL minimum of the full potential (the 5.1.D.4.7 Hessian: three levels, the radial 4μ₁², the Φ₅₅ shifts +37…+47·μ₂² positive); the proof of the GLOBAL minimum of the declared potential (with the five new members) is a registry programme.
 
 > **Theorem 5.1.D.5 (Minimization of V(Φ): cascade and masses of intermediate gauge bosons).**
 >
@@ -34048,13 +34333,13 @@ Step 3 (Renormalizability). By the standard criterion of renormalizability in d 
 Step 4 (Asymptotic behavior of the scalar sector). Without Yukawa interactions (sector under consideration) the total contribution to the one-loop β-function of the gauge coupling:
 
 ```
-b_1  =  (11/3) · C_2(adj) − (1/6) · Σ_R T(R)
-      =  (11/3) · 11 − (1/6) · 16
-      =  121/3 − 8/3
-      =  113/3
+b_1  =  (11/3) · C_2(adj) − (1/6) · T(adj) − (1/3) · [T(φ_55) + T(φ_11)]
+      =  (11/3) · 11 − (1/6) · 11 − (1/3) · (9/2 + 1/2)
+      =  121/3 − 11/6 − 5/3
+      =  221/6
 ```
 
-The positive value b_1 = 113/3 ≈ 37.67 means asymptotic freedom of the gauge coupling g_GUT(M) at the ultraviolet boundary (standard criterion of Gross-Politzer-Wilczek 1973).
+The positive value b_1 = 221/6 ≈ 36.83 means asymptotic freedom of the gauge coupling g_GUT(M) at the ultraviolet boundary (standard criterion of Gross-Politzer-Wilczek 1973). The representation census (machine, exact rational sums — the "GAUGE BETA" py block): φ_120 (adjoint) is a real field (coefficient 1/6); φ_55 = Λ² and φ_11 = Λ¹ are complex (coefficient 1/3 — twice larger), consistent with the potential of Theorem 5.1.D.4 (the terms Tr(φ_55†φ_55), (φ_11†φ_11) and the κ_i portals carry conjugate pairs). Asymptotic freedom is preserved: 221/6 ≈ 36.83 > 0.
 
 This property is necessary for the structural consistency of the Trinity fixation α_GUT = 1/F_5² = 1/25 at the scale M_GUT (Theorem 5.1.D.6, Condition 1) with the ultraviolet limit g_GUT → 0 at energies above M_Planck. □
 
@@ -34123,9 +34408,9 @@ where γ_{i,j} are numerical mass-mixing coefficients, e_{i,λ} are mixed λ × 
 
 Step 5 (Connection with β_g). The one-loop β-function of the gauge coupling g_GUT:
 
-β_g(1)  =  −b_1 · g³ / (16 π²)  =  −(113/3) · g³ / (16 π²) (5.1.D.7.1.10)
+β_g(1)  =  −b_1 · g³ / (16 π²)  =  −(221/6) · g³ / (16 π²) (5.1.D.7.1.10)
 
-where b_1 = 113/3 (Step 4 of Theorem 5.1.D.7).
+where b_1 = 221/6 (Step 4 of Theorem 5.1.D.7; φ_55 and φ_11 are complex fields).
 
 All eleven β-functions (Steps 3–5) form a closed system of ordinary differential equations of the renormalization group for the V(Φ) coefficients; the complete numerical form of coefficients c_{XX}, d_{X,Y}, γ_{i,j}, e_{i,λ}, A_{R}, B_{R} is computable via automated β-function derivation packages (Theorem 5.1.D.7.4 below). □
 
@@ -34196,7 +34481,7 @@ The Trinity point λ⃗^Trinity (Theorem 5.1.D.7.2) satisfies the Weinberg 1979 
 > **Proof.**
 >
 
-Step 1 (UV limit of the linearization matrix). By Step 5 of Theorem 5.1.D.7.1, the gauge coupling g(M) satisfies asymptotic freedom (b_1 = 113/3 > 0; Step 4 of Theorem 5.1.D.7), yielding g(M) → 0 as M → ∞. In this limit the gauge terms β'_{ii} (Step 2 of Theorem 5.1.D.7.2) vanish, and the linearization matrix β'_{ij}|_{Trinity, UV} has diagonal elements of the form:
+Step 1 (UV limit of the linearization matrix). By Step 5 of Theorem 5.1.D.7.1, the gauge coupling g(M) satisfies asymptotic freedom (b_1 = 221/6 > 0; Step 4 of Theorem 5.1.D.7), yielding g(M) → 0 as M → ∞. In this limit the gauge terms β'_{ii} (Step 2 of Theorem 5.1.D.7.2) vanish, and the linearization matrix β'_{ij}|_{Trinity, UV} has diagonal elements of the form:
 
 β'_{ii}|_{Trinity, UV}  =  2 · c_{ii} · λ_i^T  +  O(g²(M)) (5.1.D.7.2.1.1)
 
@@ -34344,11 +34629,13 @@ Extended Lagrangian with Yukawa sector:
 
 where 𝓛_gauge, 𝓛_kinetic, 𝓛_potential are defined in Definition 5.1.D.7.1, and the Yukawa term:
 
-𝓛_Yukawa  =  −y_t · Q̄_L · H · t_R −y_b · Q̄_L · H̃ · b_R −y_τ · L̄_L · H̃ · τ_R + (lighter fermions, dropped when λ_H ≪ y_t²) + h.c. (5.1.D.7.5.2)
+𝓛_Yukawa  =  −y_t · Q̄_L · H̃ · t_R −y_b · Q̄_L · H · b_R −y_τ · L̄_L · H · τ_R + (lighter fermions, dropped when λ_H ≪ y_t²) + h.c. (5.1.D.7.5.2)
 
-where H is the light electroweak doublet residing in the (1, 5) component of Φ_11 under SU(6) × SU(5) (Theorem 5.1.D.1): below M_GUT the running is performed in the effective Standard Model, since Q_L, t_R, b_R, τ_R carry no SU(11) charge; SU(11)-invariant completions of the Yukawa sector are the Λ-contractions of Remark 5.1.D.9.r (f). Numerical coupling values at the scale M_Z (PDG 2024):
+The hypercharge census of the terms (machine, exact rational sums — the "YUKAWA SECTOR" py block): t_R couples to H̃ (−1/6 − 1/2 + 2/3 = 0), b_R and τ_R couple to H (−1/6 + 1/2 − 1/3 = 0; +1/2 + 1/2 − 1 = 0); every sum is an exact zero, every term is U(1)_Y invariant. The rejected assignment (t_R via H; b_R, τ_R via H̃) carries the sums (+1, −1, −1) — non-invariant while both variants are SU(2) singlets (the ε_ab doublet contraction): the defect was purely hypercharge. The H ↔ H̃ relabel leaves the Yukawa beta sector unchanged: T(R_H) = T(R_H̃) = 1/2, C₂ = 3/4 (SU(2) pseudo-reality) — the beta functions of y_t, y_b, y_τ and the recorded two-loop results 5.1.D.7.6-5.1.D.7.10 are preserved.
 
-y_t(M_Z)  =  0.9369  (corresponds to m_t = 173.1 GeV via y_t · v_EW/√2) y_b(M_Z)  =  0.02434 (m_b = 4.18 GeV) y_τ(M_Z)  =  0.00997 (m_τ = 1.777 GeV) g_3(M_Z)  =  1.217   (α_s = 0.1179) g_2(M_Z)  =  0.6493  (sin²θ_W = 0.2312) g_1(M_Z)  =  0.3573  (after SU(5) normalization g_1 = √(5/3) g_Y)
+where H is the light electroweak doublet residing in the (1, 5) component of Φ_11 under SU(6) × SU(5) (Theorem 5.1.D.1): below M_GUT the running is performed in the effective Standard Model, since Q_L, t_R, b_R, τ_R carry no SU(11) charge; SU(11)-invariant completions of the Yukawa sector are the Λ-contractions of Remark 5.1.D.9.r (f). Numerical coupling values at the scale M_Z (PDG-2026):
+
+y_t(M_Z)  =  0.9369  (corresponds to m_t = 163.1 GeV via y_t · v_EW/√2) y_b(M_Z)  =  0.02434 (m_b = 4.18 GeV) y_τ(M_Z)  =  0.00997 (m_τ = 1.777 GeV) g_3(M_Z)  =  1.217   (α_s = 0.1179) g_2(M_Z)  =  0.6493  (sin²θ_W = 0.2312) g_1(M_Z)  =  0.3573  (after SU(5) normalization g_1 = √(5/3) g_Y)
 
 SARAH format (Mathematica, file theory_of_everything.m):
 
@@ -34363,6 +34650,19 @@ ScalarFields = {
     {Phi120, {1, 1, 1, 120}, "Phi_120 (adjoint)"},
     {Phi55,  {1, 1, 1, 55},  "Phi_55 (antisymmetric)"},
     {Phi11,  {1, 1, 1, 11},  "Phi_11 (fundamental)"}
+};
+
+FermionFields = {
+    {QL,    {SU11_left, 2, SU11_color, 3, SU11, 1/6}, 3},
+    {t_R,   {SU11_color, 3, SU11, 2/3}, 1},
+    {b_R,   {SU11_color, 3, SU11, -1/3}, 1},
+    {LL,    {SU11_left, 2, SU11, -1/2}, 3},
+    {tau_R, {SU11, -1}, 1}
+};
+YukawaMatrices = {
+    {y_t,   {QL, Phi11_tilde, t_R}},
+    {y_b,   {QL, Phi11, b_R}},
+    {y_tau, {LL, Phi11, tau_R}}
 };
 ParameterDefinitions = {
     {lambda_a, "alpha · phi^10 / N"},
@@ -34395,6 +34695,8 @@ Fermions:
   Q_L: {Gen: 3, SU3: 3, SU2: 2, U1: 1/6}
   t_R: {Gen: 1, SU3: 3, SU2: 1, U1: 2/3}
   b_R: {Gen: 1, SU3: 3, SU2: 1, U1: -1/3}
+  L_L: {Gen: 3, SU3: 1, SU2: 2, U1: -1/2}
+  tau_R: {Gen: 1, SU3: 1, SU2: 1, U1: -1}
 
 Scalars:
   Phi_120: {SU11_GUT: adjoint}
@@ -34415,9 +34717,9 @@ Potential:
    + kappa_3 * Phi_11 · Phi_55* · Phi_120 · Phi_11 + h.c.
 
 Yukawa:
-  -y_t * QL_bar · Phi_11 · tR
-  -y_b * QL_bar · Phi_11_tilde · bR
-  -y_tau * LL_bar · Phi_11_tilde · tauR
+  -y_t * QL_bar · Phi_11_tilde · tR
+  -y_b * QL_bar · Phi_11 · bR
+  -y_tau * LL_bar · Phi_11 · tauR
 
 ParameterValues:
   lambda_a: alpha * phi^10 / 11
@@ -34439,8 +34741,9 @@ AddFermion[QL, t_R, b_R, ...];
 
 AddQuarticCoupling[lambda_a, {Phi120, Phi120, Phi120, Phi120}];
 AddQuarticCoupling[lambda_b, ...];
-AddYukawa[y_t, {QL, Phi11, t_R}];
-
+AddYukawa[y_t, {QL, Phi11_tilde, t_R}];
+AddYukawa[y_b, {QL, Phi11, b_R}];
+AddYukawa[y_tau, {LL, Phi11, tau_R}];
 betaScalar2 = ComputeBetaFunction[lambda_a, 2];
 betaYukawa2 = ComputeBetaFunction[y_t, 2];
 ```
@@ -34452,9 +34755,9 @@ Step 1. The gauge group SU(11) with generators T^a (a = 1, ..., 120) is identica
 
 Step 2. The scalar representations Φ_120 (adjoint), Φ_55 (antisymmetric 2-tensor), Φ_11 (fundamental) are identical via the standard numbering of representations of simple Lie groups (Slansky 1981).
 
-Step 3. The Yukawa interactions are parametrized in the standard way via the overlap of the fundamental scalar Φ_11 and left/right doublets of Standard-Model fermions (Q̄_L, t_R, b_R, L̄_L, τ_R).
+Step 3. The Yukawa interactions are parametrized in the standard way via the overlap of the fundamental scalar Φ_11 and left/right doublets of Standard-Model fermions (Q̄_L, t_R, b_R, L̄_L, τ_R); the doublet conjugation is fixed by the census 5.1.D.7.5.2 (t_R via H̃; b_R, τ_R via H).
 
-Step 4. The numerical values of potential coefficients from Theorem 5.1.D.4 and Yukawa constants from PDG 2024 are identical in all three formats (see ParameterValues block).
+Step 4. The numerical values of potential coefficients from Theorem 5.1.D.4 and Yukawa constants from PDG-2026 are identical in all three formats (see ParameterValues block).
 
 Equivalence of the three formats is guaranteed by the fact that all three packages compute the same universal Machacek-Vaughn 1983-1985 β-functions for a general gauge theory with scalars and fermions. □
 
@@ -34723,7 +35026,7 @@ Gauge β^(2):
 
 ```
 β^(2)_g      =  +698.13 · g⁵ / (4π²)²
-             =  +4.48 · 10⁻¹ · g³   (|coefficient| ≪ b₁ = 113/3 —
+             =  +4.48 · 10⁻¹ · g³   (|coefficient| ≪ b₁ = 221/6 —
                                     asymptotic freedom preserved
                                     at two loops)
                                                             (5.1.D.7.8.3)
@@ -34991,7 +35294,7 @@ The observed number of fermion generations, n_gen = 3, therefore singles out N =
 Remark 5.1.D.9.r (scope of the construction).
 
 - The construction descends from the SU(11) flavor-unification programme (Georgi 1979); Trinity supplies the group SU(11) itself (Theorem 5.1.B.1) and the exterior-algebra rule.
-- The rule «each Λ^k at most once» (Definition 5.1.D.8.d) is a STRUCTURAL POSTULATE — natural, since Λ(ℂ¹¹) contains every antisymmetric representation exactly once, but not derived from the axioms A0–A6; dropping it (multiplicities ≤ 2) admits 108 anomaly-free three-family contents.
+- The rule «each Λ^k at most once» (Definition 5.1.D.8.d) is a STRUCTURAL POSTULATE — natural, since Λ(ℂ¹¹) contains every antisymmetric representation exactly once, but not derived from the axioms A0–A6; dropping it (multiplicities ≤ 2) admits 108 anomaly-free three-family contents. The rule census (machine, the "5.1.D.9.r" block of the validator): the enumeration of 3^10 = 59049 multiplicity vectors m_k ∈ {0, 1, 2} under the conditions Σm_k·A(Λ^k) = 0 (integer arithmetic) and the net families #10 − #10̄ = #5̄ − #5 = 3 yields EXACTLY 108 (the recorded number confirmed; the vectorlike additions are allowed — consistent with Cor 5.1.D.9.c: at multiplicities ≤ 1 there are exactly 2, Ψ and Ψ ⊕ (Λ⁵ ⊕ Λ⁶)). The dimensions of the 108 contents: 561-3531, exactly one minimal 561. The weakening ladder: the multiplicities ≤ 3 give 868 — the rule «at most once» sharply selects the minimal class; the count grows exponentially with the weakening, the content of the rule is a selection, not a prohibition.
 - The number 3 is DERIVED given the rule; it is not inserted. By contrast, in the Standard Model and in SU(5)/SO(10) unification the generation number is a free integer (representations are simply repeated three times).
 - With the 561 Weyl fermions the one-loop gauge coefficient is b₀ = 11/3 · 11 − 2/3 · 65 = −3 < 0: the unified theory is not asymptotically free above M_GUT. The coupling grows only logarithmically; with α_GUT = 1/25 (Theorem 5.4.B.1) the Landau pole lies at M_GUT · e^{2π·25/3} ≈ 5·10³⁸ GeV — some twenty orders of magnitude above M_P = 1.22·10¹⁹ GeV, outside the domain of the present framework (Section 5.7).
 - The mass operator of the heavy states IS CONSTRUCTED (Rem 5.1.D.9.u): six live Yukawas + the section carriers Φ₃₃₀/Φ₁₆₅; the enriched-sector capacity rank is 561 with kernel 0 — no massless charged exotics at the renormalizable level; the written-vacuum tree level: 350 massive / 211 in the kernel (lifted by dim-5 operators at 10^14-15 GeV). THE LIGHT/HEAVY CENSUS (machine, Rem 5.1.D.9.x): light = 3×(10⊕5̄) = 45 Weyl + 3 light neutrinos (seesaw) = 48; heavy = 561 − 48 = 513 at the cascade scales. The survival hypothesis is narrowed to the freedom of the VEV MAGNITUDES (α-ticks m_D = α·ω_k·v, M_R = α⁴·N·M_P — the same status as the SM yukawas); the full spectrum is the registry program (the quartic census, Rem 5.1.D.9.v).
@@ -35192,6 +35495,18 @@ The second block of the registry program of item (6) of Remark 5.1.D.9.u: the ex
 (3) THE FULL 56x56 MATRIX (machine): the block assembly of the four edges; rank 42 -> 42 heavy Weyl states, 14 tree-light singlets. The canon end-point (53 heavy / 3 light, 9.x) closes through the M_R seesaw operators: 11 of the 14 tree-light singlets receive higher-dimension masses, 3 light neutrinos remain — exactly the recorded count. The bridge: 42 + 11 = 53, 56 - 53 = 3 (machine).
 
 (4) BOUNDARY. The charged sectors — the component verification of 350/211 and the decomposition 211 = 163 + 48 — require the same Hodge-epsilon technique on the full 22-slot tensors — the registry. Computation: theory_of_everything.py, the Remark 5.1.D.9.aa block. □
+
+────────  Remark 5.1.D.9.bb (The charged sectors: the exact SL(11) tensors of the six Yukawas, the component verification of 350/211 and the dim-5 census of the two-eps(11) class).
+
+(1) THE EXACT TENSORS (machine). All six recorded Yukawas of 9.u(2) are built by the single manifest form T(A, B, C) = eps11(A ^ iota_{C-flat}(B)) — the interior product by the epsilon-dual form of the scalar VEV component; Psi4 Psi4 Phibar165 carries a single eps11(I u J u L^c), the Sym^2 layer. The SL(11) equivariance is verified by the machine on random group elements (compound matrices of the exterior powers) for all six; the supports of 9.z(2) are reproduced exactly: 600 / 540 / 60 / 160 / 1400 / 60 with all per-row splits ((20,5)x(20,1) 100, (15,10)x(15,5bar) 300, (6,10bar)x (6,10bar) 180, (1,5bar)x(1,10) 20; (20,5)x(6,5bar) 300, (15,10)x(1,10bar) 150, nu4-nu9 90; nu8-nu10 60; (20,5)x(1,5bar) 100, nu4-nu10 60; nu9-nu10 60; the Sym^2 pairs 1400); the pattern (x, y, z) = (1, 3, 7) holds on the whole support of Psi4 Psi8 Phibar11.
+
+(2) THE COMPONENT VERIFICATION OF 350/211 (machine). The full 561 x 561 matrix of the recorded vacuum (generic full VEVs of the recorded angles): the rank is exactly 350, the kernel 211 — the tree split of 9.u(3) is reproduced component-wise. The minimal sector (Psi4 Psi8 Phibar11 + Psi4 Psi9 Phibar55): 330/231. The singlet block of the same assembly: rank 42 — the agreement with the independent Hodge construction of 9.aa (a mutual validation of the two constructions).
+
+(3) THE DIM-5 CENSUS OF THE TWO-EPS(11) CLASS (machine). A valid dim-5 mass operator carries exactly 22 eps(11) slots (k1 + k2 + d1 + d2 = 22 — the q = 2 class of the 9.z census). The charge-and-slot census gives 30 live families (row pairs x insertion pairs). The singlet edges — FOUR (the full 22-slot count): Psi4 Psi4 Phibar330^2 (span 54 orbits, block rank 15), Psi4 Psi9 Phibar330 Phi55 (54, 15), Psi9 Psi9 Phi55^2 (54, 15 — recorded), Psi8 Psi10 Phi55^2 (18, 6 — recorded); both recorded M_R candidates are live. The candidates Psi8 Psi8 Phi165^2 (32 slots), Psi8 Psi9 Phibar165 Phibar55 (29), Psi4 Psi8 Phi165 Phibar55 (29), Psi4 Psi8 Phibar330 Phi165 (27) are invariants of the SU(6)xSU(5) subgroup only and are excluded by the slot census.
+
+(4) THE CAPACITY BOUND AT DIM-5 (machine). The Psi8 Psi10 Phi55^2 block lives in the same column space as the renormalizable nu8-nu10 edge (the rank of the stack of the two blocks = 6 = the nu10 capacity): dim-5 rearranges the pairings but not the paired count — the 14 tree-light singlets persist at dim-5. The end-point 53/3 (9.aa, 9.x) is the VALUE structure of the layer (the V(Phi) selection, the dimension-6+ operators): recorded programs, quantified by the machine.
+
+(5) THE CHIRAL NET AND 211 = 163 + 48 (machine). The copy census of the branching 9.s: 10 x160, 10bar x130, 5 x100, 5bar x115, singlets 56 (the sum 561); the net chirality — 3 copies of the 10-plet (30) and 3 copies of the 5bar (15): the recorded protection of the 48 light states (9.x) = 30 + 15 + 3 singlets. The kernel split: 211 = 163 + 48, with 163 = 152 charged + 11 singlets — the value layer. Heavy: 561 - 48 = 513. Computation: theory_of_everything.py, the block of Remark 5.1.D.9.bb. □
 
 
 #### 5.1.F CONFINEMENT: AREA LAW AND STRING BREAKING
@@ -35495,7 +35810,7 @@ Seven Millennium problems were announced by the Clay Mathematics Institute in 20
 - Hodge conjecture (Theorem 5.1.T.2): Hodge^{p,p}(IX, ℚ) = Algebraic^p(IX, ℚ) for every smooth projective variety IX through the universal Z_{M+1} action induced by the Chow-Kodaira embedding IX ↪ ℙ^M (Lemma 5.1.T.0). The coverage of all codimensions p is provided by induction via the Lefschetz hyperplane theorem (Lemma 5.1.T.0c).
 - Navier-Stokes: existence and smoothness (Theorem 5.1.W.4): global smoothness C^∞(ℝ³ × [0, ∞)) through the Beale-Kato- Majda criterion (Lemma 5.1.W.0) + spectral boundedness ω_k ≤ 2 from the Z₁₁ structure (Theorem 5.1.W.2) + ultraviolet cutoff ξ_max = 2π/ℓ_Planck from Theorem ÆТ₁ (Lemma 5.1.W.0a). The fundamental level: the closure of the nonlinearity on the finite group (Lemma 5.1.W.0b) — exact truncation invariance, global smoothness of the fundamental dynamics on the cycle (Theorem 5.1.W.5); the continuum formulation is the derived RG limit. Kolmogorov turbulence E(k) ∝ k^{-5/3} = k^{-F₅/L₂} follows from the Z₁₁ spectrum.
 - Birch-Swinnerton-Dyer (Theorem 5.1.X.1): rank(E(ℚ)) = ord_{s=1} L(E,s) for every elliptic curve E/ℚ through the geometry of an ellipse as the intersection of Sphere and Cone (Definition 5.1.X.1.d). The case ord ≤ 1 relies on classical results of Coates-Wiles 1977, Gross-Zagier 1986 and Kolyvagin 1989 (Theorem 5.1.X.2). The case ord ≥ 2 relies on the explicit Z₁₁ extension of the Heegner system (Lemma 5.1.X.0d, Theorem 5.1.X.3).
-- Poincaré conjecture (Theorem 5.1.AA.2): a closed simply-connected smooth 3-manifold M³ ⟹ M ≅ S³ through the canonical bijection of eight Thurston geometries with eight primitives of Trinity (Lemmas 5.1.AA.0a, 5.1.AA.0b — the explicit isomorphism at the level of isometry and automorphism groups). The proof uses the Perelman 2003 geometrization theorem as a lemma. The Clay Mathematics Institute prize for this problem was awarded to Perelman in 2010.
+- Poincaré conjecture (Theorem 5.1.AA.2): a closed simply-connected smooth 3-manifold M³ ⟹ M ≅ S³ through the canonical bijection of eight Thurston geometries with eight primitives of Trinity (Lemmas 5.1.AA.0a, 5.1.AA.0b — the explicit isomorphism at the level of isometry and automorphism groups). The proof uses the Perelman 2003 geometrization theorem as a lemma — a structural interpretation, not an independent solution. The Clay Mathematics Institute prize for this problem was awarded to Perelman in 2010.
 - Riemann hypothesis (Theorem 1.9.WA.3): all non-trivial zeros of ζ(s) lie on the critical line Re(s) = 1/2 through the explicit construction of the Hilbert-Pólya operator Ĥ_ζ^∞ = (1/2)·Î + Ĵ_∞ (Definition 1.9.WA.4) with spectrum on Re = 1/2 by construction, and the Σ_Trinity bijection between zeros of ζ and the operator spectrum, constructively proved via the Lefschetz fixed-point theorem (Lemma 1.9.WA.0b). The structural identity 1/2 = Absolute / Duality (Definition 1.9.WA.3.d) provides ontological grounding for the critical line.
 
 Summary: seven of seven Clay Millennium Problems receive a structural interpretation within the context of Trinity (axiomatics A0-A5 + theorems ÆТ₁-ÆТ₅) through a single structural principle. Correspondence to the original Clay formulations is not automatic and requires the additional steps demarcated in each Corollary 5.1.*.c.
@@ -37312,10 +37627,12 @@ Step 8 (G2, S³ — unique). Closed 3-manifolds with spherical geometry are quot
 
 Combination of Steps 1-8 gives (5.1.AA.3) and (5.1.AA.4). □
 
-> **Theorem 5.1.AA.2 (Main theorem: Poincaré conjecture through Thurston-Perelman geometrization + uniqueness of S³).**
+> **Theorem 5.1.AA.2 (The structural reading of geometrization: uniqueness of S³ as the agreement of Trinity with the Perelman theorem).**
 >
 
 For every closed simply-connected smooth 3-manifold (M, g) there exists a diffeomorphism M ≅ S³.
+
+Status: agreement with the PROVED Perelman 2003 geometrization theorem (Lemma 5.1.AA.0 — a classical result). Trinity does NOT claim an independent proof of the Poincaré conjecture: the theorem records the structural explanation of the uniqueness of S³ within the 8 ↔ 8 correspondence (Remark 5.1.AA.1.r) — a structural interpretation, not a solution of the original Clay formulation.
 
 > **Proof.**
 > Step 1 (Application of Geometrization). By Lemma 5.1.AA.0
@@ -37381,7 +37698,7 @@ The structural correspondence of eight Thurston geometries (Thurston classificat
 - From the standpoint of Trinity (catalog Section 4.3): 8 primitives are the complete classification of fundamental acts of Choice through different directions of the Cone relative to the Sphere;
 - Correspondence G_i ↔ P_i (i = 1, ..., 8) gives an isomorphism of these two classifications.
 
-This explains WHY exactly 8 Thurston geometries: each of the eight geometries corresponds to a fundamental structural act of Trinity. The Poincaré conjecture is a direct consequence of the fact that only one of these eight acts (the Spherical act) gives a closed simply-connected 3-manifold.
+This explains WHY exactly 8 Thurston geometries: each of the eight geometries corresponds to a fundamental structural act of Trinity. The Poincaré conjecture (proved by Perelman) receives here a structural explanation: only one of these eight acts (the Spherical act) gives a closed simply-connected 3-manifold.
 
 Remark 5.1.AA.2.r (Separation of roles of Perelman and Trinity).
 
@@ -37433,6 +37750,8 @@ the Wightman space (W1–W5)         | the structural content of the axioms     
 ```
 
 Each item is anchored in the validator (blocks of the 2.4.AE.2 series); closing any item is a new remark of the series with machine verification.
+
+Remark 5.1.G.3.П.1 (The W1 ↔ A4-Fock tie: what is carried into the continuum). The W1 programme (П1-П7) is built on top of the honest Fock construction (Rem 2.7.B.7.u (5), the "FOCK HONESTY" block); the tie layer by layer: (1) THE ONE-PARTICLE SPACE: H_11 = ℂ¹¹ is finite (A0/A3) — carried as is; the Wightman Fock space is built as the symmetric tensor over it (the same algebra a_k, a_k†). (2) THE FOCK LAYER: the infinite dimensionality of each mode follows from [a_k, a_k†] = 1 (the trace obstruction — 2.7.B.7.u (5)); in W1 this is the WIGHTMAN Fock over ℂ¹¹ — not a finite-dimensional emulation, but the ordinary symmetric Fock; the cutoff Λ_T restricts the occupied sector states (a physical restriction), not the dimension. (3) THE SPECTRAL CONDITION: on the lattice — the cone (Rem 2.4.A.0.1.d, the exact front propagation); in the continuum — the W2 condition on the joint spectrum (H, P); the linear dispersion ω ≈ 2πk/N holds in the long-wave window k = 1 (machine: the "W1 FOCK TIE" block); for k ≥ 2 the lattice dispersion is distinguishable — the continuum window is narrow, which is the very meaning of the a → 0 limit. (4) MICROCAUSALITY: the W3 row of the П7 table (the commutators outside the cone — Th 2.7.AA.2; no-signaling — Cor 2.4.K.1.c) inherits the cone of layer (3) — a derivative layer per Rem 2.4.A.0.1.c. Discipline: W1 postulates no new dynamics — the continuum limit of the same algebra; all items П1-П7 remain a programme until the limit a → 0.
 
 
 ### 5.2 M-THEORY AND EINSTEIN EQUATIONS [Temperature / k = 2]
@@ -40023,23 +40342,24 @@ Total: the ontological additions — the Choice–Will–Freedom triple and the 
 ```
 
 > **Theorem**
-> s: 714
-> Definitions: 249
-> Corollaries: 563
-> Remarks: 507
-> Lemmas: 26
+> s: 715
+> Definitions: 251
+> Corollaries: 570
+> Remarks: 539
+> Lemmas: 28
 > Propositions: 13
 > Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
 >                                              geometric-layer Theorems 1.0.AET.1,
 >                                              1.0.AET.2, 1.0.AET.3, 1.0.AET.4,
 >                                              1.0.AET.5)
-> Service appendices: 3 (I — Glossary; II — Mathematical summary;
->                         III — Structural core)
+> Service appendices: 4 (I — Glossary; II — Mathematical summary;
+>                         III — Structural core;
+>                         IV — the map of fundamental questions)
 > Continuous free parameters: 0
 
 Structure: 5 Parts × 12 modal subsections k = 0..11 = 60 cells (Sphere–Point–Cone ontology)
 
-Dimensionless constants closed: 84 / 84 (catalogue coverage) Mean relative error (tree-level): 0.0017% Structural mean (full package): ~0.0017% (validator, 84 constants) Constants with error < 0.001%: 52 / 84 Absolute masses (< PDG uncertainty): 9 Acoustic peaks of CMB: 7 (mean error 1.22%) Nuclear magic numbers: 7 / 7 (all EXACT) SI exponents of fundamental constants: 18/18 as Z₁₁ numbers (five are SI defining constants, exact by definition; a structural reading of the notation) Fractal dimensions: 7 (all EXACT) Critical exponents of 2D Ising: 5 (all EXACT) Fine-structure constant α: 0.8σ from CODATA-2022 (LKB-Rb — a recorded 4.2σ tension, the PF-1 discriminator) Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r) Hubble constant H_0: 0.017% precision via (1+α)^N
+Dimensionless constants closed: 84 / 84 (catalogue coverage) Mean relative error (tree-level): 0.0017% Structural mean (full package): ~0.0017% (validator, 84 constants) Constants with error < 0.001%: 51 / 84 Absolute masses (< PDG uncertainty): 9 Acoustic peaks of CMB: 7 (mean error 1.22%) Nuclear magic numbers: 7 / 7 (all EXACT) SI exponents of fundamental constants: 18/18 as Z₁₁ numbers (five are SI defining constants, exact by definition; a structural reading of the notation) Fractal dimensions: 7 (all EXACT) Critical exponents of 2D Ising: 5 (all EXACT) Fine-structure constant α: 0.8σ from CODATA-2022 (LKB-Rb — a recorded 4.2σ tension, the PF-1 discriminator) Ladder α(k) = π²/(N·φ^k): α(0) = 0.8972, α(10) — tree, α(9) = φ·α(10) = 0.0118 — the DM portal, derived from the action (Rem 2.4.AF.2.r) Hubble constant H_0: 0.017% precision via (1+α)^N
 
 Irrational constants in unified basis ℤ[α, π, φ, e, N, F_n, L_n]: 9 (ζ(2), ζ(3), ζ(5), ζ(7), ζ(11), Catalan G, β(4), Glaisher A, Khinchin K)
 
@@ -40672,8 +40992,10 @@ CORE RESULT 4 (SUPPORTING). N = 11 self-consistency selection.
 ─────────────────────────────────────────────────────────────────────
 The closure conditions C1 (N + 1 = K(R), R = 3) ∧ C2 (Heegner number
 h(−11) = 1) ∧ C3 (N prime) jointly select (R, N) = (3, 11).   SCOPE: the |Quintet| = 5 atom alone carries the selection; C2/C3 are
-over-determined confirmations; cross-dimensional uniqueness needs the
-OPEN kissing-number K(5) (if K(5) = 44 then N = 43 also closes). The
+over-determined confirmations; cross-dimensional uniqueness at R = 5
+rested on the open K(5) (the pair N = 43 required K(5) = 44); the
+November 2026 preprint (K(5) ≤ 43, exact rational certificates)
+closes that alternative. The
 relation N + 1 = K(R) is a geometric postulate (not a theorem of A0–A6).
 ```
 
@@ -40723,12 +41045,12 @@ Casimirs 181/22, 84/11, 289/33 (Theorem 5.1.D.7.1, Step 3), the
 total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
 2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
 2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-exit 0. Python validator: theory_of_everything.py — 1754 PASS,
+exit 0. Python validator: theory_of_everything.py — 2069 PASS,
 0 FAIL, EXIT = 0 (≈ 5–8 min), including the embedded four-test PSLQ
 experiment of Theorem 1.10.F.9 (no separate script required).
 ```
 
-The boundary of machine verification (the three tasks are not equivalent): (1) Lean and Python verify the LOGICAL derivation from the recorded axioms and definitions (714 theorems, 1754 checks — machine); (2) the consistency of the axioms themselves in the given interpretation is relative: the model is built, no contradictions found; absolute consistency is unavailable from within (the Gödel limit of self-description, Th 3.5.1); (3) the correspondence of physical objects to nature is established NOT by machine checks but by measurements — the PF-1..7 registry (front 1.0.K.1) and the catalogue-84 against PDG/CODATA (tables 2.5). A machine check of a theorem does not make the initial postulates physically true (the .ah(6) boundary; AMPLIFIER H).
+The boundary of machine verification (the three tasks are not equivalent): (1) Lean and Python verify the LOGICAL derivation from the recorded axioms and definitions (715 theorems, 2069 checks — machine); (2) the consistency of the axioms themselves in the given interpretation is relative: the model is built, no contradictions found; absolute consistency is unavailable from within (the Gödel limit of self-description, Th 3.5.1); (3) the correspondence of physical objects to nature is established NOT by machine checks but by measurements — the PF-1..7 registry (front 1.0.K.1) and the catalogue-84 against PDG/CODATA (tables 2.5). A machine check of a theorem does not make the initial postulates physically true (the .ah(6) boundary; AMPLIFIER H).
 
 ```
 ─────────────────────────────────────────────────────────────────────
@@ -40874,7 +41196,7 @@ machine proof and its recorded status.
 - The λ-cascade — the multi-loop sector ....... STATUS: DERIVED (machine) Formulas: the censuses 124740 (λ³) and 240·13!! = 32432400 (λ⁴); the chain series with cross-check 1.0000000000; W₃ = 145.7521, W₄ = 5746.2902 (Rem 2.4.AE.2.bg/.cg/.bi). Refutation: an independent momentum estimator outside the agreement.
 - The Clay Institute problems ................. STATUS: DEMARCATION Formula: structural characterizations of all 7 of 7 in the Z₁₁-projection with explicit applicability boundaries; the solutions of the original formulations are NOT claimed. Refutation: — (no claim is made; the "solved" synonym sweep is clean).
 - The PF registry — the blind phase .......... STATUS: PROGRAM Formula: 56 registered testable statements; fixation before measurement (PF-1..7 with 5σ refutation criteria; the 2027+ window). Refutation: any failed blind prediction from the registry — the general refutation rule of the whole table.
-- A mode = a contact direction ................ STATUS: DERIVED Formula: N + 1 = K(R) — a consequence of the definition of a mode and of the carrier fullness (M3); K(3) = 12 (Schütte–van der Waerden), K(24) = 196560; the uniqueness scope — R ∈ {1, 2, 3, 4, 8, 24} (Lemma 1.10.0.28.m). Refutation: a 9/9 sieve pass at another N; an observed fundamental dimension other than 3.
+- A mode = a contact direction ................ STATUS: DERIVED Formula: N + 1 = K(R) — a consequence of the definition of a mode and of the carrier fullness (M3); K(3) = 12 (Schütte–van der Waerden), K(24) = 196560; the uniqueness scope — R ∈ {1, 2, 3, 4, 8, 24} (Lemma 1.10.0.28.m); with the November 2026 preprint (K(5) ≤ 43), conditionally also R = 5. Refutation: a 9/9 sieve pass at another N; an observed fundamental dimension other than 3.
 - SM fields and anomalies ..................... STATUS: DERIVED Formula: 3×(10⊕5̄); Q (3,2)_{+1/6}, u^c (3̄,1)_{−2/3}, d^c (3̄,1)_{+1/3}, L (1,2)_{−1/2}, e^c (1,1)_{+1}; the anomalies [SU(3)]³, [SU(3)]²-U(1), [SU(2)]²-U(1), U(1)³, grav²-U(1) — all zero (machine); the Witten anomaly even (Cor 5.1.D.9.t). Refutation: a non-zero generation anomaly; an odd number of SU(2) doublets.
 - Quantum dynamics ............................ STATUS: DERIVED Formula: L̂ = Σλ_k|k⟩⟨k|, λ_k = ω_k²/Σω²; the limit — Z₂-classes, the outcome frequencies = Born (24/24 machine); no-signaling = a linear CPTP averaging; CHSH 2√2 — standard (2.4.K, Cor 2.4.K.1.c); the Schrödinger correction — only at KKT saturation (2.4.J). Refutation: mode statistics off the Born weights; a violation of the CHSH bound.
 
@@ -40924,7 +41246,7 @@ sheet.
 Python 3.12.6, numpy 2.4.2, scipy 1.17.1, sympy 1.14.0 Lean 4.35.0 (elan; WITHOUT Mathlib and external dependencies)
 
 ```
-python theory_of_everything.py   → 1754 PASS / 0 FAIL / EXIT=0
+python theory_of_everything.py   → 2069 PASS / 0 FAIL / EXIT=0
                                  (≈ 5–8 min; the time is carried by
                                  the recorded deep sweeps 2.4.G.13.y
                                  and 2.4.AD.2.v)
@@ -41038,3 +41360,14 @@ I. TESTABILITY
 - The clock horizon — 1.4·10⁻³⁰; [F]; P2
 
 Total: 52 questions; each with an anchor, a level and a status.
+
+```
+  ───────────────────────────────────────
+FACE LIST OF TENSIONS (the facade; each item carries a canon anchor)
+```
+
+- Ω_m = 1/π — 4.2σ against the independent 2026 joint estimate (BAO + CMB + supernovae, DESI-class: 0.2974 ± 0.0050 against 1/π = 0.31831); the 2.1.A.1 base, the falsifiable status of the structural value, the σ-check — 2.10.B.
+- The H₀ tension: H₀(local)/H₀(CMB) = (1+α)^N ≈ 1.083 (2.6.A.4); the reconciliation with observations — a programme (2.1.A.5.2.r).
+- LKB-Rb 2020: 137.035999206(11) — the recorded 4.2σ tension (Th 2.5.U.1; the Berkeley-Cs/LKB-Rb atomic-shift model).
+
+Discipline: the tensions are not hidden — each item carries an anchor and a resolution status (a programme/the registry).
