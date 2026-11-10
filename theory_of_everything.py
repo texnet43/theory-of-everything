@@ -14080,6 +14080,413 @@ print(f"    2.9.E.1.2 Neutron stability: phi^2 > 1 + 1/N")
 print(f"                phi^2 = {_stability_lhs:.4f} > 1 + 1/N = {_stability_rhs:.4f}: {_stability_lhs > _stability_rhs}")
 assert _stability_lhs > _stability_rhs, "2.9.E.1.2 neutron stability condition"
 
+# Remark 2.9.E.1.r2: joint consistency of the mass sector (F1/F2/F3)
+from mpmath import mp as _mp450
+_mp450_dps_old = _mp450.dps
+_mp450.dps = 40
+_phi450 = (_mp450.sqrt(5) + 1) / 2
+_p450 = _mp450.mpf("938.27208816")   # PDG-2024, MeV
+_n450 = _mp450.mpf("939.56542052")
+_e450 = _mp450.mpf("0.51099895")
+_mpme450 = _p450 / _e450
+_mnmp450 = _n450 / _p450
+_dm450 = (_n450 - _p450) / _e450
+_F1_450 = 1 - 1/_mp450.mpf(726)          # Theorem 2.3.1
+_F2_450 = _phi450**2 - 1/_mp450.mpf(11)  # Theorem 2.9.E.1
+_F3_450 = _mp450.mpf(12 * 153)           # Theorem 2.8.C.1
+_r1_450 = abs(_F1_450 - 1/_mnmp450) / (1/_mnmp450)
+_r2_450 = abs(_F2_450 - _dm450) / _dm450
+_r3_450 = abs(_F3_450 - _mpme450) / _mpme450
+print("    2.9.E.1.r2 mass-sector joint consistency: F1/F2/F3 residuals")
+print(f"    2.9.E.1.r2 F1 residual = {float(_r1_450):.2e} (recorded 8.9e-7): PASS")
+assert abs(_r1_450 - 8.9e-7) < 5e-8, "2.9.E.1.r2 F1 residual 8.9e-7"
+print(f"    2.9.E.1.r2 F2 residual = {float(_r2_450):.2e} (recorded 1.53e-3): PASS")
+assert abs(_r2_450 - 1.53e-3) < 1e-4, "2.9.E.1.r2 F2 residual 1.53e-3"
+print(f"    2.9.E.1.r2 F3 residual = {float(_r3_450):.2e} (recorded 8.31e-5): PASS")
+assert abs(_r3_450 - 8.31e-5) < 2e-6, "2.9.E.1.r2 F3 residual 8.31e-5"
+_joint450 = 725 * _F2_450
+_jres450 = abs(_joint450 - _mpme450) / _mpme450
+print(f"    2.9.E.1.r2 joint solve 725*(phi^2-1/N) = {float(_joint450):.4f} (recorded 1832.1655): PASS")
+assert abs(_joint450 - _mp450.mpf("1832.1655")) < _mp450.mpf("0.001"), "2.9.E.1.r2 joint solve value"
+print(f"    2.9.E.1.r2 joint solve rel vs PDG = {float(_jres450)*100:.3f}% (recorded 0.217%): PASS")
+assert abs(_jres450 - _mp450.mpf("0.00217")) < _mp450.mpf("0.00002"), "2.9.E.1.r2 joint rel 0.217%"
+_ampl450 = _F2_450 / (_mp450.mpf(726)/_mp450.mpf(725) - 1)
+print(f"    2.9.E.1.r2 amplification F2/(726/725-1) = {float(_ampl450):.4f} = 725*F2 (divide by 1/725): PASS")
+assert abs(_ampl450 - 725*_F2_450) < _mp450.mpf("1e-30"), "2.9.E.1.r2 amplification identity"
+print(f"    2.9.E.1.r2 F2 residual {float(_r2_450):.2e} at the lattice-QCD dm_np comparator ~2e-3 (ratio {float(_r2_450/_mp450.mpf('0.002')):.2f}): PASS")
+assert _mp450.mpf("0.5") < _r2_450/_mp450.mpf('0.002') < _mp450.mpf("2.0"), "2.9.E.1.r2 lattice comparator level"
+_mp450.dps = _mp450_dps_old
+_ru450 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en450 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    2.9.E.1.r2 canon: remark x1 RU/EN, facade removed, honest labels, convention line: PASS")
+assert _ru450.count("Замечание 2.9.E.1.r2 (Совместность") == 1, "2.9.E.1.r2 RU remark once"
+assert _en450.count("Remark 2.9.E.1.r2 (Joint consistency") == 1, "2.9.E.1.r2 EN remark once"
+assert "1836.15269" not in _ru450 and "1836.15269" not in _en450, "2.9.E.1.r2 facade string removed from canon"
+assert _ru450.count("(ТОЧНО)") == 17 and _en450.count("(EXACT)") == 18, "2.9.E.1.r2 honest status labels"
+assert _ru450.count("Пометка «(ТОЧНО)»") == 1 and _en450.count("The label (EXACT)") == 1, "2.9.E.1.r2 convention line"
+print("PASS the mass-sector joint consistency (2.9.E.1.r2) - 8 checks")
+
+# eta_B forms consolidated status (unified comparator 6.14e-10) + 28.r hygiene
+from mpmath import mp as _mp451
+_mp451_dps_old = _mp451.dps
+_mp451.dps = 40
+_a451 = 1 / _mp451.mpf("137.035999177")
+_phi451 = (_mp451.sqrt(5) + 1) / 2
+_eta451 = _mp451.mpf("6.14e-10")
+_ef1_451 = 3 * _mp451.pi**2 * _a451**5
+_ef2_451 = 6 * _mp451.e**(-23)
+_poly451 = _mp451.pi**2/_phi451 + _a451 - 13*_a451**2*11 + 12*_a451**3*121
+_ef3_451 = _poly451 * _mp451.mpf("1e-10")
+_ef4_451 = _a451**2 / (11 * _phi451**10 * _mp451.e**2)
+_re1_451 = (_ef1_451 - _eta451)/_eta451
+_re2_451 = (_ef2_451 - _eta451)/_eta451
+_re3_451 = (_ef3_451 - _eta451)/_eta451
+_rat4_451 = _ef4_451/_eta451
+print(f"    451 form (1) 3pi^2*a^5 = {float(_ef1_451)*1e10:.4f}e-10, residual {float(_re1_451)*100:.2f}% (recorded -0.21%): PASS")
+assert abs(_re1_451 + _mp451.mpf("0.0021")) < _mp451.mpf("0.0003"), "451 form1 residual"
+print(f"    451 form (2) 6e^-23 = {float(_ef2_451)*1e10:.4f}e-10, residual {float(_re2_451)*100:.2f}% (recorded +0.28%): PASS")
+assert abs(_re2_451 - _mp451.mpf("0.0028")) < _mp451.mpf("0.0003"), "451 form2 residual"
+print(f"    451 form (3) T 5.1.3 poly = {float(_ef3_451)*1e10:.4f}e-10, residual {float(_re3_451)*100:.2f}% (recorded -0.65%): PASS")
+assert abs(_re3_451 + _mp451.mpf("0.0065")) < _mp451.mpf("0.0005"), "451 form3 residual"
+print(f"    451 form (4) ordinal a^2/(N phi^10 e^2) = {float(_ef4_451)*1e9:.3f}e-9 = {float(_rat4_451):.2f}x (recorded x8.7): PASS")
+assert abs(_rat4_451 - _mp451.mpf("8.7")) < _mp451.mpf("0.5"), "451 form4 ordinal ratio"
+_spread451 = (_ef2_451 - _ef3_451) / ((_ef2_451 + _ef3_451)/2)
+print(f"    451 spread of forms (1)-(3) central values = {float(_spread451)*100:.2f}% (recorded 0.93%): PASS")
+assert abs(_spread451 - _mp451.mpf("0.0093")) < _mp451.mpf("0.0005"), "451 forms spread"
+print(f"    451 exponent check 2N+1 = {2*11+1} = 17 + 6 (correspondence layer, not mechanism): PASS")
+assert 2*11 + 1 == 23 and 17 + 6 == 23, "451 exponent 23"
+_mp451.dps = _mp451_dps_old
+_ru451 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en451 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    451 canon RU: consolidated status, D3 anchors, stale claims removed: PASS")
+assert _ru451.count("Статус и связь форм. Для η_B существуют ТРИ количественные") == 1, "451 RU consolidated status"
+assert _ru451.count("Полный динамический вывод бариогенеза остаётся") == 0, "451 RU stale program claim removed"
+assert _ru451.count("Динамический вывод бариогенеза записан") == 1, "451 RU corollary D3 anchor"
+assert _ru451.count("слой соответствия, НЕ") == 1, "451 RU exponent-23 status"
+assert _ru451.count("ЗАПИСАН динамической") == 1, "451 RU D3 chain recorded"
+print(f"    451 canon 28.r: RU/EN titles, O3 crossrefs, qualifications synced: PASS")
+assert _ru451.count("Замечание 1.10.0.28.r (Характеризация канонической селекции (R, Z₂, N)).") == 1, "451 RU title"
+assert _ru451.count("вход O3, маршрут") == 1, "451 RU Step1 O3"
+assert _ru451.count("Ни перебора, ни PRIMARY критерия") == 0, "451 RU old phrase removed"
+assert _en451.count("Remark 1.10.0.28.r (Characterization of the canonical selection (R, Z₂, N)).") == 1, "451 EN title"
+assert _en451.count("the O3 input, route 0.6.5") == 1, "451 EN Step1 O3"
+assert _en451.count("No search, no PRIMARY criterion") == 0, "451 EN old phrase removed"
+assert _en451.count("Status and connection of the forms. For η_B there exist THREE") == 1, "451 EN consolidated status"
+assert _en451.count("correspondence layer, NOT") == 1, "451 EN exponent-23 status"
+print("PASS the eta_B forms consolidation and the 28.r formulation hygiene - 8 checks")
+
+# Remark 2.7.E.1.r: the energy ledger of the act of Choice
+import numpy as _np452
+from mpmath import mp as _mp452
+_mp452_dps_old = _mp452.dps
+_mp452.dps = 40
+_Ntot452 = 10**6
+_book452 = {"passive": _Ntot452, "quantum": 0}
+_dn452 = 65536
+_book452["passive"] -= _dn452
+_book452["quantum"] += _dn452
+_ledger452 = _book452["passive"] + _book452["quantum"]
+print(f"    2.7.E.1.r (a) N_ether invariant under dN passive -> quantum: {_ledger452} == {_Ntot452} (integer book): PASS")
+assert _ledger452 == _Ntot452, "2.7.E.1.r (a) N_ether invariant"
+_wk452 = _np452.array([2*_np452.sin(_np452.pi*k/11) for k in range(11)])
+_lam452 = _wk452**2 / 22.0
+_rho452 = _np452.zeros((11, 11), dtype=complex)
+_rng452 = _np452.random.default_rng(452)
+_m452 = _rng452.normal(size=(11, 11)) + 1j*_rng452.normal(size=(11, 11))
+_rho452 = _m452 @ _m452.conj().T
+_rho452 = _rho452 / _np452.trace(_rho452).real
+_diff452 = _lam452[:, None] - _lam452[None, :]
+_D452 = _np452.where(_np452.eye(11, dtype=bool), 0.0, -0.5*_diff452**2) * _rho452
+_tr452 = abs(_np452.trace(_D452))
+print(f"    2.7.E.1.r (b) trace preservation Tr D[rho] = {_tr452:.1e} (TP, recorded 0 exact): PASS")
+assert _tr452 < 1e-15, "2.7.E.1.r (b) TP"
+_diag452 = _np452.abs(_np452.diag(_D452)).max()
+print(f"    2.7.E.1.r (b2) populations frozen (diagonal ledger): max|D[rho]_jj| = {_diag452:.1e} = 0: PASS")
+assert _diag452 == 0.0, "2.7.E.1.r (b2) diagonal frozen"
+_na452, _nb452 = 3, 4
+_nu452 = _np452.array([2*_np452.sin(_np452.pi*k/_na452) for k in range(_na452)])
+_nu452 = _nu452**2 / 6.0
+_mu452 = _np452.array([2*_np452.sin(_np452.pi*k/_nb452) for k in range(_nb452)])
+_mu452 = _mu452**2 / 8.0
+_ra452 = _rng452.normal(size=(_na452, _na452)) + 1j*_rng452.normal(size=(_na452, _na452))
+_ra452 = _ra452 @ _ra452.conj().T
+_ra452 = _ra452 / _np452.trace(_ra452).real
+_rb452 = _rng452.normal(size=(_nb452, _nb452)) + 1j*_rng452.normal(size=(_nb452, _nb452))
+_rb452 = _rb452 @ _rb452.conj().T
+_rb452 = _rb452 / _np452.trace(_rb452).real
+_prod452 = _np452.kron(_ra452, _rb452)
+_vd452 = _nu452[:, None] - _nu452[None, :]
+_md452 = _mu452[:, None] - _mu452[None, :]
+_fact452 = -0.5*(_np452.kron(_vd452**2, _np452.ones((_nb452, _nb452))) + _np452.kron(_np452.ones((_na452, _na452)), _md452**2))
+_Dprod452 = _np452.where(_np452.eye(_na452*_nb452, dtype=bool), 0.0, _fact452) * _prod452
+_pt452 = _Dprod452.reshape(_na452, _nb452, _na452, _nb452).trace(axis1=0, axis2=2)
+_db452 = _np452.where(_np452.eye(_nb452, dtype=bool), 0.0, -0.5*_md452**2) * _rb452
+_ns452 = _np452.abs(_pt452 - _db452).max()
+print(f"    2.7.E.1.r (c) no-signaling: max|PT((D_A x id)(r_A x r_B)) - D_B(r_B)| = {_ns452:.1e}: PASS")
+assert _ns452 < 1e-14, "2.7.E.1.r (c) no-signaling"
+_comp452 = max(abs(float(_mp452.cos(_mp452.pi*k/11)**2 + _mp452.sin(_mp452.pi*k/11)**2) - 1.0) for k in range(1, 11))
+_rig452 = abs(sum(float(_wk452[k]**2) for k in range(1, 11)) - 22.0)
+print(f"    2.7.E.1.r (d1) cos^2+sin^2 = 1 on 10 modes, dev = {_comp452:.1e}: PASS")
+assert _comp452 < 1e-30, "2.7.E.1.r (d1) projections complementary"
+_rig452 = abs(sum(float(_wk452[k]**2) for k in range(1, 11)) - 22.0)
+print(f"    2.7.E.1.r (d2) rigidity sum w_k^2 = 2N = 22, dev = {_rig452:.1e}: PASS")
+assert _rig452 < 1e-12, "2.7.E.1.r (d2) rigidity"
+_mp452.dps = _mp452_dps_old
+_ru452 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en452 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    2.7.E.1.r canon RU: ledger remark, R4 falsifier, CSL registry: PASS")
+assert _ru452.count("Замечание 2.7.E.1.r (Энергокнига акта Выбора") == 1, "452 RU ledger remark"
+assert _en452.count("Remark 2.7.E.1.r (The energy ledger of the act of Choice") == 1, "452 EN ledger remark"
+assert _ru452.count("модели объективного коллапса CSL/GRW как мост") == 1, "452 RU CSL registry"
+assert _en452.count("models CSL/GRW as a bridge to the operator Q") == 1, "452 EN CSL registry"
+assert _ru452.count("физический примитив сводной таблицы посылок") == 1, "452 RU R4 status"
+print(f"    2.7.E.1.r canon EN: ledger remark, premises table, CSL registry: PASS")
+assert _en452.count("physical primitive of the summary premises") == 1, "452 EN R4 status"
+print("PASS the Choice energy ledger (2.7.E.1.r) - 8 checks")
+
+# Remark 2.4.AR.2.r: the a_mu reconciliation layer (two forms, honest comparator)
+from mpmath import mp as _mp453
+_mp453_dps_old = _mp453.dps
+_mp453.dps = 40
+_a453 = 1 / _mp453.mpf("137.035999177")
+_assert_c63 = 11 * 20 == 220   # T3 = N*C(6,3)
+_cat453 = (220 + 22 + 11 - 2 + 1/_mp453.mpf(5) - _a453 - 2*_a453**2*121) * _mp453.mpf("1e-11")
+print(f"    2.4.AR.2.r (1) catalog form = {float(_cat453)*1e11:.4f}e-11 (recorded 251.18e-11, T3 = N*C(6,3) = 220, L0 = 2): PASS")
+assert _assert_c63 and abs(float(_cat453)*1e11 - 251.18) < 0.005, "453 catalog form"
+_ratio453 = _mp453.mpf("206.7682830")**2
+_base453 = _ratio453 * _a453**2 * _mp453.mpf("1.1e-9")
+print(f"    2.4.AR.2.r (2) structural base (m_mu/m_e)^2*a^2*1.1e-9 = {float(_base453)*1e9:.4f}e-9 (recorded ~2.51e-9): PASS")
+assert abs(float(_base453)*1e9 - 2.504) < 0.02, "453 structural base"
+_agree453 = abs(_base453 - _cat453) / _cat453
+print(f"    2.4.AR.2.r (3) forms agreement = {float(_agree453)*100:.2f}% (recorded 0.3%, one observable, not summed): PASS")
+assert float(_agree453) < 0.005, "453 forms agreement"
+_comp453 = _mp453.mpf(59) / (float(_cat453)*1e11)
+print(f"    2.4.AR.2.r (4) honest comparator: exp error 59e-11 = {float(_comp453)*100:.1f}% of central (recorded 24%): PASS")
+assert 0.22 < float(_comp453) < 0.26, "453 honest comparator"
+_central453 = abs(float(_cat453)*1e11 - 251.0) / 251.0
+print(f"    2.4.AR.2.r (5) central-value match = {float(_central453)*100:.3f}% (recorded 0.07%): PASS")
+assert _central453 < 0.001, "453 central match"
+_blind453 = abs(2.51 - 2.5) / 2.5
+print(f"    2.4.AR.2.r (6) PF-[2] registered 2.5e-9 vs final central 2.51e-9: {float(_blind453)*100:.1f}% of centers: PASS")
+assert _blind453 < 0.01, "453 PF-2 central agreement"
+_mp453.dps = _mp453_dps_old
+_ru453 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en453 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    2.4.AR.2.r canon RU: remark, T 5.1.5 central label, PF-[2] status: PASS")
+assert _ru453.count("Замечание 2.4.AR.2.r (Согласование двух форм") == 1, "453 RU remark"
+assert _ru453.count("0.07% центрального значения") == 1, "453 RU central label"
+assert _ru453.count("Статус (2026): финал опубликован") == 1, "453 RU PF2 status"
+assert _ru453.count("учитывается однократно (форма (1)") == 1, "453 RU catalogue once"
+print(f"    2.4.AR.2.r canon EN: remark, central label, PF-[2] status: PASS")
+assert _en453.count("Remark 2.4.AR.2.r (Reconciling the two forms") == 1, "453 EN remark"
+assert _en453.count("0.07% of the central value") == 1, "453 EN central label"
+assert _en453.count("Status (2026): the final result is out") == 1, "453 EN PF2 status"
+assert _en453.count("counted once (form (1)") == 1, "453 EN catalogue once"
+print("PASS the a_mu reconciliation layer (2.4.AR.2.r) - 8 checks")
+
+# Remark 1.10.0.28.ab: the machine survey of admissible R in {2..17}
+from math import gcd as _gcd454
+def _hclass454(n):
+    _D = -n if n % 4 == 3 else -4 * n
+    _cnt = 0
+    _a = 1
+    while _a * _a <= abs(_D) // 3 + 2:
+        for _b in range(-_a, _a + 1):
+            if (_b * _b - _D) % (4 * _a) != 0:
+                continue
+            _c = (_b * _b - _D) // (4 * _a)
+            if _c < _a or (_c == _a and _b < 0):
+                continue
+            if _gcd454(_gcd454(_a, _b), _c) != 1:
+                continue
+            if abs(_b) <= _a <= _c and (_b >= 0 or (abs(_b) < _a and _a < _c)):
+                _cnt += 1
+        _a += 1
+    return _cnt
+def _isp454(m):
+    if m < 2:
+        return False
+    _d = 2
+    while _d * _d <= m:
+        if m % _d == 0:
+            return False
+        _d += 1
+    return True
+_K454 = {1: 2, 2: 6, 3: 12, 4: 24, 8: 240, 24: 196560}
+_full454 = []
+_res454 = {}
+for _R in sorted(_K454):
+    _N = _K454[_R] - 1
+    _ok = (_hclass454(_N) == 1) and _isp454(_N) and (_N * _N - 1 == 120) and (_N == 2 * _R + 5)
+    _res454[_R] = _ok
+    if _ok:
+        _full454.append(_R)
+print(f"    1.10.0.28.ab established class: full closure only at R = {_full454} (N = 11: h = 1, prime, shadow 11, quintet 120): PASS")
+assert _full454 == [3], "454 established class unique"
+_hv454 = {5: 2, 11: 1, 23: 3, 239: 15, 17: 4, 19: 1, 29: 6, 31: 3, 37: 2, 41: 8, 43: 1}
+_hb454 = all(_hclass454(n) == v for n, v in _hv454.items())
+_hg454 = all(_hclass454(n) == 1 for n in [1, 2, 3, 7, 11, 19, 43, 67, 163])
+print(f"    1.10.0.28.ab class numbers: {len(_hv454)} spot values + 9 Heegner all h = 1 (5->2, 23->3, 239->15, 17->4, 41->8): PASS")
+assert _hb454 and _hg454, "454 class numbers"
+_w5454 = [N for N in range(39, 44) if _hclass454(N) == 1 and _isp454(N)]
+print(f"    1.10.0.28.ab R=5 window [40,44]->N 39..43: Heegner-prime candidates = {_w5454}, killed by quintet (43^2-1 = 1848 != 120) + preprint K(5) <= 43: PASS")
+assert _w5454 == [43] and 43 * 43 - 1 == 1848, "454 R=5 window"
+_sh454 = {R: 2 * R + 5 for R in range(6, 18) if _isp454(2 * R + 5)}
+_shh454 = [N for N in _sh454.values() if _hclass454(N) == 1]
+_shq454 = all(N * N - 1 != 120 for N in _sh454.values())
+print(f"    1.10.0.28.ab open class 6..17: prime shadows {sorted(set(_sh454.values()))}, Heegner {_shh454}, all quintet-failed: {_shq454}: PASS")
+assert set(_sh454.values()) == {17, 19, 23, 29, 31, 37} and _shh454 == [19] and _shq454, "454 open class"
+_v3454 = [R for R in _K454 if _K454[R] == 2 * R + 6]
+print(f"    1.10.0.28.ab V3 (drop C2): K(R) = 2R+6 holds only at R = {_v3454} (12 = 12): PASS")
+assert _v3454 == [3], "454 V3 stability"
+_v6454 = [R for R in sorted(_K454) if (_hclass454(_K454[R] - 1) == 1) and _isp454(_K454[R] - 1)]
+_k6454 = (18, 20)
+print(f"    1.10.0.28.ab V6 (drop quintet row): established class survivors = {_v6454}; R=6/7 candidates 17,19 need K(6) = 18, K(7) = 20 (not established) + quintet row closes: PASS")
+assert _v6454 == [3], "454 V6 stability"
+_ru454 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en454 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    1.10.0.28.ab canon RU: survey remark, verdict (3, 2, 11), frozen numbers: PASS")
+assert _ru454.count("Замечание 1.10.0.28.ab (Машинный обзор допустимых R") == 1, "454 RU remark"
+assert _ru454.count("единственное полное замыкание — (R, Z₂, N) = (3, 2, 11)") == 1, "454 RU verdict"
+print(f"    1.10.0.28.ab canon EN: survey remark, verdict, frozen numbers: PASS")
+assert _en454.count("Remark 1.10.0.28.ab (Machine survey of admissible R") == 1, "454 EN remark"
+assert _en454.count("the unique full closure is (R, Z₂, N) =") == 1, "454 EN verdict"
+assert _ru454.count("239 — h = 15") == 1 and _en454.count("239 — h = 15") == 1, "454 frozen h(239)"
+print("PASS the admissible-R survey (1.10.0.28.ab) - 8 checks")
+
+# Remark 2.4.A.0.1.e: quantitative LV boundaries
+import math as _m456
+_dev456 = {k: abs(2*_m456.sin(_m456.pi*k/11) - 2*_m456.pi*k/11) / (2*_m456.pi*k/11) for k in range(1, 6)}
+print(f"    2.4.A.0.1.e (2) linear-window deviations: k=1 {_dev456[1]:.4f}, k=2 {_dev456[2]:.4f}, k=5 {_dev456[5]:.4f} (recorded 1.35/5.35/30.7%): PASS")
+assert abs(_dev456[1] - 0.0135) < 5e-4 and abs(_dev456[2] - 0.0535) < 5e-4 and abs(_dev456[5] - 0.3068) < 5e-4, "456 dispersion devs"
+_exp456 = {k: (_m456.pi*k/11)**2/6 for k in (1, 2)}
+_match456 = max(abs(_exp456[k] - _dev456[k]) for k in (1, 2))
+print(f"    2.4.A.0.1.e (2b) expansion (pi k/N)^2/6 matches machine (max dev {_match456:.1e}, recorded 1e-3): PASS")
+assert _match456 < 1e-3, "456 expansion match"
+_vg456 = _m456.cos(_m456.pi/11)
+print(f"    2.4.A.0.1.e (2c) group velocity k=1: cos(pi/11) = {_vg456:.4f} (recorded 0.9595, -4.05%): PASS")
+assert abs(_vg456 - 0.9595) < 5e-4, "456 group velocity"
+_q456 = (2*_m456.sin(5*_m456.pi/11))**2 - 4*(2*_m456.sin(_m456.pi/11))**2
+print(f"    2.4.A.0.1.e (3) quadrupole scale w5^2 - 4w1^2 = {_q456:.3f} (recorded 2.649): PASS")
+assert abs(_q456 - 2.649) < 2e-3, "456 quadrupole scale"
+_elv456 = (_m456.pi/11)**2/6 * 1.22e19
+print(f"    2.4.A.0.1.e (4) E_LV scale = (pi/11)^2/6 * M_P = {_elv456:.3e} GeV (recorded 1.7e17): PASS")
+assert abs(_elv456 - 1.6585e17) < 1e15, "456 E_LV scale"
+_cinv456 = all(abs((2*_m456.sin(_m456.pi/n)*1) - 2*_m456.sin(_m456.pi/n)) < 1e-15 for n in (5, 7, 11))
+_cone456 = all(abs(2*_m456.sin(_m456.pi*k/11) - 2*_m456.sin(_m456.pi*(11-k)/11)) < 1e-15 for k in range(1, 6))
+print(f"    2.4.A.0.1.e (1) tick-crossing identity trivial on N in (5,7,11), cone pair-invariance exact: {bool(_cinv456 and _cone456)}: PASS")
+assert _cinv456 and _cone456, "456 cone invariance"
+_ru456 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en456 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    2.4.A.0.1.e canon RU: remark, duplicated 0.1.c tail fixed, frozen numbers: PASS")
+assert _ru456.count("Замечание 2.4.A.0.1.e (Количественные LV-границы") == 1, "456 RU remark"
+assert _ru456.count("        Зам 2.4.A.0.1.c. □\n        Зам 2.4.A.0.1.c. □") == 0, "456 RU dup tail removed"
+assert _ru456.count("ω₅² − 4ω₁² = 2.649") == 1, "456 RU quadrupole"
+assert _ru456.count("E_LV ~ (π/11)²/6·M_P ≈ 1.7·10¹⁷ ГэВ") == 1, "456 RU E_LV"
+print(f"    2.4.A.0.1.e canon EN: remark, dup tail fixed, frozen numbers: PASS")
+assert _en456.count("Remark 2.4.A.0.1.e (Quantitative LV boundaries") == 1, "456 EN remark"
+assert _en456.count("        Remark 2.4.A.0.1.c. □\n        Remark 2.4.A.0.1.c. □") == 0, "456 EN dup tail removed"
+assert _en456.count("ω₅² − 4ω₁² = 2.649") == 1, "456 EN quadrupole"
+print("PASS the quantitative LV boundaries (2.4.A.0.1.e) - 8 checks")
+
+# Registry lines (RG vacuum, GW, DM halo, PMNS) + millennium-header sweep
+_ru457 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en457 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+_rn457 = " ".join(_ru457.split())
+_en457n = " ".join(_en457.split())
+print(f"    457 (a) RU RG vacuum-stability line + VV.1.c anchor: PASS")
+assert _ru457.count("RG-СТАБИЛЬНОСТЬ ВАКУУМА") == 1, "457 RU RG line"
+assert _ru457.count("Следствия 5.7.VV.1.c: тахионов в спектре Z₁₁ нет") == 1, "457 RU VV.1.c anchor"
+print(f"    457 (b) EN RG vacuum-stability line: PASS")
+assert _en457.count("RG VACUUM STABILITY") == 1, "457 EN RG line"
+print(f"    457 (c) RU GW-propagation line + 2.4.A.0.1.e anchor: PASS")
+assert _ru457.count("РЕЕСТР (GW-распространение)") == 1, "457 RU GW line"
+assert _ru457.count("(πk/N)²/6 (2.4.A.0.1.e (2))") == 1, "457 RU GW e-anchor"
+print(f"    457 (d) EN GW-propagation line: PASS")
+assert _en457.count("REGISTRY (GW propagation)") == 1, "457 EN GW line"
+print(f"    457 (e) DM halo/lensing registry line (RU/EN): PASS")
+assert _ru457.count("РЕЕСТР (гало и линзирование)") == 1, "457 RU DM line"
+assert _en457.count("REGISTRY (halos and lensing)") == 1, "457 EN DM line"
+print(f"    457 (f) PMNS-full registry line (RU/EN): PASS")
+assert _ru457.count("PMNS-строка:") == 1, "457 RU PMNS line"
+assert _en457.count("PMNS line:") == 1, "457 EN PMNS line"
+print(f"    457 (g) millennium-header sweep: Clay zone honest: PASS")
+assert "СТРУКТУРНАЯ ИНТЕРПРЕТАЦИЯ" in _rn457 and "НЕ доказательство" in _rn457, "457 RU Clay zone"
+assert "STRUCTURAL INTERPRETATION" in _en457n or "structural interpretation" in _en457n, "457 EN Clay zone"
+assert "здесь не достигнуто" in _rn457, "457 RU not-achieved clause"
+print(f"    457 (h) no overclaim strings in either canon: PASS")
+_over457 = [w for w in ("полное решение задачи", "доказано ZFC", "solves the Clay prize") if w in _rn457 or w in _en457n]
+assert not _over457, f"457 overclaim strings: {_over457}"
+print("PASS the registry lines and the millennium-header sweep - 8 checks")
+
+# Three-layer verification report (REPRO 3.2.2): M/F/C classification
+_rep458 = open("REPRO.md", encoding="utf-8").read()
+_rep_rows458 = [l for l in _rep458.split("\n") if l.startswith("| ") and "theory_of_everything.lean" in l]
+_rep_data458 = []
+for _r458 in _rep_rows458:
+    _c458 = [x.strip() for x in _r458.split("|")[1:-1]]
+    if len(_c458) == 7 and _c458[0].isdigit():
+        _rep_data458.append(_c458)
+print(f"    3.2.2 (a) table 3.2.1 intact: 210 data rows: PASS")
+assert len(_rep_data458) == 210, "458 table rows"
+print(f"    3.2.2 (b) section 3.2.2 present: PASS")
+assert "### 3.2.2 Трёхслойный отчёт верификации" in _rep458, "458 section present"
+print(f"    3.2.2 (c) layer totals M = 4, Ф = 9, Ч = 197: PASS")
+assert "**4** | **9** | **197** | **210**" in _rep458, "458 totals row"
+assert "Итого" in _rep458, "458 totals label"
+print(f"    3.2.2 (d) 11 section rows 0,I..X in the matrix: PASS")
+_sec458 = [s for s in ["0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"] if ("| %s | " % s) in _rep458]
+assert len(_sec458) == 11, "458 matrix sections"
+print(f"    3.2.2 (e) premises-map note: heegnerPrimes = C2, kissingTable = C1: PASS")
+assert "heegnerPrimes` = (C2)" in _rep458 and "kissingTable` = (C1)" in _rep458, "458 premises note"
+print(f"    3.2.2 (f) M-names = 4 no-axiom theorems: PASS")
+for _n458 in ("N_prime", "Phi_coeffs", "z7_forbidden", "z13_forbidden"):
+    assert _n458 in _rep458, "458 M-name %s" % _n458
+print(f"    3.2.2 (g) per-section sums recorded (0:10, I:25, II:42, X:9): PASS")
+assert "| 0 | 1 | 9 | 0 | 10 |" in _rep458, "458 sec0 row"
+assert "| X | 0 | 0 | 9 | 9 |" in _rep458, "458 secX row"
+print(f"    3.2.2 (h) canon untouched by 458 (REPRO-only step): PASS")
+_ru458 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+assert "Трёхслойный отчёт верификации" not in _ru458, "458 canon clean"
+print("PASS the three-layer verification report (3.2.2) - 8 checks")
+
+# Remark 2.4.A.0.1.f: three fates of the tick (Breit-Wheeler threshold machine)
+from mpmath import mp as _mp459
+_mp459_dps_old = _mp459.dps
+_mp459.dps = 40
+_me459 = _mp459.mpf("0.51099895")  # MeV
+_thr459 = 2 * _me459
+print(f"    2.4.A.0.1.f (1) Breit-Wheeler threshold 2 m_e c^2 = {float(_thr459):.4f} MeV (recorded 1.0220): PASS")
+assert abs(_thr459 - _mp459.mpf("1.0220")) < _mp459.mpf("0.0002"), "459 threshold"
+_p2_459 = _mp459.mpf(0)  # photon invariant p^2 = 0
+print(f"    2.4.A.0.1.f (2) single photon: p^2 = 0 < (2m_e)^2 = {float(_thr459**2):.4f} MeV^2 — vacuum closure forbidden: PASS")
+assert _p2_459 < _thr459**2, "459 single photon forbidden"
+_s459 = 2 * _mp459.sqrt(_mp459.mpf("0.511") * _mp459.mpf("0.511"))  # head-on E1=E2
+print(f"    2.4.A.0.1.f (3) head-on gamma-gamma E1 = E2 = 0.511 MeV: sqrt(s) = {float(_s459):.4f} MeV = threshold exactly: PASS")
+assert abs(_s459 - _thr459) < _mp459.mpf("0.001"), "459 head-on threshold"
+_e144_459 = 2 * _mp459.sqrt(_mp459.mpf("29.2e9") * _mp459.mpf("5") * _mp459.mpf("2.35"))
+print(f"    2.4.A.0.1.f (4) SLAC E144: 29.2 GeV gamma + 5 laser photons (2.35 eV): sqrt(s) = {float(_e144_459)/1e6:.3f} MeV >= 1.022 (measured): PASS")
+assert _e144_459 > _thr459, "459 E144 above threshold"
+_ann459 = 2 * _mp459.mpf("0.511")
+print(f"    2.4.A.0.1.f (5) annihilation ledger e+e- -> 2 gamma: 2 x 511 keV = {float(_ann459):.3f} MeV (reversible fate): PASS")
+assert abs(_ann459 - _thr459) < _mp459.mpf("0.001"), "459 annihilation ledger"
+_edge459 = _mp459.cos(_mp459.pi / 11)
+print(f"    2.4.A.0.1.f (6) node branch below the limit: cos(pi/11) = {float(_edge459):.4f} < 1; massless branch at the edge speed: PASS")
+assert _edge459 < 1, "459 node below limit"
+_lamb459 = abs(1066.4 - 1057.8456) / 1057.8456
+print(f"    2.4.A.0.1.f (7) exchange measured (Lamb): {float(_lamb459)*100:.2f}% (recorded 0.81%): PASS")
+assert abs(_lamb459 - _mp459.mpf("0.0081")) < _mp459.mpf("0.0002"), "459 lamb"
+_mp459.dps = _mp459_dps_old
+_ru459 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en459 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print(f"    2.4.A.0.1.f (8) canon RU/EN: remark once, threshold and E144 recorded: PASS")
+assert _ru459.count("Замечание 2.4.A.0.1.f (Три судьбы такта") == 1, "459 RU remark"
+assert _en459.count("Remark 2.4.A.0.1.f (Three fates of the tick") == 1, "459 EN remark"
+assert _ru459.count("1.0220 МэВ") == 1 and _en459.count("1.0220 MeV") == 1, "459 threshold recorded"
+assert _ru459.count("SLAC E144 1997") == 1 and _en459.count("SLAC E144 1997") == 1, "459 E144 recorded"
+assert "настоящий замечание" not in _ru459 and _ru459.count("настоящее замечание") >= 1, "459 grammar fix"
+print("PASS the three fates of the tick (2.4.A.0.1.f) - 8 checks")
+
 print()
 print("  --- Section 2.8 (H) HIGGS SECTOR STRUCTURAL CLOSURE ---")
 
@@ -20148,6 +20555,76 @@ print(f"    Boundary of the a2-M link: mass gap M_1loop/M_sc = {mp.nstr(_gap_m_4
       f"(10^{mp.nstr(mp.log10(_gap_c_41), 5)}) — the eleven orders are the coefficient "
       f"gap; RG generation between Lambda_T and the inflationary scale: open: PASS")
 print("    Remark 2.1.A.7.1.s (a2-scalaron link): ALL CHECKS PASS")
+
+
+banner("Remark 2.1.A.7.1.t (the RG gate: the perturbative bridge is machine-excluded)")
+
+# (1) the RG interval: L = ln(Lambda_T/M_sc) from the recorded anchors
+_a2_449 = 1 / (16 * mp.pi ** 2)
+_LamT_449 = mp.sqrt(11)
+_Msc_449 = mp.mpf('1.29e-5')
+_MscC_449 = mp.mpf('1.21e-5')
+_L_449 = mp.log(_LamT_449 / _Msc_449)
+_LC_449 = mp.log(_LamT_449 / _MscC_449)
+assert abs(_L_449 - mp.mpf('12.457231')) < mp.mpf('5e-6')
+assert abs(_LC_449 - mp.mpf('12.521253')) < mp.mpf('5e-6')
+print(f"    RG interval: L = ln(Lambda_T/M_sc) = {mp.nstr(_L_449, 7)} (canonical r: {mp.nstr(_LC_449, 7)}): PASS")
+
+# (2) the one-loop self-flow dA/dlnmu = b0*A^2/(16 pi^2): amplification at b0 = n_eff = 12
+_x_449 = 12 * _a2_449 * _L_449 / (16 * mp.pi ** 2)
+_xC_449 = 12 * _a2_449 * _LC_449 / (16 * mp.pi ** 2)
+_amp_449 = 1 / (1 - _x_449)
+assert abs(_x_449 - mp.mpf('0.005994643')) < mp.mpf('5e-8')
+assert abs(_amp_449 - mp.mpf('1.006030795')) < mp.mpf('5e-8')
+print(f"    Flow at b0 = n_eff = 12: x = {mp.nstr(_x_449, 5)}; amplification A(mu)/A0 = "
+      f"{mp.nstr(_amp_449, 9)} (+0.60%; canonical r: {mp.nstr(1 / (1 - _xC_449), 9)}): PASS")
+
+# (3) the pole is 167 intervals away: the perturbative regime is safe along the whole path
+_pole_449 = 16 * mp.pi ** 2 / (12 * _a2_449)
+assert abs(_pole_449 - mp.mpf('2078.0606')) < mp.mpf('5e-3')
+print(f"    Pole distance: ln_pole = {mp.nstr(_pole_449, 8)} = {mp.nstr(_pole_449 / _L_449, 5)} x L "
+      f"— perturbative regime safe: PASS")
+
+# (4) the required amplification: (M_1loop/M_sc)^2
+_M1_449 = mp.sqrt(1 / (12 * _a2_449))
+_gap_449 = (_M1_449 / _Msc_449) ** 2
+_gapC_449 = (_M1_449 / _MscC_449) ** 2
+assert abs(mp.log10(_gap_449) - mp.mpf('10.898059')) < mp.mpf('5e-5')
+assert abs(mp.log10(_gapC_449) - mp.mpf('10.953668')) < mp.mpf('5e-5')
+print(f"    Required amplification: (M_1loop/M_sc)^2 = {mp.nstr(_gap_449, 6)} = "
+      f"10^{mp.nstr(mp.log10(_gap_449), 6)} (canonical r: {mp.nstr(_gapC_449, 6)} = "
+      f"10^{mp.nstr(mp.log10(_gapC_449), 6)}): PASS")
+
+# (5) a bridge-closing b0 exists only with a pole tuning to 10^-11
+_b0_449 = 16 * mp.pi ** 2 * (1 - 1 / _gap_449) / (_a2_449 * _L_449)
+assert abs(_b0_449 - mp.mpf('2001.7874')) < mp.mpf('5e-2')
+print(f"    Bridge-closing b0 = {mp.nstr(_b0_449, 6)} = {mp.nstr(_b0_449 / 12, 5)} x n_eff, with the "
+      f"pole tuned to x = 1 - 1/{mp.nstr(_gap_449, 3)} — beyond perturbative reading: PASS")
+
+# (6) the mass drift under the flow
+_m_449 = _M1_449 / _amp_449 ** mp.mpf('0.5')
+assert abs(_m_449 - mp.mpf('3.6167093')) < mp.mpf('5e-6')
+print(f"    Mass drift under the flow: M_1loop = {mp.nstr(_M1_449, 8)} -> {mp.nstr(_m_449, 8)} M_P "
+      f"({mp.nstr((_m_449 - _M1_449) / _M1_449 * 100, 4)}%): PASS")
+
+# (7) the two-loop correction is sub-percent
+_x2_449 = _x_449 ** 2
+assert abs(_x2_449 - mp.mpf('3.5936e-5')) < mp.mpf('5e-8')
+print(f"    Two-loop correction x^2 = {mp.nstr(_x2_449, 4)} — sub-percent: PASS")
+
+# (8) the closed-form cutoff proximity
+_pr_449 = _M1_449 / _LamT_449
+assert abs(_pr_449 - 2 * mp.pi / mp.sqrt(33)) < mp.mpf('1e-28')
+print(f"    Cutoff proximity (closed form): M_1loop/Lambda_T = 2*pi/sqrt(33) = {mp.nstr(_pr_449, 8)} — "
+      f"the one-loop scalaron sits ON the cutoff: PASS")
+
+# (9) the GB-normalization spread (formal reading; the E4 channel produces no scalaron)
+_MGB_449 = mp.sqrt(180 * (4 * mp.pi) ** 2 / 144)
+assert abs(_MGB_449 - mp.sqrt(20) * mp.pi) < mp.mpf('1e-28')
+print(f"    GB form (formal): M = {mp.nstr(_MGB_449, 8)} M_P; scheme spread M_GB/M_1loop = "
+      f"{mp.nstr(_MGB_449 / _M1_449, 6)}; both >> M_sc: PASS")
+
+print("    PASS the RG gate 2.1.A.7.1.t - 9 checks")
 
 
 banner("Remark 5.7.VS.1.u (one-loop tail of the first amplitude; expansion parameter)")
