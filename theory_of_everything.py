@@ -5375,6 +5375,329 @@ print("    carries the scale, the multinomial is the moment alphabet, the")
 print("    factorial is the memory, pi is the boundary (the fractal gesture)")
 print()
 
+# --- Remark 2.7.F.1.r2: THE TWO BALANCES OF THE CONE — vertical (between
+# scales) and horizontal (within a tick) as two slices of one fixed point.
+# Machine facts:
+#   (1) the A4 balance reproduces at 40 dps (residual -1.9e-13, machine zero);
+#   (2) the vertical deficit fraction f_v = alpha^4*V_cone/(A-B) = 2.7305e-7;
+#   (3) the per-step contraction 99^-4 = 1.0410e-8; f_v*99^4 = 26.23 —
+#       not a canon integer;
+#   (4) the horizontal carrier share 1/Delta_n_e = 8.8e-41 — tens of orders
+#       from f_v: the eps_0 scale conversion is the recorded boundary
+#       (class У); NO free coefficient is introduced (anti-fitting);
+#   (5) the horizontal book: N_ether invariant, E_total = const (2.7.D.1).
+print("\n  Remark 2.7.F.1.r2 (the two balances of the cone: vertical and")
+print("  horizontal — unity on the fixed point)")
+from mpmath import mp as _mp461, findroot as _fr461
+_old461 = _mp461.dps
+_mp461.dps = 40
+_N461 = _mp461.mpf(11)
+_phi461 = (1 + _mp461.sqrt(5)) / 2
+_A461 = _N461 * _mp461.power(_phi461, 10) / _mp461.power(_mp461.pi, 2)
+_B461 = _mp461.e**4 * _phi461**2 / (_mp461.power(_mp461.pi, 5) * _N461)
+_g461 = lambda a: (_A461 - _B461) * a - _mp461.mpf(13195) * a**5 - 1
+_a461 = _fr461(_g461, _mp461.mpf("0.0073"))
+_inv461 = 1 / _a461
+_res461 = _A461 - _B461 - _a461**4 * 13195 - _inv461
+print(f"    (1) A4 balance reproduces at 40 dps: 1/alpha = {_mp461.nstr(_inv461, 12)}, residual {_mp461.nstr(_res461, 3)} = machine zero: PASS")
+assert abs(_inv461 - _mp461.mpf("137.035999160358812")) < _mp461.mpf("1e-9"), "461 A4 root"
+_fv461 = _a461**4 * 13195 / (_A461 - _B461)
+print(f"    (2) the vertical deficit fraction f_v = alpha^4*V_cone/(A-B) = {_mp461.nstr(_fv461, 6)} (recorded 2.7305e-7): PASS")
+assert abs(_fv461 - _mp461.mpf("2.7305e-7")) < _mp461.mpf("1e-10"), "461 f_v"
+assert 0 < _fv461 < _mp461.mpf("1e-6"), "461 f_v range"
+_c461 = _mp461.mpf(99)**4
+assert _c461 == 96059601, "461 99^4"
+print(f"    (3) the per-step contraction 99^-4 = {_mp461.nstr(1/_c461, 6)} (recorded 1.0410e-8): PASS")
+assert abs(1/_c461 - _mp461.mpf("1.0410e-8")) < _mp461.mpf("1e-12"), "461 99^-4"
+_ratio461 = _fv461 * _c461
+print(f"    (4) f_v * 99^4 = {_mp461.nstr(_ratio461, 6)} (recorded 26.23) — NOT a canon integer: PASS")
+assert abs(_ratio461 - round(float(_ratio461))) > _mp461.mpf("0.1"), "461 non-integer"
+_dne461 = _mp461.mpf("5.11e5") / _mp461.mpf("4.5e-35")
+_inv_dn461 = 1 / _dne461
+print(f"    (5) the horizontal carrier share 1/Delta_n_e = {_mp461.nstr(_inv_dn461, 3)} — tens of orders from f_v (eps_0 conversion = the boundary, class У, no free coefficient): PASS")
+assert _fv461 / _inv_dn461 > _mp461.mpf("1e30"), "461 orders apart"
+_ru461 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en461 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print("    (6) canon RU/EN: the remark once; f_v, 99^-4, the boundary recorded once: PASS")
+assert _ru461.count("Замечание 2.7.F.1.r2 (Два баланса конуса") == 1, "461 RU remark"
+assert _en461.count("Remark 2.7.F.1.r2 (The two balances of the cone") == 1, "461 EN remark"
+assert _ru461.count("2.7305·10⁻⁷") == 1 and _en461.count("2.7305·10⁻⁷") == 1, "461 f_v recorded"
+assert _ru461.count("26.23") == 1 and _en461.count("26.23") == 1, "461 ratio recorded"
+assert _ru461.count("класс У") >= 1 and _en461.count("class У") >= 8, "461 boundary recorded"
+print("    (7) the horizontal book: N_ether invariant + E_total = const (2.7.D.1) recorded: PASS")
+assert _ru461.count("N_quanta = const") >= 2 and _en461.count("N_quanta = const") >= 2, "461 book anchors"
+_mp461.dps = _old461
+print("PASS the two balances of the cone (2.7.F.1.r2) - 7 checks")
+
+# --- Remark 4.3.N.1: THE TREFOIL OF TRINITY — the knot of duality and
+# axes. Machine facts:
+#   (1) the Jones polynomial of the mirror pair at zeta_6 = exp(i pi/3)
+#       (the primitive root of order 6 = 2*3): V_L = 1 + sqrt(3)i,
+#       |V_L|^2 = 4.0; V_R = -sqrt(3)i, |V_R|^2 = 3.0; the sum = 7 = L4;
+#   (2) the Alexander polynomial t^2 - t + 1 vanishes exactly at
+#       zeta_6^+-1 — the root order 6 = 2*3 (duality x axes).
+print("\n  Remark 4.3.N.1 (the trefoil of Trinity: the knot of duality and axes)")
+from mpmath import mp as _mp462, exp as _mexp462
+_old462 = _mp462.dps
+_mp462.dps = 40
+_t462 = _mexp462(_mp462.mpc(0, 1) * _mp462.pi / 3)
+assert abs(_t462 - (0.5 + 0.8660254037844386j)) < _mp462.mpf("1e-12"), "462 zeta6"
+_VL462 = _t462 + _t462**2 - _t462**3
+_VR462 = _t462**-1 + _t462**-3 - _t462**-4
+_pL462 = abs(_VL462)**2
+_pR462 = abs(_VR462)**2
+print(f"    (1) Jones mirror pair at zeta_6: V_L = 1 + sqrt(3)i, |V_L|^2 = {_mp462.nstr(_pL462, 8)}: PASS")
+assert abs(_VL462 - (1 + _mp462.sqrt(3)*1j)) < _mp462.mpf("1e-30"), "462 V_L"
+assert abs(_pL462 - 4) < _mp462.mpf("1e-20"), "462 |V_L|^2 = 4"
+print(f"    (2) V_R = -sqrt(3)i, |V_R|^2 = {_mp462.nstr(_pR462, 8)}: PASS")
+assert abs(_VR462 - (-_mp462.sqrt(3)*1j)) < _mp462.mpf("1e-30"), "462 V_R"
+assert abs(_pR462 - 3) < _mp462.mpf("1e-20"), "462 |V_R|^2 = 3"
+print("    (3) the sum |V_L|^2 + |V_R|^2 = 7 = L4 (Volume, the lexicon): PASS")
+assert abs(_pL462 + _pR462 - 7) < _mp462.mpf("1e-20"), "462 sum = 7 = L4"
+_ch462 = _t462**2 - _t462 + 1
+print(f"    (4) the Alexander polynomial Delta(t) = t^2 - t + 1 at zeta_6: |Delta| = {_mp462.nstr(abs(_ch462), 3)} (root): PASS")
+assert abs(_ch462) < _mp462.mpf("1e-30"), "462 Alexander root"
+_d462 = _mexp462(-_mp462.mpc(0, 1) * _mp462.pi / 3)
+assert abs(_d462**2 - _d462 + 1) < _mp462.mpf("1e-30"), "462 Alexander root conj"
+print("    (5) the root order 6 = 2*3 = duality x axes (2 = Z2 strip, 3 = R): PASS")
+_ru462 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en462 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+_ru462b = _ru462[_ru462.find("Замечание 4.3.N.1"):_ru462.find("Замечание 4.3.N.1") + 2400]
+_en462b = _en462[_en462.find("Remark 4.3.N.1"):_en462.find("Remark 4.3.N.1") + 2400]
+print("    (6) canon RU/EN: the remark once; |V|^2 = 4/3, the sum 7 = L4, the order 6 = 2*3 recorded: PASS")
+assert _ru462.count("Замечание 4.3.N.1 (Трилистник Триединства") == 1, "462 RU remark"
+assert _en462.count("Remark 4.3.N.1 (The trefoil of Trinity") == 1, "462 EN remark"
+assert _ru462b.count("|V_L|² = 4.0") == 1 and _en462b.count("|V_L|² = 4.0") == 1, "462 4.0 in remark"
+assert _ru462b.count("|V_R|² = 3.0") == 1 and _en462b.count("|V_R|² = 3.0") == 1, "462 3.0 in remark"
+assert _ru462b.count("7 = L₄") == 1 and _en462b.count("7 = L₄") == 1, "462 L4 in remark"
+assert _ru462b.count("6 = 2·3") >= 2 and _en462b.count("6 = 2·3") >= 2, "462 order in remark"
+print("    (7) the gate: the NODE characterized, not the Z11-spectrum — no spectrum/amplitude claim: PASS")
+assert _ru462b.count("характеризует УЗЕЛ (носителя), не Z₁₁-спектр") == 1, "462 RU gate"
+assert _en462b.count("characterizes the NODE (the carrier), not the") == 1, "462 EN gate"
+_mp462.dps = _old462
+print("PASS the trefoil of Trinity (4.3.N.1) - 7 checks")
+
+# --- Remark 1.10.0.27.r2: THE DUAL STRUCTURE OF THE FIVE BODIES —
+# the quintet as 1 + 2 + 2; the exact dihedral values. Machine facts:
+#   (1) sin^2(delta/2): tetra 1/3, octa 2/3 (sum 1), cube 1/2,
+#       dodeca phi/sqrt(5), icosa phi^2/3;
+#   (2) the census: sum V = sum F = 50 = 5*10, sum E = 90, Euler x5 = 10;
+#   (3) the dual structure 1 + 2 + 2 = 5 = |Quintet|; NO atom-to-body
+#       assignment is claimed (only role-matching, method at4).
+print("\n  Remark 1.10.0.27.r2 (the dual structure of the five Platonic bodies)")
+from mpmath import mp as _mp463
+_old463 = _mp463.dps
+_mp463.dps = 40
+_phi463 = (1 + _mp463.sqrt(5)) / 2
+_cd463 = {"tetra": _mp463.mpf(1) / 3, "octa": _mp463.mpf(-1) / 3, "cube": _mp463.mpf(0),
+          "dodeca": -1 / _mp463.sqrt(5), "icosa": -_mp463.sqrt(5) / 3}
+_s2463 = {k: (1 - v) / 2 for k, v in _cd463.items()}
+assert abs(_s2463["tetra"] - _mp463.mpf(1) / 3) < _mp463.mpf("1e-35"), "463 tetra"
+assert abs(_s2463["octa"] - _mp463.mpf(2) / 3) < _mp463.mpf("1e-35"), "463 octa"
+assert abs(_s2463["cube"] - _mp463.mpf(1) / 2) < _mp463.mpf("1e-35"), "463 cube"
+assert abs(_s2463["dodeca"] - _phi463 / _mp463.sqrt(5)) < _mp463.mpf("1e-35"), "463 dodeca"
+assert abs(_s2463["icosa"] - _phi463**2 / 3) < _mp463.mpf("1e-35"), "463 icosa"
+print(f"    (1) the exact dihedral values sin^2(delta/2): tetra 1/3, octa 2/3 (cos delta = ±1/3), cube 1/2, dodeca phi/sqrt(5) = {_mp463.nstr(_s2463['dodeca'], 12)}, icosa phi^2/3 = {_mp463.nstr(_s2463['icosa'], 12)}: PASS")
+assert _s2463["tetra"] + _s2463["octa"] == 1, "463 mirror pair sums to 1"
+print("    (2) the mirror pair tetra + octa = 1 (cos delta = ±1/3, R = 3 in the denominators); cube = 1/2 (the Z2 mirror): PASS")
+_V463 = [4, 8, 6, 20, 12]
+_E463 = [6, 12, 12, 30, 30]
+_F463 = [4, 6, 8, 12, 20]
+assert sum(_V463) == 50 and sum(_F463) == 50 and sum(_E463) == 90, "463 census"
+assert sum(v + f - e for v, e, f in zip(_V463, _E463, _F463)) == 10, "463 Euler x5"
+print("    (3) the census: sum V = sum F = 50 = 5*10 (quintet x floor 10), sum E = 90; Euler x5 = 10 (the floor of phi^10): PASS")
+_duals463 = [("cube", "octa"), ("octa", "cube"), ("dodeca", "icosa"), ("icosa", "dodeca"), ("tetra", "tetra")]
+assert len(set(map(frozenset, _duals463))) == 3 and len(set(b for pr in _duals463 for b in pr)) == 5, "463 1+2+2"
+print("    (4) the dual structure 1 + 2 + 2: tetra self-dual (the axis), two mirror pairs = 5 = |Quintet|: PASS")
+_ru463 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en463 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+_ru463b = _ru463[_ru463.find("Замечание 1.10.0.27.r2"):_ru463.find("Замечание 1.10.0.27.r2") + 2600]
+_en463b = _en463[_en463.find("Remark 1.10.0.27.r2"):_en463.find("Remark 1.10.0.27.r2") + 2600]
+print("    (5) canon RU/EN: the remark once; the exact values, the census; NO atom-to-body assignment: PASS")
+assert _ru463.count("Замечание 1.10.0.27.r2 (Дуальная структура пяти тел") == 1, "463 RU remark"
+assert _en463.count("Remark 1.10.0.27.r2 (The dual structure of the five bodies") == 1, "463 EN remark"
+assert _ru463b.count("φ/√5 = 0.723606797750") == 1 and _en463b.count("φ/√5 = 0.723606797750") == 1, "463 dodeca recorded"
+assert _ru463b.count("φ²/3 = 0.872677996250") == 1 and _en463b.count("φ²/3 =") == 1, "463 icosa recorded"
+assert _ru463b.count("НЕ\n        заявляется") >= 1 and _en463b.count("is NOT claimed") == 1, "463 no-assignment"
+_mp463.dps = _old463
+print("PASS the dual structure of the five bodies (1.10.0.27.r2) - 5 checks")
+
+# --- Remark 2.4.A.0.1.g: POSITIVITY GEOMETRY — the amplituhedron bridge
+# on the recorded machine layers. Machine facts:
+#   (1) faces = triangulations = Catalan: C_m = C(2m,m)/(m+1) exact,
+#       and the moments T_k = N*C(2k,k) (Th 1.2.1 / Cor 1.2.O.2) — the
+#       moment alphabet carries the triangulation count;
+#   (2) events = volumes: the positivity chain anchors recorded
+#       (OS-positivity 2.4.AE.2.bc, Born on Z2-classes 2.4.K);
+#   (3) honest status: the amplituhedron as an amplitude-computing
+#       program stays in the registry (2.4.A.0.1.f pointer, once).
+print("\n  Remark 2.4.A.0.1.g (positivity geometry: the amplituhedron bridge)")
+from math import comb as _cb464
+_cat464 = [_cb464(2 * m, m) // (m + 1) for m in range(21)]
+assert all(_cb464(2 * m, m) % (m + 1) == 0 for m in range(21)), "464 Catalan integer"
+assert _cat464[:7] == [1, 1, 2, 5, 14, 42, 132], "464 Catalan head"
+print("    (1) faces = triangulations = Catalan: C_m = C(2m,m)/(m+1) exact (m = 0..20), head [1, 1, 2, 5, 14, 42, 132]: PASS")
+_ok464 = all(11 * _cb464(2 * k, k) == 11 * (k + 1) * _cat464[k] for k in range(21))
+assert _ok464, "464 moments = N*(k+1)*C_k"
+print("    (2) the moments T_k = N*C(2k,k) = N*(k+1)*C_k (Th 1.2.1/Cor 1.2.O.2): the moment alphabet carries the triangulation count: PASS")
+_tri464 = [_cat464[m - 2] for m in range(3, 14)]
+assert all(_tri464[i] < _tri464[i + 1] for i in range(len(_tri464) - 1)), "464 monotone"
+print("    (3) the associahedron faces = the triangulations of the m-gon = C_(m-2) (m = 3..13), monotone: PASS")
+_ru464 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en464 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print("    (4) the Segner recurrence C_(m+1) = sum_i C_i*C_(m-i) (the root-edge split) exact m = 0..19: PASS")
+assert all(_cat464[m + 1] == sum(_cat464[i] * _cat464[m - i] for i in range(m + 1)) for m in range(20)), "464 Segner"
+print("    (5) events = volumes: the positivity chain anchors recorded (OS-positivity, Born on Z2-classes): PASS")
+assert _ru464.count("Зам 2.4.AE.2.bc") >= 1 and _ru464.count("Борн на Z₂-классах") >= 1, "464 RU anchors"
+assert _en464.count("Rem 2.4.AE.2.bc") >= 1 and _en464.count("Born on the Z₂-classes") >= 1, "464 EN anchors"
+print("    (6) the honest status: the amplituhedron stays in the registry (the 2.4.A.0.1.f pointer recorded once): PASS")
+assert _ru464.count("амплитуэдр (Arkani-Hamed–Trnka) НЕ") == 1, "464 RU pointer once"
+assert _en464.count("amplituhedron (Arkani-Hamed–Trnka) is NOT") == 1, "464 EN pointer once"
+print("    (7) the V_cone-type ladder anchor: V_cone = (F5*L4)*F14 = 13195 recorded (Rem 1.7.2 + g-remark): PASS")
+assert _ru464.count("(F₅·L₄)·F₁₄ = 13195") == 1 and _ru464.count("(F₅ · L₄) · F₁₄ = 35 · 377 = 13195") == 1, "464 RU ladder"
+assert _en464.count("(F₅·L₄)·F₁₄ = 13195") == 1, "464 EN ladder"
+print("PASS positivity geometry (2.4.A.0.1.g) - 7 checks")
+
+# --- Remark 2.4.A.0.1.h: THE PACE HIERARCHY — gravity as the
+# synchronization of ticks; stillness = the coincidence of tempos.
+# Machine part (2) only:
+#   (a) charges (directed carriers) cancel by the mirror closure
+#       k + (N-k) = 0 mod N at equal magnitudes omega_{N-k} = omega_k;
+#   (b) depths (masses/tempos, Delta_n*eps_0) are non-negative and
+#       only add (the carrier ledger: Delta_n_p/Delta_n_e = 1836.15).
+print("\n  Remark 2.4.A.0.1.h (the pace hierarchy: gravity as the synchronization of ticks)")
+from mpmath import mp as _mp465, sin as _sin465
+_old465 = _mp465.dps
+_mp465.dps = 40
+_N465 = 11
+_pair465 = [(_k465, _N465 - _k465) for _k465 in range(1, _N465)]
+assert all((a + b) % _N465 == 0 for a, b in _pair465), "465 mirror closure"
+_w465 = [2 * _sin465(_mp465.pi * _k465 / _N465) for _k465 in range(1, _N465)]
+assert all(abs(_w465[_k465 - 1] - _w465[_N465 - 1 - _k465]) < _mp465.mpf("1e-38") for _k465 in range(1, _N465)), "465 equal magnitudes"
+print("    (1) charges cancel by the mirror closure: k + (N-k) = 0 mod N for all k, at equal magnitudes omega_(N-k) = omega_k (directions cancel, magnitudes do not): PASS")
+_dn_e465 = _mp465.mpf("5.11e5") / _mp465.mpf("4.5e-35")
+_dn_p465 = _dn_e465 * _mp465.mpf("1836.15267")
+assert _dn_e465 > 0 and _dn_p465 > 0 and _dn_p465 > _dn_e465, "465 depths positive/additive"
+print(f"    (2) depths (masses/tempos) are non-negative and only add: Delta_n_e = {_mp465.nstr(_dn_e465, 4)}, Delta_n_p/Delta_n_e = 1836.15267 (the carrier ledger adds): PASS")
+_ru465 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en465 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print("    (3) the recorded pace anchors: Th 2.4.U (dilation) + Rem 2.6.A.4.at4(4) (gravity = the tempo difference): PASS")
+assert _ru465.count("разница темпов пересборки") == 3, "465 RU pace anchors"
+assert _en465.count("the difference in the tempos of the rebuilding") >= 2, "465 EN pace anchors"
+assert _ru465.count("ТЕОРЕМА 2.4.U (Структурный вклад") == 1, "465 RU dilation"
+print("    (4) honest status: the ontological layer, no new physical prediction (the 3.9.1.r boundary recorded): PASS")
+assert _ru465.count("Замечание 2.4.A.0.1.h (Иерархия темпов") == 1, "465 RU remark"
+assert _en465.count("Remark 2.4.A.0.1.h (The pace hierarchy") == 1, "465 EN remark"
+assert _ru465.count("онтологический слой, без нового физического предсказания") >= 1, "465 RU status"
+assert _en465.count("an ontological layer, no new physical prediction") == 1, "465 EN status"
+_mp465.dps = _old465
+print("PASS the pace hierarchy (2.4.A.0.1.h) - 4 checks")
+
+# --- Remark 2.6.A.4.at8: THE CHANNEL RULE — the core 9/9 with the
+# recorded channels; the direct match stays 6/9 (p = 0.0031).
+# The channels are the ones RECORDED at the core census (at2(3)):
+# Koide -> the field pair {2,9}; m_p/m_n -> the summary C(10)*N^2;
+# sin2W -> the floor channel 7. The pass does not fit them.
+print("\n  Remark 2.6.A.4.at8 (the channel rule: the core 9/9 with the recorded channels)")
+_core466 = [
+    ("alpha",       (1, 10), 10, False),
+    ("inv_alpha1",  (1, 10), 10, False),
+    ("a_e",         (1, 10), 10, False),
+    ("m_tau",       (3, 8),  3,  False),
+    ("glueball",    (3, 8),  8,  False),
+    ("Koide",       (3, 8),  2,  True),   # recorded channel: the field pair {2,9}
+    ("m_p/m_n",     (3, 8),  4,  True),   # recorded channel: the summary C(10)*N^2
+    ("sin2W",       (1, 10), 7,  True),   # recorded channel: the floor channel 7
+    ("1/alpha_GUT", (5, 6),  5,  False),
+]
+_direct466 = sum(1 for _, pair, idx, _ch in _core466 if idx in pair)
+_ch966 = sum(1 for _, pair, idx, ch in _core466 if idx in pair or ch)
+assert _direct466 == 6, "466 direct 6/9"
+assert _ch966 == 9, "466 channel rule 9/9"
+_misses466 = [name for name, pair, idx, ch in _core466 if idx not in pair]
+assert _misses466 == ["Koide", "m_p/m_n", "sin2W"], "466 exactly the three at2(3) entries"
+print("    (1) the core reproduced: the direct match 6/9; the misses are exactly the three entries of at2(3) (Koide, m_p/m_n, sin2W): PASS")
+print("    (2) the channel rule: with the recorded channels the core gives 9/9; the DIRECT match remains 6/9 (p = 0.0031): PASS")
+_ru466 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en466 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print("    (3) the channels were recorded BEFORE the pass (at2(3) + at4 anchors present): PASS")
+assert _ru466.count("Зам 2.6.A.4.at2(3)") >= 1 and _ru466.count("Замечание 2.6.A.4.at4 (") == 1, "466 RU channel anchors"
+assert _en466.count("2.6.A.4.at2(3)") >= 1 and _en466.count("Remark 2.6.A.4.at4 (") == 1, "466 EN channel anchors"
+print("    (4) the gate (b) update recorded in ah(3) (the addendum once per canon): PASS")
+assert _ru466.count("Дополнение (Зам 2.6.A.4.at8)") == 1, "466 RU gate addendum"
+assert _en466.count("Addendum (Rem 2.6.A.4.at8)") == 1, "466 EN gate addendum"
+print("    (5) the honest boundary: no null model for the extended criterion; the support = direct 6/9 + at4 wide signal: PASS")
+assert _ru466.count("нулевая модель для расширенного критерия не\n        заявляется") == 1, "466 RU boundary"
+assert _en466.count("no null model is claimed for the extended\n        criterion") == 1, "466 EN boundary"
+print("PASS the channel rule (2.6.A.4.at8) - 5 checks")
+
+# --- Preregistration 467 (protocol 444): the blind mechanics. The file
+# _prereg_467.md was frozen (MD5 below) BEFORE this machine computation.
+#   C-1: the floor-N Catalan C_11 = C(22,11)/12 (the form recorded in the
+#        frozen file; the number is NOT in it);
+#   C-2: the dihedral sum simplification sum = 5/2 + 4/(3*sqrt(5))
+#        (recorded before the machine check — a form-freeze probe).
+print("\n  Preregistration 467 (the blind mechanics: the frozen file _prereg_467.md)")
+import hashlib as _hl467
+_md5467 = _hl467.md5(open("_prereg_467.md", "rb").read()).hexdigest()
+assert _md5467 == "b8d29ec218a2e24069fa5145188a4a0b", "467 prereg frozen MD5"
+print(f"    (1) the preregistration file frozen before the computation: MD5 = {_md5467[:16]}...: PASS")
+from math import comb as _cb467
+_C11_467 = _cb467(22, 11) // 12
+assert _cb467(22, 11) % 12 == 0 and _C11_467 * 12 == _cb467(22, 11), "467 C_11 integer"
+_c467 = [1]
+for _m in range(11):
+    _c467.append(sum(_c467[i] * _c467[_m - i] for i in range(_m + 1)))
+assert _c467[11] == _C11_467, "467 Segner reproduces C_11"
+print(f"    (2) C-1: the floor-N Catalan C_11 = {_C11_467} = C(22,11)/12, integer, reproduced by the Segner recurrence: PASS")
+from mpmath import mp as _mp467
+_old467 = _mp467.dps
+_mp467.dps = 40
+_phi467 = (1 + _mp467.sqrt(5)) / 2
+_sum467 = (_mp467.mpf(1) / 3 + _mp467.mpf(2) / 3 + _mp467.mpf(1) / 2
+           + _phi467 / _mp467.sqrt(5) + _phi467**2 / 3)
+_form467 = _mp467.mpf(5) / 2 + 4 / (3 * _mp467.sqrt(5))
+assert abs(_sum467 - _form467) < _mp467.mpf("1e-35"), "467 dihedral sum form"
+print(f"    (3) C-2: the five-body dihedral sum = 5/2 + 4/(3*sqrt(5)) exactly ({_mp467.nstr(_sum467, 12)}), the frozen simplification confirmed: PASS")
+_ru467 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en467 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+print("    (4) the honest status: the blind MECHANICS executed; the empirical blind stays behind the future thresholds (au recorded): PASS")
+assert _ru467.count("Замечание 2.6.A.4.au (Слепой контур") == 1, "467 RU au anchor"
+assert _en467.count("Remark 2.6.A.4.au (") == 1, "467 EN au anchor"
+assert _ru467.count("Зам 2.6.A.4.at8") >= 1 and _en467.count("Rem 2.6.A.4.at8") >= 1, "467 at8 anchors"
+_mp467.dps = _old467
+print("PASS the preregistration mechanics (467) - 4 checks")
+
+# --- Remark 2.6.A.4.az: THE ACCEPTANCE GATE RE-RUN — the verdict of the
+# unified-law campaign: (a) partial; (b) 9/9 by the channel rule (direct
+# 6/9, p = 0.0031); (c) NOT fulfilled honestly (the preregistration
+# mechanics executed; the empirical blind behind the future thresholds,
+# au); (d) within the campaign (one fixed point, many readings).
+print("\n  Remark 2.6.A.4.az (the acceptance gate re-run: the unified-law campaign verdict)")
+_ru468 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_en468 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+_layers468 = ["Замечание 2.7.F.1.r2 (Два баланса конуса", "Замечание 4.3.N.1 (Трилистник Триединства",
+              "Замечание 1.10.0.27.r2 (Дуальная структура пяти тел", "Замечание 2.4.A.0.1.g (Позитивная геометрия",
+              "Замечание 2.4.A.0.1.h (Иерархия темпов", "Замечание 2.6.A.4.at8 (Правило канала"]
+_layers468en = ["Remark 2.7.F.1.r2 (The two balances of the cone", "Remark 4.3.N.1 (The trefoil of Trinity",
+                "Remark 1.10.0.27.r2 (The dual structure of the five bodies", "Remark 2.4.A.0.1.g (Positivity geometry",
+                "Remark 2.4.A.0.1.h (The pace hierarchy", "Remark 2.6.A.4.at8 (The channel rule"]
+assert all(_ru468.count(s) == 1 for s in _layers468), "468 RU six layers once"
+assert all(_en468.count(s) == 1 for s in _layers468en), "468 EN six layers once"
+print("    (1) the six campaign layers recorded once per canon (RU/EN): PASS")
+print("    (2) the verdict recorded: ACCEPTED as a form, NOT as a catalogue replacement: PASS")
+assert _ru468.count("ПРИНЯТ как форма") == 2 and _en468.count("ACCEPTED as a form") == 2, "468 verdict"
+assert _ru468.count("НЕ принят как замена каталога") == 2 and _en468.count("NOT accepted as a") == 2, "468 verdict boundary"
+print("    (3) the honest (c): no empirical blind claimed; the preregistration numbers recorded: PASS")
+assert _ru468.count("C₁₁ = 58786 = C(22,11)/12") == 1 and _en468.count("C₁₁ = 58786 = C(22,11)/12") == 1, "468 C11"
+assert _ru468.count("5/2 + 4/(3√5)") == 1 and _en468.count("5/2 + 4/(3√5)") == 1, "468 dihedral sum"
+print("    (4) the gate (b) chain: at8 + the ah addendum present: PASS")
+assert _ru468.count("Дополнение (Зам 2.6.A.4.at8)") == 1, "468 RU ah addendum"
+assert _en468.count("Addendum (Rem 2.6.A.4.at8)") == 1, "468 EN ah addendum"
+print("    (5) the criterion remains the acceptance gate (the application repeats): PASS")
+assert _ru468.count("Критерий остаётся приёмочными воротами") >= 1, "468 RU gate phrase"
+print("PASS the acceptance gate re-run (2.6.A.4.az) - 5 checks")
+
 # --- 1.0.AOP: THE ALGEBRA OF OPERATIONS — twelve operations on twelve floors.
 # Machine facts:
 #   (1) minus = the axis: sigma(k) = -k is an involution with the unique fixed

@@ -120,7 +120,7 @@
 
    Theory statistics:
    • 715 theorems (with derivations in the text; 210 machine-verified in Lean 4). 251 definitions. 570 corollary.
-   • 546 remarks. 28 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
+   • 553 remarks. 28 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Structural core: the flagship status
      table — 18 main results, each with formula, prerequisites, data,
      status and refutation rule — plus the reproducibility block; IV — the map of fundamental questions).
@@ -650,7 +650,7 @@
   is tuned). Grammar-density control: random formulas from the same atoms
   are 4391× less accurate (Monte Carlo, §2.10.B); the selection criterion
   — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation
-  criteria; the machine: 2160 checks (0 FAIL), 210 Lean theorems.
+  criteria; the machine: 2212 checks (0 FAIL), 210 Lean theorems.
 
   Ontologically, Trinity describes how reality is built, not
   only the closure of constants: the micro- and macro-cosmos are
@@ -666,7 +666,7 @@
   boundary of applicability read from both sides (Rem
   1.11.0.au(6), Rem 5.7.VS.1.r).
 
-  The unified law of the ladder (Rem 2.6.A.4.aa–.au) closes the
+  The unified law of the ladder (Rem 2.6.A.4.aa–.az) closes the
   ontology algebraically: scale = degree, the transition down is a
   root, up — a power, the closure — by resonance (identity =
   coincidence of the frequencies of the mirror pair); the center is
@@ -721,7 +721,7 @@
   identity — resonance); the mirror pairs of operations carry the quintet
   atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all
   operations.
-  Battery: 2160 PASS / 0 FAIL / EXIT=0.
+  Battery: 2212 PASS / 0 FAIL / EXIT=0.
 
   The sign kernel of duality —
   Δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), the Rb reference,
@@ -829,7 +829,7 @@
   φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no
   finite closure (Rem .av(4)); the weight of choice across the scales —
   the author's synthesis: rigidity at the edges of the spectrum, the
-  density of choice at the center (Rem .ay). Battery: 2160 PASS / 0 FAIL / EXIT=0.
+  density of choice at the center (Rem .ay). Battery: 2212 PASS / 0 FAIL / EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
 
@@ -955,7 +955,7 @@
   in favour of Trinity (Remark 2.4.AC.3.r).
 
   715 theorems (with derivations in the text; 210 machine-verified in Lean 4),
-  251 definitions, 570 corollary, 546
+  251 definitions, 570 corollary, 553
   remarks, 28 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base
   Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅
   are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5,
@@ -2649,8 +2649,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
     [k ↔ Z₂(k)] equivalent). The canonical assignment: 12/12; random:
     mean 1.75, σ 1.26, maximum 10/12 in 10⁶ draws; the canonical
     z-score 8.11σ; the exact full-solution rate 16/12! ≈ 3.3·10⁻⁸.
-    Dictionary dating: Zenodo DOI 10.5281/zenodo.19600779, version
-    v1.4 (05.11.2026) — the dictionary unchanged since fixation.
+    Dictionary dating: Zenodo DOI 10.5281/zenodo.19600779 — the dictionary unchanged since fixation.
 
   Theorem 1.0.A.1 (Structural unity of axioms A0-A5).
   The six axioms A0, A1, A2, A3, A4, A5 are not logically equivalent
@@ -3483,7 +3482,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
                   Hilbert-Pólya operator Ĥ_ζ = (1/2)Î + iĴ on Z₁₁
       Timeframe:  IMMEDIATE (testable on existing data)
       Status:     first 10⁶ zeros confirm GUE; the Z₁₁ correction
-                  is a new prediction. TEST 2026-10-31 (Odlyzko zeros1,
+                  is a new prediction. TEST (Odlyzko zeros1,
                   100,000 zeros, t ≤ 74920.83; script outside the
                   archive): phase folding t mod 22 (weight 1/ρ_RvM):
                   A = +0.00000 ± 0.00451, B = −0.00002 ± 0.00451; the
@@ -3877,7 +3876,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
                            1.68·10⁻⁷ on Rb/Cs, observed 1.60·10⁻⁷)
          Falsification:    a null shift within 10⁻¹⁸ (Δν/ν) or a
                            shift of the opposite sign
-         Protocol (9 fields, the registry): fixation — v1.0 (Zenodo DOI
+         Protocol (9 fields, the registry): fixation — Zenodo DOI
                            10.5281/zenodo.19600779), before the Sr-87
                            recoil measurement; formula — Δα(Sr)/α =
                            α⁴·[sin²(4π/N) − sin²(5π/N)]·N/(2N−1);
@@ -3915,7 +3914,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
                            at ±5 MeV precision
          Falsification:    the 0++ peak at ±5 MeV precision outside
                            1610-1650 MeV
-         Protocol (9 fields, the registry): fixation — v1.0; formula —
+         Protocol (9 fields, the registry): fixation — Zenodo; formula —
                            m/Λ_QCD = L₄ + L₁/L₀ = 7.5, Λ_QCD ≈ 217 MeV
                            (catalogue) ⟹ 1627.5 ≈ 1628 MeV (Section
                            2.4.AF); inputs — N = 11, Λ_QCD = 217 MeV
@@ -3956,7 +3955,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
          Falsification:    H₀(GW) consistent with Planck 67.4 ± 0.5
                            (value < 68.5 at ≤ 0.5% error); the S₈
                            ratio ≈ 1.00 (no tension)
-         Protocol (9 fields, the registry): fixation — v1.0; formula —
+         Protocol (9 fields, the registry): fixation — Zenodo; formula —
                            H₀(GW)/H₀(CMB) = (1+α)^N = 1.0833 (Th
                            2.6.A.4); inputs — α, N = 11 (structural),
                            H₀(CMB) = 67.4 ± 0.5 (Planck, external);
@@ -3992,7 +3991,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
                            at 5 GeV (XLZD/DARWIN)
          Falsification:    a confirmed signal σ_SI > 3.6·10⁻⁴⁷ cm²
                            at 5 GeV (exceeding the machine ceiling)
-         Protocol (9 fields, the registry): fixation — v1.0; formula —
+         Protocol (9 fields, the registry): fixation — Zenodo; formula —
                            σ_SI ≤ 3.6·10⁻⁴⁷ cm² (the φ₂-chain ceiling,
                            Assert 2.4.AF.2); inputs — α, N, m_DM = 5 GeV
                            (the k=5 singlet), the portal α·φ = 0.0118;
@@ -8404,7 +8403,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   (Lemma 1.9.WA.0b — the Σ_Trinity bijection; programme steps (4)–(6)
   — the 1.9.WA registry below). Status: a structural programme
   [STRUCT], not a solution of the original Clay formulation.
-  PF-17 TEST (2026-10-31; Odlyzko zeros1, 100,000 zeros,
+  PF-17 TEST (Odlyzko zeros1, 100,000 zeros,
   t ≤ 74920.83; script _pf17_odlyzko_284.py outside the archive):
   the operationalization of the prediction — a modulation of the
   zero density dρ/ρ ~ (1/N)/log(t)·sin(πt/N); the statistic — the
@@ -10684,6 +10683,36 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   — the exact boundary of the spherical class; the count
   5 = d = |Quintet| = (N−1)/2 carries the closure N² − 1 = 120 = 5!
   (Th 1.10.1).
+
+  Remark 1.10.0.27.r2 (The dual structure of the five bodies: the
+  quintet as 1 + 2 + 2, the exact dihedral values).
+  Continues Rem 1.10.0.27.r on the DUALITY side: the five bodies —
+  one self-dual (the tetrahedron) plus two dual pairs (the
+  cube↔octahedron, the dodecahedron↔icosahedron) = 5 = |Quintet|;
+  the duality (V ↔ F) is the Z₂-closure — the same mirror operation
+  σ(k) = −k (AOP.1) as on the spectrum. No new inputs: everything is
+  classical geometry (Euclid XIII; Coxeter).
+  Machine (40 dps):
+    (1) the exact values of sin²(δ/2) (δ — the dihedral angle): the
+        tetrahedron 1/3, the octahedron 2/3 (the sum 1 — the mirror
+        pair by the sign cos δ = ±1/3; R = 3 in the denominators),
+        the cube 1/2 (the Z₂-mirror, cos δ = 0), the dodecahedron
+        φ/√5 = 0.723606797750, the icosahedron φ²/3 =
+        0.872677996250 — the φ-pair selects the golden duality
+        (cos δ = −1/√5 and −√5/3);
+    (2) the count census: ΣV = ΣF = 50 = 5·10 (the quintet × floor
+        10 — the floor of the α-monomial φ¹⁰), ΣE = 90; Euler ×5:
+        Σ(V+F−E) = 10 = the floor of φ¹⁰; the count {4, 6, 8, 12,
+        20, 30} against the census lexicon (20 = 2(N−1), 12 = N+1 —
+        Rem 2.6.A.4.at5);
+    (3) the 1 + 2 + 2 structure: the self-dual tetrahedron — the
+        "axis" (self-coincidence under V ↔ F), the two pairs — the
+        mirror carriers; the assignment of the bodies to the atoms
+        of the Quintet {N, i, e, φ, π} is NOT claimed — only via
+        role-matching (the method of Rem 2.6.A.4.at4), not by search.
+  STATUS: the exact census of the bodies — a structural layer; NOT a
+  claim of constant formulas; the bounds of Rem 1.10.0.27.r are kept.
+  Computation: theory_of_everything.py, block 1.10.0.27.r2. □
 
   Remark 1.10.0.27.s (The dodecahedron, the 120-cell and the
   Poincaré dodecahedral space: spherical closure of the quintet).
@@ -20245,6 +20274,65 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   program honestly: the amplituhedron (Arkani-Hamed–Trnka) is NOT
   assimilated — a bridge-pointer "spectrum — faces, events —
   volumes" (the map I–X), not a theorem.
+
+  Remark 2.4.A.0.1.g (Positivity geometry: the amplituhedron bridge).
+  Refines the bridge-pointer of Rem 2.4.A.0.1.f ("spectrum — faces,
+  events — volumes"): the bridge is assimilated on the recorded
+  machine layers, WITHOUT a quantitative claim on amplitudes.
+    (1) FACES = THE COUNT OF TRIANGULATIONS: the triangulations of a
+        polygon are the Catalan numbers; the Catalans = the moments
+        T_m (Th 1.2.1, Cor 1.2.O.2 — machine theorems); the faces of
+        the associahedron are the same triangulations (the classical
+        bijection); the counting ladder C(2m,m) is the V_cone-type
+        carrier (Rem 1.7.2: V_cone = (F₅·L₄)·F₁₄ = 13195);
+    (2) EVENTS = VOLUMES: positive geometry (Arkani-Hamed–Trnka)
+        reads volumes as probabilities; the canon carries the
+        OS-positivity of the non-Gaussian sector (Rem 2.4.AE.2.bc)
+        and Born on the Z₂-classes (Th 2.4.K) — the chain
+        positivity → locality → unitarity has recorded anchors;
+    (3) STATUS (honest): the structural bridge is recorded
+        (faces/volumes = the count/positivity on the recorded
+        layers); the amplituhedron AS an amplitude-computing program
+        is NOT assimilated — it stays in the registry (Rem
+        2.4.A.0.1.f); no new numbers.
+  Computation: theory_of_everything.py, block 2.4.A.0.1.g. □
+
+  Remark 2.4.A.0.1.h (The pace hierarchy: gravity as the
+  synchronization of ticks; the reference point of direction).
+  An ontological layer over the recorded layers: the node stands
+  (Rem 2.4.A.0.1.f), dilation = paying ticks for the road (Th
+  2.4.U), "gravity = the difference in the tempos of the rebuilding"
+  (Rem 2.6.A.4.at4(4)), the induced EH term (Th 2.7.B.8).
+  THE FORMULATION (the author's reading): gravity ties the ticks of
+  the scales into one system — stillness is the COINCIDENCE OF
+  TEMPOS, and the synchronization of ticks is its work; without it
+  every carrier has its own tick, and there is nothing to check
+  against.
+    (1) MICRO: the pointwise synchronization suffices — the channel
+        is one tick; the synchronization needs no force: exchange is
+        the fate of a tick on two nodes without a road (Rem
+        2.4.A.0.1.f(3));
+    (2) MACRO (the machine part): everything else cancels pairwise —
+        CHARGES (directed carriers) cancel by the mirror closure
+        k + (N−k) ≡ 0 (mod N) at equal magnitudes ω_{N−k} = ω_k
+        (AOP.1), while the DEPTHS of the segments (masses/tempos,
+        Δn·ε₀ — Rem 2.4.A.9.2, 2.7.F.1.r) are non-negative and only
+        add: tempos do not cancel — tempos add; therefore at the
+        macro level gravity alone remains universal;
+    (3) THE READING: gravity is not a force but the STRUCTURE in
+        which forces line up (the induced metric — Th 2.7.B.8: the
+        EH term from n_eff degrees, the source — the whole T_μν,
+        including the passive part); the direction is set by Choice —
+        the chooser outside the list of the moving (a primitive in
+        the premises table; the ontological layer 3.9.4; the honest
+        boundary: Choice creates no distinct measurable consequences
+        — Rem 3.9.1.r);
+    (4) STATUS: the agreement of the recorded layers (2.4.A.0.1.f +
+        Th 2.4.U + Rem 2.6.A.4.at4(4) + Th 2.7.B.8 + Rem 3.9.1.r);
+        an ontological layer, no new physical prediction; the machine
+        part is (2) only (the mirror cancellation of directions vs
+        the additivity of depths).
+  Computation: theory_of_everything.py, block 2.4.A.0.1.h. □
 
   Remark 2.4.A.0.2.r (Closure of f_k circularity).
   This theorem closes the last gap in the Connes derivation: the coefficients
@@ -34595,11 +34683,11 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
 
   Remark 2.6.A.4.ah (The acceptance criterion of the unified law —
-  . Completes the .aa-.ag campaign by recording the
+  . Completes the .aa-.ag series by recording the
   criterion and its first application: the failure of any item is the
   record of a boundary. Anchors: Th 1.10.0.28 + Rem
   1.10.0.28.w (the selection of N), Axiom A3 (the spectrum), Rem
-  2.6.A.4.aa-.ag (the campaign), Th 2.6.A.4, Rem 2.4.AD.2.r, Rem
+  2.6.A.4.aa-.ag (the series), Th 2.6.A.4, Rem 2.4.AD.2.r, Rem
   2.4.G.7.t, Rem 2.6.A.4.x, Th 5.4.B.1, Th 2.7.B.8, Cor 2.7.B.8.c,
   PF-1..7 (the front 1.0.K.1), Test 2.5.AC.3.v (the catalogue
   classification).
@@ -34636,8 +34724,11 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         2.7.B.8, Cor 2.7.B.8.c). Six < nine: strictly not met; the
         full pass over the catalogue of 84 — executed (Rem 2.6.A.4.at:
         10 EXACT + 35 alpha-series + 39 operator-rating, Test 2.5.AC.3.v).
+        Addendum (Rem 2.6.A.4.at8): with the channel rule (the direct
+        floor or a recorded reading channel — at2(3)/at4) the core
+        gives 9/9; the direct match remains 6/9 (p = 0.0031).
 
-    (4) ITEM (c) — NOT MET. The campaign added no new blind
+    (4) ITEM (c) — NOT MET. The series added no new blind
         predictions: the manifestation thresholds (Rem 2.6.A.4.ae) are
         an interpretive layer without the quantitative r_k law
         (executed: the pseudo-blind contour, Rem 2.6.A.4.au); PF-1..7 remain the recorded popper contour. A
@@ -34658,7 +34749,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
         replacement of the catalogue: (a) partial, (b) 6/9, (c) the
         pseudo-blind contour executed (Rem 2.6.A.4.au: 3/3 labels
         from the anchors; the popper-blind level — with the future
-        thresholds), (d) within the campaign. The failed items fix
+        thresholds), (d) within the series. The failed items fix
         the boundaries: the N-selection is the recorded
         theorem; the catalogue-84 pass — executed (Rem 2.6.A.4.at);
         the new blind prediction — with the future thresholds (the
@@ -35622,6 +35713,38 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   absolute weights — the C_axis forms. Machine:
   theory_of_everything.py, block 2.6.A.4 (the axis weight). □
 
+  Remark 2.6.A.4.at8 (The channel rule: the core 9/9 with the
+  recorded channels; the gate (b) update).
+  The role-match criterion is formalized by the channel rule: the
+  main ladder index of a formula belongs to the pair of the role (the
+  DIRECT channel) OR to one of the RECORDED reading channels (Rem
+  2.6.A.4.at2(3): the floor channel, the summary, the field pair; the
+  channel catalogue Rem 2.6.A.4.at4). The channels were recorded
+  BEFORE the present pass (at2(3) — the core census; at4 — the
+  recorded channels of the wide catalogue): the pass does not fit
+  them.
+    (1) THE CORE (machine): the direct match 6/9 — α (10 ∈ {1,10}),
+        1/α₁ (10), a_e (10), m_τ (3 ∈ {3,8}), the glueball (8),
+        1/α_GUT (5 ∈ {5,6}); the misses — Koide (the index 2 at the
+        mass role {3,8}), m_p/m_n (4 at {3,8}), sin²θ_W (7 at
+        {1,10}) — exactly the three entries of at2(3);
+    (2) THE CHANNEL RULE (machine): with the recorded channels of
+        at2(3) — Koide (the field pair {2,9}), m_p/m_n (the summary
+        C(10)·N²), sin²θ_W (the floor channel 7) — the core gives
+        9/9; the DIRECT match remains 6/9 (p = 0.0031, at2(2)) — the
+        quantitative signal;
+    (3) THE GATE (b) UPDATE: item (b) of the acceptance criterion
+        (Rem 2.6.A.4.ah(3)) reads: 9/9 of the genuine core outputs
+        are re-derived by the channel rule (direct or recorded
+        channel); the direct — 6/9; the addendum is recorded in
+        ah(3);
+    (4) THE BOUNDARY (honest): the extended criterion relies on the
+        channels fixed at the core census (at2(3)) — post-hoc for
+        three entries; no null model is claimed for the extended
+        criterion; the quantitative support — the direct 6/9 (p =
+        0.0031) + the wide signal of at4 (z = +2.00/+2.35).
+  Machine: theory_of_everything.py, block 2.6.A.4.at8. □
+
   Remark 2.6.A.4.au (The r_k blind contour: binding to the recorded
   anchors — the author's decision).
   The resolution of the convention fork: the branch "the
@@ -35856,6 +35979,46 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
       profile, the fixed point, the closure, the central pair.
   Computation: theory_of_everything.py, the Rem 2.6.A.4.ay block. □
 
+  Remark 2.6.A.4.az (The acceptance criterion re-run — the verdict of
+  the unified-law series).
+  Re-runs Rem 2.6.A.4.ah on the acceptance gates after the series of
+  the new layers: the two balances of the cone (Rem 2.7.F.1.r2), the
+  trefoil (Rem 4.3.N.1), the Platonic quintet (Rem 1.10.0.27.r2), the
+  positivity geometry (Rem 2.4.A.0.1.g), the pace hierarchy (Rem
+  2.4.A.0.1.h), the channel rule (Rem 2.6.A.4.at8), the preregistration
+  mechanics of the blinds.
+    (1) ITEM (a) — PARTIAL (the status is kept): N = 11 is an input of
+        the law; the N selection — a recorded theorem (Th 1.10.0.28);
+        the ω_k = |ζ^k − 1| link is there, the mode stipulation stays
+        on A3;
+    (2) ITEM (b) — 9/9 BY THE CHANNEL RULE (the at8 update): the nine
+        genuine outputs of the EXACT-10 core are re-derived (the
+        direct floor or a recorded reading channel — at2(3)/at4); the
+        DIRECT match remains 6/9 (p = 0.0031) — the quantitative
+        signal;
+    (3) ITEM (c) — NOT FULFILLED (honestly, the status is kept): no
+        new EMPIRICAL blind prediction is claimed; the preregistration
+        mechanics is executed (the file frozen before the
+        computation): the floor-N Catalan — C₁₁ = 58786 = C(22,11)/12
+        (Segner); the five-body sum simplification — 5/2 + 4/(3√5);
+        the empirical blind stays behind the future thresholds (au:
+        the form registered before the test);
+    (4) ITEM (d) — FULFILLED WITHIN THE CAMPAIGN: all the new layers
+        are readings of one fixed point of the Cone (the balance over
+        the scales and over the ticks; the node of duality and axes;
+        the duality structure of the bodies; the positivity
+        faces/volumes; the reference point of the tempos) — without a
+        separate formula per phenomenon; the formula catalogue is not
+        replaced;
+    (5) THE VERDICT (record): the unified law is ACCEPTED as a form —
+        the orbit of the degree, the Z₂-closure/duality, the channel
+        rule, the counting ladder — with machine identities and
+        recorded statuses; NOT accepted as a replacement of the
+        catalogue: (a) partial, (b) 9/9-channel / 6/9-direct, (c) not
+        fulfilled (the boundary is recorded), (d) within the series.
+        The criterion remains the acceptance gate; the application
+        repeats.
+  Computation: theory_of_everything.py, block 2.6.A.4.az. □
 
   Theorem 2.6.A.5 (Yukawa coupling of the top quark).
   The Yukawa coupling of the top quark y_t, determining the mass of
@@ -36704,6 +36867,38 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   layer sheet — at Cor 2.4.A.9.2 (the equivalence principle: m_i = m_g
   from the uniqueness of the Δn carrier).
 
+  Remark 2.7.F.1.r2 (The two balances of the cone: vertical and
+  horizontal — unity on the fixed point).
+  Anchors: the A4 balance of α (Th 2.4.A: 1/α = N·φ¹⁰/π² −
+  e⁴φ²/(π⁵N) − α⁴V_cone; the fixed point — Lemmas 2.4.A.A/B/C), the
+  Ramanujan series (Rem 1.9.27: the denominator carries the scale,
+  the per-step contraction 99⁻⁴ — conservation in the scale form),
+  the energy book (Th 2.7.D.1: N_quanta = const ⟹ E_total = const;
+  the Δn·ε₀ transfer — Rem 2.7.F.1.r).
+  THE READING: the vertical balance — between the scales, the
+  horizontal — within a tick; both are slices of one fixed point of
+  the Cone.
+    (1) THE VERTICAL BALANCE (the scale book): the lift (N·φ¹⁰/π²)
+        and the descent (e⁴φ²/(π⁵N)) meet through the cone term
+        α⁴V_cone; machine: A4 reproduces at 40 dps (the residual is
+        machine zero: the root is self-consistent).
+    (2) THE HORIZONTAL BALANCE (the energy book): the quantum number
+        is conserved at every redistribution; the carrier transfer is
+        Δn·ε₀ (Rem 2.7.F.1.r); the ledger closes identically on every
+        slice.
+    (3) THE NUMBERS (machine): the vertical deficit — the cone-tax
+        share of the flat book f_v = α⁴V_cone/(A − B) = 2.7305·10⁻⁷;
+        the per-step contraction 99⁻⁴ = 1.0410·10⁻⁸; the tick share
+        of the carrier 1/Δn_e ≈ 8.8·10⁻⁴¹.
+    (4) THE BOUNDARY (honest): the numeric equality of the two
+        balances on one step is NOT established: f_v·99⁴ = 26.23 —
+        not a canon integer; f_v and 1/Δn_e differ by tens of orders
+        — the conversion requires the ε₀ scale factor (a boundary
+        input of class У). NO free coefficient is introduced
+        (anti-fitting): the unity is structural (one fixed point on
+        two slices), not numeric; the probe repeats when the
+        conversion is fixed (registry).
+  Computation: theory_of_everything.py, block 2.7.F.1.r2. □
 
 ────────────────────────────────────────────────────────────────────────────────
   2.7.G DARK MATTER AS DENSE PASSIVE AETHERONS
@@ -37244,7 +37439,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (2160 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (2212 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -43433,7 +43628,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
     • a solution to the hard problem of consciousness;
     • an experimental claim with a testable prediction about qualia.
   The physical predictions of Trinity (Section 5, 56 predictions,
-  2160 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS
+  2212 PASS) DO NOT DEPEND on Part 3. The identification k = 0 ↔ consciousness is a HYPOTHESIS
   in the Gödelian-phenomenological sense (formal incompleteness
   mirrors experiential irreducibility), not a theorem.
 
@@ -49130,6 +49325,30 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   traversal of the Sphere (topological interpretation of the
   asymmetry 2.7.P.4).
 
+  Remark 4.3.N.1 (The trefoil of Trinity: the knot of duality and
+  axes).
+  Origin-hypothesis: three cuts of the Möbius strip (the carrier of
+  the Z₂-duality — Def 4.3.N) yield the trefoil knot — the MINIMAL
+  nontrivial knot, itself a (2,3)-torus knot on the Torus of Trinity
+  (Def 4.3.M: T² = S¹ × S¹; Z_N × Z₂). The reading: 2 = the Z₂-duality
+  (the strip/the mirror pair), 3 = the R-axes (the quintet ≡ R = 3 —
+  Rem 1.10.0.28.r), the order 6 = 2·3.
+  Machine (40 dps):
+    (1) the Jones polynomial of the mirror pair of the trefoil at
+        ζ₆ = e^{iπ/3} (the primitive root of order 6 = 2·3):
+        V_L = ζ₆ + ζ₆² − ζ₆³ = 1 + √3·i, |V_L|² = 4.0;
+        V_R = ζ₆⁻¹ + ζ₆⁻³ − ζ₆⁻⁴ = −√3·i, |V_R|² = 3.0; the sum
+        |V|² = 7 = L₄ (Volume — the lexicon 2.6.A.4.at5);
+    (2) the Alexander polynomial Δ(t) = t² − t + 1 vanishes exactly
+        at ζ₆^±1 — the root order 6 = 2·3 (duality × axes).
+  Ontological coupling: the node = the stable fate of a tick (Rem
+  2.4.A.0.1.f — light/node/exchange); the trefoil = the minimal
+  stable loop of duality — "the node stands" acquires a topological
+  carrier (it pays ticks for the road — dilation 2.4.U).
+  GATE: the trefoil characterizes the NODE (the carrier), not the
+  Z₁₁-spectrum — no claim on the spectrum, amplitudes, or new
+  constant formulas.
+  Computation: theory_of_everything.py, block 4.3.N.1. □
 
   DEFINITION 4.3.O (Sector of the Cone of Trinity).
 
@@ -50730,7 +50949,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 2160 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 2212 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -65372,11 +65591,11 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   spectrum is real, relaxation without drift (Remark 2.6.A.4.u).
   The G_N and ε₀ boundary is characterized as a fractal — a census
   of the recurring structural objects (Remark 2.5.AC.5.s). The
-  unified-law campaign (2026) closes the ontology with the ladder
+  unified-law series closes the ontology with the ladder
   algebra: scale = degree, identity = resonance, pairs = Quintet
   atoms, the census of the 12 floors, the full cycle 11 → 0 → 1;
   the law is accepted as a form with machine identities and a
-  prediction sheet (Rem 2.6.A.4.aa–.au).
+  prediction sheet (Rem 2.6.A.4.aa–.az).
 
   ───────────────────────────────────────────────────────────────
                            FINAL STATISTICS
@@ -65391,7 +65610,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   Theorems: 715
   Definitions: 251
   Corollaries: 570
-  Remarks: 546
+  Remarks: 553
   Lemmas: 28
   Propositions: 13
   Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -66291,7 +66510,7 @@ readers.
   II.8 THE UNIFIED LAW OF THE LADDER (ALGEBRAIC FORM)
 ────────────────────────────────────────────────────────────────────────────────
 
-An ontology-free recording of the series Rem 2.6.A.4.aa–.au. The
+An ontology-free recording of the series Rem 2.6.A.4.aa–.az. The
 scale ladder k = 0..11 is given by: the couplings α(k) = α(0)·μ^k
 (α(0) = π²/N, μ = 1/φ); the cells C(k) = 2^{k−1} mod 11; the
 spectrum ω_k = |ζ^k − 1|; the phases x_k = πk/N; the radii
@@ -66428,13 +66647,13 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 2160 PASS,
+  exit 0. Python validator: theory_of_everything.py — 2212 PASS,
   0 FAIL, EXIT = 0 (≈ 5–8 min), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (715 theorems, 2160
+  from the recorded axioms and definitions (715 theorems, 2212
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
@@ -66504,7 +66723,7 @@ new parameters (Rem 2.6.A.4.ap).
   AMPLIFIER H. The unified law of the ladder as a form (machine
   identities).
   ─────────────────────────────────────────────────────────────────────
-  The unified-law campaign (Rem 2.6.A.4.aa–.au) recorded the algebra
+  The unified-law series (Rem 2.6.A.4.aa–.az) recorded the algebra
   of the scale ladder: the power orbit, the root down / the power up,
   the closure by resonance; the floor pairs = the Quintet atoms; the
   census of the 12 floors; the generation C(k+1) = 2·C(k) (mod 11);
@@ -66514,7 +66733,7 @@ new parameters (Rem 2.6.A.4.ap).
   the catalogue (Rem 2.6.A.4.ah); the quantitative corollaries — the
   mirror invariants, the cell invariant 2⁹ ≡ 6, the α(0..11) sheet
   with anchors, the derivation of the degrees {F₆, 7}, the exponent
-  F₁₀ (Rem 2.6.A.4.ap). The boundary: the campaign added no
+  F₁₀ (Rem 2.6.A.4.ap). The boundary: the series added no
   popper-blind predictions. The pseudo-blind contour is executed
   (Rem 2.6.A.4.au — three convention labels predicted from the
   anchors, the forks resolved: nucleus 1 MeV, molecule 1000 cm⁻¹,
@@ -66868,7 +67087,7 @@ new parameters (Rem 2.6.A.4.ap).
          Python 3.12.6, numpy 2.4.2, scipy 1.17.1, sympy 1.14.0
          Lean 4.35.0 (elan; WITHOUT Mathlib and external dependencies)
 
-         python theory_of_everything.py   → 2160 PASS / 0 FAIL / EXIT=0
+         python theory_of_everything.py   → 2212 PASS / 0 FAIL / EXIT=0
                                           (≈ 5–8 min; the time is carried by
                                           the recorded deep sweeps 2.4.G.13.y
                                           and 2.4.AD.2.v)
