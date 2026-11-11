@@ -1,4 +1,4 @@
-/-  Trinity ToE — Lean 4 machine verification (210 theorems, sections I-X).
+/-  Trinity ToE — Lean 4 machine verification (212 theorems, sections I-X).
     Author: texnet43 | DOI: 10.5281/zenodo.19600779 | License: CC BY 4.0 (c) 2026
 -/
 /-
@@ -12,7 +12,7 @@ Lean 4.33+, NO Mathlib dependency. All theorems use native_decide/rfl.
 
 Reproduce:   lean theory_of_everything.lean    (must exit 0, no errors)
 
-Sections (210 machine-verified theorems total):
+Sections (212 machine-verified theorems total):
   I.   Core identities (25)            — Z11 basics, Higgs VEV, mass ratios
   II.  V11 Core: D1-D5 amplifiers (42) — Lambda exponent 2N^2, RH coefficient,
                                          constructive emergence, catalogue 10/35/39
@@ -66,10 +66,13 @@ Negative intermediate values use Int (Nat subtraction truncates at zero).
   Formalization boundary (what Lean DOES and does NOT prove here):
   (a) ARITHMETIC: N := 11 is a definition; the theorems below VERIFY that 11
       satisfies the closure system {C1: N+1 = K(R), C2: h(Q(sqrt(-N))) = 1,
-      C3: N prime} on the established class, and that 11 is UNIQUE in the
-      machine-checked window [2, 163] (the Heegner-prime list is a FINITE
-      machine-checked enumeration; the Baker-Stark theorem making it global is
-      CLASSICAL MATHEMATICS cited, not re-proved in Lean).
+      C3: N prime} on the established class. UNIQUENESS is carried by the
+      ∀-theorem N_unique_heegner: for EVERY natural n in the Heegner-prime
+      classification and EVERY r, the C1 hit (r, n+1) forces n = 11 (the
+      Heegner-prime list is the machine-checked finite enumeration; the
+      Baker-Stark theorem making it global is CLASSICAL MATHEMATICS cited,
+      not re-proved in Lean). The window checks N_unique_2..163 remain as
+      explicit illustrations.
   (b) PHYSICS: R_dim := 3 enters as a TYPED INPUT (the observational premise O3
       of the canon registry R3/R7); Lean checks the arithmetic CONSEQUENCES of
       R = 3 (K(3) = 12 = N+1 etc.), not the observational truth of O3.
@@ -116,6 +119,56 @@ theorem N_unique_19 : ¬ (1, 19 + 1) ∈ kissingTable ∧ ¬ (2, 19 + 1) ∈ kis
 theorem N_unique_43 : ¬ (1, 43 + 1) ∈ kissingTable ∧ ¬ (2, 43 + 1) ∈ kissingTable ∧ ¬ (4, 43 + 1) ∈ kissingTable := by decide
 theorem N_unique_67 : ¬ (1, 67 + 1) ∈ kissingTable ∧ ¬ (2, 67 + 1) ∈ kissingTable ∧ ¬ (4, 67 + 1) ∈ kissingTable := by decide
 theorem N_unique_163 : ¬ (1, 163 + 1) ∈ kissingTable ∧ ¬ (2, 163 + 1) ∈ kissingTable ∧ ¬ (4, 163 + 1) ∈ kissingTable := by decide
+
+/-- Established-R extractor: any table hit carries r in {1, 2, 3, 4, 8, 24}
+    (the established kissing-number classes). -/
+theorem table_r_cases : ∀ r k : Nat, (r, k) ∈ kissingTable →
+    r = 1 ∨ r = 2 ∨ r = 3 ∨ r = 4 ∨ r = 8 ∨ r = 24 := by
+  intro r k hk
+  rcases List.mem_cons.mp hk with h | h1
+  · exact Or.inl (by injection h with h1 _ <;> exact h1)
+  · rcases List.mem_cons.mp h1 with h | h2
+    · exact Or.inr (Or.inl (by injection h with h1 _ <;> exact h1))
+    · rcases List.mem_cons.mp h2 with h | h3
+      · exact Or.inr (Or.inr (Or.inl (by injection h with h1 _ <;> exact h1)))
+      · rcases List.mem_cons.mp h3 with h | h4
+        · exact Or.inr (Or.inr (Or.inr (Or.inl (by injection h with h1 _ <;> exact h1))))
+        · rcases List.mem_cons.mp h4 with h | h5
+          · exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inl (by injection h with h1 _ <;> exact h1)))))
+          · rcases List.mem_cons.mp h5 with h | h6
+            · exact Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (by injection h with h1 _ <;> exact h1)))))
+            · exact absurd h6 (by simp)
+
+/-- GLOBAL UNIQUENESS over the Heegner-prime classification (the ∀-form of
+    N = 11 as the solution of {C1, C2, C3}): for EVERY natural n that is a
+    Heegner prime (C2 — the machine-checked list; the classification itself
+    is the classical Baker-Stark theorem, CITED) and for EVERY natural r,
+    the C1 hit (r, n+1) ∈ kissingTable forces n = 11. No window: this is a
+    ∀-statement, proved from the explicit list + table, not from a fixed
+    N := 11 definition. The only C1-hit among Heegner primes is (3, 12). -/
+theorem N_unique_heegner :
+    ∀ n : Nat, n ∈ heegnerPrimes →
+      (∃ r : Nat, (r, n + 1) ∈ kissingTable) → n = 11 := by
+  intro n hn ⟨r, hr⟩
+  rcases table_r_cases r (n + 1) hr with rfl | rfl | rfl | rfl | rfl | rfl
+  all_goals
+    rcases List.mem_cons.mp hn with rfl | h2
+    · first | rfl | exact absurd hr (by decide)
+    · rcases List.mem_cons.mp h2 with rfl | h3
+      · first | rfl | exact absurd hr (by decide)
+      · rcases List.mem_cons.mp h3 with rfl | h7
+        · first | rfl | exact absurd hr (by decide)
+        · rcases List.mem_cons.mp h7 with rfl | h19
+          · first | rfl | exact absurd hr (by decide)
+          · rcases List.mem_cons.mp h19 with rfl | h43
+            · first | rfl | exact absurd hr (by decide)
+            · rcases List.mem_cons.mp h43 with rfl | h67
+              · first | rfl | exact absurd hr (by decide)
+              · rcases List.mem_cons.mp h67 with rfl | h163
+                · first | rfl | exact absurd hr (by decide)
+                · rcases List.mem_singleton.mp h163 with rfl
+                  first | rfl | exact absurd hr (by decide)
+
 
 end Trinity
 
@@ -387,7 +440,7 @@ theorem total_resonant_modes : 2 * 5 = N - 1 := by native_decide
 
 /-
 HISTORICAL NOTE — this file was originally a separate D1-D5 file; the
-unified theory_of_everything.lean now contains 210 theorems (sections I-X).
+unified theory_of_everything.lean now contains 212 theorems (sections I-X).
 THEOREMS OF THE ORIGINAL D1-D5 FILE (28):
 
 D1 (Λ derivation):
@@ -1275,6 +1328,8 @@ block — the exact axiom set of the file.
 #print axioms Trinity.N_unique_43
 #print axioms Trinity.N_unique_67
 #print axioms Trinity.N_unique_163
+#print axioms Trinity.table_r_cases
+#print axioms Trinity.N_unique_heegner
 #print axioms R_over_Z2_num
 #print axioms R_over_Z2_den
 #print axioms Delta5_first5
@@ -1476,4 +1531,4 @@ block — the exact axiom set of the file.
 #print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.cell_generator
 #print axioms Trinity.V15.Washout.Trinity.V16.ConeReadings.half_cycle_negation
 
-#print "TRINITY UNIFIED: ALL 210 MACHINE-VERIFIED THEOREMS PASS" 
+#print "TRINITY UNIFIED: ALL 212 MACHINE-VERIFIED THEOREMS PASS" 
