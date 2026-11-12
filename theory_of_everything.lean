@@ -332,7 +332,7 @@ theorem phi_exponent_term2 : Z2 = 2 := by native_decide
 
 /-! ## Remark 2.4.A.0.5.w.r (D2): prod ω_k = N (φ not a Z₁₁ invariant) -/
 
-/-- det Δ = N² = 121 (spectral data are powers of N, not φ). -/
+/-- pseudo-det Δ = N² = 121: product of NONZERO eigenvalues (full det = 0, zero mode k = 0); spectral data are powers of N, not φ. -/
 theorem det_Delta : N * N = 121 := by native_decide
 
 /-- N² − 1 = 120 = adjoint dimension of SU(11). -/

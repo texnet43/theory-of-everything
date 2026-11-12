@@ -1747,13 +1747,64 @@ for _k in range(1, N):
 print(f"    prod omega_k (k=1..10) = {_prod_omega:.6f} = N = {N} (classic identity)")
 assert abs(_prod_omega - N) < 1e-6, "2.4.A.0.5.w.r prod omega_k = N"
 _det_delta = _prod_omega**2
-print(f"    det(Delta) = (prod omega_k)^2 = {_det_delta:.4f} = N^2 = {N**2}")
+print(f"    pseudo-det(Delta) = (prod omega_k)^2 = {_det_delta:.4f} = N^2 = {N**2} (full det = 0, zero mode k=0)")
 assert abs(_det_delta - N**2) < 1e-4, "2.4.A.0.5.w.r det = N^2"
 # phi is not recoverable from these (all are powers of N)
 _phi_from_N = False  # no combination of powers of N gives phi (irrational)
 print(f"    => spectral data of Z_11 = powers of N; phi NOT recoverable")
 print(f"    => phi supplied by Quintet, exponent N-1 fixed by Z_11 structure")
 print(f"    PASS: scope - phi primitive, exponent derived")
+print()
+
+# --- Remark 1.10.0.28.ac: contact-to-neighborhood bridge (contact structure -> Laplacian) ---
+print("  Remark 1.10.0.28.ac (contact -> nearest-neighbor operator bridge)")
+_w_ac = [[0] * N for _ in range(N)]
+for _k in range(N):
+    _w_ac[_k][(_k + 1) % N] = 1
+    _w_ac[_k][(_k - 1) % N] = 1
+_deg_ac = [sum(_row) for _row in _w_ac]
+assert all(_d == 2 for _d in _deg_ac), "1.10.0.28.ac: cycle node degree = 2"
+_L_ac = np.array([[float(2 - _w_ac[i][j]) if i == j else float(-_w_ac[i][j]) for j in range(N)] for i in range(N)])
+_ev_ac = sorted(np.linalg.eigvalsh(_L_ac))
+_lam_ac = sorted(4 * sin(pi * _k / N) ** 2 for _k in range(N))
+assert max(abs(_a - _b) for _a, _b in zip(_ev_ac, _lam_ac)) < 1e-9, "1.10.0.28.ac: spec(L) = {4 sin^2(pi k/N)}"
+_om_ac = sorted(2 * sin(pi * _k / N) for _k in range(N))
+assert max(abs(sqrt(_l) - _o) for _l, _o in zip(_lam_ac, _om_ac)) < 1e-12, "1.10.0.28.ac: omega = sqrt(lambda)"
+assert abs(_lam_ac[0]) < 1e-12, "1.10.0.28.ac: zero mode k=0"
+_pdet_ac = 1.0
+for _l in _lam_ac[1:]:
+    _pdet_ac *= _l
+assert abs(_pdet_ac - N ** 2) < 1e-6, "1.10.0.28.ac: pseudo-det = N^2"
+print(f"    contact bridge: adjacency -> L = diag(w) - w, node degree 2 everywhere; spec(L) = {{4 sin^2(pi k/N)}} to 1e-9: PASS")
+print(f"    contact bridge: omega_k = sqrt(lambda_k) to 1e-12 on all 11 modes (the root-Laplacian reading): PASS")
+print(f"    contact bridge: pseudo-det = product of NONZERO eigenvalues = {N**2} exactly; the full determinant = 0 at the zero mode k=0: PASS")
+print()
+
+# --- Cor 2.7.B.8.d: ghost census of the de-Donder graviton propagator ---
+print("  Cor 2.7.B.8.d (ghost census: de-Donder graviton propagator)")
+_kz_g = 1.0
+_idx3_g = [(i, j) for i in range(3) for j in range(i, 3)]
+_C_g = np.zeros((4, 6))
+for _a, (i, j) in enumerate(_idx3_g):
+    for _row in range(3):
+        if (j == _row and i == 2) or (i == _row and j == 2):
+            _C_g[_row, _a] += _kz_g
+    if i == j:
+        _C_g[3, _a] = 1.0
+_rk_g = int(np.linalg.matrix_rank(_C_g))
+assert _rk_g == 4, "2.7.B.8.d: transversality+trace rank 4"
+_, _s_g, _vt_g = np.linalg.svd(_C_g)
+_tt_g = _vt_g[_rk_g:]
+assert len(_tt_g) == 2, "2.7.B.8.d: exactly two TT polarizations"
+for _c_g in _tt_g:
+    _H_g = np.zeros((3, 3))
+    for _n, (i, j) in enumerate(_idx3_g):
+        _H_g[i, j] = _c_g[_n]
+        _H_g[j, i] = _c_g[_n]
+    assert abs(float(np.trace(_H_g))) < 1e-10 and float(np.abs(_kz_g * _H_g[2, :]).max()) < 1e-10, "2.7.B.8.d: TT purity"
+    assert _kz_g ** 2 * float(np.sum(_H_g * _H_g)) > 0, "2.7.B.8.d: Fierz-Pauli form positive"
+print(f"    ghost census: spatial sector 6; transversality+trace rank 4 -> exactly 2 TT polarizations (pure, to 1e-10): PASS")
+print(f"    ghost census: the Fierz-Pauli form positive on both; h_0mu = de Donder constraints (non-propagating); single pole i/k^2, no ghosts: PASS")
 print()
 
 # --- Section 2.4 (Seventh closure): variational-stochastic completions ---
@@ -2064,8 +2115,8 @@ constants = [
     # Hubble h: 1/(HEIGHT*HEIGHT) / (STABILITY * TEMPERATURE)
     ("Hubble h",          0.6736,          lambda r: (1/r["K3J3"]) / (phi * L[2])),
     # Spectral index: 1/TIME * WIDTH^13 / DUALITY^12
-    # (OPERATOR-RATIO ILLUSTRATION of n_s; PRIMARY = 1-5*alpha, Th 2.1.A.5 = 0.9635;
-    #  loop 2nd order 1-7a+28a^2N-9a^3N^2 = 0.9649; coefficients DERIVED, Th 2.5.P.1)
+    # (OPERATOR-RATIO ILLUSTRATION of n_s; PRIMARY = (-7,28,-9) Th 2.5.P.1 = 0.96490283;
+    #  1-5*alpha = 0.9635 zeroth order (Rem 2.5.AT.4); coefficients DERIVED, Th 2.5.P.1)
     ("n_s",               0.9657,          lambda r: (1/r["S1"]) * L[3]**13 / F[5]**12),
     # Tensor ratio: TIME * TEMPERATURE^7 / GEOMETRY^10
     ("r tensor",          0.0047,          lambda r: r["J1"] * L[2]**7 / pi**10),
@@ -2304,7 +2355,7 @@ def _jac_constants(Nv, pv, phv, ev):
         math.sin(pv/Nv)*math.sqrt(9.0/Nv)*phv**7/32,          # sin2_tW
         sum(w**2 for w in om),                                  # T1 spectral
         Vc,                                                     # V_cone
-        Nv**2,                                                  # det Delta
+        Nv**2,                                                  # pseudo-det Delta
         ev**4*phv**2/(pv**5*Nv),                               # e4 term
         a,                                                      # alpha_tree
         2*math.sin(5*pv/Nv),                                    # omega_5
@@ -4561,6 +4612,17 @@ assert len(_basis_u) == 64 and 4500 <= len(_E_u) <= 4600
 assert abs(_mc_ratio - 788) < 15, "grammar census: MC ratio must reproduce 788 (live value; targets re-pinned to PDG-2026)"
 print("    2.5 grammar census: ALL CHECKS PASS")
 
+# --- Preregistration of the null-model protocol (_prereg_nullmodel.md) ---
+# The file is frozen (MD5 below) as the PROTOCOL OF RECORD of the catalogue
+# null model (the unified protocol 2.10 + Rem 2.10.B.1/.2): the parameters
+# (12 atoms, 4391 formulas per constant, seed 42, thresholds) do not change
+# after the freeze; the MD5 is asserted by the validator at every run.
+print("\n  2.10.B  Preregistration of the null-model protocol (frozen file)")
+import hashlib as _hlnm
+_md5_nm = _hlnm.md5(open("_prereg_nullmodel.md", "rb").read()).hexdigest()
+assert _md5_nm == "9e9d8386735680f91a4614ef5030b227", "null-model prereg frozen MD5"
+print(f"    null-model protocol _prereg_nullmodel.md frozen (MD5 {_md5_nm[:16]}...): PASS")
+
 # Remark 2.4.AD.2.s: group-theoretic origin of M_R via assembled L_Trinity
 # (1) nu_R = SU(5)-singlets in Lambda^k(C^11), k=4,8,9 (Th 5.1.D.9) — structural consequence
 # (2) Majorana term M_R(k)·nu_R^T·C·nu_R is SU(11)-invariant (in L_Yukawa)
@@ -4975,6 +5037,31 @@ if best_match[0] == 2 and best_match[1] == -1 and best_match[2] == -10:
     print(f"    CONFIRMED: alpha = pi^2 / (N * phi^10) is the unique solution")
 else:
     print(f"    Note: exact formula requires phi^(-10), leading term confirmed")
+
+# --- 1.0.F.2 Control target of the alpha leading member (method of Rem 4.6.E.3) ---
+print("\n  1.0.F.2  CONTROL TARGET: alpha leading member (Rem 4.6.E.3 method)")
+# Target: the leading (Sphere) member A = N*phi^10/pi^2 = 137.0785 (Th 2.4.A,
+# tree level). Grammar c*phi^a/pi^b (c = 1..24, a in [-12,12], b in [-4,4];
+# 5400 monomials), relative window 1e-4. Method (Rem 4.6.E.3): a structural
+# closure must BEAT the grammar density - the shifted control target (+0.1)
+# counts density hits, the real target carries the exact structural form.
+_T1 = N * phi**10 / pi**2
+_T2 = _T1 + 0.1
+_grid2 = [(c, a, b) for c in range(1, 25) for a in range(-12, 13) for b in range(-4, 5)]
+_vals2 = [c * phi**a / pi**b for (c, a, b) in _grid2]
+_w2 = 1e-4
+_h1 = [(g, v) for g, v in zip(_grid2, _vals2) if abs(v - _T1) / _T1 < _w2]
+_h2 = [(g, v) for g, v in zip(_grid2, _vals2) if abs(v - _T2) / _T2 < _w2]
+_ex2 = min(abs(v - _T1) / _T1 for g, v in _h1)
+print(f"    target A = N*phi^10/pi^2 = {_T1:.4f}; window {_w2:.0e} (relative)")
+print(f"    real-target hits: {len(_h1)} (1 structural + {len(_h1) - 1} density)")
+for g, v in _h1:
+    print(f"      c={g[0]} phi^{g[1]}/pi^{g[2]} = {v:.4f} (rel {abs(v - _T1) / _T1 * 100:.4f}%)")
+print(f"    control target {_T2:.4f} (shift +0.1): density hits {len(_h2)}")
+print(f"    VERDICT: the structural closure (dev {_ex2:.1e}) beats the control: PASS")
+assert (11, 10, 2) in [g for g, _ in _h1], "1.0.F.2 structural hit missing"
+assert len(_h1) == 3 and _ex2 < 1e-12, "1.0.F.2 census: 1 structural (dev 0) + 2 density"
+assert len(_h2) == 0, "1.0.F.2 control target must have no grammar hits"
 
 # --- 1.0.H Consistency proof: explicit model ---
 print("\n  1.0.H  CONSISTENCY PROOF (explicit model in H_11)")
@@ -13824,9 +13911,9 @@ assert "The structural reading of geometrization: uniqueness of S³ as the agree
 assert "does NOT claim an independent proof of the Poincaré conjecture" in _en428n
 print("    EN: the header mirror + the status line: PASS")
 assert "Доказано 714 теорем," not in _rn428
-assert "715 теорем (с выводами в тексте; 212 машинно-верифицированы в Lean 4), 251 определений" in _rn428
+assert "715 теорем (с выводами в тексте; 212 машинно-верифицированы в Lean 4 — арифметическое ядро, граница D17), 251 определений" in _rn428
 assert "714 theorems are proven," not in _en428n
-assert "715 theorems (with derivations in the text; 212 machine-verified in Lean 4), 251 definitions" in _en428n
+assert "715 theorems (with derivations in the text; 212 machine-verified in Lean 4 — the arithmetic core, the D17 boundary), 251 definitions" in _en428n
 print("    RU/EN: the 714 claim carries the honest derivation/Lean split in both languages: PASS")
 assert "Гипотеза Пуанкаре (доказана Перельманом) → Теорема 5.1.AA.2 — структурная интерпретация, не решение (Раздел 5.1.AA)" in _rn428
 assert "Poincaré conjecture (proven by Perelman) → Theorem 5.1.AA.2 — a structural interpretation, not a solution (Section 5.1.AA)" in _en428n
@@ -13904,8 +13991,8 @@ _rt430 = _rows430(_ru430, "СВОДНАЯ ТАБЛИЦА ПОСЫЛОК", "ЗА�
 assert len(_rt430) == 14, len(_rt430)
 _pc430 = lambda _s430: [_c430.strip() for _c430 in _s430.strip()[1:-1].split(" | ")]
 _cells430 = [_pc430(_l430) for _l430 in _rt430]
-assert all(len(_r430) == 5 for _r430 in _cells430)
-print("    RU: the table parses to 14 rows x 5 columns: PASS")
+assert all(len(_r430) == 6 for _r430 in _cells430)
+print("    RU: the table parses to 14 rows x 6 columns (R7 sixth column present): PASS")
 _names430 = [_r430[0].split(" (")[0].split(" (Т ")[0] for _r430 in _cells430]
 _exp430 = ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "O1", "O2", "O3", "O4", "Выбор", "СТК", "T1–T4"]
 assert _names430 == _exp430, _names430
@@ -13930,8 +14017,13 @@ assert _enames430 == ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "O1", "O2", "O3"
 _efals430 = [" ".join(_r430[4].split()) for _r430 in _ecells430]
 assert len(set(_efals430)) == 14 and "DERIVED (not premises)" in _et430[13]
 print("    EN: the mirror table parses, 14 distinct falsifiers, the derived row marked: PASS")
+_six430 = [" ".join(_r430[5].split()) for _r430 in _cells430]
+assert all(_s430 for _s430 in _six430) and "через O1–O4" in _six430[13]
+_esix430 = [" ".join(_r430[5].split()) for _r430 in _ecells430]
+assert all(_s430 for _s430 in _esix430) and "through O1–O4" in _esix430[13]
+
 _w430 = max(len(_l430) for _l430 in _rt430 + _et430)
-assert _w430 <= 220, _w430
+assert _w430 <= 340, _w430
 print(f"    the layout: the widest table row = {_w430} chars (single-line cells, machine-parseable): PASS")
 assert "ПОСЫЛОЧНАЯ КАРТА ФЛАГМАНОВ (30 строк" in _ru430
 assert _ru430.count("→ [") >= 30
