@@ -669,7 +669,7 @@
   is tuned). Grammar-density control: random formulas from the same atoms
   are 788× less accurate (Monte Carlo, §2.10.B); the selection criterion
   — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation
-  criteria; the machine: 2588 checks (0 FAIL), 212 Lean theorems.
+  criteria; the machine: 2596 checks (0 FAIL), 212 Lean theorems.
 
   Ontologically, Trinity describes how reality is built, not
   only the closure of constants: the micro- and macro-cosmos are
@@ -740,7 +740,7 @@
   identity — resonance); the mirror pairs of operations carry the quintet
   atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all
   operations.
-  Battery: 2588 PASS / 0 FAIL / EXIT=0.
+  Battery: 2596 PASS / 0 FAIL / EXIT=0.
 
   The sign kernel of duality —
   Δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), the Rb reference,
@@ -848,7 +848,7 @@
   φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no
   finite closure (Rem .av(4)); the weight of choice across the scales —
   the author's synthesis: rigidity at the edges of the spectrum, the
-  density of choice at the center (Rem .ay). Battery: 2588 PASS / 0 FAIL / EXIT=0.
+  density of choice at the center (Rem .ay). Battery: 2596 PASS / 0 FAIL / EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
 
@@ -2782,7 +2782,23 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   v = c·√λ — the normalization forces c = 1. Beyond the ceiling
   2(N−1) the ladder departs from naive C(2m,m) (Th 1.9.C.4;
   prediction #39: at m = 11 the shift is Δ = −22 — machine confirms:
-  Σλ¹¹ = 7759730). The reading class f(L) is a structural input
+  Σλ¹¹ = 7759730).
+
+  Longer range. In the class of generalized Laplacian forms
+  L(t) = Σ_{s=1..5} t_s·(2Î − Ŝ^s − Ŝ^{−s}), t_s ≥ 0, the spectrum
+  μ_k(t) = 2Σ_s t_s·(1 − cos(2πsk/N)) carries the moments
+  Σ_k μ_k = 22·Σ_s t_s (m = 1) and Σ_k μ_k² = 44 + 22·Σ_s t_s² at
+  Σ_s t_s = 1 (m = 2; the character orthogonality:
+  Σ_k(1−cos_s)(1−cos_s') = 11 + (11/2)·δ_{ss'}) — the ladder (22, 66)
+  forces Σ_s t_s² = 1, i.e. t = e_s: a single-range coupling. All
+  e_s are isospectral (k ↦ sk is an automorphism of Z₁₁ at
+  gcd(s, 11) = 1): a distance-s operator is the same theory with
+  renumbered modes; the canonical s = 1 is the cycle generator
+  (Rem 1.10.0.28.ac). Mixed weights break the ladder at m = 2
+  (machine: 20000 random simplices t — m = 1 matched 20000/20000,
+  m = 2 — 0/20000); a two-step interaction changes the spectrum only
+  in a mixture — a pure distance-s coupling is isospectral to
+  distance-1. The reading class f(L) is a structural input
   (Cor 1.0.A.1.c); the theorem fixes the reading WITHIN the class. □
 
   Corollary 1.0.A.2 (Minimality of the core).
@@ -10059,7 +10075,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   │ Sector     │ Field          │ Spin │ Representation  │ Kinetic term               │
   ├────────────┼────────────────┼──────┼─────────────────┼────────────────────────────┤
   │ Gauge      │ g^a_μ (SU(11)) │ 1    │ adj SU(11)      │ −(1/4)·F^a_μν F^{a μν}     │
-  │ Fermions   │ 15 × (10⊕5̄)/gen│ 1/2  │ (3,2)_{1/6}…    │ i·ψ̄·γ^μ·D_μ·ψ (Cor 5.1.D.9.t)│
+  │ Fermions   │ (10⊕5̄)/gen = 15│ 1/2  │ (3,2)_{1/6}…    │ i·ψ̄·γ^μ·D_μ·ψ (Cor 5.1.D.9.t)│
   │ Scalar     │ H (дублет Φ_11)│ 0    │ (1,2)_{±1/2}    │ |D_μ H|² − V(H) (5.1.D.5)  │
   │ Aether     │ a_p, a_k, φ₂   │ 0    │ scalars         │ i·a†∂_t·a − ε₀… − ω_k…     │
   │            │                │      │                 │ (Th 2.7.B.6; |J|²<ε₀ω_k)   │
@@ -10242,7 +10258,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
       (Th 2.4.K), CPTP/no-signaling (the Cor 2.4.K chain), CHSH 2√2
       exactly (Th 2.4.V);
     • particles and fields ← the constructive chain, Steps 1–2:
-      SU(3)×SU(2)×U(1), 15×(10⊕5̄) with all anomalies zero
+      SU(3)×SU(2)×U(1), 3×(10⊕5̄) — 15 Weyl each — with all anomalies zero
       (Cor 5.1.D.9.t), three generations (Th 5.1.D.9);
     • masses and constants ← Steps 3–4 + the Yukawas (boundary inputs): the
       catalogue of 84 (machine), α (Th 2.4.A), m_h = (π/2)m_W;
@@ -10267,7 +10283,7 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   the kinetic terms −(1/4)F² is preserved for A_μ, W^i_μ, B_μ.
   The field table of Rem 2.7.B.7.u and the table of Cor 5.1.D.9.t
   are one sector (machine cross-check: dim G_SM = 8+3+1 = 12 = N+1;
-  15×(10⊕5̄) per generation, all anomalies zero; the photon is
+  (10⊕5̄) = 15 Weyl per generation, all anomalies zero; the photon is
   massless — m_γ = 0, U(1)_EM unbroken, the bound 10⁻¹⁸ eV <
   2·10⁻²⁴·m_e; the mode of the pair {1,10}).
   The normalization chain (machine, block Cor 2.7.B.7.u.4):
@@ -10700,7 +10716,12 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   — a subtracting (negative) boundary term. G_bare is not an
   independent input: the value is determined by the identity of
   Rem 2.7.B.8.v — (1 − N/π)/G_N (machine); the carrying input is
-  G_N (the dimensional anchor, Th 4.6.E.2).
+  G_N (the dimensional anchor, Th 4.6.E.2). The sign of the
+  complement creates no ghost degree of freedom: the quadratic
+  action and the propagator carry only the total coefficient
+  1/G_N > 0 — 1/G_ind and 1/G_bare are the terms of the expansion of
+  the positive total constant (the trace — Cor 2.7.B.8.d: the single
+  pole i/k², no ghost poles).
 
   Proof. The one-loop contribution of a sector with n degrees of
   freedom and cutoff Λ_f equals n·Λ_f²/(192π²) (the proof of
@@ -24007,7 +24028,8 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   Theorem 2.4.G.10 (Nonlocality as projection of the ladder poles).
   The quantum correlation of an entangled pair (Theorem 2.4.V:
   maximal Bell correlation in C¹¹⊗C¹¹ on |Ψ_max⟩ = (1/√N)·Σ_k
-  |k⟩⊗|k⟩, the Tsirelson bound) is established in the metric-free
+  |k⟩⊗|k⟩ on the mirror-pair classes, the Tsirelson bound) is
+  established in the metric-free
   section C_10, where the spatial separation of the components is
   not defined (Theorem 2.4.G.9), and is carried along a generatrix
   of the Cone through all intermediate sections onto the macro
@@ -24615,18 +24637,25 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   │   S_Trinity[ψ, g] = ∫√(−g)·[                                    │
   │                                                                 │
   │       c⁴/(16πG_ind)·R[g]                    ← gravity (GR)    │
-  │     + L_11mode(ψ_k)                           ← matter (Z₁₁)    │
-  │     + ½ Σ_k ω_k²·|ψ_k|² · g^μν·∂_μ φ_k ∂_ν φ_k                  │
-  │     − α·V_cone·Σ_{k<l} exp(−|k−l|/φ)·|ψ_k|²·|ψ_l|²              │
+  │     + L_11mode(φ_k)                           ← matter (Z₁₁)    │
+  │     + ½ Σ_k ω_k²·|φ_k|² · g^μν·∂_μ φ_k ∂_ν φ_k                  │
+  │     − α·V_cone·Σ_{k<l} exp(−|k−l|/φ)·|φ_k|²·|φ_l|²              │
   │                                                                 │
   │   ] d⁴x                                                         │
   │                                                                 │
   └─────────────────────────────────────────────────────────────────┘
 
-  where L_11mode = ½Σ_k|ψ_k'|² − ½Σ_k ω_k²·|ψ_k|² (standard part from
+  where L_11mode = ½Σ_k|φ_k'|² − ½Σ_k ω_k²·|φ_k|² (standard part from
   Section 2.4), and α is bounded by Lemmas 2.4.A.A/2.4.A.B (uniqueness
   of the root on I = [0.005, 0.01]); the value 1/137.035999160359 is set
   by the convention α := the root of the balance equation (Theorem 2.4.A).
+  ψ_k in the functional signature is the collective symbol of the
+  modes; in the functional terms the modes are written in the tensor
+  reading φ_k — two notations of one mode, not independent fields
+  (Rem 2.7.B.8.r2); ω_k in the structural notation are dimensionless
+  (the carrier chords, Th 1.1.1), the physical dimension enters
+  through the 4D lift (Th 1.0.AET.2) — the mixed term carries
+  dimension 4 at [φ_k] = 1, the same as the kinetic term.
 
   THEOREM 2.4.I (Structural correspondence: Einstein equations under
   Trinity variation and spectral normalization).
@@ -24639,8 +24668,8 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   field:
 
       T_μν^(Trinity) = Σ_k [∂_μ φ_k · ∂_ν φ_k − ½ g_μν·(∂φ_k)²
-                          + g_μν · ω_k²·|ψ_k|²/2]
-                     − g_μν · α·V_cone·Σ_{k<l} exp(−|k−l|/φ)·|ψ_k|²|ψ_l|²
+                          + g_μν · ω_k²·|φ_k|²/2]
+                     − g_μν · α·V_cone·Σ_{k<l} exp(−|k−l|/φ)·|φ_k|²|φ_l|²
 
   Proof.
   The gravitational term is INDUCED: the Λ_T²·R term arises at one
@@ -24707,28 +24736,40 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   COROLLARY 2.4.I.3 (Explicit Friedmann dynamics in the GR limit).
   In the homogeneous isotropic limit of Theorem 2.4.I, with the
   structural budget of Theorem 5.8.1 (Ω_m = Ω_b + Ω_DM = 0.310,
-  Ω_Λ = 0.6847) and the vacuum equation of state w = −1 (P = −ρ,
-  Corollary 2.4.I.1), the metric obeys the standard Friedmann
-  equation with Trinity-derived, zero-parameter content:
+  Ω_Λ = 0.6847, Ω_r — the standard inputs T_CMB/N_eff,
+  Ω_k = 1 − Σ₄, Σ₄ — Corollary 2.7.1.b) and the vacuum equation of
+  state w = −1 (P = −ρ, Corollary 2.4.I.1), the metric obeys the
+  standard Friedmann equation with Trinity-derived, zero-parameter
+  content:
 
-      H²(z)/H₀² = Ω_m·(1 + z)³ + Ω_Λ,     w(z) = −1.
+      H²(z)/H₀² = Ω_m·(1 + z)³ + Ω_r·(1 + z)⁴ + Ω_k·(1 + z)² + Ω_Λ,
+      w(z) = −1.
 
   (Equilibrium value; the deviation boundary from it is Theorem
   2.7.H.2: |1 + w| ≤ e^(−5/2)/(√3·N_cycles) ≈ 10⁻⁶¹, unobservable at
   any experimental precision.)
 
-  Here Ω_m + Ω_Λ = 0.994, so spatial flatness holds at the ~0.6%
-  structural level (the residual 1 − Ω_m − Ω_Λ ≈ 0.006 is the same
-  closure deficit as in Theorem 2.7.1, not an independent parameter).
-  For the flat case the scale factor solves analytically:
+  The full form carries the radiation (the early Universe,
+  z ≳ z_eq = Ω_m/Ω_r ≈ 3400) and the curvature: Ω_m + Ω_Λ = 0.994,
+  Ω_k ≈ 0.005 — the same closure deficit as in Theorem 2.7.1, not an
+  independent parameter. For the flat radiation-free case
+  (|Ω_k| ≤ 0.6%, z ≪ z_eq) the scale factor solves analytically:
 
       a(t) = (Ω_m/Ω_Λ)^{1/3} · sinh^{2/3}( (3/2)·√Ω_Λ·H₀·t ),
 
-  with matter domination a ∝ t^{2/3} at early times and de Sitter
-  expansion a ∝ exp(√Ω_Λ·H₀·t) at late times. The acoustic sound
-  horizon r_s = ∫ c_s(z) dz / H(z), integrated from the drag epoch,
-  follows from the same H(z); its first-principles baryon-photon
-  derivation is a direction of further formalization.
+  with matter domination a ∝ t^{2/3} at early times (at z ≫ z_eq the
+  radiation gives a ∝ t^{1/2}) and de Sitter expansion
+  a ∝ exp(√Ω_Λ·H₀·t) at late times. On the recorded parameters the
+  full and the flat radiation-free forms deviate by at most ~0.5%
+  over the H(z)-table range of Remark 2.4.I.1.r — machine. The
+  acoustic sound horizon r_s = ∫ c_s(z) dz / H(z), integrated from
+  the drag epoch, follows from the full H(z); its first-principles
+  baryon-photon derivation is a direction of further formalization.
+
+  Budget readings: the boxed Ω_m = 0.310 and Ω_Λ = 0.6847 are the
+  refined φ/Lucas forms (Th 5.8.1); the numerical table below is run
+  on the leading π-form Ω_m = 1/π (Th 2.1.A.1) — the precision
+  hierarchy is recorded (Rem 2.1.A.3.2: ~0.4–3.4%).
 
   Remark 2.4.I.1.r (numerical cosmology table: H(z), distances and
   the sound horizon on the structural parameters). The first
@@ -24923,12 +24964,15 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
         (a) λ(t) ≥ 0 (multiplier feasibility);
         (b) λ(t)·(ω_max² − ‖θ̇‖²_g) = 0 (complementary slackness);
         (c) the evolution = projected Hamiltonian dynamics.
-      At SATURATION (‖θ̇‖ = ω_max) λ > 0: the projection of the phase
-      vector onto the constraint boundary gives a phase renormalization
-      δS ∝ (λ/ℏ)·(‖θ̇‖² − ω_max²), which in the coordinates
-      ψ = √p·exp(iS/ℏ) takes the form of the nonlinear term
-      ℏ²/(2m·N²·ω_max²)·(∇ ln|ψ|²)². With a slack constraint λ = 0
-      (item (b)) and the equation is standard Schrödinger.
+      At SATURATION (‖θ̇‖ = ω_max) λ > 0: the multiplier enters the
+      Hamiltonian H_c = H + λ·(ω_max² − ‖θ̇‖²_g)/2; the constraint
+      force 2λ·g_{μν}θ̇^μ removes the norm-violating momentum
+      component; the action shift along the projected trajectory
+      δS = −2∫λ·g_{μν}θ̇^μ dθ^ν ≠ 0 on the boundary (θ̇ = ω_max ≠ 0),
+      which in the coordinates ψ = √p·exp(iS/ℏ) takes the form of the
+      nonlinear term ℏ²/(2m·N²·ω_max²)·(∇ ln|ψ|²)². With a slack
+      constraint λ = 0 (item (b)) and the equation is standard
+      Schrödinger.
 
   (3) DOMAIN AND NODES. The correction is defined on dense states with
       p = |ψ|² > 0 off the node set; ln|ψ|² is smooth on
@@ -24970,9 +25014,12 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   COROLLARY 2.4.J.2 (Geometric origin of i).
   The imaginary unit i arises not as a postulate, but from
   J_Trinity² = −I: specifically from the identity (Ŝ − Ŝ†)² =
-  −4·diag(sin²(πk/N)). This gives a deep answer to "why complex
-  numbers in QM?": because the Z₂-mirror on Z₁₁ generates a
-  J-structure with J² = −I.
+  −4·diag(sin²(2πk/N)) in the Fourier basis of the carrier; at odd N
+  the multiset {sin²(2πk/N)} coincides with {sin²(πk/N)} (k ↦ 2k is
+  an automorphism of Z₁₁), so the spectrum of Ĵ is {0, ±sin(2πk/N)} =
+  {0, ±ω_k/2} — the half-chords of the carrier. This gives a deep
+  answer to "why complex numbers in QM?": because the Z₂-mirror on
+  Z₁₁ generates a J-structure with J² = −I.
 
 ────────────────────────────────────────────────────────────────────────────────
   2.4.K BORN RULE FROM Z₁₁-MARTINGALE CONVERGENCE
@@ -25088,6 +25135,25 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   │                                                                 │
   └─────────────────────────────────────────────────────────────────┘
 
+  (g) NON-CIRCULARITY OF THE QUADRATIC RULE. The quadratic rule is
+      not built into the measurement dynamics: the quadratic norm is
+      the structural input A5 (Σ_k|Ψ_k|² = N) fixing the initial
+      weights ρ_k(0); the tick chain (Rem 3.5.3.s) carries a
+      selection linear in m_k = λ_k − 1/N — no quadraticity in the
+      tick operator; the outcome frequencies = the initial weights is
+      the martingale theorem (e). Control: an initial state off the
+      uniform one gives the same frequencies = its own initial
+      weights (machine: a general ρ₀ in the 2.4.K block).
+
+  (h) THE FORM OF S[Î] ON THE OFF-DIAGONAL ENTRIES. The diffusive
+      unravelling of the dephasing: (S[Î](ρ))_{jk} = (λ_j + λ_k −
+      2⟨Î⟩_ρ)·ρ_{jk}; together with the D-form (Rem 2.4.K.2(1)):
+      dρ_{jk} = −½(λ_j−λ_k)²γ_T·ρ_{jk}·dt + √γ_T·(λ_j + λ_k −
+      2⟨Î⟩_ρ)·ρ_{jk}·dW_t. The trace is preserved per step exactly,
+      the reality of ρ is preserved; the ensemble drift per step is
+      the D-form exactly (machine: the 2.4.K block, an ensemble of
+      states).
+
   Machine: the 2.4.K validator block (the λ_k weights, Σω² = 2N = 22,
   the λ spread, Euler-Maruyama for the uniform and a general ρ₀ — the
   outcome frequencies → Born; QV growth). □
@@ -25110,8 +25176,9 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   ρ_A = Tr_B ρ_AB evolves ONLY by local terms (the partial trace of
   [L̂⊗I, I⊗X] vanishes) — no-signaling: individual trajectories carry
   no information; (iii) the BELL STATISTICS are satisfied in the
-  standard way (the CHSH maximum 2√2 — Th 2.4.V: the Z₁₁ spectral
-  identity): the Trinity difference is not a new statistics but the
+  standard way (the CHSH maximum 2√2 — Th 2.4.V: the pair
+  construction on the Z₁₁ carrier): the Trinity difference is not a
+  new statistics but the
   STRUCTURE OF THE RECORD of the act (the senses = reading, the
   choice = writing, 0.8.6); the registrable programme — the quantum
   computer with a single inject.
@@ -25669,10 +25736,10 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   structural origin is the signed duality kernel (Theorem 2.5.U.1).
 
 ────────────────────────────────────────────────────────────────────────────────
-  2.4.V TSIRELSON BOUND AS Z₁₁ SPECTRAL IDENTITY
+  2.4.V THE TSIRELSON BOUND ON THE Z₁₁ CARRIER
 ────────────────────────────────────────────────────────────────────────────────
 
-  THEOREM 2.4.V (The CHSH maximum from the Z₁₁ spectrum).
+  THEOREM 2.4.V (The CHSH maximum on the Z₁₁ carrier).
 
   The CHSH inequality for two pairs of binary measurements:
   |E(A,B) + E(A,B') + E(A',B) − E(A',B')| ≤ S_max. Local-realistically
@@ -25689,8 +25756,10 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   Mirror reduction. On every Z₂ mirror pair {k, N−k} the state is cut
   EXACTLY into a Bell-maximal pair
       |ψ_k⟩ = (|k⟩⊗|k⟩ + |N−k⟩⊗|N−k⟩)/√2,
-  because p(k) = λ_k/(λ_k + λ_{N−k}) = 1/2 by the Z₂-invariance of the
-  weights (machine: p = 1/2, deviation 0 for all five pairs).
+  because the amplitudes of |Ψ_max⟩ on the pair modes are equal
+  (1/N each): p(k) = λ_k/(λ_k + λ_{N−k}) = 1/2 — both routes (equal
+  amplitudes and the Z₂-invariance of the weights; machine: p = 1/2,
+  deviation 0 for all five pairs).
 
   Observables. On the 2D subspace of the pair — embedded Paulis
       A(θ) = cos θ·σ_z + sin θ·σ_x,  B(φ) = cos φ·σ_z + sin φ·σ_x;
@@ -25699,8 +25768,21 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   Quantum maximum. At the angles (0, π/4, π/2, −π/4):
       S = 3·cos(π/4) − cos(3π/4) = 2√2 EXACTLY
   (machine: the deviation from 2√2 = 0.0e+00; the Tsirelson bound is
-  attained; √(N − L₂) = √(11 − 3) = √8 = 2√2 — the spectral form of
-  the same number at N = 11).
+  attained; √(N − L₂) = √(11 − 3) = √8 = 2√2 — the recorded numerical
+  coincidence at N = 11, not the source of the bound).
+
+  Ensemble over the full state. The class event is part of the
+  instrument outcome (the reading 2.4.K: six classes = 5 pairs + the
+  mode 0), so the construction is the CONDITIONAL statistics of a
+  class: S_pair = 2√2 on each class {k, N−k}. The unconditional
+  statistics of |Ψ_max⟩ with the block-diagonal extension of the
+  observables A|0⟩ = |0⟩, B|0⟩ = |0⟩ (the null mode carries the
+  perfect correlation E_0 = 1):
+      S_ens = (10/11)·2√2 + (2/11)·1 ≈ 2.7531 < 2√2
+  (machine; the trivial extension E_0 = 0 gives S_ens = (10/11)·2√2 ≈
+  2.5713). Both unconditional records lie in (2, 2√2) — the quantum
+  correlations of the full carrier outside the local class and inside
+  the Tsirelson bound; the pair bound 2√2 reads on the classes.
 
   Local bound. The model with a hidden variable k ∈ Z₁₁ (shared by
   the two sides) and outcomes A(θ, k) = sign(cos(θ + 2πk/N)) gives
@@ -25721,16 +25803,21 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   2√2 is zero. Computation: theory_of_everything.py, block 2.4.V. □
 
   COROLLARY 2.4.V.1.
-  The Tsirelson bound in Trinity is NOT a postulate but a consequence
-  of the spectral structure of Z₁₁. At N = 11: N − L₂ = 11 − 3 = 8 and
-  √(N − L₂) = √8 = 2^(3/2) = 2√2 — the bound reads as a spectral
-  identity at the chosen N. The local bound 2 is exact at every N
-  (the limit of the local-realist class, not an N → ∞ limit).
+  The Tsirelson bound is attained by the construction of Th 2.4.V —
+  Pauli observables on the 2D subspaces of the mirror pairs of the
+  Z₁₁ carrier: the class-conditional record S_pair = 2√2, the
+  unconditional record of the ensemble — 2.7531 (machine). At
+  N = 11: N − L₂ = 11 − 3 = 8 and √(N − L₂) = √8 = 2^(3/2) = 2√2 —
+  the recorded numerical coincidence at the chosen N. The local bound
+  2 is exact at every N (the limit of the local-realist class, not an
+  N → ∞ limit).
 
   COROLLARY 2.4.V.2 (Falsifiable prediction #37: Bell experiment).
   The model coincides with standard QM in the CHSH kinematics EXACTLY:
-  S_max = 2√2, the derived correction = 0 (α does not enter the state
-  or the observables; machine: 0.0e+00). The numerical correction
+  the class-conditional maximum S_pair = 2√2, the unconditional record
+  of the ensemble 2.7531 (machine), the derived correction = 0 (α does
+  not enter the state or the observables; machine: 0.0e+00). The
+  numerical correction
   α²N⁻² is not derived and is removed; any confirmed deviation from
   2√2 falsifies the model together with QM. The specific testable
   signature of Trinity: every Z₂ mirror pair carries an EXACT
@@ -38978,7 +39065,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 constants remain EXACT, all validator checks
-  continue to pass (2588 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (2596 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -44314,7 +44401,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   Modal reading. Verification is the signal wiring of the canon:
   the machine drives the current of checks through the chains of
-  derivation (2588 PASS / 0 FAIL — the count of the charge transport
+  derivation (2596 PASS / 0 FAIL — the count of the charge transport
   of distinctions); the mirror of Time (the pair 1↔10) — the backward
   run of the proof: statistics reads the derivation from its end
   (uniqueness) to its beginning (axioms).
@@ -45469,7 +45556,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   the zero mode. The load-bearing structure is algebraic:
   π_L2 ↔ X̂ (Theorem 4.0.D.2); existence and uniqueness — Theorem
   4.0.D.6 (the fixed point of the Cone). The physical predictions of
-  Trinity (Section 5, 56 predictions, 2588 PASS) belong to the
+  Trinity (Section 5, 56 predictions, 2596 PASS) belong to the
   physics layer (Parts 1-2, 4-5) and use no inputs from Part 3.
 
   Section 3 formalizes Consciousness as the k = 0 mode of Z₁₁ and unfolds
@@ -53015,7 +53102,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 2588 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 2596 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -68976,13 +69063,13 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 2588 PASS,
+  exit 0. Python validator: theory_of_everything.py — 2596 PASS,
   0 FAIL, EXIT = 0 (≈ 5–8 min), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (715 theorems, 2588
+  from the recorded axioms and definitions (715 theorems, 2596
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
@@ -69435,7 +69522,7 @@ new parameters (Rem 2.6.A.4.ap).
          Python 3.12.6, numpy 2.4.2, scipy 1.17.1, sympy 1.14.0
          Lean 4.35.0 (elan; WITHOUT Mathlib and external dependencies)
 
-         python theory_of_everything.py   → 2588 PASS / 0 FAIL / EXIT=0
+         python theory_of_everything.py   → 2596 PASS / 0 FAIL / EXIT=0
                                           (≈ 5–8 min; the time is carried by
                                           the recorded deep sweeps 2.4.G.13.y
                                           and 2.4.AD.2.v)

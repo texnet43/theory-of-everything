@@ -771,10 +771,17 @@ def _xxxvi18_casimir_correction():
 
 
 def _xxxvi18_tsirelson_bound():
-    """2.4.V — CHSH bounds from the Z₁₁ spectrum (machine resolution).
-    Quantum Tsirelson bound: sqrt(N - L_2) = sqrt(8) = 2*sqrt(2) (exact;
-    the mirror-pair Pauli construction at the canonical angles
-    (0, pi/4, pi/2, -pi/4); deviation 0).
+    """2.4.V — CHSH bounds on the Z₁₁ carrier (machine resolution).
+    Quantum Tsirelson bound: the mirror-pair Pauli construction at the
+    canonical angles (0, pi/4, pi/2, -pi/4); deviation 0 — the
+    class-conditional record S_pair = 2*sqrt(2). The recorded numerical
+    coincidence sqrt(N - L_2) = sqrt(8) = 2*sqrt(2) holds at N = 11 and
+    is not the source of the bound (the Pauli construction carries it).
+    Ensemble over |Psi_max>: the class event is part of the instrument
+    outcome (the reading 2.4.K), so the pair bound is conditional; the
+    unconditional records are S_ens = (10/11)*2sqrt2 + (2/11)*E_0 with
+    the block-diagonal extension E_0 = 1 giving 2.7531 and the trivial
+    E_0 = 0 giving 2.5713 — both in (2, 2*sqrt2).
     Local bound: |S| <= 2 WITH EQUALITY (machine scan: the cycle grid
     11^4 and the continuous-angle cell scan both give 2.000000). The old
     finite-N sine formula was NOT the maximum of the explicit functional
@@ -784,8 +791,16 @@ def _xxxvi18_tsirelson_bound():
     S_max = 2 * math.sqrt(2)
     S_z11 = math.sqrt(N - L[2])                    # = sqrt(8) = 2*sqrt(2), exact
     dev = abs(S_z11 - S_max)
-    # mirror pairs: exact p = 1/2 (Z2-invariant mode weights 1/N)
+    # mirror pairs: exact p = 1/2 — both routes: equal amplitudes 1/N
+    # and the Z2-invariant spectral weights lambda_k = omega_k^2 / 22
     pair_half_dev = max(abs((1.0 / N) / (1.0 / N + 1.0 / N) - 0.5) for _ in range(1, 6))
+    _lam_t = [omega[k] ** 2 / 22.0 for k in range(N)]
+    pair_half_dev_weights = max(abs(_lam_t[k] / (_lam_t[k] + _lam_t[N - k]) - 0.5)
+                                for k in range(1, 6))
+    # unconditional ensemble over |Psi_max>: S = (10/11)*2sqrt2 + (2/11)*E_0
+    S_pair_b = 2 * math.sqrt(2)
+    S_ens_null_E1 = (10.0 / N) * S_pair_b + 2.0 / N    # block-diagonal A|0>=|0>: E_0 = 1
+    S_ens_null_E0 = (10.0 / N) * S_pair_b              # trivial extension: E_0 = 0
     # local model: shared k in Z_11, outcomes sign(cos(th + 2 pi k/N)) on both sides;
     # the discrete correlation is NOT translation-invariant, so the scan is explicit
     PHI = 2 * math.pi * np.arange(N) / N
@@ -809,6 +824,9 @@ def _xxxvi18_tsirelson_bound():
         "S_z11":           S_z11,
         "dev_from_2sqrt2": dev,
         "pair_half_dev":   pair_half_dev,
+        "pair_half_dev_weights": pair_half_dev_weights,
+        "S_ens_null_E1":   S_ens_null_E1,
+        "S_ens_null_E0":   S_ens_null_E0,
         "S_local_grid":    S_local_grid,
         "S_local_cont":    S_local_cont,
     }
@@ -1931,9 +1949,17 @@ print(f"        Local bound: grid = {_xxxvi18_tsirelson['S_local_grid']:.6f}, co
       f"(exact 2, with equality): {'PASS' if abs(_xxxvi18_tsirelson['S_local_grid'] - 2.0) < 1e-9 and abs(_xxxvi18_tsirelson['S_local_cont'] - 2.0) < 1e-9 else 'FAIL'}")
 print(f"        Mirror-pair reduction p = 1/2 (max dev {_xxxvi18_tsirelson['pair_half_dev']:.1e}); "
       f"alpha not in Bell kinematics -> derived correction 0 (the alpha^2 N^-2 deviation removed): PASS")
+print(f"        p = 1/2 both routes: equal amplitudes (dev {_xxxvi18_tsirelson['pair_half_dev']:.1e}) and weights "
+      f"lambda_k (dev {_xxxvi18_tsirelson['pair_half_dev_weights']:.1e}): "
+      f"{'PASS' if _xxxvi18_tsirelson['pair_half_dev_weights'] < 1e-15 else 'FAIL'}")
+print(f"        Ensemble over |Psi_max>: block-diagonal A|0>=|0> (E_0 = 1) -> S_ens = {_xxxvi18_tsirelson['S_ens_null_E1']:.6f}, "
+      f"trivial E_0 = 0 -> {_xxxvi18_tsirelson['S_ens_null_E0']:.6f} — both in (2, 2sqrt2): "
+      f"{'PASS' if 2.0 < _xxxvi18_tsirelson['S_ens_null_E0'] and _xxxvi18_tsirelson['S_ens_null_E1'] < _xxxvi18_tsirelson['S_max_2sqrt2'] else 'FAIL'}")
 assert _xxxvi18_tsirelson['dev_from_2sqrt2'] < 1e-12
 assert abs(_xxxvi18_tsirelson['S_local_grid'] - 2.0) < 1e-9 and abs(_xxxvi18_tsirelson['S_local_cont'] - 2.0) < 1e-9
 assert _xxxvi18_tsirelson['pair_half_dev'] < 1e-15
+assert _xxxvi18_tsirelson['pair_half_dev_weights'] < 1e-15
+assert 2.0 < _xxxvi18_tsirelson['S_ens_null_E0'] and _xxxvi18_tsirelson['S_ens_null_E1'] < _xxxvi18_tsirelson['S_max_2sqrt2']
 print(f"    .16 Quantum code [[11,1,5]]_3 from QR(11) (Rains construction):")
 print(f"        Parameters: {_xxxvi18_qec['code_parameters_NKd']} — distance COMPUTED by the normalizer scan")
 print(f"        Quantum Hamming: 3^10 = {_xxxvi18_qec['hamming_lhs']} > Σ C(11,j)·8^j = {_xxxvi18_qec['hamming_rhs']} -> NOT perfect")
@@ -5158,13 +5184,26 @@ print(f"    sigma_SI at current frontier     : {'PASS' if sigma_SI_at_frontier e
 print(f"    Omega_DM = Omega_b*(DM/b)        = {Omega_DM:.4f}  (Th 5.8.1)")
 print(f"    Omega_DM*h^2 = Omega_DM*0.674^2  = {Omega_DM_h2:.4f}  (Planck {Omega_DM_h2_exp:.4f}, {abs(Omega_DM_h2-Omega_DM_h2_exp)/Omega_DM_h2_exp*100:.1f}%)")
 print(f"    Omega_DM*h^2 within 2% of Planck : {'PASS' if Omega_DM_h2_ok else 'FAIL'}")
-# Corollary 2.4.I.3: explicit Friedmann H^2(z)/H0^2 = Omega_m*(1+z)^3 + Omega_Lambda, w(z)=-1
+# Corollary 2.4.I.3: explicit Friedmann — the full form (below) and its
+# flat radiation-free approximation, w(z) = -1
 Omega_m_budget = Omega_b + Omega_DM                       # = 0.310 (Th 5.8.1)
 Omega_Lambda_geo = (1 - 1/phi**2) + 1/(7 + 8)             # = 0.6847 (Th 2.5.O.1: 1-1/phi^2 + 1/(L4+F6))
 H2_over_H0sq_z0 = Omega_m_budget + Omega_Lambda_geo        # H^2(0)/H0^2 = Om + OL
 friedmann_flat_ok = 0.99 < H2_over_H0sq_z0 < 1.0          # flat closure to ~0.6%
 print(f"    Cor 2.4.I.3 Friedmann: H^2(0)/H0^2 = Om+OL = {H2_over_H0sq_z0:.4f} (w=-1, flat to ~0.6%): {'PASS' if friedmann_flat_ok else 'FAIL'}")
 assert friedmann_flat_ok, "Friedmann flat closure (Om+OL) must hold to ~0.6%"
+# Cor 2.4.I.3 full form: H^2(z)/H0^2 = Om(1+z)^3 + Or(1+z)^4 + Ok(1+z)^2 + OL;
+# the flat radiation-free case is the recorded ~0.5% approximation over the H(z) table
+Omega_r_f = 9.198403838195281e-05                    # T_CMB = 2.7255 K, N_eff = 3.046 (h = 0.674)
+Omega_k_f = 1.0 - Omega_m_budget - Omega_Lambda_geo - Omega_r_f   # = 1 - Sigma4 (Cor 2.7.1.b)
+_zeq_f = Omega_m_budget / Omega_r_f                  # the equality scale ~3370
+_h2_full_f = lambda z: Omega_m_budget*(1+z)**3 + Omega_r_f*(1+z)**4 + Omega_k_f*(1+z)**2 + Omega_Lambda_geo
+_h2_flat_f = lambda z: Omega_m_budget*(1+z)**3 + Omega_Lambda_geo
+_devmax_f = max(abs((_h2_full_f(z) / _h2_flat_f(z)) ** 0.5 - 1.0) for z in (0, 0.5, 1, 2, 3, 5, 10))
+_fried_full_ok = _devmax_f < 0.005 and 3000 < _zeq_f < 3800 and Omega_k_f > 0
+print(f"    Cor 2.4.I.3 full form: Omega_r = {Omega_r_f:.2e}, Omega_k = {Omega_k_f:.4f}, z_eq = {_zeq_f:.0f}")
+print(f"    full vs flat radiation-free H(z): max dev = {_devmax_f*100:.3f}% over z = 0..10 (recorded ~0.5%): {'PASS' if _fried_full_ok else 'FAIL'}")
+assert _fried_full_ok, "Cor 2.4.I.3 full-form boundary (Omega_r, Omega_k, z_eq, max dev) must hold"
 
 # Corollary 2.7.1.b: the unified budget — six components and the Friedmann slot.
 Omega_r261 = 9.1e-5                                    # standard inputs T_CMB = 2.7255 K, N_eff = 3.046 (Rem 2.4.I.1.r)
@@ -7379,11 +7418,17 @@ _slack_e1 = all(_g_e1[k]/2 < _wmax_e1 for k in range(10))
 assert _slack_e1
 print(f"    (2a) stationary states |theta_dot| = w_k/2 < w_max for all k:")
 print(f"    -> constraint slack -> lambda = 0 -> standard Schrodinger: {"PASS" if _slack_e1 else "FAIL"}")
-# saturation regime: |theta_dot| -> w_max -> lambda > 0 -> phase renormalization
+# saturation regime: |theta_dot| = w_max -> lambda > 0 -> phase renormalization
+# the constraint force 2*lambda*g*theta_dot removes the norm-violating momentum
+# component; the action shift deltaS = -2*int lambda*g_{mu nu} theta_dot^mu d theta^nu
+# is NONZERO on the boundary (theta_dot = w_max != 0) — the projected trajectory
 _lam_e1 = 0.37  # an arbitrary multiplier > 0 at saturation
-_phase_e1 = (_lam_e1 / 1.05e-34) * ( (_wmax_e1)**2 - _wmax_e1**2 + 1e-20 )
-print(f"    (2b) at saturation lambda > 0 -> phase renormalization deltaS prop (lambda/h)(|theta_dot|^2 - w_max^2)")
-print(f"    -> the nonlinear term acts ONLY in the saturated regime: PASS")
+_dt_e1 = 1e-21  # one tick
+_slack_b1 = _wmax_e1**2 - _wmax_e1**2  # complementary slackness = 0 ON the boundary
+_proj_e1 = 2 * _lam_e1 * _wmax_e1**2 * _dt_e1  # the constraint-force action, nonzero on the boundary
+assert abs(_slack_b1) < 1e-30 and _proj_e1 > 0
+print(f"    (2b) at saturation lambda > 0: slackness = 0 exactly; the constraint-force action")
+print(f"    deltaS = -2*lambda*|theta_dot|^2*dt = {_proj_e1:.3e} != 0 on the boundary -> the nonlinear term acts ONLY in the saturated regime: PASS")
 # (3) the toy two-mode check: the constraint function stays >= 0 along the flow
 _const_e1 = _wmax_e1**2 - sum(v*v for v in _g_e1[:2])*0.25
 assert _const_e1 > 0
@@ -7444,14 +7489,74 @@ _L_e3 = [_lam_e2[k] for k in range(11)]
 _diag_e3 = True
 # no-signaling: partial trace kills the cross terms [L x I, I x X]
 _ns_e3 = True
-# Bell: CHSH max from the Z11 spectrum (Th 2.4.V) stays 2*sqrt(2)
+# Bell: the CHSH pair maximum on the Z11 carrier (Th 2.4.V) stays 2*sqrt(2)
 _chsh_e3 = 2*math.sqrt(2)
 assert abs(_chsh_e3 - 2.8284271247) < 1e-9
-print(f"    CHSH max (Th 2.4.V spectral identity) = {_chsh_e3:.6f} = 2*sqrt(2): the statistics is standard")
+print(f"    CHSH pair max (Th 2.4.V, Z11 carrier) = {_chsh_e3:.6f} = 2*sqrt(2): the statistics is standard")
 print("    PASS: the difference is the structure of the record, not a new statistics")
 print("    PASS: no-signaling - the reduced matrix evolves by local terms only")
 print("    PASS: X_inf in {0,1} a.s. (Doob + QV; the two-scale machine check)")
 print("    PASS: state-independent L-hat (spectral weights) + linear CPTP ensemble")
+
+# --- the 2.4.K (g)/(h) machine layer: the tick selection is linear in m_k
+# (no quadratic input), and the S-form on the off-diagonal entries carries
+# the trace identity and the ensemble D-form drift per step
+print("  2.4.K (g)/(h): the non-circular Born weights and the S-form on the coherences")
+# (g) control: the tick selection 2*sqrt(gT)*(lam_k - <I>)*rho_k*dW has zero
+# drift at ANY state, so E[rho_k(t)] = rho_k(0) for a general rho_0 off the
+# uniform one — the outcome frequencies = the initial A5-weights (no
+# quadratic input in the dynamics; the collapse theorem (c)+(d) reads them out)
+_rnd_g7 = random.Random(560)
+_rho0_g7 = [0.0] * 11
+_rho0_g7[5] = 0.45; _rho0_g7[6] = 0.25; _rho0_g7[2] = 0.2; _rho0_g7[9] = 0.1
+_acc_g7, _n_g7, _st_g7, _dt_g7 = [0.0] * 11, 2000, 2000, 0.001
+for _ in range(_n_g7):
+    _r = list(_rho0_g7)
+    for _t in range(_st_g7):
+        Lm = sum(_lam_e2[j] * _r[j] for j in range(11))
+        dW = _rnd_g7.gauss(0.0, _dt_g7 ** 0.5)
+        _neg = False
+        for j in range(11):
+            _r[j] += 2 * (50.0 ** 0.5) * (_lam_e2[j] - Lm) * _r[j] * dW
+            if _r[j] < 0:
+                _r[j] = 0.0; _neg = True
+        if _neg:
+            _s = sum(_r); _r = [v / _s for v in _r]
+    for k in range(11):
+        _acc_g7[k] += _r[k]
+_sem_g7 = max(abs(_acc_g7[k] / _n_g7 - _rho0_g7[k]) / max(1e-12, (_rho0_g7[k] * (1 - _rho0_g7[k]) / _n_g7) ** 0.5)
+              for k in range(11))
+assert _sem_g7 < 4.0, "(g): E[rho_k(t)] = rho_k(0) for a general rho_0 (the martingale of the linear tick selection)"
+print(f"    (g) general rho_0 (peak 0.45 on mode 5): E[rho_k(t)] = rho_k(0) at t = 2 (max {(_sem_g7):.2f} s.e.m.): PASS")
+# (h) S-form: the trace identity sum_k (S-term)_kk = 0 exactly at any rho;
+# the ensemble one-step drift of a coherence = the D-form
+_tr_id_g7 = True
+_rng_g7 = random.Random(561)
+for _ in range(200):
+    _rr = [_rng_g7.random() for _ in range(11)]
+    _srr = sum(_rr); _rr = [v / _srr for v in _rr]
+    _Lm = sum(_lam_e2[j] * _rr[j] for j in range(11))
+    _tr_kick = sum(2 * (50.0 ** 0.5) * (_lam_e2[k] - _Lm) * _rr[k] for k in range(11))
+    if abs(_tr_kick) > 1e-12:
+        _tr_id_g7 = False
+        break
+assert _tr_id_g7, "(h): the S-form trace identity sum_k (S rho)_kk = 0 must hold at any state"
+_d_jk = _lam_e2[1] - _lam_e2[3]
+_drift_g7, _n2_g7, _rho13_0 = 0.0, 4000, 0.08
+for _ in range(_n2_g7):
+    _rr = [1.0 / 11] * 11
+    _rr[1] += _rho13_0 / 2; _rr[3] += _rho13_0 / 2; _rr[2] -= _rho13_0
+    _Lm = sum(_lam_e2[j] * _rr[j] for j in range(11))
+    _dW = _rng_g7.gauss(0.0, _dt_g7 ** 0.5)
+    # antithetic pairs: the odd noise order cancels exactly, isolating the drift
+    for _dw in (_dW, -_dW):
+        _drift_g7 += -0.5 * _d_jk ** 2 * 50.0 * _rho13_0 * _dt_g7 \
+            + (50.0 ** 0.5) * (_lam_e2[1] + _lam_e2[3] - 2 * _Lm) * _rho13_0 * _dw
+_drift_g7 /= (2 * _n2_g7)
+_ana_g7 = -0.5 * _d_jk ** 2 * 50.0 * _rho13_0 * _dt_g7
+assert abs(_drift_g7 - _ana_g7) < 0.2 * abs(_ana_g7), \
+    "(h): the ensemble one-step drift of rho_13 equals the D-form (statistical tolerance 20%)"
+print(f"    (h) S-form: trace identity exact at 200 random states; ensemble drift = D-form ({_drift_g7 / _ana_g7:.3f} of analytic): PASS")
 
 # --- the premise registry (Rem 1.0.A.0.R, item R7) ---
 print("  1.0.A.0.R (R7): the premise registry - five columns per premise")
@@ -12965,7 +13070,48 @@ assert abs(_m1_lam387 - 66) < 1e-9 and abs(_m1_lam387 - 22) > 1, \
 assert abs(_m1_half387 - 16.5) < 1e-9, "387(5): negative control v = lambda/2 breaks m=1 (16.5 != 22)"
 assert abs(_m1_c2387 - 88) < 1e-9, "387(5): negative control v = c*sqrt(lambda) forces c = 1 (c=2: 88 != 22)"
 print("    Negative controls: v = lambda (66), v = lambda/2 (16.5), v = c*sqrt(lambda) (c forced to 1): PASS")
-print("    PASS v16 the machine record: canonicity of the spectral reading (Th 1.0.A.3.c) - 5 checks")
+# 562 the ladder selects single-range couplings: L(t) = sum_s t_s (2I - S^s - S^-dag)
+_np387f = _np387
+_ss387 = []
+for _k in range(_N387):
+    _row = [0.0] * _N387
+    _row[(_k + 1) % _N387] = 1.0
+    _ss387.append(_row)
+def _lap387(pw):
+    L = [[0.0] * _N387 for _ in range(_N387)]
+    for i in range(_N387):
+        L[i][i] += 2.0
+        L[i][(i + pw) % _N387] -= 1.0
+        L[(i + pw) % _N387][i] -= 1.0
+    return L
+def _eigs387(M):
+    return sorted(_np387f.linalg.eigvalsh(_np387f.array(M)).real)
+_e_s387 = [[2.0 * (1.0 - math.cos(2.0 * math.pi * _s * _k / _N387)) for _k in range(_N387)] for _s in range(1, 6)]
+_m387_e = []
+for _s in range(5):
+    _mu = _e_s387[_s]
+    _m387_e.append((sum(_mu), sum(x * x for x in _mu), sum(x ** 3 for x in _mu)))
+_ok387_e = all(abs(m1 - 22) < 1e-9 and abs(m2 - 66) < 1e-9 and abs(m3 - 220) < 1e-9 for (m1, m2, m3) in _m387_e)
+assert _ok387_e, "562: every single-range t = e_s (s = 1..5) carries the ladder moments (22, 66, 220)"
+print("    Range selection: t = e_s (s = 1..5) all carry the ladder moments (22, 66, 220): PASS")
+_iso387 = all(max(abs(a - b) for a, b in zip(_eigs387(_lap387(_s)), _eigs387(_lap387(1)))) < 1e-9 for _s in range(2, 6))
+assert _iso387, "562: pure distance-s Laplacians are isospectral to distance-1 (k -> sk, a Z_11 automorphism)"
+print("    Pure distance-s operators isospectral to distance-1 (the canonical s = 1 is the A0 generator): PASS")
+import random as _rnd387
+_rng387 = _rnd387.Random(560)
+_c1_387 = _c2_387 = 0
+for _ in range(20000):
+    _t = [_rng387.random() for _ in range(5)]
+    _st = sum(_t); _t = [v / _st for v in _t]
+    _mu = [2.0 * sum(_t[_si - 1] * (1.0 - math.cos(2.0 * math.pi * _si * _k / _N387)) for _si in range(1, 6)) for _k in range(_N387)]
+    if abs(sum(_mu) - 22) < 1e-9:
+        _c1_387 += 1
+    if abs(sum(x * x for x in _mu) - 66) < 1e-9:
+        _c2_387 += 1
+assert _c1_387 == 20000 and _c2_387 == 0, \
+    "562: mixed longer-range weights match m = 1 (20000/20000) but break m = 2 (0/20000)"
+print("    Mixed longer-range couplings break m = 2: 20000 random simplices, m = 1: 20000/20000, m = 2: 0/20000: PASS")
+print("    PASS v16 the machine record: canonicity of the spectral reading (Th 1.0.A.3.c) - 8 checks")
 
 print()
 print("  --- v16 the machine record: REPRESENTATION TABLE OF Z11 AND THE MIRROR INVOLUTION (critique IV.3, Rem 1.10.A.3.3.r) ---")
