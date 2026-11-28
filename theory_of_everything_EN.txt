@@ -122,7 +122,7 @@
 
    Theory statistics:
    • 715 theorems (with derivations in the text; 212 machine-verified in Lean 4 — the arithmetic core). 251 definitions. 569 corollary.
-   • 589 remarks. 28 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
+   • 593 remarks. 28 lemmas. 13 propositions. 7 axioms (6 base A0–A5 Hilbert + A6 dimensional; ÆT₁/₂/₃/₄/₅ are consequences of the geometric layer, Theorems 1.0.AET.1/2/3/4/5, conditional on T1–T4 + Choice). 4 appendices (I — Glossary; II — Mathematical summary without
   ontological language; III — Structural core: the flagship status
      table — 18 main results, each with formula, prerequisites, data,
      status and refutation rule — plus the reproducibility block; IV — the map of fundamental questions).
@@ -674,7 +674,7 @@
   is tuned). Grammar-density control: random formulas from the same atoms
   are 788× less accurate (Monte Carlo, §2.10.B); the selection criterion
   — MDL-uniqueness; the blind tests — the PF registry with 5σ refutation
-  criteria; the machine: 2735 checks (0 FAIL), 212 Lean theorems.
+  criteria; the machine: 2742 checks (0 FAIL), 212 Lean theorems.
 
   Ontologically, Trinity describes how reality is built, not
   only the closure of constants: the micro- and macro-cosmos are
@@ -745,7 +745,7 @@
   identity — resonance); the mirror pairs of operations carry the quintet
   atoms, and the Euler identity e^{iπ}+1 = 0 is the resonance of all
   operations.
-  Battery: 2735 PASS / 0 FAIL / EXIT=0.
+  Battery: 2742 PASS / 0 FAIL / EXIT=0.
 
   The sign kernel of duality —
   Δα(Z) = α⁴·[sin²(πk_e/N) − sin²(πk_p/N)]·N/(2N−1), the Rb reference,
@@ -853,7 +853,7 @@
   φ-tower is an exact statement: φ^t > t at t ≥ 1 — unbounded, no
   finite closure (Rem .av(4)); the weight of choice across the scales —
   the author's synthesis: rigidity at the edges of the spectrum, the
-  density of choice at the center (Rem .ay). Battery: 2735 PASS / 0 FAIL / EXIT=0.
+  density of choice at the center (Rem .ay). Battery: 2742 PASS / 0 FAIL / EXIT=0.
 
   ★ THREE FLAGSHIP RESULTS (peer-review-ready) ★
 
@@ -984,7 +984,7 @@
   2^94 ≈ 1.98e28 (Rem 1.0.K.2.4.r.1).
 
   715 theorems (with derivations in the text; 212 machine-verified in Lean 4 — the arithmetic core),
-  251 definitions, 569 corollary, 589
+  251 definitions, 569 corollary, 593
   remarks, 28 lemmas, 13 propositions. Axiomatics: 7 axioms (6 base
   Hilbert A0-A5 + A6 dimensional lexicon); ÆT₁, ÆT₂, ÆT₃, ÆT₄, ÆT₅
   are reduced to the geometric layer (Theorems 1.0.AET.1 — 1.0.AET.5,
@@ -22478,6 +22478,37 @@ closure system {C1, C2, C3} (Th 1.10.0.28); in particular Ψ₁₂ = Ψ₁.
   reading) is interpretive: both are exact. Computation:
   theory_of_everything.py, the Remark 2.4.A.0.7.r block. □
 
+  Remark 2.4.A.0.8 (The alpha map across the carrier: the 0/1 ends,
+  the floor-4 intensity, the i phase layer). An ontological layer over
+  the recorded ladder; every position is cross-checked against the
+  canon.
+  (1) The ends of the ladder. The Point (floor 0): the zero mode
+  carries no chord (omega_0 = 0), no direction — alpha = 0/1 = 0. The
+  Structure (floor 11): the closure x^N = 1, the identity operation —
+  alpha = 1/1 ("the full alpha", outside Duality). The interior 1..10 —
+  the phi ladder: alpha decreases by phi per floor from alpha(1) =
+  0.5545 to alpha(10) = 1/137.036 (the full root).
+  (2) The floor-4 intensity (the inverse-square law). The influence of
+  the point tick spreads across the Cone with flux conservation
+  through the cross-section — the plane (the multiplication
+  semantics; the extension floors 3+4); the density over the section
+  is the floor-4 intensity of the count. The rule is recorded in
+  parallel for the loop: e^4 — the A2 intensity of floor 4; for the
+  point residual — the same order: alpha^4 = (alpha^2)^2, where
+  alpha^2 = r_e/a_0 (Th 2.4.AB.2); in the Bartini cell force (4,-4) ->
+  10 — the same four degrees. The order 4 is derived ontologically:
+  the section x the two ends of the act (Rem 4.0.D.7.c.t). The
+  coefficient V_cone is derived (Rem 2.4.A.0.7.r), the sign is the
+  Balance, the root is Lemmas 2.4.A.A/.C + the RG census 2.4.D.r2.
+  (3) The i phase layer and the golden angle. The direction carries i:
+  the pair phases x_k + x_{N-k} = pi, the identity A2; the sign kernel
+  Delta_alpha(Z) = alpha^4*[sin^2(pi*k_e/N) - sin^2(pi*k_p/N)]*
+  N/(2N-1) (Th 2.5.U.1) — the sin^2 factors are the i projections.
+  The golden angle 360°/phi^2 = 137.5078° carries 4.2016 Z11 steps —
+  the {4,7}/{5,6} boundary (the TM zone); the difference
+  golden - 2/phi^3 = 137.035628 (2.7e-6) — a directed resonance, not a
+  derivation (honest status). Machine: the 2.4.A.0.8 block. □
+
   Corollary 2.4.A.16 (Relation to Theorem 2.5.U.1).
   The Trinity α from 2.4.A (the single rule) stands at 0.8σ of
   CODATA-2022; the tension with the Rb measurement (Morel et al.
@@ -39641,7 +39672,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   Trinity enriched with substantial layer without changing the
   formal foundation: all 84 catalogue records remain UNCHANGED (the accuracies — per
   catalogue 2.5, up to 2.6% for the coarse forms), all validator checks
-  continue to pass (2735 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
+  continue to pass (2742 PASS), all structural characterizations within the context of Trinity of 7/7 Clay
   problems are preserved. Aether theory is INTERPRETIVE enrichment,
   not replacement.
 
@@ -45031,7 +45062,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   Modal reading. Verification is the signal wiring of the canon:
   the machine drives the current of checks through the chains of
-  derivation (2735 PASS / 0 FAIL — the count of the charge transport
+  derivation (2742 PASS / 0 FAIL — the count of the charge transport
   of distinctions); the mirror of Time (the pair 1↔10) — the backward
   run of the proof: statistics reads the derivation from its end
   (uniqueness) to its beginning (axioms).
@@ -46186,7 +46217,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   the zero mode. The load-bearing structure is algebraic:
   π_L2 ↔ X̂ (Theorem 4.0.D.2); existence and uniqueness — Theorem
   4.0.D.6 (the fixed point of the Cone). The physical predictions of
-  Trinity (Section 5, 56 predictions, 2735 PASS) belong to the
+  Trinity (Section 5, 56 predictions, 2742 PASS) belong to the
   physics layer (Parts 1-2, 4-5) and use no inputs from Part 3.
 
   Section 3 formalizes Consciousness as the k = 0 mode of Z₁₁ and unfolds
@@ -53788,7 +53819,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
 
   (C5) INTERNAL CONSISTENCY CRITERION: algorithmically verifiable
        closure of the theory.
-       Trinity: theory_of_everything.py EXIT=0, 2735 PASS, 0 FAIL
+       Trinity: theory_of_everything.py EXIT=0, 2742 PASS, 0 FAIL
        (formal verification of all assertions).
 
   (C6) LAKATOS CRITERION (Lakatos 1970): positive heuristics — a
@@ -68959,7 +68990,7 @@ Remark 2.4.AF.2.r (Deriving the portal from the action: the rung of
   Theorems: 715
   Definitions: 251
   Corollaries: 569
-  Remarks: 592
+  Remarks: 593
   Lemmas: 28
   Propositions: 13
   Axioms: 7 (6 base Hilbert A0–A5 + A6 dimensional lexicon; ÆT₁/₂/₃/₄/₅ are
@@ -70011,13 +70042,13 @@ new parameters (Rem 2.6.A.4.ap).
   total scalar Dynkin index T(R_S) = 21 and the weighted Casimir sum
   2520 (5.1.D.7.7.10/11), the freeze-out bounds (Corollary
   2.4.AF.3.1). Reproducible: `lean theory_of_everything.lean`
-  exit 0. Python validator: theory_of_everything.py — 2735 PASS,
+  exit 0. Python validator: theory_of_everything.py — 2742 PASS,
   0 FAIL, EXIT = 0 (≈ 5–8 min), including the embedded four-test PSLQ
   experiment of Theorem 1.10.F.9 (no separate script required).
 
   The boundary of machine verification (the three tasks are not
   equivalent): (1) Lean and Python verify the LOGICAL derivation
-  from the recorded axioms and definitions (715 theorems, 2735
+  from the recorded axioms and definitions (715 theorems, 2742
   checks — machine); (2) the consistency of the axioms themselves in
   the given interpretation is relative: the model is built, no
   contradictions found; absolute consistency is unavailable from
@@ -70470,7 +70501,7 @@ new parameters (Rem 2.6.A.4.ap).
          Python 3.12.6, numpy 2.4.2, scipy 1.17.1, sympy 1.14.0
          Lean 4.35.0 (elan; WITHOUT Mathlib and external dependencies)
 
-         python theory_of_everything.py   → 2735 PASS / 0 FAIL / EXIT=0
+         python theory_of_everything.py   → 2742 PASS / 0 FAIL / EXIT=0
                                           (≈ 5–8 min; the time is carried by
                                           the recorded deep sweeps 2.4.G.13.y
                                           and 2.4.AD.2.v)

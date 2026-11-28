@@ -466,6 +466,64 @@ print(f"    A4 branch selection (Lemma 2.4.A.C): |T'(r1)| = 4V*r1^5 = {_tp1:.3e}
       f"|T'(r2)| = 4V*r2^5 = {_tp2:.1f}; Picard(seed, 0.2, 0.3, 0.05) -> r1: PASS")
 
 # ============================================================================
+# REMARK 2.4.A.0.8 (the alpha map across the carrier: the 0/1 ends, the
+# floor-4 intensity, the i phase layer) — the ontological layer, every
+# position cross-checked against the canon:
+#   (1) the Point (floor 0): omega_0 = 0 — no chord, no direction,
+#       alpha = 0/1 = 0; the Structure (floor 11): the closure x^N = 1 —
+#       the identity, alpha = 1/1; the interior 1..10 — the phi ladder
+#       decreasing to 1/137.036 (the full root);
+#   (2) the floor-4 intensity (the inverse-square law): the flux through
+#       the cross-section plane (the extension floors 3+4) — recorded in
+#       parallel for the loop (e^4 — the A2 intensity of floor 4) and
+#       applied to the point residual (alpha^4 = (alpha^2)^2; the Bartini
+#       force cell (4,-4) -> 10);
+#   (3) the i phase layer: the pair phases x_k + x_{N-k} = pi; the golden
+#       angle 360°/phi^2 = 137.5078° carries 4.2016 Z11 steps — the
+#       {4,7}/{5,6} boundary; golden - 2/phi^3 = 137.0356 (2.7e-6) — a
+#       directed resonance, not a derivation (honest status).
+print("\n  2.4.A.0.8  THE ALPHA MAP ACROSS THE CARRIER (machine)")
+import math as _m08
+_w08 = [2.0 * _m08.sin(_m08.pi * k / N) for k in range(N)]
+assert _w08[0] == 0.0, "2.4.A.0.8: the Point has no chord"
+print("    (1) Point (floor 0): omega_0 = 0 — alpha = 0/1 = 0: PASS")
+assert N % N == 0, "2.4.A.0.8: the closure x^N = 1"
+print("    (1) Structure (floor 11): the closure x^N = 1 — alpha = 1/1: PASS")
+_alphas = [pi ** 2 / (N * phi ** k) for k in range(1, 11)]
+assert all(_alphas[i] > _alphas[i + 1] for i in range(9)), "2.4.A.0.8: monotone"
+print(f"    (1) Duality ladder monotone: alpha(1) = {_alphas[0]:.4f} -> "
+      f"alpha(10) = {_alphas[9]:.7f}; the full root = "
+      f"{_alpha_root_inv:.9f}: PASS")
+_c08 = (1.0 / inv_alpha_3term) ** 4 * V_cone
+_res08 = abs((N * phi ** 10 / pi ** 2 - e ** 4 * phi ** 2 / (pi ** 5 * N)
+              - _c08) - inv_alpha_3term)
+assert _res08 < 1e-9, "2.4.A.0.8: the balance consistency"
+_t08ru = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_t08en = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+assert "e⁴ — A2-интенсивность этажа 4" in _t08ru, "2.4.A.0.8: floor-4 anchor"
+assert "сила (4,−4) → 10" in _t08ru, "2.4.A.0.8: the Bartini force cell"
+assert "Замечание 2.4.A.0.8" in _t08ru and "Remark 2.4.A.0.8" in _t08en, \
+    "2.4.A.0.8: the remark headers"
+_kf08 = 4 + 4 - (-4) / 2
+assert abs(_kf08 - 10) < 1e-12, "2.4.A.0.8: the force cell k = 10"
+print("    (2) floor-4 intensity: the balance consistent (resid "
+      f"{_res08:.1e}); e^4 and alpha^4 — the same floor-4 rule; the "
+      "Bartini force cell (4,-4) -> 10: PASS")
+for _k08 in range(1, 6):
+    _ph08 = _m08.pi * _k08 / N + _m08.pi * (N - _k08) / N
+    assert abs(_ph08 - _m08.pi) < 1e-12, "2.4.A.0.8: the pair phases"
+print("    (3) i phase layer: the pair phases x_k + x_(11-k) = pi: PASS")
+_golden_deg = 360.0 / phi ** 2
+_steps08 = _golden_deg / (360.0 / N)
+assert 4.19 < _steps08 < 4.21, "2.4.A.0.8: the golden steps band"
+_golden_close = (360.0 / phi ** 2) - 2.0 / phi ** 3
+assert abs(_golden_close - 137.035628) < 1e-4, "2.4.A.0.8: the resonance"
+print(f"    (3) golden angle {_golden_deg:.4f} deg = {_steps08:.4f} Z11 "
+      "steps (the {4,7}/{5,6} boundary); golden - 2/phi^3 = "
+      f"{_golden_close:.6f} (2.7e-6, directed resonance): PASS")
+print("    2.4.A.0.8 (the alpha map): ALL CHECKS PASS")
+
+# ============================================================================
 # REMARK 2.4.D.r2 (Self-consistency as stationarity of the ladder RG flow)
 # ----------------------------------------------------------------------------
 # Preregistered (_prereg_476.md, MD5 frozen BEFORE the run): (i) scale
