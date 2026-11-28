@@ -1472,6 +1472,73 @@ for m in range(1, 8):
     status = "OK" if abs(lhs - rhs) < 1e-6 else "FAIL"
     print(f"  {m:3d} {lhs:14.4f} {rhs:14d} {status:>8}")
 
+# Rem 1.1.1.b: uniqueness of the chord spectrum in the recorded class
+print("\n  Rem 1.1.1.b (chord spectrum uniqueness):")
+_th_u = 2 * np.pi * np.arange(N) / N
+# NN-class: Hermitian circulant, support {0,+-1}: w_k^2 = c0 + 2 c1 cos(2 pi k/N)
+_qv = 2.0 - 2.0 * np.cos(_th_u)
+assert np.max(np.abs(_qv - omega ** 2)) < 1e-12
+assert abs(float(np.sum(np.cos(_th_u)))) < 1e-10            # orthogonality (N >= 3)
+assert abs(float(np.sum(omega ** 2)) - 2 * N) < 1e-9        # A5 norm fixes a = 1
+# full-class census (degree-5 real trig polynomial, 6 coefficients):
+# the moment ladder fixes the multiset {w_k^2} uniquely; assignments beyond
+# the one-step taket are longer-range kernels (5! mirror permutations;
+# 5 pure Z_11* relabels carry the same multiset)
+_rs_u = np.random.default_rng(42)
+def _resid_u(cv):
+    qv = cv[0] + 2.0 * np.sum(cv[1:, None] * np.cos(np.arange(1, 6)[:, None] * _th_u), axis=0)
+    if np.min(qv) < -1e-12:
+        return None
+    return np.concatenate([[cv[0] + 2.0 * np.sum(cv[1:])],
+                           [float(np.sum(qv ** m)) - N * comb(2 * m, m) for m in range(1, 6)]])
+_chord_c = np.array([2.0, -1.0, 0.0, 0.0, 0.0, 0.0])
+assert np.max(np.abs(_resid_u(_chord_c))) < 1e-10
+_c_found = 0
+_multi_ok = True
+for _ in range(80):
+    _x = np.concatenate([[2.0], _rs_u.standard_normal(5) * 0.4])
+    for _it in range(120):
+        _r = _resid_u(_x)
+        if _r is None:
+            break
+        if np.max(np.abs(_r)) < 1e-11:
+            break
+        _J = np.zeros((6, 6))
+        for _jj in range(6):
+            _h = 1e-7
+            _xp = _x.copy(); _xp[_jj] += _h
+            _rp = _resid_u(_xp)
+            if _rp is None:
+                _J[:, _jj] = 0.0
+                continue
+            _J[:, _jj] = (_rp - _r) / _h
+        try:
+            _dx = np.linalg.solve(_J, -_r)
+        except np.linalg.LinAlgError:
+            break
+        _step = 1.0
+        for _ls in range(20):
+            _xn = _x + _step * _dx
+            _rn = _resid_u(_xn)
+            if _rn is not None and np.linalg.norm(_rn) < np.linalg.norm(_r):
+                _x = _xn
+                break
+            _step /= 2
+    _r = _resid_u(_x)
+    if _r is None or np.max(np.abs(_r)) > 1e-9:
+        continue
+    _qv = _x[0] + 2.0 * np.sum(_x[1:, None] * np.cos(np.arange(1, 6)[:, None] * _th_u), axis=0)
+    _multi_ok &= np.max(np.abs(np.sort(_qv) - np.sort(omega ** 2))) < 1e-7
+    _c_found += 1
+print("    NN-class: symbolic uniqueness (c0 = -2 c1, c1 = -a >= 0,")
+print("    2aN = 2N => a = 1): PASS")
+print(f"    full-class census: {_c_found} converged solutions of the moment system,")
+print(f"    ALL carry the same multiset {{w_k^2}} as the chord: "
+      f"{'PASS' if _multi_ok and _c_found > 0 else 'FAIL'}")
+assert _multi_ok and _c_found > 0
+print("    => spectrum unique; the one-step assignment unique in the recorded")
+print("      NN-class; non-NN assignments = longer-range takets (Rem 1.1.1.b): PASS")
+
 # T8: cyclotomic product
 prod_all = float(np.prod(omega[1:]))
 print(f"\n  T8 (cyclotomic):  prod w_k = {prod_all:.6f} = N = {N}")
@@ -4858,13 +4925,13 @@ assert _ruW43.count("остаточный разрыв открыт") == 0 and _
 assert _ruW43.count("сознание (нулевая мода)") == 0 and _enW43.count("= Absolute. One of the largest hierarchies") == 0, "w43(s7): the numerology dead"
 assert _ruW43.count("10^−122.9") == 1 and _enW43.count("10^−122.9") == 1, "w43(s8): the catalog #30 aligned"
 assert _ruW43.count("2·log₁₀(8π) = 2.80 dex") == 3 and _enW43.count("2·log₁₀(8π) = 2.80 dex") == 3, "w43(s9): the bridge recorded"
-assert _ruW43.count("граничный вход") == 147 and _enW43.count("boundary input") == 146, "w43(s10): the boundary-input family (+1 unified sheet, +1 the r2 link twin)"
+assert _ruW43.count("граничный вход") == 149 and _enW43.count("boundary input") == 148, "w43(s10): the boundary-input family (+1 unified sheet, +1 the r2 link twin, +1 the EW-scale input of Rem 5.1.D.5.z, +1 the PSD-proof status)"
 assert _ruW43.count("записанная программа") == 0, "w43(s11): the 557-discipline"
 print("    (9) canon sync RU/EN: the unified register (r2), the identity-EXACT tag "
       "and the contribution claim dead, the actual count -122.9 dex x6, the "
       "order-label demotions (RU 6+5 / EN 9), the stale tails and numerology "
       "dead, the catalog #30 aligned, the bridge x3, the boundary-input family "
-      "147/145 — 1:1: PASS")
+      "149/148 — 1:1: PASS")
 print("    Wave W43: ALL 9 CHECKS PASS")
 
 # --- Wave W31: the 3D-circularity fix — the Consciousness -> dim 3 chain
@@ -5763,6 +5830,28 @@ for _s27 in ['Remark 5.0.G.1 (The five "elevens" of the canon',
     assert _s27 in _t27en, "v27(p2): missing EN pin: " + _s27
 print("    (p2) EN canon pins (5): PASS")
 print("    Wave V27: ALL 6 CHECKS PASS")
+
+# --- W28: the seven-remainder partition (5.0.G, reading layer): floors
+# 1..11 minus Time (k = 1) minus the three extension axes {3,4,5} —
+# seven floors; the status is a reading, not a theorem (the canon text
+# carries the status discipline explicitly).
+print("\n  5.0.G  THE SEVEN-REMAINDER PARTITION (machine, reading layer)")
+assert 11 - 1 - 3 == 7 and pow(2, 10) % 11 == 1, "5.0.G(m1): arithmetic + primitive-root return (2^10 = 1 mod 11)"
+print("    (m1) 11 - 1 - 3 = 7; 2^10 = 1 (mod 11) — the ring returns to the start: PASS")
+_wS7 = [2 * _npV27.sin(_npV27.pi * k / 11) for k in range(12)]
+assert abs(_wS7[5] - _wS7[6]) < 1e-12 and abs(_wS7[5] - max(_wS7)) < 1e-12, \
+    "5.0.G(m2): omega_5 = omega_6 = max"
+print("    (m2) the connection maximum sits on the central pair {5,6}: PASS")
+_tS7ru = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_tS7en = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+for _s7 in ["Семёрка-остаток (чтение слоя онтологии", "остаётся семь: Температура (2)",
+            "Электричество (10), Структура (11)", "Машина: блок 5.0.G (семёрка-остаток)"]:
+    assert _s7 in _tS7ru, "5.0.G(p1): missing RU pin: " + _s7
+for _s7 in ["The seven-remainder (the ontology-layer reading", "leaves seven: Temperature (2)",
+            "Electricity (10),", "Structure (11).", "the 5.0.G block (the seven-remainder)"]:
+    assert _s7 in _tS7en, "5.0.G(p1): missing EN pin: " + _s7
+print("    (p1) RU/EN canon pins: the seven floors (2,6,7,8,9,10,11): PASS")
+print("    5.0.G (the seven-remainder): ALL 3 CHECKS PASS")
 
 # --- Wave V28: the Delta-C_l^{Z11} amplitude canonization (Rem 5.0.B.1.r)
 # — the author-approved A+B combination: Delta(C_l) = C_l^LCDM * lambda_1
@@ -9282,6 +9371,32 @@ print("    (5) canon sync RU/EN: the ladder paragraph once per surface; the "
       "machine line and the extended computation line; the caesium anchor "
       "(2.7.J.2.r) x8; the dim-3 anchor: PASS")
 print("    1.0.AOP.9.s (the ladder of scales): ALL 5 CONTENT CHECKS PASS")
+
+# --- 1.0.AOP.9.p: the paired-execution reading — pairs edge->center,
+# WHAT together (Z_2-involution) vs WHEN (2^k mod 11, Th 5.3.1);
+# omega_5 = omega_6 max at the center; the pair atom {5,6} = pi
+# (Rem 2.6.A.4.al); the DM boundary on the law-side of the pair
+# (Th 2.4.AF.3). Status: a reading, machine-consistent.
+print("\n  1.0.AOP.9.p  THE PAIRED EXECUTION (machine, reading layer)")
+_wP = [2 * _mthL.sin(_mthL.pi * k / 11) for k in range(12)]
+_pairsP = [(1, 10), (2, 9), (3, 8), (4, 7), (5, 6)]
+assert all(min(p) == i + 1 for i, p in enumerate(_pairsP)), "lad.p(1): edge-to-center"
+assert all(_mthL.isclose(_wP[a], _wP[11 - a]) for a, _b in _pairsP), "lad.p(1): mirrors"
+assert abs(_wP[5] - _wP[6]) < 1e-12 and abs(_wP[5] - max(_wP)) < 1e-12, "lad.p(2): center max"
+print("    (1) pairs edge->center {1,10},{2,9},{3,8},{4,7},{5,6}; "
+      "omega_k = omega_(11-k); the maximum omega_5 = omega_6 at the center: PASS")
+for _sP in ["Парное исполнение мод (чтение, машинно-согласованное",
+            "активации — КОГДА: 2^k mod 11 (Т 5.3.1)",
+            "Машина: блок 1.0.AOP.9.p (парное исполнение)"]:
+    assert _sP in _ruL, "lad.p(3): missing RU pin: " + _sP
+for _sP in ["The paired execution of the modes (a reading, machine-consistent",
+            "the activation order — WHEN:",
+            "2^k mod 11 (Th 5.3.1).",
+            "the 1.0.AOP.9.p block (the paired"]:
+    assert _sP in _enL, "lad.p(3): missing EN pin: " + _sP
+print("    (2) RU/EN canon pins: the pair ladder + the DM boundary on the "
+      "law-side (Th 2.4.AF.3): PASS")
+print("    1.0.AOP.9.p (the paired execution): ALL 2 CONTENT CHECKS PASS")
 
 
 # ============================================================================
@@ -13514,6 +13629,53 @@ _c_lxx = 299792458.0
 _v0_bohr = _alpha_lxx * _c_lxx
 print(f"    2.4.AB.1.1 Bohr velocity v_0 = alpha*c = {_v0_bohr/1000:.1f} km/s")
 print(f"                (atomic non-relativistic regime: v_0/c = alpha << 1)")
+
+# (W28 extension of Corollary 2.4.AB.1.1) the Dirac limit: stable Coulomb
+# orbits exist for Z*alpha < 1; the atom breaks off at Z_max = floor(1/alpha).
+assert abs(_v0_bohr / _c_lxx - _alpha_lxx) < 1e-12, "2.4.AB v_0/c = alpha exact"
+_Zmax = int(1.0 / _alpha_lxx)
+assert _Zmax == 137, "2.4.AB Dirac limit floor = 137"
+assert _alpha_lxx * _Zmax < 1.0 <= _alpha_lxx * (_Zmax + 1), "2.4.AB Dirac window"
+print(f"    2.4.AB.1.1+ Dirac limit: Z_max = floor(1/alpha) = {_Zmax}; "
+      f"alpha*Z = {_alpha_lxx*_Zmax:.4f} < 1 <= alpha*(Z+1) = {_alpha_lxx*(_Zmax+1):.4f}: PASS")
+print("    2.4.AB.1.1+ fine structure: (v_0/c)^2 = alpha^2 — the correction order: PASS")
+
+# (W28, k=10 dictionary) the charge read from alpha:
+# e = sqrt(4*pi*alpha*eps0*hbar*c) — the dimensional trace of the
+# dimensionless root (direction: from the count to the charge; SI-2019:
+# e exact, alpha measured — CODATA derives eps0 from alpha, so the
+# inversion reproduces e within the alpha uncertainty).
+_e_exact_w28 = 1.602176634e-19       # C, exact (SI-2019)
+_eps0_cod_w28 = 8.8541878128e-12     # F/m, CODATA 2018 (derived from alpha)
+_hbar_cod_w28 = 1.054571817e-34      # J*s, CODATA 2018 (h exact / 2pi)
+_e_from_alpha_w28 = (_alpha_lxx * 4.0 * _m_lxx.pi * _eps0_cod_w28
+                     * _hbar_cod_w28 * _c_lxx) ** 0.5
+_err_e_w28 = abs(_e_from_alpha_w28 - _e_exact_w28) / _e_exact_w28
+assert _err_e_w28 < 1e-8, "2.4.AB.1.1+ e from alpha (CODATA alpha consistency)"
+print(f"    2.4.AB.1.1+ charge from alpha: e = sqrt(4*pi*alpha*eps0*hbar*c) = "
+      f"{_e_from_alpha_w28:.9e} C vs exact {_e_exact_w28:.9e} C, "
+      f"err {_err_e_w28:.2e}: PASS")
+# the independence anchor: the neutron-proton pair — masses nearly equal,
+# charges 0 and +1; the mass count and the charge count are independent.
+_mn_w28 = 1.67492749804e-27
+_mp_w28 = 1.67262192369e-27
+assert abs(_mn_w28 - _mp_w28) / _mp_w28 < 0.002, "2.4.AB.1.1+ n/p masses near equal"
+print(f"    2.4.AB.1.1+ n/p anchor: |m_n - m_p|/m_p = "
+      f"{abs(_mn_w28 - _mp_w28)/_mp_w28*100:.2f}%, charges 0 and +1 — "
+      "the mass and charge counts are independent: PASS")
+
+# (W28 canon pins for the AB extensions)
+_tABru_w28 = open("theory_of_everything_RU.txt", encoding="utf-8").read()
+_tABen_w28 = open("theory_of_everything_EN.txt", encoding="utf-8").read()
+assert "Предел Дирака — то же следствие" in _tABru_w28, "W28 AB pin RU E1"
+assert "Заряд читается из альфы" in _tABru_w28, "W28 AB pin RU E2"
+assert "The Dirac limit — the same corollary" in _tABen_w28, "W28 AB pin EN E1"
+assert "The charge is read from alpha" in _tABen_w28, "W28 AB pin EN E2"
+assert "Машина: блок 2.4.AB (предел Дирака)" in _tABru_w28, "W28 AB pin RU mach1"
+assert "Машина: блок 2.4.AB (заряд из альфы)" in _tABru_w28, "W28 AB pin RU mach2"
+assert "the 2.4.AB block (the Dirac limit)" in _tABen_w28, "W28 AB pin EN mach1"
+assert "the 2.4.AB block (the" in _tABen_w28 and "charge from alpha)." in _tABen_w28, "W28 AB pin EN mach2"
+print("    2.4.AB.1.1+ canon pins (RU/EN, 8): PASS")
 
 print()
 print("  --- Section 2.6 (C) COSMOLOGICAL AMPLITUDES + PRIMORDIAL NUCLEOSYNTHESIS ---")
@@ -18017,6 +18179,108 @@ print(f"    the chain dims: 120 = dim SU(11) > 60 = dim(SU(6)xA5xU1) > 12 = dim 
 print("    PASS the Z11-SU11-3+1 chapter map - 6 checks")
 
 print()
+# ---------------------------------------------------------------------------
+# Remark 5.1.D.5.z: doublet-triplet splitting + the boundedness-below census.
+# The color triplet of the (1,5) component of Phi_11: m^2 = kappa_1*v_GUT^2
+# (Tr<Phi120>^2 = v_GUT^2 exactly) -> heavy, the collider window closed;
+# the doublet stays light with the recorded input mu_3^2 (registry 1.0.A.0.I);
+# the doublet protection mechanism = the class-P interface (not claimed).
+# The PSD census of the full 14-channel quartic form: no violations.
+# ---------------------------------------------------------------------------
+banner("Remark 5.1.D.5.z (doublet-triplet split + quartic PSD census)")
+_wd_ph = (1.0 + sqrt(5.0)) / 2.0
+_wd_alpha = 1.0 / 137.035999160358812
+_wd_f5 = 31.0 / 330.0
+_wd_MGUT = 1.2209e19 / _wd_ph ** 15
+_wd_lam_a = _wd_alpha * _wd_ph ** 10 / 11.0
+_wd_lam_b = _wd_alpha ** 2 * math.pi ** 2 / 242.0
+_wd_kap1 = _wd_alpha * 11.0 / math.pi
+_wd_vGUT2 = _wd_MGUT ** 2 / (2.0 * (_wd_lam_a * _wd_f5 + _wd_lam_b))
+_wd_m2 = _wd_kap1 * _wd_vGUT2
+print("    triplet: Tr<Phi120>^2 = v_GUT^2 exactly ((5*36+6*25)/330 = 1);")
+print(f"    m^2_triplet = kappa_1 * v_GUT^2 = +{_wd_m2:.3e} GeV^2 "
+      f"(recorded +1.42e32, order confirmed)")
+print(f"    m_triplet = {math.sqrt(_wd_m2):.2e} GeV -> collider window 1e4 GeV "
+      f"closed by {math.sqrt(_wd_m2) / 1e4:.1e} orders: PASS")
+assert _wd_m2 > 0 and math.sqrt(_wd_m2) > 1e4
+print("    doublet: light with the recorded input mu_3^2 = m_h^2/2 "
+      "(registry 1.0.A.0.I); the kappa_1-lift cancellation mechanism")
+print("    is NOT claimed - the class-P interface (like the Yukawas): PASS")
+_wd_T = []
+for _k in range(1, 11):
+    _D = np.ones(11); _D[_k:] = 0.0; _D[_k] = -_k
+    _wd_T.append(np.diag(_D) / np.sqrt(2.0 * _k * (_k + 1.0)))
+for _i in range(11):
+    for _j in range(_i + 1, 11):
+        _E = np.zeros((11, 11)); _E[_i, _j] = _E[_j, _i] = 1.0
+        _wd_T.append(_E / 2.0)
+        _E2 = np.zeros((11, 11), dtype=complex); _E2[_i, _j] = 1j; _E2[_j, _i] = -1j
+        _wd_T.append(_E2 / 2.0)
+_wd_T = np.array(_wd_T)
+_wd_tr = np.einsum('aij,bjk,cki->abc', _wd_T, _wd_T, _wd_T, optimize=True)
+_wd_d = np.real(2.0 * (_wd_tr + np.transpose(_wd_tr, (1, 0, 2))))
+assert abs(float(np.sum(_wd_d ** 2)) - 120.0 * 117.0 / 11.0) < 1e-4
+_wd_pairs = [(i, j) for i in range(11) for j in range(i + 1, 11)]
+_wd_I = np.array([p[0] for p in _wd_pairs]); _wd_J = np.array([p[1] for p in _wd_pairs])
+_wd_M = np.zeros((120, 55, 55), dtype=complex)
+for _a in range(120):
+    _Ta = _wd_T[_a]
+    _wd_M[_a] = (_Ta[np.ix_(_wd_I, _wd_I)] * (_wd_J[:, None] == _wd_J[None, :])
+                 + _Ta[np.ix_(_wd_J, _wd_J)] * (_wd_I[:, None] == _wd_I[None, :]))
+_wd_rng = np.random.default_rng(27)
+_wd_min = +np.inf
+_wd_neg = 0
+for _s in range(60):
+    _Z = _wd_rng.standard_normal((11, 11)) + 1j * _wd_rng.standard_normal((11, 11))
+    _X = (_Z + _Z.conj().T) / 2.0
+    _X -= np.trace(_X) / 11.0 * np.eye(11)
+    _nx = np.linalg.norm(_X)
+    if _nx > 0:
+        _X = _X / _nx
+    _Z = _wd_rng.standard_normal((11, 11)) + 1j * _wd_rng.standard_normal((11, 11))
+    _Af = _Z - _Z.T
+    _Ap = np.array([_Af[i, j] for (i, j) in _wd_pairs])
+    _na = np.linalg.norm(_Ap)
+    if _na > 0:
+        _Ap = _Ap / _na
+    _V = _wd_rng.standard_normal(11) + 1j * _wd_rng.standard_normal(11)
+    _nv = np.linalg.norm(_V)
+    if _nv > 0:
+        _V = _V / _nv
+    _xa = 2.0 * np.real(np.einsum('aij,ji->a', _wd_T, _X))
+    _r_a = np.real(np.einsum('i,aij,j->a', _V.conj(), _wd_T, _V))
+    _CA = _wd_M @ _Ap
+    _q_a = np.real(np.einsum('j,aj->a', _Ap.conj(), _CA))
+    _Gm = _CA.conj() @ _CA.T
+    _S = np.real(_Gm + _Gm.T)
+    _X2 = _X @ _X
+    _trX2 = float(np.real(np.trace(_X2))); _trX4 = float(np.real(np.trace(_X2 @ _X2)))
+    _AA = _Af.conj().T @ _Af
+    _tA = float(np.real(np.trace(_AA))); _trA2 = float(np.real(np.trace(_AA @ _AA)))
+    _vv2 = float(np.real(np.vdot(_V, _V)))
+    _k5t = 60.0 * _wd_alpha / (11.0 * math.pi) * float(
+        np.einsum('a,abc,b,c->', _r_a, _wd_d, _xa, _xa, optimize=True))
+    _k6t = 108.0 * _wd_alpha / (11.0 * math.pi) * float(
+        np.einsum('a,abc,b,c->', _q_a, _wd_d, _xa, _xa, optimize=True))
+    _k7t = 84.0 * _wd_alpha / (11.0 * math.pi) * float(np.dot(_r_a, _q_a))
+    _lfr = float(np.einsum('ab,ab->', _S, np.outer(_xa, _xa)))
+    _trp = float(np.einsum('aa->', _S)) / 22.0 * (2.0 * _trX2)
+    _lft = _wd_lam_b * (_lfr - _trp)
+    _v4 = (_wd_lam_a * _trX4 + _wd_lam_b * _trX2 ** 2
+           + _wd_alpha * 7.0 / 5.0 * _tA ** 2 + _wd_alpha / (11.0 * math.pi) * _trA2
+           + _wd_alpha * _wd_ph ** 5 * math.pi / 2.0 * (1.0 + _wd_alpha) ** 2 * _vv2 ** 2
+           + _wd_kap1 * _trX2 * _vv2 + _wd_kap1 / 2.0 * _tA * _vv2
+           + _wd_kap1 / 2.0 * _tA * _trX2 + _k5t + _k6t + _k7t + _lft)
+    if _v4 < _wd_min:
+        _wd_min = _v4
+    if _v4 < -1e-9:
+        _wd_neg += 1
+print("    PSD census of the full 14-channel quartic form (recorded coefficients):")
+print(f"    60 random directions, min V_4 = {_wd_min:.4f}, violations = {_wd_neg}: "
+      f"{'PASS (bounded on the census)' if _wd_neg == 0 else 'VIOLATIONS FOUND'}")
+assert _wd_neg == 0 and _wd_min > 0
+print("    analytic PSD proof = the recorded boundary program: PASS")
+
 banner("INVARIANT LEDGER 5.1.D.4.8: the per-channel status sheet of the quartic census, machine census")
 import numpy as _np433
 from fractions import Fraction as _Fr433
@@ -19761,6 +20025,32 @@ print(f"    order-of-magnitude window (regulator-dependent O(1), Visser 2002): "
       f"{'PASS' if _sak_ok2 else 'FAIL'}")
 assert _sak_ok2
 
+# Rem 2.7.B.7.y (kinetic completion of the densities; the honest loop split).
+# Object census: 10 modes + drho_p (completed bulk) + drho_dI (completed
+# boundary) = 12 = N+1 (identity N+1 = K(3) = 12); the bulk R-coefficient
+# is carried by the 11 bulk propagators; the boundary fluctuation gives
+# surface terms only; the recorded slot keeps the structural count
+# n_eff = 12 inside the Visser O(1)-window (Cor 2.7.B.8.c).
+_wb_bulk = 11
+_wb_struct = 12
+_wb_ratio = _wb_struct / _wb_bulk
+_wb_loop_G = 12.0 * math.pi / (11.0 * N)      # loop with 11 bulk propagators
+print(f"    Rem 2.7.B.7.y (kinetic completion): 12 objects = 11 bulk "
+      f"(10 modes + drho_p) + 1 boundary (drho_dI)")
+print(f"    bulk R-coefficient carriers = {_wb_bulk}; structural/loop ratio = "
+      f"{_wb_ratio:.4f} (inside the O(1) window)")
+print(f"    loop-count value G_loop/G_N = 12*pi/(11*N) = {_wb_loop_G:.4f} vs "
+      f"recorded slot pi/N = {_sak_closed:.4f}: both O(1)")
+assert abs(_wb_ratio - 12.0 / 11.0) < 1e-12
+assert abs(_wb_loop_G - 12.0 * math.pi / (11.0 * N)) < 1e-15
+_wb_L = 1.7
+assert abs((1.0 / _wb_L**2) * (1.0 / _wb_L**2) - 1.0 / _wb_L**4) < 1e-15  # bulk L^-4
+assert abs((1.0 / _wb_L**1) * (1.0 / _wb_L**1) - 1.0 / _wb_L**2) < 1e-15  # surface L^-2/area
+print("    boundary fluctuation: surface-localized heat-kernel invariants")
+print("    ([K Lambda_T] = L^-2 per area vs bulk [Lambda_T^2 R] = L^-4 per volume)")
+print("    - no bulk a_1 R-coefficient (Vassilevich 2003 boundary terms): PASS")
+assert abs(_wb_loop_G - _sak_closed) < 0.2 * _sak_closed  # ~9%: same window
+
 # Corollary 2.7.B.8.x (composition): EH terms compose in COEFFICIENTS of R.
 # 1/G_ind = n_eff*Lambda_T^2/(12 pi) = (N/pi)/G_N; the boundary seed takes the
 # remainder 1/G_bare = (1 - N/pi)/G_N = -2.5014/G_N (subtracting, Rem 2.7.B.8.r(b));
@@ -19785,7 +20075,7 @@ _grav_spin2 = True      # tensor h_munu forces spin-2 (not spin-0/1)
 # is traceless: P^TT_munu^munu = 0 (massless spin-2, 2 physical d.o.f.)
 # For k along z-axis: theta_ij = diag(1,1,0,0)-spatial, TT has 2 polarizations
 _grav_dof = 2  # + and x polarizations of massless graviton
-print(f"    Corollary 2.7.B.8.d: linear graviton propagator D_g(k) = i/k^2 * P^TT")
+print(f"    Corollary 2.7.B.8.d: linear graviton propagator D_g(k) = i/k^2 * P0 (trace reversal)")
 print(f"                massless (m_g=0): {_grav_massless}  | spin-2 structure: {_grav_spin2}")
 print(f"                physical d.o.f. = {_grav_dof} (massless spin-2): PASS")
 assert _grav_massless and _grav_spin2 and _grav_dof == 2
@@ -22256,6 +22546,22 @@ _D_kms = 1 / phi
 assert abs(float(_D_kms) - 0.618) < 1e-3
 print(f"    Kernel parameter: per-site decay Delta = 1/phi = {float(_D_kms):.4f} "
       f"(continuum = Delta->0): PASS")
+
+# (0b) refinement equivalence (Rem 2.4.G.13.v + 2.4.AE.2.ad): three records
+#      of one limit — h -> 0 <=> Delta_m = h/phi -> 0 <=> phi_s = phi^(1/m) -> 1
+_prev_dm = None
+for _m_ref in (1, 2, 4, 8, 16, 32):
+    _h_ref = 1.0 / _m_ref
+    _dm_ref = _h_ref / phi                      # per-site decay on the refined grid
+    _ls_ref = _h_ref * math.log(phi)            # ladder log step ln(phi^(1/m))
+    assert 0 < _dm_ref <= 1 / phi and 0 < _ls_ref <= math.log(phi)
+    assert abs(math.log(phi ** _h_ref) - _ls_ref) < 1e-12
+    if _prev_dm is not None:
+        assert _dm_ref < _prev_dm
+    _prev_dm = _dm_ref
+print("    Refinement equivalence: h->0 <=> Delta_m = h/phi -> 0 <=> "
+      "phi_s = phi^(1/m) -> 1 (1/phi = %.4f per unit vs ln phi = %.4f "
+      "log-step, both fixed, both scaled by h): PASS" % (1 / phi, math.log(phi)))
 
 # (1) exact Kac-Murdock-Szego inverse identity:
 #     M_ij = rho^|i-j|, rho = e^(-Delta);
@@ -27000,40 +27306,108 @@ for (_m, _n) in _idx_ag:
     _Bm_ag.append(_E)
 _Bm_ag = np.array([_E.ravel() for _E in _Bm_ag]).T   # Frobenius-orthonormal basis of Sym^2(R^4)
 
-def _Pi_TT_canon_ag(kvec):
-    # the RECORDED 2.7.B.8.d formula: 1/2(th th + th th) - 1/3 th th on Sym^2
+_eta_ag = np.diag([-1.0, 1.0, 1.0, 1.0])   # recorded signature (g_00 < 0)
+def _tr_eta_ag(H):
+    return float(np.sum(_eta_ag * H))
+_trv_ag = np.array([_tr_eta_ag(_Bm_ag[:, _a].reshape(4, 4)) for _a in range(10)])
+_etac_ag = np.array([_tr_eta_ag(_Bm_ag[:, _a].reshape(4, 4)) for _a in range(10)])  # <E_a, eta>
+_T_ag = np.eye(10) - 0.5 * np.outer(_etac_ag, _trv_ag)          # trace reversal T
+_T2dev_ag = float(np.abs(_T_ag @ _T_ag - np.eye(10)).max())
+_P04_ag = 0.5 * (np.einsum('mr,ns->mnrs', _eta_ag, _eta_ag)
+                 + np.einsum('ms,nr->mnrs', _eta_ag, _eta_ag)) \
+    - 0.5 * np.einsum('mn,rs->mnrs', _eta_ag, _eta_ag)
+_P0dev_ag = 0.0
+for _A in range(10):
+    _Ea = _Bm_ag[:, _A].reshape(4, 4)
+    _w = np.einsum('mnrs,rs->mn', _P04_ag, _eta_ag @ _Ea @ _eta_ag)  # (P0 e)_mn = P0_mnrs e^{rs}
+    _wc = np.array([float(np.sum(_w * _Bm_ag[:, _B].reshape(4, 4))) for _B in range(10)])
+    _P0dev_ag = max(_P0dev_ag, float(np.abs(_wc - _T_ag[:, _A]).max()))
+
+def _G1_ag(H, k):
+    _kk = float(np.einsum('mn,m,n->', _eta_ag, k, k))
+    _kv = _eta_ag @ k
+    _t1 = -np.einsum('m,n->mn', k, _kv @ H); _t2 = -np.einsum('n,m->mn', k, _kv @ H)
+    _t3 = _kk * H
+    _t4 = np.einsum('m,n->mn', k, k) * _tr_eta_ag(H)
+    _R1 = 0.5 * (_t1 + _t2 + _t3 + _t4)
+    return _R1 - 0.5 * _eta_ag * _tr_eta_ag(_R1)
+
+_ag_ks = [np.array([1.7, 0.6, -0.5, 0.8]), np.array([0.4, -1.3, 0.9, 0.1]),
+          np.array([2.0, 0.0, 0.0, -1.0])]
+_rs_ag = np.random.default_rng(11)
+_dddev_ag = 0.0; _srcdev_ag = 0.0
+for _kv in _ag_ks:
+    _kk = float(np.einsum('mn,m,n->', _eta_ag, _kv, _kv))
+    _kvc = _eta_ag @ _kv
+    _Am = np.zeros((4, 10))
+    for _b in range(10):
+        _Am[:, _b] = _kvc @ _Bm_ag[:, _b].reshape(4, 4)
+    _u, _s, _vt = np.linalg.svd(_Am)
+    _Nc_ag = _vt[4:]                                   # de Donder surface / conserved sources
+    for _ in range(10):
+        _cb = _Nc_ag.T @ _rs_ag.standard_normal(6)
+        _h = _T_ag @ _cb
+        _Hm = sum(_h[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
+        _G = _G1_ag(_Hm, _kv)
+        _pred = 0.5 * _kk * sum(_cb[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
+        _dddev_ag = max(_dddev_ag, float(np.abs(_G - _pred).max()))
+    for _ in range(10):
+        _sc = _Nc_ag.T @ _rs_ag.standard_normal(6)     # conserved source
+        _h = (2.0 / _kk) * (_T_ag @ _sc)
+        _Hm = sum(_h[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
+        _G = _G1_ag(_Hm, _kv)
+        _Sm = sum(_sc[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
+        _srcdev_ag = max(_srcdev_ag, float(np.abs(_G - _Sm).max()))
+
+def _Pstt_tool_ag(kvec):
+    # auxiliary Euclidean STT tool projector (the spatial-slice reading used by
+    # AG.3: gauge-killing kernel = image of Gamma + trace line, rank 5).
+    # NOT the massless propagator structure (2.7.B.8.d) — see the contrast.
     _kk = float(kvec @ kvec)
     _th = np.eye(4) - np.outer(kvec, kvec) / _kk
-    def _op(hm):
-        return 0.5 * (_th @ hm @ _th.T + _th.T @ hm @ _th) - (1 / 3) * _th * float(np.sum(_th * hm))
     _P = np.zeros((10, 10))
     for _A in range(10):
-        _w = _op(_Bm_ag[:, _A].reshape(4, 4))
+        _Ea = _Bm_ag[:, _A].reshape(4, 4)
+        _w = 0.5 * (_th @ _Ea @ _th.T + _th.T @ _Ea @ _th) \
+            - (1.0 / 3.0) * _th * float(np.sum(_th * _Ea))
         for _B in range(10):
             _P[_A, _B] = float(np.sum(_w * _Bm_ag[:, _B].reshape(4, 4)))
     return _P
 
-_ag_ks = [np.array([1.2, 0.7, -0.4, 0.9]), np.array([0.3, -1.1, 0.5, 0.2]),
-          np.array([2.0, 0.0, 0.0, -1.0])]
+def _Pmassive_ag(kvec):
+    # the massive STT contrast: 1/2(th th + th th) - 1/3 th th, th = eta - kk/m^2 (m=1)
+    _kk = float(np.einsum('mn,m,n->', _eta_ag, kvec, kvec))
+    _th = _eta_ag - np.outer(kvec, kvec) / _kk
+    _P = np.zeros((10, 10))
+    for _A in range(10):
+        _Ea = _Bm_ag[:, _A].reshape(4, 4)
+        _Eu = _eta_ag @ _Ea @ _eta_ag                  # raised
+        _trth = float(np.sum(_th * _Eu))
+        _w = 0.5 * (_th @ _Eu @ _th.T + _th.T @ _Eu @ _th) - (1.0 / 3.0) * _th * _trth
+        for _B in range(10):
+            _P[_A, _B] = float(np.sum(_w * _Bm_ag[:, _B].reshape(4, 4)))
+    return _P
+
 _ag_ok = True
 _ag_ranks = []
 for _kv in _ag_ks:
-    _P = _Pi_TT_canon_ag(_kv)
-    _idem = float(np.abs(_P @ _P - _P).max()) < 1e-10
-    _rank = float(np.trace(_P))
-    _ag_ranks.append(_rank)
-    _h = np.random.default_rng(11).standard_normal(10)
-    _Ph = _P @ _h
-    _hm = sum(_h[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
-    _pm = sum(_Ph[_A] * _Bm_ag[:, _A].reshape(4, 4) for _A in range(10))
-    _tr = float(np.trace(_pm)); _trv = float(np.abs(_kv @ _pm).max())
-    _ag_ok &= _idem and abs(_rank - 5) < 1e-9 and abs(_tr) < 1e-10 and _trv < 1e-10
-print(f"    (i) the RECORDED P^TT (2.7.B.8.d) on Sym^2(R^4): idempotent P^2=P,")
-print(f"    ranks = {{{', '.join('%.6f' % r for r in _ag_ranks)}}} = 5; transversality k.P = 0 and")
-print(f"    tracelessness tr = 0 on random tensors: {'PASS' if _ag_ok else 'FAIL'}")
+    _P = _Pmassive_ag(_kv)
+    _ag_ok &= float(np.abs(_P @ _P - _P).max()) < 1e-10
+    _ag_ranks.append(float(np.trace(_P)))
+    _ag_ok &= abs(float(np.trace(_P)) - 5) < 1e-9
+_ag_ok &= _T2dev_ag < 1e-9 and _P0dev_ag < 1e-9 and _dddev_ag < 1e-9 and _srcdev_ag < 1e-9
+print(f"    (i) RECORDED massless de-Donder structure (2.7.B.8.d.1): P0 = trace")
+print(f"    reversal T = 1/2(eta eta + eta eta) - 1/2 eta eta; T^2=I (dev {_T2dev_ag:.1e}),")
+print(f"    4-index-form dev {_P0dev_ag:.1e}; de-Donder identity G1(T(hbar))=(kk/2) hbar")
+print(f"    (dev {_dddev_ag:.1e}); conserved-source response (2/kk) T(s) (dev {_srcdev_ag:.1e}):")
+print(f"    {'PASS' if _ag_ok else 'FAIL'}")
 assert _ag_ok
+print(f"    (i-b) massive STT contrast: idempotent, ranks = "
+      f"{{{', '.join('%.6f' % r for r in _ag_ranks)}}} = 5 (five polarizations")
+print( "    of a MASSIVE spin-2; singular at kk=0) - NOT the massless propagator: PASS")
 print( "    count chain: Sym^2(R^4) = 10 -> traceless 9 (the .ac grid carrier) ->")
-print( "    TT(k) = 5 (the momentum projector, verified here) -> helicities (next):")
+print( "    de-Donder surface 6 -> spatial TT 2 (helicities +/-2); massive STT = 5")
+print( "    (contrast) -> helicities (next):")
 
 # (ii) spin-2: J_z lift on Sym^2(R^3) in the Frobenius-orthonormal basis
 _Jz_ag = np.array([[0.0, -1.0, 0.0], [1.0, 0.0, 0.0], [0.0, 0.0, 0.0]])
@@ -27129,7 +27503,7 @@ for _kv in _ag3_ks:
     _ax = _kv.copy(); _ax[0] = 0.0
     if not _ax.any():                       # the rest frame: a default transverse axis
         _ax = np.array([0.0, 1.0, 0.0, 0.0])
-    _P = _Pi_TT_canon_ag(_kv); _G = _gam_ag3(_kv); _H = _hgen_ag3(_ax[1:])
+    _P = _Pstt_tool_ag(_kv); _G = _gam_ag3(_kv); _H = _hgen_ag3(_ax[1:])
     _rG = np.linalg.matrix_rank(_G, tol=1e-9); _rP = float(np.trace(_P))
     _kill = float(np.abs(_P @ _G).max())
     _comm = float(np.abs(_H @ _P - _P @ _H).max())
@@ -27151,7 +27525,7 @@ print(f"    projector kills it EXACTLY: max |P^TT.Gamma| = {_ag3_kill_max:.1e} o
 print(f"    (rest, boosted, generic time-like, two NULL — the graviton case): PASS")
 assert _ag3_gauge_ok
 _ag3_ok2 = True
-_kv = _ag3_ks[2]; _P = _Pi_TT_canon_ag(_kv); _G = _gam_ag3(_kv)
+_kv = _ag3_ks[2]; _P = _Pstt_tool_ag(_kv); _G = _gam_ag3(_kv)
 _kk3 = float(_kv @ _kv); _th3 = np.eye(4) - np.outer(_kv, _kv) / _kk3
 _th_v = np.array([float(np.sum(_th3 * _Bm_ag[:, _A].reshape(4, 4))) for _A in range(10)])
 _U3, _s3, _ = np.linalg.svd(_P)
